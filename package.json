@@ -1,0 +1,19 @@
+{
+  "name": "templiq",
+  "version": "1.0.0",
+  "description": "A Liquid template renderer using JSON models",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "liquidjs": "^10.9.2",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+} 
