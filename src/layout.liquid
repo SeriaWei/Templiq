@@ -3,34 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1 {
-      color: #2a69ac;
-      border-bottom: 2px solid #eaeaea;
-      padding-bottom: 10px;
-    }
-    a {
-      color: #2a69ac;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>Templiq - Liquid模板引擎</title>
+  <meta name="description" content="Templiq - 简单易用的Liquid模板引擎示例">
+  <!-- Bootstrap 3 CSS -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css">
+  <!-- Bootstrap 3 JavaScript -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <main class="content">
-    {{ content }}
-  </main>
+  <div class="container">
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
 </body>
 </html> 

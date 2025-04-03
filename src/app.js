@@ -26,40 +26,27 @@ app.get('/', (req, res) => {
   try {
     const dataDir = path.resolve(__dirname, './data');
     const templateDir = path.resolve(__dirname, './templates');
-    
+
     const files = fs.readdirSync(dataDir)
       .filter(file => file.endsWith('.json'));
-    
+
     const examples = [];
-    
+
     for (const file of files) {
       const baseName = file.replace('.json', '');
       const templatePath = path.join(templateDir, `${baseName}.liquid`);
-    
+
       if (fs.existsSync(templatePath)) {
-        try {
-          const data = JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf8'));
-          examples.push({
-            name: baseName,
-            title: data.page_title || data.title || baseName,
-            description: data.page_description || `${baseName}模板示例`
-          });
-        } catch (error) {
-          examples.push({
-            name: baseName,
-            title: baseName,
-            description: `${baseName}模板示例`
-          });
-        }
+        examples.push({
+          name: baseName
+        });
       }
     }
-    
+
     engine.renderFile('../index', { examples: examples })
       .then(content => {
         const layoutData = {
-          content: content,
-          title: 'Templiq - Liquid模板引擎',
-          description: 'Templiq - 简单易用的Liquid模板引擎示例'
+          content: content
         };
         res.render('layout', layoutData);
       })
@@ -74,20 +61,17 @@ app.get('/', (req, res) => {
 app.get('/preview/:template', (req, res) => {
   const templateName = req.params.template;
   const dataPath = path.resolve(__dirname, `./data/${templateName}.json`);
-  
+
   try {
     let data = {};
     if (fs.existsSync(dataPath)) {
       data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
     }
-    
+
     engine.renderFile(templateName, data)
       .then(content => {
         const layoutData = {
-          ...data,
-          content: content,
-          title: data.page_title || data.title || templateName,
-          description: data.page_description || `${templateName}模板预览`
+          content: content
         };
         res.render('layout', layoutData);
       })
