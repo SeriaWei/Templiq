@@ -1,0 +1,75 @@
+{% header %}
+<style>
+.section-CLPPSG {}
+</style>
+{% endheader %}
+
+<div class="section-CLPPSG">
+{% if this.Model.Heading %}
+<p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
+{% endif %}
+
+{% if this.Model.Summary %}
+<p property="true" data-property="Summary" method="text">{{this.Model.Summary}}</p>
+{% endif %}
+
+{% if this.Model.RowContent %}
+<p property="true" data-property="RowContent" method="html">{{this.Model.RowContent | raw}}</p>
+{% endif %}
+
+{% if this.Model.Address %}
+<p property="true" data-property="Address" method="text">{{this.Model.Address}}</p>
+{% endif %}
+
+{% if this.Model.IsPublished %}
+<p property="true" data-property="IsPublished" method="text">{{this.Model.IsPublished}}</p>
+{% endif %}
+
+{% if this.Model.Hobby %}
+<p property="true" data-property="Hobby" method="text">{{this.Model.Hobby}}</p>
+{% endif %}
+
+{% if this.Model.Working %}
+<p property="true" data-property="Working" method="text">{{this.Model.Working}}</p>
+{% endif %}
+
+{% if this.Model.PublishedDate %}
+<p property="true" data-property="PublishedDate" method="text">{{this.Model.PublishedDate}}</p>
+{% endif %}
+
+{% if this.Model.Gender %}
+<p property="true" data-property="Gender" method="text">{{this.Model.Gender}}</p>
+{% endif %}
+
+{% if this.Model.Email %}
+<p property="true" data-property="Email" method="text">{{this.Model.Email}}</p>
+{% endif %}
+
+{% if this.Model.Age %}
+<p property="true" data-property="Age" method="text">{{this.Model.Age}}</p>
+{% endif %}
+
+{% if this.Model.Phone %}
+<p property="true" data-property="Phone" method="text">{{this.Model.Phone}}</p>
+{% endif %}
+
+<ul>
+{% for item in this.Model.Images %}
+<li>
+{% if item.Src %}
+<img property="true" data-property="Images[{{forloop.index | minus:1}}].Src" method="attr" para="src" src="{% url item.Src %}" />
+{% endif %}
+
+{% if item.Description %}
+<p property="true" data-property="Images[{{forloop.index | minus:1}}].Description" method="text">{{item.Description}}</p>
+{% endif %}
+
+</li>
+{% endfor %}
+</ul>
+</div>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
