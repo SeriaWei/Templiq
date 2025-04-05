@@ -65,10 +65,54 @@ app.get('/preview/:template', (req, res) => {
   try {
     let data = {};
     if (fs.existsSync(dataPath)) {
-      data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+      const rawData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+      
+      // 转换函数：将新格式转换为模板所需的旧格式
+      const convertData = (data) => {
+        if (!data || typeof data !== 'object') return data;
+        
+        if (data.FieldType) {
+          switch(data.FieldType) {
+            case 'SingleLine':
+            case 'Paragraph':
+            case 'HtmlBox':
+              return data.Value || '';
+            case 'Checkbox':
+              return data.Value === 'true';
+            case 'Address':
+              return data.ValueArray ? data.ValueArray.join(' ') : '';
+            case 'Radio':
+              return data.Value;
+            case 'Array':
+              return data.Children ? data.Children.map(child => convertData(child)) : [];
+            case 'Object':
+              return data.Children ? convertData(data.Children) : {};
+            default:
+              return data.Value || '';
+          }
+        }
+        
+        if (Array.isArray(data)) {
+          return data.map(item => convertData(item));
+        }
+        
+        const result = {};
+        for (const key in data) {
+          result[key] = convertData(data[key]);
+        }
+        return result;
+      };
+      
+      data = convertData(rawData);
     }
 
-    engine.renderFile(templateName, data)
+    const modelData = {
+      this: {
+        Model: data
+      }
+    };
+
+    engine.renderFile(templateName, modelData)
       .then(content => {
         const layoutData = {
           content: content
@@ -85,4 +129,4 @@ app.get('/preview/:template', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`服务器已启动: http://localhost:${PORT}`);
-}); 
+});

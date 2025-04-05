@@ -1,4 +1,4 @@
-  <style>
+<style>
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -76,35 +76,35 @@
   </style>
 
 
-  {% if products.size > 0 %}
+  {% if this.Model.Products.size > 0 %}
     <div class="product-grid">
-      {% for product in products %}
-        <div class="product-card {% if product.in_stock == false %}out-of-stock{% endif %}">
-          {% if product.image %}
-            <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image">
+      {% for product in this.Model.Products %}
+        <div class="product-card {% if product.InStock == false %}out-of-stock{% endif %}">
+          {% if product.Image %}
+            <img src="{{ product.Image }}" alt="{{ product.title }}" class="product-image">
           {% endif %}
           
-          <h2 class="product-title">{{ product.title }}</h2>
+          <h2 class="product-title">{{ product.Title }}</h2>
           
           <div>
-            {% for tag in product.tags %}
-              <span class="tag {% if tag == '促销' %}sale{% endif %} {% if tag == '新品' %}new{% endif %}">{{ tag }}</span>
+            {% for tag in product.Tags %}
+              <span class="tag {% if tag.Tag == '促销' %}sale{% endif %} {% if tag.Tag == '新品' %}new{% endif %}">{{ tag.Tag }}</span>
             {% endfor %}
           </div>
           
-          <p>{{ product.description | truncate: 100 }}</p>
+          <p>{{ product.Description | truncate: 100 }}</p>
           
           <p class="price">
-            {% if product.compare_at_price and product.compare_at_price > product.price %}
-              <span style="text-decoration: line-through; color: #888; font-size: 0.9em;">{{ product.compare_at_price }}元</span>
+            {% if product.CompareAtPrice and product.CompareAtPrice > product.Price %}
+              <span style="text-decoration: line-through; color: #888; font-size: 0.9em;">{{ product.CompareAtPrice }}元</span>
             {% endif %}
-            {{ product.price }}元
+            {{ product.Price }}元
           </p>
           
           <div class="stock-status">
-            {% if product.in_stock %}
-              {% if product.inventory < 5 and product.inventory > 0 %}
-                <span style="color: orange;">库存紧张，仅剩{{ product.inventory }}件</span>
+            {% if product.InStock %}
+              {% if product.Inventory < 5 and product.Inventory > 0 %}
+                <span style="color: orange;">库存紧张，仅剩{{ product.Inventory }}件</span>
               {% else %}
                 <span style="color: green;">有货</span>
               {% endif %}
@@ -117,8 +117,8 @@
     </div>
 
     <div class="pagination">
-      {% for i in (1..pagination.total_pages) %}
-        <a href="?page={{ i }}" {% if pagination.current_page == i %}class="active"{% endif %}>{{ i }}</a>
+      {% for i in (1..this.Model.Pagination.TotalPages) %}
+        <a href="?page={{ i }}" {% if this.Model.Pagination.CurrentPage == i %}class="active"{% endif %}>{{ i }}</a>
       {% endfor %}
     </div>
   {% else %}

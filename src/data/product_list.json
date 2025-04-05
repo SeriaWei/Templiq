@@ -1,78 +1,458 @@
 {
-  "page_title": "我们的商品",
-  "page_description": "浏览我们最新的商品系列",
-  "products": [
-    {
-      "id": 1,
-      "title": "高级智能手表",
-      "description": "这款智能手表配备了先进的健康监测功能，包括心率监测、血氧饱和度检测和睡眠追踪。它还具有长达7天的电池续航时间，防水设计，以及各种智能通知功能。",
-      "price": 1299,
-      "compare_at_price": 1599,
-      "in_stock": true,
-      "inventory": 15,
-      "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=300&q=80",
-      "tags": ["新品", "科技", "穿戴设备"]
-    },
-    {
-      "id": 2,
-      "title": "无线蓝牙耳机",
-      "description": "享受无线自由。这款蓝牙耳机提供出色的音质和舒适的佩戴体验，配备先进的降噪技术和触控控制。",
-      "price": 499,
-      "compare_at_price": null,
-      "in_stock": true,
-      "inventory": 3,
-      "image": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=300&q=80",
-      "tags": ["音频", "科技", "促销"]
-    },
-    {
-      "id": 3,
-      "title": "便携式移动电源",
-      "description": "这款高容量移动电源可以同时为多个设备充电，支持快充技术，小巧便携，是出行的理想伴侣。",
-      "price": 199,
-      "compare_at_price": 249,
-      "in_stock": true,
-      "inventory": 20,
-      "image": "https://images.unsplash.com/photo-1583863619885-193f7eac6266?auto=format&fit=crop&w=300&q=80",
-      "tags": ["科技", "配件", "促销"]
-    },
-    {
-      "id": 4,
-      "title": "专业摄影相机",
-      "description": "捕捉完美瞬间。这款高端相机配备了最新的传感器技术和强大的图像处理能力，适合专业摄影师和爱好者。",
-      "price": 5999,
-      "compare_at_price": null,
-      "in_stock": false,
-      "inventory": 0,
-      "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=300&q=80",
-      "tags": ["科技", "摄影", "专业设备"]
-    },
-    {
-      "id": 5,
-      "title": "智能家居套装",
-      "description": "将您的家变得更智能。这套套装包括智能灯泡、智能插座和智能音箱，全部可以通过手机应用程序或语音控制。",
-      "price": 899,
-      "compare_at_price": 1099,
-      "in_stock": true,
-      "inventory": 8,
-      "image": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=300&q=80",
-      "tags": ["新品", "科技", "智能家居"]
-    },
-    {
-      "id": 6,
-      "title": "游戏笔记本电脑",
-      "description": "为游戏玩家设计的高性能笔记本电脑，配备最新的图形处理器和高刷新率显示屏，提供沉浸式游戏体验。",
-      "price": 8999,
-      "compare_at_price": 9599,
-      "in_stock": true,
-      "inventory": 5,
-      "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=300&q=80",
-      "tags": ["科技", "电脑", "游戏"]
+  "PageTitle": {
+    "FieldType": "SingleLine",
+    "DisplayName": "页面标题",
+    "Value": "我们的商品"
+  },
+  "PageDescription": {
+    "FieldType": "Paragraph",
+    "DisplayName": "页面描述",
+    "Value": "浏览我们最新的商品系列"
+  },
+  "Products": {
+    "FieldType": "Array",
+    "DisplayName": "商品列表",
+    "Children": [
+      {
+        "Id": {
+          "FieldType": "Number",
+          "DisplayName": "商品ID",
+          "Value": "1"
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "商品名称",
+          "Value": "高级智能手表"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述",
+          "Value": "这款智能手表配备了先进的健康监测功能，包括心率监测、血氧饱和度检测和睡眠追踪。它还具有长达7天的电池续航时间，防水设计，以及各种智能通知功能。"
+        },
+        "Price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "Value": "1299"
+        },
+        "CompareAtPrice": {
+          "FieldType": "Number",
+          "DisplayName": "原价",
+          "Value": "1599"
+        },
+        "InStock": {
+          "FieldType": "Checkbox",
+          "DisplayName": "有货",
+          "Value": "true"
+        },
+        "Inventory": {
+          "FieldType": "Number",
+          "DisplayName": "库存",
+          "Value": "15"
+        },
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "商品图片",
+          "Value": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=300&q=80"
+        },
+        "Tags": {
+          "FieldType": "Array",
+          "DisplayName": "标签",
+          "Children": [
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "新品"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "科技"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "穿戴设备"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Id": {
+          "FieldType": "Number",
+          "DisplayName": "商品ID",
+          "Value": "2"
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "商品名称",
+          "Value": "无线蓝牙耳机"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述",
+          "Value": "享受无线自由。这款蓝牙耳机提供出色的音质和舒适的佩戴体验，配备先进的降噪技术和触控控制。"
+        },
+        "Price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "Value": "499"
+        },
+        "CompareAtPrice": {
+          "FieldType": "Number",
+          "DisplayName": "原价",
+          "Value": "599"
+        },
+        "InStock": {
+          "FieldType": "Checkbox",
+          "DisplayName": "有货",
+          "Value": "true"
+        },
+        "Inventory": {
+          "FieldType": "Number",
+          "DisplayName": "库存",
+          "Value": "3"
+        },
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "商品图片",
+          "Value": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=300&q=80"
+        },
+        "Tags": {
+          "FieldType": "Array",
+          "DisplayName": "标签",
+          "Children": [
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "音频"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "科技"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "促销"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Id": {
+          "FieldType": "Number",
+          "DisplayName": "商品ID",
+          "Value": "3"
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "商品名称",
+          "Value": "便携式移动电源"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述",
+          "Value": "这款高容量移动电源可以同时为多个设备充电，支持快充技术，小巧便携，是出行的理想伴侣。"
+        },
+        "Price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "Value": "199"
+        },
+        "CompareAtPrice": {
+          "FieldType": "Number",
+          "DisplayName": "原价",
+          "Value": "249"
+        },
+        "InStock": {
+          "FieldType": "Checkbox",
+          "DisplayName": "有货",
+          "Value": "true"
+        },
+        "Inventory": {
+          "FieldType": "Number",
+          "DisplayName": "库存",
+          "Value": "20"
+        },
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "商品图片",
+          "Value": "https://images.unsplash.com/photo-1583863619885-193f7eac6266?auto=format&fit=crop&w=300&q=80"
+        },
+        "Tags": {
+          "FieldType": "Array",
+          "DisplayName": "标签",
+          "Children": [
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "科技"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "配件"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "促销"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Id": {
+          "FieldType": "Number",
+          "DisplayName": "商品ID",
+          "Value": "4"
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "商品名称",
+          "Value": "专业摄影相机"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述",
+          "Value": "捕捉完美瞬间。这款高端相机配备了最新的传感器技术和强大的图像处理能力，适合专业摄影师和爱好者。"
+        },
+        "Price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "Value": "5999"
+        },
+        "CompareAtPrice": {
+          "FieldType": "Number",
+          "DisplayName": "原价",
+          "Value": "6999"
+        },
+        "InStock": {
+          "FieldType": "Checkbox",
+          "DisplayName": "有货",
+          "Value": "false"
+        },
+        "Inventory": {
+          "FieldType": "Number",
+          "DisplayName": "库存",
+          "Value": "0"
+        },
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "商品图片",
+          "Value": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=300&q=80"
+        },
+        "Tags": {
+          "FieldType": "Array",
+          "DisplayName": "标签",
+          "Children": [
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "科技"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "摄影"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "专业设备"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Id": {
+          "FieldType": "Number",
+          "DisplayName": "商品ID",
+          "Value": "5"
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "商品名称",
+          "Value": "智能家居套装"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述",
+          "Value": "将您的家变得更智能。这套套装包括智能灯泡、智能插座和智能音箱，全部可以通过手机应用程序或语音控制。"
+        },
+        "Price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "Value": "899"
+        },
+        "CompareAtPrice": {
+          "FieldType": "Number",
+          "DisplayName": "原价",
+          "Value": "1099"
+        },
+        "InStock": {
+          "FieldType": "Checkbox",
+          "DisplayName": "有货",
+          "Value": "true"
+        },
+        "Inventory": {
+          "FieldType": "Number",
+          "DisplayName": "库存",
+          "Value": "8"
+        },
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "商品图片",
+          "Value": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=300&q=80"
+        },
+        "Tags": {
+          "FieldType": "Array",
+          "DisplayName": "标签",
+          "Children": [
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "新品"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "科技"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "智能家居"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Id": {
+          "FieldType": "Number",
+          "DisplayName": "商品ID",
+          "Value": "6"
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "商品名称",
+          "Value": "游戏笔记本电脑"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述",
+          "Value": "为游戏玩家设计的高性能笔记本电脑，配备最新的图形处理器和高刷新率显示屏，提供沉浸式游戏体验。"
+        },
+        "Price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "Value": "8999"
+        },
+        "CompareAtPrice": {
+          "FieldType": "Number",
+          "DisplayName": "原价",
+          "Value": "9599"
+        },
+        "InStock": {
+          "FieldType": "Checkbox",
+          "DisplayName": "有货",
+          "Value": "true"
+        },
+        "Inventory": {
+          "FieldType": "Number",
+          "DisplayName": "库存",
+          "Value": "5"
+        },
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "商品图片",
+          "Value": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=300&q=80"
+        },
+        "Tags": {
+          "FieldType": "Array",
+          "DisplayName": "标签",
+          "Children": [
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "科技"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "电脑"
+              }
+            },
+            {
+              "Tag": {
+                "FieldType": "SingleLine",
+                "DisplayName": "标签",
+                "Value": "游戏"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Pagination": {
+    "FieldType": "Object",
+    "DisplayName": "分页信息",
+    "Children": {
+      "CurrentPage": {
+        "FieldType": "Number",
+        "DisplayName": "当前页",
+        "Value": "1"
+      },
+      "TotalPages": {
+        "FieldType": "Number",
+        "DisplayName": "总页数",
+        "Value": "3"
+      },
+      "ItemsPerPage": {
+        "FieldType": "Number",
+        "DisplayName": "每页数量",
+        "Value": "6"
+      },
+      "TotalItems": {
+        "FieldType": "Number",
+        "DisplayName": "总商品数",
+        "Value": "18"
+      }
     }
-  ],
-  "pagination": {
-    "current_page": 1,
-    "total_pages": 3,
-    "items_per_page": 6,
-    "total_items": 18
   }
-} 
+}
