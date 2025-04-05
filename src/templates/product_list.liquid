@@ -115,12 +115,6 @@
         </div>
       {% endfor %}
     </div>
-
-    <div class="pagination">
-      {% for i in (1..this.Model.Pagination.TotalPages) %}
-        <a href="?page={{ i }}" {% if this.Model.Pagination.CurrentPage == i %}class="active"{% endif %}>{{ i }}</a>
-      {% endfor %}
-    </div>
   {% else %}
     <p>暂无商品</p>
   {% endif %}

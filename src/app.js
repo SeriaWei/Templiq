@@ -58,7 +58,62 @@ app.get('/', (req, res) => {
   }
 });
 
-app.get('/preview/:template', (req, res) => {
+const convertToViewModel = (data) => {
+  if (!data || typeof data !== 'object') return data;
+  
+  if (data.FieldType) {
+    switch(data.FieldType) {
+      case 'SingleLine':
+      case 'Paragraph':
+      case 'HtmlBox':
+        return data.Value || '';
+      case 'Checkbox':
+        if (data.ValueArray) {
+          return data.FieldOptions
+            ? data.FieldOptions
+                .filter((option, index) => data.ValueArray[index] === 'true' || data.ValueArray[index] === option.Value)
+                .map(option => option.Value)
+            : data.ValueArray.filter(val => val === 'true' || val !== '');
+        }
+        return data.Value === 'true';
+      case 'Address':
+        return data.ValueArray ? data.ValueArray.join(' ') : '';
+      case 'Radio':
+        return data.Value;
+      case 'Array':
+        return data.Children ? data.Children.map(child => convertToViewModel(child)) : [];
+      case 'Object':
+        return data.Children ? convertToViewModel(data.Children) : {};
+      default:
+        return data.Value || '';
+    }
+  }
+  
+  if (Array.isArray(data)) {
+    return data.map(item => convertToViewModel(item));
+  }
+  
+  const result = {};
+  for (const key in data) {
+    result[key] = convertToViewModel(data[key]);
+  }
+  return result;
+};
+
+const renderTemplate = (templateName, data) => {
+  const modelData = {
+    this: {
+      Model: data
+    }
+  };
+
+  return engine.renderFile(templateName, modelData)
+    .then(content => ({
+      content: content
+    }));
+};
+
+app.get('/preview/:template', async (req, res) => {
   const templateName = req.params.template;
   const dataPath = path.resolve(__dirname, `./data/${templateName}.json`);
 
@@ -66,62 +121,11 @@ app.get('/preview/:template', (req, res) => {
     let data = {};
     if (fs.existsSync(dataPath)) {
       const rawData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-      
-      // 转换函数：将新格式转换为模板所需的旧格式
-      const convertData = (data) => {
-        if (!data || typeof data !== 'object') return data;
-        
-        if (data.FieldType) {
-          switch(data.FieldType) {
-            case 'SingleLine':
-            case 'Paragraph':
-            case 'HtmlBox':
-              return data.Value || '';
-            case 'Checkbox':
-              return data.Value === 'true';
-            case 'Address':
-              return data.ValueArray ? data.ValueArray.join(' ') : '';
-            case 'Radio':
-              return data.Value;
-            case 'Array':
-              return data.Children ? data.Children.map(child => convertData(child)) : [];
-            case 'Object':
-              return data.Children ? convertData(data.Children) : {};
-            default:
-              return data.Value || '';
-          }
-        }
-        
-        if (Array.isArray(data)) {
-          return data.map(item => convertData(item));
-        }
-        
-        const result = {};
-        for (const key in data) {
-          result[key] = convertData(data[key]);
-        }
-        return result;
-      };
-      
-      data = convertData(rawData);
+      data = convertToViewModel(rawData);
     }
 
-    const modelData = {
-      this: {
-        Model: data
-      }
-    };
-
-    engine.renderFile(templateName, modelData)
-      .then(content => {
-        const layoutData = {
-          content: content
-        };
-        res.render('layout', layoutData);
-      })
-      .catch(error => {
-        res.status(500).send(`渲染错误: ${error.message}`);
-      });
+    const layoutData = await renderTemplate(templateName, data);
+    res.render('layout', layoutData);
   } catch (error) {
     res.status(500).send(`渲染错误: ${error.message}`);
   }

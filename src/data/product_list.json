@@ -428,31 +428,5 @@
         }
       }
     ]
-  },
-  "Pagination": {
-    "FieldType": "Object",
-    "DisplayName": "分页信息",
-    "Children": {
-      "CurrentPage": {
-        "FieldType": "Number",
-        "DisplayName": "当前页",
-        "Value": "1"
-      },
-      "TotalPages": {
-        "FieldType": "Number",
-        "DisplayName": "总页数",
-        "Value": "3"
-      },
-      "ItemsPerPage": {
-        "FieldType": "Number",
-        "DisplayName": "每页数量",
-        "Value": "6"
-      },
-      "TotalItems": {
-        "FieldType": "Number",
-        "DisplayName": "总商品数",
-        "Value": "18"
-      }
-    }
   }
 }
