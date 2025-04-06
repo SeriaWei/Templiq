@@ -15,7 +15,57 @@ const engine = new Liquid({
   extname: '.liquid',
   cache: process.env.NODE_ENV === 'production'
 });
+engine.registerTag("header",{
+  parse: function(tagToken, remainTokens) {
+    this.tpls = []
+    let closed = false
+    while(remainTokens.length) {
+      let token = remainTokens.shift()
+      if (token.name === 'endheader') {
+        closed = true
+        break
+      }
+      let tpl = this.liquid.parser.parseToken(token, remainTokens)
+      this.tpls.push(tpl)
+    }
+    if (!closed) throw new Error(`tag ${tagToken.getText()} not closed`)
+  },
+  render: function(ctx) {
+    return this.liquid.renderer.renderTemplates(this.tpls, ctx);
+  }
+});
+engine.registerTag("footer",{
+  parse: function(tagToken, remainTokens) {
+    this.tpls = []
+    let closed = false
+    while(remainTokens.length) {
+      let token = remainTokens.shift()
+      if (token.name === 'endfooter') {
+        closed = true
+        break
+      }
+      let tpl = this.liquid.parser.parseToken(token, remainTokens)
+      this.tpls.push(tpl)
+    }
+    if (!closed) throw new Error(`tag ${tagToken.getText()} not closed`)
+  },
+  render: function(ctx) {
+    return this.liquid.renderer.renderTemplates(this.tpls, ctx);
+  }
+});
 
+engine.registerTag("url", {
+  parse: function(tagToken) {
+    this.str = tagToken.args;
+  },
+  render: async function(ctx) {
+    const value = this.str;
+    if (typeof value === 'string' && value.startsWith('~')) {
+      return value.substring(1);
+    }
+    return value;
+  }
+});
 app.engine('liquid', engine.express());
 app.set('views', path.resolve(__dirname));
 app.set('view engine', 'liquid');
