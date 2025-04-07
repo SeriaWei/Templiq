@@ -1,0 +1,132 @@
+{
+    "Heading": {
+        "FieldType": "SingleLine",            
+        "DisplayName": "标题栏",
+        "Value": "标题栏"
+    },
+    "Summary": {
+        "FieldType": "Paragraph",            
+        "DisplayName": "概述",
+        "Value": "Hello"
+    },
+    "RowContent": {
+        "FieldType": "HtmlBox",            
+        "DisplayName": "简介",
+        "Value": "<p>Html text</p>"
+    },
+    "Address": {
+        "FieldType": "Address",
+        "DisplayName": "地址",
+        "ValueArray": [
+            "广东省",
+            "深圳市",
+            "罗湖区"
+        ]
+    },
+    "IsPublished": {
+        "FieldType": "Checkbox",
+        "DisplayName": "已发布？",
+        "Value": "true"
+    },
+    "Hobby": {
+        "FieldType": "Checkbox",
+        "DisplayName": "爱好",
+        "ValueArray": [
+            "false",
+            "2"
+        ],
+        "FieldOptions": [
+            {
+                "DisplayText": "看书",
+                "Value": "1"
+            },
+            {
+                "DisplayText": "看电影",
+                "Value": "2"
+            }
+        ]
+    },
+    "Working": {
+        "FieldType": "Radio",
+        "DisplayName": "工作情况",
+        "Value": "2",
+        "FieldOptions": [
+            {
+                "DisplayText": "在职",
+                "Value": "1"
+            },
+            {
+                "DisplayText": "自由职业",
+                "Value": "2"
+            }
+        ]
+    },
+    "PublishedDate": {
+        "FieldType": "Date",
+        "Name": "Date",
+        "PropertyName": "PublishedDate",
+        "DisplayName": "发布日期",
+        "Value": "2025/04/05"
+    },
+    "Gender": {
+        "FieldType": "Dropdown",
+        "DisplayName": "性别",
+        "Value": "1",
+        "FieldOptions": [
+            {
+                "DisplayText": "男",
+                "Value": "1"
+            },
+            {
+                "DisplayText": "女",
+                "Value": "2"
+            }
+        ]
+    },
+    "Email": {
+        "FieldType": "Email",
+        "DisplayName": "邮箱",
+        "Value": "seriawei@outlook.com",
+        "IsRequired": true
+    },
+    "Age": {
+        "FieldType": "Number",
+        "DisplayName": "年龄",
+        "Value": "18"
+    },
+    "Phone": {
+        "FieldType": "Phone",
+        "DisplayName": "电话",
+        "Value": "15116133733"
+    },
+    "Images": {
+        "FieldType": "Array",
+        "DisplayName": "图片",
+        "Children": [
+            {
+                "Src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片",
+                    "Value": "/UpLoad/Images/202209/7r8a8lnqc2yo.png"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述",
+                    "Value": "Image 1"
+                }
+            },
+            {
+                "Src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片",
+                    "Value": "~/UpLoad/Images/202209/7r8trkgudvr4.png"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述",
+                    "Value": "Image 2"
+                }
+            }
+        ]
+    }
+}

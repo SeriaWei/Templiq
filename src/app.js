@@ -59,14 +59,14 @@ engine.registerTag("footer", {
 });
 engine.registerTag("url", {
     parse: function (tagToken) {
-        this.str = tagToken.args;
+        this.args = tagToken.args;
     },
     render: async function (ctx) {
-        const value = this.str;
+        const value = await this.liquid.evalValue(this.args, ctx);
         if (typeof value === 'string' && value.startsWith('~')) {
             return value.substring(1);
         }
-        return value;
+        return value || '';
     }
 });
 app.engine('liquid', engine.express());
@@ -109,46 +109,6 @@ app.get('/', (req, res) => {
         }
     }
 });
-const convertToViewModel = (data) => {
-    if (!data || typeof data !== 'object')
-        return data;
-    if (data.FieldType) {
-        const field = data;
-        switch (field.FieldType) {
-            case 'SingleLine':
-            case 'Paragraph':
-            case 'HtmlBox':
-                return field.Value || '';
-            case 'Checkbox':
-                if (field.ValueArray) {
-                    return field.FieldOptions
-                        ? field.FieldOptions
-                            .filter((option, index) => field.ValueArray[index] === 'true' || field.ValueArray[index] === option.Value)
-                            .map(option => option.Value)
-                        : field.ValueArray.filter(val => val === 'true' || val !== '');
-                }
-                return field.Value === 'true';
-            case 'Address':
-                return field.ValueArray ? field.ValueArray.join(' ') : '';
-            case 'Radio':
-                return field.Value;
-            case 'Array':
-                return field.Children ? field.Children.map((child) => convertToViewModel(child)) : [];
-            case 'Object':
-                return field.Children ? convertToViewModel(field.Children) : {};
-            default:
-                return field.Value || '';
-        }
-    }
-    if (Array.isArray(data)) {
-        return data.map(item => convertToViewModel(item));
-    }
-    const result = {};
-    for (const key in data) {
-        result[key] = convertToViewModel(data[key]);
-    }
-    return result;
-};
 const renderTemplate = (templateName, data) => {
     const modelData = {
         this: {
@@ -166,8 +126,8 @@ app.get('/preview/:template', async (req, res) => {
     try {
         let data = {};
         if (fs_1.default.existsSync(dataPath)) {
-            const rawData = JSON.parse(fs_1.default.readFileSync(dataPath, 'utf8'));
-            data = convertToViewModel(rawData);
+            data = JSON.parse(fs_1.default.readFileSync(dataPath, 'utf8'));
+            //data = convertToViewModel(rawData);
         }
         const layoutData = await renderTemplate(templateName, data);
         res.render('layout', layoutData);
