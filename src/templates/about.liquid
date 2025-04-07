@@ -1,0 +1,129 @@
+{% header %}
+<style>
+.section-about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+.section-about .company-info {
+  margin-bottom: 4rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-about .company-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+.section-about .company-info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+.section-about .team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+.section-about .team-member {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-about .team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.section-about .team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.section-about .team-member h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+.section-about .team-member p {
+  color: #34495e;
+  line-height: 1.6;
+}
+.section-about .team-member .position {
+  color: #3498db;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+</style>
+{% endheader %}
+
+<div class="section-about">
+  <div class="company-info">
+    {% if this.Model.CompanyName %}
+    <h1 property="true" data-property="CompanyName" method="text">{{this.Model.CompanyName}}</h1>
+    {% endif %}
+
+    {% if this.Model.CompanyDescription %}
+    <p property="true" data-property="CompanyDescription" method="text">{{this.Model.CompanyDescription}}</p>
+    {% endif %}
+
+    {% if this.Model.Vision %}
+    <p property="true" data-property="Vision" method="text">{{this.Model.Vision}}</p>
+    {% endif %}
+
+    {% if this.Model.Mission %}
+    <p property="true" data-property="Mission" method="text">{{this.Model.Mission}}</p>
+    {% endif %}
+
+    {% if this.Model.ContactInfo %}
+    <div property="true" data-property="ContactInfo" method="html">{{this.Model.ContactInfo | raw}}</div>
+    {% endif %}
+  </div>
+
+  {% if this.Model.TeamMembers %}
+  <div class="team-members">
+    {% for member in this.Model.TeamMembers %}
+    <div class="team-member">
+      {% if member.Avatar %}
+      <img property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Avatar" method="attr" para="src" src="{% url member.Avatar %}" alt="{{member.Name}}" />
+      {% endif %}
+
+      {% if member.Name %}
+      <h3 property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Name" method="text">{{member.Name}}</h3>
+      {% endif %}
+
+      {% if member.Position %}
+      <p property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Position" method="text">{{member.Position}}</p>
+      {% endif %}
+
+      {% if member.Bio %}
+      <p property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Bio" method="text">{{member.Bio}}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% footer %}
+<script type="text/javascript">
+document.querySelectorAll('.team-member').forEach(member => {
+  member.addEventListener('mouseenter', () => {
+    member.style.transform = 'translateY(-10px)';
+  });
+  member.addEventListener('mouseleave', () => {
+    member.style.transform = 'translateY(0)';
+  });
+});
+</script>
+{% endfooter %}

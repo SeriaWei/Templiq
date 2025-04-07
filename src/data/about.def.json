@@ -1,0 +1,46 @@
+{
+    "CompanyName": {
+        "FieldType": "SingleLine",
+        "DisplayName": "公司名称"
+    },
+    "CompanyDescription": {
+        "FieldType": "Paragraph",
+        "DisplayName": "公司简介"
+    },
+    "Vision": {
+        "FieldType": "Paragraph",
+        "DisplayName": "愿景"
+    },
+    "Mission": {
+        "FieldType": "Paragraph",
+        "DisplayName": "使命"
+    },
+    "ContactInfo": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "联系信息"
+    },
+    "TeamMembers": {
+        "FieldType": "Array",
+        "DisplayName": "团队成员",
+        "Children": [
+            {
+                "Avatar": {
+                    "FieldType": "Media",
+                    "DisplayName": "头像"
+                },
+                "Name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "姓名"
+                },
+                "Position": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "职位"
+                },
+                "Bio": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "个人简介"
+                }
+            }
+        ]
+    }
+}

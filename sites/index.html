@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Design Co.</title>
+    <!-- Updated Bootstrap 3 CSS to a China-accessible CDN -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+        }
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1583743814966-8936f5b7be1a') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            padding-top: 15%;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Clothing Design Co.</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to Clothing Design Co.</h1>
+        <p>Where creativity meets fashion</p>
+        <a href="#products" class="btn btn-primary btn-lg">Explore Our Collection</a>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-section" id="about" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b') center/cover; padding: 100px 0;">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: 60px;">
+                <h2 style="font-size: 42px; font-weight: 300; letter-spacing: 2px; color: #333;">About Us</h2>
+                <div style="width: 80px; height: 2px; background: #e67e22; margin: 20px auto;"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about-card" style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
+                        <div class="icon-box" style="width: 60px; height: 60px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <i class="glyphicon glyphicon-briefcase" style="font-size: 24px; color: #e67e22;"></i>
+                        </div>
+                        <h3 style="font-size: 24px; font-weight: 500; margin-bottom: 20px; color: #333;">Our Company</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                            Founded in 2010, Clothing Design Co. is a leading fashion brand dedicated to creating high-quality, stylish clothing for modern individuals.
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52a" alt="Design Studio" style="width: 100%; border-radius: 4px; margin-top: 20px;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card" style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
+                        <div class="icon-box" style="width: 60px; height: 60px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <i class="glyphicon glyphicon-star" style="font-size: 24px; color: #e67e22;"></i>
+                        </div>
+                        <h3 style="font-size: 24px; font-weight: 500; margin-bottom: 20px; color: #333;">Our Mission</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                            We believe fashion should be accessible, sustainable, and expressive. Our mission is to empower individuals to express their unique style.
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9" alt="Sustainable Fashion" style="width: 100%; border-radius: 4px; margin-top: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="container" id="products">
+        <h2 class="text-center" style="margin-bottom: 50px; font-size: 36px; font-weight: 300; letter-spacing: 2px;">Featured Products</h2>
+        <div class="row">
+            <div class="col-sm-4 product">
+                <div class="product-card">
+                    <div class="image-wrapper">
+                        <img src="https://placehold.co/300x200?text=Classic+Dress" alt="Product 1" class="img-responsive">
+                    </div>
+                    <div class="product-content">
+                        <h4>Classic Dress</h4>
+                        <p>Elegant and timeless design.</p>
+                        <a href="#" class="btn btn-default btn-view">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 product">
+                <div class="product-card">
+                    <div class="image-wrapper">
+                        <img src="https://placehold.co/300x200?text=Casual+Wear" alt="Product 2" class="img-responsive">
+                    </div>
+                    <div class="product-content">
+                        <h4>Casual Wear</h4>
+                        <p>Comfortable for everyday use.</p>
+                        <a href="#" class="btn btn-default btn-view">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 product">
+                <div class="product-card">
+                    <div class="image-wrapper">
+                        <img src="https://placehold.co/300x200?text=Sportswear" alt="Product 3" class="img-responsive">
+                    </div>
+                    <div class="product-content">
+                        <h4>Sportswear</h4>
+                        <p>Perfect for active lifestyles.</p>
+                        <a href="#" class="btn btn-default btn-view">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+        }
+        .image-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        .product-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-content h4 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        .product-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .btn-view {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+        }
+        .btn-view:hover {
+            background: #e9ecef;
+            border-color: #ccc;
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Clothing Design Co. All rights reserved.</p>
+    </footer>
+
+    <!-- Updated jQuery and Bootstrap JS to China-accessible CDNs -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
