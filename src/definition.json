@@ -1,40 +1,27 @@
 {
     "Heading": {
         "FieldType": "SingleLine",            
-        "DisplayName": "标题栏",
-        "Value": "标题栏"
+        "DisplayName": "标题栏"
     },
     "Summary": {
         "FieldType": "Paragraph",            
-        "DisplayName": "概述",
-        "Value": "Hello"
+        "DisplayName": "概述"
     },
     "RowContent": {
         "FieldType": "HtmlBox",            
-        "DisplayName": "简介",
-        "Value": "<p>Html text</p>"
+        "DisplayName": "简介"
     },
     "Address": {
         "FieldType": "Address",
-        "DisplayName": "地址",
-        "ValueArray": [
-            "广东省",
-            "深圳市",
-            "罗湖区"
-        ]
+        "DisplayName": "地址"
     },
     "IsPublished": {
         "FieldType": "Checkbox",
-        "DisplayName": "已发布？",
-        "Value": "true"
+        "DisplayName": "已发布？"
     },
     "Hobby": {
         "FieldType": "Checkbox",
         "DisplayName": "爱好",
-        "ValueArray": [
-            "false",
-            "2"
-        ],
         "FieldOptions": [
             {
                 "DisplayText": "看书",
@@ -49,7 +36,6 @@
     "Working": {
         "FieldType": "Radio",
         "DisplayName": "工作情况",
-        "Value": "2",
         "FieldOptions": [
             {
                 "DisplayText": "在职",
@@ -63,15 +49,11 @@
     },
     "PublishedDate": {
         "FieldType": "Date",
-        "Name": "Date",
-        "PropertyName": "PublishedDate",
-        "DisplayName": "发布日期",
-        "Value": "2025/04/05"
+        "DisplayName": "发布日期"
     },
     "Gender": {
         "FieldType": "Dropdown",
-        "DisplayName": "性别",
-        "Value": "1",
+        "DisplayName": "性别",       
         "FieldOptions": [
             {
                 "DisplayText": "男",
@@ -85,19 +67,16 @@
     },
     "Email": {
         "FieldType": "Email",
-        "DisplayName": "邮箱",
-        "Value": "seriawei@outlook.com",
+        "DisplayName": "邮箱",        
         "IsRequired": true
     },
     "Age": {
         "FieldType": "Number",
-        "DisplayName": "年龄",
-        "Value": "18"
+        "DisplayName": "年龄"
     },
     "Phone": {
         "FieldType": "Phone",
-        "DisplayName": "电话",
-        "Value": "15116133733"
+        "DisplayName": "电话"
     },
     "Images": {
         "FieldType": "Array",
@@ -106,25 +85,21 @@
             {
                 "Src": {
                     "FieldType": "Media",
-                    "DisplayName": "图片",
-                    "Value": "/UpLoad/Images/202209/7r8a8lnqc2yo.png"
+                    "DisplayName": "图片"
                 },
                 "Description": {
                     "FieldType": "Paragraph",
-                    "DisplayName": "描述",
-                    "Value": "Image 1"
+                    "DisplayName": "描述"
                 }
             },
             {
                 "Src": {
                     "FieldType": "Media",
-                    "DisplayName": "图片",
-                    "Value": "~/UpLoad/Images/202209/7r8trkgudvr4.png"
+                    "DisplayName": "图片"
                 },
                 "Description": {
                     "FieldType": "Paragraph",
-                    "DisplayName": "描述",
-                    "Value": "Image 2"
+                    "DisplayName": "描述"
                 }
             }
         ]
