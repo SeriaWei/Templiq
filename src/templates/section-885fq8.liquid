@@ -1,0 +1,118 @@
+{% header %}
+<style>
+.section-885fq8 {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+.section-885fq8 .timeline-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-885fq8 .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section-885fq8 .timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #007bff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.section-885fq8 .timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 30px;
+}
+.section-885fq8 .timeline-item:nth-child(odd) {
+    left: 0;
+}
+.section-885fq8 .timeline-item:nth-child(even) {
+    left: 50%;
+}
+.section-885fq8 .timeline-content {
+    padding: 20px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.section-885fq8 .timeline-date {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.section-885fq8 .timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    border-radius: 50%;
+    top: 25px;
+}
+.section-885fq8 .timeline-item:nth-child(odd) .timeline-dot {
+    right: -8px;
+}
+.section-885fq8 .timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+@media (max-width: 767px) {
+    .section-885fq8 .timeline::after {
+        left: 31px;
+    }
+    .section-885fq8 .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .section-885fq8 .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .section-885fq8 .timeline-dot {
+        left: 23px !important;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-885fq8">
+    <div class="container">
+        <div class="timeline-heading">
+            <h2 property="true" data-property="Heading" method="text">{{this.Model.Heading}}</h2>
+            <div property="true" data-property="Summary" method="text">{{this.Model.Summary}}</div>
+        </div>
+        
+        <div class="timeline">
+            {% for item in this.Model.TimelineItems %}
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div property="true" data-property="TimelineItems[{{forloop.index | minus:1}}].Date" method="text" class="timeline-date">
+                        {{item.Date}}
+                    </div>
+                    <h4 property="true" data-property="TimelineItems[{{forloop.index | minus:1}}].Title" method="text">
+                        {{item.Title}}
+                    </h4>
+                    <div property="true" data-property="TimelineItems[{{forloop.index | minus:1}}].Description" method="html">
+                        {{item.Description | raw}}
+                    </div>
+                    {% if item.ImageSrc %}
+                    <img property="true" data-property="TimelineItems[{{forloop.index | minus:1}}].ImageSrc" method="attr" para="src" 
+                         src="{% url item.ImageSrc %}" class="img-responsive mt-3" alt="{{item.Title}}" />
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

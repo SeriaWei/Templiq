@@ -1,0 +1,34 @@
+{
+    "Heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "Summary": {
+        "FieldType": "Paragraph",
+        "DisplayName": "概述"
+    },
+    "TimelineItems": {
+        "FieldType": "Array",
+        "DisplayName": "时间线项目",
+        "Children": [
+            {
+                "Date": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "日期"
+                },
+                "Title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "Description": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "描述"
+                },
+                "ImageSrc": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片"
+                }
+            }
+        ]
+    }
+} 
