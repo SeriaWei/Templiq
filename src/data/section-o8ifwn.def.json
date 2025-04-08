@@ -1,0 +1,32 @@
+{
+    "MainHeading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主标题",
+        "IsRequired": true
+    },
+    "SubHeading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "副标题",
+        "IsRequired": true
+    },
+    "Features": {
+        "FieldType": "Array",
+        "DisplayName": "产品特性",
+        "Children": [
+            {
+                "IconSrc": {
+                    "FieldType": "Media",
+                    "DisplayName": "特性图标"
+                },
+                "Title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "特性标题"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "特性描述"
+                }
+            }
+        ]
+    }
+} 

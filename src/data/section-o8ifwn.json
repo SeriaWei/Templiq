@@ -1,0 +1,21 @@
+{
+    "MainHeading": "产品核心特性",
+    "SubHeading": "为您提供卓越的产品体验",
+    "Features": [
+        {
+            "IconSrc": "https://cdn-icons-png.flaticon.com/512/1935/1935159.png",
+            "Title": "简单易用",
+            "Description": "直观的界面设计，让您快速上手，轻松掌握所有功能"
+        },
+        {
+            "IconSrc": "https://cdn-icons-png.flaticon.com/512/2721/2721291.png",
+            "Title": "安全可靠",
+            "Description": "采用先进的安全技术，保护您的数据安全，让您使用更放心"
+        },
+        {
+            "IconSrc": "https://cdn-icons-png.flaticon.com/512/1534/1534938.png",
+            "Title": "性能卓越",
+            "Description": "优化的性能表现，为您带来流畅的使用体验"
+        }
+    ]
+} 

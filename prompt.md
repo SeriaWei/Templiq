@@ -1,4 +1,4 @@
-帮我完成这个section，包含一些文字和图片，图片请使用网上的免费图片。界面要美观大方有设计感，同时支持各种尺寸的设备。同时创建对应的json数据和字段定义。
+帮我完成这个section，图片请使用网上的免费图片。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式。同时需要创建对应的json数据和相关的字段定义。
 model binding使用的是liquid模板语法，但有些特殊要求，规范如下：
 ``` src/templates/_base.liquid
 <p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
@@ -12,32 +12,18 @@ json data 示例
 ``` src/data/_base.json
 {
     "Heading": "标题栏",
-    "Summary": "Hello",
-    "RowContent": "<p>Html text</p>",
-    "Address": "广东省 深圳市 罗湖区",
-    "IsPublished": true,
-    "Hobby": [
-        "看电影"
-    ],
-    "Working": "自由职业",
-    "PublishedDate": "2025/04/05",
-    "Gender": "男",
-    "Email": "seriawei@outlook.com",
-    "Age": "18",
-    "Phone": "15116133733",
+    "HtmlContent": "<p>Html text</p>",
     "Images": [
         {
-            "Src": "/UpLoad/Images/202209/7r8a8lnqc2yo.png",
-            "Description": "Image 1"
+            "Src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
         },
         {
-            "Src": "~/UpLoad/Images/202209/7r8trkgudvr4.png",
-            "Description": "Image 2"
+            "Src": "https://images.unsplash.com/photo-1449034446853-66c86144b0ad"
         }
     ]
 }
 ```
-字段定义规范
+以下是完整的字段定义规范，定义字段时请严格参照这个规范
 ``` src/data/_base.def.json
 {
     "Heading": {
@@ -123,16 +109,6 @@ json data 示例
         "FieldType": "Array",
         "DisplayName": "图片",
         "Children": [
-            {
-                "Src": {
-                    "FieldType": "Media",
-                    "DisplayName": "图片"
-                },
-                "Description": {
-                    "FieldType": "Paragraph",
-                    "DisplayName": "描述"
-                }
-            },
             {
                 "Src": {
                     "FieldType": "Media",

@@ -1,0 +1,81 @@
+{% header %}
+<style>
+.section-o8ifwn {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-o8ifwn .feature-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-o8ifwn .feature-card {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.section-o8ifwn .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.section-o8ifwn .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.section-o8ifwn .feature-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.section-o8ifwn .feature-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-o8ifwn {
+        padding: 40px 0;
+    }
+    
+    .section-o8ifwn .feature-card {
+        margin-bottom: 20px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-o8ifwn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="feature-heading">
+                    <h2 property="true" data-property="MainHeading" method="text">{{this.Model.MainHeading}}</h2>
+                    <p property="true" data-property="SubHeading" method="text">{{this.Model.SubHeading}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for feature in this.Model.Features %}
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <img property="true" data-property="Features[{{forloop.index | minus:1}}].IconSrc" method="attr" para="src" class="feature-icon" src="{% url feature.IconSrc %}" alt="{{feature.Title}}" />
+                    <h3 property="true" data-property="Features[{{forloop.index | minus:1}}].Title" method="text" class="feature-title">{{feature.Title}}</h3>
+                    <p property="true" data-property="Features[{{forloop.index | minus:1}}].Description" method="text" class="feature-description">{{feature.Description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
