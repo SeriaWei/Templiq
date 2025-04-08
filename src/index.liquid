@@ -1,3 +1,35 @@
+<style>
+.template-item {
+  margin-bottom: 20px;
+}
+.template-item .thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+  transition: all 0.2s ease-in-out;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.template-item .thumbnail:hover {
+  border-color: #337ab7;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  transform: translateY(-2px);
+}
+.template-item .caption {
+  padding: 9px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.template-item img {
+  width: 100%;
+  height: 150px !important;
+  object-fit: cover;
+}
+</style>
+
 <div class="page-header">
   <h1>Templiq - Liquid模板引擎</h1>
 </div>
@@ -8,15 +40,24 @@
   </div>
   <div class="panel-body">
     {% if examples and examples.size > 0 %}
-      <ol>
+      <div class="row">
         {% for example in examples %}
-          <li><a href="/preview/{{ example.name }}" target="_blank">{{ example.name }}</a></li>
+          <div class="col-md-3 col-sm-6 template-item">
+            <div class="thumbnail">
+              <a href="/preview/{{ example.name }}" target="_blank">
+                <img src="/thumbs/{{ example.name }}.png" alt="{{ example.name }}的预览图" onerror="this.src='/thumbs/default.svg'" class="img-responsive">
+                <div class="caption text-center">
+                  <h4>{{ example.name }}</h4>
+                </div>
+              </a>
+            </div>
+          </div>
         {% endfor %}
-      </ol>
+      </div>
     {% else %}
       <div class="alert alert-info">
         <p>目前没有可用的示例</p>
       </div>
     {% endif %}
   </div>
-</div> 
+</div>
