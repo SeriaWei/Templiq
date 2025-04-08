@@ -1,0 +1,134 @@
+{% header %}
+<style>
+.section-899cku {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.section-899cku .banner-container {
+  position: relative;
+  height: 100%;
+}
+
+.section-899cku .banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.section-899cku .banner-slide.active {
+  opacity: 1;
+}
+
+.section-899cku .banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-899cku .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+}
+
+.section-899cku .banner-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.section-899cku .banner-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 1200px) {
+  .section-899cku {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-899cku {
+    height: 400px;
+  }
+  
+  .section-899cku .banner-title {
+    font-size: 2rem;
+  }
+  
+  .section-899cku .banner-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-899cku {
+    height: 300px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-899cku">
+  <div class="banner-container">
+    {% for slide in this.Model.Slides %}
+    <div class="banner-slide {% if forloop.index == 1 %}active{% endif %}">
+      <img property="true" 
+           data-property="Slides[{{forloop.index | minus:1}}].Image" 
+           method="attr" 
+           para="src" 
+           src="{% url slide.Image %}" 
+           class="banner-image" 
+           alt="{{slide.Title}}"
+      />
+    </div>
+    {% endfor %}
+    
+    <div class="banner-content">
+      <h1 property="true" data-property="Title" method="text" class="banner-title">
+        {{this.Model.Title}}
+      </h1>
+      <div property="true" data-property="Description" method="html" class="banner-description">
+        {{this.Model.Description | raw}}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  const slides = document.querySelectorAll('.section-899cku .banner-slide');
+  let currentSlide = 0;
+  
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+  
+  if (slides.length > 1) {
+    setInterval(nextSlide, 5000);
+  }
+})();
+</script>
+{% endfooter %}

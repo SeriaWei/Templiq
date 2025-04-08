@@ -1,0 +1,28 @@
+{
+  "Title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": true
+  },
+  "Description": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "描述文本"
+  },
+  "Slides": {
+    "FieldType": "Array",
+    "DisplayName": "轮播图片",
+    "Children": [
+      {
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "背景图片",
+          "IsRequired": true
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "图片标题"
+        }
+      }
+    ]
+  }
+} 
