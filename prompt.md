@@ -1,1 +1,149 @@
-帮我完成这个section，包含一些文字和图片，图片请使用网上的免费图片。界面要美观大方有设计感，同时支持各种尺寸的设备。创建对应的json数据放到src/data目录下，model binding方式请参考 src/templates/_base.liquid 文件。字段定义规范在 src/data/_base.def.json 文件中，请按这个规范创建json数据的字段定义.
+帮我完成这个section，包含一些文字和图片，图片请使用网上的免费图片。界面要美观大方有设计感，同时支持各种尺寸的设备。同时创建对应的json数据和字段定义。
+model binding使用的是liquid模板语法，但有些特殊要求，规范如下：
+``` src/templates/_base.liquid
+<p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
+<p property="true" data-property="HtmlContent" method="html">{{this.Model.HtmlContent | raw}}</p>
+{% for item in this.Model.Images %}
+<img property="true" data-property="Images[{{forloop.index | minus:1}}].Src" method="attr" para="src" src="{% url item.Src %}" />
+</li>
+{% endfor %}
+```
+json data 示例
+``` src/data/_base.json
+{
+    "Heading": "标题栏",
+    "Summary": "Hello",
+    "RowContent": "<p>Html text</p>",
+    "Address": "广东省 深圳市 罗湖区",
+    "IsPublished": true,
+    "Hobby": [
+        "看电影"
+    ],
+    "Working": "自由职业",
+    "PublishedDate": "2025/04/05",
+    "Gender": "男",
+    "Email": "seriawei@outlook.com",
+    "Age": "18",
+    "Phone": "15116133733",
+    "Images": [
+        {
+            "Src": "/UpLoad/Images/202209/7r8a8lnqc2yo.png",
+            "Description": "Image 1"
+        },
+        {
+            "Src": "~/UpLoad/Images/202209/7r8trkgudvr4.png",
+            "Description": "Image 2"
+        }
+    ]
+}
+```
+字段定义规范
+``` src/data/_base.def.json
+{
+    "Heading": {
+        "FieldType": "SingleLine",            
+        "DisplayName": "标题栏"
+    },
+    "Summary": {
+        "FieldType": "Paragraph",            
+        "DisplayName": "概述"
+    },
+    "RowContent": {
+        "FieldType": "HtmlBox",            
+        "DisplayName": "简介"
+    },
+    "Address": {
+        "FieldType": "Address",
+        "DisplayName": "地址"
+    },
+    "IsPublished": {
+        "FieldType": "Checkbox",
+        "DisplayName": "已发布？"
+    },
+    "Hobby": {
+        "FieldType": "Checkbox",
+        "DisplayName": "爱好",
+        "FieldOptions": [
+            {
+                "DisplayText": "看书",
+                "Value": "1"
+            },
+            {
+                "DisplayText": "看电影",
+                "Value": "2"
+            }
+        ]
+    },
+    "Working": {
+        "FieldType": "Radio",
+        "DisplayName": "工作情况",
+        "FieldOptions": [
+            {
+                "DisplayText": "在职",
+                "Value": "1"
+            },
+            {
+                "DisplayText": "自由职业",
+                "Value": "2"
+            }
+        ]
+    },
+    "PublishedDate": {
+        "FieldType": "Date",
+        "DisplayName": "发布日期"
+    },
+    "Gender": {
+        "FieldType": "Dropdown",
+        "DisplayName": "性别",       
+        "FieldOptions": [
+            {
+                "DisplayText": "男",
+                "Value": "1"
+            },
+            {
+                "DisplayText": "女",
+                "Value": "2"
+            }
+        ]
+    },
+    "Email": {
+        "FieldType": "Email",
+        "DisplayName": "邮箱",        
+        "IsRequired": true
+    },
+    "Age": {
+        "FieldType": "Number",
+        "DisplayName": "年龄"
+    },
+    "Phone": {
+        "FieldType": "Phone",
+        "DisplayName": "电话"
+    },
+    "Images": {
+        "FieldType": "Array",
+        "DisplayName": "图片",
+        "Children": [
+            {
+                "Src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                }
+            },
+            {
+                "Src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                }
+            }
+        ]
+    }
+}
+```
