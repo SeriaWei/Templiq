@@ -1,4 +1,4 @@
-帮我完成这个section，图片请使用网上的免费图片。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式。同时需要创建对应的json数据和相关的字段定义。
+帮我完成这个section，图片请使用网上的免费图片。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和相关的字段定义。
 model binding使用的是liquid模板语法，但有些特殊要求，规范如下：
 ``` src/templates/_base.liquid
 <p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
@@ -105,9 +105,13 @@ json data 示例
         "FieldType": "Phone",
         "DisplayName": "电话"
     },
-    "Images": {
+    "Avatar": {
+        "FieldType": "Media",
+        "DisplayName": "头像"
+    }，
+    "GalleryItems": {
         "FieldType": "Array",
-        "DisplayName": "图片",
+        "DisplayName": "数组",
         "Children": [
             {
                 "Src": {
