@@ -98,24 +98,15 @@ app.use(express.static(path.resolve(__dirname, './public')));
 
 app.get('/', (req: Request, res: Response) => {
   try {
-    const dataDir = path.resolve(__dirname, './data');
     const templateDir = path.resolve(__dirname, './templates');
+    
+    // 读取所有.liquid模板文件
+    const templates = fs.readdirSync(templateDir)
+      .filter(file => file.endsWith('.liquid'));
 
-    const files = fs.readdirSync(dataDir)
-      .filter(file => file.endsWith('.json'));
-
-    const examples: Example[] = [];
-
-    for (const file of files) {
-      const baseName = file.replace('.json', '');
-      const templatePath = path.join(templateDir, `${baseName}.liquid`);
-
-      if (fs.existsSync(templatePath)) {
-        examples.push({
-          name: baseName
-        });
-      }
-    }
+    const examples: Example[] = templates.map(file => ({
+      name: file.replace('.liquid', '')
+    }));
 
     engine.renderFile('../index', { examples: examples })
       .then(content => {

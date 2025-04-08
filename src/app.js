@@ -75,20 +75,13 @@ app.set('view engine', 'liquid');
 app.use(express_1.default.static(path_1.default.resolve(__dirname, './public')));
 app.get('/', (req, res) => {
     try {
-        const dataDir = path_1.default.resolve(__dirname, './data');
         const templateDir = path_1.default.resolve(__dirname, './templates');
-        const files = fs_1.default.readdirSync(dataDir)
-            .filter(file => file.endsWith('.json'));
-        const examples = [];
-        for (const file of files) {
-            const baseName = file.replace('.json', '');
-            const templatePath = path_1.default.join(templateDir, `${baseName}.liquid`);
-            if (fs_1.default.existsSync(templatePath)) {
-                examples.push({
-                    name: baseName
-                });
-            }
-        }
+        // 读取所有.liquid模板文件
+        const templates = fs_1.default.readdirSync(templateDir)
+            .filter(file => file.endsWith('.liquid'));
+        const examples = templates.map(file => ({
+            name: file.replace('.liquid', '')
+        }));
         engine.renderFile('../index', { examples: examples })
             .then(content => {
             const layoutData = {

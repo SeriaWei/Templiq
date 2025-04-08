@@ -1,0 +1,18 @@
+{
+    "Title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "Description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述"
+    },
+    "ButtonText": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮文本"
+    },
+    "Image": {
+        "FieldType": "Media",
+        "DisplayName": "图片"
+    }
+} 
