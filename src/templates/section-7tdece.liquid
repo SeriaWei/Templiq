@@ -1,0 +1,128 @@
+{% header %}
+<style>
+.section-7tdece {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.section-7tdece .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-7tdece .header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-7tdece .title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-7tdece .description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.section-7tdece .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.section-7tdece .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.section-7tdece .gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.section-7tdece .gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.section-7tdece .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.section-7tdece .gallery-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.section-7tdece .gallery-item:hover .caption {
+  transform: translateY(0);
+}
+
+.section-7tdece .gallery-item .caption h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.section-7tdece .gallery-item .caption p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .section-7tdece {
+    padding: 2rem 1rem;
+  }
+  
+  .section-7tdece .title {
+    font-size: 2rem;
+  }
+  
+  .section-7tdece .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-7tdece">
+  <div class="container">
+    <div class="header">
+      <h2 class="title" property="true" data-property="Title" method="text">{{this.Model.Title}}</h2>
+      <p class="description" property="true" data-property="Description" method="text">{{this.Model.Description}}</p>
+    </div>
+    
+    <div class="gallery">
+      {% for item in this.Model.GalleryItems %}
+      <div class="gallery-item">
+        <img property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Image" method="attr" para="src" src="{{item.Image}}" alt="{{item.Title}}" />
+        <div class="caption">
+          <h3 property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Title" method="text">{{item.Title}}</h3>
+          <p property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Caption" method="text">{{item.Caption}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

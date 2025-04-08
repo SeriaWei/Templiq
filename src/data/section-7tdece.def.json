@@ -1,0 +1,30 @@
+{
+    "Title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "Description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述"
+    },
+    "GalleryItems": {
+        "FieldType": "Array",
+        "DisplayName": "作品集列表",
+        "Children": [
+            {
+                "Image": {
+                    "FieldType": "Media",
+                    "DisplayName": "作品图片"
+                },
+                "Title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "作品标题"
+                },
+                "Caption": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "作品说明"
+                }
+            }
+        ]
+    }
+} 

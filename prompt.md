@@ -1,0 +1,1 @@
+帮我完成这个section，包含一些文字和图片，图片请使用网上的免费图片。界面要美观大方有设计感，同时支持各种尺寸的设备。创建对应的json数据放到src/data目录下，model binding方式请参考 src/templates/_base.liquid 文件。字段定义规范在 src/data/_base.def.json 文件中，请按这个规范创建json数据的字段定义.
