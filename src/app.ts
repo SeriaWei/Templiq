@@ -28,8 +28,8 @@ interface Field {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '2mb'}));
+app.use(bodyParser.urlencoded({ extended: true, limit: '2mb' }));
 
 const engine = new Liquid({
   root: path.resolve(__dirname, './templates'),
@@ -136,6 +136,7 @@ const renderTemplate = (templateName: string, data: any): Promise<LayoutData> =>
 
   return engine.renderFile(templateName, modelData)
     .then(content => ({
+      isPreview: true,
       content: content
     }));
 };
@@ -148,7 +149,6 @@ app.get('/preview/:template', async (req: Request, res: Response) => {
     let data: any = {};
     if (fs.existsSync(dataPath)) {
       data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-      //data = convertToViewModel(rawData);
     }
     const layoutData = await renderTemplate(templateName, data);
     res.render('layout', layoutData);
@@ -161,6 +161,48 @@ app.get('/preview/:template', async (req: Request, res: Response) => {
   }
 });
 
+// 处理保存预览图的API
+app.post('/api/save-preview', async (req: Request, res: Response) => {
+  try {
+    const { imageData } = req.body;
+    if (!imageData) {
+      return res.status(400).json({ success: false, error: '未提供图片数据' });
+    }
+
+    // 从Base64数据中提取实际的图片数据
+    const base64Data = imageData.replace(/^data:image\/png;base64,/, '');
+    const imageBuffer = Buffer.from(base64Data, 'base64');
+
+    // 确保thumbs目录存在
+    const thumbsDir = path.resolve(__dirname, 'public/thumbs');
+    if (!fs.existsSync(thumbsDir)) {
+      fs.mkdirSync(thumbsDir, { recursive: true });
+    }
+
+    // 使用模板名称作为文件名
+    const { templateName } = req.body;
+    if (!templateName) {
+      return res.status(400).json({ success: false, error: '未提供模板名称' });
+    }
+    const filename = `${templateName}.png`;
+    const filePath = path.join(thumbsDir, filename);
+
+    // 保存图片
+    fs.writeFileSync(filePath, imageBuffer);
+
+    res.json({
+      success: true,
+      filename: filename
+    });
+  } catch (error) {
+    console.error('保存预览图失败:', error);
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : '保存预览图时发生未知错误'
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`服务器已启动: http://localhost:${PORT}`);
-}); 
+});

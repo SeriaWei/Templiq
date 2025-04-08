@@ -4,7 +4,7 @@
   "description": "一个使用LiquidJS的模板渲染应用",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "ts-node src/app.ts",
     "dev": "ts-node src/app.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",

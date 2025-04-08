@@ -11,6 +11,8 @@
   <!-- Bootstrap 3 JavaScript -->
   <script src="/jquery.min.js"></script>
   <script src="/bootstrap.min.js"></script>
+  <!-- html2canvas -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
   html{
     font-size:16px;
@@ -21,5 +23,65 @@
   <main class="content">
       {{ content }}
   </main>
+  {% if isPreview %}
+  <button id="savePreview" class="btn btn-primary" style="position: fixed;right: 0;top: 0;">保存缩略图</button>
+  <script>
+    document.getElementById('savePreview').addEventListener('click', async function() {
+      const content = document.querySelector('main.content');
+      const templateName = window.location.pathname.split('/').pop();
+      
+      // 等待所有图片加载完成
+      const images = content.getElementsByTagName('img');
+      const imagePromises = Array.from(images).map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+      
+      try {
+        await Promise.all(imagePromises);
+        const canvas = await html2canvas(content, {
+          useCORS: true,
+          allowTaint: true
+        });
+        
+        const maxWidth = 800; 
+        const scale = Math.min(1, maxWidth / canvas.width);
+        const scaledWidth = canvas.width * scale;
+        const scaledHeight = canvas.height * scale;
+        
+        const scaledCanvas = document.createElement('canvas');
+        scaledCanvas.width = scaledWidth;
+        scaledCanvas.height = scaledHeight;
+        const ctx = scaledCanvas.getContext('2d');
+        ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight);
+        
+        const imageData = scaledCanvas.toDataURL('image/png', 0.8); // 使用0.8的质量压缩
+        fetch('/api/save-preview', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ imageData, templateName })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if(data.success) {
+            alert('缩略图保存成功！');
+          } else {
+            alert('保存失败：' + data.error);
+          }
+        })
+        .catch(error => {
+          alert('保存失败：' + error.message);
+        });
+      }catch(error) {
+        console.error('Error capturing preview:', error);
+      }
+    });
+  </script>
+  {% endif %}
 </body>
-</html> 
+</html>
