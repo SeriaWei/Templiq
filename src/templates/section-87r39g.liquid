@@ -116,7 +116,7 @@
     <div class="gallery">
       {% for item in this.Model.GalleryItems %}
       <div class="gallery-item">
-        <img property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Image" method="attr" para="src" src="{{item.Image}}" alt="{{item.Title}}" />
+        <img property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Image" method="attr" para="src" src="{% url item.Image %}" alt="{{item.Title}}" />
         <div class="caption">
           <h3 property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Title" method="text">{{item.Title}}</h3>
           <p property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Caption" method="text">{{item.Caption}}</p>
