@@ -1,0 +1,97 @@
+{% header %}
+<style>
+.section-89t7o1 {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.section-89t7o1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.section-89t7o1 .banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-89t7o1 .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-89t7o1 .banner-content {
+    max-width: 700px;
+    padding: 2rem;
+}
+
+.section-89t7o1 .banner-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.section-89t7o1 .banner-summary {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.section-89t7o1 .banner-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.section-89t7o1 .banner-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .section-89t7o1 {
+        min-height: 450px;
+    }
+    
+    .section-89t7o1 .banner-heading {
+        font-size: 2.5rem;
+    }
+    
+    .section-89t7o1 .banner-summary {
+        font-size: 1.1rem;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-89t7o1">
+    <img property="true" data-property="BannerImage" method="attr" para="src" src="{% url this.Model.BannerImage %}" class="banner-bg" alt="Banner background">
+    <div class="container">
+        <div class="banner-content">
+            <h1 property="true" data-property="Heading" method="text" class="banner-heading">{{this.Model.Heading}}</h1>
+            <p property="true" data-property="Summary" method="text" class="banner-summary">{{this.Model.Summary}}</p>
+            <a property="true" data-property="ButtonLink" method="attr" para="href" href="{{this.Model.ButtonLink}}" class="banner-button">
+                <span property="true" data-property="ButtonText" method="text">{{this.Model.ButtonText}}</span>
+            </a>
+        </div>
+    </div>
+</section>
