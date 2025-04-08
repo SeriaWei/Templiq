@@ -1,0 +1,36 @@
+{
+    "Heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "团队标题"
+    },
+    "Description": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "团队介绍"
+    },
+    "TeamMembers": {
+        "FieldType": "Array",
+        "DisplayName": "团队成员",
+        "Children": [
+            {
+                "Name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "姓名"
+                },
+                "Position": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "职位"
+                },
+                "Description": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "个人介绍"
+                },
+                "Image": {
+                    "Src": {
+                        "FieldType": "Media",
+                        "DisplayName": "头像"
+                    }
+                }
+            }
+        ]
+    }
+} 

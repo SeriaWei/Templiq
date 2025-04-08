@@ -1,0 +1,86 @@
+{% header %}
+<style>
+.section-880zrk {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+.section-880zrk .team-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-880zrk .team-description {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-880zrk .team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.section-880zrk .member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.section-880zrk .member-name {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+.section-880zrk .member-position {
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+.section-880zrk .member-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+@media (max-width: 768px) {
+    .section-880zrk {
+        padding: 40px 0;
+    }
+    .section-880zrk .member-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-880zrk">
+    <div class="container">
+        <h2 class="team-heading" property="true" data-property="Heading" method="text">{{this.Model.Heading}}</h2>
+        <div class="team-description" property="true" data-property="Description" method="html">{{this.Model.Description | raw}}</div>
+        
+        <div class="row">
+            {% for member in this.Model.TeamMembers %}
+            <div class="col-lg-4 col-md-6">
+                <div class="team-member">
+                    <img property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Image.Src" 
+                         method="attr" para="src" 
+                         src="{% url member.Image.Src %}" 
+                         class="member-image" 
+                         alt="{{member.Name}}">
+                    <h3 class="member-name" property="true" 
+                        data-property="TeamMembers[{{forloop.index | minus:1}}].Name" 
+                        method="text">{{member.Name}}</h3>
+                    <div class="member-position" property="true" 
+                         data-property="TeamMembers[{{forloop.index | minus:1}}].Position" 
+                         method="text">{{member.Position}}</div>
+                    <div class="member-description" property="true" 
+                         data-property="TeamMembers[{{forloop.index | minus:1}}].Description" 
+                         method="html">{{member.Description | raw}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
