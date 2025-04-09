@@ -30,7 +30,6 @@
       const content = document.querySelector('main.content');
       const templateName = window.location.pathname.split('/').pop();
       
-      // 等待所有图片加载完成
       const images = content.getElementsByTagName('img');
       const imagePromises = Array.from(images).map(img => {
         if (img.complete) return Promise.resolve();

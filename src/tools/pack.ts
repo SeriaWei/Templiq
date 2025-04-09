@@ -15,6 +15,11 @@ const packageFiles = [
         "FileName": `${viewName}.liquid`,
         "FilePath": `~/Plugins/ZKEACMS.Fluid/Views/${viewName}.liquid`,
         "Content": tplBase64
+    },
+    {
+        "FileName": `${template}.png`,
+        "FilePath": `~/UpLoad/Images/Widget/${template}.png`,
+        "Content": Buffer.from(fs.readFileSync(path.resolve(__dirname, `../public/thumbs/${template}.png`))).toString("base64")
     }
 ];
 const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
@@ -72,7 +77,6 @@ async function mergeDataToSchema(schema: any, data: any): Promise<any> {
                     const newPath = `~/UpLoad/Images/Widget/${fileName}`;
                     result[key].Value = newPath;
                     
-                    // Download file and add to packageFiles
                     const downloadPromise = downloadFile(url)
                         .then(fileContent => {
                             packageFiles.push({
@@ -121,7 +125,7 @@ async function main() {
             "Position": 1,
             "ServiceTypeName": "ZKEACMS.Fluid.Service.ExtendableWidgetService",
             "StyleClass": "full",
-            "Thumbnail": "~/UpLoad/Images/202504/abqdr5kdi6tc.png",
+            "Thumbnail": `~/UpLoad/Images/Widget/${template}.png`,
             "ViewModelTypeName": "ZKEACMS.Fluid.Models.ExtendableWidget",
             "WidgetName": "Banner",
             "ZoneId": null,
