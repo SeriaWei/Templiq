@@ -29,35 +29,26 @@
   object-fit: cover;
 }
 </style>
-
-<div class="page-header">
-  <h1>Templiq - Liquid模板引擎</h1>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-title">示例模板</h2>
-  </div>
-  <div class="panel-body">
-    {% if examples and examples.size > 0 %}
-      <div class="row">
-        {% for example in examples %}
-          <div class="col-md-3 col-sm-6 template-item">
-            <div class="thumbnail">
-              <a href="/preview/{{ example.name }}" target="_blank">
-                <img src="/thumbs/{{ example.name }}.png" alt="{{ example.name }}的预览图" onerror="this.src='/thumbs/default.svg'" class="img-responsive">
-                <div class="caption text-center">
-                  <h4>{{ example.name }}</h4>
-                </div>
-              </a>
-            </div>
+<br/>
+<div class="container-fluid">
+  {% if examples and examples.size > 0 %}
+    <div class="row">
+      {% for example in examples %}
+        <div class="col-lg-2 col-md-3 col-sm-6 template-item">
+          <div class="thumbnail">
+            <a href="/preview/{{ example.name }}" target="_blank">
+              <img src="/thumbs/{{ example.name }}.png" alt="{{ example.name }}" onerror="this.src='/thumbs/default.svg'" class="img-responsive">
+              <div class="caption text-center">
+                <h4>{{ example.name }}</h4>
+              </div>
+            </a>
           </div>
-        {% endfor %}
-      </div>
-    {% else %}
-      <div class="alert alert-info">
-        <p>目前没有可用的示例</p>
-      </div>
-    {% endif %}
-  </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-info">
+      <p>目前没有可用的示例</p>
+    </div>
+  {% endif %}
 </div>

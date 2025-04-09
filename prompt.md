@@ -1,6 +1,6 @@
-帮我完成这个section，图片请使用网上的免费图片，如果不需要javascript，请移除footer。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和相关的字段定义，放到src/data目录下。
+帮我完成这个section，图片请使用网上的免费图片，如果不需要javascript，请移除footer。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和字段定义，并保存src/data目录下。在定义json数据的时候，要避免使用以下字段名:[Properties,PropertySchema,IsInDesign,InitPartialView,AssemblyName,FormView,IsSystem,IsTemplate,LayoutId,PageId,PartialView,Position,ServiceTypeName,StyleClass,Thumbnail,ViewModelTypeName,WidgetName,ZoneId,CreateBy,CreatebyName,CreateDate,Description,Status,Title,ExtendData,ActionType,RuleID,InnerStyle,CustomClass,CustomStyle,DataSourceLink,DataSourceLinkTitle,EditTemplateOnline]。
 model binding使用的是liquid模板语法，但有些特殊要求，规范如下：
-``` src/templates/_base.liquid
+``` src/templates/tpl.liquid
 <p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
 <p property="true" data-property="HtmlContent" method="html">{{this.Model.HtmlContent | raw}}</p>
 {% for item in this.Model.Images %}
@@ -9,22 +9,19 @@ model binding使用的是liquid模板语法，但有些特殊要求，规范如�
 {% endfor %}
 ```
 json data 示例
-``` src/data/_base.json
+``` src/data/tpl.json
 {
     "Heading": "标题栏",
     "HtmlContent": "<p>Html text</p>",
     "Images": [
         {
             "Src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
-        },
-        {
-            "Src": "https://images.unsplash.com/photo-1449034446853-66c86144b0ad"
         }
     ]
 }
 ```
-以下是完整的字段定义，定义字段时请严格参照这个规范，并且只支持一级嵌套
-``` src/data/_base.def.json
+以下是完整的字段定义，定义字段时请严格参照这个规范，注意只支持一级嵌套
+``` src/data/tpl.def.json
 {
     "Heading": {
         "FieldType": "SingleLine",            
@@ -34,7 +31,7 @@ json data 示例
         "FieldType": "Paragraph",            
         "DisplayName": "概述"
     },
-    "RowContent": {
+    "HtmlContent": {
         "FieldType": "HtmlBox",            
         "DisplayName": "简介"
     },
@@ -116,7 +113,8 @@ json data 示例
             {
                 "Src": {
                     "FieldType": "Media",
-                    "DisplayName": "图片"
+                    "DisplayName": "图片",
+                    "IsRequired": true
                 },
                 "Description": {
                     "FieldType": "Paragraph",

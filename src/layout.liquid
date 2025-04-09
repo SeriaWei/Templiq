@@ -24,7 +24,7 @@
       {{ content }}
   </main>
   {% if isPreview %}
-  <button id="savePreview" class="btn btn-primary" style="position: fixed;right: 0;top: 0;">保存缩略图</button>
+  <button id="savePreview" class="btn btn-primary" style="position: fixed;right: 0;top: 0;z-index: 1000;">保存缩略图</button>
   <script>
     document.getElementById('savePreview').addEventListener('click', async function() {
       const content = document.querySelector('main.content');
