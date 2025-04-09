@@ -5,25 +5,22 @@ import * as https from 'https';
 import * as crypto from 'crypto';
 import url from 'url';
 
-const template = process.argv[2] || "section-87r39g";
-const tplName = template.split("-")[1];
-const viewName = `Widget.Extend-${tplName}`;
-const tpl = fs.readFileSync(path.resolve(__dirname, `../templates/${template}.liquid`), "utf8");
-const tplBase64 = Buffer.from(tpl).toString("base64");
-const packageFiles = [
-    {
-        "FileName": `${viewName}.liquid`,
-        "FilePath": `~/Plugins/ZKEACMS.Fluid/Views/${viewName}.liquid`,
-        "Content": tplBase64
-    },
-    {
-        "FileName": `${template}.png`,
-        "FilePath": `~/UpLoad/Images/Widget/${template}.png`,
-        "Content": Buffer.from(fs.readFileSync(path.resolve(__dirname, `../public/thumbs/${template}.png`))).toString("base64")
-    }
-];
-const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
-const schemaDef = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.def.json`), "utf8"));
+
+const CONFIG = {
+    ASSEMBLY_NAME: 'ZKEACMS.Fluid',
+    SERVICE_TYPE_NAME: 'ZKEACMS.Fluid.Service.ExtendableWidgetService',
+    VIEW_MODEL_TYPE_NAME: 'ZKEACMS.Fluid.Models.ExtendableWidget',
+    PACKAGE_INSTALLER: 'WidgetPackageInstaller'
+};
+
+function getViewName(template: string): string {
+    const tplName = template.split("-")[1];
+    return `Widget.Extend-${tplName}`;
+}
+
+function readFileAsBase64(filePath: string): string {
+    return Buffer.from(fs.readFileSync(filePath)).toString("base64");
+}
 
 function generateUniqueFileName(url: string): string {
     const hash = crypto.createHash('md5').update(url).digest('hex');
@@ -41,8 +38,22 @@ function generateUniqueFileName(url: string): string {
 }
 
 async function downloadFile(url: string): Promise<Buffer> {
+    console.log(`Downloading: ${url}`);
     return new Promise((resolve, reject) => {
-        https.get(url, (response) => {
+        const options = {
+            rejectUnauthorized: false,
+            timeout: 10000 
+        };
+        
+        https.get(url, options, (response) => {
+            if (response.statusCode === 301 || response.statusCode === 302) {
+                if (response.headers.location) {
+                    return downloadFile(response.headers.location)
+                        .then(resolve)
+                        .catch(reject);
+                }
+            }
+            
             const chunks: Buffer[] = [];
             response.on('data', (chunk) => chunks.push(chunk));
             response.on('end', () => resolve(Buffer.concat(chunks)));
@@ -51,12 +62,11 @@ async function downloadFile(url: string): Promise<Buffer> {
     });
 }
 
-async function mergeDataToSchema(schema: any, data: any): Promise<any> {
+async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): Promise<any> {
     if (!schema || !data) return Promise.resolve(schema);
 
     const result = JSON.parse(JSON.stringify(schema));
-    const downloadPromises: Promise<void>[] = [];
-
+    
     for (const key in result) {
         if (data[key] !== undefined) {
             if (result[key].FieldType === 'Array' && Array.isArray(data[key])) {
@@ -66,29 +76,31 @@ async function mergeDataToSchema(schema: any, data: any): Promise<any> {
                     }
 
                     const childTemplate = result[key].Children[0];
-                    const childPromises = data[key].map((item: any) => mergeDataToSchema(childTemplate, item));
-                    downloadPromises.push(...childPromises);
-                    result[key].Children = await Promise.all(childPromises);
+                    const childResults = [];
+                    for (const item of data[key]) {
+                        const childResult = await mergeDataToSchema(childTemplate, item, packageFiles);
+                        childResults.push(childResult);
+                    }
+                    result[key].Children = childResults;
                 }
             } else {
                 if(result[key].FieldType === 'Media' && data[key]) {
                     const url = data[key];
                     const fileName = generateUniqueFileName(url);
                     const newPath = `~/UpLoad/Images/Widget/${fileName}`;
-                    result[key].Value = newPath;
-                    
-                    const downloadPromise = downloadFile(url)
-                        .then(fileContent => {
-                            packageFiles.push({
-                                FileName: path.basename(newPath),
-                                FilePath: newPath,
-                                Content: fileContent.toString('base64')
-                            });
-                        })
-                        .catch(error => {
-                            console.error(`Failed to download file from ${url}:`, error);
+
+                    try {
+                        const fileContent = await downloadFile(url);
+                        result[key].Value = newPath;
+                        packageFiles.push({
+                            FileName: path.basename(newPath),
+                            FilePath: newPath,
+                            Content: fileContent.toString('base64')
                         });
-                    downloadPromises.push(downloadPromise);
+                    } catch (error) {
+                        result[key].Value = url;
+                        console.error(`Failed to download file from ${url}:`, error);
+                    }
                 } else {
                     result[key].Value = data[key];
                 }
@@ -96,65 +108,109 @@ async function mergeDataToSchema(schema: any, data: any): Promise<any> {
         }
     }
 
-    await Promise.all(downloadPromises);
     return result;
 }
 
-// Update the main execution flow to be async
-async function main() {
-    const schemaDefWidthData = await mergeDataToSchema(schemaDef, data);
+function createPackageFiles(template: string, viewName: string): any[] {
+    return [
+        {
+            "FileName": `${viewName}.liquid`,
+            "FilePath": `~/Plugins/ZKEACMS.Fluid/Views/${viewName}.liquid`,
+            "Content": readFileAsBase64(path.resolve(__dirname, `../templates/${template}.liquid`))
+        },
+        {
+            "FileName": `${template}.png`,
+            "FilePath": `~/UpLoad/Images/Widget/${template}.png`,
+            "Content": readFileAsBase64(path.resolve(__dirname, `../public/thumbs/${template}.png`))
+        }
+    ];
+}
+
+function createWidgetConfig(template: string, viewName: string, schemaDefWidthData: any, schemaDef: any): any {
     const extendData = {
         "Properties": schemaDefWidthData,
         "PropertySchema": JSON.stringify(schemaDef),
         "IsInDesign": true,
         "InitPartialView": viewName
     };
-    const fullPackage = {
-        "Widget": {
-            "Properties": schemaDefWidthData,
-            "PropertySchema": JSON.stringify(schemaDef),
-            "IsInDesign": true,
-            "InitPartialView": viewName,
-            "AssemblyName": "ZKEACMS.Fluid",
-            "FormView": null,
-            "IsSystem": false,
-            "IsTemplate": true,
-            "LayoutId": null,
-            "PageId": null,
-            "PartialView": viewName,
-            "Position": 1,
-            "ServiceTypeName": "ZKEACMS.Fluid.Service.ExtendableWidgetService",
-            "StyleClass": "full",
-            "Thumbnail": `~/UpLoad/Images/Widget/${template}.png`,
-            "ViewModelTypeName": "ZKEACMS.Fluid.Models.ExtendableWidget",
-            "WidgetName": "Banner",
-            "ZoneId": null,
-            "CreateBy": null,
-            "CreatebyName": null,
-            "CreateDate": null,
-            "Description": null,
-            "Status": 1,
-            "Title": null,
-            "ExtendData": JSON.stringify(extendData),
-            "ActionType": null,
-            "RuleID": null,
-            "InnerStyle": null,
-            "CustomClass": "full",
-            "CustomStyle": "",
-            "DataSourceLink": null,
-            "DataSourceLinkTitle": null,
-            "EditTemplateOnline": false
-        },
-        "Files": packageFiles,
-        "PackageInstaller": "WidgetPackageInstaller"
+
+    return {
+        "Properties": schemaDefWidthData,
+        "PropertySchema": JSON.stringify(schemaDef),
+        "IsInDesign": true,
+        "InitPartialView": viewName,
+        "AssemblyName": CONFIG.ASSEMBLY_NAME,
+        "FormView": null,
+        "IsSystem": false,
+        "IsTemplate": true,
+        "LayoutId": null,
+        "PageId": null,
+        "PartialView": viewName,
+        "Position": 1,
+        "ServiceTypeName": CONFIG.SERVICE_TYPE_NAME,
+        "StyleClass": "full",
+        "Thumbnail": `~/UpLoad/Images/Widget/${template}.png`,
+        "ViewModelTypeName": CONFIG.VIEW_MODEL_TYPE_NAME,
+        "WidgetName": "Banner",
+        "ZoneId": null,
+        "CreateBy": null,
+        "CreatebyName": null,
+        "CreateDate": null,
+        "Description": null,
+        "Status": 1,
+        "Title": null,
+        "ExtendData": JSON.stringify(extendData),
+        "ActionType": null,
+        "RuleID": null,
+        "InnerStyle": null,
+        "CustomClass": "full",
+        "CustomStyle": "",
+        "DataSourceLink": null,
+        "DataSourceLinkTitle": null,
+        "EditTemplateOnline": false
     };
+}
+
+// 创建完整的包
+async function createFullPackage(template: string): Promise<any> {
+    const viewName = getViewName(template);
+    const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
+    const schemaDef = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.def.json`), "utf8"));
+    
+    const packageFiles = createPackageFiles(template, viewName);
+    const schemaDefWidthData = await mergeDataToSchema(schemaDef, data, packageFiles);
+    const widgetConfig = createWidgetConfig(template, viewName, schemaDefWidthData, schemaDef);
+
+    return {
+        "Widget": widgetConfig,
+        "Files": packageFiles,
+        "PackageInstaller": CONFIG.PACKAGE_INSTALLER
+    };
+}
+
+// 导出打包函数
+export async function packWidget(template: string): Promise<Buffer> {
+    const fullPackage = await createFullPackage(template);
+    const packageJson = JSON.stringify(fullPackage, null, 2);
+    
+    return new Promise((resolve, reject) => {
+        zlib.gzip(Buffer.from(packageJson, 'utf8'), (err, buffer) => {
+            if (err) reject(err);
+            else resolve(buffer);
+        });
+    });
+}
+
+// 主函数
+async function main() {
+    const template = process.argv[2] || "section-87r39g";
+    const fullPackage = await createFullPackage(template);
+    const packageJson = JSON.stringify(fullPackage, null, 2);
 
     const outputDir = path.resolve(__dirname, '../../output');
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir);
     }
-
-    const packageJson = JSON.stringify(fullPackage, null, 2);
 
     const outputPath = path.join(outputDir, `${template}.wgt`);
     const gzip = zlib.createGzip();
@@ -168,7 +224,10 @@ async function main() {
     console.log(`Widget package created at ${outputPath}`);
 }
 
-main().catch(error => {
-    console.error('Error creating widget package:', error);
-    process.exit(1);
-});
+// 如果是直接运行此文件，则执行原来的主函数
+if (require.main === module) {
+    main().catch(error => {
+        console.error('Error creating widget package:', error);
+        process.exit(1);
+    });
+}

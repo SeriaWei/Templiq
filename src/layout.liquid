@@ -24,11 +24,14 @@
       {{ content }}
   </main>
   {% if isPreview %}
-  <button id="savePreview" class="btn btn-primary" style="position: fixed;right: 0;top: 0;z-index: 1000;">保存缩略图</button>
+  <div style="position: fixed;right: 0;top: 0;z-index: 1000;">
+    <p><button id="savePreview" class="btn btn-primary">保存缩略图</button></p>
+    <p><a href="/download/{{templateName}}" class="btn btn-primary">下载</a></p>
+  </div>
   <script>
     document.getElementById('savePreview').addEventListener('click', async function() {
       const content = document.querySelector('main.content');
-      const templateName = window.location.pathname.split('/').pop();
+      const templateName = '{{templateName}}';
       
       const images = content.getElementsByTagName('img');
       const imagePromises = Array.from(images).map(img => {

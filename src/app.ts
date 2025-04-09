@@ -3,6 +3,7 @@ import { Liquid } from 'liquidjs';
 import bodyParser from 'body-parser';
 import path from 'path';
 import fs from 'fs';
+import { packWidget } from './tools/pack';
 
 // 定义接口
 interface Example {
@@ -28,7 +29,7 @@ interface Field {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.json({limit: '2mb'}));
+app.use(bodyParser.json({ limit: '2mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '2mb' }));
 
 const engine = new Liquid({
@@ -38,10 +39,10 @@ const engine = new Liquid({
 });
 
 engine.registerTag("header", {
-  parse: function(tagToken: any, remainTokens: any[]): void {
+  parse: function (tagToken: any, remainTokens: any[]): void {
     this.tpls = []
     let closed = false
-    while(remainTokens.length) {
+    while (remainTokens.length) {
       let token = remainTokens.shift()
       if (token.name === 'endheader') {
         closed = true
@@ -52,16 +53,16 @@ engine.registerTag("header", {
     }
     if (!closed) throw new Error(`tag ${tagToken.getText()} not closed`)
   },
-  render: function(ctx: any): any {
+  render: function (ctx: any): any {
     return this.liquid.renderer.renderTemplates(this.tpls, ctx);
   }
 });
 
 engine.registerTag("footer", {
-  parse: function(tagToken: any, remainTokens: any[]): void {
+  parse: function (tagToken: any, remainTokens: any[]): void {
     this.tpls = []
     let closed = false
-    while(remainTokens.length) {
+    while (remainTokens.length) {
       let token = remainTokens.shift()
       if (token.name === 'endfooter') {
         closed = true
@@ -72,16 +73,16 @@ engine.registerTag("footer", {
     }
     if (!closed) throw new Error(`tag ${tagToken.getText()} not closed`)
   },
-  render: function(ctx: any): any {
+  render: function (ctx: any): any {
     return this.liquid.renderer.renderTemplates(this.tpls, ctx);
   }
 });
 
 engine.registerTag("url", {
-  parse: function(tagToken: any): void {
+  parse: function (tagToken: any): void {
     this.args = tagToken.args;
   },
-  render: async function(ctx: any): Promise<string> {
+  render: async function (ctx: any): Promise<string> {
     const value = await this.liquid.evalValue(this.args, ctx);
     if (typeof value === 'string' && value.startsWith('~')) {
       return value.substring(1);
@@ -99,7 +100,7 @@ app.use(express.static(path.resolve(__dirname, './public')));
 app.get('/', (req: Request, res: Response) => {
   try {
     const templateDir = path.resolve(__dirname, './templates');
-    
+
     // 读取所有.liquid模板文件
     const templates = fs.readdirSync(templateDir)
       .filter(file => file.endsWith('.liquid'));
@@ -136,6 +137,7 @@ const renderTemplate = (templateName: string, data: any): Promise<LayoutData> =>
 
   return engine.renderFile(templateName, modelData)
     .then(content => ({
+      templateName: templateName,
       isPreview: true,
       content: content
     }));
@@ -199,6 +201,23 @@ app.post('/api/save-preview', async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : '保存预览图时发生未知错误'
+    });
+  }
+});
+
+app.get('/download/:template', async (req: Request, res: Response) => {
+  try {
+    const templateName = req.params.template;
+    const packageBuffer = await packWidget(templateName);
+
+    res.setHeader('Content-Type', 'application/octet-stream');
+    res.setHeader('Content-Disposition', `attachment; filename=${templateName}.wgt`);
+    res.send(packageBuffer);
+  } catch (error) {
+    console.error('打包下载失败:', error);
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : '打包下载时发生未知错误'
     });
   }
 });
