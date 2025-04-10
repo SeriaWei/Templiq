@@ -3,6 +3,7 @@ model binding使用的是liquid模板语法，但有些特殊要求，规范如�
 ``` src/templates/tpl.liquid
 <p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
 <p property="true" data-property="HtmlContent" method="html">{{this.Model.HtmlContent | raw}}</p>
+<a property="true" data-property="Link" method="attr" para="href" href="{% url this.Model.Link %}">{{this.Model.LinkText}}</a>
 {% for item in this.Model.Images %}
 <img property="true" data-property="Images[{{forloop.index | minus:1}}].Src" method="attr" para="src" src="{% url item.Src %}" />
 </li>
