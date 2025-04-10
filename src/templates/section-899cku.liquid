@@ -19,11 +19,13 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .section-899cku .banner-slide.active {
   opacity: 1;
+  visibility: visible;
 }
 
 .section-899cku .banner-image {
@@ -117,8 +119,14 @@
   let currentSlide = 0;
   
   function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
+    const currentActive = document.querySelector('.section-899cku .banner-slide.active');
+    if (currentActive) {
+      currentActive.classList.remove('active');
+    }
+    // 确保在移除当前slide的active类之后，立即添加下一个slide的active类
+    requestAnimationFrame(() => {
+      slides[index].classList.add('active');
+    });
   }
   
   function nextSlide() {
