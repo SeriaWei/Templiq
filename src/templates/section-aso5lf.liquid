@@ -1,0 +1,117 @@
+{% header %}
+<style>
+.section-aso5lf {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-aso5lf .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.section-aso5lf .hero-container {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 0 15px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-aso5lf .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-aso5lf .hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.section-aso5lf .hero-content {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-aso5lf .hero-cta {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.section-aso5lf .hero-cta:hover {
+  background-color: #0069d9;
+  text-decoration: none;
+  color: #fff;
+}
+
+.section-aso5lf .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .section-aso5lf {
+    padding: 60px 0;
+  }
+  
+  .section-aso5lf .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-aso5lf .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-aso5lf {
+    padding: 40px 0;
+  }
+  
+  .section-aso5lf .hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-aso5lf .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-aso5lf">
+  <img property="true" data-property="BackgroundImage" method="attr" para="src" src="{% url this.Model.BackgroundImage %}" class="hero-background" alt="Background">
+  <div class="hero-overlay"></div>
+  <div class="hero-container">
+    <h1 property="true" data-property="Heading" method="text" class="hero-title">{{this.Model.Heading}}</h1>
+    <div property="true" data-property="Subheading" method="text" class="hero-subtitle">{{this.Model.Subheading}}</div>
+    <div property="true" data-property="HeroContent" method="html" class="hero-content">{{this.Model.HeroContent | raw}}</div>
+    <a property="true" data-property="ButtonLink" method="attr" para="href" href="{% url this.Model.ButtonLink %}" class="hero-cta">
+      <span property="true" data-property="ButtonText" method="text">{{this.Model.ButtonText}}</span>
+    </a>
+  </div>
+</section>

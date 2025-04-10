@@ -171,8 +171,8 @@ function createWidgetConfig(template: string, viewName: string, schemaDefWidthDa
     };
 }
 
-// 创建完整的包
 async function createFullPackage(template: string): Promise<any> {
+    console.log(`Creating package for template: ${template}`);
     const viewName = getViewName(template);
     const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
     const schemaDef = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.def.json`), "utf8"));
@@ -188,7 +188,6 @@ async function createFullPackage(template: string): Promise<any> {
     };
 }
 
-// 导出打包函数
 export async function packWidget(template: string): Promise<Buffer> {
     const fullPackage = await createFullPackage(template);
     const packageJson = JSON.stringify(fullPackage, null, 2);
@@ -201,7 +200,6 @@ export async function packWidget(template: string): Promise<Buffer> {
     });
 }
 
-// 主函数
 async function main() {
     const template = process.argv[2] || "section-87r39g";
     const fullPackage = await createFullPackage(template);

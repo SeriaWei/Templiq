@@ -1,0 +1,30 @@
+{
+  "Heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主标题",
+    "IsRequired": true
+  },
+  "Subheading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "副标题"
+  },
+  "HeroContent": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "描述内容"
+  },
+  "ButtonText": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮文本",
+    "IsRequired": true
+  },
+  "ButtonLink": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮链接",
+    "IsRequired": true
+  },
+  "BackgroundImage": {
+    "FieldType": "Media",
+    "DisplayName": "背景图片",
+    "IsRequired": true
+  }
+}
