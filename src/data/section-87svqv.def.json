@@ -1,9 +1,9 @@
 {
-    "Title": {
+    "Heading": {
         "FieldType": "SingleLine",
         "DisplayName": "标题"
     },
-    "Description": {
+    "Summary": {
         "FieldType": "Paragraph",
         "DisplayName": "描述"
     },
@@ -15,4 +15,4 @@
         "FieldType": "Media",
         "DisplayName": "图片"
     }
-} 
+}
