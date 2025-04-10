@@ -1,0 +1,22 @@
+{
+  "ProductTitle": {
+    "FieldType": "SingleLine",
+    "DisplayName": "产品标题"
+  },
+  "ProductDescription": {
+    "FieldType": "Paragraph",
+    "DisplayName": "产品描述"
+  },
+  "ProductImage": {
+    "FieldType": "Media",
+    "DisplayName": "产品图片"
+  },
+  "ButtonText": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮文本"
+  },
+  "ButtonLink": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮链接"
+  }
+}
