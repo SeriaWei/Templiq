@@ -3,7 +3,7 @@ import path from 'path';
 import * as zlib from 'zlib';
 import * as https from 'https';
 import * as crypto from 'crypto';
-import url from 'url';
+import sharp from 'sharp';
 
 
 const CONFIG = {
@@ -38,14 +38,22 @@ function generateUniqueFileName(url: string): string {
 }
 
 async function downloadFile(url: string): Promise<Buffer> {
+    const fileName = generateUniqueFileName(url);
+    const cachePath = path.resolve(__dirname, '../public/thumbs', fileName);
+
+    if (fs.existsSync(cachePath)) {
+        console.log(`Using cached file: ${fileName}`);
+        return fs.readFileSync(cachePath);
+    }
+
     console.log(`Downloading: ${url}`);
     return new Promise((resolve, reject) => {
         const options = {
             rejectUnauthorized: false,
-            timeout: 10000 
+            timeout: 10000
         };
-        
-        https.get(url, options, (response) => {
+
+        https.get(url, options, async (response) => {
             if (response.statusCode === 301 || response.statusCode === 302) {
                 if (response.headers.location) {
                     return downloadFile(response.headers.location)
@@ -53,10 +61,38 @@ async function downloadFile(url: string): Promise<Buffer> {
                         .catch(reject);
                 }
             }
-            
+
             const chunks: Buffer[] = [];
             response.on('data', (chunk) => chunks.push(chunk));
-            response.on('end', () => resolve(Buffer.concat(chunks)));
+            response.on('end', async () => {
+                try {
+                    const buffer = Buffer.concat(chunks);
+                    const image = sharp(buffer);
+                    const metadata = await image.metadata();
+
+                    let processedBuffer: Buffer;
+                    if (metadata.width && metadata.width > 1920) {
+                        processedBuffer = await image
+                            .resize(1920, undefined, {
+                                fit: 'inside',
+                                withoutEnlargement: true
+                            })
+                            .toBuffer();
+                    } else {
+                        processedBuffer = buffer;
+                    }
+
+                    const cacheDir = path.dirname(cachePath);
+                    if (!fs.existsSync(cacheDir)) {
+                        fs.mkdirSync(cacheDir, { recursive: true });
+                    }
+
+                    fs.writeFileSync(cachePath, processedBuffer);
+                    resolve(processedBuffer);
+                } catch (error) {
+                    reject(error);
+                }
+            });
             response.on('error', reject);
         }).on('error', reject);
     });
@@ -84,13 +120,14 @@ async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): P
                     result[key].Children = childResults;
                 }
             } else {
-                if(result[key].FieldType === 'Media' && data[key]) {
+                if(result[key].FieldType === 'Media' && data[key] && data[key].startsWith('http')) {
                     const url = data[key];
                     const fileName = generateUniqueFileName(url);
                     const newPath = `~/UpLoad/Images/Widget/${fileName}`;
 
                     try {
                         const fileContent = await downloadFile(url);
+                        console.log(`New path: ${newPath}`);
                         result[key].Value = newPath;
                         packageFiles.push({
                             FileName: path.basename(newPath),
@@ -180,7 +217,7 @@ async function createFullPackage(template: string): Promise<any> {
     const packageFiles = createPackageFiles(template, viewName);
     const schemaDefWidthData = await mergeDataToSchema(schemaDef, data, packageFiles);
     const widgetConfig = createWidgetConfig(template, viewName, schemaDefWidthData, schemaDef);
-
+    console.log(`Widget config created for template: ${template}`);
     return {
         "Widget": widgetConfig,
         "Files": packageFiles,
@@ -201,7 +238,7 @@ export async function packWidget(template: string): Promise<Buffer> {
 }
 
 async function main() {
-    const template = process.argv[2] || "section-87r39g";
+    const template = process.argv[2] || "section-899cku";
     const fullPackage = await createFullPackage(template);
     const packageJson = JSON.stringify(fullPackage, null, 2);
 

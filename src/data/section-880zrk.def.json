@@ -3,7 +3,7 @@
         "FieldType": "SingleLine",
         "DisplayName": "团队标题"
     },
-    "Description": {
+    "Summary": {
         "FieldType": "HtmlBox",
         "DisplayName": "团队介绍"
     },
@@ -25,12 +25,10 @@
                     "DisplayName": "个人介绍"
                 },
                 "Image": {
-                    "Src": {
-                        "FieldType": "Media",
-                        "DisplayName": "头像"
-                    }
+                    "FieldType": "Media",
+                    "DisplayName": "头像"
                 }
             }
         ]
     }
-} 
+}

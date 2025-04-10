@@ -1,30 +1,24 @@
 {
     "Heading": "我们的团队",
-    "Description": "<p>我们是一支充满激情和创造力的团队，致力于为客户提供最优质的服务和解决方案。</p>",
+    "Summary": "<p>我们是一支充满激情和创造力的团队，致力于为客户提供最优质的服务和解决方案。</p>",
     "TeamMembers": [
         {
             "Name": "张明",
             "Position": "技术总监",
             "Description": "<p>拥有10年以上的开发经验，精通前端和后端开发。</p>",
-            "Image": {
-                "Src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
-            }
+            "Image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
         },
         {
             "Name": "李华",
             "Position": "设计师",
             "Description": "<p>专注于用户体验设计，擅长创造简洁优雅的界面。</p>",
-            "Image": {
-                "Src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
-            }
+            "Image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
         },
         {
             "Name": "王芳",
             "Position": "产品经理",
             "Description": "<p>具有丰富的产品规划和项目管理经验。</p>",
-            "Image": {
-                "Src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-            }
+            "Image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
         }
     ]
 } 

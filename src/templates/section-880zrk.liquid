@@ -53,15 +53,15 @@
 <section class="section-880zrk">
     <div class="container">
         <h2 class="team-heading" property="true" data-property="Heading" method="text">{{this.Model.Heading}}</h2>
-        <div class="team-description" property="true" data-property="Description" method="html">{{this.Model.Description | raw}}</div>
+        <div class="team-description" property="true" data-property="Summary" method="html">{{this.Model.Summary | raw}}</div>
         
         <div class="row">
             {% for member in this.Model.TeamMembers %}
             <div class="col-lg-4 col-md-6">
                 <div class="team-member">
-                    <img property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Image.Src" 
+                    <img property="true" data-property="TeamMembers[{{forloop.index | minus:1}}].Image" 
                          method="attr" para="src" 
-                         src="{% url member.Image.Src %}" 
+                         src="{% url member.Image %}" 
                          class="member-image" 
                          alt="{{member.Name}}">
                     <h3 class="member-name" property="true" 
