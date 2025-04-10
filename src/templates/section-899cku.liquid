@@ -94,17 +94,17 @@
            para="src" 
            src="{% url slide.Image %}" 
            class="banner-image" 
-           alt="{{slide.Title}}"
+           alt="{{slide.Heading}}"
       />
     </div>
     {% endfor %}
     
     <div class="banner-content">
-      <h1 property="true" data-property="Title" method="text" class="banner-title">
-        {{this.Model.Title}}
+      <h1 property="true" data-property="Heading" method="text" class="banner-title">
+        {{this.Model.Heading}}
       </h1>
-      <div property="true" data-property="Description" method="html" class="banner-description">
-        {{this.Model.Description | raw}}
+      <div property="true" data-property="Summary" method="html" class="banner-description">
+        {{this.Model.Summary | raw}}
       </div>
     </div>
   </div>
