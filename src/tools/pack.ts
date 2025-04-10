@@ -188,7 +188,7 @@ function createWidgetConfig(template: string, viewName: string, schemaDefWidthDa
         "StyleClass": "full",
         "Thumbnail": `~/UpLoad/Images/Widget/${template}.png`,
         "ViewModelTypeName": CONFIG.VIEW_MODEL_TYPE_NAME,
-        "WidgetName": "Banner",
+        "WidgetName": template,
         "ZoneId": null,
         "CreateBy": null,
         "CreatebyName": null,
