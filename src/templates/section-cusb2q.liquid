@@ -1,0 +1,102 @@
+{% header %}
+<style>
+.section-cusb2q {
+    padding: 4em 0;
+    background: #f8f9fa;
+}
+.section-cusb2q .container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.section-cusb2q .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+    align-items: center;
+}
+.section-cusb2q .text-content {
+    padding-right: 2em;
+}
+.section-cusb2q .heading {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+.section-cusb2q .summary {
+    font-size: 1.2em;
+    color: #5a6a7e;
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+.section-cusb2q .content {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 2em;
+    line-height: 1.8;
+}
+.section-cusb2q .btn-primary {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-size: 1.1em;
+    color: #fff;
+    background: #3498db;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.section-cusb2q .btn-primary:hover {
+    background: #2980b9;
+}
+.section-cusb2q .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.section-cusb2q .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.section-cusb2q .image-wrapper:hover img {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .section-cusb2q .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+    .section-cusb2q .text-content {
+        padding-right: 0;
+        text-align: center;
+    }
+    .section-cusb2q .heading {
+        font-size: 2em;
+    }
+    .section-cusb2q .summary {
+        font-size: 1.1em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-cusb2q">
+    <div class="container-custom">
+        <div class="content-grid">
+            <div class="text-content">
+                <h2 property="true" data-property="Heading" method="text" class="heading">{{this.Model.Heading}}</h2>
+                <p property="true" data-property="Summary" method="text" class="summary">{{this.Model.Summary}}</p>
+                <div property="true" data-property="Content" method="html" class="content">{{this.Model.Content | raw}}</div>
+                <a property="true" data-property="ButtonLink" method="attr" para="href" href="{{this.Model.ButtonLink}}" class="btn-primary">
+                    <span property="true" data-property="ButtonText" method="text">{{this.Model.ButtonText}}</span>
+                </a>
+            </div>
+            <div class="image-wrapper">
+                <img property="true" data-property="Image" method="attr" para="src" src="{% url this.Model.Image %}" alt="Feature image">
+            </div>
+        </div>
+    </div>
+</section>

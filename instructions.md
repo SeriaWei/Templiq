@@ -13,7 +13,7 @@ json data 示例
 ``` src/data/tpl.json
 {"Heading": "标题栏","HtmlContent": "<p>Html text</p>","Images": [{"Src": "https://images.unsplash.com/photo-xxx?w=500&q=80"}]}
 ```
-以下是完整的字段定义，定义字段时请严格参照这个规范，注意只支持一级嵌套，DisplayName始终使用中文
+以下是完整的字段定义，定义字段时请严格参照这个规范，注意只支持一级嵌套，DisplayName始终使用中文，FieldType的值必须是以下之一：SingleLine,Paragraph,HtmlBox,Address,Checkbox,Radio,Date,Dropdown,Email,Number,Phone,Media,Array。FieldType为Array时，Children为数组，数组元素为字段定义。
 ``` src/data/tpl.def.json
 {
 "Heading": {"FieldType": "SingleLine","DisplayName": "标题栏"},
