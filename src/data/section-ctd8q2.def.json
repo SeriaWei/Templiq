@@ -1,0 +1,22 @@
+{
+  "Heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "Content": {
+    "FieldType": "Paragraph",
+    "DisplayName": "描述文本"
+  },
+  "Image": {
+    "FieldType": "Media",
+    "DisplayName": "右侧图片"
+  },
+  "ButtonText": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮文本"
+  },
+  "ButtonLink": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮链接"
+  }
+}

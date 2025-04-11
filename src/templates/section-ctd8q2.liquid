@@ -1,0 +1,79 @@
+{% header %}
+<style>
+.section-ctd8q2 {
+    padding: 80px 0;
+    background: #ffffff;
+}
+.section-ctd8q2 .container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section-ctd8q2 .content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.section-ctd8q2 .text-content {
+    flex: 1;
+}
+.section-ctd8q2 .image-content {
+    flex: 1;
+}
+.section-ctd8q2 .heading {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+.section-ctd8q2 .description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5em;
+}
+.section-ctd8q2 .button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.section-ctd8q2 .button:hover {
+    background: #0056b3;
+}
+.section-ctd8q2 .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+    .section-ctd8q2 .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .section-ctd8q2 .heading {
+        font-size: 2em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ctd8q2">
+    <div class="container-custom">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2 property="true" data-property="Heading" method="text" class="heading">{{this.Model.Heading}}</h2>
+                <p property="true" data-property="Content" method="text" class="description">{{this.Model.Content}}</p>
+                <a property="true" data-property="ButtonLink" method="attr" para="href" href="{{this.Model.ButtonLink}}" class="button">
+                    <span property="true" data-property="ButtonText" method="text">{{this.Model.ButtonText}}</span>
+                </a>
+            </div>
+            <div class="image-content">
+                <img property="true" data-property="Image" method="attr" para="src" src="{% url this.Model.Image %}" alt="Feature image">
+            </div>
+        </div>
+    </div>
+</section>
