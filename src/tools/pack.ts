@@ -114,7 +114,7 @@ function validateFieldNames(schema: any): void {
             throw new Error(`Detected reserved field name '${key}', to avoid system conflicts, the packaging process has been terminated. Please modify the field name and retry.`);
         }
         if(schema[key].Children && !Array.isArray(schema[key].Children)){
-            throw new Error(`Detected array field '${key}' is not array, to avoid system conflicts, the packaging process has been terminated. Please modify the field and retry.`);
+            schema[key].Children=[schema[key].Children];
         }
     }
 }
