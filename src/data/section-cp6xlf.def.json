@@ -1,0 +1,47 @@
+{
+    "Avatar": {
+        "FieldType": "Media",
+        "DisplayName": "头像"
+    },
+    "Name": {
+        "FieldType": "SingleLine",
+        "DisplayName": "姓名"
+    },
+    "Profession": {
+        "FieldType": "SingleLine",
+        "DisplayName": "职业"
+    },
+    "Introduction": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "个人简介"
+    },
+    "Email": {
+        "FieldType": "Email",
+        "DisplayName": "邮箱"
+    },
+    "Phone": {
+        "FieldType": "Phone",
+        "DisplayName": "电话"
+    },
+    "GalleryItems": {
+        "FieldType": "Array",
+        "DisplayName": "图片画廊",
+        "Children": [
+            {
+                "Src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片",
+                    "IsRequired": true
+                },
+                "Caption": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                }
+            }
+        ]
+    }
+}

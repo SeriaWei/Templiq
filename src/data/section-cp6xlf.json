@@ -1,0 +1,25 @@
+{
+    "Avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    "Name": "张明",
+    "Profession": "UI/UX设计师",
+    "Introduction": "<p>热衷于创造美观实用的用户界面，专注于提升用户体验和交互设计。拥有5年以上的设计经验，擅长将复杂的问题转化为简单优雅的解决方案。</p>",
+    "Email": "zhangming@example.com",
+    "Phone": "13800138000",
+    "GalleryItems": [
+        {
+            "Src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+            "Caption": "项目展示",
+            "Description": "最新完成的移动应用界面设计"
+        },
+        {
+            "Src": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=600&fit=crop",
+            "Caption": "工作环境",
+            "Description": "充满创意的工作空间"
+        },
+        {
+            "Src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+            "Caption": "团队协作",
+            "Description": "与团队成员讨论设计方案"
+        }
+    ]
+}

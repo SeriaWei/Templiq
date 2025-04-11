@@ -1,0 +1,160 @@
+{% header %}
+<style>
+.section-cp6xlf {
+    padding: 4em 0;
+    background-color: #f8f9fa;
+}
+
+.section-cp6xlf .profile-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.section-cp6xlf .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1.5em;
+    object-fit: cover;
+}
+
+.section-cp6xlf .profile-name {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.section-cp6xlf .profile-profession {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.section-cp6xlf .profile-intro {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+.section-cp6xlf .profile-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 1em;
+}
+
+.section-cp6xlf .contact-item {
+    color: #666;
+    text-decoration: none;
+}
+
+.section-cp6xlf .contact-item:hover {
+    color: #007bff;
+}
+
+.section-cp6xlf .profile-container,
+.section-cp6xlf .gallery-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-cp6xlf .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.section-cp6xlf .gallery-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.section-cp6xlf .gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.section-cp6xlf .gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.section-cp6xlf .gallery-content {
+    padding: 1.5em;
+}
+
+.section-cp6xlf .gallery-caption {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.section-cp6xlf .gallery-description {
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .section-cp6xlf .profile-contact {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .section-cp6xlf .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-cp6xlf">
+    <div class="profile-container">
+        <div class="profile-card">
+                <img property="true" data-property="Avatar" method="attr" para="src" 
+                     src="{% url this.Model.Avatar %}" class="profile-avatar" alt="Profile Avatar">
+                <h2 property="true" data-property="Name" method="text" 
+                    class="profile-name">{{this.Model.Name}}</h2>
+                <div property="true" data-property="Profession" method="text" 
+                     class="profile-profession">{{this.Model.Profession}}</div>
+                <div property="true" data-property="Introduction" method="html" 
+                     class="profile-intro">{{this.Model.Introduction | raw}}</div>
+                <div class="profile-contact">
+                    <a property="true" data-property="Email" method="attr" para="href" 
+                       href="mailto:{{this.Model.Email}}" class="contact-item">
+                        <i class="glyphicon glyphicon-envelope"></i> {{this.Model.Email}}
+                    </a>
+                    <a property="true" data-property="Phone" method="attr" para="href" 
+                       href="tel:{{this.Model.Phone}}" class="contact-item">
+                        <i class="glyphicon glyphicon-phone"></i> {{this.Model.Phone}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            {% for item in this.Model.GalleryItems %}
+            <div class="gallery-item">
+                <img property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Src" 
+                     method="attr" para="src" src="{% url item.Src %}" 
+                     class="gallery-image" alt="Gallery Image">
+                <div class="gallery-content">
+                    <h3 property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Caption" 
+                        method="text" class="gallery-caption">{{item.Caption}}</h3>
+                    <p property="true" data-property="GalleryItems[{{forloop.index | minus:1}}].Description" 
+                       method="text" class="gallery-description">{{item.Description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
