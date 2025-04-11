@@ -6,25 +6,25 @@
             "Date": "2018年1月",
             "Title": "公司成立",
             "Description": "<p>在充满希望的新年伊始，我们怀着激动的心情开启了创业征程。</p>",
-            "ImageSrc": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
+            "ImageSrc": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
         },
         {
             "Date": "2019年6月",
             "Title": "首次产品发布",
             "Description": "<p>经过一年半的潜心研发，我们的首款产品成功面世。</p>",
-            "ImageSrc": "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+            "ImageSrc": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
         },
         {
             "Date": "2021年3月",
             "Title": "完成A轮融资",
             "Description": "<p>获得投资机构的认可，为未来发展注入新动力。</p>",
-            "ImageSrc": "https://images.unsplash.com/photo-1507679799987-c73779587ccf"
+            "ImageSrc": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
         },
         {
             "Date": "2023年12月",
             "Title": "全球化布局",
             "Description": "<p>正式开启国际化战略，产品服务遍及多个国家和地区。</p>",
-            "ImageSrc": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"
+            "ImageSrc": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80"
         }
     ]
-} 
+}
