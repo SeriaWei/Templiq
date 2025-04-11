@@ -238,13 +238,23 @@ export async function packWidget(template: string): Promise<Buffer> {
 }
 
 async function main() {
-    const template = process.argv[2] || "section-899cku";
+    const template = process.argv[2];
+    
+    if (template) {
+        await packageSingleTemplate(template);
+    } else {
+        await packageUnpackagedTemplates();
+    }
+}
+
+async function packageSingleTemplate(template: string): Promise<void> {
+    console.log(`Packaging template: ${template}`);
     const fullPackage = await createFullPackage(template);
     const packageJson = JSON.stringify(fullPackage, null, 2);
 
     const outputDir = path.resolve(__dirname, '../../output');
     if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir);
+        fs.mkdirSync(outputDir, { recursive: true });
     }
 
     const outputPath = path.join(outputDir, `${template}.wgt`);
@@ -259,7 +269,46 @@ async function main() {
     console.log(`Widget package created at ${outputPath}`);
 }
 
-// 如果是直接运行此文件，则执行原来的主函数
+async function packageUnpackagedTemplates(): Promise<void> {
+    const templatesDir = path.resolve(__dirname, '../templates');
+    const outputDir = path.resolve(__dirname, '../../output');
+    
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    const templates = fs.readdirSync(templatesDir)
+        .filter(file => file.endsWith('.liquid'))
+        .map(file => file.replace('.liquid', ''));
+    
+    const existingPackages = fs.existsSync(outputDir) 
+        ? fs.readdirSync(outputDir)
+            .filter(file => file.endsWith('.wgt'))
+            .map(file => file.replace('.wgt', ''))
+        : [];
+    
+    const unpackagedTemplates = templates.filter(template => 
+        !existingPackages.includes(template)
+    );
+    
+    if (unpackagedTemplates.length === 0) {
+        console.log('All templates have been packaged.');
+        return;
+    }
+    
+    console.log(`Found ${unpackagedTemplates.length} unpackaged templates: ${unpackagedTemplates.join(', ')}`);
+    
+    for (const template of unpackagedTemplates) {
+        try {
+            await packageSingleTemplate(template);
+        } catch (error) {
+            console.error(`Error packaging template ${template}:`, error);
+        }
+    }
+    
+    console.log(`Packaged ${unpackagedTemplates.length} templates.`);
+}
+
 if (require.main === module) {
     main().catch(error => {
         console.error('Error creating widget package:', error);
