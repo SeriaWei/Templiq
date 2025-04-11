@@ -1,0 +1,31 @@
+{
+    "Heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "Summary": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述文字"
+    },
+    "GalleryItems": {
+        "FieldType": "Array",
+        "DisplayName": "图片集",
+        "Children": [
+            {
+                "Src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片",
+                    "IsRequired": true
+                },
+                "Title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "图片标题"
+                },
+                "Description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "图片描述"
+                }
+            }
+        ]
+    }
+}

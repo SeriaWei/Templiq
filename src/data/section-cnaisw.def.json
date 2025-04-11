@@ -7,7 +7,7 @@
     "FieldType": "Paragraph",
     "DisplayName": "简介文本"
   },
-  "Description": {
+  "Content": {
     "FieldType": "HtmlBox",
     "DisplayName": "详细描述"
   },

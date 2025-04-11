@@ -1,7 +1,7 @@
 {
   "Heading": "时尚潮流服饰",
   "Summary": "发现属于你的独特风格",
-  "Description": "<p>精选全球顶级设计师作品，为您打造独特的时尚魅力。每一件单品都经过精心挑选，让您在任何场合都能展现出众的气质。</p>",
+  "Content": "<p>精选全球顶级设计师作品，为您打造独特的时尚魅力。每一件单品都经过精心挑选，让您在任何场合都能展现出众的气质。</p>",
   "FashionItems": [
     {
       "Image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&h=800&q=80",
