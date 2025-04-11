@@ -1,0 +1,28 @@
+{
+    "Heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "产品标题"
+    },
+    "Summary": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "产品描述"
+    },
+    "Features": {
+        "FieldType": "Array",
+        "DisplayName": "产品特性",
+        "Children": [
+            {
+                "Text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "特性描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    },
+    "ProductImage": {
+        "FieldType": "Media",
+        "DisplayName": "产品图片",
+        "IsRequired": true
+    }
+}

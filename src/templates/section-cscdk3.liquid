@@ -1,0 +1,152 @@
+{% header %}
+<style>
+.section-cscdk3 {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.section-cscdk3 .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-cscdk3 .product-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-cscdk3 .product-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-cscdk3 .product-description {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.section-cscdk3 .product-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.section-cscdk3 .product-features {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.section-cscdk3 .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-cscdk3 .feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.section-cscdk3 .feature-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    color: #007bff;
+}
+
+.section-cscdk3 .feature-text {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.5;
+}
+
+.section-cscdk3 .product-image-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.section-cscdk3 .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 992px) {
+    .section-cscdk3 {
+        padding: 60px 0;
+    }
+
+    .section-cscdk3 .product-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-cscdk3 .product-content {
+        flex-direction: column;
+    }
+
+    .section-cscdk3 .product-features {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .section-cscdk3 .product-image-wrapper {
+        order: -1;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-cscdk3 {
+        padding: 40px 0;
+    }
+
+    .section-cscdk3 .product-title {
+        font-size: 1.8em;
+    }
+
+    .section-cscdk3 .product-description {
+        font-size: 1em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-cscdk3">
+    <div class="section-container">
+        <div class="product-header">
+            <h2 property="true" data-property="Heading" method="text" class="product-title">{{this.Model.Heading}}</h2>
+            <div property="true" data-property="Summary" method="html" class="product-description">{{this.Model.Summary | raw}}</div>
+        </div>
+        <div class="product-content">
+            <div class="product-features">
+                <ul class="feature-list">
+                    {% for item in this.Model.Features %}
+                    <li class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span property="true" data-property="Features[{{forloop.index | minus:1}}].Text" method="text" class="feature-text">{{item.Text}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="product-image-wrapper">
+                <img property="true" data-property="ProductImage" method="attr" para="src" src="{% url this.Model.ProductImage %}" class="product-image" alt="Product Image">
+            </div>
+        </div>
+    </div>
+</section>
