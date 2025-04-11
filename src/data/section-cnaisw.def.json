@@ -1,0 +1,39 @@
+{
+  "Heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "Summary": {
+    "FieldType": "Paragraph",
+    "DisplayName": "简介文本"
+  },
+  "Description": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "详细描述"
+  },
+  "FashionItems": {
+    "FieldType": "Array",
+    "DisplayName": "服装展示项",
+    "Children": [
+      {
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "服装图片",
+          "IsRequired": true
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "服装名称"
+        },
+        "Price": {
+          "FieldType": "SingleLine",
+          "DisplayName": "价格"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "商品描述"
+        }
+      }
+    ]
+  }
+}

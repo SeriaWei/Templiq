@@ -1,0 +1,117 @@
+{% header %}
+<style>
+.section-cnaisw {
+  padding: 4em 0;
+  background: #f8f9fa;
+}
+
+.section-cnaisw .section-header {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.section-cnaisw .section-title {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.section-cnaisw .section-summary {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.section-cnaisw .section-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.section-cnaisw .section-description {
+  font-size: 1em;
+  color: #777;
+  max-width: 800px;
+  margin: 0 auto 2em;
+}
+
+.section-cnaisw .fashion-item {
+  margin-bottom: 2em;
+  transition: transform 0.3s ease;
+}
+
+.section-cnaisw .fashion-item:hover {
+  transform: translateY(-10px);
+}
+
+.section-cnaisw .fashion-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.section-cnaisw .fashion-title {
+  font-size: 1.3em;
+  color: #333;
+  margin: 0.5em 0;
+}
+
+.section-cnaisw .fashion-price {
+  font-size: 1.2em;
+  color: #e44d26;
+  font-weight: bold;
+  margin: 0.3em 0;
+}
+
+.section-cnaisw .fashion-description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .section-cnaisw {
+    padding: 2em 0;
+  }
+  
+  .section-cnaisw .section-title {
+    font-size: 2em;
+  }
+  
+  .section-cnaisw .fashion-image {
+    height: 280px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-cnaisw">
+  <div class="section-content">
+    <div class="section-header">
+      <h2 property="true" data-property="Heading" method="text" class="section-title">{{this.Model.Heading}}</h2>
+      <div property="true" data-property="Summary" method="text" class="section-summary">{{this.Model.Summary}}</div>
+      <div property="true" data-property="Description" method="html" class="section-description">{{this.Model.Description | raw}}</div>
+    </div>
+    
+    <div class="row">
+      {% for item in this.Model.FashionItems %}
+      <div class="col-md-4">
+        <div class="fashion-item">
+          <img property="true" data-property="FashionItems[{{forloop.index | minus:1}}].Image" method="attr" para="src" 
+               src="{% url item.Image %}" class="fashion-image" alt="{{item.Title}}">
+          <h3 property="true" data-property="FashionItems[{{forloop.index | minus:1}}].Title" method="text" 
+              class="fashion-title">{{item.Title}}</h3>
+          <div property="true" data-property="FashionItems[{{forloop.index | minus:1}}].Price" method="text" 
+               class="fashion-price">{{item.Price}}</div>
+          <p property="true" data-property="FashionItems[{{forloop.index | minus:1}}].Description" method="text" 
+             class="fashion-description">{{item.Description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
