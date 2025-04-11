@@ -1,0 +1,19 @@
+{
+  "Cards": [
+    {
+      "Image": "https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=500&q=80",
+      "Title": "创新科技",
+      "Description": "提供先进的技术解决方案，助力企业数字化转型"
+    },
+    {
+      "Image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80",
+      "Title": "专业团队",
+      "Description": "经验丰富的技术团队，为您提供专业服务支持"
+    },
+    {
+      "Image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80",
+      "Title": "优质服务",
+      "Description": "以客户为中心，提供全方位的优质服务体验"
+    }
+  ]
+}

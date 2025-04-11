@@ -111,7 +111,10 @@ const RESERVED_FIELD_NAMES = [
 function validateFieldNames(schema: any): void {
     for (const key in schema) {
         if (RESERVED_FIELD_NAMES.includes(key)) {
-            throw new Error(`检测到保留字段名 '${key}'，为避免系统冲突，打包过程已终止。请修改该字段名后重试。`);
+            throw new Error(`Detected reserved field name '${key}', to avoid system conflicts, the packaging process has been terminated. Please modify the field name and retry.`);
+        }
+        if(schema[key].Children && !Array.isArray(schema[key].Children)){
+            throw new Error(`Detected array field '${key}' is not array, to avoid system conflicts, the packaging process has been terminated. Please modify the field and retry.`);
         }
     }
 }
@@ -124,10 +127,6 @@ async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): P
         if (data[key] !== undefined) {
             if (result[key].FieldType === 'Array' && Array.isArray(data[key])) {
                 if (result[key].Children && result[key].Children.length > 0 && data[key].length > 0) {
-                    if (!Array.isArray(result[key].Children)) {
-                        result[key].Children = [result[key].Children];
-                    }
-
                     const childTemplate = result[key].Children[0];
                     const childResults = [];
                     for (const item of data[key]) {

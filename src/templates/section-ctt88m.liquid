@@ -1,0 +1,73 @@
+{% header %}
+<style>
+.section-ctt88m {
+    padding: 4em 0;
+    background-color: #f8f9fa;
+}
+.section-ctt88m .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.section-ctt88m .card {
+    border: none;
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0 0.25em 1em rgba(0,0,0,0.1);
+    height: 100%;
+}
+.section-ctt88m .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.section-ctt88m .card-body {
+    padding: 1.5em;
+}
+.section-ctt88m .card-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+.section-ctt88m .card-text {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+.section-ctt88m .row {
+    margin: 0 -0.5em;
+}
+.section-ctt88m .col {
+    padding: 0.5em;
+}
+@media (max-width: 768px) {
+    .section-ctt88m {
+        padding: 2em 0;
+    }
+    .section-ctt88m .card-img-top {
+        height: 150px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ctt88m">
+    <div class="container-fluid">
+        <div class="row">
+            {% for item in this.Model.Cards %}
+            <div class="col col-12 col-md-4">
+                <div class="card">
+                    <img property="true" data-property="Cards[{{forloop.index | minus:1}}].Image" method="attr" para="src" 
+                         src="{% url item.Image %}" class="card-img-top" alt="{{item.Title}}">
+                    <div class="card-body">
+                        <h3 property="true" data-property="Cards[{{forloop.index | minus:1}}].Title" method="text" 
+                            class="card-title">{{item.Title}}</h3>
+                        <p property="true" data-property="Cards[{{forloop.index | minus:1}}].Description" method="text" 
+                           class="card-text">{{item.Description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

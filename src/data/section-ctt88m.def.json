@@ -1,0 +1,23 @@
+{
+  "Cards": {
+    "FieldType": "Array",
+    "DisplayName": "卡片列表",
+    "Children": [
+      {
+        "Image": {
+          "FieldType": "Media",
+          "DisplayName": "卡片图片",
+          "IsRequired": true
+        },
+        "Title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "卡片标题"
+        },
+        "Description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "卡片描述"
+        }
+      }
+    ]
+  }
+}
