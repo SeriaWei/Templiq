@@ -1,4 +1,6 @@
-图片用网上的免费图片，确保图片以合适的尺寸加载。如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，如果要用.container，应另外定义一个避免冲突，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和字段定义，并保存src/data目录下。在定义json数据的时候，要避免使用以下字段名:Position,Thumbnail,Description,Status,Title。
+图片用网上的免费图片，确保图片以合适的尺寸加载。如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，如果要用.container，应另外定义一个避免冲突，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和字段定义，并保存src/data目录下。
+
+# 模板规范
 model binding使用的是liquid模板语法，但有些特殊要求，规范如下：
 ``` src/templates/tpl.liquid
 <p property="true" data-property="Heading" method="text">{{this.Model.Heading}}</p>
@@ -9,11 +11,47 @@ model binding使用的是liquid模板语法，但有些特殊要求，规范如�
 </li>
 {% endfor %}
 ```
-json data 示例
+# JSON data 示例
 ``` src/data/tpl.json
 {"Heading": "标题栏","HtmlContent": "<p>Html text</p>","Images": [{"Src": "https://images.unsplash.com/photo-xxx?w=500&q=80"}]}
 ```
-以下是完整的字段定义，定义字段时请严格参照这个规范，注意只支持一级嵌套，DisplayName始终使用中文，FieldType的值必须是以下之一：SingleLine,Paragraph,HtmlBox,Address,Checkbox,Radio,Date,Dropdown,Email,Number,Phone,Media,Array。FieldType为Array时，Children为数组，数组元素为字段定义。
+# 字段定义规范
+## 基本要求
+1. 字段定义必须使用JSON格式
+2. 只支持一级嵌套结构
+3. DisplayName必须使用中文
+4. 禁止使用的字段名：Description, Status, Title, Position, Thumbnail
+5. 字段定义必须包含字段类型(FieldType)和显示名称(DisplayName)
+
+## 字段类型(FieldType)选项
+必须是以下值之一：
+- SingleLine: 单行文本
+- Paragraph: 多行文本
+- HtmlBox: HTML内容
+- Address: 地址
+- Checkbox: 复选框
+- Radio: 单选按钮
+- Date: 日期
+- Dropdown: 下拉菜单
+- Email: 邮箱
+- Number: 数字
+- Phone: 电话
+- Media: 媒体文件
+- Array: 数组类型(需包含Children定义[数组])
+
+## 字段属性说明
+1. 每个字段必须包含：
+   - FieldType: 字段类型
+   - DisplayName: 显示名称(中文)
+   
+2. 可选属性：
+   - IsRequired: 是否必填(true/false)
+   - FieldOptions: 选项列表(仅Checkbox(多选)/Radio/Dropdown类型需要)
+     - 每个选项包含:
+       - DisplayText: 显示文本
+       - Value: 选项值
+
+## 示例模板
 ``` src/data/tpl.def.json
 {
 "Heading": {"FieldType": "SingleLine","DisplayName": "标题栏"},
