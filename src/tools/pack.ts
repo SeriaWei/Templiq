@@ -98,11 +98,28 @@ async function downloadFile(url: string): Promise<Buffer> {
     });
 }
 
+const RESERVED_FIELD_NAMES = [
+  'Properties', 'PropertySchema', 'IsInDesign', 'InitPartialView',
+  'AssemblyName', 'FormView', 'IsSystem', 'IsTemplate', 'LayoutId',
+  'PageId', 'PartialView', 'Position', 'ServiceTypeName', 'StyleClass',
+  'Thumbnail', 'ViewModelTypeName', 'WidgetName', 'ZoneId', 'CreateBy',
+  'CreatebyName', 'CreateDate', 'Description', 'Status', 'Title',
+  'ExtendData', 'ActionType', 'RuleID', 'InnerStyle', 'CustomClass',
+  'CustomStyle', 'DataSourceLink', 'DataSourceLinkTitle', 'EditTemplateOnline'
+];
+
+function validateFieldNames(schema: any): void {
+    for (const key in schema) {
+        if (RESERVED_FIELD_NAMES.includes(key)) {
+            throw new Error(`检测到保留字段名 '${key}'，为避免系统冲突，打包过程已终止。请修改该字段名后重试。`);
+        }
+    }
+}
+
 async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): Promise<any> {
     if (!schema || !data) return Promise.resolve(schema);
-
-    const result = JSON.parse(JSON.stringify(schema));
     
+    const result = JSON.parse(JSON.stringify(schema));    
     for (const key in result) {
         if (data[key] !== undefined) {
             if (result[key].FieldType === 'Array' && Array.isArray(data[key])) {
@@ -213,6 +230,8 @@ async function createFullPackage(template: string): Promise<any> {
     const viewName = getViewName(template);
     const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
     const schemaDef = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.def.json`), "utf8"));
+    
+    validateFieldNames(schemaDef);
     
     const packageFiles = createPackageFiles(template, viewName);
     const schemaDefWidthData = await mergeDataToSchema(schemaDef, data, packageFiles);
