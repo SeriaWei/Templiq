@@ -1,0 +1,82 @@
+{% header %}
+<style>
+.section-dj5u9d {
+  padding: 4em 0;
+  background: #f8f9fa;
+}
+.section-dj5u9d .content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.section-dj5u9d .feature-card {
+  background: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.25em 1em rgba(0,0,0,0.1);
+  padding: 2em;
+  margin-bottom: 2em;
+}
+.section-dj5u9d .feature-image {
+  width: 100%;
+  height: 18em;
+  object-fit: cover;
+  border-radius: 0.3em;
+}
+.section-dj5u9d h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 0.8em;
+}
+.section-dj5u9d .description {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+.section-dj5u9d .cta-button {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  background: #007bff;
+  color: white;
+  border-radius: 0.3em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.section-dj5u9d .cta-button:hover {
+  background: #0056b3;
+  transform: translateY(-0.15em);
+}
+@media (max-width: 48em) {
+  .section-dj5u9d {
+    padding: 2em 0;
+  }
+  .section-dj5u9d .feature-image {
+    height: 12em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-dj5u9d">
+  <div class="content-container">
+    <div class="feature-card">
+      <h2 property="true" data-property="Heading" method="text">{{this.Model.heading}}</h2>
+      <img property="true" data-property="FeaturedImage" method="attr" para="src" 
+           src="{% url this.Model.featured_image %}" 
+           class="feature-image" 
+           alt="特色图片">
+      <div property="true" data-property="Description" method="html" class="description">
+        {{this.Model.description | raw}}
+      </div>
+      <a href="#" class="cta-button" 
+         property="true" data-property="ButtonText" method="text">
+        {{this.Model.button_text}}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
