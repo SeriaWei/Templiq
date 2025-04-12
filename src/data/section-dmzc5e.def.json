@@ -1,0 +1,40 @@
+{
+  "avatar": {
+    "FieldType": "Media",
+    "DisplayName": "头像",
+    "IsRequired": true
+  },
+  "name": {
+    "FieldType": "SingleLine",
+    "DisplayName": "姓名",
+    "IsRequired": true
+  },
+  "title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "职业头衔",
+    "IsRequired": true
+  },
+  "bio": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "个人简介",
+    "IsRequired": true
+  },
+  "social_links": {
+    "FieldType": "Array",
+    "DisplayName": "社交链接",
+    "Children": [
+      {
+        "platform": {
+          "FieldType": "SingleLine",
+          "DisplayName": "平台名称",
+          "IsRequired": true
+        },
+        "url": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接地址",
+          "IsRequired": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+  "name": "张明",
+  "title": "全栈开发工程师",
+  "bio": "<p>热衷于探索新技术，专注于Web开发和人工智能领域。拥有5年以上的开发经验，精通前端框架和后端架构设计。在业余时间喜欢写技术博客，分享开发心得。</p>",
+  "social_links": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com"
+    },
+    {
+      "platform": "Blog",
+      "url": "https://medium.com"
+    }
+  ]
+}

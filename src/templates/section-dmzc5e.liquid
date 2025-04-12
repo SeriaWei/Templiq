@@ -1,0 +1,125 @@
+{% header %}
+<style>
+.section-dmzc5e {
+  padding: 4em 2em;
+  background: #ffffff;
+}
+
+.section-dmzc5e .bio-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-dmzc5e .avatar {
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section-dmzc5e .avatar:hover {
+  transform: scale(1.05);
+}
+
+.section-dmzc5e .name {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 0.3em;
+}
+
+.section-dmzc5e .title {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 1.5em;
+}
+
+.section-dmzc5e .bio {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2em;
+}
+
+.section-dmzc5e .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.section-dmzc5e .social-link {
+  color: #666;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.section-dmzc5e .social-link:hover {
+  color: #007bff;
+}
+
+@media (max-width: 48em) {
+  .section-dmzc5e {
+    padding: 3em 1em;
+  }
+  
+  .section-dmzc5e .avatar {
+    width: 10em;
+    height: 10em;
+  }
+  
+  .section-dmzc5e .name {
+    font-size: 2em;
+  }
+  
+  .section-dmzc5e .title {
+    font-size: 1.1em;
+  }
+  
+  .section-dmzc5e .bio {
+    font-size: 1em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-dmzc5e">
+  <div class="bio-container">
+    <img property="true" data-property="avatar" method="attr" para="src" 
+         src="{% url this.Model.avatar %}" 
+         class="avatar" 
+         alt="个人头像">
+    <h1 property="true" data-property="name" method="text" class="name">
+      {{this.Model.name}}
+    </h1>
+    <div property="true" data-property="title" method="text" class="title">
+      {{this.Model.title}}
+    </div>
+    <div property="true" data-property="bio" method="html" class="bio">
+      {{this.Model.bio | raw}}
+    </div>
+    <div class="social-links">
+      {% for link in this.Model.social_links %}
+      <a property="true" 
+         data-property="social_links[{{forloop.index | minus:1}}].url" 
+         method="attr" para="href" 
+         href="{% url link.url %}" 
+         class="social-link">
+        <span property="true" 
+              data-property="social_links[{{forloop.index | minus:1}}].platform" 
+              method="text">
+          {{link.platform}}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
