@@ -1,0 +1,87 @@
+{% header %}
+<style>
+.section-cw5bx9 {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+.section-cw5bx9 .contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.section-cw5bx9 .contact-title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+.section-cw5bx9 .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+.section-cw5bx9 .contact-item {
+  flex: 0 0 calc(33.333% - 20px);
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.section-cw5bx9 .contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.section-cw5bx9 .contact-icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+.section-cw5bx9 h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+.section-cw5bx9 p {
+  color: #666;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .section-cw5bx9 {
+    padding: 40px 0;
+  }
+  .section-cw5bx9 .contact-item {
+    flex: 0 0 100%;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-cw5bx9">
+  <div class="contact-container">
+    <h2 property="true" data-property="Header" method="text" class="contact-title">{{this.Model.Header}}</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <h3 property="true" data-property="AddressTitle" method="text">{{this.Model.AddressTitle}}</h3>
+        <p property="true" data-property="Address" method="text">{{this.Model.Address}}</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <h3 property="true" data-property="PhoneTitle" method="text">{{this.Model.PhoneTitle}}</h3>
+        <p property="true" data-property="Phone" method="text">{{this.Model.Phone}}</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <h3 property="true" data-property="EmailTitle" method="text">{{this.Model.EmailTitle}}</h3>
+        <p property="true" data-property="Email" method="text">{{this.Model.Email}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

@@ -1,0 +1,30 @@
+{
+    "Header": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "AddressTitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "地址标题"
+    },
+    "Address": {
+        "FieldType": "Address",
+        "DisplayName": "公司地址"
+    },
+    "PhoneTitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "电话标题"
+    },
+    "Phone": {
+        "FieldType": "Phone",
+        "DisplayName": "联系电话"
+    },
+    "EmailTitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "邮箱标题"
+    },
+    "Email": {
+        "FieldType": "Email",
+        "DisplayName": "电子邮箱"
+    }
+}
