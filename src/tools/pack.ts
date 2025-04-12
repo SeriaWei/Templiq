@@ -99,30 +99,67 @@ async function downloadFile(url: string): Promise<Buffer> {
 }
 
 const RESERVED_FIELD_NAMES = [
-  'Properties', 'PropertySchema', 'IsInDesign', 'InitPartialView',
-  'AssemblyName', 'FormView', 'IsSystem', 'IsTemplate', 'LayoutId',
-  'PageId', 'PartialView', 'Position', 'ServiceTypeName', 'StyleClass',
-  'Thumbnail', 'ViewModelTypeName', 'WidgetName', 'ZoneId', 'CreateBy',
-  'CreatebyName', 'CreateDate', 'Description', 'Status', 'Title',
-  'ExtendData', 'ActionType', 'RuleID', 'InnerStyle', 'CustomClass',
-  'CustomStyle', 'DataSourceLink', 'DataSourceLinkTitle', 'EditTemplateOnline'
+    'Properties', 'PropertySchema', 'IsInDesign', 'InitPartialView',
+    'AssemblyName', 'FormView', 'IsSystem', 'IsTemplate', 'LayoutId',
+    'PageId', 'PartialView', 'Position', 'ServiceTypeName', 'StyleClass',
+    'Thumbnail', 'ViewModelTypeName', 'WidgetName', 'ZoneId', 'CreateBy',
+    'CreatebyName', 'CreateDate', 'Description', 'Status', 'Title',
+    'ExtendData', 'ActionType', 'RuleID', 'InnerStyle', 'CustomClass',
+    'CustomStyle', 'DataSourceLink', 'DataSourceLinkTitle', 'EditTemplateOnline'
 ];
 
-function validateFieldNames(schema: any): void {
+const VALID_FIELD_TYPES = [
+    'SingleLine', 'Paragraph', 'HtmlBox', 'Address', 'Checkbox',
+    'Radio', 'Date', 'Dropdown', 'Email', 'Number', 'Phone',
+    'Media', 'Array'
+];
+
+function validateSchema(schema: any, verifyFieldName: boolean): void {
     for (const key in schema) {
-        if (RESERVED_FIELD_NAMES.includes(key)) {
+        if (verifyFieldName && RESERVED_FIELD_NAMES.includes(key)) {
             throw new Error(`Detected reserved field name '${key}', to avoid system conflicts, the packaging process has been terminated. Please modify the field name and retry.`);
         }
-        if(schema[key].Children && !Array.isArray(schema[key].Children)){
-            schema[key].Children=[schema[key].Children];
+        if (!schema[key].FieldType) {
+            throw new Error(`Field '${key}' is missing required property 'FieldType'.`);
+        }
+        if (!schema[key].DisplayName) {
+            throw new Error(`Field '${key}' is missing required property 'DisplayName'.`);
+        }
+        if (!VALID_FIELD_TYPES.includes(schema[key].FieldType)) {
+            throw new Error(`Invalid FieldType '${schema[key].FieldType}' for field '${key}'. Valid types are: ${VALID_FIELD_TYPES.join(', ')}.`);
+        }
+        if(schema[key].FieldType === 'Radio' || schema[key].FieldType === 'Dropdown'){
+            if (!schema[key].FieldOptions) {
+                throw new Error(`Field '${key}' is missing required property 'FieldOptions'.`);
+            }
+            if (!Array.isArray(schema[key].FieldOptions)) {
+                throw new Error(`FieldOptions for field '${key}' should be an array.`);
+            }
+            if (schema[key].FieldOptions.length < 1) {
+                throw new Error(`FieldOptions for field '${key}' should more than 1.`); 
+            }
+            for (const option of schema[key].FieldOptions) {
+                if (!option.DisplayText || !option.Value) {
+                    throw new Error(`Invalid FieldOptions for field '${key}'. Each option should have 'DisplayText' and 'Value' properties.`);
+                } 
+            }
+        }
+        if (schema[key].Children && !Array.isArray(schema[key].Children)) {
+            schema[key].Children = [schema[key].Children];
+        }
+
+        if (schema[key].Children && Array.isArray(schema[key].Children)) {
+            for (const child of schema[key].Children) {
+                validateSchema(child, false);
+            }
         }
     }
 }
 
 async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): Promise<any> {
     if (!schema || !data) return Promise.resolve(schema);
-    
-    const result = JSON.parse(JSON.stringify(schema));    
+
+    const result = JSON.parse(JSON.stringify(schema));
     for (const key in result) {
         if (data[key] !== undefined) {
             if (result[key].FieldType === 'Array' && Array.isArray(data[key])) {
@@ -136,7 +173,7 @@ async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): P
                     result[key].Children = childResults;
                 }
             } else {
-                if(result[key].FieldType === 'Media' && data[key] && data[key].startsWith('http')) {
+                if (result[key].FieldType === 'Media' && data[key] && data[key].startsWith('http')) {
                     const url = data[key];
                     const fileName = generateUniqueFileName(url);
                     const newPath = `~/UpLoad/Images/Widget/${fileName}`;
@@ -229,9 +266,9 @@ async function createFullPackage(template: string): Promise<any> {
     const viewName = getViewName(template);
     const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
     const schemaDef = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.def.json`), "utf8"));
-    
-    validateFieldNames(schemaDef);
-    
+
+    validateSchema(schemaDef, true);
+
     const packageFiles = createPackageFiles(template, viewName);
     const schemaDefWidthData = await mergeDataToSchema(schemaDef, data, packageFiles);
     const widgetConfig = createWidgetConfig(template, viewName, schemaDefWidthData, schemaDef);
@@ -246,7 +283,7 @@ async function createFullPackage(template: string): Promise<any> {
 export async function packWidget(template: string): Promise<Buffer> {
     const fullPackage = await createFullPackage(template);
     const packageJson = JSON.stringify(fullPackage, null, 2);
-    
+
     return new Promise((resolve, reject) => {
         zlib.gzip(Buffer.from(packageJson, 'utf8'), (err, buffer) => {
             if (err) reject(err);
@@ -257,7 +294,7 @@ export async function packWidget(template: string): Promise<Buffer> {
 
 async function main() {
     const template = process.argv[2];
-    
+
     if (template) {
         await packageSingleTemplate(template);
     } else {
@@ -290,7 +327,7 @@ async function packageSingleTemplate(template: string): Promise<void> {
 async function packageUnpackagedTemplates(): Promise<void> {
     const templatesDir = path.resolve(__dirname, '../templates');
     const outputDir = path.resolve(__dirname, '../../output');
-    
+
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
@@ -298,24 +335,24 @@ async function packageUnpackagedTemplates(): Promise<void> {
     const templates = fs.readdirSync(templatesDir)
         .filter(file => file.endsWith('.liquid'))
         .map(file => file.replace('.liquid', ''));
-    
-    const existingPackages = fs.existsSync(outputDir) 
+
+    const existingPackages = fs.existsSync(outputDir)
         ? fs.readdirSync(outputDir)
             .filter(file => file.endsWith('.wgt'))
             .map(file => file.replace('.wgt', ''))
         : [];
-    
-    const unpackagedTemplates = templates.filter(template => 
+
+    const unpackagedTemplates = templates.filter(template =>
         !existingPackages.includes(template)
     );
-    
+
     if (unpackagedTemplates.length === 0) {
         console.log('All templates have been packaged.');
         return;
     }
-    
+
     console.log(`Found ${unpackagedTemplates.length} unpackaged templates: ${unpackagedTemplates.join(', ')}`);
-    
+
     for (const template of unpackagedTemplates) {
         try {
             await packageSingleTemplate(template);
@@ -323,7 +360,7 @@ async function packageUnpackagedTemplates(): Promise<void> {
             console.error(`Error packaging template ${template}:`, error);
         }
     }
-    
+
     console.log(`Packaged ${unpackagedTemplates.length} templates.`);
 }
 
