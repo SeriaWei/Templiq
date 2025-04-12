@@ -1,8 +1,5 @@
 {
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
     "github.copilot.chat.codeGeneration.instructions": [
-        {
-            "file": "instructions.md"
-        }
     ]
 }
