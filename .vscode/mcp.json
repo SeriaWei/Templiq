@@ -1,0 +1,14 @@
+{
+    "servers": {
+        "my-mcp-server-b657bf7d": {
+            "type": "stdio",
+            "command": "npx",
+            "args": ["-y","mcp-zkeacms-api"],
+            "env": {
+                "API_HOST": "http://localhost:5000",
+                "API_USER": "admin",
+                "API_PASSWORD": "admin",
+            }
+        }
+    }
+}
