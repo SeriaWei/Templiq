@@ -1,0 +1,30 @@
+{
+    "cases": {
+        "FieldType": "Array",
+        "DisplayName": "案例列表",
+        "Children": [
+            {
+                "image": {
+                    "FieldType": "Media",
+                    "DisplayName": "案例图片",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "案例标题",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "案例描述",
+                    "IsRequired": true
+                },
+                "link": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "详情链接",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

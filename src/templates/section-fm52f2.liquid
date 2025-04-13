@@ -1,0 +1,93 @@
+{% header %}
+<style>
+.section-fm52f2 {
+  padding: 10px 0;
+}
+
+.section-fm52f2 .case-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-fm52f2 .case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.section-fm52f2 .case-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.section-fm52f2 .case-item:hover {
+  transform: translateY(-5px);
+}
+
+.section-fm52f2 .case-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.section-fm52f2 .case-content {
+  padding: 20px;
+}
+
+.section-fm52f2 .case-title {
+  font-size: 1.25em;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.section-fm52f2 .case-description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.section-fm52f2 .case-link {
+  display: inline-block;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .section-fm52f2 {
+    padding: 40px 0;
+  }
+  
+  .section-fm52f2 .case-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-fm52f2">
+  <div class="case-container">
+    <div class="case-grid">
+      {% for case in this.Model.cases %}
+      <div class="case-item">
+        <img property="true" data-property="cases[{{forloop.index | minus:1}}].image" method="attr" para="src" 
+             src="{% url case.image %}" alt="案例图片" class="case-image">
+        <div class="case-content">
+          <h3 property="true" data-property="cases[{{forloop.index | minus:1}}].title" method="text" 
+              class="case-title">{{case.title}}</h3>
+          <p property="true" data-property="cases[{{forloop.index | minus:1}}].description" method="text" 
+             class="case-description">{{case.description}}</p>
+          <a property="true" data-property="cases[{{forloop.index | minus:1}}].link" method="attr" para="href" 
+             href="{% url case.link %}" class="case-link">查看详情</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
