@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import fs from 'fs';
 import { packWidget } from './tools/pack';
+import { createNewSection } from './tools/new-section';
 
 // 定义接口
 interface Example {
@@ -107,7 +108,7 @@ app.get('/', (req: Request, res: Response) => {
 
     const examples: Example[] = templates.map(file => ({
       name: file.replace('.liquid', '')
-    }));
+    })).sort((a, b) => a.name.localeCompare(b.name)? -1 : 1);
 
     engine.renderFile('../index', { examples: examples })
       .then(content => {
@@ -205,19 +206,44 @@ app.post('/api/save-preview', async (req: Request, res: Response) => {
   }
 });
 
-app.get('/download/:template', async (req: Request, res: Response) => {
+app.post('/api/create-template', async (req: Request, res: Response) => {
   try {
-    const templateName = req.params.template;
-    const packageBuffer = await packWidget(templateName);
-
-    res.setHeader('Content-Type', 'application/octet-stream');
-    res.setHeader('Content-Disposition', `attachment; filename=${templateName}.wgt`);
-    res.send(packageBuffer);
+    const { customName } = req.body;
+    const { sectionName } = createNewSection(customName);
+    res.json({
+      success: true,
+      templateName: sectionName
+    });
   } catch (error) {
-    console.error('打包下载失败:', error);
+    console.error('创建模板失败:', error);
     res.status(500).json({
       success: false,
-      error: error instanceof Error ? error.message : '打包下载时发生未知错误'
+      error: error instanceof Error ? error.message : '创建模板时发生未知错误'
+    });
+  }
+});
+
+app.post('/api/pack', async (req: Request, res: Response) => {
+  try {
+    const { templateName } = req.body;
+    if (!templateName) {
+      return res.status(400).json({ success: false, error: '未提供模板名称' });
+    }
+
+    const packageBuffer = await packWidget(templateName);
+    const outputPath = path.resolve(__dirname, `../output/${templateName}.wgt`);
+
+    fs.writeFileSync(outputPath, packageBuffer);
+
+    res.json({
+      success: true,
+      filename: `${templateName}.wgt`
+    });
+  } catch (error) {
+    console.error('打包失败:', error);
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : '打包时发生未知错误'
     });
   }
 });

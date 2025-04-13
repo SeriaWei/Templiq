@@ -21,7 +21,7 @@
   {% if isPreview %}
   <div style="position: fixed;right: 0;top: 0;z-index: 1000;">
     <p><button id="savePreview" class="btn btn-primary">保存缩略图</button></p>
-    <p><a href="/download/{{templateName}}" class="btn btn-primary">下载</a></p>
+    <p><button id="packTemplate" class="btn btn-primary">打包</button></p>
   </div>
   <script>
     document.getElementById('savePreview').addEventListener('click', async function() {
@@ -77,6 +77,27 @@
       }catch(error) {
         console.error('Error capturing preview:', error);
       }
+    });
+    document.getElementById('packTemplate').addEventListener('click', async function() {
+      const templateName = '{{templateName}}';
+      fetch('/api/pack', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ templateName })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.success) {
+          alert('模板打包成功！' + data.filename);
+        } else {
+          alert('打包失败：' + data.error);
+        }
+      })
+      .catch(error => {
+        alert('打包失败：' + error.message);
+      });
     });
   </script>
   {% endif %}

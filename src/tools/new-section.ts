@@ -1,22 +1,30 @@
 import fs from 'fs';
 import path from 'path';
-const sectionName = new Date().getTime().toString(36).substring(2);
-const newSectionTemplate = 
-`{% header %}
-<style>
-.section-${sectionName} {}
-</style>
-{% endheader %}
 
-<section class="section-${sectionName}">
-</section>
+export function createNewSection(customName?: string) {
+    const sectionName = customName || new Date().getTime().toString(36).substring(2);
+    const newSectionTemplate = 
+    `{% header %}
+    <style>
+    .section-${sectionName} {}
+    </style>
+    {% endheader %}
 
-{% footer %}
-<script type="text/javascript">
-</script>
-{% endfooter %}`
+    <section class="section-${sectionName}">
+    </section>
 
-const newSectionFile = path.join(__dirname, '..', 'templates', `section-${sectionName}.liquid`);
-fs.writeFileSync(newSectionFile, newSectionTemplate);
+    {% footer %}
+    <script type="text/javascript">
+    </script>
+    {% endfooter %}`;
 
-console.log(`New section ${sectionName} created at ${newSectionFile}`);
+    const newSectionFile = path.join(__dirname, '..', 'templates', `section-${sectionName}.liquid`);
+    fs.writeFileSync(newSectionFile, newSectionTemplate);
+
+    console.log(`New section ${sectionName} created at ${newSectionFile}`);
+    return { sectionName, filePath: newSectionFile };
+}
+
+if (require.main === module) {
+    createNewSection();
+}

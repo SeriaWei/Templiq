@@ -29,8 +29,11 @@
   object-fit: cover;
 }
 </style>
-<br/>
+
 <div class="container-fluid">
+<p>
+<a href="javascript:void(0)" class="btn btn-primary create-template-btn">创建新模板</a>
+</p>
   {% if examples and examples.size > 0 %}
     <div class="row">
       {% for example in examples %}
@@ -52,3 +55,24 @@
     </div>
   {% endif %}
 </div>
+<script>
+document.querySelector('.create-template-btn').addEventListener('click', function() {
+    fetch('/api/create-template', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.success) {
+        window.location.reload();
+      } else {
+        alert('创建模板失败：' + data.error);
+      }
+    })
+    .catch(error => {
+      alert('创建模板失败：' + error.message);
+    });
+  });
+</script>
