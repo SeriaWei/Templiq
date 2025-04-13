@@ -90,4 +90,3 @@ async function upload(template) {
 }
 
 await upload(process.argv[2]);
-export default upload;
