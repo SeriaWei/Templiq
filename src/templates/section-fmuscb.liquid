@@ -1,0 +1,222 @@
+{% header %}
+<style>
+.section-fmuscb {
+  padding: 2em 0;
+  overflow: hidden;
+}
+.section-fmuscb .carousel-container {
+  max-width: 75em;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.section-fmuscb .heading {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+.section-fmuscb .description {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 2em;
+  color: #666;
+}
+.section-fmuscb .carousel {
+  position: relative;
+  margin: 0 auto;
+}
+.section-fmuscb .slides {
+  position: relative;
+  height: 30em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.section-fmuscb .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.section-fmuscb .slide.active {
+  opacity: 1;
+}
+.section-fmuscb .slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-fmuscb .slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5em;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.section-fmuscb .slide-title {
+  font-size: 1.5em;
+  margin: 0 0 0.5em;
+}
+.section-fmuscb .slide-description {
+  font-size: 1em;
+  margin: 0;
+}
+.section-fmuscb .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3em;
+  height: 3em;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.section-fmuscb .carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.section-fmuscb .carousel-prev {
+  left: 1em;
+}
+.section-fmuscb .carousel-next {
+  right: 1em;
+}
+.section-fmuscb .carousel-dots {
+  position: absolute;
+  bottom: 7em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5em;
+}
+.section-fmuscb .carousel-dot {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.section-fmuscb .carousel-dot.active {
+  background: #fff;
+}
+@media (max-width: 48em) {
+  .section-fmuscb .heading {
+    font-size: 2em;
+  }
+  .section-fmuscb .slides {
+    height: 20em;
+  }
+  .section-fmuscb .carousel-arrow {
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-fmuscb">
+  <div class="carousel-container">
+    <h2 property="true" data-property="heading" method="text" class="heading">{{this.Model.heading}}</h2>
+    <div property="true" data-property="description" method="html" class="description">{{this.Model.description | raw}}</div>
+    
+    <div class="carousel" data-auto-play="{{this.Model.auto_play}}">
+      <ul class="slides">
+        {% for slide in this.Model.slides %}
+        <li class="slide{% if forloop.first %} active{% endif %}">
+          <img property="true" data-property="slides[{{forloop.index | minus:1}}].image" method="attr" para="src" 
+               src="{% url slide.image %}" alt="{{slide.title}}" class="slide-image">
+          <div class="slide-content">
+            <h3 property="true" data-property="slides[{{forloop.index | minus:1}}].title" method="text" 
+                class="slide-title">{{slide.title}}</h3>
+            <p property="true" data-property="slides[{{forloop.index | minus:1}}].description" method="text" 
+               class="slide-description">{{slide.description}}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      
+      {% if this.Model.show_arrows == "true" %}
+      <div class="carousel-arrow carousel-prev">❮</div>
+      <div class="carousel-arrow carousel-next">❯</div>
+      {% endif %}
+      
+      {% if this.Model.show_dots == "true" %}
+      <div class="carousel-dots">
+        {% for slide in this.Model.slides %}
+        <div class="carousel-dot{% if forloop.first %} active{% endif %}"></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  const carousel = document.querySelector('.section-fmuscb .carousel');
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll('.slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  let currentSlide = 0;
+  let autoPlayInterval;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentSlide = index;
+      showSlide(currentSlide);
+    });
+  });
+
+  if (carousel.dataset.autoPlay === 'true') {
+    autoPlayInterval = setInterval(nextSlide, 5000);
+    
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(autoPlayInterval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      autoPlayInterval = setInterval(nextSlide, 5000);
+    });
+  }
+})();
+</script>
+{% endfooter %}
