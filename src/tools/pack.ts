@@ -123,7 +123,32 @@ const VALID_FIELD_TYPES = [
     'Media', 'Array'
 ];
 
-function validateSchema(schema: any, verifyFieldName: boolean): void {
+function validateSchema(schema: any, verifyFieldName: boolean, data?: any): void {
+    if (data) {
+        for (const key in data) {
+            if (!schema[key]) {
+                throw new Error(`Property '${key}' in data is not defined in schema. Please ensure all data properties have corresponding schema definitions.`);
+            }
+            if (Array.isArray(data[key]) && schema[key].FieldType !== 'Array') {
+                throw new Error(`Property '${key}' in data is not Array.`);
+            }
+
+            if (schema[key].Children && !Array.isArray(schema[key].Children)) {
+                schema[key].Children = [schema[key].Children];
+            }
+
+            if (schema[key].FieldType === 'Array' && Array.isArray(data[key])) {
+                if (!schema[key].Children || schema[key].Children.length == 0) {
+                    throw new Error(`Property '${key}' in data is Array, but Children is not defined in schema.`);
+                }
+                if (data[key].length > 0) {
+                    for (const item of data[key]) {
+                        validateSchema(schema[key].Children[0], false, item);
+                    }
+                }
+            }
+        }
+    }
     for (const key in schema) {
         if (verifyFieldName && RESERVED_FIELD_NAMES.includes(key)) {
             throw new Error(`Detected reserved field name '${key}', to avoid system conflicts, the packaging process has been terminated. Please modify the field name and retry.`);
@@ -153,10 +178,6 @@ function validateSchema(schema: any, verifyFieldName: boolean): void {
                 }
             }
         }
-        if (schema[key].Children && !Array.isArray(schema[key].Children)) {
-            schema[key].Children = [schema[key].Children];
-        }
-
         if (schema[key].Children && Array.isArray(schema[key].Children)) {
             for (const child of schema[key].Children) {
                 validateSchema(child, false);
@@ -271,7 +292,7 @@ async function createFullPackage(template: string): Promise<any> {
     const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.json`), "utf8"));
     const schemaDef = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../data/${template}.def.json`), "utf8"));
 
-    validateSchema(schemaDef, true);
+    validateSchema(schemaDef, true, data);
 
     const packageFiles = createPackageFiles(template, viewName);
     const schemaDefWidthData = await mergeDataToSchema(schemaDef, data, packageFiles);

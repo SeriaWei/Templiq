@@ -31,15 +31,31 @@ class B2Uploader {
         return response.data.files;
     }
 
+    async deleteFile(bucketId, fileName) {
+        await this.init();
+        const files = await this.listFiles(bucketId);
+        const existingFile = files.find(file => file.fileName === fileName);
+        
+        if (existingFile) {
+            console.log(`Deleting: ${fileName}`);
+            await b2.deleteFileVersion({
+                fileId: existingFile.fileId,
+                fileName: existingFile.fileName
+            });
+            console.log(`Deleted: ${fileName}`);
+        }
+    }
+
     async uploadFile(bucketId, filePath, fileName) {
         await this.init();
+        const actualFileName = fileName || path.basename(filePath);
+        await this.deleteFile(bucketId, actualFileName);
 
         const { data: { uploadUrl, authorizationToken } } = await b2.getUploadUrl({
             bucketId: bucketId
         });
 
         const fileBuffer = fs.readFileSync(filePath);
-        const actualFileName = fileName || path.basename(filePath);
 
         const response = await b2.uploadFile({
             uploadUrl: uploadUrl,
