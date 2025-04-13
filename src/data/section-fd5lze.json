@@ -1,0 +1,16 @@
+{
+  "faq_items": [
+    {
+      "question": "什么是Templiq？",
+      "answer": "<p>Templiq是一个强大的模板系统，它允许您快速创建和管理网站内容。通过简单的界面，您可以轻松地自定义网站的各个部分。</p>"
+    },
+    {
+      "question": "如何开始使用Templiq？",
+      "answer": "<p>开始使用Templiq非常简单：</p><ul><li>注册一个账户</li><li>选择您喜欢的模板</li><li>自定义内容</li><li>发布您的网站</li></ul>"
+    },
+    {
+      "question": "Templiq支持哪些功能？",
+      "answer": "<p>Templiq提供多种强大的功能：</p><ul><li>响应式设计</li><li>拖放式编辑器</li><li>丰富的模板库</li><li>SEO优化</li><li>实时预览</li></ul>"
+    }
+  ]
+}

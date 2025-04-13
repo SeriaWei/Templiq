@@ -1,0 +1,20 @@
+{
+  "faq_items": {
+    "FieldType": "Array",
+    "DisplayName": "常见问题列表",
+    "Children": [
+      {
+        "question": {
+          "FieldType": "SingleLine",
+          "DisplayName": "问题",
+          "IsRequired": true
+        },
+        "answer": {
+          "FieldType": "HtmlBox",
+          "DisplayName": "答案",
+          "IsRequired": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{% header %}
+<style>
+.section-fd5lze {
+  padding: 4em 0;
+  background-color: #f8f9fa;
+}
+
+.section-fd5lze .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.section-fd5lze .faq-item {
+  margin-bottom: 1em;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25em;
+  background-color: #fff;
+}
+
+.section-fd5lze .faq-question {
+  position: relative;
+  padding: 1em;
+  cursor: pointer;
+  font-weight: 500;
+  color: #212529;
+}
+
+.section-fd5lze .faq-question:after {
+  content: '+';
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section-fd5lze .faq-question[aria-expanded='true']:after {
+  content: '-';
+}
+
+.section-fd5lze .faq-answer {
+  padding: 0 1em 1em;
+  color: #6c757d;
+}
+
+.section-fd5lze .faq-answer p:last-child {
+  margin-bottom: 0;
+}
+</style>
+{% endheader %}
+
+<section class="section-fd5lze">
+  <div class="faq-container">
+    {% for item in this.Model.faq_items %}
+    <div class="faq-item">
+      <div class="faq-question" property="true" data-property="faq_items[{{forloop.index | minus:1}}].question" method="text"
+           data-toggle="collapse" data-target="#faq-{{forloop.index}}" aria-expanded="false" aria-controls="faq-{{forloop.index}}">
+        {{item.question}}
+      </div>
+      <div class="collapse faq-answer" id="faq-{{forloop.index}}" property="true" 
+           data-property="faq_items[{{forloop.index | minus:1}}].answer" method="html">
+        {{item.answer | raw}}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.section-fd5lze .faq-question').on('click', function() {
+    var isExpanded = $(this).attr('aria-expanded') === 'true';
+    $(this).attr('aria-expanded', !isExpanded);
+  });
+});
+</script>
+{% endfooter %}
