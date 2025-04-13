@@ -79,14 +79,16 @@ async function upload(template) {
 
         const uploader = new B2Uploader();
         console.log(`Uploading ${template}.wgt to B2`);
-        const wgtResult = await uploader.uploadFile(bucketId, `./output/${template}.wgt`, `zkeasoft/widgets/${template}.wgt`);
+        const wgtResult = await uploader.uploadFile(bucketId, `./output/${template}.wgt`, `widgets/${template}.wgt`);
         console.log('Complete:', wgtResult);
         console.log(`Uploading ${template}.png to B2`);
-        const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `zkeasoft/widgets/thumb/${template}.png`);
+        const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `widgets/thumb/${template}.png`);
         console.log('Complete:', thubmResult);
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-await upload(process.argv[2]);
+(async () => {
+    await upload(process.argv[2]);
+})();

@@ -1,0 +1,166 @@
+{% header %}
+<style>
+.section-famff0 {
+  position: relative;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4em 2em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.section-famff0::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, rgba(20, 30, 48, 0.9), rgba(36, 59, 85, 0.8));
+  z-index: 1;
+}
+
+.section-famff0 .content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4em;
+}
+
+.section-famff0 .text-content {
+  flex: 1;
+  text-align: left;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.section-famff0 .visual-content {
+  flex: 1;
+  position: relative;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRight 0.8s ease forwards 0.2s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section-famff0 .heading {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  background: linear-gradient(45deg, #fff, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-famff0 .description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 2em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-famff0 .cta-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 2em;
+  font-size: 1.1em;
+  color: #fff;
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.section-famff0 .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(45deg, #2563eb, #1d4ed8);
+}
+
+.section-famff0 .visual-content::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+@media (max-width: 1024px) {
+  .section-famff0 .content-wrapper {
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+  }
+
+  .section-famff0 .text-content {
+    text-align: center;
+  }
+
+  .section-famff0 .heading {
+    font-size: 2.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-famff0 {
+    padding: 3em 1.5em;
+  }
+
+  .section-famff0 .heading {
+    font-size: 2em;
+  }
+
+  .section-famff0 .description {
+    font-size: 1em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-famff0" style="background-image: url('{% url this.Model.background_image %}');">
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h1 property="true" data-property="heading" method="text" class="heading">{{this.Model.heading}}</h1>
+      <div property="true" data-property="description" method="html" class="description">{{this.Model.description | raw}}</div>
+      <a property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}" class="cta-button">
+        <span property="true" data-property="button_text" method="text">{{this.Model.button_text}}</span>
+      </a>
+    </div>
+    <div class="visual-content"></div>
+  </div>
+</section>
