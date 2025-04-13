@@ -1,6 +1,6 @@
 {
     "servers": {
-        "my-mcp-server-b657bf7d": {
+        "my-mcp-server-zkeacms": {
             "type": "stdio",
             "command": "npx",
             "args": ["-y","mcp-zkeacms-api"],
