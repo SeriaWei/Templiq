@@ -1,0 +1,30 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "summary": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "简介文字"
+  },
+  "advantages": {
+    "FieldType": "Array",
+    "DisplayName": "优势列表",
+    "Children": [
+      {
+        "icon": {
+          "FieldType": "Media",
+          "DisplayName": "图标"
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "优势标题"
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "优势描述"
+        }
+      }
+    ]
+  }
+}

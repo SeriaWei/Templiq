@@ -1,0 +1,21 @@
+{
+  "heading": "为什么选择我们",
+  "summary": "<p>我们拥有专业的团队、丰富的经验和创新的解决方案，致力于为客户提供最优质的服务。选择我们，让您的业务更上一层楼。</p>",
+  "advantages": [
+    {
+      "icon": "/icons/medal-line.svg",
+      "title": "专业团队",
+      "description": "拥有多年行业经验的专业团队，为您提供最优质的服务支持"
+    },
+    {
+      "icon": "/icons/pie-chart-line.svg",
+      "title": "创新解决方案",
+      "description": "持续创新的解决方案，助力您的业务快速发展"
+    },
+    {
+      "icon": "/icons/customer-service-2-line.svg",
+      "title": "优质服务",
+      "description": "24/7全天候客户支持，确保您的需求得到及时响应"
+    }
+  ]
+}

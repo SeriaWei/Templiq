@@ -1,0 +1,90 @@
+{% header %}
+<style>
+.section-f90nmb {
+    padding: 4em 0;
+    background-color: #ffffff;
+}
+.section-f90nmb .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.section-f90nmb .section-header {
+    text-align: center;
+    margin-bottom: 3em;
+}
+.section-f90nmb .section-title {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 0.5em;
+}
+.section-f90nmb .section-summary {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+.section-f90nmb .advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    margin-top: 3em;
+}
+.section-f90nmb .advantage-item {
+    text-align: center;
+    padding: 2em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.section-f90nmb .advantage-item:hover {
+    transform: translateY(-5px);
+}
+.section-f90nmb .advantage-icon {
+    width: 3em;
+    height: 3em;
+    margin-bottom: 1em;
+}
+.section-f90nmb .advantage-title {
+    font-size: 1.25em;
+    color: #2c3e50;
+    margin-bottom: 0.5em;
+}
+.section-f90nmb .advantage-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .section-f90nmb {
+        padding: 3em 0;
+    }
+    .section-f90nmb .section-title {
+        font-size: 2em;
+    }
+    .section-f90nmb .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-f90nmb">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+            <div class="section-summary" property="true" data-property="summary" method="html">{{this.Model.summary | raw}}</div>
+        </div>
+        <div class="advantages-grid">
+            {% for advantage in this.Model.advantages %}
+            <div class="advantage-item">
+                <img property="true" data-property="advantages[{{forloop.index | minus:1}}].icon" method="attr" para="src" src="{% url advantage.icon %}" class="advantage-icon" alt="{{advantage.title}}">
+                <h3 property="true" data-property="advantages[{{forloop.index | minus:1}}].title" method="text" class="advantage-title">{{advantage.title}}</h3>
+                <p property="true" data-property="advantages[{{forloop.index | minus:1}}].description" method="text" class="advantage-description">{{advantage.description}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

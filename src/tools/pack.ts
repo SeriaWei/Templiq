@@ -24,6 +24,9 @@ function readFileAsBase64(filePath: string): string {
 
 function generateUniqueFileName(url: string): string {
     const hash = crypto.createHash('md5').update(url).digest('hex');
+    if (url.startsWith('/')) {
+        return hash + path.extname(url);
+    }
     let ext = '.jpg';
     try {
         const urlObj = new URL(url);
@@ -44,6 +47,12 @@ async function downloadFile(url: string): Promise<Buffer> {
     if (fs.existsSync(cachePath)) {
         console.log(`Using cached file: ${fileName}`);
         return fs.readFileSync(cachePath);
+    }
+
+    if (url.startsWith('/')) {
+        console.log(`Reading local file: ${url}`);
+        const buffer = fs.readFileSync(path.resolve(__dirname, '../public', url.slice(1)));
+        return buffer;
     }
 
     console.log(`Downloading: ${url}`);
@@ -128,7 +137,7 @@ function validateSchema(schema: any, verifyFieldName: boolean): void {
         if (!VALID_FIELD_TYPES.includes(schema[key].FieldType)) {
             throw new Error(`Invalid FieldType '${schema[key].FieldType}' for field '${key}'. Valid types are: ${VALID_FIELD_TYPES.join(', ')}.`);
         }
-        if(schema[key].FieldType === 'Radio' || schema[key].FieldType === 'Dropdown'){
+        if (schema[key].FieldType === 'Radio' || schema[key].FieldType === 'Dropdown') {
             if (!schema[key].FieldOptions) {
                 throw new Error(`Field '${key}' is missing required property 'FieldOptions'.`);
             }
@@ -136,12 +145,12 @@ function validateSchema(schema: any, verifyFieldName: boolean): void {
                 throw new Error(`FieldOptions for field '${key}' should be an array.`);
             }
             if (schema[key].FieldOptions.length < 1) {
-                throw new Error(`FieldOptions for field '${key}' should more than 1.`); 
+                throw new Error(`FieldOptions for field '${key}' should more than 1.`);
             }
             for (const option of schema[key].FieldOptions) {
                 if (!option.DisplayText || !option.Value) {
                     throw new Error(`Invalid FieldOptions for field '${key}'. Each option should have 'DisplayText' and 'Value' properties.`);
-                } 
+                }
             }
         }
         if (schema[key].Children && !Array.isArray(schema[key].Children)) {
@@ -173,24 +182,19 @@ async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): P
                     result[key].Children = childResults;
                 }
             } else {
-                if (result[key].FieldType === 'Media' && data[key] && data[key].startsWith('http')) {
+                if (result[key].FieldType === 'Media' && data[key]) {
                     const url = data[key];
                     const fileName = generateUniqueFileName(url);
                     const newPath = `~/UpLoad/Images/Widget/${fileName}`;
 
-                    try {
-                        const fileContent = await downloadFile(url);
-                        console.log(`New path: ${newPath}`);
-                        result[key].Value = newPath;
-                        packageFiles.push({
-                            FileName: path.basename(newPath),
-                            FilePath: newPath,
-                            Content: fileContent.toString('base64')
-                        });
-                    } catch (error) {
-                        result[key].Value = url;
-                        console.error(`Failed to download file from ${url}:`, error);
-                    }
+                    const fileContent = await downloadFile(url);
+                    console.log(`New path: ${newPath}`);
+                    result[key].Value = newPath;
+                    packageFiles.push({
+                        FileName: path.basename(newPath),
+                        FilePath: newPath,
+                        Content: fileContent.toString('base64')
+                    });
                 } else {
                     result[key].Value = data[key];
                 }
