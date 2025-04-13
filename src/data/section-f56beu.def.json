@@ -1,0 +1,22 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "description": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "描述内容"
+  },
+  "button_text": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮文本"
+  },
+  "button_link": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮链接"
+  },
+  "background_image": {
+    "FieldType": "Media",
+    "DisplayName": "背景图片"
+  }
+}

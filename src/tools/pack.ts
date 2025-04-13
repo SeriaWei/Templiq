@@ -39,7 +39,7 @@ function generateUniqueFileName(url: string): string {
 
 async function downloadFile(url: string): Promise<Buffer> {
     const fileName = generateUniqueFileName(url);
-    const cachePath = path.resolve(__dirname, '../public/thumbs', fileName);
+    const cachePath = path.resolve(__dirname, '../public/thumbs/cached', fileName);
 
     if (fs.existsSync(cachePath)) {
         console.log(`Using cached file: ${fileName}`);

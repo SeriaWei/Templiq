@@ -1,0 +1,103 @@
+{% header %}
+<style>
+.section-f56beu {
+  position: relative;
+  padding: 80px 0;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.section-f56beu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.section-f56beu .content-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+.section-f56beu .heading {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.section-f56beu .description {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 2em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-f56beu .cta-button {
+  display: inline-block;
+  padding: 0.8em 2em;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.section-f56beu .cta-button:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .section-f56beu {
+    padding: 60px 0;
+  }
+
+  .section-f56beu .heading {
+    font-size: 2.5em;
+  }
+
+  .section-f56beu .description {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-f56beu {
+    padding: 40px 0;
+  }
+
+  .section-f56beu .heading {
+    font-size: 2em;
+  }
+
+  .section-f56beu .description {
+    font-size: 1em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-f56beu" style="background-image: url('{% url this.Model.background_image %}');">
+  <div class="content-wrapper">
+    <h1 property="true" data-property="heading" method="text" class="heading">{{this.Model.heading}}</h1>
+    <div property="true" data-property="description" method="html" class="description">{{this.Model.description | raw}}</div>
+    <a property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}" class="cta-button">
+      <span property="true" data-property="button_text" method="text">{{this.Model.button_text}}</span>
+    </a>
+  </div>
+</section>
