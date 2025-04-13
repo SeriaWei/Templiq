@@ -1,0 +1,78 @@
+{% header %}
+<style>
+.section-ferwd7 {
+  padding: 1em 0;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-ferwd7 .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.section-ferwd7 .nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-ferwd7 .nav-item {
+  flex: 1;
+  min-width: 150px;
+}
+
+.section-ferwd7 .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.8em 1em;
+  background: #f8f9fa;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.section-ferwd7 .nav-link:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.section-ferwd7 .nav-icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .section-ferwd7 .nav-item {
+    min-width: calc(50% - 0.5em);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-ferwd7 .nav-item {
+    min-width: 100%;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-ferwd7">
+  <div class="nav-container">
+    <ul class="nav-list">
+      {% for item in this.Model.nav_items %}
+      <li class="nav-item">
+        <a property="true" data-property="nav_items[{{forloop.index | minus:1}}].link" method="attr" para="href" href="{% url item.link %}" class="nav-link">
+          <img property="true" data-property="nav_items[{{forloop.index | minus:1}}].icon" method="attr" para="src" src="{% url item.icon %}" alt="" class="nav-icon" />
+          <span property="true" data-property="nav_items[{{forloop.index | minus:1}}].text" method="text">{{item.text}}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

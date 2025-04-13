@@ -1,0 +1,25 @@
+{
+  "nav_items": {
+    "FieldType": "Array",
+    "DisplayName": "导航项列表",
+    "Children": [
+      {
+        "icon": {
+          "FieldType": "Media",
+          "DisplayName": "图标",
+          "IsRequired": true
+        },
+        "text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "文本",
+          "IsRequired": true
+        },
+        "link": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接",
+          "IsRequired": true
+        }
+      }
+    ]
+  }
+}
