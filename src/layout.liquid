@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <main class="content" style="max-width: 1300px; margin: 0 auto;">
+  <main class="content" style="margin: 0 auto;">
     {{ content }}
   </main>
   {% if isPreview %}
@@ -51,6 +51,7 @@
     document.getElementById('savePreview').addEventListener('click', async function () {
       let content = document.querySelector('main.content');
       const templateName = '{{templateName}}';
+      const originalWidth = content.style.width;
 
       const images = content.getElementsByTagName('img');
       const imagePromises = Array.from(images).map(img => {
@@ -63,28 +64,40 @@
 
       try {
         await Promise.all(imagePromises);
+        // 生成原始尺寸图片
         const canvas = await html2canvas(content, {
           useCORS: true,
           allowTaint: true
         });
-
-        // 保存原始尺寸图片
         const originalImageData = canvas.toDataURL('image/png');
+
+        // 设置固定宽度生成缩略图
+        content.style.width = '1200px';
+        // use await to wait for the canvas to be ready
+        await new Promise((resolve, reject) => {
+          setTimeout(resolve, 1000);
+        });
+
+        const thumbnailCanvas = await html2canvas(content, {
+          useCORS: true,
+          allowTaint: true
+        });
 
         // 生成缩小的图片
         const maxWidth = 500;
-        const scale = Math.min(1, maxWidth / canvas.width);
-        const scaledWidth = canvas.width * scale;
-        const scaledHeight = canvas.height * scale;
+        const scale = Math.min(1, maxWidth / thumbnailCanvas.width);
+        const scaledWidth = thumbnailCanvas.width * scale;
+        const scaledHeight = thumbnailCanvas.height * scale;
 
         const scaledCanvas = document.createElement('canvas');
         scaledCanvas.width = scaledWidth;
         scaledCanvas.height = scaledHeight;
         const ctx = scaledCanvas.getContext('2d');
-        ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight);
+        ctx.drawImage(thumbnailCanvas, 0, 0, scaledWidth, scaledHeight);
 
         const thumbnailImageData = scaledCanvas.toDataURL('image/png', 0.8);
 
+        content.style.width = originalWidth;
         // 发送两个图片数据到服务器
         fetch('/api/save-preview', {
           method: 'POST',
