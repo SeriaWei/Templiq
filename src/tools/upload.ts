@@ -106,8 +106,13 @@ async function upload(template: string) {
         console.log(`Uploading ${template}.wgt to B2`);
         const wgtResult = await uploader.uploadFile(bucketId, `./output/${template}.wgt`, `widgets/${template}.wgt`);
         console.log('Complete:', wgtResult.fileName);
+        
         console.log(`Uploading ${template}.png to B2`);
-        const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `widgets/thumb/${template}.png`);
+        const thubResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `widgets/thumb/${template}.png`);
+        console.log('Complete:', thubResult.fileName);
+        
+        console.log(`Uploading ${template}-m.png to B2`);
+        const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}-m.png`, `widgets/thumb/${template}-m.png`);
         console.log('Complete:', thubmResult.fileName);
     } catch (error) {
         console.error('Error:', error);

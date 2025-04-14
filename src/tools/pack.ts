@@ -236,7 +236,7 @@ function createPackageFiles(template: string, viewName: string): any[] {
         {
             "FileName": `${template}.png`,
             "FilePath": `~/UpLoad/Images/Widget/${template}.png`,
-            "Content": readFileAsBase64(path.resolve(__dirname, `../public/thumbs/${template}.png`))
+            "Content": readFileAsBase64(path.resolve(__dirname, `../public/thumbs/${template}-m.png`))
         }
     ];
 }
