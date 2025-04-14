@@ -50,9 +50,9 @@
     });
     document.getElementById('savePreview').addEventListener('click', async function () {
       let content = document.querySelector('main.content>section');
-      if (content.children.length === 1 && content.children[0].clientWidth < content.clientWidth) {
-        content = content.children[0];
-      }
+      // if (content.children.length === 1 && content.children[0].clientWidth < content.clientWidth) {
+      //   content = content.children[0];
+      // }
       const templateName = '{{templateName}}';
 
       const images = content.getElementsByTagName('img');
