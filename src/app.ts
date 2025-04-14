@@ -165,35 +165,37 @@ app.get('/preview/:template', async (req: Request, res: Response) => {
 
 app.post('/api/save-preview', async (req: Request, res: Response) => {
   try {
-    const { imageData } = req.body;
-    if (!imageData) {
+    const { originalImageData, thumbnailImageData, templateName } = req.body;
+    if (!originalImageData || !thumbnailImageData) {
       return res.status(400).json({ success: false, error: '未提供图片数据' });
     }
+    if (!templateName) {
+      return res.status(400).json({ success: false, error: '未提供模板名称' });
+    }
 
-    // 从Base64数据中提取实际的图片数据
-    const base64Data = imageData.replace(/^data:image\/png;base64,/, '');
-    const imageBuffer = Buffer.from(base64Data, 'base64');
-
-    // 确保thumbs目录存在
     const thumbsDir = path.resolve(__dirname, 'public/thumbs');
     if (!fs.existsSync(thumbsDir)) {
       fs.mkdirSync(thumbsDir, { recursive: true });
     }
 
-    // 使用模板名称作为文件名
-    const { templateName } = req.body;
-    if (!templateName) {
-      return res.status(400).json({ success: false, error: '未提供模板名称' });
-    }
-    const filename = `${templateName}.png`;
-    const filePath = path.join(thumbsDir, filename);
+    // 保存原始图片
+    const originalBase64Data = originalImageData.replace(/^data:image\/png;base64,/, '');
+    const originalImageBuffer = Buffer.from(originalBase64Data, 'base64');
+    const originalFilename = `${templateName}.png`;
+    const originalFilePath = path.join(thumbsDir, originalFilename);
+    fs.writeFileSync(originalFilePath, originalImageBuffer);
 
-    // 保存图片
-    fs.writeFileSync(filePath, imageBuffer);
+    // 保存缩略图
+    const thumbnailBase64Data = thumbnailImageData.replace(/^data:image\/png;base64,/, '');
+    const thumbnailImageBuffer = Buffer.from(thumbnailBase64Data, 'base64');
+    const thumbnailFilename = `${templateName}-m.png`;
+    const thumbnailFilePath = path.join(thumbsDir, thumbnailFilename);
+    fs.writeFileSync(thumbnailFilePath, thumbnailImageBuffer);
 
     res.json({
       success: true,
-      filename: filename
+      originalFilename,
+      thumbnailFilename
     });
   } catch (error) {
     console.error('保存预览图失败:', error);

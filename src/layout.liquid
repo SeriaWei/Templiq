@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
   <!-- html2canvas -->
   <script src="/html2canvas.min.js"></script>
 </head>
+
 <body>
   <main class="content">
-      {{ content }}
+    {{ content }}
   </main>
   {% if isPreview %}
   <div class="btn-group" style="position: fixed;right: 0;top: 0;z-index: 1000;">
@@ -25,7 +27,7 @@
     <button id="uploadTemplate" class="btn btn-primary">上传</button>
   </div>
   <script>
-    document.getElementById('uploadTemplate').addEventListener('click', async function() {
+    document.getElementById('uploadTemplate').addEventListener('click', async function () {
       const templateName = '{{templateName}}';
       fetch('/api/upload', {
         method: 'POST',
@@ -34,22 +36,25 @@
         },
         body: JSON.stringify({ templateName })
       })
-      .then(response => response.json())
-      .then(data => {
-        if(data.success) {
-          alert('模板上传成功！');
-        } else {
-          alert('上传失败：' + data.error);
-        }
-      })
-      .catch(error => {
-        alert('上传失败：' + error.message);
-      });
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('模板上传成功！');
+          } else {
+            alert('上传失败：' + data.error);
+          }
+        })
+        .catch(error => {
+          alert('上传失败：' + error.message);
+        });
     });
-    document.getElementById('savePreview').addEventListener('click', async function() {
-      const content = document.querySelector('main.content');
+    document.getElementById('savePreview').addEventListener('click', async function () {
+      let content = document.querySelector('main.content section');
+      if (content.children.length === 1 && content.children[0].clientWidth < content.clientWidth) {
+        content = content.children[0];
+      }
       const templateName = '{{templateName}}';
-      
+
       const images = content.getElementsByTagName('img');
       const imagePromises = Array.from(images).map(img => {
         if (img.complete) return Promise.resolve();
@@ -58,49 +63,59 @@
           img.onerror = reject;
         });
       });
-      
+
       try {
         await Promise.all(imagePromises);
         const canvas = await html2canvas(content, {
           useCORS: true,
           allowTaint: true
         });
-        
-        const maxWidth = 800; 
+
+        // 保存原始尺寸图片
+        const originalImageData = canvas.toDataURL('image/png');
+
+        // 生成缩小的图片
+        const maxWidth = 500;
         const scale = Math.min(1, maxWidth / canvas.width);
         const scaledWidth = canvas.width * scale;
         const scaledHeight = canvas.height * scale;
-        
+
         const scaledCanvas = document.createElement('canvas');
         scaledCanvas.width = scaledWidth;
         scaledCanvas.height = scaledHeight;
         const ctx = scaledCanvas.getContext('2d');
         ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight);
-        
-        const imageData = scaledCanvas.toDataURL('image/png', 0.8); // 使用0.8的质量压缩
+
+        const thumbnailImageData = scaledCanvas.toDataURL('image/png', 0.8);
+
+        // 发送两个图片数据到服务器
         fetch('/api/save-preview', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ imageData, templateName })
+          body: JSON.stringify({
+            originalImageData,
+            thumbnailImageData,
+            templateName
+          })
         })
-        .then(response => response.json())
-        .then(data => {
-          if(data.success) {
-            alert('缩略图保存成功！');
-          } else {
-            alert('保存失败：' + data.error);
-          }
-        })
-        .catch(error => {
-          alert('保存失败：' + error.message);
-        });
-      }catch(error) {
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert('缩略图保存成功！');
+            } else {
+              alert('保存失败：' + data.error);
+            }
+          })
+          .catch(error => {
+            alert('保存失败：' + error.message);
+          });
+      } catch (error) {
         console.error('Error capturing preview:', error);
       }
     });
-    document.getElementById('packTemplate').addEventListener('click', async function() {
+    document.getElementById('packTemplate').addEventListener('click', async function () {
       const templateName = '{{templateName}}';
       fetch('/api/pack', {
         method: 'POST',
@@ -109,19 +124,20 @@
         },
         body: JSON.stringify({ templateName })
       })
-      .then(response => response.json())
-      .then(data => {
-        if(data.success) {
-          alert('模板打包成功！' + data.filename);
-        } else {
-          alert('打包失败：' + data.error);
-        }
-      })
-      .catch(error => {
-        alert('打包失败：' + error.message);
-      });
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('模板打包成功！' + data.filename);
+          } else {
+            alert('打包失败：' + data.error);
+          }
+        })
+        .catch(error => {
+          alert('打包失败：' + error.message);
+        });
     });
   </script>
   {% endif %}
 </body>
+
 </html>

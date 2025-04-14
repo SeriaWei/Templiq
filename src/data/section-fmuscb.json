@@ -18,7 +18,7 @@
       "description": "令人心醉的黄昏美景"
     }
   ],
-  "show_dots": true,
-  "show_arrows": true,
-  "auto_play": true
+  "show_dots": "true",
+  "show_arrows": "true",
+  "auto_play": "true"
 }
