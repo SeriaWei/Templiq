@@ -4,13 +4,15 @@ import path from 'path';
 import dotenv from 'dotenv';
 
 dotenv.config();
+interface B2File { fileId: string; fileName: string };
 
 const b2 = new B2({
-    applicationKeyId: process.env.B2_APPLICATION_KEY_ID,
-    applicationKey: process.env.B2_APPLICATION_KEY
+    applicationKeyId: process.env.B2_APPLICATION_KEY_ID as string,
+    applicationKey: process.env.B2_APPLICATION_KEY as string
 });
 
 class B2Uploader {
+    authorized: boolean;
     constructor() {
         this.authorized = false;
     }
@@ -22,20 +24,23 @@ class B2Uploader {
         }
     }
 
-    async listFiles(bucketId) {
+    async listFiles(bucketId: string, prefix: string): Promise<B2File[]> {
         await this.init();
         const response = await b2.listFileNames({
             bucketId: bucketId,
             maxFileCount: 1000,
+            startFileName: '',
+            prefix: prefix,
+            delimiter: ''
         });
-        return response.data.files;
+        return response.data.files as B2File[];
     }
 
-    async deleteFile(bucketId, fileName) {
+    async deleteFile(bucketId: string, fileName: string) {
         await this.init();
-        const files = await this.listFiles(bucketId);
+        const files = await this.listFiles(bucketId, fileName);
         const existingFile = files.find(file => file.fileName === fileName);
-        
+
         if (existingFile) {
             console.log(`Deleting: ${fileName}`);
             await b2.deleteFileVersion({
@@ -46,7 +51,11 @@ class B2Uploader {
         }
     }
 
-    async uploadFile(bucketId, filePath, fileName) {
+    async uploadFile(bucketId: string, filePath: string, fileName: string): Promise<B2File> {
+        if (!fs.existsSync(filePath)) {
+            console.error(`File not found: ${filePath}`);
+            return { fileId: '', fileName: '' };
+        }
         await this.init();
         const actualFileName = fileName || path.basename(filePath);
         await this.deleteFile(bucketId, actualFileName);
@@ -64,14 +73,14 @@ class B2Uploader {
             data: fileBuffer,
             onUploadProgress: (event) => {
                 const percent = Math.round((event.loaded * 100) / event.total);
-                console.log(`上传进度: ${percent}%`);
+                console.log(`Upload progress: ${percent}%`);
             }
         });
 
-        return response.data;
+        return response.data as B2File;
     }
 
-    async uploadBuffer(bucketId, buffer, fileName) {
+    async uploadBuffer(bucketId: string, buffer: Buffer, fileName: string) {
         await this.init();
 
         const { data: { uploadUrl, authorizationToken } } = await b2.getUploadUrl({
@@ -89,22 +98,26 @@ class B2Uploader {
     }
 }
 
-async function upload(template) {
+async function upload(template: string) {
     try {
-        const bucketId = process.env.B2_BUCKET_ID;
+        const bucketId = process.env.B2_BUCKET_ID as string;
 
         const uploader = new B2Uploader();
         console.log(`Uploading ${template}.wgt to B2`);
         const wgtResult = await uploader.uploadFile(bucketId, `./output/${template}.wgt`, `widgets/${template}.wgt`);
-        console.log('Complete:', wgtResult);
+        console.log('Complete:', wgtResult.fileName);
         console.log(`Uploading ${template}.png to B2`);
         const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `widgets/thumb/${template}.png`);
-        console.log('Complete:', thubmResult);
+        console.log('Complete:', thubmResult.fileName);
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-(async () => {
-    await upload(process.argv[2]);
-})();
+export { upload };
+
+if (require.main === module) {
+    (async () => {
+        await upload(process.argv[2]);
+    })();
+}

@@ -5,8 +5,8 @@ import path from 'path';
 import fs from 'fs';
 import { packWidget } from './tools/pack';
 import { createNewSection } from './tools/new-section';
+import * as B2 from './tools/upload';
 
-// 定义接口
 interface Example {
   name: string;
 }
@@ -102,7 +102,6 @@ app.get('/', (req: Request, res: Response) => {
   try {
     const templateDir = path.resolve(__dirname, './templates');
 
-    // 读取所有.liquid模板文件
     const templates = fs.readdirSync(templateDir)
       .filter(file => file.endsWith('.liquid'));
 
@@ -164,7 +163,6 @@ app.get('/preview/:template', async (req: Request, res: Response) => {
   }
 });
 
-// 处理保存预览图的API
 app.post('/api/save-preview', async (req: Request, res: Response) => {
   try {
     const { imageData } = req.body;
@@ -244,6 +242,27 @@ app.post('/api/pack', async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : '打包时发生未知错误'
+    });
+  }
+});
+
+app.post('/api/upload', async (req: Request, res: Response) => {
+  try {
+    const { templateName } = req.body;
+    if (!templateName) {
+      return res.status(400).json({ success: false, error: '未提供模板名称' });
+    }
+
+    await B2.upload(templateName);
+
+    res.json({
+      success: true
+    });
+  } catch (error) {
+    console.error('上传失败:', error);
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : '上传时发生未知错误'
     });
   }
 });

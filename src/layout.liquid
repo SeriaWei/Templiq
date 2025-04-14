@@ -19,11 +19,33 @@
       {{ content }}
   </main>
   {% if isPreview %}
-  <div style="position: fixed;right: 0;top: 0;z-index: 1000;">
-    <p><button id="savePreview" class="btn btn-primary">保存缩略图</button></p>
-    <p><button id="packTemplate" class="btn btn-primary">打包</button></p>
+  <div class="btn-group" style="position: fixed;right: 0;top: 0;z-index: 1000;">
+    <button id="savePreview" class="btn btn-primary">保存缩略图</button>
+    <button id="packTemplate" class="btn btn-primary">打包</button>
+    <button id="uploadTemplate" class="btn btn-primary">上传</button>
   </div>
   <script>
+    document.getElementById('uploadTemplate').addEventListener('click', async function() {
+      const templateName = '{{templateName}}';
+      fetch('/api/upload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ templateName })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.success) {
+          alert('模板上传成功！');
+        } else {
+          alert('上传失败：' + data.error);
+        }
+      })
+      .catch(error => {
+        alert('上传失败：' + error.message);
+      });
+    });
     document.getElementById('savePreview').addEventListener('click', async function() {
       const content = document.querySelector('main.content');
       const templateName = '{{templateName}}';
