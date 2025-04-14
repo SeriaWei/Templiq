@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <main class="content">
+  <main class="content" style="max-width: 1300px; margin: 0 auto;">
     {{ content }}
   </main>
   {% if isPreview %}
@@ -49,10 +49,7 @@
         });
     });
     document.getElementById('savePreview').addEventListener('click', async function () {
-      let content = document.querySelector('main.content>section');
-      // if (content.children.length === 1 && content.children[0].clientWidth < content.clientWidth) {
-      //   content = content.children[0];
-      // }
+      let content = document.querySelector('main.content');
       const templateName = '{{templateName}}';
 
       const images = content.getElementsByTagName('img');
