@@ -80,12 +80,29 @@ async function downloadFile(url: string): Promise<Buffer> {
                     const metadata = await image.metadata();
 
                     let processedBuffer: Buffer;
-                    if (metadata.width && metadata.width > 1920) {
+                    if (metadata.format === 'jpeg' || metadata.format === 'jpg') {
                         processedBuffer = await image
-                            .resize(1920, undefined, {
+                            .resize(metadata.width && metadata.width > 1920 ? 1920 : metadata.width, undefined, {
                                 fit: 'inside',
                                 withoutEnlargement: true
                             })
+                            .jpeg({ quality: 80, mozjpeg: true })
+                            .toBuffer();
+                    } else if (metadata.format === 'png') {
+                        processedBuffer = await image
+                            .resize(metadata.width && metadata.width > 1920 ? 1920 : metadata.width, undefined, {
+                                fit: 'inside',
+                                withoutEnlargement: true
+                            })
+                            .png({ compressionLevel: 9, palette: true, quality: 80 })
+                            .toBuffer();
+                    } else if (metadata.format === 'webp') {
+                        processedBuffer = await image
+                            .resize(metadata.width && metadata.width > 1920 ? 1920 : metadata.width, undefined, {
+                                fit: 'inside',
+                                withoutEnlargement: true
+                            })
+                            .webp({ quality: 80 })
                             .toBuffer();
                     } else {
                         processedBuffer = buffer;
