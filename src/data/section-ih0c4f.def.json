@@ -1,0 +1,42 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "description": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "描述内容"
+  },
+  "image": {
+    "FieldType": "Media",
+    "DisplayName": "产品图片"
+  },
+  "features": {
+    "FieldType": "Array",
+    "DisplayName": "产品特点",
+    "Children": [
+      {
+        "icon": {
+          "FieldType": "Media",
+          "DisplayName": "图标"
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "特点标题"
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "特点描述"
+        }
+      }
+    ]
+  },
+  "button_text": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮文字"
+  },
+  "button_link": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮链接"
+  }
+}

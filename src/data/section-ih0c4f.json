@@ -1,0 +1,24 @@
+{
+  "heading": "高性能存储解决方案",
+  "description": "<p>提供卓越的数据存储性能，满足您的专业需求。采用先进技术，确保数据传输速度和安全性。</p>",
+  "image": "https://images.unsplash.com/photo-1563089145-599997674d42?w=800&q=80",
+  "features": [
+    {
+      "icon": "https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?w=100&q=80",
+      "title": "高速传输",
+      "description": "采用最新接口技术，提供极致传输速度"
+    },
+    {
+      "icon": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=100&q=80",
+      "title": "可靠耐用",
+      "description": "优质芯片和严格质检，确保产品稳定性"
+    },
+    {
+      "icon": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&q=80",
+      "title": "兼容性强",
+      "description": "支持多种设备和系统平台"
+    }
+  ],
+  "button_text": "了解更多",
+  "button_link": "/products"
+}

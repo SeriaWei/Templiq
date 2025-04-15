@@ -1,0 +1,157 @@
+{% header %}
+<style>
+.section-ih0c4f {
+  padding: 4em 0;
+  background: #f8f9fa;
+}
+
+.section-ih0c4f .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.section-ih0c4f .product-showcase {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+
+.section-ih0c4f .product-content {
+  flex: 1;
+}
+
+.section-ih0c4f .product-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.section-ih0c4f .product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5em;
+  box-shadow: 0 1em 2em rgba(0,0,0,0.1);
+}
+
+.section-ih0c4f .heading {
+  font-size: 2.5em;
+  color: #1a1a1a;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.section-ih0c4f .description {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 2em;
+  line-height: 1.6;
+}
+
+.section-ih0c4f .features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.section-ih0c4f .feature {
+  text-align: center;
+  padding: 1.5em;
+  background: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0,0,0,0.05);
+}
+
+.section-ih0c4f .feature-icon {
+  width: 3em;
+  height: 3em;
+  margin-bottom: 1em;
+}
+
+.section-ih0c4f .feature-title {
+  font-size: 1.2em;
+  color: #1a1a1a;
+  margin-bottom: 0.5em;
+}
+
+.section-ih0c4f .feature-description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.section-ih0c4f .cta-button {
+  display: inline-block;
+  padding: 0.8em 2em;
+  font-size: 1.1em;
+  color: white;
+  background: #0066cc;
+  border-radius: 0.3em;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.section-ih0c4f .cta-button:hover {
+  background: #0052a3;
+}
+
+@media (max-width: 992px) {
+  .section-ih0c4f .product-showcase {
+    flex-direction: column;
+    gap: 2em;
+  }
+  
+  .section-ih0c4f .product-image {
+    max-width: 100%;
+    order: -1;
+  }
+  
+  .section-ih0c4f .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .section-ih0c4f {
+    padding: 2em 0;
+  }
+  
+  .section-ih0c4f .heading {
+    font-size: 2em;
+  }
+  
+  .section-ih0c4f .features {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-ih0c4f">
+  <div class="container">
+    <div class="product-showcase">
+      <div class="product-content">
+        <h2 property="true" data-property="heading" method="text" class="heading">{{this.Model.heading}}</h2>
+        <div property="true" data-property="description" method="html" class="description">{{this.Model.description | raw}}</div>
+        
+        <div class="features">
+          {% for feature in this.Model.features %}
+          <div class="feature">
+            <img property="true" data-property="features[{{forloop.index | minus:1}}].icon" method="attr" para="src" src="{% url feature.icon %}" class="feature-icon" alt="Feature icon">
+            <h3 property="true" data-property="features[{{forloop.index | minus:1}}].title" method="text" class="feature-title">{{feature.title}}</h3>
+            <p property="true" data-property="features[{{forloop.index | minus:1}}].description" method="text" class="feature-description">{{feature.description}}</p>
+          </div>
+          {% endfor %}
+        </div>
+        
+        <a property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}" class="cta-button">
+          <span property="true" data-property="button_text" method="text">{{this.Model.button_text}}</span>
+        </a>
+      </div>
+      
+      <div class="product-image">
+        <img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="Product image">
+      </div>
+    </div>
+  </div>
+</section>
