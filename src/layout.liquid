@@ -67,23 +67,17 @@
         // 生成原始尺寸图片
         const canvas = await html2canvas(content, {
           useCORS: true,
-          allowTaint: true
+          allowTaint: true,
+          windowWidth: 1200
         });
-        const originalImageData = canvas.toDataURL('image/png');
-
-        // 设置固定宽度生成缩略图
-        content.style.width = '1200px';
-        // use await to wait for the canvas to be ready
-        await new Promise((resolve, reject) => {
-          setTimeout(resolve, 1000);
-        });
+        const originalImageData = canvas.toDataURL('image/png');        
 
         const thumbnailCanvas = await html2canvas(content, {
           useCORS: true,
-          allowTaint: true
+          allowTaint: true,
+          windowWidth: 1024
         });
 
-        // 生成缩小的图片
         const maxWidth = 500;
         const scale = Math.min(1, maxWidth / thumbnailCanvas.width);
         const scaledWidth = thumbnailCanvas.width * scale;
@@ -95,10 +89,10 @@
         const ctx = scaledCanvas.getContext('2d');
         ctx.drawImage(thumbnailCanvas, 0, 0, scaledWidth, scaledHeight);
 
-        const thumbnailImageData = scaledCanvas.toDataURL('image/png', 0.8);
+        const thumbnailImageData = scaledCanvas.toDataURL('image/png');
 
         content.style.width = originalWidth;
-        // 发送两个图片数据到服务器
+        
         fetch('/api/save-preview', {
           method: 'POST',
           headers: {

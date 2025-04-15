@@ -3,6 +3,7 @@ import { Liquid } from 'liquidjs';
 import bodyParser from 'body-parser';
 import path from 'path';
 import fs from 'fs';
+import sharp from 'sharp';
 import { packWidget } from './tools/pack';
 import { createNewSection } from './tools/new-section';
 import * as B2 from './tools/upload';
@@ -178,19 +179,23 @@ app.post('/api/save-preview', async (req: Request, res: Response) => {
       fs.mkdirSync(thumbsDir, { recursive: true });
     }
 
-    // 保存原始图片
-    const originalBase64Data = originalImageData.replace(/^data:image\/png;base64,/, '');
+    const originalBase64Data = originalImageData.replace(/^data:image\/[^;]+;base64,/, '');
     const originalImageBuffer = Buffer.from(originalBase64Data, 'base64');
     const originalFilename = `${templateName}.png`;
     const originalFilePath = path.join(thumbsDir, originalFilename);
-    fs.writeFileSync(originalFilePath, originalImageBuffer);
+    
+    await sharp(originalImageBuffer)
+      .png({ quality: 70, compressionLevel: 9 })
+      .toFile(originalFilePath);
 
-    // 保存缩略图
-    const thumbnailBase64Data = thumbnailImageData.replace(/^data:image\/png;base64,/, '');
+    const thumbnailBase64Data = thumbnailImageData.replace(/^data:image\/[^;]+;base64,/, '');
     const thumbnailImageBuffer = Buffer.from(thumbnailBase64Data, 'base64');
     const thumbnailFilename = `${templateName}-m.png`;
     const thumbnailFilePath = path.join(thumbsDir, thumbnailFilename);
-    fs.writeFileSync(thumbnailFilePath, thumbnailImageBuffer);
+    
+    await sharp(thumbnailImageBuffer)
+      .png({ quality: 90, compressionLevel: 9 })
+      .toFile(thumbnailFilePath);
 
     res.json({
       success: true,
