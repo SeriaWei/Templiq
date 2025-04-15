@@ -140,7 +140,7 @@ const VALID_FIELD_TYPES = [
     'Media', 'Array'
 ];
 
-function validateSchema(schema: any, verifyFieldName: boolean, data?: any): void {
+export function validateSchema(schema: any, verifyFieldName: boolean, data?: any): void {
     if (data) {
         for (const key in data) {
             if (!schema[key]) {
