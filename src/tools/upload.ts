@@ -98,22 +98,35 @@ class B2Uploader {
     }
 }
 
+async function uploadTemplate(uploader: B2Uploader, bucketId: string, template: string) {
+    console.log(`Uploading ${template}.wgt to B2`);
+    const wgtResult = await uploader.uploadFile(bucketId, `./output/${template}.wgt`, `widgets/${template}.wgt`);
+    console.log('Complete:', wgtResult.fileName);
+
+    console.log(`Uploading ${template}.png to B2`);
+    const thubResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `widgets/thumb/${template}.png`);
+    console.log('Complete:', thubResult.fileName);
+
+    console.log(`Uploading ${template}-m.png to B2`);
+    const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}-m.png`, `widgets/thumb/${template}-m.png`);
+    console.log('Complete:', thubmResult.fileName);
+}
+
 async function upload(template: string) {
     try {
         const bucketId = process.env.B2_BUCKET_ID as string;
-
         const uploader = new B2Uploader();
-        console.log(`Uploading ${template}.wgt to B2`);
-        const wgtResult = await uploader.uploadFile(bucketId, `./output/${template}.wgt`, `widgets/${template}.wgt`);
-        console.log('Complete:', wgtResult.fileName);
-        
-        console.log(`Uploading ${template}.png to B2`);
-        const thubResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}.png`, `widgets/thumb/${template}.png`);
-        console.log('Complete:', thubResult.fileName);
-        
-        console.log(`Uploading ${template}-m.png to B2`);
-        const thubmResult = await uploader.uploadFile(bucketId, `./src/public/thumbs/${template}-m.png`, `widgets/thumb/${template}-m.png`);
-        console.log('Complete:', thubmResult.fileName);
+        if (template === 'all') {
+            const outputDir = './output';
+            const files = fs.readdirSync(outputDir);
+            const wgtFiles = files.filter(f => f.endsWith('.wgt'));
+            for (const wgtFile of wgtFiles) {
+                const tplName = path.basename(wgtFile, '.wgt');
+                await uploadTemplate(uploader, bucketId, tplName);
+            }
+        } else {
+            await uploadTemplate(uploader, bucketId, template);
+        }
     } catch (error) {
         console.error('Error:', error);
     }
