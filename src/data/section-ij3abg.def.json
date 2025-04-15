@@ -1,0 +1,40 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "subtitle": {
+    "FieldType": "Paragraph",
+    "DisplayName": "副标题"
+  },
+  "products": {
+    "FieldType": "Array",
+    "DisplayName": "产品列表",
+    "Children": [
+      {
+        "image": {
+          "FieldType": "Media",
+          "DisplayName": "产品图片",
+          "IsRequired": true
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "产品名称",
+          "IsRequired": true
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "产品描述"
+        },
+        "link": {
+          "FieldType": "SingleLine",
+          "DisplayName": "产品链接"
+        },
+        "button_text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "按钮文字"
+        }
+      }
+    ]
+  }
+}

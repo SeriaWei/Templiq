@@ -1,0 +1,166 @@
+{% header %}
+<style>
+.section-ij3abg {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-ij3abg .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-ij3abg .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-ij3abg .section-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.section-ij3abg .section-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.section-ij3abg .product-showcase {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.section-ij3abg .product-showcase:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.section-ij3abg .product-content {
+    flex: 1;
+}
+
+.section-ij3abg .product-image-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.section-ij3abg .product-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.section-ij3abg .product-image-wrapper:hover .product-image {
+    transform: scale(1.05);
+}
+
+.section-ij3abg .product-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.section-ij3abg .product-description {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2em;
+}
+
+.section-ij3abg .product-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #0053a7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,83,167,0.2);
+}
+
+.section-ij3abg .product-link:hover {
+    background-color: #003d7a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,83,167,0.3);
+}
+
+@media (max-width: 992px) {
+    .section-ij3abg .product-showcase {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .section-ij3abg .product-showcase:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .section-ij3abg .product-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-ij3abg {
+        padding: 60px 0;
+    }
+
+    .section-ij3abg .section-title {
+        font-size: 2em;
+    }
+
+    .section-ij3abg .product-title {
+        font-size: 1.8em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ij3abg">
+    <div class="container">
+        <div class="section-header">
+            {% if this.Model.heading %}
+                <h2 property="true" data-property="heading" method="text" class="section-title">{{this.Model.heading}}</h2>
+            {% endif %}
+            {% if this.Model.subtitle %}
+                <p property="true" data-property="subtitle" method="text" class="section-subtitle">{{this.Model.subtitle}}</p>
+            {% endif %}
+        </div>
+        
+        {% if this.Model.products.size > 0 %}
+            {% for product in this.Model.products %}
+            <div class="product-showcase">
+                <div class="product-content">
+                    {% if product.title %}
+                        <h3 property="true" data-property="products[{{forloop.index | minus:1}}].title" method="text" class="product-title">{{product.title}}</h3>
+                    {% endif %}
+                    {% if product.description %}
+                        <p property="true" data-property="products[{{forloop.index | minus:1}}].description" method="text" class="product-description">{{product.description}}</p>
+                    {% endif %}
+                    {% if product.link and product.button_text %}
+                        <a property="true" data-property="products[{{forloop.index | minus:1}}].link" method="attr" para="href" href="{% url product.link %}" class="product-link">
+                            <span property="true" data-property="products[{{forloop.index | minus:1}}].button_text" method="text">{{product.button_text}}</span>
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="product-image-wrapper">
+                    {% if product.image %}
+                        <img property="true" data-property="products[{{forloop.index | minus:1}}].image" method="attr" para="src" src="{% url product.image %}" alt="Product image" class="product-image">
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>

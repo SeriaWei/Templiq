@@ -1,7 +1,7 @@
 图片用网上的免费图片，确保图片以合适的尺寸加载。如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，如果要用.container，应另外定义一个避免冲突，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和字段定义，并保存src/data目录下。
 
 # 模板规范
-model binding使用的是liquid模板语法，但还有些特殊要求，规范如下：
+model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
 ``` src/templates/tpl.liquid
 {% if this.Model.heading %}
 <p property="true" data-property="heading" method="text">{{this.Model.heading}}</p>

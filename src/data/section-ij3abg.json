@@ -1,0 +1,27 @@
+{
+  "heading": "高性能存储解决方案",
+  "subtitle": "为您的数字生活提供可靠、高速的存储产品",
+  "products": [
+    {
+      "image": "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=500",
+      "title": "高速固态硬盘",
+      "description": "采用最新NVMe技术，读写速度快，性能稳定可靠。",
+      "link": "#",
+      "button_text": "了解详情"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+      "title": "大容量内存条",
+      "description": "高品质内存模组，支持超频，稳定性出众。",
+      "link": "#",
+      "button_text": "立即选购"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500",
+      "title": "移动存储设备",
+      "description": "便携式闪存盘，安全加密，随身携带。",
+      "link": "#",
+      "button_text": "查看更多"
+    }
+  ]
+}
