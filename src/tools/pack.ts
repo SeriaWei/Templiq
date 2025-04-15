@@ -147,9 +147,11 @@ function validateSchema(schema: any, verifyFieldName: boolean, data?: any): void
                 throw new Error(`Property '${key}' in data is not defined in schema. Please ensure all data properties have corresponding schema definitions.`);
             }
             if (Array.isArray(data[key]) && schema[key].FieldType !== 'Array') {
+                throw new Error(`Property '${key}' in schema is not Array.`);
+            }
+            if (!Array.isArray(data[key]) && schema[key].FieldType === 'Array') {
                 throw new Error(`Property '${key}' in data is not Array.`);
             }
-
             if (schema[key].Children && !Array.isArray(schema[key].Children)) {
                 schema[key].Children = [schema[key].Children];
             }
