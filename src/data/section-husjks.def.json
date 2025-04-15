@@ -1,0 +1,14 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主标题"
+  },
+  "html_content": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "HTML内容"
+  },
+  "image_src": {
+    "FieldType": "Media",
+    "DisplayName": "图片"
+  }
+}

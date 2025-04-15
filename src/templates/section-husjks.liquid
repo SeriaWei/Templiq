@@ -1,0 +1,75 @@
+{% header %}
+<style>
+.section-husjks {
+  padding: 2em 0;
+  background: #f8fafc;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.section-husjks .section-husjks-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.section-husjks .section-husjks-heading {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 0.7em;
+  color: #222;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.section-husjks .section-husjks-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1.5em auto;
+  border-radius: 0.7em;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+.section-husjks .section-husjks-content {
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 0;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .section-husjks .section-husjks-container {
+    padding: 1em 0.5em;
+    border-radius: 0.5em;
+  }
+  .section-husjks .section-husjks-heading {
+    font-size: 1.3em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-husjks">
+  <div class="section-husjks-container">
+    <img
+      property="true"
+      data-property="image.src"
+      method="attr"
+      para="src"
+      class="section-husjks-image"
+      src="{% url this.Model.image_src %}"
+      alt="展示图片"
+    />
+    <div
+      property="true"
+      data-property="heading"
+      method="text"
+      class="section-husjks-heading"
+    >{{this.Model.heading}}</div>
+    <div
+      property="true"
+      data-property="html_content"
+      method="html"
+      class="section-husjks-content"
+    >{{this.Model.html_content | raw}}</div>
+  </div>
+</section>
