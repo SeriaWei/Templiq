@@ -30,14 +30,15 @@
 }
 </style>
 
-<div class="container-fluid">
-<p>
-<a href="javascript:void(0)" class="btn btn-primary create-template-btn">创建新模板</a>
-</p>
+<div class="container">
+<div class="clearfix">
+  <h3 class="pull-left">Templiq</h1>
+  <a href="javascript:void(0)" style="margin-top: 10px;" class="pull-right btn btn-primary create-template-btn">创建新模板</a>
+</div>
   {% if examples and examples.size > 0 %}
     <div class="row">
       {% for example in examples %}
-        <div class="col-lg-2 col-md-3 col-sm-6 template-item">
+        <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 template-item">
           <div class="thumbnail">
             <a href="/preview/{{ example.name }}" target="_blank">
               <img src="/thumbs/{{ example.name }}-m.png" alt="{{ example.name }}" onerror="this.src='/thumbs/default.svg'" class="img-responsive">
@@ -49,6 +50,27 @@
         </div>
       {% endfor %}
     </div>
+    {% if totalPages and totalPages > 1 %}
+    <nav>
+      <ul class="pagination">
+        <li class="{% if page == 1 %}disabled{% endif %}">
+          <a href="?page={{ page | minus: 1 }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% for p in (1..totalPages) %}
+        <li class="{% if p == page %}active{% endif %}">
+          <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        <li class="{% if page == totalPages %}disabled{% endif %}">
+          <a href="?page={{ page | plus: 1 }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    {% endif %}
   {% else %}
     <div class="alert alert-info">
       <p>目前没有可用的示例</p>

@@ -102,15 +102,25 @@ app.use(express.static(path.resolve(__dirname, './public')));
 app.get('/', (req: Request, res: Response) => {
   try {
     const templateDir = path.resolve(__dirname, './templates');
-
     const templates = fs.readdirSync(templateDir)
       .filter(file => file.endsWith('.liquid'));
 
-    const examples: Example[] = templates.map(file => ({
-      name: file.replace('.liquid', '')
-    })).sort((a, b) => a.name.localeCompare(b.name)? -1 : 1);
+    const pageSize = 18;
+    const page = parseInt(req.query.page as string) || 1;
+    const total = templates.length;
+    const totalPages = Math.ceil(total / pageSize);
 
-    engine.renderFile('../index', { examples: examples })
+    const sortedTemplates = templates.map(file => ({
+      name: file.replace('.liquid', '')
+    })).sort((a, b) => a.name.localeCompare(b.name) ? -1 : 1);
+
+    const pagedExamples = sortedTemplates.slice((page - 1) * pageSize, page * pageSize);
+
+    engine.renderFile('../index', {
+      examples: pagedExamples,
+      page,
+      totalPages
+    })
       .then(content => {
         const layoutData: LayoutData = {
           content: content
