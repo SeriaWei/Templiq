@@ -1,0 +1,115 @@
+{% header %}
+<style>
+.section-m9lfb4vn {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.section-m9lfb4vn__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.section-m9lfb4vn__slider {
+  display: flex;
+  gap: 2em;
+  padding: 1em 0.5em;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section-m9lfb4vn__card {
+  flex: 0 0 auto;
+  width: calc(33.333% - 1.333em);
+  min-width: 280px;
+  background: #ffffff;
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.section-m9lfb4vn__header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.section-m9lfb4vn__avatar {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.section-m9lfb4vn__info {
+  flex: 1;
+}
+
+.section-m9lfb4vn__name {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-m9lfb4vn__role {
+  color: #6c757d;
+  font-size: 0.9em;
+  margin: 0.2em 0 0;
+}
+
+.section-m9lfb4vn__rating {
+  color: #ffc107;
+  font-size: 1.2em;
+}
+
+.section-m9lfb4vn__content {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #495057;
+}
+
+@media (max-width: 768px) {
+  .section-m9lfb4vn {
+    padding: 3em 1em;
+  }
+  
+  .section-m9lfb4vn__card {
+    width: calc(100% - 2em);
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9lfb4vn">
+  <div class="section-m9lfb4vn__container">
+    <div class="section-m9lfb4vn__slider">
+      {% for item in this.Model.testimonials %}
+      <div class="section-m9lfb4vn__card">
+        <div class="section-m9lfb4vn__header">
+          <img property="true" data-property="testimonials[{{forloop.index | minus:1}}].avatar" method="attr" para="src" src="{% url item.avatar %}" class="section-m9lfb4vn__avatar" alt="{{item.name}}的头像">
+          <div class="section-m9lfb4vn__info">
+            <h3 class="section-m9lfb4vn__name" property="true" data-property="testimonials[{{forloop.index | minus:1}}].name" method="text">{{item.name}}</h3>
+            <p class="section-m9lfb4vn__role" property="true" data-property="testimonials[{{forloop.index | minus:1}}].role" method="text">{{item.role}}</p>
+          </div>
+        </div>
+        {% if item.rating %}
+        <div class="section-m9lfb4vn__rating">
+          {% for i in (1..item.rating) %}★{% endfor %}
+        </div>
+        {% endif %}
+        <p class="section-m9lfb4vn__content" property="true" data-property="testimonials[{{forloop.index | minus:1}}].content" method="text">{{item.content}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

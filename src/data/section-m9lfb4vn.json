@@ -1,0 +1,25 @@
+{
+    "testimonials": [
+        {
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=80",
+            "name": "张小姐",
+            "role": "资深用户",
+            "rating": 5,
+            "content": "产品非常好用，界面简洁直观，功能齐全。客服团队的响应速度也很快，解决问题非常专业。"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&q=80",
+            "name": "王先生",
+            "role": "企业客户",
+            "rating": 5,
+            "content": "作为一家中型企业的负责人，我对这个产品的效率提升功能印象深刻。团队协作变得更加顺畅，强烈推荐！"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&q=80",
+            "name": "李女士",
+            "role": "合作媒体",
+            "rating": 5,
+            "content": "从媒体角度来看，这是一个非常创新的解决方案。它不仅满足了市场需求，还在用户体验方面做出了很多突破。"
+        }
+    ]
+}
