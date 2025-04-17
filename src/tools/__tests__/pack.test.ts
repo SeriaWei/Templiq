@@ -202,4 +202,41 @@ describe('validateSchema', () => {
         expect(() => validateSchema(schema, true, data))
             .toThrow("Property 'items' in data is not Array.");
     });
+
+    test('should validate all JSON files in src/data directory against their schema definitions', async () => {
+        const fs = require('fs');
+        const path = require('path');
+        const dataDir = path.resolve(__dirname, '../../../src/data');
+        
+        const dataFiles = fs.readdirSync(dataDir)
+            .filter((file: string) => file.endsWith('.json') && !file.endsWith('.def.json'));
+        
+        expect(dataFiles.length).toBeGreaterThan(0);
+        
+        for (const dataFile of dataFiles) {
+            const baseName = dataFile.replace('.json', '');
+            const schemaFile = `${baseName}.def.json`;
+            const schemaFilePath = path.join(dataDir, schemaFile);
+            const dataFilePath = path.join(dataDir, dataFile);
+            
+            if (!fs.existsSync(schemaFilePath)) {
+                console.warn(`Schema file ${schemaFile} not found for data file ${dataFile}, skipping...`);
+                continue;
+            }
+            
+            const schemaContent = fs.readFileSync(schemaFilePath, 'utf8');
+            const dataContent = fs.readFileSync(dataFilePath, 'utf8');
+            
+            try {
+                const schema = JSON.parse(schemaContent);
+                const data = JSON.parse(dataContent);
+                
+                expect(() => validateSchema(schema, true, data)).not.toThrow();
+                console.log(`Validated ${dataFile} successfully against schema ${schemaFile}`);
+            } catch (error: any) {
+                console.error(`Error validating ${dataFile}: ${error.message || '未知错误'}`);
+                throw error; 
+            }
+        }
+    });
 });
