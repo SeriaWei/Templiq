@@ -1,0 +1,228 @@
+{% header %}
+<style>
+.section-j6hgf3 {
+  padding: 2em 0;
+  font-family: Arial, sans-serif;
+}
+.section-j6hgf3 .product-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.section-j6hgf3 .product-image-container {
+  flex: 2; 
+  position: relative;
+  margin-right: 4em;
+}
+.section-j6hgf3 .product-image {
+  width: 100%;
+  padding-bottom: 75%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+}
+.section-j6hgf3 .product-image img {
+  position: absolute;
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 1em;
+}
+.section-j6hgf3 .product-thumbnails {
+  display: flex;
+  margin-top: 1em;
+}
+.section-j6hgf3 .thumbnail {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e0e0e0;
+  margin-right: 0.5em;
+  cursor: pointer;
+  padding: 0.25em;
+}
+.section-j6hgf3 .thumbnail.active {
+  border: 2px solid #d21f3c;
+}
+.section-j6hgf3 .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.section-j6hgf3 .product-info {
+  flex: 1; 
+}
+.section-j6hgf3 .product-title {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+  color: #000;
+}
+.section-j6hgf3 .product-subtitle {
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  color: #000;
+}
+.section-j6hgf3 .product-description {
+  font-size: 1em;
+  margin-bottom: 2em;
+  color: #333;
+}
+.section-j6hgf3 .specs-list {
+  margin-bottom: 1.5em;
+}
+.section-j6hgf3 .spec-item {
+  margin-bottom: 0.75em;
+  color: #333;
+}
+.section-j6hgf3 .part-number {
+  color: #777;
+  margin-bottom: 1em;
+}
+.section-j6hgf3 .buy-button {
+  display: block;
+  background-color: #d21f3c;
+  color: white;
+  text-align: center;
+  padding: 0.75em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 1em;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+.section-j6hgf3 .action-links {
+  display: flex;
+  margin-top: 1em;
+}
+.section-j6hgf3 .action-link {
+  display: flex;
+  align-items: center;
+  color: #555;
+  margin-right: 2em;
+  text-decoration: none;
+}
+.section-j6hgf3 .action-link svg {
+  margin-right: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .section-j6hgf3 .product-container {
+    flex-direction: column;
+  }
+  .section-j6hgf3 .product-image-container {
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-j6hgf3">
+  <div class="product-container">
+    {% if this.Model.product_images and this.Model.product_images.size > 0 %}
+    <div class="product-image-container">
+      <div class="product-image">
+        <img property="true" data-property="product_images[0].large" method="attr" para="src" 
+             src="{% url this.Model.product_images[0].large %}" 
+             alt="{{ this.Model.title }}" />
+      </div>
+      
+      {% if this.Model.product_images.size > 1 %}
+      <div class="product-thumbnails">
+        {% for image in this.Model.product_images %}
+        <div class="thumbnail" data-full-image="{% url image.large %}">
+          <img property="true" data-property="product_images[{{forloop.index | minus:1}}].thumbnail" method="attr" para="src" 
+               src="{% url image.thumbnail | default: image.large %}" 
+               alt="{{ this.Model.title }} - thumbnail {{forloop.index}}" />
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    <div class="product-info">
+      {% if this.Model.title %}
+      <h2 property="true" data-property="title" method="text" class="product-title">{{ this.Model.title }}</h2>
+      {% endif %}
+      
+      {% if this.Model.subtitle %}
+      <h3 property="true" data-property="subtitle" method="text" class="product-subtitle">{{ this.Model.subtitle }}</h3>
+      {% endif %}
+      
+      {% if this.Model.description %}
+      <p property="true" data-property="description" method="text" class="product-description">{{ this.Model.description }}</p>
+      {% endif %}
+      
+      {% if this.Model.part_number %}
+      <div property="true" data-property="part_number" method="text" class="part-number">Part Number: {{ this.Model.part_number }}</div>
+      {% endif %}
+      
+      {% if this.Model.specs and this.Model.specs.size > 0 %}
+      <ul class="specs-list">
+        {% for spec in this.Model.specs %}
+        <li property="true" data-property="specs[{{forloop.index | minus:1}}].text" method="text" class="spec-item">{{ spec.text }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      
+      {% if this.Model.buy_button_text %}
+      <a property="true" data-property="buy_button_url" method="attr" para="href" href="{% url this.Model.buy_button_url %}" class="buy-button">
+        <span property="true" data-property="buy_button_text" method="text">{{ this.Model.buy_button_text }}</span>
+      </a>
+      {% endif %}
+      
+      <div class="action-links">        
+        {% if this.Model.datasheet_url %}
+        <a property="true" data-property="datasheet_url" method="attr" para="href" href="{% url this.Model.datasheet_url %}" class="action-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Datasheet
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  const thumbnails = document.querySelectorAll('.section-j6hgf3 .thumbnail');
+  const mainImage = document.querySelector('.section-j6hgf3 .product-image img');
+  
+  if (thumbnails.length > 0) {
+    thumbnails[0].classList.add('active');
+  }
+  
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', function() {
+      const fullImageSrc = this.getAttribute('data-full-image');
+      mainImage.setAttribute('src', fullImageSrc);
+      
+      // Update active thumbnail
+      thumbnails.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+})();
+</script>
+{% endfooter %}

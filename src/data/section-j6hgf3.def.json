@@ -1,0 +1,61 @@
+{
+  "title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "产品标题",
+    "IsRequired": true
+  },
+  "subtitle": {
+    "FieldType": "SingleLine",
+    "DisplayName": "产品副标题"
+  },
+  "description": {
+    "FieldType": "Paragraph",
+    "DisplayName": "产品描述"
+  },
+  "part_number": {
+    "FieldType": "SingleLine",
+    "DisplayName": "产品编号"
+  },
+  "specs": {
+    "FieldType": "Array",
+    "DisplayName": "产品规格列表",
+    "Children": [
+      {
+        "text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "规格内容",
+          "IsRequired": true
+        }
+      }
+    ]
+  },
+  "product_images": {
+    "FieldType": "Array",
+    "DisplayName": "产品图片",
+    "Children": [
+      {
+        "large": {
+          "FieldType": "Media",
+          "DisplayName": "大图",
+          "IsRequired": true
+        },
+        "thumbnail": {
+          "FieldType": "Media",
+          "DisplayName": "缩略图"
+        }
+      }
+    ]
+  },
+  "buy_button_text": {
+    "FieldType": "SingleLine",
+    "DisplayName": "购买按钮文本"
+  },
+  "buy_button_url": {
+    "FieldType": "SingleLine",
+    "DisplayName": "购买按钮链接"
+  },
+  "datasheet_url": {
+    "FieldType": "SingleLine",
+    "DisplayName": "产品说明书链接"
+  }
+}

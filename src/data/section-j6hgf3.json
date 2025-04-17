@@ -1,0 +1,33 @@
+{
+  "title": "Kingston FURY Renegade G5 PCIe 5.0 NVMe M.2 SSD",
+  "subtitle": "PCIe 5.0 NVMe M.2 SSD",
+  "description": "For gamers, enthusiasts and high-power users seeking extreme performance",
+  "part_number": "SFYR2S/1T0",
+  "specs": [
+    {
+      "text": "PCIe 5.0 NVMe M.2"
+    },
+    {
+      "text": "Up to 14,200MB/s Read, 11,000MB/s Write"
+    },
+    {
+      "text": "Includes Acronis cloning software"
+    },
+    {
+      "text": "Single-sided"
+    }
+  ],
+  "product_images": [
+    {
+      "large": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=85",
+      "thumbnail": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=150&q=80"
+    },
+    {
+      "large": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=85",
+      "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=150&q=80"
+    }
+  ],
+  "buy_button_text": "Where to Buy",
+  "buy_button_url": "/buy",
+  "datasheet_url": "/datasheet"
+}
