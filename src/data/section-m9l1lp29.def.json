@@ -1,0 +1,65 @@
+{
+  "section_title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "区块标题",
+    "IsRequired": true
+  },
+  "section_subtitle": {
+    "FieldType": "Paragraph",
+    "DisplayName": "区块副标题"
+  },
+  "features": {
+    "FieldType": "Array",
+    "DisplayName": "特性列表",
+    "Children": [
+      {
+        "image": {
+          "FieldType": "Media",
+          "DisplayName": "特性图片",
+          "IsRequired": true
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "特性标题",
+          "IsRequired": true
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "特性描述"
+        },
+        "link": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接地址"
+        },
+        "link_text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接文字"
+        }
+      }
+    ]
+  },
+  "content_html": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "HTML内容"
+  },
+  "main_content_title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主要内容标题"
+  },
+  "main_content_text": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "主要内容描述"
+  },
+  "main_image": {
+    "FieldType": "Media",
+    "DisplayName": "主要内容图片"
+  },
+  "cta_text": {
+    "FieldType": "SingleLine",
+    "DisplayName": "号召性按钮文字"
+  },
+  "cta_link": {
+    "FieldType": "SingleLine",
+    "DisplayName": "号召性按钮链接"
+  }
+}

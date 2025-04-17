@@ -1,0 +1,215 @@
+{% header %}
+<style>
+.section-m9l1lp29 {
+  padding: 30px 0;
+  background-color: #fff;
+  color: #1d1d1f;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.section-m9l1lp29 .custom-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.section-m9l1lp29 .section-title {
+  font-size: 2.5em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -0.02em;
+}
+
+.section-m9l1lp29 .section-subtitle {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #86868b;
+}
+
+.section-m9l1lp29 .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.section-m9l1lp29 .feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-m9l1lp29 .feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.section-m9l1lp29 .feature-item:hover .feature-image {
+  transform: scale(1.02);
+}
+
+.section-m9l1lp29 .feature-title {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1d1d1f;
+}
+
+.section-m9l1lp29 .feature-description {
+  font-size: 0.875em;
+  color: #86868b;
+  margin-bottom: 15px;
+}
+
+.section-m9l1lp29 .cta-link {
+  display: inline-flex;
+  align-items: center;
+  color: #0066cc;
+  font-size: 0.875em;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.section-m9l1lp29 .cta-link:hover {
+  text-decoration: underline;
+}
+
+.section-m9l1lp29 .cta-link:after {
+  content: "→";
+  margin-left: 5px;
+}
+
+.section-m9l1lp29 .content-wrapper {
+  margin-top: 80px;
+}
+
+.section-m9l1lp29 .content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.section-m9l1lp29 .content-text {
+  flex: 1;
+}
+
+.section-m9l1lp29 .content-image {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.section-m9l1lp29 .content-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 990px) {
+  .section-m9l1lp29 .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 734px) {
+  .section-m9l1lp29 {
+    padding: 60px 0;
+  }
+  
+  .section-m9l1lp29 .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-m9l1lp29 .content-container {
+    flex-direction: column;
+  }
+  
+  .section-m9l1lp29 .section-title {
+    font-size: 2em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9l1lp29">
+  <div class="custom-container">
+    {% if this.Model.section_title %}
+    <h2 property="true" data-property="section_title" method="text" class="section-title">{{ this.Model.section_title }}</h2>
+    {% endif %}
+    
+    {% if this.Model.section_subtitle %}
+    <p property="true" data-property="section_subtitle" method="text" class="section-subtitle">{{ this.Model.section_subtitle }}</p>
+    {% endif %}
+    
+    {% if this.Model.features and this.Model.features.size > 0 %}
+    <div class="feature-grid">
+      {% for feature in this.Model.features %}
+      <div class="feature-item">
+        {% if feature.image %}
+        <img property="true" data-property="features[{{forloop.index | minus:1}}].image" method="attr" para="src" src="{% url feature.image %}" alt="{{ feature.title }}" class="feature-image">
+        {% endif %}
+        
+        {% if feature.title %}
+        <h3 property="true" data-property="features[{{forloop.index | minus:1}}].title" method="text" class="feature-title">{{ feature.title }}</h3>
+        {% endif %}
+        
+        {% if feature.description %}
+        <p property="true" data-property="features[{{forloop.index | minus:1}}].description" method="text" class="feature-description">{{ feature.description }}</p>
+        {% endif %}
+        
+        {% if feature.link_text %}
+        <a property="true" data-property="features[{{forloop.index | minus:1}}].link" method="attr" para="href" href="{% url feature.link %}" class="cta-link">{{ feature.link_text }}</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% if this.Model.content_html %}
+    <div class="content-wrapper">
+      <div property="true" data-property="content_html" method="html" class="content-html">{{ this.Model.content_html | raw }}</div>
+    </div>
+    {% endif %}
+    
+    {% if this.Model.main_content_title or this.Model.main_content_text or this.Model.main_image %}
+    <div class="content-wrapper">
+      <div class="content-container">
+        <div class="content-text">
+          {% if this.Model.main_content_title %}
+          <h3 property="true" data-property="main_content_title" method="text" class="content-title">{{ this.Model.main_content_title }}</h3>
+          {% endif %}
+          
+          {% if this.Model.main_content_text %}
+          <div property="true" data-property="main_content_text" method="html" class="content-description">{{ this.Model.main_content_text | raw }}</div>
+          {% endif %}
+          
+          {% if this.Model.cta_text %}
+          <a property="true" data-property="cta_link" method="attr" para="href" href="{% url this.Model.cta_link %}" class="cta-link">{{ this.Model.cta_text }}</a>
+          {% endif %}
+        </div>
+        
+        {% if this.Model.main_image %}
+        <div class="content-image">
+          <img property="true" data-property="main_image" method="attr" para="src" src="{% url this.Model.main_image %}" alt="{{ this.Model.main_content_title }}">
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

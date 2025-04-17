@@ -1,0 +1,32 @@
+{
+  "section_title": "简洁设计，非凡体验",
+  "section_subtitle": "探索 Apple 最新产品系列，这些产品不仅美观，而且具有前所未有的性能和功能，旨在提升您的生活品质。",
+  "features": [
+    {
+      "image": "https://images.unsplash.com/photo-1605170439002-90845e8c0137?w=500&q=80",
+      "title": "出色的性能",
+      "description": "搭载最新芯片，带来前所未有的速度和效率",
+      "link": "#performance",
+      "link_text": "了解更多"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500&q=80",
+      "title": "精美的设计",
+      "description": "令人惊叹的工艺与材质，打造极致美学体验",
+      "link": "#design",
+      "link_text": "探索细节"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1530319067432-f2a729c03db5?w=500&q=80",
+      "title": "创新科技",
+      "description": "突破性技术融入日常使用，带来全新可能",
+      "link": "#innovation",
+      "link_text": "查看创新"
+    }
+  ],
+  "main_content_title": "重新定义可能性",
+  "main_content_text": "<p>我们不断追求卓越，将最先进的技术与极简设计相结合，创造出改变生活的产品。无论工作还是娱乐，都能以前所未有的方式提升您的体验。</p>",
+  "main_image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+  "cta_text": "了解产品系列",
+  "cta_link": "#products"
+}
