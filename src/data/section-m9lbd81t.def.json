@@ -1,0 +1,25 @@
+{
+  "grid_items": {
+    "FieldType": "Array",
+    "DisplayName": "网格区块",
+    "Children": [
+      {
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "标题",
+          "IsRequired": true
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "描述",
+          "IsRequired": true
+        },
+        "background_image": {
+          "FieldType": "Media",
+          "DisplayName": "背景图片",
+          "IsRequired": true
+        }
+      }
+    ]
+  }
+}
