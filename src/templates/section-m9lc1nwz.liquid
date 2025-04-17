@@ -1,0 +1,95 @@
+{% header %}
+<style>
+.section-m9lc1nwz {
+  position: relative;
+  min-height: 30em;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  color: #fff;
+  padding: 2em;
+  box-sizing: border-box;
+}
+.section-m9lc1nwz__content {
+  position: relative;
+  z-index: 1;
+  max-width: 80em;
+  background: rgba(0,0,0,0.45);
+  border-radius: 1em;
+  padding: 2em;
+}
+.section-m9lc1nwz--position-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-m9lc1nwz--position-top-left {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+.section-m9lc1nwz--position-top-right {
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: right;
+}
+.section-m9lc1nwz--position-bottom-left {
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+}
+.section-m9lc1nwz--position-bottom-right {
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+.section-m9lc1nwz__heading {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.25);
+}
+.section-m9lc1nwz__text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.18);
+}
+@media (max-width: 768px) {
+  .section-m9lc1nwz {
+    min-height: 25em;
+    padding: 1.5em;
+  }
+  .section-m9lc1nwz__content {
+    padding: 1.2em;
+  }
+  .section-m9lc1nwz__heading {
+    font-size: 2em;
+  }
+  .section-m9lc1nwz__text {
+    font-size: 1em;
+  }
+}
+@media (max-width: 480px) {
+  .section-m9lc1nwz {
+    min-height: 20em;
+    padding: 1em;
+  }
+  .section-m9lc1nwz__heading {
+    font-size: 1.8em;
+  }
+}
+</style>
+{% endheader %}
+
+{% assign position_class = "section-m9lc1nwz--position-" | append: this.Model.text_position | default: "section-m9lc1nwz--position-center" %}
+
+<section class="section-m9lc1nwz {{ position_class }}" {% if this.Model.background_image %} style="background-image: url('{% url this.Model.background_image %}');" {% endif %}>
+  <div class="section-m9lc1nwz__content">
+    {% if this.Model.heading %}
+    <h2 class="section-m9lc1nwz__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+    {% endif %}
+    {% if this.Model.text_content %}
+    <div class="section-m9lc1nwz__text" property="true" data-property="text_content" method="html">{{this.Model.text_content | raw}}</div>
+    {% endif %}
+  </div>
+</section>
