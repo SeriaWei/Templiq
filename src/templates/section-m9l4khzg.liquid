@@ -1,0 +1,134 @@
+{% header %}
+<style>
+.section-m9l4khzg {
+  width: 100%;
+  background-color: #fff;
+  color: #1d1d1f;
+}
+
+.section-m9l4khzg__container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.section-m9l4khzg__headline {
+  font-size: 3em;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.section-m9l4khzg__subhead {
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2em;
+  color: #86868b;
+}
+
+.section-m9l4khzg__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  margin-top: 3em;
+}
+
+.section-m9l4khzg__item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-m9l4khzg__item-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5em;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+  background-color: #fafafa;
+}
+
+.section-m9l4khzg__item:nth-child(2) .section-m9l4khzg__item-image {
+  height: 280px;
+}
+
+.section-m9l4khzg__item-title {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.section-m9l4khzg__item-desc {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #86868b;
+}
+
+@media (max-width: 734px) {
+  .section-m9l4khzg__container {
+    padding: 50px 20px;
+  }
+  
+  .section-m9l4khzg__headline {
+    font-size: 2em;
+  }
+  
+  .section-m9l4khzg__subhead {
+    font-size: 1.2em;
+  }
+  
+  .section-m9l4khzg__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-m9l4khzg__item-image,
+  .section-m9l4khzg__item:nth-child(2) .section-m9l4khzg__item-image {
+    height: 280px;
+    object-fit: cover;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9l4khzg">
+  <div class="section-m9l4khzg__container">
+    {% if this.Model.headline %}
+    <h2 class="section-m9l4khzg__headline" property="true" data-property="headline" method="text">{{this.Model.headline}}</h2>
+    {% endif %}
+    
+    {% if this.Model.subhead %}
+    <div class="section-m9l4khzg__subhead" property="true" data-property="subhead" method="html">{{this.Model.subhead | raw}}</div>
+    {% endif %}
+    
+    {% if this.Model.items %}
+    <div class="section-m9l4khzg__grid">
+      {% for item in this.Model.items %}
+      <div class="section-m9l4khzg__item">
+        {% if item.image %}
+        <img class="section-m9l4khzg__item-image" property="true" data-property="items[{{forloop.index | minus:1}}].image" method="attr" para="src" src="{% url item.image %}" alt="{{item.title}}" />
+        {% endif %}
+        {% if item.title %}
+        <h3 class="section-m9l4khzg__item-title" property="true" data-property="items[{{forloop.index | minus:1}}].title" method="text">{{item.title}}</h3>
+        {% endif %}
+        {% if item.description %}
+        <p class="section-m9l4khzg__item-desc" property="true" data-property="items[{{forloop.index | minus:1}}].description" method="text">{{item.description}}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

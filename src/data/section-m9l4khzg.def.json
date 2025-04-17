@@ -1,0 +1,35 @@
+{
+    "headline": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主标题",
+        "IsRequired": true
+    },
+    "subhead": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "副标题",
+        "IsRequired": true
+    },
+    "items": {
+        "FieldType": "Array",
+        "DisplayName": "特性列表",
+        "Children": [
+            {
+                "image": {
+                    "FieldType": "Media",
+                    "DisplayName": "特性图片",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "特性标题",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "特性描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

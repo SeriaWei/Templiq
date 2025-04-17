@@ -1,0 +1,21 @@
+{
+    "headline": "设计精妙 体验非凡",
+    "subhead": "探索创新科技，感受卓越品质",
+    "items": [
+        {
+            "image": "https://images.unsplash.com/photo-1525598912003-663126343e1f?w=500&q=80",
+            "title": "创新设计",
+            "description": "突破性的设计理念，带来全新视觉体验"
+        },
+        {
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80",
+            "title": "卓越性能",
+            "description": "强大的性能表现，为您开启无限可能"
+        },
+        {
+            "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500&q=80",
+            "title": "精致工艺",
+            "description": "精雕细琢的工艺，彰显品质之美"
+        }
+    ]
+}
