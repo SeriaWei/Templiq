@@ -1,0 +1,84 @@
+{% header %}
+<style>
+.section-m9l13js0 {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 4em 0;
+}
+
+.section-m9l13js0 .m9l-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.section-m9l13js0 .headline {
+  font-size: 3.5em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+  letter-spacing: -0.02em;
+}
+
+.section-m9l13js0 .subhead {
+  font-size: 1.7em;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  color: #86868b;
+}
+
+.section-m9l13js0 .cta-link {
+  font-size: 1.3em;
+  color: #2997ff;
+  text-decoration: none;
+}
+
+.section-m9l13js0 .cta-link:hover {
+  text-decoration: underline;
+}
+
+.section-m9l13js0 .hero-image {
+  width: 100%;
+  max-width: 900px;
+  margin: 2em auto 0;
+  height: auto;
+}
+
+@media (max-width: 734px) {
+  .section-m9l13js0 .headline {
+    font-size: 2.5em;
+  }
+  
+  .section-m9l13js0 .subhead {
+    font-size: 1.4em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9l13js0">
+  <div class="m9l-container">
+    {% if this.Model.headline %}
+    <h2 property="true" data-property="headline" method="text" class="headline">{{this.Model.headline}}</h2>
+    {% endif %}
+    
+    {% if this.Model.subhead %}
+    <h3 property="true" data-property="subhead" method="text" class="subhead">{{this.Model.subhead}}</h3>
+    {% endif %}
+    
+    {% if this.Model.cta_link and this.Model.cta_text %}
+    <a property="true" data-property="cta_link" method="attr" para="href" href="{% url this.Model.cta_link %}" class="cta-link">
+      <span property="true" data-property="cta_text" method="text">{{this.Model.cta_text}}</span>
+    </a>
+    {% endif %}
+    
+    {% if this.Model.hero_image %}
+    <img property="true" data-property="hero_image" method="attr" para="src" src="{% url this.Model.hero_image %}" class="hero-image" alt="{{this.Model.headline}}" />
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

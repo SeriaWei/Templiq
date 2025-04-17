@@ -1,0 +1,24 @@
+{
+    "headline": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主标题",
+        "IsRequired": true
+    },
+    "subhead": {
+        "FieldType": "SingleLine",
+        "DisplayName": "副标题"
+    },
+    "cta_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮文字"
+    },
+    "cta_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮链接"
+    },
+    "hero_image": {
+        "FieldType": "Media",
+        "DisplayName": "主图",
+        "IsRequired": true
+    }
+}

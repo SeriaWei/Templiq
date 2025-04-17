@@ -316,7 +316,7 @@ async function createFullPackage(template: string): Promise<any> {
     const packageFiles = createPackageFiles(template, viewName);
     const schemaDefWidthData = await mergeDataToSchema(schemaDef, data, packageFiles);
     const widgetConfig = createWidgetConfig(template, viewName, schemaDefWidthData, schemaDef);
-    console.log(`Widget config created for template: ${template}`);
+    console.log(`Widget created for template: ${template}`);
     return {
         "Widget": widgetConfig,
         "Files": packageFiles,
