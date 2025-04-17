@@ -1,0 +1,27 @@
+{
+  "headline": "探索创新科技",
+  "sub_headline": "发现改变生活方式的突破性产品，体验Apple的精工细作与前沿设计。",
+  "product_items": [
+    {
+      "image_src": "https://images.unsplash.com/photo-1603898037225-1bea09c550c0?w=800&q=80",
+      "title": "iPhone",
+      "description": "重新定义智能手机体验，尽在指尖。",
+      "link_text": "了解更多",
+      "link_url": "/iphone"
+    },
+    {
+      "image_src": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+      "title": "MacBook",
+      "description": "专业表现，优雅设计，为创造而生。",
+      "link_text": "了解更多",
+      "link_url": "/macbook"
+    },
+    {
+      "image_src": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80",
+      "title": "iPad",
+      "description": "轻薄强大，让创意无限延展。",
+      "link_text": "了解更多",
+      "link_url": "/ipad"
+    }
+  ]
+}
