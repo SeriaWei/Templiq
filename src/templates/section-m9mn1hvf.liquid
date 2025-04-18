@@ -1,0 +1,211 @@
+{% header %}
+<style>
+.section-m9mn1hvf {
+  padding: 4em 2em;
+  background: #f8f9fa;
+}
+
+.section-m9mn1hvf__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-m9mn1hvf__plan {
+  flex: 1;
+  min-width: 280px;
+  max-width: 360px;
+  background: white;
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-m9mn1hvf__plan--highlighted {
+  transform: scale(1.05);
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.15);
+  border: 2px solid #007bff;
+}
+
+.section-m9mn1hvf__plan-header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.section-m9mn1hvf__plan-name {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.section-m9mn1hvf__price-wrapper {
+  margin-bottom: 1em;
+}
+
+.section-m9mn1hvf__price {
+  font-size: 3em;
+  font-weight: bold;
+  color: #007bff;
+  line-height: 1;
+}
+
+.section-m9mn1hvf__currency {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.section-m9mn1hvf__period {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.section-m9mn1hvf__original-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.9em;
+  margin-right: 0.5em;
+}
+
+.section-m9mn1hvf__discount {
+  display: inline-block;
+  background: #ff6b6b;
+  color: white;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  font-size: 0.8em;
+}
+
+.section-m9mn1hvf__features {
+  flex-grow: 1;
+  margin-bottom: 2em;
+}
+
+.section-m9mn1hvf__feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  color: #666;
+}
+
+.section-m9mn1hvf__feature-icon {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+  color: #007bff;
+}
+
+.section-m9mn1hvf__feature--pro {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.section-m9mn1hvf__feature-badge {
+  background: #e3f2fd;
+  color: #007bff;
+  padding: 0.2em 0.5em;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  margin-left: 0.5em;
+}
+
+.section-m9mn1hvf__quota {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.section-m9mn1hvf__cta {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.section-m9mn1hvf__cta:hover {
+  background: #0056b3;
+  color: #fff;
+}
+
+.section-m9mn1hvf__annual-saving {
+  text-align: center;
+  color: #28a745;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .section-m9mn1hvf {
+    padding: 2em 1em;
+  }
+  
+  .section-m9mn1hvf__plan {
+    margin-bottom: 1em;
+  }
+  
+  .section-m9mn1hvf__plan--highlighted {
+    transform: none;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9mn1hvf">
+  <div class="section-m9mn1hvf__container">
+    {% for plan in this.Model.plans %}
+    <div class="section-m9mn1hvf__plan {% if plan.is_highlighted %}section-m9mn1hvf__plan--highlighted{% endif %}">
+      <div class="section-m9mn1hvf__plan-header">
+        <h3 class="section-m9mn1hvf__plan-name" property="true" data-property="plans[{{forloop.index | minus:1}}].name" method="text">{{plan.name}}</h3>
+        <div class="section-m9mn1hvf__price-wrapper">
+          {% if plan.original_price %}
+          <span class="section-m9mn1hvf__original-price" property="true" data-property="plans[{{forloop.index | minus:1}}].original_price" method="text">{{plan.currency}}{{plan.original_price}}</span>
+          {% endif %}
+          {% if plan.discount_label %}
+          <span class="section-m9mn1hvf__discount" property="true" data-property="plans[{{forloop.index | minus:1}}].discount_label" method="text">{{plan.discount_label}}</span>
+          {% endif %}
+          <div>
+            <span class="section-m9mn1hvf__price">
+              <span class="section-m9mn1hvf__currency" property="true" data-property="plans[{{forloop.index | minus:1}}].currency" method="text">{{plan.currency}}</span>
+              <span property="true" data-property="plans[{{forloop.index | minus:1}}].price" method="text">{{plan.price}}</span>
+            </span>
+            <span class="section-m9mn1hvf__period" property="true" data-property="plans[{{forloop.index | minus:1}}].period" method="text">/{{plan.period}}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-m9mn1hvf__features">
+        {% for feature in plan.features %}
+        <div class="section-m9mn1hvf__feature {% if feature.is_pro %}section-m9mn1hvf__feature--pro{% endif %}">
+          {% if feature.icon %}
+          <svg class="section-m9mn1hvf__feature-icon" property="true" data-property="plans[{{forloop.parent.index | minus:1}}].features[{{forloop.index | minus:1}}].icon" method="text">
+            <use href="#icon-{{feature.icon}}"></use>
+          </svg>
+          {% endif %}
+          <span property="true" data-property="plans[{{forloop.parent.index | minus:1}}].features[{{forloop.index | minus:1}}].text" method="text">{{feature.text}}</span>
+          {% if feature.is_pro %}
+          <span class="section-m9mn1hvf__feature-badge">Pro</span>
+          {% endif %}
+          {% if feature.quota %}
+          <span class="section-m9mn1hvf__quota" property="true" data-property="plans[{{forloop.parent.index | minus:1}}].features[{{forloop.index | minus:1}}].quota" method="text">{{feature.quota}}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      
+      <a href="{% url plan.cta_link %}" class="section-m9mn1hvf__cta" property="true" data-property="plans[{{forloop.index | minus:1}}].cta_text" method="text">{{plan.cta_text}}</a>
+      {% if plan.annual_saving %}
+      <div class="section-m9mn1hvf__annual-saving" property="true" data-property="plans[{{forloop.index | minus:1}}].annual_saving" method="text">{{plan.annual_saving}}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
