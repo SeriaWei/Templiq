@@ -1,0 +1,211 @@
+{% header %}
+<style>
+.section-m9mni9dm {
+  padding: 4em 2em;
+  background: #f8f9fa;
+}
+
+.section-m9mni9dm__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  align-items: stretch;
+}
+
+.section-m9mni9dm__plan {
+  background: white;
+  border-radius: 1em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-m9mni9dm__plan--popular {
+  box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.5em);
+  border: 2px solid #007bff;
+}
+
+.section-m9mni9dm__plan--popular::before {
+  content: '推荐';
+  position: absolute;
+  top: 1.5em;
+  right: -2em;
+  background: #007bff;
+  color: white;
+  padding: 0.5em 3em;
+  transform: rotate(45deg);
+  font-size: 0.8em;
+}
+
+.section-m9mni9dm__name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.section-m9mni9dm__price-container {
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.section-m9mni9dm__price {
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.section-m9mni9dm__currency {
+  font-size: 0.5em;
+  margin-right: 0.2em;
+}
+
+.section-m9mni9dm__period {
+  font-size: 0.3em;
+  color: #666;
+  margin-left: 0.2em;
+}
+
+.section-m9mni9dm__original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.section-m9mni9dm__discount {
+  position: absolute;
+  top: -1em;
+  right: 0;
+  background: #ff4757;
+  color: white;
+  padding: 0.2em 0.8em;
+  border-radius: 1em;
+  font-size: 0.8em;
+}
+
+.section-m9mni9dm__features {
+  flex-grow: 1;
+  margin-bottom: 2em;
+}
+
+.section-m9mni9dm__feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  color: #666;
+}
+
+.section-m9mni9dm__feature-icon {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.8em;
+}
+
+.section-m9mni9dm__feature--pro {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.section-m9mni9dm__button {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.section-m9mni9dm__button:hover {
+  background: #0056b3;
+  color:#fff;
+}
+
+.section-m9mni9dm__annual-save {
+  text-align: center;
+  color: #28a745;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .section-m9mni9dm {
+    padding: 2em 1em;
+  }
+  
+  .section-m9mni9dm__container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .section-m9mni9dm__plan--popular {
+    transform: none;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9mni9dm">
+  <div class="section-m9mni9dm__container">
+    {% for plan in this.Model.plans %}
+    <div class="section-m9mni9dm__plan {% if plan.is_popular %}section-m9mni9dm__plan--popular{% endif %}">
+      <h3 class="section-m9mni9dm__name" property="true" data-property="plans[{{forloop.index | minus:1}}].name" method="text">{{plan.name}}</h3>
+      
+      <div class="section-m9mni9dm__price-container">
+        {% if plan.discount_label %}
+        <div class="section-m9mni9dm__discount" property="true" data-property="plans[{{forloop.index | minus:1}}].discount_label" method="text">{{plan.discount_label}}</div>
+        {% endif %}
+        
+        <div class="section-m9mni9dm__price">
+          <span class="section-m9mni9dm__currency" property="true" data-property="plans[{{forloop.index | minus:1}}].currency" method="text">{{plan.currency}}</span>
+          <span property="true" data-property="plans[{{forloop.index | minus:1}}].price" method="text">{{plan.price}}</span>
+          <span class="section-m9mni9dm__period" property="true" data-property="plans[{{forloop.index | minus:1}}].period" method="text">{{plan.period}}</span>
+        </div>
+        
+        {% if plan.original_price %}
+        <div class="section-m9mni9dm__original-price">
+          <span property="true" data-property="plans[{{forloop.index | minus:1}}].currency" method="text">{{plan.currency}}</span>
+          <span property="true" data-property="plans[{{forloop.index | minus:1}}].original_price" method="text">{{plan.original_price}}</span>
+        </div>
+        {% endif %}
+      </div>
+      
+      <div class="section-m9mni9dm__features">
+        {% for feature in plan.features %}
+        <div class="section-m9mni9dm__feature {% if feature.is_pro %}section-m9mni9dm__feature--pro{% endif %}">
+          {% if feature.icon %}
+          <img class="section-m9mni9dm__feature-icon" property="true" data-property="plans[{{forloop.parentloop.index | minus:1}}].features[{{forloop.index | minus:1}}].icon" method="attr" para="src" src="{% url feature.icon %}" alt="">
+          {% endif %}
+          <span property="true" data-property="plans[{{forloop.parentloop.index | minus:1}}].features[{{forloop.index | minus:1}}].text" method="text">{{feature.text}}</span>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <a href="#" class="section-m9mni9dm__button" property="true" data-property="plans[{{forloop.index | minus:1}}].button_text" method="text">{{plan.button_text}}</a>
+      
+      {% if plan.annual_save %}
+      <div class="section-m9mni9dm__annual-save" property="true" data-property="plans[{{forloop.index | minus:1}}].annual_save" method="text">{{plan.annual_save}}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
