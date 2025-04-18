@@ -1,0 +1,269 @@
+{% header %}
+<style>
+.section-m9mnrrun {
+  padding: 1em 0 3em;
+  background-color: #f8f9fa; /* Light background for the section */
+}
+
+.section-m9mnrrun__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-m9mnrrun__heading {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  color: #333;
+}
+
+.section-m9mnrrun__plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.section-m9mnrrun__card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Fixed width for cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-m9mnrrun__card--highlight {
+  border-color: #007bff;
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.section-m9mnrrun__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-m9mnrrun__card-focus {
+  padding: 1.5em;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.section-m9mnrrun__card-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.section-m9mnrrun__card-price-tag {
+  margin-bottom: 0.5em;
+}
+
+.section-m9mnrrun__card-price {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.section-m9mnrrun__card-period {
+  font-size: 1em;
+  color: #6c757d;
+}
+
+.section-m9mnrrun__card-original-price {
+  text-decoration: line-through;
+  color: #6c757d;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+}
+
+.section-m9mnrrun__card-discount {
+  display: inline-block;
+  background-color: #ffc107;
+  color: #333;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+.section-m9mnrrun__card-features {
+  padding: 1.5em;
+  flex-grow: 1; /* Make features area grow */
+}
+
+.section-m9mnrrun__feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-m9mnrrun__feature-item {
+  margin-bottom: 0.8em;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.section-m9mnrrun__feature-item--included {
+  color: #28a745; /* Green for included */
+}
+
+.section-m9mnrrun__feature-item--excluded {
+  color: #dc3545; /* Red for excluded */
+  text-decoration: line-through;
+}
+
+.section-m9mnrrun__feature-icon {
+  margin-right: 0.5em;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.section-m9mnrrun__card-action {
+  padding: 1.5em;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.section-m9mnrrun__card-button {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.section-m9mnrrun__card-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.section-m9mnrrun__card--highlight .section-m9mnrrun__card-button {
+    background-color: #28a745; /* Different button color for highlighted */
+}
+
+.section-m9mnrrun__card--highlight .section-m9mnrrun__card-button:hover {
+    background-color: #218838;
+}
+
+.section-m9mnrrun__card-save-tag {
+  display: block;
+  margin-top: 0.8em;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .section-m9mnrrun__plans {
+    gap: 1.5em;
+  }
+  .section-m9mnrrun__card {
+    width: calc(50% - 1em); /* Two cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-m9mnrrun__heading {
+    font-size: 2em;
+  }
+  .section-m9mnrrun__card {
+    width: calc(50% - 1em);
+  }
+}
+
+@media (max-width: 576px) {
+  .section-m9mnrrun__plans {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-m9mnrrun__card {
+    width: 90%; /* One card per row */
+    max-width: 350px;
+  }
+  .section-m9mnrrun__card--highlight {
+    transform: scale(1); /* Disable scaling on small screens */
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9mnrrun">
+  <div class="section-m9mnrrun__container">
+    {% if this.Model.section_heading %}
+      <h2 class="section-m9mnrrun__heading" property="true" data-property="section_heading" method="text">{{ this.Model.section_heading }}</h2>
+    {% endif %}
+
+    {% if this.Model.plans.size > 0 %}
+      <div class="section-m9mnrrun__plans">
+        {% for plan in this.Model.plans %}
+          {% assign card_index = forloop.index | minus: 1 %}
+          <div class="section-m9mnrrun__card {% if plan.highlight %}section-m9mnrrun__card--highlight{% endif %}">
+            <div class="section-m9mnrrun__card-focus">
+              {% if plan.name %}
+                <h3 class="section-m9mnrrun__card-name" property="true" data-property="plans[{{card_index}}].name" method="text">{{ plan.name }}</h3>
+              {% endif %}
+              <div class="section-m9mnrrun__card-price-tag">
+                {% if plan.price %}
+                  <span class="section-m9mnrrun__card-price" property="true" data-property="plans[{{card_index}}].price" method="text">{{ plan.price }}</span>
+                {% endif %}
+                {% if plan.period %}
+                  <span class="section-m9mnrrun__card-period" property="true" data-property="plans[{{card_index}}].period" method="text">{{ plan.period }}</span>
+                {% endif %}
+                {% if plan.original_price %}
+                  <span class="section-m9mnrrun__card-original-price" property="true" data-property="plans[{{card_index}}].original_price" method="text">{{ plan.original_price }}</span>
+                {% endif %}
+              </div>
+              {% if plan.discount_tag %}
+                <span class="section-m9mnrrun__card-discount" property="true" data-property="plans[{{card_index}}].discount_tag" method="text">{{ plan.discount_tag }}</span>
+              {% endif %}
+            </div>
+
+            {% if plan.features.size > 0 %}
+              <div class="section-m9mnrrun__card-features">
+                <ul class="section-m9mnrrun__feature-list">
+                  {% for feature in plan.features %}
+                    {% assign feature_index = forloop.index | minus: 1 %}
+                    <li class="section-m9mnrrun__feature-item {% if feature.included %}section-m9mnrrun__feature-item--included{% else %}section-m9mnrrun__feature-item--excluded{% endif %}">
+                      {% if feature.included %}
+                        <svg class="section-m9mnrrun__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                      {% else %}
+                        <svg class="section-m9mnrrun__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                      {% endif %}
+                      <span property="true" data-property="plans[{{card_index}}].features[{{feature_index}}].text" method="text">{{ feature.text }}</span>
+                      <span property="true" data-property="plans[{{card_index}}].features[{{feature_index}}].included" method="boolean" style="display:none;">{{ feature.included }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="section-m9mnrrun__card-action">
+              {% if plan.button_text %}
+                <a href="{% url plan.button_link %}" class="section-m9mnrrun__card-button" property="true" data-property="plans[{{card_index}}].button_link" method="attr" para="href">
+                  <span property="true" data-property="plans[{{card_index}}].button_text" method="text">{{ plan.button_text }}</span>
+                </a>
+              {% endif %}
+              {% if plan.save_tag %}
+                <span class="section-m9mnrrun__card-save-tag" property="true" data-property="plans[{{card_index}}].save_tag" method="text">{{ plan.save_tag }}</span>
+              {% endif %}
+            </div>
+             <span property="true" data-property="plans[{{card_index}}].highlight" method="boolean" style="display:none;">{{ plan.highlight }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
