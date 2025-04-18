@@ -113,22 +113,18 @@ async function uploadTemplate(uploader: B2Uploader, bucketId: string, template: 
 }
 
 async function upload(template: string) {
-    try {
-        const bucketId = process.env.B2_BUCKET_ID as string;
-        const uploader = new B2Uploader();
-        if (template === 'all') {
-            const outputDir = './output';
-            const files = fs.readdirSync(outputDir);
-            const wgtFiles = files.filter(f => f.endsWith('.wgt'));
-            for (const wgtFile of wgtFiles) {
-                const tplName = path.basename(wgtFile, '.wgt');
-                await uploadTemplate(uploader, bucketId, tplName);
-            }
-        } else {
-            await uploadTemplate(uploader, bucketId, template);
+    const bucketId = process.env.B2_BUCKET_ID as string;
+    const uploader = new B2Uploader();
+    if (template === 'all') {
+        const outputDir = './output';
+        const files = fs.readdirSync(outputDir);
+        const wgtFiles = files.filter(f => f.endsWith('.wgt'));
+        for (const wgtFile of wgtFiles) {
+            const tplName = path.basename(wgtFile, '.wgt');
+            await uploadTemplate(uploader, bucketId, tplName);
         }
-    } catch (error) {
-        console.error('Error:', error);
+    } else {
+        await uploadTemplate(uploader, bucketId, template);
     }
 }
 
