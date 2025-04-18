@@ -1,0 +1,52 @@
+{
+    "plans": [
+        {
+            "plan_name": "Starter",
+            "price": "\u00a599 /月",
+            "original_price": "\u00a5129 /月",
+            "discount_label": "限时优惠",
+            "features": [
+                {
+                    "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+                    "text": "50GB存储",
+                    "usage": "50GB/100GB"
+                },
+                {
+                    "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+                    "text": "基础支持"
+                },
+                {
+                    "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+                    "text": "高级报表",
+                    "pro_only": true
+                }
+            ],
+            "highlight": false,
+            "annual_save_label": ""
+        },
+        {
+            "plan_name": "Pro",
+            "price": "\u00a5199 /月",
+            "original_price": "\u00a5249 /月",
+            "discount_label": "限时优惠",
+            "features": [
+                {
+                    "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+                    "text": "100GB存储",
+                    "usage": "100GB/100GB"
+                },
+                {
+                    "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+                    "text": "优先支持"
+                },
+                {
+                    "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+                    "text": "高级报表",
+                    "pro_only": true
+                }
+            ],
+            "highlight": true,
+            "annual_save_label": "年付节省20%"
+        }
+    ]
+}

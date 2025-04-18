@@ -1,0 +1,191 @@
+{% header %}
+<style>
+.section-m9mnzupw {
+  padding: 2em 0;
+  background: #f8f9fa;
+}
+.section-m9mnzupw .section-m9mnzupw__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.section-m9mnzupw .pricing-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+.section-m9mnzupw .pricing-card {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0.2em 1em rgba(0,0,0,0.08);
+  border: 0.15em solid #e0e0e0;
+  width: 22em;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+}
+.section-m9mnzupw .pricing-card--highlight {
+  border-color: #337ab7;
+  box-shadow: 0 0.4em 2em rgba(51,122,183,0.15);
+  z-index: 1;
+}
+.section-m9mnzupw .pricing-card__focus {
+  padding: 2em 1em 1em 1em;
+  text-align: center;
+  border-bottom: 0.08em solid #e0e0e0;
+  background: linear-gradient(90deg,#f5faff 60%,#eaf6ff 100%);
+  border-radius: 1em 1em 0 0;
+}
+.section-m9mnzupw .pricing-card__plan-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.05em;
+}
+.section-m9mnzupw .pricing-card__price {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #337ab7;
+  margin-bottom: 0.2em;
+}
+.section-m9mnzupw .pricing-card__original-price {
+  font-size: 1em;
+  color: #bbb;
+  text-decoration: line-through;
+  margin-left: 0.5em;
+}
+.section-m9mnzupw .pricing-card__discount {
+  display: inline-block;
+  background: #ffecb3;
+  color: #b26a00;
+  font-size: 0.95em;
+  border-radius: 0.5em;
+  padding: 0.1em 0.7em;
+  margin-left: 0.5em;
+}
+.section-m9mnzupw .pricing-card__features {
+  flex: 1 1 auto;
+  padding: 1.2em 1.5em 0.5em 1.5em;
+  list-style: none;
+  margin: 0;
+}
+.section-m9mnzupw .pricing-card__feature {
+  display: flex;
+  align-items: center;
+  font-size: 1.05em;
+  margin-bottom: 0.8em;
+  position: relative;
+}
+.section-m9mnzupw .pricing-card__feature-icon {
+  width: 1.4em;
+  height: 1.4em;
+  margin-right: 0.7em;
+  flex-shrink: 0;
+}
+.section-m9mnzupw .pricing-card__feature-usage {
+  margin-left: auto;
+  font-size: 0.95em;
+  color: #337ab7;
+  background: #eaf6ff;
+  border-radius: 0.5em;
+  padding: 0.1em 0.7em;
+}
+.section-m9mnzupw .pricing-card__feature-proonly {
+  display: inline-block;
+  background: #337ab7;
+  color: #fff;
+  font-size: 0.85em;
+  border-radius: 0.5em;
+  padding: 0.1em 0.7em;
+  margin-left: 0.7em;
+}
+.section-m9mnzupw .pricing-card__actions {
+  padding: 1.2em 1em 1.5em 1em;
+  text-align: center;
+  border-top: 0.08em solid #e0e0e0;
+  border-radius: 0 0 1em 1em;
+  background: #f9fafb;
+}
+.section-m9mnzupw .pricing-card__btn {
+  display: inline-block;
+  font-size: 1.1em;
+  padding: 0.7em 2.2em;
+  border-radius: 2em;
+  background: #337ab7;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 0.1em 0.5em rgba(51,122,183,0.08);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.section-m9mnzupw .pricing-card--highlight .pricing-card__btn {
+  background: #23527c;
+  box-shadow: 0 0.2em 1em rgba(51,122,183,0.18);
+}
+.section-m9mnzupw .pricing-card__annual-save {
+  display: block;
+  margin-top: 0.7em;
+  font-size: 0.95em;
+  color: #388e3c;
+  background: #e8f5e9;
+  border-radius: 0.5em;
+  padding: 0.1em 0.7em;
+}
+@media (max-width: 900px) {
+  .section-m9mnzupw .pricing-table {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-m9mnzupw .pricing-card {
+    width: 95%;
+    margin-bottom: 2em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9mnzupw">
+  <div class="section-m9mnzupw__container">
+    <div class="pricing-table">
+      {% for plan in this.Model.plans %}
+      <div class="pricing-card{% if plan.highlight %} pricing-card--highlight{% endif %}">
+        <div class="pricing-card__focus">
+          <div class="pricing-card__plan-name" property="true" data-property="plans[{{forloop.index | minus:1}}].plan_name" method="text">{{plan.plan_name}}</div>
+          <span class="pricing-card__price" property="true" data-property="plans[{{forloop.index | minus:1}}].price" method="text">{{plan.price}}</span>
+          {% if plan.original_price %}
+          <span class="pricing-card__original-price" property="true" data-property="plans[{{forloop.index | minus:1}}].original_price" method="text">{{plan.original_price}}</span>
+          {% endif %}
+          {% if plan.discount_label %}
+          <span class="pricing-card__discount" property="true" data-property="plans[{{forloop.index | minus:1}}].discount_label" method="text">{{plan.discount_label}}</span>
+          {% endif %}
+        </div>
+        <ul class="pricing-card__features">
+          {% for feature in plan.features %}
+          <li class="pricing-card__feature">
+            {% if feature.icon %}
+            <img class="pricing-card__feature-icon" property="true" data-property="plans[{{forloop.parentloop.index | minus:1}}].features[{{forloop.index | minus:1}}].icon" method="attr" para="src" src="{% url feature.icon %}" alt="icon" />
+            {% endif %}
+            <span property="true" data-property="plans[{{forloop.parentloop.index | minus:1}}].features[{{forloop.index | minus:1}}].text" method="text">{{feature.text}}</span>
+            {% if feature.usage %}
+            <span class="pricing-card__feature-usage" property="true" data-property="plans[{{forloop.parentloop.index | minus:1}}].features[{{forloop.index | minus:1}}].usage" method="text">{{feature.usage}}</span>
+            {% endif %}
+            {% if feature.pro_only %}
+            <span class="pricing-card__feature-proonly" property="true" data-property="plans[{{forloop.parentloop.index | minus:1}}].features[{{forloop.index | minus:1}}].pro_only" method="checkbox">仅Pro版</span>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="pricing-card__actions">
+          <button class="pricing-card__btn">立即订阅</button>
+          {% if plan.annual_save_label %}
+          <span class="pricing-card__annual-save" property="true" data-property="plans[{{forloop.index | minus:1}}].annual_save_label" method="text">{{plan.annual_save_label}}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
