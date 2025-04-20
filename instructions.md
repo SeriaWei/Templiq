@@ -1,4 +1,4 @@
-图片用网上的免费图片，确保图片以合适的尺寸加载。如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，如果要用.container，应另外定义一个避免冲突，新添加的样式都要限定在这个section的作用域下。同时需要创建对应的json数据和字段定义，并保存src/data目录下。
+图片用网上的免费图片，确保图片以合适的尺寸加载。如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，但如果要用.container，应另外定义一个避免冲突，所有的样式都要限定在这个section的作用域下。同时需要创建模板对应的JSON数据和字段定义，并保存src/data目录下。
 
 # 模板规范
 model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
@@ -17,7 +17,11 @@ model binding使用的是liquid模板语法，注意添加条件判断以避免�
 </li>
 {% endfor %}
 ```
-# JSON 数据示例
+# JSON 数据规范
+## 基本要求
+- 属性必须使用snake_case命名法
+- 数组类型的属性值必须是对象
+## 示例
 ``` src/data/tpl.json
 {
     "heading": "标题栏",
@@ -32,9 +36,7 @@ model binding使用的是liquid模板语法，注意添加条件判断以避免�
 # 字段定义规范
 ## 基本要求
 - 字段定义必须使用JSON格式
-- 只支持一级嵌套结构
 - 字段名必须使用snake_case命名法
-- 禁止使用的字段名：Title, Description, Status, Position, Thumbnail
 - 字段定义必须包含字段类型(FieldType)和中文显示名称(DisplayName)
 
 ## 字段类型(FieldType)选项
