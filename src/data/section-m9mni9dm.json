@@ -1,0 +1,81 @@
+{
+  "plans": [
+    {
+      "name": "基础版",
+      "price": 99,
+      "currency": "¥",
+      "period": "/月",
+      "original_price": 129,
+      "discount_label": "限时优惠",
+      "features": [
+        {
+          "text": "10GB 存储空间",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png"
+        },
+        {
+          "text": "最多 3 个项目",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-folder-1439784-1214347.png"
+        },
+        {
+          "text": "基础客服支持",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-customer-service-1-461752.png"
+        }
+      ],
+      "button_text": "立即开始"
+    },
+    {
+      "name": "专业版",
+      "price": 199,
+      "currency": "¥",
+      "period": "/月",
+      "original_price": 259,
+      "discount_label": "限时优惠",
+      "features": [
+        {
+          "text": "50GB 存储空间",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+          "is_pro": true
+        },
+        {
+          "text": "无限项目",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-folder-1439784-1214347.png",
+          "is_pro": true
+        },
+        {
+          "text": "优先客服支持",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-customer-service-1-461752.png",
+          "is_pro": true
+        }
+      ],
+      "button_text": "升级专业版",
+      "is_popular": true,
+      "annual_save": "年付立省20%"
+    },
+    {
+      "name": "企业版",
+      "price": 499,
+      "currency": "¥",
+      "period": "/月",
+      "original_price": 699,
+      "discount_label": "限时优惠",
+      "features": [
+        {
+          "text": "200GB 存储空间",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-1-461749.png",
+          "is_pro": true
+        },
+        {
+          "text": "无限项目 + 高级分析",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-folder-1439784-1214347.png",
+          "is_pro": true
+        },
+        {
+          "text": "24/7专属客服",
+          "icon": "https://cdn.iconscout.com/icon/free/png-256/free-customer-service-1-461752.png",
+          "is_pro": true
+        }
+      ],
+      "button_text": "联系我们"
+    }
+  ]
+}

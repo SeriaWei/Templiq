@@ -1,0 +1,66 @@
+{
+  "section_heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "板块标题"
+  },
+  "plans": {
+    "FieldType": "Array",
+    "DisplayName": "定价套餐",
+    "Children": [
+      {
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "套餐名称"
+        },
+        "price": {
+          "FieldType": "SingleLine",
+          "DisplayName": "价格"
+        },
+        "period": {
+          "FieldType": "SingleLine",
+          "DisplayName": "周期"
+        },
+        "original_price": {
+          "FieldType": "SingleLine",
+          "DisplayName": "原价"
+        },
+        "discount_tag": {
+          "FieldType": "SingleLine",
+          "DisplayName": "折扣标签"
+        },
+        "features": {
+          "FieldType": "Array",
+          "DisplayName": "功能列表",
+          "Children": [
+            {
+              "text": {
+                "FieldType": "SingleLine",
+                "DisplayName": "功能描述"
+              },
+              "included": {
+                "FieldType": "Checkbox",
+                "DisplayName": "是否包含"
+              }
+            }
+          ]
+        },
+        "button_text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "按钮文字"
+        },
+        "button_link": {
+          "FieldType": "SingleLine",
+          "DisplayName": "按钮链接"
+        },
+        "highlight": {
+          "FieldType": "Checkbox",
+          "DisplayName": "是否高亮"
+        },
+        "save_tag": {
+          "FieldType": "SingleLine",
+          "DisplayName": "节省标签"
+        }
+      }
+    ]
+  }
+}

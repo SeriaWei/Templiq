@@ -1,0 +1,65 @@
+{
+    "plans": [
+        {
+            "name": "基础版",
+            "price": 99,
+            "currency": "¥",
+            "period": "月",
+            "original_price": 129,
+            "discount_label": "限时优惠",
+            "features": [
+                {
+                    "text": "10GB存储空间",
+                    "icon": "cloud",
+                    "quota": "10GB"
+                },
+                {
+                    "text": "基础客户支持",
+                    "icon": "headset"
+                },
+                {
+                    "text": "最多3个项目",
+                    "icon": "folder",
+                    "quota": "3个"
+                }
+            ],
+            "cta_text": "立即开始",
+            "cta_link": "#starter"
+        },
+        {
+            "name": "专业版",
+            "price": 299,
+            "currency": "¥",
+            "period": "月",
+            "original_price": 399,
+            "discount_label": "限时优惠",
+            "features": [
+                {
+                    "text": "100GB存储空间",
+                    "icon": "cloud",
+                    "quota": "100GB",
+                    "is_pro": true
+                },
+                {
+                    "text": "优先客户支持",
+                    "icon": "headset",
+                    "is_pro": true
+                },
+                {
+                    "text": "无限项目",
+                    "icon": "folder",
+                    "is_pro": true
+                },
+                {
+                    "text": "高级数据分析",
+                    "icon": "chart",
+                    "is_pro": true
+                }
+            ],
+            "cta_text": "升级专业版",
+            "cta_link": "#pro",
+            "is_highlighted": true,
+            "annual_saving": "年付立省20%"
+        }
+    ]
+}

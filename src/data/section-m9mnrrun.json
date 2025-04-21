@@ -1,0 +1,59 @@
+{
+  "section_heading": "选择适合您的计划",
+  "plans": [
+    {
+      "name": "基础版",
+      "price": "¥99",
+      "period": "/月",
+      "original_price": "",
+      "discount_tag": "",
+      "features": [
+        {"text": "50GB 存储空间", "included": true},
+        {"text": "基础支持", "included": true},
+        {"text": "每月 1000 次 API 调用", "included": true},
+        {"text": "高级分析", "included": false},
+        {"text": "优先支持", "included": false}
+      ],
+      "button_text": "选择基础版",
+      "button_link": "#",
+      "highlight": false,
+      "save_tag": ""
+    },
+    {
+      "name": "专业版",
+      "price": "¥299",
+      "period": "/月",
+      "original_price": "¥399",
+      "discount_tag": "限时优惠",
+      "features": [
+        {"text": "500GB 存储空间", "included": true},
+        {"text": "优先支持", "included": true},
+        {"text": "每月 10000 次 API 调用", "included": true},
+        {"text": "高级分析", "included": true},
+        {"text": "专属客户经理", "included": false}
+      ],
+      "button_text": "选择专业版",
+      "button_link": "#",
+      "highlight": true,
+      "save_tag": "年付节省20%"
+    },
+    {
+      "name": "企业版",
+      "price": "¥999",
+      "period": "/月",
+      "original_price": "",
+      "discount_tag": "",
+      "features": [
+        {"text": "无限存储空间", "included": true},
+        {"text": "专属客户经理", "included": true},
+        {"text": "无限 API 调用", "included": true},
+        {"text": "高级分析", "included": true},
+        {"text": "SLA 保障", "included": true}
+      ],
+      "button_text": "联系我们",
+      "button_link": "#",
+      "highlight": false,
+      "save_tag": ""
+    }
+  ]
+}

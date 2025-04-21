@@ -1,0 +1,72 @@
+{
+  "plans": {
+    "FieldType": "Array",
+    "DisplayName": "价格套餐",
+    "Children": [
+      {
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "套餐名称",
+          "IsRequired": true
+        },
+        "price": {
+          "FieldType": "Number",
+          "DisplayName": "价格",
+          "IsRequired": true
+        },
+        "currency": {
+          "FieldType": "SingleLine",
+          "DisplayName": "货币符号",
+          "IsRequired": true
+        },
+        "period": {
+          "FieldType": "SingleLine",
+          "DisplayName": "计费周期",
+          "IsRequired": true
+        },
+        "original_price": {
+          "FieldType": "Number",
+          "DisplayName": "原价"
+        },
+        "discount_label": {
+          "FieldType": "SingleLine",
+          "DisplayName": "优惠标签"
+        },
+        "features": {
+          "FieldType": "Array",
+          "DisplayName": "功能列表",
+          "Children": [
+            {
+              "text": {
+                "FieldType": "SingleLine",
+                "DisplayName": "功能描述",
+                "IsRequired": true
+              },
+              "icon": {
+                "FieldType": "Media",
+                "DisplayName": "功能图标"
+              },
+              "is_pro": {
+                "FieldType": "Checkbox",
+                "DisplayName": "是否高级功能"
+              }
+            }
+          ]
+        },
+        "button_text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "按钮文字",
+          "IsRequired": true
+        },
+        "is_popular": {
+          "FieldType": "Checkbox",
+          "DisplayName": "是否主推套餐"
+        },
+        "annual_save": {
+          "FieldType": "SingleLine",
+          "DisplayName": "年付优惠提示"
+        }
+      }
+    ]
+  }
+}
