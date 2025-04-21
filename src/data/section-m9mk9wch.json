@@ -1,0 +1,140 @@
+{
+  "section_title": "Simple, Transparent Pricing",
+  "section_description": "Choose the perfect plan for your needs. No hidden fees, no surprises.",
+  "show_toggle": true,
+  "annual_discount_percent": "20",
+  "pricing_plans": [
+    {
+      "plan_name": "Starter",
+      "price": "19",
+      "billing_period": "month",
+      "show_original_price": false,
+      "original_price": "",
+      "discount_label": "",
+      "is_featured": false,
+      "featured_label": "",
+      "features": [
+        {
+          "text": "Up to 5 users",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "10GB storage",
+          "pro_only": false,
+          "usage_limit": "10GB storage",
+          "usage_percent": "50"
+        },
+        {
+          "text": "Basic reporting",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "Email support",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        }
+      ],
+      "cta_text": "Get Started",
+      "cta_url": "#starter-plan",
+      "is_secondary": true,
+      "savings_text": "Save $45 per year"
+    },
+    {
+      "plan_name": "Professional",
+      "price": "49",
+      "billing_period": "month",
+      "show_original_price": true,
+      "original_price": "69",
+      "discount_label": "Limited offer",
+      "is_featured": true,
+      "featured_label": "Most Popular",
+      "features": [
+        {
+          "text": "Up to 20 users",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "50GB storage",
+          "pro_only": false,
+          "usage_limit": "50GB storage",
+          "usage_percent": "75"
+        },
+        {
+          "text": "Advanced analytics",
+          "pro_only": true,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "Priority support",
+          "pro_only": true,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "API access",
+          "pro_only": true,
+          "usage_limit": "",
+          "usage_percent": ""
+        }
+      ],
+      "cta_text": "Get Started",
+      "cta_url": "#pro-plan",
+      "is_secondary": false,
+      "savings_text": "Save $118 per year"
+    },
+    {
+      "plan_name": "Enterprise",
+      "price": "99",
+      "billing_period": "month",
+      "show_original_price": false,
+      "original_price": "",
+      "discount_label": "",
+      "is_featured": false,
+      "featured_label": "",
+      "features": [
+        {
+          "text": "Unlimited users",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "500GB storage",
+          "pro_only": false,
+          "usage_limit": "500GB storage",
+          "usage_percent": "25"
+        },
+        {
+          "text": "Custom reporting",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "24/7 phone support",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        },
+        {
+          "text": "Custom integrations",
+          "pro_only": false,
+          "usage_limit": "",
+          "usage_percent": ""
+        }
+      ],
+      "cta_text": "Contact Sales",
+      "cta_url": "#enterprise-plan",
+      "is_secondary": false,
+      "savings_text": "Save $238 per year"
+    }
+  ]
+}

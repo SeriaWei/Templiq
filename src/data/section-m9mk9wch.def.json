@@ -1,0 +1,128 @@
+{
+  "section_title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": false
+  },
+  "section_description": {
+    "FieldType": "Paragraph",
+    "DisplayName": "描述",
+    "IsRequired": false
+  },
+  "show_toggle": {
+    "FieldType": "Checkbox",
+    "DisplayName": "显示月度/年度切换",
+    "IsRequired": false
+  },
+  "annual_discount_percent": {
+    "FieldType": "Number",
+    "DisplayName": "年度折扣百分比",
+    "IsRequired": false
+  },
+  "pricing_plans": {
+    "FieldType": "Array",
+    "DisplayName": "价格方案",
+    "Children": {
+      "plan_name": {
+        "FieldType": "SingleLine",
+        "DisplayName": "方案名称",
+        "IsRequired": true
+      },
+      "price": {
+        "FieldType": "Number",
+        "DisplayName": "价格",
+        "IsRequired": true
+      },
+      "billing_period": {
+        "FieldType": "Dropdown",
+        "DisplayName": "计费周期",
+        "IsRequired": false,
+        "FieldOptions": [
+          {
+            "DisplayText": "月",
+            "Value": "month"
+          },
+          {
+            "DisplayText": "年",
+            "Value": "year"
+          },
+          {
+            "DisplayText": "一次性",
+            "Value": "one-time"
+          }
+        ]
+      },
+      "show_original_price": {
+        "FieldType": "Checkbox",
+        "DisplayName": "显示原价",
+        "IsRequired": false
+      },
+      "original_price": {
+        "FieldType": "Number",
+        "DisplayName": "原价",
+        "IsRequired": false
+      },
+      "discount_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "折扣标签",
+        "IsRequired": false
+      },
+      "is_featured": {
+        "FieldType": "Checkbox",
+        "DisplayName": "是否为推荐方案",
+        "IsRequired": false
+      },
+      "featured_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "推荐标签",
+        "IsRequired": false
+      },
+      "features": {
+        "FieldType": "Array",
+        "DisplayName": "功能列表",
+        "Children": {
+          "text": {
+            "FieldType": "SingleLine",
+            "DisplayName": "功能描述",
+            "IsRequired": true
+          },
+          "pro_only": {
+            "FieldType": "Checkbox",
+            "DisplayName": "仅高级版",
+            "IsRequired": false
+          },
+          "usage_limit": {
+            "FieldType": "SingleLine",
+            "DisplayName": "使用限制",
+            "IsRequired": false
+          },
+          "usage_percent": {
+            "FieldType": "Number",
+            "DisplayName": "使用百分比",
+            "IsRequired": false
+          }
+        }
+      },
+      "cta_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮文字",
+        "IsRequired": false
+      },
+      "cta_url": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮链接",
+        "IsRequired": false
+      },
+      "is_secondary": {
+        "FieldType": "Checkbox",
+        "DisplayName": "次要按钮样式",
+        "IsRequired": false
+      },
+      "savings_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "年度节省提示",
+        "IsRequired": false
+      }
+    }
+  }
+}
