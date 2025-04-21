@@ -4,7 +4,8 @@ import path from 'path';
 export function createNewSection(customName?: string) {
     const sectionName = customName || new Date().getTime().toString(36);
     const newSectionTemplate = 
-`{% header %}
+`<!-- Template name placeholder -->
+{% header %}
 <style>
 .section-${sectionName} {}
 </style>

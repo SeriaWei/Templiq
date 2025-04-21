@@ -1,0 +1,34 @@
+{
+  "testimonials": [
+    {
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop",
+      "name": "张明",
+      "position": "技术总监",
+      "company": "云智科技有限公司",
+      "review_text": "使用这个产品后，我们的团队工作效率提升了<span class=\"highlight\">35%</span>。系统稳定性和用户体验都非常出色，完全满足了我们的需求。特别是它的自动化功能，为我们节省了大量重复性工作的时间。",
+      "thumbnail": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&h=280&fit=crop",
+      "verification_text": "Google",
+      "rating": 4.5
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop",
+      "name": "李婷",
+      "position": "产品经理",
+      "company": "智联电商科技",
+      "review_text": "这是一个非常直观且易用的系统。我们的团队在短短<span class=\"highlight\">2周</span>内就完全掌握了所有功能。客户支持团队的响应速度也令人印象深刻。",
+      "thumbnail": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&h=280&fit=crop",
+      "verification_text": "Amazon",
+      "rating": 5
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop",
+      "name": "王建国",
+      "position": "运营总监",
+      "company": "创新科技集团",
+      "review_text": "产品的数据分析功能非常强大，帮助我们提升了<span class=\"highlight\">50%</span>的决策效率。系统的可扩展性也很好，能够根据我们的需求进行定制。",
+      "thumbnail": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&h=280&fit=crop",
+      "verification_text": "Microsoft",
+      "rating": 4.8
+    }
+  ]
+}

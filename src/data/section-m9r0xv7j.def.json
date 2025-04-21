@@ -1,0 +1,49 @@
+{
+  "testimonials": {
+    "FieldType": "Array",
+    "DisplayName": "客户评价列表",
+    "Children": [
+      {
+        "avatar": {
+          "FieldType": "Media",
+          "DisplayName": "用户头像",
+          "IsRequired": true
+        },
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "用户姓名",
+          "IsRequired": true
+        },
+        "position": {
+          "FieldType": "SingleLine",
+          "DisplayName": "职位",
+          "IsRequired": true
+        },
+        "company": {
+          "FieldType": "SingleLine",
+          "DisplayName": "公司名称",
+          "IsRequired": true
+        },
+        "review_text": {
+          "FieldType": "HtmlBox",
+          "DisplayName": "评价内容",
+          "IsRequired": true
+        },
+        "thumbnail": {
+          "FieldType": "Media",
+          "DisplayName": "预览图"
+        },
+        "verification_text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "认证标识",
+          "IsRequired": true
+        },
+        "rating": {
+          "FieldType": "Number",
+          "DisplayName": "评分",
+          "IsRequired": true
+        }
+      }
+    ]
+  }
+}

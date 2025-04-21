@@ -1,0 +1,316 @@
+<!-- 客户评价轮播 -->
+{% header %}
+<style>
+.section-m9r0xv7j {
+  padding: 2em 1em;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.section-m9r0xv7j .testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-m9r0xv7j .testimonial-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.section-m9r0xv7j .testimonial-card:first-child {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.section-m9r0xv7j .testimonial-card {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.1);
+  padding: 2em;
+}
+
+.section-m9r0xv7j .identity-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.section-m9r0xv7j .avatar-wrapper {
+  position: relative;
+  width: 3.75em;
+  height: 3.75em;
+  margin-right: 1em;
+}
+
+.section-m9r0xv7j .avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.section-m9r0xv7j .identity-info {
+  flex: 1;
+}
+
+.section-m9r0xv7j .name {
+  font-size: 1.125em;
+  margin: 0;
+}
+
+.section-m9r0xv7j .position {
+  font-weight: 600;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.section-m9r0xv7j .company {
+  font-size: 0.875em;
+  color: #666;
+  margin: 0.25em 0 0;
+}
+
+.section-m9r0xv7j .content-section {
+  margin-bottom: 1.5em;
+}
+
+.section-m9r0xv7j .review-text {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.section-m9r0xv7j .highlight {
+  color: #2b6cb0;
+  font-weight: 600;
+}
+
+.section-m9r0xv7j .media-preview {
+  position: relative;
+  width: 100%;
+  max-width: 20em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.section-m9r0xv7j .preview-image {
+  width: 100%;
+  height: auto;
+}
+
+.section-m9r0xv7j .trust-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-m9r0xv7j .badge {
+  display: flex;
+  align-items: center;
+  font-size: 0.875em;
+  color: #ffffff;
+}
+
+.section-m9r0xv7j .badge svg {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.5em;
+}
+
+.section-m9r0xv7j .rating {
+  display: flex;
+  align-items: center;
+}
+
+.section-m9r0xv7j meter {
+  width: 8em;
+  height: 0.5em;
+  border-radius: 0.25em;
+}
+
+.section-m9r0xv7j meter::-webkit-meter-bar {
+  background: #edf2f7;
+  border-radius: 0.25em;
+}
+
+.section-m9r0xv7j meter::-webkit-meter-optimum-value {
+  background: #f6ad55;
+  border-radius: 0.25em;
+}
+
+.section-m9r0xv7j .nav-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  gap: 0.5em;
+}
+
+.section-m9r0xv7j .nav-dot {
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background: #cbd5e0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-m9r0xv7j .nav-dot.active {
+  background: #4a5568;
+}
+
+@media (max-width: 768px) {
+  .section-m9r0xv7j .review-text {
+    -webkit-line-clamp: 2;
+  }
+
+  .section-m9r0xv7j .testimonial-card {
+    padding: 1.5em;
+  }
+
+  .section-m9r0xv7j .avatar-wrapper {
+    width: 3em;
+    height: 3em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9r0xv7j">
+  <div class="testimonial-container">
+    {% for testimonial in this.Model.testimonials %}
+    <div class="testimonial-card">
+      <div class="identity-section">
+        <div class="avatar-wrapper">
+          {% if testimonial.avatar %}
+          <img property="true" data-property="testimonials[{{forloop.index | minus:1}}].avatar" method="attr" para="src" src="{% url testimonial.avatar %}" class="avatar" alt="Customer avatar" />
+          {% endif %}
+        </div>
+        <div class="identity-info">
+          {% if testimonial.name %}
+          <h3 class="name" property="true" data-property="testimonials[{{forloop.index | minus:1}}].name" method="text">{{testimonial.name}}</h3>
+          {% endif %}
+          {% if testimonial.position %}
+          <strong class="position" property="true" data-property="testimonials[{{forloop.index | minus:1}}].position" method="text">{{testimonial.position}}</strong>
+          {% endif %}
+          {% if testimonial.company %}
+          <p class="company" property="true" data-property="testimonials[{{forloop.index | minus:1}}].company" method="text">{{testimonial.company}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="content-section">
+        {% if testimonial.review_text %}
+        <div class="review-text" property="true" data-property="testimonials[{{forloop.index | minus:1}}].review_text" method="html">{{testimonial.review_text | raw}}</div>
+        {% endif %}
+        {% if testimonial.thumbnail %}
+        <div class="media-preview">
+          <img property="true" data-property="testimonials[{{forloop.index | minus:1}}].thumbnail" method="attr" para="src" src="{% url testimonial.thumbnail %}" class="preview-image" alt="Video preview" />
+        </div>
+        {% endif %}
+      </div>
+      <div class="trust-section">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="#fff">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span property="true" data-property="testimonials[{{forloop.index | minus:1}}].verification_text" method="text">{{testimonial.verification_text}}</span>
+        </div>
+        <div class="rating">
+          <meter property="true" data-property="testimonials[{{forloop.index | minus:1}}].rating" method="attr" para="value" value="{{testimonial.rating}}" min="0" max="5" optimum="5"></meter>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="nav-dots">
+      {% for testimonial in this.Model.testimonials %}
+      <div class="nav-dot{% if forloop.first %} active{% endif %}"></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  const container = document.querySelector('.section-m9r0xv7j');
+  if (!container) return;
+
+  const cards = container.querySelectorAll('.testimonial-card');
+  const dots = container.querySelectorAll('.nav-dot');
+  let currentIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function autoPlay() {
+    const interval = 5000;
+    return setInterval(() => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      updateCarousel();
+    }, interval);
+  }
+
+  function updateCarousel() {
+    cards.forEach((card, index) => {
+      if (index === currentIndex) {
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.position = 'relative';
+      } else {
+        card.style.opacity = '0';
+        card.style.visibility = 'hidden';
+        card.style.position = 'absolute';
+      }
+      dots[index].classList.toggle('active', index === currentIndex);
+    });
+  }
+
+  container.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  container.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    const diff = touchEndX - touchStartX;
+
+    if (Math.abs(diff) > 30) {
+      if (diff > 0 && currentIndex > 0) {
+        currentIndex--;
+      } else if (diff < 0 && currentIndex < cards.length - 1) {
+        currentIndex++;
+      }
+      updateCarousel();
+    }
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+    });
+  });
+
+  let autoPlayTimer = autoPlay();
+
+  container.addEventListener('mouseenter', () => {
+    clearInterval(autoPlayTimer);
+  });
+
+  container.addEventListener('mouseleave', () => {
+    autoPlayTimer = autoPlay();
+  });
+})();
+</script>
+{% endfooter %}
