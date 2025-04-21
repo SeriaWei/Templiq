@@ -246,11 +246,19 @@ async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): P
 }
 
 function createPackageFiles(template: string, viewName: string): any[] {
+    // Read the template, remove the first line if it's an HTML comment, then encode
+    const templatePath = path.resolve(__dirname, `../templates/${template}.liquid`);
+    let templateContent = fs.readFileSync(templatePath, 'utf8');
+    const lines = templateContent.split('\n');
+    if (lines.length > 0 && lines[0].trim().startsWith('<!--') && lines[0].trim().endsWith('-->')) {
+        lines.shift();
+        templateContent = lines.join('\n');
+    }
     return [
         {
             "FileName": `${viewName}.liquid`,
             "FilePath": `~/Plugins/ZKEACMS.Fluid/Views/${viewName}.liquid`,
-            "Content": readFileAsBase64(path.resolve(__dirname, `../templates/${template}.liquid`))
+            "Content": Buffer.from(templateContent).toString('base64')
         },
         {
             "FileName": `${template}.png`,
@@ -258,6 +266,18 @@ function createPackageFiles(template: string, viewName: string): any[] {
             "Content": readFileAsBase64(path.resolve(__dirname, `../public/thumbs/${template}-m.png`))
         }
     ];
+}
+
+function getWidgetNameFromTemplate(template: string): string {
+    const templatePath = path.resolve(__dirname, `../templates/${template}.liquid`);
+    const content = fs.readFileSync(templatePath, 'utf8');
+    const firstLine = content.split('\n')[0].trim();
+    // Remove <!-- and --> and trim whitespace
+    if (firstLine.startsWith('<!--') && firstLine.endsWith('-->')) {
+        return firstLine.slice(4, -3).trim();
+    }
+    // fallback to template name if not found
+    return template;
 }
 
 function createWidgetConfig(template: string, viewName: string, schemaDefWidthData: any, schemaDef: any): any {
@@ -285,7 +305,7 @@ function createWidgetConfig(template: string, viewName: string, schemaDefWidthDa
         "StyleClass": "full",
         "Thumbnail": `~/UpLoad/Images/Widget/${template}.png`,
         "ViewModelTypeName": CONFIG.VIEW_MODEL_TYPE_NAME,
-        "WidgetName": template,
+        "WidgetName": getWidgetNameFromTemplate(template),
         "ZoneId": null,
         "CreateBy": null,
         "CreatebyName": null,
