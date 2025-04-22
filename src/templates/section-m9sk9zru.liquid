@@ -1,0 +1,127 @@
+<!-- 图文分区展示 -->
+{% header %}
+<style>
+.section-m9sk9zru {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+.section-m9sk9zru__left {
+  flex: 1;
+  min-width: 300px;
+  padding: 0 2em;
+}
+.section-m9sk9zru__title {
+  color: #8b0000;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 1em;
+  position: relative;
+}
+.section-m9sk9zru__description {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+.section-m9sk9zru__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #8b0000;
+}
+.section-m9sk9zru__button {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  background: #8b0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1em;
+}
+.section-m9sk9zru__button:hover {
+  color: white;
+}
+.section-m9sk9zru__right {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0;
+}
+.section-m9sk9zru__image-container {
+  position: relative;
+}
+.section-m9sk9zru__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-m9sk9zru__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+.section-m9sk9zru__caption-link {
+  color: white;
+  text-decoration: none;
+}
+.section-m9sk9zru__caption-link:hover {
+  color: white;
+}
+@media (max-width: 768px) {
+  .section-m9sk9zru {
+    flex-direction: column;
+    padding: 1em 0;
+  }
+  .section-m9sk9zru__left,
+  .section-m9sk9zru__right {
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9sk9zru">
+  <div class="section-m9sk9zru__left">
+    {% if this.Model.title %}
+    <h2 class="section-m9sk9zru__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+    {% endif %}
+    
+    {% if this.Model.description %}
+    <div class="section-m9sk9zru__description" property="true" data-property="description" method="html">{{this.Model.description}}</div>
+    {% endif %}
+    
+    {% if this.Model.button_text and this.Model.button_link %}
+    <a href="{% url this.Model.button_link %}" class="section-m9sk9zru__button" property="true" data-property="button_text" method="text">{{this.Model.button_text}}</a>
+    {% endif %}
+  </div>
+  
+  <div class="section-m9sk9zru__right">
+    {% for image in this.Model.images %}
+    <div class="section-m9sk9zru__image-container">
+      <img class="section-m9sk9zru__image" property="true" data-property="images[{{forloop.index | minus:1}}].src" method="attr" para="src" src="{% url image.src %}" alt="{{image.caption}}" />
+      {% if image.caption and image.caption_link %}
+      <div class="section-m9sk9zru__caption">
+        <a href="{% url image.caption_link %}" class="section-m9sk9zru__caption-link" property="true" data-property="images[{{forloop.index | minus:1}}].caption" method="text">{{image.caption}}</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

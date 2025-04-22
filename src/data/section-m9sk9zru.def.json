@@ -1,0 +1,40 @@
+{
+  "title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": true
+  },
+  "description": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "描述文字"
+  },
+  "button_text": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮文字"
+  },
+  "button_link": {
+    "FieldType": "SingleLine",
+    "DisplayName": "按钮链接"
+  },
+  "images": {
+    "FieldType": "Array",
+    "DisplayName": "图片集合",
+    "Children": [
+      {
+        "src": {
+          "FieldType": "Media",
+          "DisplayName": "图片URL",
+          "IsRequired": true
+        },
+        "caption": {
+          "FieldType": "SingleLine",
+          "DisplayName": "图片说明"
+        },
+        "caption_link": {
+          "FieldType": "SingleLine",
+          "DisplayName": "说明链接"
+        }
+      }
+    ]
+  }
+}

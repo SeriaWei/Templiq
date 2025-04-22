@@ -1,0 +1,28 @@
+{
+  "title": "自然风光摄影作品集",
+  "description": "<p>欣赏来自世界各地的壮丽自然风光摄影作品，每一张照片都捕捉了大自然的独特魅力。</p><p>这些作品由专业摄影师使用长曝光、黄金时刻等技巧拍摄，展现了挪威峡湾的壮阔、阿尔卑斯山脉的雄伟、加拿大班夫国家公园的纯净以及新西兰南岛森林的神秘。</p>",
+  "button_text": "浏览全部作品",
+  "button_link": "#",
+  "images": [
+    {
+      "src": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=500&q=80",
+      "caption": "挪威峡湾风光",
+      "caption_link": "#"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=500&q=80",
+      "caption": "阿尔卑斯山脉",
+      "caption_link": "#"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80",
+      "caption": "加拿大班夫国家公园",
+      "caption_link": "#"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500&q=80",
+      "caption": "新西兰南岛森林",
+      "caption_link": "#"
+    }
+  ]
+}
