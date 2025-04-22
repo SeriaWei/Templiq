@@ -1,0 +1,101 @@
+<!-- 全宽背景图文展示 -->
+{% header %}
+<style>
+.section-m9s4u6hk {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 450px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
+
+.section-m9s4u6hk .content-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.section-m9s4u6hk .content-wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 5px;
+  padding: 2em;
+  color: white;
+  margin-bottom: 2em;
+}
+
+.section-m9s4u6hk.full-width-content .content-container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.section-m9s4u6hk.full-width-content .content-wrapper {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.section-m9s4u6hk.full-width-content .text-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.section-m9s4u6hk .title {
+  font-size: 2.2em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.section-m9s4u6hk .description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-m9s4u6hk {
+    height: 60vh;
+  }
+  
+  .section-m9s4u6hk .title {
+    font-size: 1.8em;
+  }
+  
+  .section-m9s4u6hk .description {
+    font-size: 1em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9s4u6hk {% if this.Model.full_width_content %}full-width-content{% endif %}" {% if this.Model.background_image %}style="background-image: url('{% url this.Model.background_image %}');"{% endif %}>
+  <div class="content-container">
+    <div class="content-wrapper">
+      <div class="text-container">
+        {% if this.Model.title %}
+        <h2 class="title" property="true" data-property="title" method="text">{{ this.Model.title }}</h2>
+        {% endif %}
+        
+        {% if this.Model.description %}
+        <div class="description" property="true" data-property="description" method="html">{{ this.Model.description | raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% footer %}
+<script type="text/javascript">
+// No JavaScript needed for this component
+</script>
+{% endfooter %}
