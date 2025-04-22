@@ -1,0 +1,40 @@
+{
+    "heading": {
+      "FieldType": "SingleLine",
+      "DisplayName": "区块标题"
+    },
+    "products": {
+      "FieldType": "Array",
+      "DisplayName": "产品列表",
+      "Children": [
+        {
+          "image": {
+            "FieldType": "Media",
+            "DisplayName": "产品图片",
+            "IsRequired": true
+          },
+          "title": {
+            "FieldType": "SingleLine",
+            "DisplayName": "产品名称",
+            "IsRequired": true
+          },
+          "description": {
+            "FieldType": "Paragraph",
+            "DisplayName": "产品描述"
+          },
+          "price": {
+            "FieldType": "SingleLine",
+            "DisplayName": "产品价格"
+          },
+          "link": {
+            "FieldType": "SingleLine",
+            "DisplayName": "产品链接"
+          },
+          "link_text": {
+            "FieldType": "SingleLine",
+            "DisplayName": "链接文字"
+          }
+        }
+      ]
+    }
+  }

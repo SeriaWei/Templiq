@@ -1,0 +1,29 @@
+{
+    "heading": "精选产品",
+    "products": [
+      {
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+        "title": "高品质耳机",
+        "description": "专业级音质，舒适佩戴体验",
+        "price": "¥599",
+        "link": "/products/headphones",
+        "link_text": "立即购买"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
+        "title": "智能手表",
+        "description": "健康监测，运动追踪",
+        "price": "¥1299",
+        "link": "/products/smartwatch",
+        "link_text": "查看详情"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80",
+        "title": "无线充电器",
+        "description": "快速充电，兼容多种设备",
+        "price": "¥199",
+        "link": "/products/charger",
+        "link_text": "加入购物车"
+      }
+    ]
+  }
