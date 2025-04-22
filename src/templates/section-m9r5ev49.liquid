@@ -1,0 +1,140 @@
+<!-- 团队介绍 -->
+{% header %}
+<style>
+.section-m9r5ev49 {
+  padding: 1em 0;
+  background-color: {% if this.Model.background_color %}{{this.Model.background_color}}{% else %}#f8f9fa{% endif %};
+}
+
+.section-m9r5ev49 .team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.section-m9r5ev49 .team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.section-m9r5ev49 .team-member {
+  position: relative;
+  text-align: center;
+  padding: 1.5em;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.section-m9r5ev49 .team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.section-m9r5ev49 .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1em;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.section-m9r5ev49 .name {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.section-m9r5ev49 .position {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+.section-m9r5ev49 .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.section-m9r5ev49 .social-links a {
+  color: #666;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.section-m9r5ev49 .social-links a:hover {
+  color: #007bff;
+}
+
+.section-m9r5ev49 .bio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.95);
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.section-m9r5ev49 .team-member:hover .bio {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .section-m9r5ev49 .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .section-m9r5ev49 .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9r5ev49">
+  <div class="team-container">
+    {% if this.Model.heading %}
+    <h2 property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+    {% endif %}
+    
+    <div class="team-grid">
+      {% for member in this.Model.members %}
+      <div class="team-member">
+        {% if member.avatar %}
+        <img property="true" data-property="members[{{forloop.index | minus:1}}].avatar" method="attr" para="src" src="{% url member.avatar %}" class="avatar" />
+        {% endif %}
+        
+        {% if member.name %}
+        <h3 property="true" data-property="members[{{forloop.index | minus:1}}].name" method="text" class="name">{{member.name}}</h3>
+        {% endif %}
+        
+        {% if member.position %}
+        <p property="true" data-property="members[{{forloop.index | minus:1}}].position" method="text" class="position">{{member.position}}</p>
+        {% endif %}      
+        
+        {% if member.bio %}
+        <div property="true" data-property="members[{{forloop.index | minus:1}}].bio" method="html" class="bio">{{member.bio | raw}}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+{% endfooter %}

@@ -1,0 +1,30 @@
+{
+  "heading": "我们的团队",
+  "background_color": "#f8f9fa",
+  "members": [
+    {
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&q=80",
+      "name": "张三",
+      "position": "CEO",
+      "bio": "10年互联网创业经验，专注于产品设计和用户体验。"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1542103749-8ef59b94f47e?w=500&q=80",
+      "name": "李四",
+      "position": "CTO",
+      "bio": "资深全栈工程师，擅长系统架构和高并发处理。"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80",
+      "name": "王芳",
+      "position": "产品经理",
+      "bio": "5年产品管理经验，专注于用户需求分析和产品规划。"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80",
+      "name": "赵六",
+      "position": "UI设计师",
+      "bio": "专注于用户体验设计，擅长创造简洁优雅的界面。"
+    }
+  ]
+}

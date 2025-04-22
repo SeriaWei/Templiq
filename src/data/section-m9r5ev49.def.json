@@ -1,0 +1,36 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "background_color": {
+    "FieldType": "SingleLine",
+    "DisplayName": "背景颜色"
+  },
+  "members": {
+    "FieldType": "Array",
+    "DisplayName": "团队成员",
+    "Children": [
+      {
+        "avatar": {
+          "FieldType": "Media",
+          "DisplayName": "头像",
+          "IsRequired": true
+        },
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "姓名",
+          "IsRequired": true
+        },
+        "position": {
+          "FieldType": "SingleLine",
+          "DisplayName": "职位"
+        },
+        "bio": {
+          "FieldType": "Paragraph",
+          "DisplayName": "个人简介"
+        }
+      }
+    ]
+  }
+}
