@@ -1,0 +1,19 @@
+{
+    "section_title": "客户评价",
+    "testimonials": [
+        {
+            "avatar": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=200&q=80",
+            "client_name": "张先生",
+            "client_title": "ABC公司CEO",
+            "rating": 5,
+            "content": "产品非常出色，服务团队响应迅速，帮助我们解决了关键问题。强烈推荐！"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+            "client_name": "李女士",
+            "client_title": "XYZ公司市场总监",
+            "rating": 4,
+            "content": "使用体验很好，界面直观易用，帮助我们提高了工作效率。"
+        }
+    ]
+}

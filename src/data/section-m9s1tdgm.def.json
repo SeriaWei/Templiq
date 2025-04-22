@@ -1,0 +1,60 @@
+{
+    "section_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区块标题"
+    },
+    "testimonials": {
+        "FieldType": "Array",
+        "DisplayName": "评价列表",
+        "Children": [
+            {
+                "avatar": {
+                    "FieldType": "Media",
+                    "DisplayName": "客户头像",
+                    "IsRequired": true
+                },
+                "client_name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "客户姓名",
+                    "IsRequired": true
+                },
+                "client_title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "客户职位"
+                },
+                "rating": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "评分",
+                    "IsRequired": true,
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "1星",
+                            "Value": "1"
+                        },
+                        {
+                            "DisplayText": "2星",
+                            "Value": "2"
+                        },
+                        {
+                            "DisplayText": "3星",
+                            "Value": "3"
+                        },
+                        {
+                            "DisplayText": "4星",
+                            "Value": "4"
+                        },
+                        {
+                            "DisplayText": "5星",
+                            "Value": "5"
+                        }
+                    ]
+                },
+                "content": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "评价内容",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

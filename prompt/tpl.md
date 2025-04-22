@@ -1,7 +1,10 @@
-模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现区块，模板之类的字眼。图片用网上的免费图片，确保图片以合适的尺寸加载。如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，但如果要用.container，应另外定义一个避免冲突，所有的样式都要限定在这个section的作用域下。同时需要创建模板对应的JSON数据和字段定义，并保存src/data目录下。
+# 基本规范
+完成模板代码，注意要有良好的用户体验。用网上的免费图片时，确保图片以合适的尺寸加载。然后创建模板对应的JSON数据和字段定义，与模板同名（字段定义加.def）保存src/data目录下。注意必须保证模板，数据和字段定义三者的一致性。
 
 # 模板规范
-model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
+模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现“区块”，“模板”之类的字眼。
+如果不需要javascript，请移除footer。CSS样式中font-size优先使用em而非rem。界面要美观大方有设计感，支持各种尺寸的设备。可以使用bootstrap3中定义的样式，但如果要用.container，应另外定义一个避免冲突，所有的样式都要限定在这个section的作用域下。
+Model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
 ``` src/templates/tpl.liquid
 {% if this.Model.heading %}
 <p property="true" data-property="heading" method="text">{{this.Model.heading}}</p>

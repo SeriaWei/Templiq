@@ -1,0 +1,146 @@
+<!-- 客户评价 -->
+{% header %}
+<style>
+.section-m9s1tdgm {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 2em 0;
+  background-color: #f9f9f9;
+}
+
+.section-m9s1tdgm .custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-m9s1tdgm .testimonial-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2em;
+  margin: 1em 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.section-m9s1tdgm .testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.section-m9s1tdgm .testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.section-m9s1tdgm .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1em;
+}
+
+.section-m9s1tdgm .client-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.section-m9s1tdgm .client-title {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0.2em 0 0;
+}
+
+.section-m9s1tdgm .testimonial-content {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1em;
+}
+
+.section-m9s1tdgm .rating {
+  color: #ffc107;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.section-m9s1tdgm .section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+  color: #333;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.section-m9s1tdgm .section-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+}
+
+@media (max-width: 768px) {
+  .section-m9s1tdgm .testimonial-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .section-m9s1tdgm .avatar {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+  
+  .section-m9s1tdgm .section-title {
+    font-size: 1.5em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9s1tdgm">
+  <div class="custom-container">
+    {% if this.Model.section_title %}
+    <h2 property="true" data-property="section_title" method="text" class="section-title">{{this.Model.section_title}}</h2>
+    {% endif %}
+    
+    <div class="testimonial-grid">
+      {% for item in this.Model.testimonials %}
+      <div class="testimonial-card">
+        {% if item.avatar %}
+        <div class="testimonial-header">
+          <img property="true" data-property="testimonials[{{forloop.index | minus:1}}].avatar" method="attr" para="src" src="{% url item.avatar %}" class="avatar" alt="{{item.client_name}}">
+          <div>
+            {% if item.client_name %}
+            <h3 property="true" data-property="testimonials[{{forloop.index | minus:1}}].client_name" method="text" class="client-name">{{item.client_name}}</h3>
+            {% endif %}
+            {% if item.client_title %}
+            <p property="true" data-property="testimonials[{{forloop.index | minus:1}}].client_title" method="text" class="client-title">{{item.client_title}}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+        
+        {% if item.rating %}
+        <div property="true" data-property="testimonials[{{forloop.index | minus:1}}].rating" method="text" class="rating">
+          {% assign rating = item.rating | plus:0 %}
+          {% for i in (1..5) %}
+            {% if i <= rating %}★{% else %}☆{% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        {% if item.content %}
+        <div property="true" data-property="testimonials[{{forloop.index | minus:1}}].content" method="text" class="testimonial-content">{{item.content}}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
