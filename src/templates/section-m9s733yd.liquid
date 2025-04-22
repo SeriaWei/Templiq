@@ -1,0 +1,122 @@
+<!-- 双拼色背景切片 -->
+{% header %}
+<style>
+.section-m9s733yd {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.section-m9s733yd .content-slice {
+  position: absolute;
+  left: 0;
+  height: 140px; 
+  top: calc(50% - 70px);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-m9s733yd .title-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 2em 0 2em 50%;
+  text-align: left;
+  margin: 0;
+  border-top-right-radius: 8px;
+}
+
+.section-m9s733yd .title {
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+  font-weight: 600;
+}
+
+.section-m9s733yd .cta-container {
+  background-color: #b40321;
+  padding: 0.5em 0 0.5em 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  font-size: 16px; 
+  border-bottom-right-radius: 8px;
+}
+
+.section-m9s733yd .cta-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.section-m9s733yd .cta-link:hover {
+  opacity: 0.85;
+}
+
+.section-m9s733yd .cta-icon {
+  margin-left: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .section-m9s733yd {
+    height: 400px;
+  }
+  .section-m9s733yd .content-slice {
+    width: 80%;
+    top:auto;
+    bottom: 3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-m9s733yd {
+    height: 300px;
+  }
+  .section-m9s733yd .content-slice {
+    width: 100%;
+    top:auto;
+    bottom: 0;
+  }
+  .section-m9s733yd .title-container {
+    border-top-right-radius: 0;
+    padding-left: 1em;
+  }
+  .section-m9s733yd .cta-container {
+    border-bottom-right-radius: 0;
+    padding-left: 1em;
+  }
+  .section-m9s733yd .title {
+    font-size: 1.5em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9s733yd" style="background-image: url('{% url this.Model.background_image %}')">
+  {% if this.Model.title or this.Model.cta_text %}
+  <div class="content-slice">
+    {% if this.Model.title %}
+    <div class="title-container">
+      <h2 class="title" property="true" data-property="title" method="text">{{ this.Model.title }}</h2>
+    </div>
+    {% endif %}
+    
+    {% if this.Model.cta_text %}
+    <div class="cta-container">
+      <a href="{% url this.Model.cta_link %}" class="cta-link" property="true" data-property="cta_link" method="attr" para="href">
+        <span property="true" data-property="cta_text" method="text">{{ this.Model.cta_text }}</span>
+        <span class="cta-icon">&#8594;</span>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+</section>
