@@ -2,5 +2,6 @@
   "background_image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&q=80",
   "title": "探索自然的奇妙",
   "description": "<p>大自然有着令人惊叹的美丽和无穷的奥秘，等待我们去探索。从壮观的山脉到宁静的湖泊，每一处景色都讲述着独特的故事。</p>",
-  "full_width_content": true
+  "full_width_content": false,
+  "light_theme": false
 }

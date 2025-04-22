@@ -16,7 +16,12 @@
   },
   "full_width_content": {
     "FieldType": "Checkbox",
-    "DisplayName": "内容区域占满全宽并底部对齐",
+    "DisplayName": "文字内容是否全宽",
+    "IsRequired": false
+  },
+  "light_theme": {
+    "FieldType": "Checkbox",
+    "DisplayName": "使用浅色主题",
     "IsRequired": false
   }
 }

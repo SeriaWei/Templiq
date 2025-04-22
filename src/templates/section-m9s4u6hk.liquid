@@ -32,6 +32,11 @@
   margin-bottom: 2em;
 }
 
+.section-m9s4u6hk .content-wrapper.light-theme {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #222;
+}
+
 .section-m9s4u6hk.full-width-content .content-container {
   max-width: none;
   padding-left: 0;
@@ -81,7 +86,7 @@
 
 <section class="section-m9s4u6hk {% if this.Model.full_width_content %}full-width-content{% endif %}" {% if this.Model.background_image %}style="background-image: url('{% url this.Model.background_image %}');"{% endif %}>
   <div class="content-container">
-    <div class="content-wrapper">
+    <div class="content-wrapper {% if this.Model.light_theme %}light-theme{% endif %}">
       <div class="text-container">
         {% if this.Model.title %}
         <h2 class="title" property="true" data-property="title" method="text">{{ this.Model.title }}</h2>
@@ -94,8 +99,3 @@
     </div>
   </div>
 </section>
-{% footer %}
-<script type="text/javascript">
-// No JavaScript needed for this component
-</script>
-{% endfooter %}
