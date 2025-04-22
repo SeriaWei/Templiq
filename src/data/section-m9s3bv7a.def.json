@@ -1,0 +1,35 @@
+{
+  "title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": false
+  },
+  "subtitle": {
+    "FieldType": "SingleLine",
+    "DisplayName": "副标题",
+    "IsRequired": false
+  },
+  "features": {
+    "FieldType": "Array",
+    "DisplayName": "产品特性",
+    "Children": [
+      {
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "产品名称",
+          "IsRequired": true
+        },
+        "image": {
+          "FieldType": "Media",
+          "DisplayName": "产品图片",
+          "IsRequired": true
+        },
+        "link_url": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接地址",
+          "IsRequired": false
+        }
+      }
+    ]
+  }
+}
