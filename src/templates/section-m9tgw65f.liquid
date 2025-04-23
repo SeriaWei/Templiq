@@ -1,0 +1,199 @@
+<!-- 个人介绍 -->
+{% header %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+.section-m9tgw65f {
+    padding: 2em 0;
+}
+.section-m9tgw65f .container-custom {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section-m9tgw65f .profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+.section-m9tgw65f .profile-content {
+    flex: 1;
+}
+.section-m9tgw65f .profile-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.section-m9tgw65f .profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section-m9tgw65f .profile-title {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+    color: #222;
+}
+.section-m9tgw65f .profile-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 500;
+}
+.section-m9tgw65f .profile-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 1em;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+.section-m9tgw65f .contact-info {
+    margin-bottom: 2em;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.section-m9tgw65f .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.section-m9tgw65f .contact-item:hover {
+    color: #2d5af1;
+}
+
+.section-m9tgw65f .contact-item i {
+    width: 1.2em;
+    text-align: center;
+    color: #2d5af1;
+    font-size: 1.1em;
+}
+
+.section-m9tgw65f .contact-item span {
+    position: relative;
+}
+
+.section-m9tgw65f .contact-item span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #2d5af1;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.section-m9tgw65f .contact-item:hover span::after {
+    transform: scaleX(1);
+}
+
+.section-m9tgw65f .social-links {
+    display: flex;
+    gap: 1.2em;
+}
+
+.section-m9tgw65f .social-link {
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 50%;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.section-m9tgw65f .social-link:hover {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .section-m9tgw65f .profile-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .section-m9tgw65f .profile-avatar {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .section-m9tgw65f .contact-info {
+        justify-content: center;
+        gap: 1.5em;
+    }
+    
+    .section-m9tgw65f .social-links {
+        justify-content: center;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9tgw65f">
+    <div class="container-custom">
+        <div class="profile-wrapper">
+            <div class="profile-content">
+                {% if this.Model.title %}
+                <h2 class="profile-title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+                {% endif %}
+                
+                {% if this.Model.subtitle %}
+                <div class="profile-subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</div>
+                {% endif %}
+                
+                {% if this.Model.description %}
+                <div class="profile-description" property="true" data-property="description" method="html">{{this.Model.description | raw}}</div>
+                {% endif %}
+                
+                <div class="contact-info">
+                    {% if this.Model.email %}
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span property="true" data-property="email" method="text">{{this.Model.email}}</span>
+                    </div>
+                    {% endif %}
+                    
+                    {% if this.Model.phone %}
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span property="true" data-property="phone" method="text">{{this.Model.phone}}</span>
+                    </div>
+                    {% endif %}
+                </div>
+
+                {% if this.Model.social_links %}
+                <div class="social-links">
+                    {% for item in this.Model.social_links %}
+                    <a class="social-link" property="true" data-property="social_links[{{forloop.index | minus:1}}].url" method="attr" para="href" href="{{item.url}}" target="_blank">
+                        <i property="true" data-property="social_links[{{forloop.index | minus:1}}].icon" method="class" class="{{item.icon}}"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="profile-avatar">
+                {% if this.Model.avatar %}
+                <img property="true" data-property="avatar" method="attr" para="src" src="{% url this.Model.avatar %}" alt="Profile Avatar">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

@@ -1,0 +1,90 @@
+{
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "subtitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "副标题",
+        "IsRequired": false
+    },
+    "description": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "介绍内容",
+        "IsRequired": true
+    },
+    "avatar": {
+        "FieldType": "Media",
+        "DisplayName": "头像图片",
+        "IsRequired": true
+    },
+    "email": {
+        "FieldType": "Email",
+        "DisplayName": "电子邮箱"
+    },
+    "phone": {
+        "FieldType": "Phone",
+        "DisplayName": "联系电话"
+    },
+    "social_links": {
+        "FieldType": "Array",
+        "DisplayName": "社交链接",
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "社交平台",
+                    "IsRequired": true,
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "GitHub",
+                            "Value": "fab fa-github"
+                        },
+                        {
+                            "DisplayText": "LinkedIn",
+                            "Value": "fab fa-linkedin"
+                        },
+                        {
+                            "DisplayText": "Twitter",
+                            "Value": "fab fa-twitter"
+                        },
+                        {
+                            "DisplayText": "微信",
+                            "Value": "fab fa-weixin"
+                        },
+                        {
+                            "DisplayText": "知乎",
+                            "Value": "fab fa-zhihu"
+                        },
+                        {
+                            "DisplayText": "Facebook",
+                            "Value": "fab fa-facebook"
+                        },
+                        {
+                            "DisplayText": "Instagram",
+                            "Value": "fab fa-instagram"
+                        },
+                        {
+                            "DisplayText": "YouTube",
+                            "Value": "fab fa-youtube"
+                        },
+                        {
+                            "DisplayText": "Dribbble",
+                            "Value": "fab fa-dribbble"
+                        },
+                        {
+                            "DisplayText": "Behance",
+                            "Value": "fab fa-behance"
+                        }
+                    ]
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接地址",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}
