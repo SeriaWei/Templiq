@@ -1,0 +1,116 @@
+<!-- 产品特点展示 -->
+{% header %}
+<style>
+.section-m9tbptqg {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-m9tbptqg .section-title {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.section-m9tbptqg .content-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.section-m9tbptqg .content-wrapper {
+    flex: 2;
+}
+
+.section-m9tbptqg .image-wrapper {
+    flex: 1;
+}
+
+.section-m9tbptqg .preview-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.section-m9tbptqg .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.section-m9tbptqg .feature-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.section-m9tbptqg .feature-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.section-m9tbptqg .feature-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .section-m9tbptqg .content-container {
+        flex-direction: column;
+    }
+    
+    .section-m9tbptqg .image-wrapper {
+        position: static;
+        order: 1;
+        margin-top: 40px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-m9tbptqg .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-m9tbptqg .section-title {
+        font-size: 2em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9tbptqg">
+    {% if this.Model.title %}
+    <h2 class="section-title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+    {% endif %}
+    
+    <div class="content-container">
+        <div class="content-wrapper">
+            <div class="features-grid">
+                {% for feature in this.Model.features %}
+                <div class="feature-item">
+                    {% if feature.icon %}
+                    <img class="feature-icon" property="true" data-property="features[{{forloop.index | minus:1}}].icon" method="attr" para="src" src="{% url feature.icon %}" alt="{{feature.title}}" />
+                    {% endif %}
+                    
+                    {% if feature.title %}
+                    <h3 class="feature-title" property="true" data-property="features[{{forloop.index | minus:1}}].title" method="text">{{feature.title}}</h3>
+                    {% endif %}
+                    
+                    {% if feature.description %}
+                    <p class="feature-description" property="true" data-property="features[{{forloop.index | minus:1}}].description" method="text">{{feature.description}}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            {% if this.Model.preview_image %}
+            <img class="preview-image" property="true" data-property="preview_image" method="attr" para="src" src="{% url this.Model.preview_image %}" alt="Preview" />
+            {% endif %}
+        </div>
+    </div>
+</section>

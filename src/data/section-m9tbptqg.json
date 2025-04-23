@@ -1,0 +1,26 @@
+{
+    "title": "Freedom to explore, experiment and create",
+    "preview_image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=800&auto=format&fit=crop&q=80",
+    "features": [
+        {
+            "icon": "https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/icons/clock.svg",
+            "title": "Save time",
+            "description": "Don't start from scratch — complete your creative projects with ready made video and audio assets."
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/icons/dollar-sign.svg",
+            "title": "Save money",
+            "description": "Premium assets, without the price tag. No download limits means you can download whatever you want, for one low cost."
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/icons/plus-circle.svg",
+            "title": "New assets added daily",
+            "description": "Stand out and always be on-trend with our ever growing library of creative assets, created by industry experts."
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/icons/x-circle.svg",
+            "title": "Cancel any time",
+            "description": "We believe in creative freedom. Canceling your subscription is quick and easy — no strings attached."
+        }
+    ]
+}

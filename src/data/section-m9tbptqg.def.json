@@ -1,0 +1,35 @@
+{
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "preview_image": {
+        "FieldType": "Media",
+        "DisplayName": "预览图片",
+        "IsRequired": true
+    },
+    "features": {
+        "FieldType": "Array",
+        "DisplayName": "特点列表",
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "Media",
+                    "DisplayName": "图标",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "特点标题",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "特点描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}
