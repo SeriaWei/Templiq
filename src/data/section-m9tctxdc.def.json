@@ -1,0 +1,20 @@
+{
+    "blocks": {
+        "FieldType": "Array",
+        "DisplayName": "信息区块",
+        "Children": [
+            {
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题",
+                    "IsRequired": true
+                },
+                "content": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "内容描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

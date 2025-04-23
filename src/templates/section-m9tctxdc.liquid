@@ -1,0 +1,79 @@
+<!-- Template name placeholder -->
+{% header %}
+<style>
+.section-m9tctxdc {
+    padding: 4em 0;
+}
+
+.section-m9tctxdc .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-m9tctxdc .blocks-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+.section-m9tctxdc .block {
+    padding: 2em;
+    border-radius: 24px;
+    transition: transform 0.3s ease;
+}
+
+.section-m9tctxdc .block:hover {
+    transform: translateY(-5px);
+}
+
+.section-m9tctxdc .block-title {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.section-m9tctxdc .block-content {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.section-m9tctxdc .block-1 { background-color: #4A90E2; }
+.section-m9tctxdc .block-2 { background-color: #50C878; }
+.section-m9tctxdc .block-3 { background-color: #F39C12; }
+.section-m9tctxdc .block-4 { background-color: #9B59B6; }
+.section-m9tctxdc .block-5 { background-color: #E74C3C; }
+.section-m9tctxdc .block-6 { background-color: #34495E; }
+
+@media (max-width: 768px) {
+    .section-m9tctxdc .blocks-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9tctxdc">
+    <div class="container">
+        <div class="blocks-wrapper">
+            {% if this.Model.blocks %}
+                {% for block in this.Model.blocks %}
+                    <div class="block block-{{forloop.index}}">
+                        {% if block.title %}
+                            <h3 class="block-title" property="true" data-property="blocks[{{forloop.index | minus:1}}].title" method="text">{{block.title}}</h3>
+                        {% endif %}
+                        {% if block.content %}
+                            <div class="block-content" property="true" data-property="blocks[{{forloop.index | minus:1}}].content" method="text">{{block.content}}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
