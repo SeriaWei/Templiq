@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "title": "高效协作",
+      "desc": "团队成员无缝沟通，提升工作效率。",
+      "bg_color": "#d4e09b",
+      "text_color": "#000000"
+    },
+    {
+      "title": "绿色环保",
+      "desc": "坚持可持续发展，守护美好家园。",
+      "bg_color": "#f6f4d2",
+      "text_color": "#000000"
+    },
+    {
+      "title": "创新驱动",
+      "desc": "不断探索，激发无限可能。",
+      "bg_color": "#cbdfbd",
+      "text_color": "#000000"
+    },
+    {
+      "title": "用户至上",
+      "desc": "关注体验，服务每一位用户。",
+      "bg_color": "#f19c79",
+      "text_color": "#000000"
+    }
+  ]
+}

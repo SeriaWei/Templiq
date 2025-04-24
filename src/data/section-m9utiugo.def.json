@@ -1,0 +1,26 @@
+{
+  "blocks": {
+    "FieldType": "Array",
+    "DisplayName": "信息方块",
+    "Children": [
+      {
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "标题"
+        },
+        "desc": {
+          "FieldType": "Paragraph",
+          "DisplayName": "描述"
+        },
+        "bg_color": {
+          "FieldType": "SingleLine",
+          "DisplayName": "背景色(#d4e09b)"
+        },
+        "text_color": {
+          "FieldType": "SingleLine",
+          "DisplayName": "文字颜色(#000000)"
+        }
+      }
+    ]
+  }
+}

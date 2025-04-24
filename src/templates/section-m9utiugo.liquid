@@ -1,0 +1,79 @@
+<!-- 四色信息方块 -->
+{% header %}
+<style>
+.section-m9utiugo {
+    max-width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.section-m9utiugo .m9utiugo-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+}
+.section-m9utiugo .m9utiugo-block {
+    flex: 1 1 25%;
+    min-width: 180px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    box-sizing: border-box;
+    padding: 2em;
+    /* 默认色由数据覆盖 */
+}
+.section-m9utiugo .m9utiugo-block-1 { background: #d4e09b; color: #000; }
+.section-m9utiugo .m9utiugo-block-2 { background: #f6f4d2; color: #000; }
+.section-m9utiugo .m9utiugo-block-3 { background: #cbdfbd; color: #000; }
+.section-m9utiugo .m9utiugo-block-4 { background: #f19c79; color: #000; }
+.section-m9utiugo .m9utiugo-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+.section-m9utiugo .m9utiugo-desc {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0;
+}
+@media (max-width: 900px) {
+    .section-m9utiugo .m9utiugo-block { font-size: 0.95em; }
+}
+@media (max-width: 700px) {
+    .section-m9utiugo .m9utiugo-row { flex-wrap: wrap; }
+    .section-m9utiugo .m9utiugo-block { flex: 1 1 50%; min-width: 140px; }
+}
+@media (max-width: 480px) {
+    .section-m9utiugo .m9utiugo-block { flex: 1 1 100%; min-width: 100px; }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9utiugo">
+  <div class="m9utiugo-row">
+    {% for block in this.Model.blocks %}
+      <div class="m9utiugo-block m9utiugo-block-{{ forloop.index }}"
+        {% if block.bg_color or block.text_color %}
+          style="
+            {% if block.bg_color %}background: {{ block.bg_color }};{% endif %}
+            {% if block.text_color %}color: {{ block.text_color }};{% endif %}
+          "
+          property="true"
+          data-property="blocks[{{forloop.index | minus:1}}].bg_color,blocks[{{forloop.index | minus:1}}].text_color"
+          method="style"
+        {% endif %}
+      >
+        {% if block.title %}
+          <div class="m9utiugo-title" property="true" data-property="blocks[{{forloop.index | minus:1}}].title" method="text">{{ block.title }}</div>
+        {% endif %}
+        {% if block.desc %}
+          <div class="m9utiugo-desc" property="true" data-property="blocks[{{forloop.index | minus:1}}].desc" method="text">{{ block.desc }}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
