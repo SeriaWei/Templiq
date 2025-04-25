@@ -1,0 +1,29 @@
+{
+  "heading": "关于我们",
+  "description": "<p>我们是一家致力于提供优质服务的公司，拥有专业的团队和丰富的行业经验。</p>",
+  "team_members": [
+    {
+      "name": "张三",
+      "position": "创始人兼CEO",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80"
+    },
+    {
+      "name": "李四",
+      "position": "技术总监",
+      "avatar": "https://images.unsplash.com/photo-1542103749-8ef59b94f47e?w=300&q=80"
+    },
+    {
+      "name": "王五",
+      "position": "产品经理",
+      "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&q=80"
+    },
+    {
+      "name": "赵六",
+      "position": "设计师",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80"
+    }
+  ],
+  "email": "contact@example.com",
+  "phone": "13800138000",
+  "address": "北京市朝阳区"
+}

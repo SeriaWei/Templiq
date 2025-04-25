@@ -1,0 +1,165 @@
+<!-- 关于我们 -->
+{% header %}
+<style>
+.section-m9wwpfhc {
+  max-width:1170px;
+  padding-right:15px;
+  padding-left:15px;
+  margin: 0 auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section-m9wwpfhc h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #222;
+}
+
+.about-description {
+  font-size: 1.1em;
+  margin-bottom: 2em;
+}
+
+.team-section {
+  margin: 3em 0;
+}
+
+.team-section h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1.5em;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.member-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+
+.team-member h3 {
+  font-size: 1.3em;
+  margin: 0.5em 0;
+}
+
+.team-member p {
+  color: #666;
+}
+
+.contact-section {
+  margin: 3em 0;
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+
+.contact-icon {
+  margin-right: 1em;
+  font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9wwpfhc">
+  {% if this.Model.heading %}
+  <h1 property="true" data-property="heading" method="text">{{this.Model.heading}}</h1>
+  {% endif %}
+  
+  {% if this.Model.description %}
+  <div class="about-description" property="true" data-property="description" method="html">
+    {{this.Model.description | raw}}
+  </div>
+  {% endif %}
+  
+  {% if this.Model.team_members %}
+  <div class="team-section">
+    <h2>我们的团队</h2>
+    <div class="team-grid">
+      {% for member in this.Model.team_members %}
+      <div class="team-member">
+        {% if member.avatar %}
+        <img property="true" data-property="team_members[{{forloop.index | minus:1}}].avatar" method="attr" para="src" src="{% url member.avatar %}" alt="{{member.name}}" class="member-avatar">
+        {% endif %}
+        <h3 property="true" data-property="team_members[{{forloop.index | minus:1}}].name" method="text">{{member.name}}</h3>
+        <p property="true" data-property="team_members[{{forloop.index | minus:1}}].position" method="text">{{member.position}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if this.Model.email or this.Model.phone or this.Model.address %}
+  <div class="contact-section">
+    <h2>联系我们</h2>
+    <div class="contact-grid">
+      {% if this.Model.email %}
+      <div class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <span property="true" data-property="email" method="text">{{this.Model.email}}</span>
+      </div>
+      {% endif %}
+      {% if this.Model.phone %}
+      <div class="contact-item">
+        <span class="contact-icon">📞</span>
+        <span property="true" data-property="phone" method="text">{{this.Model.phone}}</span>
+      </div>
+      {% endif %}
+      {% if this.Model.address %}
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <span property="true" data-property="address" method="text">{{this.Model.address}}</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}

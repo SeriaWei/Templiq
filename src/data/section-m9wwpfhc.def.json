@@ -1,0 +1,43 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题"
+  },
+  "description": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "描述"
+  },
+  "team_members": {
+    "FieldType": "Array",
+    "DisplayName": "团队成员",
+    "Children": [
+      {
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "姓名",
+          "IsRequired": true
+        },
+        "position": {
+          "FieldType": "SingleLine",
+          "DisplayName": "职位"
+        },
+        "avatar": {
+          "FieldType": "Media",
+          "DisplayName": "头像"
+        }
+      }
+    ]
+  },
+  "email": {
+    "FieldType": "Email",
+    "DisplayName": "邮箱"
+  },
+  "phone": {
+    "FieldType": "Phone",
+    "DisplayName": "电话"
+  },
+  "address": {
+    "FieldType": "Address",
+    "DisplayName": "地址"
+  }
+}
