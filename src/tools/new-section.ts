@@ -7,7 +7,9 @@ export function createNewSection(customName?: string) {
 `<!-- Template name placeholder -->
 {% header %}
 <style>
-.section-${sectionName} {}
+.section-${sectionName} {
+    padding:1em 0;
+}
 </style>
 {% endheader %}
 
