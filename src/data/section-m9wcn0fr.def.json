@@ -1,0 +1,43 @@
+{
+  "title": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主标题",
+    "IsRequired": true
+  },
+  "subtitle": {
+    "FieldType": "SingleLine",
+    "DisplayName": "副标题"
+  },
+  "primary_color": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主题色",
+    "IsRequired": true
+  },
+  "features": {
+    "FieldType": "Array",
+    "DisplayName": "功能列表",
+    "Children": [
+      {
+        "icon": {
+          "FieldType": "Media",
+          "DisplayName": "功能图标",
+          "IsRequired": true
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "功能标题",
+          "IsRequired": true
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "功能描述",
+          "IsRequired": true
+        },
+        "badge": {
+          "FieldType": "SingleLine",
+          "DisplayName": "功能标签"
+        }
+      }
+    ]
+  }
+}

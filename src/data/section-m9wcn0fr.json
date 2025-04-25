@@ -1,0 +1,31 @@
+{
+  "title": "为什么选择我们？",
+  "subtitle": "探索我们独特的优势，体验卓越的服务与创新科技",
+  "primary_color": "#007bff",
+  "features": [
+    {
+      "icon": "https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/solid/rocket-launch.svg",
+      "title": "一键部署",
+      "description": "简单快捷的部署流程，让您的项目立即上线",
+      "badge": "+95%效率"
+    },
+    {
+      "icon": "https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/solid/shield-check.svg",
+      "title": "安全可靠",
+      "description": "企业级安全保障，确保数据万无一失",
+      "badge": "99.9%可用性"
+    },
+    {
+      "icon": "https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/solid/chat-bubble-left-right.svg",
+      "title": "全天候支持",
+      "description": "专业团队24/7在线，随时解答您的疑问",
+      "badge": "5分钟响应"
+    },
+    {
+      "icon": "https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/solid/chart-bar.svg",
+      "title": "智能分析",
+      "description": "深度数据分析，助力业务决策优化",
+      "badge": "AI驱动"
+    }
+  ]
+}
