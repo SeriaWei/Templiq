@@ -1,0 +1,137 @@
+<!-- 人物照片与内容展示 -->
+{% header %}
+<style>
+.section-m9wjjxiy {
+    padding: 2em 0;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.section-m9wjjxiy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.section-m9wjjxiy .image-container {
+    flex: 0 0 40%;
+    position: relative;
+    padding-right: 2em;
+}
+.section-m9wjjxiy .image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+    height: auto;
+}
+.section-m9wjjxiy .profile-image {
+    width: 48%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1.5em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 5px solid #fff;
+    max-width: 300px;
+}
+.section-m9wjjxiy .profile-image-1 {
+    margin-top: 0;
+    align-self: flex-start;
+    z-index: 2;
+}
+.section-m9wjjxiy .profile-image-2 {
+    margin-top: 4em;
+    align-self: flex-end;
+    z-index: 1;
+}
+.section-m9wjjxiy .content-container {
+    flex: 0 0 60%;
+    padding-left: 1em;
+}
+.section-m9wjjxiy .title {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.section-m9wjjxiy .description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    color: #555;
+}
+.section-m9wjjxiy .cta-button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.section-m9wjjxiy .cta-button:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .section-m9wjjxiy-container {
+        flex-direction: column;
+    }
+    .section-m9wjjxiy .image-container {
+        flex: 0 0 100%;
+        margin-bottom: 2em;
+        padding-right: 0;
+        max-width: 400px;
+    }
+    .section-m9wjjxiy .content-container {
+        flex: 0 0 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+    .section-m9wjjxiy .image-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-m9wjjxiy .profile-image {
+        width: 80%;
+        margin-bottom: 2em;
+    }
+    .section-m9wjjxiy .profile-image-2 {
+        margin-top: 0;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9wjjxiy">
+    <div class="section-m9wjjxiy-container">
+        <div class="image-container">
+            <div class="image-wrapper">
+                {% if this.Model.profile_image_1 %}
+                <img property="true" data-property="profile_image_1" method="attr" para="src" class="profile-image profile-image-1" src="{% url this.Model.profile_image_1 %}" alt="Profile Image 1" />
+                {% endif %}
+                
+                {% if this.Model.profile_image_2 %}
+                <img property="true" data-property="profile_image_2" method="attr" para="src" class="profile-image profile-image-2" src="{% url this.Model.profile_image_2 %}" alt="Profile Image 2" />
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="content-container">
+            {% if this.Model.title %}
+            <h2 property="true" data-property="title" method="text" class="title">{{this.Model.title}}</h2>
+            {% endif %}
+            
+            {% if this.Model.description %}
+            <div property="true" data-property="description" method="html" class="description">{{this.Model.description | raw}}</div>
+            {% endif %}
+            
+            {% if this.Model.button_text %}
+            <a property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}" class="cta-button">{{this.Model.button_text}}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>

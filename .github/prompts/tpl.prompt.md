@@ -41,6 +41,7 @@ Model binding使用的是liquid模板语法，注意添加条件判断以避免�
 - 字段定义必须使用JSON格式
 - 字段名必须使用snake_case命名法
 - 字段定义必须包含字段类型(FieldType)和中文显示名称(DisplayName)
+- 仅当字段类型是Array的时候，才使用Children定义子字段
 
 ## 字段类型(FieldType)选项
 必须是以下值之一：

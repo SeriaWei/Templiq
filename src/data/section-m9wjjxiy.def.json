@@ -1,0 +1,30 @@
+{
+    "profile_image_1": {
+        "FieldType": "Media",
+        "DisplayName": "左侧上方照片",
+        "IsRequired": true
+    },
+    "profile_image_2": {
+        "FieldType": "Media",
+        "DisplayName": "左侧下方照片",
+        "IsRequired": true
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "description": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "内容描述",
+        "IsRequired": true
+    },
+    "button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮文字"
+    },
+    "button_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮链接"
+    }
+}
