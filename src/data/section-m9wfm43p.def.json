@@ -1,0 +1,30 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": false
+  },
+  "timeline_items": {
+    "FieldType": "Array",
+    "DisplayName": "时间轴项目",
+    "Children": [
+      {
+        "date": {
+          "FieldType": "SingleLine",
+          "DisplayName": "日期",
+          "IsRequired": true
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "标题",
+          "IsRequired": true
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "描述",
+          "IsRequired": false
+        }
+      }
+    ]
+  }
+}

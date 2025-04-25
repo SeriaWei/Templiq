@@ -1,0 +1,147 @@
+<!-- 历史事件 -->
+{% header %}
+<style>
+.section-m9wfm43p {
+  padding: 1em 0;
+}
+
+.section-m9wfm43p .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-m9wfm43p .timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #006E51;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.section-m9wfm43p .timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.section-m9wfm43p .timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 4px solid #006E51;
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+}
+
+.section-m9wfm43p .timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.section-m9wfm43p .timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.section-m9wfm43p .timeline-item:nth-child(odd)::after {
+  right: -10px;
+}
+
+.section-m9wfm43p .timeline-item:nth-child(even)::after {
+  left: -10px;
+}
+
+.section-m9wfm43p .timeline-item:nth-child(odd) .timeline-content {
+  text-align: right;
+}
+
+.section-m9wfm43p .timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+}
+
+.section-m9wfm43p .timeline-content {
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.section-m9wfm43p .timeline-date {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #006E51;
+  margin-bottom: 0.5em;
+}
+
+.section-m9wfm43p .timeline-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.section-m9wfm43p .timeline-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .section-m9wfm43p .timeline::after {
+    left: 31px;
+  }
+  
+  .section-m9wfm43p .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .section-m9wfm43p .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  .section-m9wfm43p .timeline-item:nth-child(even)::after,
+  .section-m9wfm43p .timeline-item::after {
+    left: 21px;
+  }
+  
+  .section-m9wfm43p .timeline-item:nth-child(odd) .timeline-content {
+    text-align: left;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9wfm43p">
+  {% if this.Model.heading %}
+  <h2 property="true" data-property="heading" method="text" class="text-center mb-5">{{this.Model.heading}}</h2>
+  {% endif %}
+  
+  <div class="timeline">
+    {% for item in this.Model.timeline_items %}
+    <div class="timeline-item">
+      <div class="timeline-content">
+        {% if item.date %}
+        <div property="true" data-property="timeline_items[{{forloop.index | minus:1}}].date" method="text" class="timeline-date">{{item.date}}</div>
+        {% endif %}
+        {% if item.title %}
+        <h3 property="true" data-property="timeline_items[{{forloop.index | minus:1}}].title" method="text" class="timeline-title">{{item.title}}</h3>
+        {% endif %}
+        {% if item.description %}
+        <div property="true" data-property="timeline_items[{{forloop.index | minus:1}}].description" method="text" class="timeline-description">{{item.description}}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
