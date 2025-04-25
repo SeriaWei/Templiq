@@ -1,0 +1,385 @@
+<!-- Template name placeholder -->
+{% header %}
+<style>
+.section-m9w7sqav {
+  padding: 60px 0;
+  background: linear-gradient(to right, #f8f9fa, #fff, #f8f9fa);
+  position: relative;
+}
+
+.section-m9w7sqav .testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 60px;
+}
+
+.section-m9w7sqav .testimonial-slider-wrapper {
+  overflow: hidden;
+}
+
+.section-m9w7sqav .testimonial-slider {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  padding: 1em 0;
+}
+
+.section-m9w7sqav .testimonial-card {
+  width: calc(33.33% - 14px);
+  min-width: calc(33.33% - 14px);
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.section-m9w7sqav .user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-m9w7sqav .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.section-m9w7sqav .user-meta {
+  margin-left: 16px;
+}
+
+.section-m9w7sqav .user-name {
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 1em;
+}
+
+.section-m9w7sqav .user-title {
+  color: #666;
+  font-size: 0.875em;
+  margin: 0;
+}
+
+.section-m9w7sqav .rating {
+  color: #ffc107;
+  font-size: 1.125em;
+  margin-bottom: 12px;
+}
+
+.section-m9w7sqav .comment {
+  font-size: 0.9375em;
+  line-height: 1.6;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.section-m9w7sqav .nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-m9w7sqav .nav-button:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.section-m9w7sqav .nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255,255,255,0.7);
+  box-shadow: none;
+}
+
+.section-m9w7sqav .nav-button:disabled:hover {
+  box-shadow: none;
+}
+
+.section-m9w7sqav .nav-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #666;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.section-m9w7sqav .nav-button:hover svg {
+  stroke: #333;
+}
+
+.section-m9w7sqav .nav-button:disabled svg {
+  stroke: #999;
+}
+
+.section-m9w7sqav .prev-button {
+  left: 0;
+}
+
+.section-m9w7sqav .next-button {
+  right: 0;
+}
+
+.section-m9w7sqav .dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.section-m9w7sqav .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.3s;
+}
+
+.section-m9w7sqav .dot.active {
+  background: #666;
+}
+
+@media (max-width: 991px) {
+  .section-m9w7sqav .testimonial-card {
+    width: calc(50% - 10px);
+    min-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 767px) {
+  .section-m9w7sqav .testimonial-container {
+    padding: 0 20px;
+  }
+  
+  .section-m9w7sqav .testimonial-card {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .section-m9w7sqav .nav-button {
+    display: none;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9w7sqav">
+  <div class="testimonial-container">
+    {% if this.Model.testimonials.size > 0 %}
+    <div class="testimonial-slider-wrapper">
+      <div class="testimonial-slider">
+        {% for item in this.Model.testimonials %}
+        <div class="testimonial-card">
+          <div class="user-info">
+            <img property="true" data-property="testimonials[{{forloop.index | minus:1}}].avatar" 
+                 method="attr" para="src" src="{% url item.avatar %}" 
+                 class="avatar" alt="{{item.name}}" />
+            <div class="user-meta">
+              <h4 property="true" data-property="testimonials[{{forloop.index | minus:1}}].name" 
+                  method="text" class="user-name">{{item.name}}</h4>
+              <p property="true" data-property="testimonials[{{forloop.index | minus:1}}].title" 
+                 method="text" class="user-title">{{item.title}}</p>
+            </div>
+          </div>
+          <div property="true" data-property="testimonials[{{forloop.index | minus:1}}].rating" 
+               method="html" class="rating">
+            {% for i in (1..item.rating) %}★{% endfor %}
+            {% for i in (item.rating..4) %}☆{% endfor %}
+          </div>
+          <p property="true" data-property="testimonials[{{forloop.index | minus:1}}].comment" 
+             method="text" class="comment">{{item.comment}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <button class="nav-button prev-button" disabled>
+      <svg viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="nav-button next-button">
+      <svg viewBox="0 0 24 24">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+    
+    <div class="dots">
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  const slider = document.querySelector('.section-m9w7sqav .testimonial-slider');
+  const cards = slider.querySelectorAll('.testimonial-card');
+  const dotsContainer = document.querySelector('.section-m9w7sqav .dots');
+  const prevBtn = document.querySelector('.section-m9w7sqav .prev-button');
+  const nextBtn = document.querySelector('.section-m9w7sqav .next-button');
+  
+  let currentIndex = 0;
+  let isAnimating = false;
+  let autoplayTimer = null;
+  let visibleCards = 3; // 默认显示3个卡片
+  
+  // 计算可见卡片数量
+  function calculateVisibleCards() {
+    const width = window.innerWidth;
+    if (width <= 767) {
+      visibleCards = 1;
+    } else if (width <= 991) {
+      visibleCards = 2;
+    } else {
+      visibleCards = 3;
+    }
+    
+    // 重新生成指示器圆点
+    updateDots();
+    // 更新按钮状态
+    updateButtons();
+  }
+  
+  // 生成指示器圆点
+  function updateDots() {
+    dotsContainer.innerHTML = '';
+    const totalGroups = Math.ceil((cards.length - visibleCards + 1));
+    
+    for (let i = 0; i < totalGroups; i++) {
+      const dot = document.createElement('span');
+      dot.className = `dot ${i === currentIndex ? 'active' : ''}`;
+      dot.addEventListener('click', () => {
+        if (!isAnimating) {
+          currentIndex = i;
+          updateSlider();
+        }
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+  
+  // 更新按钮状态
+  function updateButtons() {
+    const maxIndex = cards.length - visibleCards;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+  }
+  
+  function updateSlider() {
+    if (isAnimating) return;
+    isAnimating = true;
+    
+    // 修改偏移量计算方式
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 20;
+    const offset = -currentIndex * (cardWidth + gap);
+    
+    requestAnimationFrame(() => {
+      slider.style.transform = `translateX(${offset}px)`;
+    });
+    
+    // 更新圆点状态
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    
+    // 更新按钮状态
+    updateButtons();
+    
+    setTimeout(() => {
+      isAnimating = false;
+    }, 300);
+  }
+  
+  function slide(direction) {
+    if (isAnimating) return;
+    
+    const maxIndex = cards.length - visibleCards;
+    const newIndex = currentIndex + direction;
+    
+    if (newIndex >= 0 && newIndex <= maxIndex) {
+      currentIndex = newIndex;
+      updateSlider();
+    }
+  }
+  
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => slide(1), 5000);
+  }
+  
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+  
+  prevBtn?.addEventListener('click', () => slide(-1));
+  nextBtn?.addEventListener('click', () => slide(1));
+  
+  slider.addEventListener('mouseenter', stopAutoplay);
+  slider.addEventListener('mouseleave', startAutoplay);
+  
+  // Touch events
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  slider.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    stopAutoplay();
+  });
+  
+  slider.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > 50) {
+      const direction = diff > 0 ? 1 : -1;
+      const maxIndex = cards.length - visibleCards;
+      const newIndex = currentIndex + direction;
+      
+      if (newIndex >= 0 && newIndex <= maxIndex) {
+        currentIndex = newIndex;
+        updateSlider();
+      }
+    }
+    startAutoplay();
+  });
+  
+  // 初始化
+  calculateVisibleCards();
+  slider.style.transition = 'transform 0.3s ease';
+  startAutoplay();
+  
+  // 监听窗口大小变化
+  window.addEventListener('resize', () => {
+    calculateVisibleCards();
+    updateSlider();
+  });
+})();
+</script>
+{% endfooter %}

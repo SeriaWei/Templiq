@@ -1,0 +1,53 @@
+{
+  "testimonials": [
+    {
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&q=80",
+      "name": "Sarah Chen",
+      "title": "设计师 · 上海",
+      "rating": 5,
+      "comment": "非常专业的服务团队，产品质量超出预期。整个合作过程非常愉快，期待未来有更多合作机会！"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&q=80",
+      "name": "David Wang",
+      "title": "产品经理 · 北京",
+      "rating": 5,
+      "comment": "团队响应速度快，专业度高，充分理解了我们的需求并提供了很好的解决方案。"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&q=80",
+      "name": "Linda Zhang",
+      "title": "创始人 · 深圳",
+      "rating": 4,
+      "comment": "作为长期合作伙伴，见证了团队的成长。服务品质始终保持高水准，值得信赖。"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&q=80",
+      "name": "Michael Li",
+      "title": "技术总监 · 杭州",
+      "rating": 5,
+      "comment": "技术团队非常专业，解决方案既考虑了当前需求，也为未来扩展预留了空间。合作很愉快！"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&q=80",
+      "name": "Emma Zhou",
+      "title": "市场经理 · 广州",
+      "rating": 4,
+      "comment": "服务很到位，团队反应迅速，能够快速理解并实现我们的营销需求。效果很好！"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&q=80",
+      "name": "Jack Zhang",
+      "title": "创业者 · 成都",
+      "rating": 5,
+      "comment": "作为初创公司，我们很看重合作伙伴的专业度和响应速度。这个团队完全超出了我们的期望。"
+    },
+    {
+      "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&h=120&q=80",
+      "name": "Sophie Liu",
+      "title": "运营总监 · 武汉",
+      "rating": 5,
+      "comment": "产品体验非常好，团队的服务态度也很专业。特别是在遇到问题时，能够快速响应并解决。"
+    }
+  ]
+}

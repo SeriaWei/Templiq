@@ -1,0 +1,35 @@
+{
+  "testimonials": {
+    "FieldType": "Array",
+    "DisplayName": "用户评价列表",
+    "Children": [
+      {
+        "avatar": {
+          "FieldType": "Media",
+          "DisplayName": "用户头像",
+          "IsRequired": true
+        },
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "用户姓名",
+          "IsRequired": true
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "职业和地区",
+          "IsRequired": true
+        },
+        "rating": {
+          "FieldType": "Number",
+          "DisplayName": "评分(1-5)",
+          "IsRequired": true
+        },
+        "comment": {
+          "FieldType": "Paragraph",
+          "DisplayName": "评价内容",
+          "IsRequired": true
+        }
+      }
+    ]
+  }
+}
