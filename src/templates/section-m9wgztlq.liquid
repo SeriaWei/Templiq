@@ -1,0 +1,138 @@
+<!-- 翻转卡片 -->
+{% header %}
+<style>
+.section-m9wgztlq {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.section-m9wgztlq .section-heading {
+  margin-bottom: 0.3em;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.section-m9wgztlq .section-subheading {
+  margin-bottom: 2em;
+  font-size: 1.1em;
+  color: #666;
+}
+
+.section-m9wgztlq .flip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 0 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-m9wgztlq .flip-card {
+  perspective: 1000px;
+  width: 220px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.section-m9wgztlq .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.section-m9wgztlq .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.section-m9wgztlq .flip-card-front,
+.section-m9wgztlq .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.section-m9wgztlq .flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.section-m9wgztlq .flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-m9wgztlq .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  text-align: left;
+}
+
+.section-m9wgztlq .card-title {
+  font-size: 1.1em;
+  margin: 0 0 0.3em;
+  font-weight: 600;
+}
+
+.section-m9wgztlq .card-desc {
+  font-size: 0.9em;
+  margin: 0;
+  opacity: 0.9;
+}
+</style>
+{% endheader %}
+
+<section class="section-m9wgztlq">
+  {% if this.Model.heading %}
+  <h2 class="section-heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+  {% endif %}
+  {% if this.Model.subheading %}
+  <p class="section-subheading" property="true" data-property="subheading" method="text">{{this.Model.subheading}}</p>
+  {% endif %}
+  
+  <div class="flip-container">
+    {% for card in this.Model.cards %}
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img property="true" data-property="cards[{{forloop.index | minus:1}}].front_image" method="attr" para="src" src="{% url card.front_image %}" alt="Front image">
+          {% if card.front_title or card.front_desc %}
+          <div class="card-content">
+            {% if card.front_title %}
+            <h3 class="card-title" property="true" data-property="cards[{{forloop.index | minus:1}}].front_title" method="text">{{card.front_title}}</h3>
+            {% endif %}
+            {% if card.front_desc %}
+            <p class="card-desc" property="true" data-property="cards[{{forloop.index | minus:1}}].front_desc" method="text">{{card.front_desc}}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="flip-card-back">
+          <img property="true" data-property="cards[{{forloop.index | minus:1}}].back_image" method="attr" para="src" src="{% url card.back_image %}" alt="Back image">
+          {% if card.back_title or card.back_desc %}
+          <div class="card-content">
+            {% if card.back_title %}
+            <h3 class="card-title" property="true" data-property="cards[{{forloop.index | minus:1}}].back_title" method="text">{{card.back_title}}</h3>
+            {% endif %}
+            {% if card.back_desc %}
+            <p class="card-desc" property="true" data-property="cards[{{forloop.index | minus:1}}].back_desc" method="text">{{card.back_desc}}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

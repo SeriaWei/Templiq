@@ -1,0 +1,45 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": true
+  },
+  "subheading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "副标题"
+  },
+  "cards": {
+    "FieldType": "Array",
+    "DisplayName": "翻转卡片",
+    "Children": [
+      {
+        "front_image": {
+          "FieldType": "Media",
+          "DisplayName": "正面图片",
+          "IsRequired": true
+        },
+        "front_title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "正面标题"
+        },
+        "front_desc": {
+          "FieldType": "SingleLine",
+          "DisplayName": "正面描述"
+        },
+        "back_image": {
+          "FieldType": "Media",
+          "DisplayName": "背面图片",
+          "IsRequired": true
+        },
+        "back_title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "背面标题"
+        },
+        "back_desc": {
+          "FieldType": "SingleLine",
+          "DisplayName": "背面描述"
+        }
+      }
+    ]
+  }
+}
