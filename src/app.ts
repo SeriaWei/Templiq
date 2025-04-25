@@ -110,11 +110,30 @@ app.get('/', (req: Request, res: Response) => {
     const total = templates.length;
     const totalPages = Math.ceil(total / pageSize);
 
+    // First, create the basic template objects with just the name
     const sortedTemplates = templates.map(file => ({
-      name: file.replace('.liquid', '')
+      name: file.replace('.liquid', ''),
+      title: file.replace('.liquid', '')
     })).sort((a, b) => a.name.localeCompare(b.name) ? -1 : 1);
 
     const pagedExamples = sortedTemplates.slice((page - 1) * pageSize, page * pageSize);
+    
+    for (const example of pagedExamples) {
+      const filePath = path.join(templateDir, `${example.name}.liquid`);
+      try {
+        const content = fs.readFileSync(filePath, 'utf8');
+        const lines = content.split('\n');
+        if (lines.length > 0) {
+          const firstLine = lines[0].trim();
+          const commentMatch = firstLine.match(/<!--\s*(.*?)\s*-->/);
+          if (commentMatch && commentMatch[1]) {
+            example.title = commentMatch[1];
+          }
+        }
+      } catch (err) {
+        console.error(`Error reading template ${example.name}:`, err);
+      }
+    }
 
     engine.renderFile('../index', {
       examples: pagedExamples,
