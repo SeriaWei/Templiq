@@ -1,0 +1,44 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "标题",
+    "IsRequired": false
+  },
+  "faq_items": {
+    "FieldType": "Array",
+    "DisplayName": "FAQ列表",
+    "Children": [
+      {
+        "question": {
+          "FieldType": "SingleLine",
+          "DisplayName": "问题",
+          "IsRequired": true
+        },
+        "answer": {
+          "FieldType": "HtmlBox",
+          "DisplayName": "答案",
+          "IsRequired": true
+        },
+        "size": {
+          "FieldType": "Dropdown",
+          "DisplayName": "区块大小",
+          "IsRequired": true,
+          "FieldOptions": [
+            {
+              "DisplayText": "大（整行）",
+              "Value": "large"
+            },
+            {
+              "DisplayText": "中（两列宽）",
+              "Value": "medium"
+            },
+            {
+              "DisplayText": "小（一列宽）",
+              "Value": "small"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

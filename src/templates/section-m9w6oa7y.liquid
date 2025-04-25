@@ -1,0 +1,142 @@
+<!-- FAQ列表 -->
+{% header %}
+<style>
+.section-m9w6oa7y {
+  padding: 2em 1em;
+}
+
+.section-m9w6oa7y .faq-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-m9w6oa7y .faq-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  height: auto;
+}
+
+.section-m9w6oa7y .faq-item:nth-child(3n+1) {
+  background: #f8f9ff;
+}
+
+.section-m9w6oa7y .faq-item:nth-child(3n+2) {
+  background: #fff9f8;
+}
+
+.section-m9w6oa7y .faq-item:nth-child(3n+3) {
+  background: #f8fff9;
+}
+
+.section-m9w6oa7y .faq-item:nth-child(1) {
+  padding: 2em;
+  font-size: 1.1em;
+}
+
+.section-m9w6oa7y .faq-item:nth-child(4) {
+  padding: 1.8em;
+  font-size: 1.05em;
+}
+
+.section-m9w6oa7y .faq-item:nth-child(7) {
+  padding: 1.7em;
+}
+
+.section-m9w6oa7y .faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.section-m9w6oa7y .faq-item.large {
+  grid-column: 1 / -1;
+  padding: 2em;
+  font-size: 1.1em;
+}
+
+.section-m9w6oa7y .faq-item.medium {
+  grid-column: span 2;
+  padding: 1.8em;
+  font-size: 1.05em;
+}
+
+.section-m9w6oa7y .faq-item.small {
+  grid-column: span 1;
+  padding: 1.5em;
+}
+
+.section-m9w6oa7y .question {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1em;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.section-m9w6oa7y .question::before {
+  content: "Q";
+  position: absolute;
+  left: 0;
+  color: #6b7280;
+  font-size: 0.9em;
+}
+
+.section-m9w6oa7y .answer {
+  color: #666;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.section-m9w6oa7y .answer::before {
+  content: "A";
+  position: absolute;
+  left: 0;
+  color: #9ca3af;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .section-m9w6oa7y .faq-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-m9w6oa7y .faq-item.large,
+  .section-m9w6oa7y .faq-item.medium {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9w6oa7y">
+  {% if this.Model.heading %}
+  <h2 property="true" data-property="heading" method="text" class="text-center mb-4">{{this.Model.heading}}</h2>
+  {% endif %}
+  
+  <div class="faq-container">
+    {% for item in this.Model.faq_items %}
+    <div property="true" class="faq-item {{item.size}}">
+      <div property="true" data-property="faq_items[{{forloop.index | minus:1}}].question" method="text" class="question">
+        {{item.question}}
+      </div>
+      <div property="true" data-property="faq_items[{{forloop.index | minus:1}}].answer" method="html" class="answer">
+        {{item.answer | raw}}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
