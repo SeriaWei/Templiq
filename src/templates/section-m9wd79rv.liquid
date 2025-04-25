@@ -1,0 +1,125 @@
+<!-- 全屏视频背景 -->
+{% header %}
+<style>
+.section-m9wd79rv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-m9wd79rv .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.section-m9wd79rv .video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-m9wd79rv .fallback-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.section-m9wd79rv .video-loaded .fallback-image {
+  opacity: 0;
+}
+
+.section-m9wd79rv .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.section-m9wd79rv .content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 1em;
+}
+
+.section-m9wd79rv .heading {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.section-m9wd79rv .description {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+
+.section-m9wd79rv .cta-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.section-m9wd79rv .cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+</style>
+{% endheader %}
+
+<section class="section-m9wd79rv">
+  <div class="video-background">
+    {% if this.Model.video_url %}
+    {% if this.Model.fallback_image %}
+    <img class="fallback-image" property="true" data-property="fallback_image" method="attr" para="src" src="{% url this.Model.fallback_image %}" alt="">
+    {% endif %}
+    <video 
+      property="true" 
+      data-property="video_url" 
+      method="attr" 
+      para="src" 
+      src="{% url this.Model.video_url %}" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      onloadeddata="this.parentElement.classList.add('video-loaded')"
+    ></video>
+    {% endif %}
+  </div>
+  <div class="overlay"></div>
+  <div class="content">
+    {% if this.Model.heading %}
+    <h1 class="heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h1>
+    {% endif %}
+    {% if this.Model.description %}
+    <div class="description" property="true" data-property="description" method="text">{{this.Model.description}}</div>
+    {% endif %}
+    {% if this.Model.cta_text %}
+    <a class="cta-button" property="true" data-property="cta_link" method="attr" para="href" href="{% url this.Model.cta_link %}">{{this.Model.cta_text}}</a>
+    {% endif %}
+  </div>
+</section>

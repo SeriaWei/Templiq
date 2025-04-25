@@ -225,16 +225,22 @@ async function mergeDataToSchema(schema: any, data: any, packageFiles: any[]): P
                 if (result[key].FieldType === 'Media' && data[key]) {
                     const url = data[key];
                     const fileName = generateUniqueFileName(url);
-                    const newPath = `~/UpLoad/Images/Widget/${fileName}`;
-
-                    const fileContent = await downloadFile(url);
-                    console.log(`New path: ${newPath}`);
-                    result[key].Value = newPath;
-                    packageFiles.push({
-                        FileName: path.basename(newPath),
-                        FilePath: newPath,
-                        Content: fileContent.toString('base64')
-                    });
+                    const fileExt = path.extname(fileName).toLowerCase();
+                    
+                    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+                    if (imageExtensions.includes(fileExt)) {
+                        const newPath = `~/UpLoad/Images/Widget/${fileName}`;
+                        const fileContent = await downloadFile(url);
+                        console.log(`New path: ${newPath}`);
+                        result[key].Value = newPath;
+                        packageFiles.push({
+                            FileName: path.basename(newPath),
+                            FilePath: newPath,
+                            Content: fileContent.toString('base64')
+                        });
+                    } else {
+                        result[key].Value = data[key];
+                    }
                 } else {
                     result[key].Value = data[key];
                 }
