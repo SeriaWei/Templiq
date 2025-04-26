@@ -1,0 +1,32 @@
+{
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "title_background_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题背景文字"
+    },
+    "description": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "描述内容",
+        "IsRequired": true
+    },
+    "button1_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮1文字"
+    },
+    "button1_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮1链接"
+    },
+    "button2_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮2文字"
+    },
+    "button2_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮2链接"
+    }
+}

@@ -1,0 +1,88 @@
+<!-- 关于我们 -->
+{% header %}
+<style>
+.section-m9y2o3ok {
+    position: relative;
+    padding: 4em 0;
+    background-color: #f8fafc;
+    text-align: center;
+}
+
+.section-m9y2o3ok .content {
+    position: relative;
+    z-index: 1;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.section-m9y2o3ok h2 {
+    font-size: 2.5em;
+    color: rgb(96, 77, 137);
+    margin-bottom: 1em;
+}
+
+.section-m9y2o3ok p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #4a5568;
+}
+.section-m9y2o3ok .description{
+    margin: 4em 0 4em;
+}
+.section-m9y2o3ok .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.section-m9y2o3ok .btn {
+    padding: 0.8em 1.8em;
+    border: 2px solid rgb(96, 77, 137);
+    border-radius: 4px;
+    background: white;
+    color: rgb(96, 77, 137);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.section-m9y2o3ok .btn:hover {
+    background: rgb(96, 77, 137);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .section-m9y2o3ok h2 {
+        font-size: 2em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9y2o3ok">
+    <div class="content">
+        {% if this.Model.heading %}
+        <h2 property="true" data-property="heading" method="text" style="position: relative;">
+            {{this.Model.heading}}
+            {% if this.Model.title_background_text %}
+            <span style="position: absolute; left: 50%; bottom: -5px; transform: translate(-50%, 0); font-size: 3em; font-weight: 900; color: rgba(96, 77, 137, 0.1); z-index: -1; white-space: nowrap; width: 100%; text-align: center;">{{this.Model.title_background_text}}</span>
+            {% endif %}
+        </h2>
+        {% endif %}
+        
+        {% if this.Model.description %}
+        <div class="description" property="true" data-property="description" method="html">{{this.Model.description | raw}}</div>
+        {% endif %}
+        
+        <div class="buttons">
+            {% if this.Model.button1_text %}
+            <a href="{% url this.Model.button1_link %}" class="btn" property="true" data-property="button1" method="attr" para="href">{{this.Model.button1_text}}</a>
+            {% endif %}
+            
+            {% if this.Model.button2_text %}
+            <a href="{% url this.Model.button2_link %}" class="btn" property="true" data-property="button2" method="attr" para="href">{{this.Model.button2_text}}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
