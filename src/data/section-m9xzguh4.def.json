@@ -1,0 +1,22 @@
+{
+    "copyright_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "版权文本"
+    },
+    "links": {
+        "FieldType": "Array",
+        "DisplayName": "底部链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文本"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接地址"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,63 @@
+<!-- 页脚版权 -->
+{% header %}
+<style>
+.section-m9xzguh4 {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 2em 0;
+    font-size: 0.9em;
+}
+.section-m9xzguh4 .footer-content {
+    max-width:1170px;
+    padding-right:15px;
+    padding-left:15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-m9xzguh4 .copyright {
+    margin-bottom: 1em;
+    opacity: 0.7;
+}
+.section-m9xzguh4 .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+}
+.section-m9xzguh4 .footer-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.section-m9xzguh4 .footer-link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .section-m9xzguh4 .footer-links {
+        gap: 1em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9xzguh4">
+  <div class="footer-content">
+    {% if this.Model.copyright_text %}
+    <p property="true" data-property="copyright_text" method="text" class="copyright">{{this.Model.copyright_text}}</p>
+    {% endif %}
+    {% if this.Model.links %}
+    <div class="footer-links">
+      {% for link in this.Model.links %}
+      <a property="true" data-property="links[{{forloop.index | minus:1}}].url" method="attr" para="href" href="{% url link.url %}" class="footer-link">{{link.text}}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+
+{% endfooter %}

@@ -1,0 +1,17 @@
+{
+    "copyright_text": "© 2023 公司名称 版权所有",
+    "links": [
+        {
+            "text": "隐私政策",
+            "url": "/privacy"
+        },
+        {
+            "text": "使用条款",
+            "url": "/terms"
+        },
+        {
+            "text": "联系我们",
+            "url": "/contact"
+        }
+    ]
+}
