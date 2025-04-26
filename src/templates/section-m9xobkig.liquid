@@ -1,0 +1,190 @@
+<!-- 企业页脚 -->
+{% header %}
+<style>
+.section-m9xobkig {
+    color: #4a4a4a;
+    background-color: #f8f9fa;
+}
+
+.section-m9xobkig .footer-container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3em 0 2em;
+    border-top: 1px solid #e0e0e0;
+}
+
+.section-m9xobkig .footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 2em;
+    padding: 0 1.5em;
+}
+
+.section-m9xobkig .footer-column h4 {
+    font-size: 1.1em;
+    margin-bottom: 1.25em;
+    color: #2c3e50;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.section-m9xobkig .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-m9xobkig .footer-links li {
+    margin-bottom: 0.75em;
+}
+
+.section-m9xobkig .footer-links a {
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    display: inline-block;
+    padding: 0.15em 0;
+}
+
+.section-m9xobkig .footer-links a:hover {
+    color: #3498db;
+}
+
+.section-m9xobkig .company-info {
+    margin-top: 1em;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #7f8c8d;
+}
+
+.section-m9xobkig .social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 1.5em;
+}
+
+.section-m9xobkig .social-links a {
+    color: #7f8c8d;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.section-m9xobkig .social-links a:hover {
+    color: #3498db;
+}
+
+.section-m9xobkig .copyright-container {
+    text-align: center;
+    padding: 1.75em 0;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f1f3f5;
+}
+
+.section-m9xobkig .copyright {
+    font-size: 0.85em;
+    color: #95a5a6;
+    margin-bottom: 0.5em;
+}
+
+.section-m9xobkig .legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    font-size: 0.8em;
+}
+
+.section-m9xobkig .legal-links a {
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.section-m9xobkig .legal-links a:hover {
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .section-m9xobkig .footer-column {
+        flex: 100%;
+        padding: 0;
+        margin-bottom: 2.5em;
+    }
+    
+    .section-m9xobkig .footer-column:last-child {
+        margin-bottom: 1em;
+    }
+    
+    .section-m9xobkig .legal-links {
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: center;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9xobkig">
+    <div class="footer-container">
+        {% if this.Model.columns %}
+            {% for column in this.Model.columns %}
+                <div class="footer-column">
+                    {% if column.title %}
+                        <h4 property="true" data-property="columns[{{forloop.index | minus:1}}].title" method="text">{{column.title}}</h4>
+                    {% endif %}
+                    
+                    {% if column.links %}
+                        <ul class="footer-links">
+                            {% for link in column.links %}
+                                <li>
+                                    <a property="true" data-property="columns[{{forloop.parentloop.index | minus:1}}].links[{{forloop.index | minus:1}}]" method="attr" para="href" href="{% url link.url %}">
+                                        {% if link.text %}{{link.text}}{% endif %}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    
+                    {% if column.info %}
+                        <div class="company-info" property="true" data-property="columns[{{forloop.index | minus:1}}].info" method="text">
+                            {{column.info}}
+                        </div>
+                    {% endif %}
+                    
+                    {% if column.social_links %}
+                        <div class="social-links">
+                            {% for social in column.social_links %}
+                                <a property="true" data-property="columns[{{forloop.parentloop.index | minus:1}}].social_links[{{forloop.index | minus:1}}]" method="attr" para="href" href="{% url social.url %}" aria-label="{{social.platform}}">
+                                    <i class="{{social.icon_class}}"></i>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+    <div class="copyright-container">
+        {% if this.Model.copyright %}
+            <div class="copyright" property="true" data-property="copyright" method="text">
+                &copy; {{this.Model.copyright}}
+            </div>
+        {% endif %}
+        
+        {% if this.Model.legal_links %}
+            <div class="legal-links">
+                {% for link in this.Model.legal_links %}
+                    <a property="true" data-property="legal_links[{{forloop.index | minus:1}}]" method="attr" para="href" href="{% url link.url %}">
+                        {% if link.text %}{{link.text}}{% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

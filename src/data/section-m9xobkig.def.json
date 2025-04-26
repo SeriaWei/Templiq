@@ -1,0 +1,83 @@
+{
+    "columns": {
+        "FieldType": "Array",
+        "DisplayName": "页脚栏目",
+        "Children": [
+            {
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "栏目标题",
+                    "IsRequired": true
+                },
+                "info": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "公司信息"
+                },
+                "links": {
+                    "FieldType": "Array",
+                    "DisplayName": "链接列表",
+                    "Children": [
+                        {
+                            "text": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "链接文本",
+                                "IsRequired": true
+                            },
+                            "url": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "链接地址",
+                                "IsRequired": true
+                            }
+                        }
+                    ]
+                },
+                "social_links": {
+                    "FieldType": "Array",
+                    "DisplayName": "社交媒体链接",
+                    "Children": [
+                        {
+                            "url": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "链接地址",
+                                "IsRequired": true
+                            },
+                            "platform": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "平台名称",
+                                "IsRequired": true
+                            },
+                            "icon_class": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "图标类名",
+                                "IsRequired": true
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "copyright": {
+        "FieldType": "SingleLine",
+        "DisplayName": "版权信息",
+        "IsRequired": true
+    },
+    "legal_links": {
+        "FieldType": "Array",
+        "DisplayName": "法律链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文本",
+                    "IsRequired": true
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接地址",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

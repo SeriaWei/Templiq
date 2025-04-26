@@ -8,10 +8,6 @@ export function createNewSection(customName?: string) {
 {% header %}
 <style>
 .section-${sectionName} {
-    max-width:1170px;
-    padding-right:15px;
-    padding-left:15px;
-    margin: 0 auto;
 }
 </style>
 {% endheader %}

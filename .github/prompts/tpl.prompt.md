@@ -5,7 +5,7 @@
 - 模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现“区块”，“模板”之类的字眼
 - 如果不需要javascript，请移除footer
 - CSS样式中font-size优先使用em而非rem
-- 可以使用bootstrap3中定义的样式，但禁止使用.container这个类。
+- 可以使用bootstrap3中定义的样式，但禁止使用.container这个类，如果需要请重新定义一个避免冲突。
 - 如果要限制section宽度，请使用max-width。例如:max-width:1170px;padding-right:15px;padding-left:15px;margin: 0 auto;
 - 所有的样式都要限定在这个section的作用域下。
 Model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
@@ -26,6 +26,7 @@ Model binding使用的是liquid模板语法，注意添加条件判断以避免�
 ```
 # JSON 数据规范
 ## 基本要求
+- 不要使用placeholder形式的数据，请使用专业真实数据
 - 属性必须使用snake_case命名法
 - 数组类型的属性值必须是对象
 ## 示例
