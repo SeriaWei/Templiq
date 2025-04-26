@@ -2,24 +2,7 @@
     "columns": [
         {
             "title": "关于我们",
-            "info": "TechSolutions Inc. 是一家专注于企业数字化转型的技术服务提供商，成立于2010年，总部位于上海。",
-            "social_links": [
-                {
-                    "url": "https://facebook.com/techsolutions",
-                    "platform": "Facebook",
-                    "icon_class": "fab fa-facebook-f"
-                },
-                {
-                    "url": "https://twitter.com/techsolutions",
-                    "platform": "Twitter",
-                    "icon_class": "fab fa-twitter"
-                },
-                {
-                    "url": "https://linkedin.com/company/techsolutions",
-                    "platform": "LinkedIn",
-                    "icon_class": "fab fa-linkedin-in"
-                }
-            ]
+            "info": "TechSolutions Inc. 是一家专注于企业数字化转型的技术服务提供商，成立于2010年，总部位于上海。"
         },
         {
             "title": "产品服务",

@@ -30,29 +30,6 @@
                             }
                         }
                     ]
-                },
-                "social_links": {
-                    "FieldType": "Array",
-                    "DisplayName": "社交媒体链接",
-                    "Children": [
-                        {
-                            "url": {
-                                "FieldType": "SingleLine",
-                                "DisplayName": "链接地址",
-                                "IsRequired": true
-                            },
-                            "platform": {
-                                "FieldType": "SingleLine",
-                                "DisplayName": "平台名称",
-                                "IsRequired": true
-                            },
-                            "icon_class": {
-                                "FieldType": "SingleLine",
-                                "DisplayName": "图标类名",
-                                "IsRequired": true
-                            }
-                        }
-                    ]
                 }
             }
         ]
