@@ -111,9 +111,7 @@
             <div class="section-m9zntvzb__item">
                 <div class="section-m9zntvzb__icon">
                     {% if benefit.icon_svg %}
-                    <svg property="true" data-property="benefits[{{forloop.index | minus:1}}].icon_svg" method="html" viewBox="0 0 24 24">
-                        {{ benefit.icon_svg | raw }}
-                    </svg>
+                    {{ benefit.icon_svg | raw }}
                     {% endif %}
                 </div>
                 <h3 property="true" data-property="benefits[{{forloop.index | minus:1}}].title" method="text" class="section-m9zntvzb__title">{{ benefit.title }}</h3>
