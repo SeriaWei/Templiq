@@ -1,0 +1,39 @@
+{
+  "heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主标题"
+  },
+  "subheading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "副标题"
+  },
+  "cards": {
+    "FieldType": "Array",
+    "DisplayName": "游戏卡片",
+    "Children": [
+      {
+        "image": {
+          "FieldType": "Media",
+          "DisplayName": "图片",
+          "IsRequired": true
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "标题"
+        },
+        "icon": {
+          "FieldType": "HtmlBox",
+          "DisplayName": "图标"
+        },
+        "link": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接地址"
+        },
+        "link_text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接文字"
+        }
+      }
+    ]
+  }
+}

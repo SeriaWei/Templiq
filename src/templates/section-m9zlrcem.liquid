@@ -1,0 +1,157 @@
+<!-- 游玩区域 -->
+{% header %}
+<style>
+.section-m9zlrcem {
+  background: linear-gradient(to bottom, #5e4b8b, #7e6bab);  
+  color: white;
+}
+
+.section-m9zlrcem__container {
+  max-width: 1170px;
+  padding: 15px 15px 45px;
+  margin: 0 auto;
+}
+
+.section-m9zlrcem__header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-m9zlrcem__header h1 {
+  font-size: 80px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+}
+
+.section-m9zlrcem__header h2 {
+  font-size: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.section-m9zlrcem__cards-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section-m9zlrcem__card {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-m9zlrcem__card-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-m9zlrcem__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-m9zlrcem__card-content {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  color: #333;
+}
+
+.section-m9zlrcem__icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px;
+}
+
+.section-m9zlrcem__card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-m9zlrcem__learn-more {
+  display: inline-block;
+  padding: 8px 30px;
+  border: 1px solid #5e4b8b;
+  border-radius: 50px;
+  color: #5e4b8b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.section-m9zlrcem__learn-more:hover {
+  background: #5e4b8b;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .section-m9zlrcem__cards-container {
+    flex-direction: column;
+  }
+  
+  .section-m9zlrcem__header h1 {
+    font-size: 50px;
+  }
+  
+  .section-m9zlrcem__header h2 {
+    font-size: 24px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9zlrcem">
+  <div class="section-m9zlrcem__container">
+    {% if this.Model.heading or this.Model.subheading %}
+      <div class="section-m9zlrcem__header">
+        {% if this.Model.heading %}
+          <h1 property="true" data-property="heading" method="text">{{this.Model.heading}}</h1>
+        {% endif %}
+        {% if this.Model.subheading %}
+          <h2 property="true" data-property="subheading" method="text">{{this.Model.subheading}}</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    {% if this.Model.cards %}
+      <div class="section-m9zlrcem__cards-container">
+        {% for card in this.Model.cards %}
+          <div class="section-m9zlrcem__card">
+            {% if card.image %}
+              <div class="section-m9zlrcem__card-image">
+                <img property="true" data-property="cards[{{forloop.index | minus:1}}].image" method="attr" para="src" src="{% url card.image %}" alt="{{card.title}}">
+              </div>
+            {% endif %}
+            <div class="section-m9zlrcem__card-content">
+              {% if card.icon %}
+                <div class="section-m9zlrcem__icon">
+                  {{card.icon | raw}}
+                </div>
+              {% endif %}
+              {% if card.title %}
+                <h3 class="section-m9zlrcem__card-title" property="true" data-property="cards[{{forloop.index | minus:1}}].title" method="text">{{card.title}}</h3>
+              {% endif %}
+              {% if card.link and card.link_text %}
+                <a href="{% url card.link %}" class="section-m9zlrcem__learn-more" property="true" data-property="cards[{{forloop.index | minus:1}}].link_text" method="text">{{card.link_text}}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
