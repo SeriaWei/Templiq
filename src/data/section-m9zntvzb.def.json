@@ -1,0 +1,35 @@
+{
+    "image_url": {
+        "FieldType": "Media",
+        "DisplayName": "背景图片",
+        "IsRequired": true
+    },
+    "image_alt": {
+        "FieldType": "SingleLine",
+        "DisplayName": "图片描述",
+        "IsRequired": true
+    },
+    "benefits": {
+        "FieldType": "Array",
+        "DisplayName": "福利项目",
+        "Children": [
+            {
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

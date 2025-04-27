@@ -1,0 +1,126 @@
+<!-- 员工福利 -->
+{% header %}
+<style>
+.section-m9zntvzb {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 1em 0;
+}
+
+.section-m9zntvzb__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+
+.section-m9zntvzb__image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-m9zntvzb__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-m9zntvzb__benefits {
+    flex: 1;
+    min-width: 300px;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-m9zntvzb__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.875em;
+}
+
+.section-m9zntvzb__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-m9zntvzb__icon {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.9375em;
+}
+
+.section-m9zntvzb__icon svg {
+    width: 4.5em;
+    height: 4.5em;
+    fill: #6b5b95;
+}
+
+.section-m9zntvzb__title {
+    font-size: 1.125em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.section-m9zntvzb__desc {
+    font-size: 0.875em;
+    color: #666;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .section-m9zntvzb {
+        flex-direction: column;
+    }
+    
+    .section-m9zntvzb__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .section-m9zntvzb__grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-m9zntvzb">
+    <div class="section-m9zntvzb__container">
+    <div class="section-m9zntvzb__image">
+        {% if this.Model.image_url %}
+        <img property="true" data-property="image_url" method="attr" para="src" src="{% url this.Model.image_url %}" alt="{{ this.Model.image_alt }}" />
+        {% endif %}
+    </div>
+    
+    <div class="section-m9zntvzb__benefits">
+        <div class="section-m9zntvzb__grid">
+            {% for benefit in this.Model.benefits %}
+            <div class="section-m9zntvzb__item">
+                <div class="section-m9zntvzb__icon">
+                    {% if benefit.icon_svg %}
+                    <svg property="true" data-property="benefits[{{forloop.index | minus:1}}].icon_svg" method="html" viewBox="0 0 24 24">
+                        {{ benefit.icon_svg | raw }}
+                    </svg>
+                    {% endif %}
+                </div>
+                <h3 property="true" data-property="benefits[{{forloop.index | minus:1}}].title" method="text" class="section-m9zntvzb__title">{{ benefit.title }}</h3>
+                <p property="true" data-property="benefits[{{forloop.index | minus:1}}].description" method="text" class="section-m9zntvzb__desc">{{ benefit.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</section>
