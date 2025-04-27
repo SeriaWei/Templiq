@@ -3,123 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Area - 游玩区域</title>
+    <title>Arcade Installation Page</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
         }
         
         body {
-            background: linear-gradient(to bottom, #5e4b8b, #7e6bab);
-            min-height: 100vh;
-            padding: 40px 20px;
-            color: white;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        
-        .header h1 {
-            font-size: 80px;
-            font-weight: 300;
-            letter-spacing: 10px;
-            color: rgba(255, 255, 255, 0.15);
-            margin-bottom: 10px;
-        }
-        
-        .header h2 {
-            font-size: 32px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-        }
-        
-        .cards-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .card {
-            flex: 1;
-            min-width: 250px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .card-content {
             padding: 20px;
-            text-align: center;
-            background: white;
-            color: #333;
+            position: relative;
         }
         
-        .icon {
+        .circles {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .circle-yellow {
+            width: 80px;
+            height: 80px;
+            background-color: #E9C046;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .circle-purple {
             width: 50px;
             height: 50px;
-            margin: 0 auto 15px;
+            background-color: #6B5B95;
+            border-radius: 50%;
+            position: absolute;
+            top: 80px;
+            right: 60px;
         }
         
-        .card-title {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #333;
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .images {
+            width: 50%;
+        }
+        
+        .main-image {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .small-images {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .small-image {
+            width: 48%;
+        }
+        
+        .text-content {
+            width: 45%;
+            padding-left: 40px;
+        }
+        
+        .step-title {
+            font-size: 72px;
+            font-weight: bold;
+            color: rgba(200, 200, 220, 0.8);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .subtitle {
+            font-size: 32px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.8;
         }
         
         .learn-more {
             display: inline-block;
-            padding: 8px 30px;
-            border: 1px solid #5e4b8b;
-            border-radius: 50px;
-            color: #5e4b8b;
+            background-color: #6B5B95;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
         
         .learn-more:hover {
-            background: #5e4b8b;
-            color: white;
+            background-color: #5A4A84;
         }
         
         @media (max-width: 768px) {
-            .cards-container {
+            .content {
                 flex-direction: column;
             }
             
-            .header h1 {
-                font-size: 50px;
+            .images, .text-content {
+                width: 100%;
+                padding-left: 0;
             }
             
-            .header h2 {
+            .text-content {
+                margin-top: 30px;
+            }
+            
+            .step-title {
+                font-size: 48px;
+            }
+            
+            .subtitle {
                 font-size: 24px;
             }
         }
@@ -127,85 +144,27 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>PLAY AREA</h1>
-            <h2>游玩区域</h2>
+        <div class="circles">
+            <div class="circle-yellow"></div>
+            <div class="circle-purple"></div>
         </div>
         
-        <div class="cards-container">
-            <!-- Card 1 -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-fCC2SeK8AIPB7EOSI2Uhdv8YVF6XWf.png" alt="Racing arcade game">
-                </div>
-                <div class="card-content">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 6H6L3 12V18H5C5 19.1046 5.89543 20 7 20C8.10457 20 9 19.1046 9 18H15C15 19.1046 15.8954 20 17 20C18.1046 20 19 19.1046 19 18H21V14L16 6Z" stroke="#5e4b8b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7 18C7.55228 18 8 17.5523 8 17C8 16.4477 7.55228 16 7 16C6.44772 16 6 16.4477 6 17C6 17.5523 6.44772 18 7 18Z" fill="#5e4b8b"/>
-                            <path d="M17 18C17.5523 18 18 17.5523 18 17C18 16.4477 17.5523 16 17 16C16.4477 16 16 16.4477 16 17C16 17.5523 16.4477 18 17 18Z" fill="#5e4b8b"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">极速飙车</h3>
-                    <a href="#" class="learn-more">了解更多</a>
+        <div class="content">
+            <div class="images">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-2Z1VYY4Z6UnB43oWhf0qnECUhwr8BH.png" alt="Arcade with teddy bear" class="main-image">
+                <div class="small-images">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-2Z1VYY4Z6UnB43oWhf0qnECUhwr8BH.png" alt="Arcade lights" class="small-image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-2Z1VYY4Z6UnB43oWhf0qnECUhwr8BH.png" alt="Arcade game" class="small-image">
                 </div>
             </div>
             
-            <!-- Card 2 -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-fCC2SeK8AIPB7EOSI2Uhdv8YVF6XWf.png" alt="Claw machine with stuffed toys">
-                </div>
-                <div class="card-content">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 8C13.1046 8 14 7.10457 14 6C14 4.89543 13.1046 4 12 4C10.8954 4 10 4.89543 10 6C10 7.10457 10.8954 8 12 8Z" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M12 8V13" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M9 11L12 13L15 11" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M12 13V18C12 19.1046 11.1046 20 10 20H9" stroke="#5e4b8b" stroke-width="1.5" stroke-linecap="round"/>
-                            <circle cx="12" cy="6" r="1" fill="#5e4b8b"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">欢乐抓娃</h3>
-                    <a href="#" class="learn-more">了解更多</a>
-                </div>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-fCC2SeK8AIPB7EOSI2Uhdv8YVF6XWf.png" alt="Basketball arcade game">
-                </div>
-                <div class="card-content">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="9" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M5 12C5 8.13401 8.13401 5 12 5" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M12 19C15.866 19 19 15.866 19 12" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M12 5C15.866 5 19 8.13401 19 12" stroke="#5e4b8b" stroke-width="1.5"/>
-                            <path d="M12 19C8.13401 19 5 15.866 5 12" stroke="#5e4b8b" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">热血投篮</h3>
-                    <a href="#" class="learn-more">了解更多</a>
-                </div>
-            </div>
-            
-            <!-- Card 4 -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-fCC2SeK8AIPB7EOSI2Uhdv8YVF6XWf.png" alt="Handheld puzzle game">
-                </div>
-                <div class="card-content">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4V8C12 9.10457 12.8954 10 14 10H18V14C18 15.1046 17.1046 16 16 16H12V20" stroke="#5e4b8b" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M12 4H8C6.89543 4 6 4.89543 6 6V10H10C11.1046 10 12 10.8954 12 12V16H16C17.1046 16 18 16.8954 18 18V20" stroke="#5e4b8b" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">益智积木</h3>
-                    <a href="#" class="learn-more">了解更多</a>
-                </div>
+            <div class="text-content">
+                <h1 class="step-title">STEP TWO</h1>
+                <h2 class="subtitle">设备安装中</h2>
+                <p class="description">
+                    从全球甄选优质电玩设备与新奇玩具，严格把控质量。专业团队有序安装调试，确保每一款设备稳定运行，为玩家带来极致体验。
+                </p>
+                <a href="#" class="learn-more">了解更多→</a>
             </div>
         </div>
     </div>

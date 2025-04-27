@@ -1,0 +1,46 @@
+{
+    "step_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "步骤标题"
+    },
+    "subtitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "副标题"
+    },
+    "description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述内容"
+    },
+    "link_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "链接文字"
+    },
+    "link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "链接地址"
+    },
+    "main_image_src": {
+        "FieldType": "Media",
+        "DisplayName": "主图地址"
+    },
+    "main_image_alt": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主图描述"
+    },
+    "gallery_images": {
+        "FieldType": "Array",
+        "DisplayName": "画廊图片",
+        "Children": [
+            {
+                "src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片地址"
+                },
+                "alt": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "图片描述"
+                }
+            }
+        ]
+    }
+}

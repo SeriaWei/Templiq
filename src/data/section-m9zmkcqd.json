@@ -1,0 +1,19 @@
+{
+    "step_title": "STEP TWO",
+    "subtitle": "设备安装中",
+    "description": "从全球甄选优质电玩设备与新奇玩具，严格把控质量。专业团队有序安装调试，确保每一款设备稳定运行，为玩家带来极致体验。",
+    "link_text": "了解更多→",
+    "link": "#",
+    "main_image_src": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80",
+    "main_image_alt": "专业电玩设备安装",
+    "gallery_images": [
+        {
+            "src": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=500&q=80",
+            "alt": "电玩设备灯光效果"
+        },
+        {
+            "src": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80",
+            "alt": "专业电玩游戏机"
+        }
+    ]
+}

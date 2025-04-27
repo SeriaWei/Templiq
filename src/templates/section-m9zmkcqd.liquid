@@ -1,0 +1,176 @@
+<!-- 图文分栏展示 -->
+{% header %}
+<style>  
+  .section-m9zmkcqd {
+    background-color: white;
+    color: #333;
+    line-height: 1.6;    
+    position: relative;
+  }
+  
+  .section-m9zmkcqd .circles {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .section-m9zmkcqd .circle-yellow {
+    width: 80px;
+    height: 80px;
+    background-color: #E9C046;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .section-m9zmkcqd .circle-purple {
+    width: 50px;
+    height: 50px;
+    background-color: #6B5B95;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+    right: 60px;
+  }
+  
+  .section-m9zmkcqd .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+  
+  .section-m9zmkcqd .images {
+    width: 50%;
+  }
+  
+  .section-m9zmkcqd .main-image {
+    width: 100%;
+    margin-bottom: 15px;
+    max-height: 300px;
+    object-fit: cover;
+    align-self: flex-start;
+  }
+  
+  .section-m9zmkcqd .small-images {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .section-m9zmkcqd .small-image {
+    object-fit: cover;
+    align-self: flex-start;
+    width: calc(50% - 7.5px);
+  }
+  
+  .section-m9zmkcqd .text-content {
+    width: 45%;
+    padding-left: 40px;
+  }
+  
+  .section-m9zmkcqd .step-title {
+    font-size: 4.5em;
+    font-weight: bold;
+    color: rgba(200, 200, 220, 0.8);
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+  
+  .section-m9zmkcqd .subtitle {
+    font-size: 2em;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .section-m9zmkcqd .description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  
+  .section-m9zmkcqd .learn-more {
+    display: inline-block;
+    background-color: #6B5B95;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  .learn-more:hover {
+    background-color: #5A4A84;
+  }
+  
+  @media (max-width: 768px) {
+    .section-m9zmkcqd .content {
+      flex-direction: column;
+    }
+    
+    .section-m9zmkcqd .images, .section-m9zmkcqd .text-content {
+      width: 100%;
+      padding-left: 0;
+    }
+    
+    .section-m9zmkcqd .text-content {
+      margin-top: 30px;
+    }
+    
+    .section-m9zmkcqd .step-title {
+      font-size: 3em;
+    }
+    
+    .section-m9zmkcqd .subtitle {
+      font-size: 1.5em;
+    }
+  }
+</style>
+{% endheader %}
+
+<section class="section-m9zmkcqd">
+  <div class="circles">
+    <div class="circle-yellow"></div>
+    <div class="circle-purple"></div>
+  </div>
+  
+  <div class="content">
+    <div class="images">
+      {% if this.Model.main_image_src %}
+      <img property="true" data-property="main_image_src" method="attr" para="src" src="{% url this.Model.main_image_src %}" {% if this.Model.main_image_alt %}alt="{{this.Model.main_image_alt}}"{% endif %} class="main-image">
+      {% endif %}
+      
+      <div class="small-images">
+        {% for image in this.Model.gallery_images %}
+        <img property="true" data-property="gallery_images[{{forloop.index | minus:1}}].src" method="attr" para="src" src="{% url image.src %}" alt="{{image.alt}}" class="small-image">
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="text-content">
+      {% if this.Model.step_title %}
+      <h1 class="step-title">{{this.Model.step_title}}</h1>
+      {% endif %}
+      
+      {% if this.Model.subtitle %}
+      <h2 class="subtitle">{{this.Model.subtitle}}</h2>
+      {% endif %}
+      
+      {% if this.Model.description %}
+      <p class="description">{{this.Model.description}}</p>
+      {% endif %}
+      
+      {% if this.Model.link_text %}
+      <a property="true" data-property="link" method="attr" para="href" href="{% url this.Model.link %}" class="learn-more">{{this.Model.link_text}}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
