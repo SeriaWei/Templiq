@@ -1,0 +1,30 @@
+{
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "testimonials": {
+        "FieldType": "Array",
+        "DisplayName": "客户评价列表",
+        "Children": [
+            {
+                "avatar": {
+                    "FieldType": "Media",
+                    "DisplayName": "客户头像",
+                    "IsRequired": true
+                },
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "客户姓名",
+                    "IsRequired": true
+                },
+                "content": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "评价内容",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

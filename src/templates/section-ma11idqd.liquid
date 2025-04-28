@@ -1,0 +1,217 @@
+<!-- 客户评价 -->
+{% header %}
+<style>
+.section-ma11idqd {
+  padding: 1em 0;
+}
+
+.section-ma11idqd .content {
+  max-width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+
+.section-ma11idqd .heading {
+  text-align: center;
+  color: #4a148c;
+  font-size: 2.5em;
+  margin-bottom: 2em;
+}
+
+.section-ma11idqd .testimonial-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-ma11idqd .nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #4a148c;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.section-ma11idqd .nav-button:hover {
+  background: #6a1b9a;
+}
+
+.section-ma11idqd .nav-prev {
+  left: 0;
+}
+
+.section-ma11idqd .nav-next {
+  right: 0;
+}
+
+.section-ma11idqd .testimonial-avatars {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.section-ma11idqd .avatar-wrapper {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.section-ma11idqd .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.section-ma11idqd .avatar-wrapper.active {
+  transform: scale(1.2);
+}
+
+.section-ma11idqd .avatar-wrapper.active .avatar {
+  filter: grayscale(0%);
+}
+
+.section-ma11idqd .testimonial-content {
+  text-align: center;
+  position: relative;
+  min-height: 150px;
+}
+
+.section-ma11idqd .testimonial-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.section-ma11idqd .testimonial-item.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.section-ma11idqd .customer-name {
+  color: #4a148c;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.section-ma11idqd .testimonial-text {
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section-ma11idqd .nav-button {
+    display: none;
+  }
+  
+  .section-ma11idqd .testimonial-avatars {
+    gap: 1em;
+  }
+  
+  .section-ma11idqd .avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma11idqd">
+  <div class="content">
+    <h2 property="true" data-property="heading" method="text" class="heading">{{this.Model.heading}}</h2>
+    
+    <div class="testimonial-carousel">
+      <button class="nav-button nav-prev" aria-label="Previous testimonial">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <div class="testimonial-avatars">
+        {% for testimonial in this.Model.testimonials %}
+          <div class="avatar-wrapper {% if forloop.first %}active{% endif %}" data-index="{{forloop.index | minus:1}}">
+            <img property="true" data-property="testimonials[{{forloop.index | minus:1}}].avatar" method="attr" para="src" 
+                 src="{% url testimonial.avatar %}" alt="Customer avatar" class="avatar">
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div class="testimonial-content">
+        {% for testimonial in this.Model.testimonials %}
+          <div class="testimonial-item {% if forloop.first %}active{% endif %}" data-index="{{forloop.index | minus:1}}">
+            <h3 property="true" data-property="testimonials[{{forloop.index | minus:1}}].name" method="text" 
+                class="customer-name">{{testimonial.name}}</h3>
+            <p property="true" data-property="testimonials[{{forloop.index | minus:1}}].content" method="text" 
+               class="testimonial-text">{{testimonial.content}}</p>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <button class="nav-button nav-next" aria-label="Next testimonial">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  const carousel = document.querySelector('.section-ma11idqd .testimonial-carousel');
+  const avatarWrappers = carousel.querySelectorAll('.avatar-wrapper');
+  const testimonialItems = carousel.querySelectorAll('.testimonial-item');
+  const prevButton = carousel.querySelector('.nav-prev');
+  const nextButton = carousel.querySelector('.nav-next');
+  let currentIndex = 0;
+  
+  function showTestimonial(index) {
+    avatarWrappers.forEach(wrapper => wrapper.classList.remove('active'));
+    testimonialItems.forEach(item => item.classList.remove('active'));
+    
+    avatarWrappers[index].classList.add('active');
+    testimonialItems[index].classList.add('active');
+    currentIndex = index;
+  }
+  
+  function nextTestimonial() {
+    const nextIndex = (currentIndex + 1) % testimonialItems.length;
+    showTestimonial(nextIndex);
+  }
+  
+  function prevTestimonial() {
+    const prevIndex = (currentIndex - 1 + testimonialItems.length) % testimonialItems.length;
+    showTestimonial(prevIndex);
+  }
+  
+  avatarWrappers.forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const index = parseInt(wrapper.dataset.index);
+      showTestimonial(index);
+    });
+  });
+  
+  prevButton.addEventListener('click', prevTestimonial);
+  nextButton.addEventListener('click', nextTestimonial);
+})();
+</script>
+{% endfooter %}

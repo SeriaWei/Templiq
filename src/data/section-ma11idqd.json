@@ -1,0 +1,30 @@
+{
+    "heading": "客户评价",
+    "testimonials": [
+        {
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face",
+            "name": "陈锦添",
+            "content": "施尔商务咨询有限公司的服务非常专业，服务人员态度很好，解决问题及时。他们的团队非常耐心，能够详细了解我们的需求，并提供有针对性的解决方案。整个服务过程非常有条理，让我们感到很放心。我对他们的服务非常满意，以后还会继续选择他们。"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
+            "name": "李美玲",
+            "content": "作为一个长期客户，我对施尔商务咨询的服务质量非常认可。他们的团队专业素质过硬，服务态度也很好。每次遇到问题，他们都能快速响应并提供有效的解决方案。"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
+            "name": "王建国",
+            "content": "施尔商务咨询给我们提供了很大的帮助，他们的服务既专业又贴心。团队成员都很有经验，能够准确把握我们的需求，提供的解决方案也很实用。服务过程中的沟通非常顺畅，让人感觉很舒服。"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=96&h=96&fit=crop&crop=face",
+            "name": "张丽华",
+            "content": "选择施尔商务咨询是一个正确的决定。他们的服务水平很高，团队专业性强，工作效率也很高。最让我印象深刻的是他们认真负责的态度，总是能站在客户的角度思考问题。"
+        },
+        {
+            "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop&crop=face",
+            "name": "郑明远",
+            "content": "施尔商务咨询的服务真的很不错，他们的团队专业水平高，服务态度好，而且非常注重细节。每次咨询都能得到很好的建议和解决方案，是一家值得信赖的咨询公司。"
+        }
+    ]
+}
