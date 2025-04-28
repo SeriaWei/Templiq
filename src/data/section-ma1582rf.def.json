@@ -1,0 +1,29 @@
+{
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "contact_items": {
+        "FieldType": "Array",
+        "DisplayName": "联系信息块",
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "Media",
+                    "DisplayName": "图标",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "信息标题",
+                    "IsRequired": true
+                },
+                "content": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "内容",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

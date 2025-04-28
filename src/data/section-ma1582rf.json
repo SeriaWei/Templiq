@@ -1,0 +1,25 @@
+{
+    "heading": "联系我们",
+    "contact_items": [
+        {
+            "icon": "https://jsd.onmicrosoft.cn/npm/bootstrap-icons@1.7.2/icons/telephone.svg",
+            "title": "联系电话",
+            "content": "400-800-1234"
+        },
+        {
+            "icon": "https://jsd.onmicrosoft.cn/npm/bootstrap-icons@1.7.2/icons/envelope.svg",
+            "title": "邮箱地址",
+            "content": "contact@templiq.com"
+        },
+        {
+            "icon": "https://jsd.onmicrosoft.cn/npm/bootstrap-icons@1.7.2/icons/geo-alt.svg",
+            "title": "公司地址",
+            "content": "上海市浦东新区世纪大道100号"
+        },
+        {
+            "icon": "https://jsd.onmicrosoft.cn/npm/bootstrap-icons@1.7.2/icons/clock.svg",
+            "title": "工作时间",
+            "content": "周一至周五 9:00-18:00"
+        }
+    ]
+}

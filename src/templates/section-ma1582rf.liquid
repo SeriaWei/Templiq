@@ -1,0 +1,121 @@
+<!-- 联系我们 -->
+{% header %}
+<style>
+.section-ma1582rf {
+  background: #2d1857;
+  color: #fff;
+  padding: 2em 0;
+}
+.section-ma1582rf .contact-container {
+  max-width:1170px;
+  padding:0 15px;
+  margin:0 auto;
+}
+.section-ma1582rf .contact-title {
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 2em;
+  letter-spacing: 0.05em;
+}
+.section-ma1582rf .contact-blocks {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 2em;
+}
+.section-ma1582rf .contact-block {
+  background: #fff;
+  color: #2d1857;
+  border-radius: 1em;
+  flex: 1 1 200px;
+  min-width: 180px;
+  max-width: 270px;
+  padding: 2em 1.2em 1.5em 1.2em;
+  box-shadow: 0 4px 24px rgba(45,24,87,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.section-ma1582rf .contact-block:hover {
+  box-shadow: 0 8px 32px rgba(45,24,87,0.18);
+}
+.section-ma1582rf .contact-icon {
+  width: 3em;
+  height: 3em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-ma1582rf .contact-block-title {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-bottom: 0.7em;
+  text-align: center;
+}
+.section-ma1582rf .contact-block-content {
+  font-size: 1em;
+  text-align: center;
+  word-break: break-all;
+}
+@media (max-width: 991px) {
+  .section-ma1582rf .contact-blocks {
+    gap: 1.2em;
+  }
+  .section-ma1582rf .contact-block {
+    min-width: 180px;
+    max-width: 220px;
+    padding: 1.5em 0.8em 1.2em 0.8em;
+  }
+}
+@media (max-width: 767px) {
+  .section-ma1582rf .contact-blocks {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+  }
+  .section-ma1582rf .contact-block {
+    width: 100%;
+    max-width: 400px;
+  }
+  .section-ma1582rf {
+    padding: 2.5em 0 2em 0;
+  }
+  .section-ma1582rf .contact-title {
+    font-size: 1.5em;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma1582rf">
+  <div class="contact-container">
+    {% if this.Model.heading %}
+      <h2 class="contact-title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+    {% endif %}
+    <div class="contact-blocks">
+      {% for item in this.Model.contact_items %}
+        <div class="contact-block">
+          {% if item.icon %}
+            <div class="contact-icon" property="true" data-property="contact_items[{{forloop.index | minus:1}}].icon" method="attr" para="src">
+              <img src="{% url item.icon %}" alt="icon" style="width:2.5em;height:2.5em;max-width:100%;max-height:100%;display:block;" />
+            </div>
+          {% endif %}
+          {% if item.title %}
+            <div class="contact-block-title" property="true" data-property="contact_items[{{forloop.index | minus:1}}].title" method="text">{{item.title}}</div>
+          {% endif %}
+          {% if item.content %}
+            <div class="contact-block-content" property="true" data-property="contact_items[{{forloop.index | minus:1}}].content" method="text">{{item.content}}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+</script>
+{% endfooter %}
