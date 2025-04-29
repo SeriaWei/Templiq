@@ -6,8 +6,8 @@
 - 如果不需要javascript，请移除footer
 - CSS样式中font-size优先使用em而非rem
 - 可以使用bootstrap3中定义的样式，但禁止使用.container这个类，如果需要请重新定义一个避免冲突。
-- 请保持section占满整行。如果要限制宽度，请限制子级元素并使用max-width，最大宽度要用1170px加上左右15px边距，而不是直接用1200px。例如:max-width:1170px;padding-right:15px;padding-left:15px;margin: 0 auto;
-- 所有的样式都要限定在这个section的作用域下。
+- 如果section内容是限宽的，请添加一个子级例如div并使用max-width来限制内容宽度。最大宽度要用1170px加上左右15px边距，而不是直接用1200px。例如:.section_tpl__content{max-width:1170px;padding-right:15px;padding-left:15px;margin: 0 auto;}
+- 所有的样式都要限定在这个section的作用域下，可以使用BEM命名方式，避免冲突。
 Model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
 ``` src/templates/tpl.liquid
 {% if this.Model.heading %}
@@ -26,9 +26,10 @@ Model binding使用的是liquid模板语法，注意添加条件判断以避免�
 ```
 # JSON 数据规范
 ## 基本要求
-- 不要使用placeholder形式的数据，请使用专业真实数据
+- 不要使用placeholder形式的数据，请使用真实专业数据
 - 属性必须使用snake_case命名法
-- 数组类型的属性值必须是对象
+- 属性都是简单类型不要用Object，但数组里面必须是Object
+- JSON要格式化并采用适当的缩进
 ## 示例
 ``` src/data/tpl.json
 {
@@ -43,7 +44,7 @@ Model binding使用的是liquid模板语法，注意添加条件判断以避免�
 ```
 # 字段定义规范
 ## 基本要求
-- 字段定义必须使用JSON格式
+- 字段定义必须使用JSON格式并且要格式化并采用适当的缩进
 - 字段名必须使用snake_case命名法
 - 字段定义必须包含字段类型(FieldType)和中文显示名称(DisplayName)
 - 仅当字段类型是Array的时候，才使用Children定义子字段
