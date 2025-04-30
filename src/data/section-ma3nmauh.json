@@ -1,0 +1,22 @@
+{
+    "title": "Choose your plan",
+    "subtitle": "Honest and affordable pricing model to help you get started easily and trouble free.",
+    "plans": [
+        {
+            "name": "DEVELOPER",
+            "price": "$49 per year",
+            "description": "Up to 2 social networks and 2 automations",
+            "button_text": "Get Started",
+            "button_url": "#",
+            "is_featured": false
+        },
+        {
+            "name": "AGENCY",
+            "price": "$99 per year",
+            "description": "Up to 15 social networks and 50 automations",
+            "button_text": "Get Started",
+            "button_url": "#",
+            "is_featured": true
+        }
+    ]
+}

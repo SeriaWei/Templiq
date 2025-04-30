@@ -1,0 +1,163 @@
+<!-- 定价计划 -->
+{% header %}
+<style>
+.section-ma3nmauh {
+    background-color: #ffffff;
+    padding: 2em 0;
+}
+.section-ma3nmauh .content {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-ma3nmauh__header {
+    margin-bottom: 3em;
+}
+.section-ma3nmauh__title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+.section-ma3nmauh__subtitle {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.section-ma3nmauh__plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+.section-ma3nmauh__plan {
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2em;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.section-ma3nmauh__plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.section-ma3nmauh__plan--featured {
+    border: 2px solid #007bff;
+}
+.section-ma3nmauh__plan-name {
+    color: #007bff;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    text-align: left;
+}
+.section-ma3nmauh__plan-price {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: #333;
+    text-align: left;
+}
+.section-ma3nmauh__plan-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 2em;
+    min-height: 3em;
+    text-align: left;
+}
+.section-ma3nmauh__plan-button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.section-ma3nmauh__plan-button--dark {
+    background-color: #333;
+    color: white;
+}
+.section-ma3nmauh__plan-button--dark:hover {
+    background-color: #222;
+    color: white;
+}
+.section-ma3nmauh__plan-button--primary {
+    background-color: #007bff;
+    color: white;
+}
+.section-ma3nmauh__plan-button--primary:hover {
+    background-color: #0069d9;
+    color: white;
+}
+.section-ma3nmauh__badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    color: #007bff;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .section-ma3nmauh__plans {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-ma3nmauh__plan {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 2em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma3nmauh">
+    <div class="content">
+        <div class="section-ma3nmauh__header">
+            {% if this.Model.title %}
+            <h2 class="section-ma3nmauh__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+            {% endif %}
+            {% if this.Model.subtitle %}
+            <p class="section-ma3nmauh__subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+            {% endif %}
+        </div>
+        
+        <div class="section-ma3nmauh__plans">
+            {% for plan in this.Model.plans %}
+            <div class="section-ma3nmauh__plan {% if plan.is_featured %}section-ma3nmauh__plan--featured{% endif %}">
+                {% if plan.is_featured %}
+                <div class="section-ma3nmauh__badge">
+                    <i class="fa fa-bookmark"></i>
+                </div>
+                {% endif %}
+                {% if plan.name %}
+                <div class="section-ma3nmauh__plan-name" property="true" data-property="plans[{{forloop.index | minus:1}}].name" method="text">{{plan.name}}</div>
+                {% endif %}
+                {% if plan.price %}
+                <div class="section-ma3nmauh__plan-price" property="true" data-property="plans[{{forloop.index | minus:1}}].price" method="text">{{plan.price}}</div>
+                {% endif %}
+                {% if plan.description %}
+                <div class="section-ma3nmauh__plan-description" property="true" data-property="plans[{{forloop.index | minus:1}}].description" method="text">{{plan.description}}</div>
+                {% endif %}
+                {% if plan.button_text and plan.button_url %}
+                <a href="{% url plan.button_url %}" 
+                   class="section-ma3nmauh__plan-button {% if plan.is_featured %}section-ma3nmauh__plan-button--primary{% else %}section-ma3nmauh__plan-button--dark{% endif %}"
+                   property="true" 
+                   data-property="plans[{{forloop.index | minus:1}}].button_url" 
+                   method="attr" 
+                   para="href">
+                    <span property="true" data-property="plans[{{forloop.index | minus:1}}].button_text" method="text">{{plan.button_text}}</span>
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

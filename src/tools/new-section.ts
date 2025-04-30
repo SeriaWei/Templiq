@@ -8,17 +8,21 @@ export function createNewSection(customName?: string) {
 {% header %}
 <style>
 .section-${sectionName} {
+    background-color: #f0f0f0;
+    padding: 2em 0;
+}
+.section-${sectionName} .content {
+    max-width:1170px;
+    padding:0 15px;
+    margin:0 auto;
 }
 </style>
 {% endheader %}
 
 <section class="section-${sectionName}">
+    <div class="content">Hello world</div>
 </section>
-
-{% footer %}
-<script type="text/javascript">
-</script>
-{% endfooter %}`;
+`;
 
     const newSectionFile = path.join(__dirname, '..', 'templates', `section-${sectionName}.liquid`);
     fs.writeFileSync(newSectionFile, newSectionTemplate);

@@ -1,0 +1,53 @@
+{
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "plans": {
+        "FieldType": "Array",
+        "DisplayName": "定价方案",
+        "Children": [
+            {
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "方案名称",
+                    "IsRequired": true
+                },
+                "price": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "价格",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "方案描述"
+                },
+                "button_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮文本",
+                    "IsRequired": true
+                },
+                "button_url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮链接",
+                    "IsRequired": true
+                },
+                "is_featured": {
+                    "FieldType": "Checkbox",
+                    "DisplayName": "是否推荐",
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "是",
+                            "Value": "true"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

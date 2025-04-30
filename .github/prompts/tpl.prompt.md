@@ -1,13 +1,23 @@
 # 基本规范
-使用响应式设计完成模板代码，界面要精致美观有设计感，注意要有良好的用户体验。用网上的免费图片时，确保图片以合适的尺寸加载。然后初始化模板对应的JSON数据(src/data/{template-name}.json)和字段定义(src/data/{template-name}.def.json)。注意必须保证模板，数据和字段定义三者的一致性。
+使用响应式设计完成模板代码，代码要格式化并采用适当的缩进。界面要精致美观有设计感，注意要有良好的用户体验。用网上的免费图片时，确保图片以合适的尺寸加载。然后初始化模板对应的JSON数据(src/data/{template-name}.json)和字段定义(src/data/{template-name}.def.json)。注意必须保证模板，数据和字段定义三者的一致性。
+
+# CSS样式规范
+- CSS样式中font-size优先使用em而非rem
+- 可以使用bootstrap3中定义的样式
+- 禁止使用container这个类名字
+- 禁止直接限宽section居中，应添加子级再居中，例如.section-tpl .content{max-width:1170px;padding:0 15px;margin:0 auto;}
+- 所有的样式都要限定在这个section的作用域下，可以使用BEM命名方式，避免冲突。
 
 # 模板规范
 - 模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现“区块”，“模板”之类的字眼
-- 如果不需要javascript，请移除footer
-- CSS样式中font-size优先使用em而非rem
-- 可以使用bootstrap3中定义的样式，但禁止使用container这个类，如果需要请重新定义一个避免冲突，例如.section_tpl__container{max-width:1170px;padding:0 15px;margin:0 auto;}
-- 所有的样式都要限定在这个section的作用域下，可以使用BEM命名方式，避免冲突。
-Model binding使用的是liquid模板语法，注意添加条件判断以避免生成空标签，还有些特殊要求，规范如下：
+- 数据在{{this.Model}}中
+- 使用的是liquid模板语法
+- 绑定时需添加property="true",data-property="{property_path}",method="{text|attr|html}",para="href"。para只在method="attr"时要添加，它们是jQuery的method，例如：$(this).attr("href")
+- 嵌套循环下不添加property="true",data-property="{property_path}",method="attr",para="href"这几个attribute
+- 注意添加条件判断以避免生成空标签
+- javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
+
+## Model binding示例：
 ``` src/templates/tpl.liquid
 {% if this.Model.heading %}
 <p property="true" data-property="heading" method="text">{{this.Model.heading}}</p>
