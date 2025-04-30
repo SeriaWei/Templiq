@@ -1,0 +1,59 @@
+{
+    "title_purple": {
+        "FieldType": "SingleLine",
+        "DisplayName": "紫色标题文本",
+        "IsRequired": true
+    },
+    "title_orange": {
+        "FieldType": "SingleLine",
+        "DisplayName": "橙色标题文本",
+        "IsRequired": true
+    },
+    "description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述文本",
+        "IsRequired": true
+    },
+    "features": {
+        "FieldType": "Array",
+        "DisplayName": "功能卡片",
+        "Children": [
+            {
+                "color": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "图标颜色",
+                    "IsRequired": true,
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "蓝色",
+                            "Value": "blue"
+                        },
+                        {
+                            "DisplayText": "橙色",
+                            "Value": "orange"
+                        },
+                        {
+                            "DisplayText": "青色",
+                            "Value": "teal"
+                        }
+                    ]
+                },
+                "icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "SVG图标代码",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "功能标题",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "功能描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

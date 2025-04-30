@@ -1,0 +1,25 @@
+{
+    "title_purple": "All-In-One",
+    "title_orange": "Cloud Software.",
+    "description": "Skilline is one powerful online software suite that combines all the tools needed to run a successful school or office.",
+    "features": [
+        {
+            "color": "blue",
+            "icon": "<path fill=\"white\" d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 11h8v2H8v-2zm0 4h8v2H8v-2zm0-8h2v2H8V7z\"/>",
+            "title": "Online Billing, Invoicing, & Contracts",
+            "description": "Simple and secure control of your organization's financial and legal transactions. Send customized invoices and contracts"
+        },
+        {
+            "color": "orange",
+            "icon": "<path fill=\"white\" d=\"M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z\"/>",
+            "title": "Easy Scheduling & Attendance Tracking",
+            "description": "Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance"
+        },
+        {
+            "color": "teal",
+            "icon": "<path fill=\"white\" d=\"M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z\"/>",
+            "title": "Customer Tracking",
+            "description": "Automate and track emails to individuals or groups. Skilline's built-in system helps organize your organization"
+        }
+    ]
+}

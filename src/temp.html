@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skilline - Online Learning Platform</title>
+    <title>Skilline - All-In-One Cloud Software</title>
     <style>
         * {
             margin: 0;
@@ -13,182 +13,167 @@
         }
         
         body {
-            background-color: #FFF8F0;
-            overflow-x: hidden;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
+            padding: 40px 20px;
+            text-align: center;
         }
         
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 100vh;
-            padding: 50px 0;
-            position: relative;
+        .header {
+            margin-bottom: 60px;
         }
         
-        .hero-content {
-            max-width: 550px;
-            z-index: 2;
-        }
-        
-        .hero-title {
-            font-size: 48px;
-            line-height: 1.2;
+        .header h1 {
+            font-size: 36px;
             margin-bottom: 20px;
+            font-weight: 700;
         }
         
-        .orange-text {
+        .header h1 .purple {
+            color: #4B3F9F;
+        }
+        
+        .header h1 .orange {
             color: #FF8A00;
         }
         
-        .blue-text {
-            color: #2F327D;
-        }
-        
-        .hero-description {
-            color: #333;
+        .header p {
             font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
         
-        .cta-buttons {
+        .features {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
         }
         
-        .btn-primary {
-            background-color: #FF8A00;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .feature-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
         
-        .btn-primary:hover {
-            background-color: #E67E00;
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
         
-        .btn-video {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .play-icon {
-            width: 40px;
-            height: 40px;
-            background-color: white;
+        .icon-circle {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 20px;
         }
         
-        .play-icon svg {
-            width: 15px;
-            height: 15px;
-            margin-left: 3px;
+        .icon-circle.blue {
+            background-color: #5B72EE;
         }
         
-        .hero-image {
-            position: relative;
-            z-index: 1;
+        .icon-circle.orange {
+            background-color: #FF8A00;
         }
         
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
+        .icon-circle.teal {
+            background-color: #29BDCA;
         }
         
-        .wave-shape {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            background-color: white;
-            border-radius: 100% 100% 0 0;
-            z-index: 0;
+        .icon-circle svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
         }
         
-        @media (max-width: 992px) {
-            .hero {
+        .feature-card h3 {
+            color: #4B3F9F;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            min-height: 60px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .features {
                 flex-direction: column;
-                text-align: center;
-                padding-top: 80px;
+                align-items: center;
             }
             
-            .hero-content {
-                margin-bottom: 50px;
+            .feature-card {
+                max-width: 100%;
             }
             
-            .cta-buttons {
-                justify-content: center;
+            .header h1 {
+                font-size: 28px;
             }
             
-            .hero-image {
-                margin-top: 30px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 36px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .header p {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="orange-text">Studying</span> 
-                    <span class="blue-text">Online is now much easier</span>
-                </h1>
-                <p class="hero-description">
-                    Skilline is an interesting platform that will teach you in more an interactive way
-                </p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn-primary">Join for free</a>
-                    <a href="#" class="btn-video">
-                        <div class="play-icon">
-                            <svg viewBox="0 0 24 24" fill="#FF8A00">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                        <span>Watch how it works</span>
-                    </a>
+        <div class="header">
+            <h1><span class="purple">All-In-One</span> <span class="orange">Cloud Software.</span></h1>
+            <p>Skilline is one powerful online software suite that combines all the tools needed to run a successful school or office.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon-circle blue">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="white" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 11h8v2H8v-2zm0 4h8v2H8v-2zm0-8h2v2H8V7z"/>
+                    </svg>
                 </div>
+                <h3>Online Billing, Invoicing, & Contracts</h3>
+                <p>Simple and secure control of your organization's financial and legal transactions. Send customized invoices and contracts</p>
             </div>
-            <div class="hero-image">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8wNDwh8LqFnYG1yVqk1wziC2e2MK8M.png" alt="Student with books" width="500">
+            
+            <div class="feature-card">
+                <div class="icon-circle orange">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="white" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/>
+                    </svg>
+                </div>
+                <h3>Easy Scheduling & Attendance Tracking</h3>
+                <p>Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance</p>
             </div>
-        </section>
+            
+            <div class="feature-card">
+                <div class="icon-circle teal">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="white" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                </div>
+                <h3>Customer Tracking</h3>
+                <p>Automate and track emails to individuals or groups. Skilline's built-in system helps organize your organization</p>
+            </div>
+        </div>
     </div>
-    <div class="wave-shape"></div>
 </body>
 </html>

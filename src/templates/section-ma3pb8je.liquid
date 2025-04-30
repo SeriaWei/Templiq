@@ -1,0 +1,167 @@
+<!-- 特色功能展示 -->
+{% header %}
+<style>
+.section-ma3pb8je {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    padding: 2.5em 0;
+}
+
+.section-ma3pb8je .content {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-ma3pb8je__header {
+    margin-bottom: 3.75em;
+}
+
+.section-ma3pb8je__title {
+    font-size: 2.25em;
+    margin-bottom: 0.55em;
+    font-weight: 700;
+}
+
+.section-ma3pb8je__title-purple {
+    color: #4B3F9F;
+}
+
+.section-ma3pb8je__title-orange {
+    color: #FF8A00;
+}
+
+.section-ma3pb8je__description {
+    font-size: 1.125em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.section-ma3pb8je__features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 2.5em;
+}
+
+.section-ma3pb8je__feature-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.875em;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.section-ma3pb8je__feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.section-ma3pb8je__icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25em;
+}
+
+.section-ma3pb8je__icon-circle--blue {
+    background-color: #5B72EE;
+}
+
+.section-ma3pb8je__icon-circle--orange {
+    background-color: #FF8A00;
+}
+
+.section-ma3pb8je__icon-circle--teal {
+    background-color: #29BDCA;
+}
+
+.section-ma3pb8je__icon-circle svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.section-ma3pb8je__feature-title {
+    color: #4B3F9F;
+    font-size: 1.375em;
+    margin-bottom: 0.7em;
+    font-weight: 600;
+    min-height: 60px;
+}
+
+.section-ma3pb8je__feature-desc {
+    color: #666;
+    font-size: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-ma3pb8je__features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-ma3pb8je__feature-card {
+        max-width: 100%;
+    }
+    
+    .section-ma3pb8je__title {
+        font-size: 1.75em;
+    }
+    
+    .section-ma3pb8je__description {
+        font-size: 1em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma3pb8je">
+    <div class="content">
+        <div class="section-ma3pb8je__header">
+            {% if this.Model.title_purple and this.Model.title_orange %}
+            <h1 class="section-ma3pb8je__title">
+                <span class="section-ma3pb8je__title-purple" property="true" data-property="title_purple" method="text">{{this.Model.title_purple}}</span> 
+                <span class="section-ma3pb8je__title-orange" property="true" data-property="title_orange" method="text">{{this.Model.title_orange}}</span>
+            </h1>
+            {% endif %}
+            
+            {% if this.Model.description %}
+            <p class="section-ma3pb8je__description" property="true" data-property="description" method="text">
+                {{this.Model.description}}
+            </p>
+            {% endif %}
+        </div>
+        
+        {% if this.Model.features and this.Model.features.length > 0 %}
+        <div class="section-ma3pb8je__features">
+            {% for feature in this.Model.features %}
+            <div class="section-ma3pb8je__feature-card">
+                <div class="section-ma3pb8je__icon-circle section-ma3pb8je__icon-circle--{{feature.color}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" property="true" data-property="features[{{forloop.index | minus:1}}].icon" method="html">
+                        {{feature.icon | raw}}
+                    </svg>
+                </div>
+                <h3 class="section-ma3pb8je__feature-title" property="true" data-property="features[{{forloop.index | minus:1}}].title" method="text">
+                    {{feature.title}}
+                </h3>
+                <p class="section-ma3pb8je__feature-desc" property="true" data-property="features[{{forloop.index | minus:1}}].description" method="text">
+                    {{feature.description}}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
