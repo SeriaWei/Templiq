@@ -1,0 +1,217 @@
+<!-- 在线学习英雄区 -->
+{% header %}
+<style>
+.section-ma3oa44q {
+    background-color: #FFF8F0;
+    overflow-x: hidden;
+    padding: 4em 0;
+    position: relative;
+}
+.section-ma3oa44q .content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section-ma3oa44q__left {
+    max-width: 550px;
+    z-index: 2;
+    flex: 1;
+}
+.section-ma3oa44q__title {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-bottom: 0.8em;
+    font-weight: 700;
+}
+.section-ma3oa44q__title-orange {
+    color: #FFA500;
+}
+.section-ma3oa44q__title-blue {
+    color: #003366;
+}
+.section-ma3oa44q__description {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1.8em;
+}
+.section-ma3oa44q__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+}
+.section-ma3oa44q__btn-primary {
+    background-color: #FFA500;
+    color: white;
+    padding: 0.9em 1.8em;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.section-ma3oa44q__btn-primary:hover {
+    background-color: #E67E00;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+.section-ma3oa44q__btn-video {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+.section-ma3oa44q__play-icon {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.section-ma3oa44q__play-icon svg {
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.2em;
+    fill: #FFA500;
+}
+.section-ma3oa44q__right {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-left: 5%;
+}
+.section-ma3oa44q__image {
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+.section-ma3oa44q__wave-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    border-radius: 100% 100% 0 0;
+    z-index: 0;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .section-ma3oa44q .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .section-ma3oa44q__left {
+        margin-bottom: 3em;
+    }
+    .section-ma3oa44q__buttons {
+        justify-content: center;
+    }
+    .section-ma3oa44q__right {
+        margin-top: 1.5em;
+        max-width: 380px;
+        margin-left: 0;
+        flex: 0 0 100%;
+    }
+    .section-ma3oa44q__image {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-ma3oa44q__title {
+        font-size: 2.2em;
+    }
+    .section-ma3oa44q__buttons {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .section-ma3oa44q__btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+    .section-ma3oa44q__btn-video {
+        width: 100%;
+        justify-content: center;
+    }
+    .section-ma3oa44q__right {
+        max-width: 320px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma3oa44q">
+    <div class="content">
+        <div class="section-ma3oa44q__left">
+            {% if this.Model.title_first_part or this.Model.title_second_part %}
+            <h1 class="section-ma3oa44q__title">
+                {% if this.Model.title_first_part %}
+                <span property="true" data-property="title_first_part" method="text" class="section-ma3oa44q__title-orange">{{ this.Model.title_first_part }}</span>
+                {% endif %}
+                {% if this.Model.title_second_part %}
+                <span property="true" data-property="title_second_part" method="text" class="section-ma3oa44q__title-blue">{{ this.Model.title_second_part }}</span>
+                {% endif %}
+            </h1>
+            {% endif %}
+            
+            {% if this.Model.description %}
+            <p class="section-ma3oa44q__description" property="true" data-property="description" method="text">
+                {{ this.Model.description }}
+            </p>
+            {% endif %}
+            
+            <div class="section-ma3oa44q__buttons">
+                {% if this.Model.primary_button_text %}
+                <a href="{% url this.Model.primary_button_link %}" class="section-ma3oa44q__btn-primary" property="true" data-property="primary_button_link" method="attr" para="href">
+                    <span property="true" data-property="primary_button_text" method="text">{{ this.Model.primary_button_text }}</span>
+                </a>
+                {% endif %}
+                
+                {% if this.Model.video_button_text %}
+                <a href="{% url this.Model.video_button_link %}" class="section-ma3oa44q__btn-video" property="true" data-property="video_button_link" method="attr" para="href">
+                    <div class="section-ma3oa44q__play-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <span property="true" data-property="video_button_text" method="text">{{ this.Model.video_button_text }}</span>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="section-ma3oa44q__right">
+            {% if this.Model.hero_image %}
+            <img 
+                class="section-ma3oa44q__image" 
+                property="true" 
+                data-property="hero_image" 
+                method="attr" 
+                para="src" 
+                src="{% url this.Model.hero_image %}" 
+                alt="{{ this.Model.hero_image_alt }}"
+            />
+            {% endif %}
+        </div>
+    </div>
+    <div class="section-ma3oa44q__wave-shape"></div>
+</section>

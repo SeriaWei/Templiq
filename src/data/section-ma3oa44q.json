@@ -1,0 +1,11 @@
+{
+    "title_first_part": "Studying",
+    "title_second_part": " Online is now much easier",
+    "description": "Skilline is an interesting platform that will teach you in more an interactive way",
+    "primary_button_text": "Join for free",
+    "primary_button_link": "#join-free",
+    "video_button_text": "Watch how it works",
+    "video_button_link": "#watch-demo",
+    "hero_image": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "hero_image_alt": "Student studying with laptop and books"
+}

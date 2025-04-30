@@ -1,0 +1,47 @@
+{
+    "title_first_part": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第一部分（橙色）",
+        "IsRequired": true
+    },
+    "title_second_part": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第二部分（蓝色）",
+        "IsRequired": true
+    },
+    "description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题描述",
+        "IsRequired": true
+    },
+    "primary_button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文本",
+        "IsRequired": true
+    },
+    "primary_button_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接",
+        "IsRequired": true
+    },
+    "video_button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "视频按钮文本",
+        "IsRequired": true
+    },
+    "video_button_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "视频按钮链接",
+        "IsRequired": true
+    },
+    "hero_image": {
+        "FieldType": "Media",
+        "DisplayName": "主图片",
+        "IsRequired": true
+    },
+    "hero_image_alt": {
+        "FieldType": "SingleLine",
+        "DisplayName": "图片描述文本",
+        "IsRequired": true
+    }
+}

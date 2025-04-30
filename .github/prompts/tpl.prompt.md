@@ -15,7 +15,7 @@
 - 绑定时需添加property="true",data-property="{property_path}",method="{text|attr|html}",para="href"。para只在method="attr"时要添加，它们是jQuery的method，例如：$(this).attr("href")
 - 嵌套循环下不添加property="true",data-property="{property_path}",method="attr",para="href"这几个attribute
 - 注意添加条件判断以避免生成空标签
-- javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
+- 如果有javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
 
 ## Model binding示例：
 ``` src/templates/tpl.liquid
