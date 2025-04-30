@@ -1,0 +1,66 @@
+{
+  "title": "优质农业机械设备展示",
+  "description": "我们提供各类高效、耐用的农业机械设备，助力现代农业发展",
+  "categories": [
+    {
+      "name": "农用拖拉机",
+      "products": [
+        {
+          "image": "https://images.unsplash.com/photo-1516199423456-1f1e91b06f25?w=800&q=80",
+          "title": "大型农用拖拉机 - A8系列",
+          "link":"#"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+          "title": "中型农用拖拉机 - B5系列",
+          "link":"#"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1516199423456-1f1e91b06f25?w=800&q=80",
+          "title": "小型农用拖拉机 - C3系列",
+          "link":"#"
+        }
+      ]
+    },
+    {
+      "name": "收割机",
+      "products": [
+        {
+          "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+          "title": "全自动联合收割机 - H9系列",
+          "link":"#"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+          "title": "水稻联合收割机 - R6系列",
+          "link":"#"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+          "title": "玉米联合收割机 - M4系列",
+          "link":"#"
+        }
+      ]
+    },
+    {
+      "name": "播种机",
+      "products": [
+        {
+          "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+          "title": "精量播种机 - P7系列",
+          "link":"#"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1516199423456-1f1e91b06f25?w=800&q=80",
+          "title": "免耕播种机 - N5系列",
+          "link":"#"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+          "title": "气吸式播种机 - V3系列",
+          "link":"#"
+        }
+      ]
+    }
+  ]
+}

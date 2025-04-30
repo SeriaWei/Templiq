@@ -1,0 +1,195 @@
+<!-- 分类Tab显示 -->
+{% header %}
+<style>
+    .section-ma2gphbh {
+        padding: 2em 0;
+        display: flex;
+        background-color: #f5f5f5;
+    }
+    
+    .section-ma2gphbh .section-header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    
+    .section-ma2gphbh .section-title {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 0.5em;
+    }
+    
+    .section-ma2gphbh .section-description {
+        font-size: 1.1em;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .section-ma2gphbh .content_wrap {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1200px;
+    }
+
+    .section-ma2gphbh .sidebar {
+        width: 140px;
+        background-color: #f0f0f0;
+        margin-right: 20px;
+    }
+
+    .section-ma2gphbh .sidebar-item {
+        padding: 20px;
+        cursor: pointer;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .section-ma2gphbh .sidebar-item.active {
+        background-color: #ff9800;
+        color: white;
+    }
+
+    .section-ma2gphbh .product-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+
+    .section-ma2gphbh .content {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .section-ma2gphbh .product-card {
+        background-color: white;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-ma2gphbh .product-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .section-ma2gphbh .product-title {
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+
+    @media (max-width: 768px) {
+        .section-ma2gphbh {
+            flex-direction: column;
+        }
+
+        .section-ma2gphbh .content_wrap {
+            flex-direction: column;
+            padding: 0 15px;
+        }
+
+        .section-ma2gphbh .sidebar {
+            width: 100%;
+            min-height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: 0;
+        }
+
+        .section-ma2gphbh .sidebar-item {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .section-ma2gphbh .product-group {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .section-ma2gphbh .product-card {
+            width: calc(100% - 40px);
+            margin: 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .section-ma2gphbh .product-group {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endheader %}
+
+<section class="section-ma2gphbh">
+    <div class="content_wrap">
+        <div class="section-header">
+            {% if this.Model.title %}
+            <h2 property="true" data-property="title" method="text" class="section-title">{{this.Model.title}}</h2>
+            {% endif %}
+            {% if this.Model.description %}
+            <p property="true" data-property="description" method="text" class="section-description">{{this.Model.description}}</p>
+            {% endif %}
+        </div>
+        <div class="sidebar">
+            {% for category in this.Model.categories %}
+            <div property="true" data-property="categories[{{forloop.index | minus:1}}].name" method="text"
+                class="sidebar-item{% if forloop.first %} active{% endif %}" data-category="{{category.name}}">
+                {{category.name}}</div>
+            {% endfor %}
+        </div>
+        <div class="content">
+            {% for category in this.Model.categories %}
+            <div class="product-group" data-category="{{category.name}}" {% if forloop.first !=true %}
+                style="display: none;" {% endif %}>
+                {% for product in category.products %}
+                <a href="{% url product.link %}">
+                    <div class="product-card">
+                        <img src="{% url product.image %}" alt="{{product.title}}"
+                            class="product-image">
+                        <h3 class="product-title">{{product.title}}</h3>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% footer %}
+<script>
+    (function () {
+        const sidebarItems = document.querySelectorAll('.section-ma2gphbh .sidebar-item');
+        const productGroups = document.querySelectorAll('.section-ma2gphbh .product-group');
+
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', function () {
+                sidebarItems.forEach(si => si.classList.remove('active'));
+                this.classList.add('active');
+
+                const selectedCategory = this.getAttribute('data-category');
+                productGroups.forEach(group => {
+                    if (group.getAttribute('data-category') === selectedCategory) {
+                        group.style.display = '';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+            });
+        });   
+    })();
+</script>
+{% endfooter %}
