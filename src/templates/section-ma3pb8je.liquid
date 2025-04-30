@@ -142,16 +142,12 @@
                 {{this.Model.description}}
             </p>
             {% endif %}
-        </div>
-        
-        {% if this.Model.features and this.Model.features.length > 0 %}
+        </div>        
         <div class="section-ma3pb8je__features">
             {% for feature in this.Model.features %}
             <div class="section-ma3pb8je__feature-card">
                 <div class="section-ma3pb8je__icon-circle section-ma3pb8je__icon-circle--{{feature.color}}">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" property="true" data-property="features[{{forloop.index | minus:1}}].icon" method="html">
-                        {{feature.icon | raw}}
-                    </svg>
+                    {{feature.icon | raw}}
                 </div>
                 <h3 class="section-ma3pb8je__feature-title" property="true" data-property="features[{{forloop.index | minus:1}}].title" method="text">
                     {{feature.title}}
@@ -162,6 +158,5 @@
             </div>
             {% endfor %}
         </div>
-        {% endif %}
     </div>
 </section>
