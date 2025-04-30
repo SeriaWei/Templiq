@@ -1,0 +1,135 @@
+<!-- Top文章 -->
+{% header %}
+<style>
+.section-ma3zmsng {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+.section-ma3zmsng .content {
+    display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 0 15px;
+}
+.section-ma3zmsng .main-article {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+.section-ma3zmsng .main-article img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.section-ma3zmsng .main-article-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+}
+.section-ma3zmsng .main-article-content h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.section-ma3zmsng .main-article-content p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.section-ma3zmsng .sidebar {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.section-ma3zmsng .sidebar-article {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+.section-ma3zmsng .sidebar-article-image {
+    width: 120px;
+    height: 90px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.section-ma3zmsng .sidebar-article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section-ma3zmsng .sidebar-article-content {
+    flex: 1;
+}
+.section-ma3zmsng .sidebar-article-content h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+.section-ma3zmsng .sidebar-article-content .date {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.section-ma3zmsng .sidebar-article-content p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .section-ma3zmsng .content {
+        flex-direction: column;
+    }
+    .section-ma3zmsng .sidebar {
+        width: 100%;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma3zmsng">
+    <div class="content">
+        <div class="main-article">
+            {% assign first_article = this.Model.Articles | first %}
+            <img src="{% url first_article.ImageThumbUrl %}" alt="{{first_article.Title}}">
+            <div class="main-article-content">
+                <h2>{{first_article.Title}}</h2>
+                <p>{{first_article.Summary | default: first_article.Content | truncate: 100}}</p>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            {% for item in this.Model.Articles offset:1 limit:3 %}
+                <div class="sidebar-article">
+                    <div class="sidebar-article-image">
+                        <img src="{% url item.ImageThumbUrl %}" alt="{{item.Title}}">
+                    </div>
+                    <div class="sidebar-article-content">
+                        <h3>
+                            <a target="_blank" href="{% url this.Model.Widget.DetailPageUrl %}/{{item.Url}}.html">
+                                {{item.Title}}
+                            </a>
+                        </h3>
+                        <div class="date">{{item.PublishDate | date: "%Y-%m-%d %H:%M"}}</div>
+                        <p>{{item.Summary | default: item.Content | truncate: 60}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
