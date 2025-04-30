@@ -41,10 +41,10 @@
       {% for example in examples %}
         <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 template-item">
           <div class="thumbnail">
-            <a href="/preview/{{ example.name }}" target="_blank">
+            <a href="/preview/{{ example.name }}">
               <img src="/thumbs/{{ example.name }}-m.png" alt="{{ example.title }}" onerror="this.src='/thumbs/default.svg'" class="img-responsive">
               <div class="caption text-center">
-                <h4>{{ example.title }}</h4>
+                <h5>{{ example.title }}</h5>
               </div>
             </a>
           </div>
