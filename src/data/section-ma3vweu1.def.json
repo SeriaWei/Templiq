@@ -1,0 +1,20 @@
+{
+    "stats": {
+        "FieldType": "Array",
+        "DisplayName": "统计数据",
+        "Children": [
+            {
+                "number": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数值",
+                    "IsRequired": true
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

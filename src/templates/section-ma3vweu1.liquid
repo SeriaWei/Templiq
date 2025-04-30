@@ -1,0 +1,100 @@
+<!-- 统计数据面板 -->
+{% header %}
+<style>
+.section-ma3vweu1 {
+    background-color: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0 2em;
+}
+
+.section-ma3vweu1 .stats-container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.section-ma3vweu1 .blue-sidebar {
+    background-color: #0066cc;
+    position: absolute;
+    top: -20px;
+    bottom: 20px;
+    left: -10px;
+    z-index: 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    right: 40px;
+    border-radius: 5px;
+}
+
+.section-ma3vweu1 .stats-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-ma3vweu1 .stat-item {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.section-ma3vweu1 .stat-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.section-ma3vweu1 .stat-label {
+    font-size: 0.875em;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .section-ma3vweu1 {
+        padding: 2em 0;
+    }
+    .section-ma3vweu1 .blue-sidebar{
+        display: none;
+    }
+    .section-ma3vweu1 .stats-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-ma3vweu1 .stat-item {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .section-ma3vweu1 .blue-sidebar {
+        right: 10px;
+        bottom: 20px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-ma3vweu1">
+    <div class="stats-container">
+        <div class="blue-sidebar"></div>
+        <div class="stats-card">
+            {% for stat in this.Model.stats %}
+            <div class="stat-item">
+                {% if stat.number %}
+                <div class="stat-number" property="true" data-property="stats[{{forloop.index | minus:1}}].number" method="text">{{stat.number}}</div>
+                {% endif %}
+                {% if stat.label %}
+                <div class="stat-label" property="true" data-property="stats[{{forloop.index | minus:1}}].label" method="text">{{stat.label}}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
