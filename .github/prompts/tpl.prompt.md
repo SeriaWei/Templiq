@@ -5,8 +5,9 @@
 - CSS样式中font-size优先使用em而非rem
 - 可以使用bootstrap3中定义的样式
 - 禁止使用container这个类名字
-- 禁止直接限宽section居中，应添加子级再居中，例如.section-tpl .content{max-width:1170px;padding:0 15px;margin:0 auto;}
+- section内容如果限宽居中，最大宽度请使用1170px，例如.section-tpl .content{max-width:1170px;margin:0 auto;}
 - 所有的样式都要限定在这个section的作用域下，可以使用BEM命名方式，避免冲突。
+- 不要在SVG中添加class属性，因为SVG会被用户换掉
 
 # 模板规范
 - 模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现“区块”，“模板”之类的字眼
@@ -16,6 +17,8 @@
 - 嵌套循环下不添加property="true",data-property="{property_path}",method="attr",para="href"这几个attribute
 - 注意添加条件判断以避免生成空标签
 - 如果有javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
+- SVG完整代码都在属性中，所以不需要专门写SVG标签，直接输出即可，也不要加property="true"。例如：{{this.Model.svg | raw}}
+
 
 ## Model binding示例：
 ``` src/templates/tpl.liquid

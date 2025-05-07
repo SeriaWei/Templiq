@@ -1,0 +1,26 @@
+{
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题",
+        "IsRequired": true
+    },
+    "partners": {
+        "FieldType": "Array",
+        "DisplayName": "合作伙伴列表",
+        "IsRequired": true,
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG",
+                    "IsRequired": true
+                },
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "品牌名称",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}
