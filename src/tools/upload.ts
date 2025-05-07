@@ -132,6 +132,9 @@ export { upload };
 
 if (require.main === module) {
     (async () => {
+        // const uploader = new B2Uploader();
+        // const bucketId = process.env.B2_BUCKET_ID as string;
+        // await uploader.uploadFile(bucketId, `./src/cms-v4.3.zip`, `cms-v4.3.zip`);
         await upload(process.argv[2]);
     })();
 }
