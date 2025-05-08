@@ -1,0 +1,64 @@
+{
+  "main_heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主标题"
+  },
+  "services": {
+    "FieldType": "Array",
+    "DisplayName": "服务列表",
+    "Children": [
+      {
+        "type": {
+          "FieldType": "SingleLine",
+          "DisplayName": "服务卡片类型",
+          "FieldOptions": [
+            {
+              "DisplayText": "主要",
+              "Value": "primary"
+            },
+            {
+              "DisplayText": "次要",
+              "Value": "secondary"
+            }
+          ]
+        },
+        "title": {
+          "FieldType": "SingleLine",
+          "DisplayName": "服务标题"
+        },
+        "description": {
+          "FieldType": "Paragraph",
+          "DisplayName": "服务描述"
+        }
+      }
+    ]
+  },
+  "main_image_src": {
+    "FieldType": "Media",
+    "DisplayName": "主图片链接"
+  },
+  "main_image_alt": {
+    "FieldType": "SingleLine",
+    "DisplayName": "主图片替代文本"
+  },
+  "intro_heading": {
+    "FieldType": "SingleLine",
+    "DisplayName": "简介标题"
+  },
+  "intro_paragraph": {
+    "FieldType": "Paragraph",
+    "DisplayName": "简介段落"
+  },
+  "intro_list_items": {
+    "FieldType": "Array",
+    "DisplayName": "简介列表项",
+    "Children": [
+      {
+        "text": {
+          "FieldType": "SingleLine",
+          "DisplayName": "列表项文本"
+        }
+      }
+    ]
+  }
+}

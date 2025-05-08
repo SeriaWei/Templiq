@@ -1,0 +1,162 @@
+{% header %}
+<style>
+.section-mafffny4 {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px 0;
+}
+
+.section-mafffny4 .section-mafffny4-container {
+    max-width: 1170px; 
+    margin: 0 auto;
+}
+
+.section-mafffny4 .main-heading {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 40px 0;
+    color: #000;
+}
+
+.section-mafffny4 .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.section-mafffny4 .services-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-mafffny4 .image-column {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.section-mafffny4 .service-card {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 25px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-mafffny4 .service-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+}
+
+.section-mafffny4 .service-card.primary::before {
+    background-color: #e63946;
+}
+
+.section-mafffny4 .service-card.secondary::before {
+    background-color: #6c757d;
+}
+
+.section-mafffny4 .service-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.section-mafffny4 .service-card p {
+    color: #666;
+    font-size: 1em;
+}
+
+.section-mafffny4 .main-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-mafffny4 .intro-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.section-mafffny4 .intro-section p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.section-mafffny4 .intro-section ul {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.section-mafffny4 .intro-section li {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .section-mafffny4 .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .section-mafffny4 .image-column {
+        order: -1;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mafffny4">
+    <div class="section-mafffny4-container">
+        {% if this.Model.main_heading %}
+        <h1 class="main-heading" property="true" data-property="main_heading" method="text">{{this.Model.main_heading}}</h1>
+        {% endif %}
+        
+        <div class="content-wrapper">
+            <div class="services-column">
+                {% for service in this.Model.services %}
+                <div class="service-card {{ service.type }}">
+                    {% if service.title %}
+                    <h2 property="true" data-property="services[{{forloop.index | minus:1}}].title" method="text">{{service.title}}</h2>
+                    {% endif %}
+                    {% if service.description %}
+                    <p property="true" data-property="services[{{forloop.index | minus:1}}].description" method="text">{{service.description}}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="image-column">
+                {% if this.Model.main_image_src %}
+                <img property="true" data-property="main_image_src" method="attr" para="src" src="{% url this.Model.main_image_src %}" alt="{{this.Model.main_image_alt}}" class="main-image">
+                {% endif %}
+                
+                <div class="intro-section">
+                    {% if this.Model.intro_heading %}
+                    <h2 property="true" data-property="intro_heading" method="text">{{this.Model.intro_heading}}</h2>
+                    {% endif %}
+                    {% if this.Model.intro_paragraph %}
+                    <p property="true" data-property="intro_paragraph" method="text">{{this.Model.intro_paragraph}}</p>
+                    {% endif %}
+                    
+                    {% if this.Model.intro_list_items and this.Model.intro_list_items.size > 0 %}
+                    <ul>
+                        {% for item in this.Model.intro_list_items %}
+                        <li property="true" data-property="intro_list_items[{{forloop.index | minus:1}}].text" method="text">{{item.text}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

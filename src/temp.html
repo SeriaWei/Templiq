@@ -1,196 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Partners</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background-color: #0f0f0f;
-  color: #f5f5f5;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-}
-.title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 4rem;
-}
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.logo-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 2rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s ease;
-}
-.logo-cell:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-.logo-cell:nth-child(4n) {
-  border-right: none;
-}
-.logo-content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.logo-icon {
-  width: 32px;
-  height: 32px;
-}
-.logo-text {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-}
-@media screen and (max-width: 1024px) {
-  .container {
-    padding: 3rem 1rem;
-  }
-  
-  .title {
-    font-size: 1.75rem;
-    margin-bottom: 3rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .logo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .logo-cell:nth-child(2n) {
-    border-right: none;
-  }
-  
-  .logo-cell {
-    padding: 2rem 1rem;
-  }
-  
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .logo-text {
-    font-size: 1.125rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .logo-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .logo-cell {
-    border-right: none;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Consulting Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 40px 0;
+            color: #000;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .services-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-column {
+            flex: 1.5;
+            min-width: 300px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+        }
+        
+        .service-card.primary::before {
+            background-color: #e63946;
+        }
+        
+        .service-card.secondary::before {
+            background-color: #6c757d;
+        }
+        
+        .service-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .main-image {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .intro-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .intro-section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .intro-section ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+        
+        .intro-section li {
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .image-column {
+                order: -1;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h2 class="title">Brands we have had privilege to work with</h2>
-  <div class="logo-grid">
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z"></path>
-          <path d="M12 12L20 7.5"></path>
-          <path d="M12 12V21"></path>
-          <path d="M12 12L4 7.5"></path>
-        </svg>
-        <span class="logo-text">Snowflake</span>
-      </div>
+    <div class="container">
+        <h1>How can we help you?</h1>
+        
+        <div class="content-wrapper">
+            <div class="services-column">
+                <div class="service-card primary">
+                    <h2>Business Consulting</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
+                </div>
+                
+                <div class="service-card secondary">
+                    <h2>Strategy Planning</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
+                </div>
+                
+                <div class="service-card secondary">
+                    <h2>Video Content</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
+                </div>
+            </div>
+            
+            <div class="image-column">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-WfHYXQ3Lsberha0SthBCMJQQM3ySnj.png" alt="Business consulting meeting" class="main-image">
+                
+                <div class="intro-section">
+                    <h2>Introduction to Business Consulting</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
+                    
+                    <ul>
+                        <li>Helping small businesses</li>
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Business Strategy and Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6.5 6.5L17.5 17.5"></path>
-          <path d="M17.5 6.5L6.5 17.5"></path>
-          <circle cx="12" cy="12" r="9"></circle>
-        </svg>
-        <span class="logo-text">Flash</span>
-      </div>
-    </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          <polyline points="17 6 23 6 23 12"></polyline>
-        </svg>
-        <span class="logo-text">Rise</span>
-      </div>
-    </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <circle cx="12" cy="12" r="6"></circle>
-          <circle cx="12" cy="12" r="2"></circle>
-        </svg>
-        <span class="logo-text">PinPoint</span>
-      </div>
-    </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"></path>
-        </svg>
-        <span class="logo-text">Proline</span>
-      </div>
-    </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-          <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-        <span class="logo-text">Vision</span>
-      </div>
-    </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-        </svg>
-        <span class="logo-text">Volume</span>
-      </div>
-    </div>
-    <div class="logo-cell">
-      <div class="logo-content">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-          <line x1="6" y1="6" x2="6" y2="6"></line>
-          <line x1="6" y1="18" x2="6" y2="18"></line>
-        </svg>
-        <span class="logo-text">Hitech</span>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>
