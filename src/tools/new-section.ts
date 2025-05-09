@@ -13,7 +13,6 @@ export function createNewSection(customName?: string) {
 }
 .section-${sectionName} .content {
     max-width:1170px;
-    padding:0 15px;
     margin:0 auto;
 }
 </style>

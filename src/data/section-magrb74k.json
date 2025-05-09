@@ -1,0 +1,36 @@
+{
+    "title": "全系列OEM代工厂项目",
+    "subtitle": "免费提供三证资质备案，3052种成熟配方量身定制",
+    "products": [
+        {
+            "title": "眉部产品",
+            "image": "https://images.unsplash.com/photo-1597225244660-1cd128c64284?w=500&q=80",
+            "features": [{"text": "眉笔"}, {"text": "眉粉"}, {"text": "眉胶"}]
+        },
+        {
+            "title": "脸部产品",
+            "image": "https://images.unsplash.com/photo-1542452255191-c85a98f2c5d1?w=500&q=80",
+            "features": [{"text": "滴管粉底液"}, {"text": "单色多色气垫BB霜"}, {"text": "单色多色气垫腮红等"}]
+        },
+        {
+            "title": "唇部产品",
+            "image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&q=80",
+            "features": [{"text": "口红"}, {"text": "唇釉"}, {"text": "唇膏"}]
+        },
+        {
+            "title": "护肤喷雾",
+            "image": "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&q=80",
+            "features": [{"text": "保湿喷雾"}, {"text": "舒缓喷雾"}, {"text": "定妆喷雾"}]
+        },
+        {
+            "title": "面膜产品",
+            "image": "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=500&q=80",
+            "features": [{"text": "补水面膜"}, {"text": "美白面膜"}, {"text": "修复面膜"}]
+        },
+        {
+            "title": "面霜产品",
+            "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500&q=80",
+            "features": [{"text": "保湿霜"}, {"text": "晚霜"}, {"text": "眼霜"}]
+        }
+    ]
+}

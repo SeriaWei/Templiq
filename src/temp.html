@@ -1,164 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Consulting Services</title>
+    <title>全系列OEM代工厂项目</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
         
-        h1 {
+        .header {
             text-align: center;
-            font-size: 2.5rem;
-            margin: 40px 0;
-            color: #000;
+            margin-bottom: 40px;
+            margin-top: 20px;
         }
         
-        .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
         }
         
-        .services-column {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .image-column {
-            flex: 1.5;
-            min-width: 300px;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .sub-title {
+            font-size: 18px;
+            color: #666;
             margin-bottom: 30px;
-            padding: 25px 30px;
-            position: relative;
-            overflow: hidden;
         }
         
-        .service-card::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 5px;
-        }
-        
-        .service-card.primary::before {
-            background-color: #e63946;
-        }
-        
-        .service-card.secondary::before {
-            background-color: #6c757d;
-        }
-        
-        .service-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #000;
-        }
-        
-        .service-card p {
-            color: #666;
-            font-size: 1rem;
-        }
-        
-        .main-image {
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
         }
         
-        .intro-section h2 {
-            font-size: 1.8rem;
+        .product-item {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .product-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .overlay h3 {
+            font-size: 22px;
             margin-bottom: 15px;
-            color: #000;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
         }
         
-        .intro-section p {
-            color: #666;
-            margin-bottom: 20px;
+        .overlay p {
+            margin: 5px 0;
+            font-size: 16px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            transition-delay: 0.1s;
         }
         
-        .intro-section ul {
-            list-style-position: inside;
-            margin-left: 10px;
-        }
-        
-        .intro-section li {
-            color: #666;
-            margin-bottom: 8px;
-        }
-        
-        @media (max-width: 768px) {
-            .content-wrapper {
-                flex-direction: column;
-            }
-            
-            .image-column {
-                order: -1;
-            }
+        .product-item:hover .overlay h3,
+        .product-item:hover .overlay p {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>How can we help you?</h1>
-        
-        <div class="content-wrapper">
-            <div class="services-column">
-                <div class="service-card primary">
-                    <h2>Business Consulting</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
-                </div>
-                
-                <div class="service-card secondary">
-                    <h2>Strategy Planning</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
-                </div>
-                
-                <div class="service-card secondary">
-                    <h2>Video Content</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
-                </div>
+    <div class="header">
+        <h1 class="main-title">全系列OEM代工厂项目</h1>
+        <p class="sub-title">免费提供三证资质备案，3052种成熟配方量身定制</p>
+    </div>
+    
+    <div class="product-grid">
+        <!-- First row -->
+        <div class="product-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ndTafF8w2Tvt0K9rgFUzddML4TzN1a.png" alt="Person applying eyebrow makeup">
+            <div class="overlay">
+                <h3>眉部产品</h3>
+                <p>眉笔</p>
+                <p>眉粉</p>
+                <p>眉胶</p>
             </div>
-            
-            <div class="image-column">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-WfHYXQ3Lsberha0SthBCMJQQM3ySnj.png" alt="Business consulting meeting" class="main-image">
-                
-                <div class="intro-section">
-                    <h2>Introduction to Business Consulting</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
-                    
-                    <ul>
-                        <li>Helping small businesses</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Business Strategy and Management</li>
-                    </ul>
-                </div>
+        </div>
+        
+        <div class="product-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ndTafF8w2Tvt0K9rgFUzddML4TzN1a.png" alt="Person applying eyebrow makeup">
+            <div class="overlay">
+                <h3>脸部产品</h3>
+                <p>滴管粉底液</p>
+                <p>单色多色气垫BB霜</p>
+                <p>单色多色气垫腮红等</p>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ndTafF8w2Tvt0K9rgFUzddML4TzN1a.png" alt="Person holding lipstick">
+            <div class="overlay">
+                <h3>唇部产品</h3>
+                <p>口红</p>
+                <p>唇釉</p>
+                <p>唇膏</p>
+            </div>
+        </div>
+        
+        <!-- Second row -->
+        <div class="product-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ndTafF8w2Tvt0K9rgFUzddML4TzN1a.png" alt="Person using skincare spray">
+            <div class="overlay">
+                <h3>护肤喷雾</h3>
+                <p>保湿喷雾</p>
+                <p>舒缓喷雾</p>
+                <p>定妆喷雾</p>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ndTafF8w2Tvt0K9rgFUzddML4TzN1a.png" alt="Person with sheet mask">
+            <div class="overlay">
+                <h3>面膜产品</h3>
+                <p>补水面膜</p>
+                <p>美白面膜</p>
+                <p>修复面膜</p>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ndTafF8w2Tvt0K9rgFUzddML4TzN1a.png" alt="Hand holding skincare jar">
+            <div class="overlay">
+                <h3>面霜产品</h3>
+                <p>保湿霜</p>
+                <p>晚霜</p>
+                <p>眼霜</p>
             </div>
         </div>
     </div>
