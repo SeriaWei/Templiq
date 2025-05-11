@@ -40,7 +40,8 @@
 ## 基本要求
 - 不要使用placeholder形式的数据，请使用真实专业数据
 - 属性必须使用snake_case命名法
-- 属性都是简单类型不要用Object，但数组里面必须是Object
+- 属性都是简单类型，不能是Object
+- 数组不能是简单类型，必须是Object
 - JSON要格式化并采用适当的缩进
 ## 示例
 ``` src/data/tpl.json
