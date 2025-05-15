@@ -1,0 +1,76 @@
+<!-- 首页横幅 -->
+{% header %}
+<style>
+.section-mapcggtm {
+    position: relative;
+    padding: 4em 0;
+    background-size: cover;
+    background-position: center;
+}
+.section-mapcggtm__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+.section-mapcggtm__content {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 0 1em;
+}
+.section-mapcggtm__title {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+.section-mapcggtm__subtitle {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-mapcggtm__button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background-color: #ff6b6b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+.section-mapcggtm__button:hover {
+    background-color: #ff5252;
+}
+@media (max-width: 768px) {
+    .section-mapcggtm__title {
+        font-size: 2em;
+    }
+    .section-mapcggtm__subtitle {
+        font-size: 1em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mapcggtm" style="background-image: url('{% url this.Model.background_image %}')">
+    <div class="section-mapcggtm__overlay"></div>
+    <div class="section-mapcggtm__content">
+        {% if this.Model.title %}
+            <h1 class="section-mapcggtm__title" property="true" data-property="title" method="text">{{this.Model.title}}</h1>
+        {% endif %}
+        {% if this.Model.subtitle %}
+            <p class="section-mapcggtm__subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+        {% endif %}
+        {% if this.Model.button_text %}
+            <a href="{% url this.Model.button_link %}" class="section-mapcggtm__button" property="true" data-property="button_text" method="text" data-property-link="button_link" method-link="attr" para-link="href">{{this.Model.button_text}}</a>
+        {% endif %}
+    </div>
+</section>

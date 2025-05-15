@@ -1,0 +1,30 @@
+{
+    "background_image": {
+        "FieldType": "Media",
+        "DisplayName": "背景图片",
+        "IsRequired": true
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主标题",
+        "IsRequired": true,
+        "MaxLength": 50
+    },
+    "subtitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "副标题",
+        "IsRequired": false,
+        "MaxLength": 100
+    },
+    "button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮文字",
+        "IsRequired": false,
+        "MaxLength": 20
+    },
+    "button_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "按钮链接",
+        "IsRequired": false
+    }
+}
