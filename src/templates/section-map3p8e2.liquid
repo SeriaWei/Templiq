@@ -113,6 +113,7 @@
             </div>
             
             {% for section in this.Model.link_sections %}
+            {% assign section_index = forloop.index0 %}
             <div class="section-map3p8e2__links-section">
                 {% if section.heading %}
                 <h3 class="section-map3p8e2__heading" property="true" data-property="link_sections[{{forloop.index0}}].heading" method="text">{{section.heading}}</h3>
@@ -121,8 +122,8 @@
                 <ul class="section-map3p8e2__link-list">
                     {% for link in section.links %}
                     <li>
-                        <a href="{% url link.url %}" property="true" data-property="link_sections[{{forloop.parent.index0}}].links[{{forloop.index0}}].url" method="attr" para="href">
-                            <span property="true" data-property="link_sections[{{forloop.parent.index0}}].links[{{forloop.index0}}].text" method="text">{{link.text}}</span>
+                        <a href="{% url link.url %}" property="true" data-property="link_sections[{{section_index}}].links[{{forloop.index0}}].url" method="attr" para="href">
+                            <span property="true" data-property="link_sections[{{section_index}}].links[{{forloop.index0}}].text" method="text">{{link.text}}</span>
                         </a>
                     </li>
                     {% endfor %}
