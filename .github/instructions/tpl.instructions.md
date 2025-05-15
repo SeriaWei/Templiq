@@ -14,10 +14,10 @@
 - 数据在{{this.Model}}中
 - 使用的是liquid模板语法
 - 绑定时需添加property="true",data-property="{property_path}",method="{text|attr|html}",para="href"。para只在method="attr"时要添加，它们是jQuery的method，例如：$(this).attr("href")
-- 嵌套循环下不添加property="true",data-property="{property_path}",method="attr",para="href"这几个attribute
+- 嵌套循环时不要使用forloop.parentloop来取索引，而是在父循环中定义一个变量来保存索引，例如：{% assign index = forloop.index0 %}，然后在子循环中使用这个变量
 - 注意添加条件判断以避免生成空标签
 - 如果有javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
-- SVG完整代码都在属性中，所以不需要专门写SVG标签，直接输出即可，也不要加property="true"。例如：{{this.Model.svg | raw}}
+- 绑定SVG图标时，由于完整的SVG图标代码都在属性中，所以不要在模板里面写"<svg>"标签以避免重复,也不要加[property="true"]，直接输出即可。例如：{{this.Model.svg | raw}}
 
 
 ## Model binding示例：
@@ -32,7 +32,7 @@
 <a property="true" data-property="link" method="attr" para="href" href="{% url this.Model.link %}">{{this.Model.link_text}}</a>
 {% endif %}
 {% for item in this.Model.images %}
-<img property="true" data-property="images[{{forloop.index | minus:1}}].src" method="attr" para="src" src="{% url item.src %}" />
+<img property="true" data-property="images[{{forloop.index0}}].src" method="attr" para="src" src="{% url item.src %}" />
 </li>
 {% endfor %}
 ```

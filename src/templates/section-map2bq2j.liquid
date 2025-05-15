@@ -1,0 +1,122 @@
+<!-- 功能特点 -->
+{% header %}
+<style>
+.section-map2bq2j {
+    background-color: #fff;
+    padding: 2em;
+}
+.section-map2bq2j .content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+.section-map2bq2j__header {
+    max-width: 42em;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-map2bq2j__badge {
+    font-size: 1em;
+    line-height: 1.75;
+    font-weight: 600;
+    color: #4f46e5;
+    margin-bottom: 0.5em;
+}
+.section-map2bq2j__title {
+    font-size: 2.5em;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 0.5em;
+}
+.section-map2bq2j__description {
+    font-size: 1.125em;
+    line-height: 1.75;
+    color: #4b5563;
+    margin-bottom: 2.5em;
+}
+.section-map2bq2j__features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5em 2em;
+    max-width: 36em;
+    margin: 0 auto;
+}
+.section-map2bq2j__feature {
+    position: relative;
+    padding-left: 4em;
+}
+.section-map2bq2j__feature-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 0.5em;
+    background-color: #4f46e5;
+    color: white;
+}
+.section-map2bq2j__feature-title {
+    font-size: 1em;
+    line-height: 1.75;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5em;
+}
+.section-map2bq2j__feature-description {
+    font-size: 1em;
+    line-height: 1.75;
+    color: #4b5563;
+}
+
+@media (min-width: 640px) {
+    .section-map2bq2j__title {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-map2bq2j__header {
+        text-align: center;
+    }
+    .section-map2bq2j__features {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 72em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-map2bq2j">
+  <div class="content">
+    <div class="section-map2bq2j__header">
+      {% if this.Model.badge_text %}
+      <h2 class="section-map2bq2j__badge" property="true" data-property="badge_text" method="text">{{this.Model.badge_text}}</h2>
+      {% endif %}
+      {% if this.Model.title %}
+      <p class="section-map2bq2j__title" property="true" data-property="title" method="text">{{this.Model.title}}</p>
+      {% endif %}
+      {% if this.Model.description %}
+      <p class="section-map2bq2j__description" property="true" data-property="description" method="text">{{this.Model.description}}</p>
+      {% endif %}
+    </div>
+    <div class="section-map2bq2j__features">
+      {% for feature in this.Model.features %}
+      <div class="section-map2bq2j__feature">
+        <div class="section-map2bq2j__feature-icon">
+          {{feature.icon | raw}}
+        </div>
+        <dt class="section-map2bq2j__feature-title" property="true" data-property="features[{{forloop.index | minus:1}}].title" method="text">
+          {{feature.title}}
+        </dt>
+        <dd class="section-map2bq2j__feature-description" property="true" data-property="features[{{forloop.index | minus:1}}].description" method="text">
+          {{feature.description}}
+        </dd>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

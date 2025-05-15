@@ -1,0 +1,66 @@
+{
+  "svg": {
+    "FieldType": "HtmlBox",
+    "DisplayName": "Logo SVG"
+  },
+  "tagline": {
+    "FieldType": "Paragraph",
+    "DisplayName": "公司标语"
+  },
+  "social_icons": {
+    "FieldType": "Array",
+    "DisplayName": "社交媒体链接",
+    "Children": [
+      {
+        "name": {
+          "FieldType": "SingleLine",
+          "DisplayName": "平台名称"
+        },
+        "url": {
+          "FieldType": "SingleLine",
+          "DisplayName": "链接地址",
+          "IsRequired": true
+        },
+        "icon": {
+          "FieldType": "HtmlBox",
+          "DisplayName": "图标SVG"
+        }
+      }
+    ]
+  },
+  "link_sections": {
+    "FieldType": "Array",
+    "DisplayName": "链接分区",
+    "Children": [
+      {
+        "heading": {
+          "FieldType": "SingleLine",
+          "DisplayName": "分区标题"
+        },
+        "links": {
+          "FieldType": "Array",
+          "DisplayName": "链接列表",
+          "Children": [
+            {
+              "text": {
+                "FieldType": "SingleLine",
+                "DisplayName": "链接文本",
+                "IsRequired": true
+              },
+              "url": {
+                "FieldType": "SingleLine",
+                "DisplayName": "链接地址",
+                "IsRequired": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "copyright": {
+    "FieldType": "SingleLine",
+    "DisplayName": "版权信息",
+    "IsRequired": true
+  }
+}

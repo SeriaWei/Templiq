@@ -1,0 +1,142 @@
+<!-- 现代页脚 -->
+{% header %}
+<style>
+.section-map3p8e2 {
+    background-color: #111827;
+    color: #fff;
+    padding: 4em 2em 2em;
+}
+.section-map3p8e2 .content {
+    max-width:1170px;
+    margin:0 auto;
+}
+.section-map3p8e2__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5em;
+}
+.section-map3p8e2__logo-section {
+    flex: 1;
+    min-width: 250px;
+}
+.section-map3p8e2__logo {
+    width: 40px;
+    margin-bottom: 1.25em;
+}
+.section-map3p8e2__tagline {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1.25em;
+    color: #e2e8f0;
+}
+.section-map3p8e2__social-icons {
+    display: flex;
+    gap: 1.25em;
+    margin-top: 1.25em;
+}
+.section-map3p8e2__social-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    fill: #fff;
+}
+.section-map3p8e2__social-icon:hover {
+    opacity: 1;
+}
+.section-map3p8e2__links-section {
+    flex: 1;
+    min-width: 160px;
+}
+.section-map3p8e2__heading {
+    font-size: 1.125em;
+    font-weight: 600;
+    margin-bottom: 1.25em;
+}
+.section-map3p8e2__link-list {
+    list-style: none;
+    padding: 0;
+}
+.section-map3p8e2__link-list li {
+    margin-bottom: 0.75em;
+}
+.section-map3p8e2__link-list a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.section-map3p8e2__link-list a:hover {
+    color: #fff;
+}
+.section-map3p8e2__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #334155;
+}
+.section-map3p8e2__copyright {
+    width: 100%;
+    color: #94a3b8;
+    font-size: 0.875em;
+}
+@media (max-width: 768px) {
+    .section-map3p8e2__container {
+        flex-direction: column;
+        gap: 1.875em;
+    }
+    .section-map3p8e2__links-section {
+        min-width: 100%;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-map3p8e2">
+    <div class="content">
+        <div class="section-map3p8e2__container">
+            <div class="section-map3p8e2__logo-section">
+                {% if this.Model.svg %}
+                {{this.Model.svg | raw}}
+                {% endif %}
+                {% if this.Model.tagline %}
+                <p class="section-map3p8e2__tagline" property="true" data-property="tagline" method="text">{{this.Model.tagline}}</p>
+                {% endif %}
+                {% if this.Model.social_icons and this.Model.social_icons.size > 0 %}
+                <div class="section-map3p8e2__social-icons">
+                    {% for social in this.Model.social_icons %}
+                    <a href="{% url social.url %}" property="true" data-property="social_icons[{{forloop.index0}}].url" method="attr" para="href" aria-label="{{social.name}}">
+                        {{social.icon | raw}}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            
+            {% for section in this.Model.link_sections %}
+            {% assign section_index = forloop.index0 %}
+            <div class="section-map3p8e2__links-section">
+                {% if section.heading %}
+                <h3 class="section-map3p8e2__heading" property="true" data-property="link_sections[{{forloop.index0}}].heading" method="text">{{section.heading}}</h3>
+                {% endif %}
+                {% if section.links and section.links.size > 0 %}
+                <ul class="section-map3p8e2__link-list">
+                    {% for link in section.links %}
+                    <li>
+                        <a href="{% url link.url %}" property="true" data-property="link_sections[{{section_index}}].links[{{forloop.index0}}].url" method="attr" para="href">
+                            <span property="true" data-property="link_sections[{{section_index}}].links[{{forloop.index0}}].text" method="text">{{link.text}}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endfor %}
+            
+            <div class="section-map3p8e2__divider"></div>
+            
+            <div class="section-map3p8e2__copyright" property="true" data-property="copyright" method="text">
+                {{this.Model.copyright}}
+            </div>
+        </div>
+    </div>
+</section>
