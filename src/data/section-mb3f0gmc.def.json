@@ -1,0 +1,44 @@
+{
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主标题",
+        "IsRequired": true
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "primary_button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文字"
+    },
+    "primary_button_url": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接"
+    },
+    "secondary_button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次按钮文字"
+    },
+    "secondary_button_url": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次按钮链接"
+    },
+    "features": {
+        "FieldType": "Array",
+        "DisplayName": "特色功能",
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "图标SVG代码"
+                },
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "功能描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

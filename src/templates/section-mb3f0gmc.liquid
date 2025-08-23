@@ -1,0 +1,200 @@
+<!-- Hero区块 -->
+{% header %}
+<style>
+.section-mb3f0gmc {
+    position: relative;
+    min-height: 50vh;
+    padding: 1em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.section-mb3f0gmc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.section-mb3f0gmc .content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.section-mb3f0gmc .hero-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-mb3f0gmc .hero-subtitle {
+    font-size: 1.25em;
+    font-weight: 300;
+    margin-bottom: 2em;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.section-mb3f0gmc .hero-buttons {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-mb3f0gmc .btn {
+    display: inline-block;
+    padding: 0.875em 2em;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    min-width: 160px;
+}
+
+.section-mb3f0gmc .btn-primary {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.section-mb3f0gmc .btn-primary:hover {
+    background: #ff5252;
+    border-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.section-mb3f0gmc .btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.section-mb3f0gmc .btn-secondary:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.section-mb3f0gmc .hero-features {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.section-mb3f0gmc .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.section-mb3f0gmc .feature-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .section-mb3f0gmc .hero-title {
+        font-size: 2.5em;
+    }
+    
+    .section-mb3f0gmc .hero-subtitle {
+        font-size: 1.1em;
+        margin-bottom: 1.5em;
+    }
+    
+    .section-mb3f0gmc .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-mb3f0gmc .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .section-mb3f0gmc .hero-features {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-mb3f0gmc .hero-title {
+        font-size: 2em;
+    }
+    
+    .section-mb3f0gmc .content {
+        padding: 0 1em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mb3f0gmc">
+    <div class="content">
+        {% if this.Model.title %}
+        <h1 class="hero-title" property="true" data-property="title" method="text">{{this.Model.title}}</h1>
+        {% endif %}
+        
+        {% if this.Model.subtitle %}
+        <p class="hero-subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+        {% endif %}
+        
+        {% if this.Model.primary_button_text or this.Model.secondary_button_text %}
+        <div class="hero-buttons">
+            {% if this.Model.primary_button_text %}
+            <a href="{% url this.Model.primary_button_url %}" class="btn btn-primary" property="true" data-property="primary_button_url" method="attr" para="href">
+                <span property="true" data-property="primary_button_text" method="text">{{this.Model.primary_button_text}}</span>
+            </a>
+            {% endif %}
+            
+            {% if this.Model.secondary_button_text %}
+            <a href="{% url this.Model.secondary_button_url %}" class="btn btn-secondary" property="true" data-property="secondary_button_url" method="attr" para="href">
+                <span property="true" data-property="secondary_button_text" method="text">{{this.Model.secondary_button_text}}</span>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        {% if this.Model.features %}
+        <div class="hero-features">
+            {% for feature in this.Model.features %}
+            <div class="feature-item">
+                {% if feature.icon %}
+                {{feature.icon | raw}}
+                {% endif %}
+                <span property="true" data-property="features[{{forloop.index | minus:1}}].text" method="text">{{feature.text}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

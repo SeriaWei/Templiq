@@ -1,0 +1,22 @@
+{
+    "title": "创新科技，引领未来",
+    "subtitle": "我们致力于为客户提供最前沿的技术解决方案，助力企业数字化转型，实现业务增长和创新突破",
+    "primary_button_text": "立即开始",
+    "primary_button_url": "#contact",
+    "secondary_button_text": "了解更多",
+    "secondary_button_url": "#about",
+    "features": [
+        {
+            "icon": "<svg class=\"feature-icon\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>",
+            "text": "专业团队"
+        },
+        {
+            "icon": "<svg class=\"feature-icon\" viewBox=\"0 0 24 24\"><path d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>",
+            "text": "品质保证"
+        },
+        {
+            "icon": "<svg class=\"feature-icon\" viewBox=\"0 0 24 24\"><path d=\"M13 10V3L4 14h7v7l9-11h-7z\"/></svg>",
+            "text": "快速交付"
+        }
+    ]
+}
