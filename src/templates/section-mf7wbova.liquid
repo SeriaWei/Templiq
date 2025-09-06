@@ -1,0 +1,149 @@
+<!-- 产品展示gallery -->
+{% header %}
+<style>
+.section-mf7wbova {
+    background-color: #f8f9fa;
+    padding: 4em 0;
+}
+.section-mf7wbova .content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.section-mf7wbova__header {
+    text-align: center;
+    margin-bottom: 3em;
+}
+.section-mf7wbova__title {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 0.5em;
+    font-weight: 300;
+}
+.section-mf7wbova__subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 0;
+}
+.section-mf7wbova__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+}
+.section-mf7wbova__card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-mf7wbova__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.section-mf7wbova__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+.section-mf7wbova__card-body {
+    padding: 1.5em;
+}
+.section-mf7wbova__product-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+.section-mf7wbova__product-description {
+    color: #7f8c8d;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+.section-mf7wbova__product-price {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 1em;
+}
+.section-mf7wbova__product-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 0.75em 2em;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.section-mf7wbova__product-button:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    color: #fff;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .section-mf7wbova {
+        padding: 2em 0;
+    }
+    .section-mf7wbova__title {
+        font-size: 2em;
+    }
+    .section-mf7wbova__gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mf7wbova">
+    <div class="content">
+        {% if this.Model.title %}
+        <div class="section-mf7wbova__header">
+            <h2 property="true" data-property="title" method="text" class="section-mf7wbova__title">{{this.Model.title}}</h2>
+            {% if this.Model.subtitle %}
+            <p property="true" data-property="subtitle" method="text" class="section-mf7wbova__subtitle">{{this.Model.subtitle}}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        {% if this.Model.products and this.Model.products.size > 0 %}
+        <div class="section-mf7wbova__gallery">
+            {% for product in this.Model.products %}
+            <div class="section-mf7wbova__card">
+                {% if product.image %}
+                <img property="true" data-property="products[{{forloop.index0}}].image" method="attr" para="src" src="{% url product.image %}" alt="{{product.name}}" class="section-mf7wbova__image" />
+                {% endif %}
+                
+                <div class="section-mf7wbova__card-body">
+                    {% if product.name %}
+                    <h3 property="true" data-property="products[{{forloop.index0}}].name" method="text" class="section-mf7wbova__product-title">{{product.name}}</h3>
+                    {% endif %}
+                    
+                    {% if product.description %}
+                    <p property="true" data-property="products[{{forloop.index0}}].description" method="text" class="section-mf7wbova__product-description">{{product.description}}</p>
+                    {% endif %}
+                    
+                    {% if product.price %}
+                    <div property="true" data-property="products[{{forloop.index0}}].price" method="text" class="section-mf7wbova__product-price">{{product.price}}</div>
+                    {% endif %}
+                    
+                    {% if product.button_text %}
+                    <a property="true" data-property="products[{{forloop.index0}}].button_link" method="attr" para="href" href="{% url product.button_link %}" class="section-mf7wbova__product-button">
+                        <span property="true" data-property="products[{{forloop.index0}}].button_text" method="text">{{product.button_text}}</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

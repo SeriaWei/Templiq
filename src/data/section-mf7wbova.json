@@ -1,0 +1,54 @@
+{
+    "title": "精选产品展示",
+    "subtitle": "发现我们最新最优质的产品系列",
+    "products": [
+        {
+            "name": "智能无线蓝牙耳机",
+            "description": "高保真音质，主动降噪技术，续航长达30小时。适合音乐爱好者和商务人士使用。",
+            "price": "¥299",
+            "image": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80",
+            "button_text": "立即购买",
+            "button_link": "/products/wireless-headphones"
+        },
+        {
+            "name": "智能手表运动版",
+            "description": "全天候健康监测，GPS定位，50米防水，超长续航。您的贴身健康助手。",
+            "price": "¥1,299",
+            "image": "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400&q=80",
+            "button_text": "查看详情",
+            "button_link": "/products/smart-watch"
+        },
+        {
+            "name": "便携式无线充电器",
+            "description": "支持快充技术，兼容多种设备，轻薄便携设计。随时随地为您的设备充电。",
+            "price": "¥159",
+            "image": "https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400&q=80",
+            "button_text": "加入购物车",
+            "button_link": "/products/wireless-charger"
+        },
+        {
+            "name": "专业摄影三脚架",
+            "description": "碳纤维材质，轻便稳固，多角度调节。摄影师和内容创作者的理想选择。",
+            "price": "¥899",
+            "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&q=80",
+            "button_text": "了解更多",
+            "button_link": "/products/camera-tripod"
+        },
+        {
+            "name": "高清网络摄像头",
+            "description": "4K分辨率，自动对焦，内置降噪麦克风。居家办公和在线会议的必备设备。",
+            "price": "¥399",
+            "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&q=80",
+            "button_text": "立即订购",
+            "button_link": "/products/webcam"
+        },
+        {
+            "name": "蓝牙机械键盘",
+            "description": "Cherry轴体，背光设计，无线连接。为专业工作者打造的高效输入工具。",
+            "price": "¥699",
+            "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&q=80",
+            "button_text": "预订购买",
+            "button_link": "/products/mechanical-keyboard"
+        }
+    ]
+}
