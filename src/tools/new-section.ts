@@ -19,20 +19,24 @@ export function createNewSection(customName?: string) {
 {% endheader %}
 
 <section class="section-${sectionName}">
-    <div class="content">Hello world</div>
+    <div class="content">{{this.Model.content}}</div>
 </section>
 `;
 
+    console.log(`Creating new section template: section-${sectionName}`);
+
     const newSectionFile = path.join(__dirname, '..', 'templates', `section-${sectionName}.liquid`);
     fs.writeFileSync(newSectionFile, newSectionTemplate);
+    console.log(`New template file created at ${newSectionFile}`);
 
-    // const newDataFile = path.join(__dirname, '..', 'data', `section-${sectionName}.json`);
-    // fs.writeFileSync(newDataFile, "{}");
+    const newDataFile = path.join(__dirname, '..', 'data', `section-${sectionName}.json`);
+    fs.writeFileSync(newDataFile, `{"content": "Hello World!"}`);
+    console.log(`New data file created at ${newDataFile}`);
 
-    // const newDefFile = path.join(__dirname, '..', 'data', `section-${sectionName}.def.json`);
-    // fs.writeFileSync(newDefFile, "{}");
+    const newDefFile = path.join(__dirname, '..', 'data', `section-${sectionName}.def.json`);
+    fs.writeFileSync(newDefFile, `{"content":{"FieldType":"SingleLine","DisplayName":"Content"}}`);
+    console.log(`New field definition file created at ${newDefFile}`);
 
-    console.log(`New section ${sectionName} created at ${newSectionFile}`);
     return { sectionName, filePath: newSectionFile };
 }
 
