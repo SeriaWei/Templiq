@@ -31,6 +31,7 @@ prompt = """
 - 注意添加条件判断以避免生成空标签
 - 如果有javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
 - 绑定SVG图标时，由于完整的SVG图标代码都在属性中，所以不要在模板里面写"<svg>"标签以避免重复,也不要加[property="true"]，直接输出即可。例如：{{this.Model.svg | raw}}
+- 对于图片，链接的URL，要使用url tag，例如: `<img src="{% url image.src %}" />`
 
 
 ## Model binding示例：
