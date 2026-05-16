@@ -1,26 +1,23 @@
-description = "Build a liquid template from html"
-prompt = """
+---
+name: convert-to-cms-tpl
+description: Convert an design(Html pages in src/designs/<design-name> folder) to a ZKEACMS template. Use this skill when the user asks to convert a design to a CMS template.
+---
+
 # 任务和步骤
 
-请根据这个html文件来创建一个liquid模板。请按以下步骤来完成这个任务：
-1. 阅读这个html文件，并分析并理解里面的内容。
-2. 运行命令`npm run new`，这个命令会创建对应的脚手架：liquid模板文件(.liquid)，模板所需的数据文件(.json)，数据字段的定义文件(.def.json)
-3. 根据html的内容定义数据文件({template-name}.json)
+请先阅读design的相关代码，并理解里面的内容。然后根据design的内容将每一个Section转换成一个对应的ZKEACMS模板。
+每一个Section转换模板的步骤如下：
+
+1. 分析这个Section的内容和结构，理解它需要哪些css,js来支持它的展示，你将要提取出这些css,js到liquid模板文件(.liquid)中。如果Section较多，请考虑使用`todo`工具来标记需要处理的Section。
+2. 运行命令`npm run new`，这个命令会创建对应的脚手架：liquid模板文件(.liquid)，模板所需的数据文件(.json)，数据字段的定义文件(.def.json)。请直接使用这个命令创建创建的文件，并且保持文件名不变，不要手动创建文件。
+3. 根据Section的html的内容定义数据文件({template-name}.json)
 4. 根据数据文件({template-name}.json)创建对应的字段定义文件({template-name}.def.json)
 5. 根据html的内容和数据完成模板绑定({template-name}.liquid)
 
 # 基本规范
 
-使用响应式设计完成模板代码，代码要格式化并采用适当的缩进。界面要精致美观有设计感，注意要有良好的用户体验。用网上的免费图片时，确保图片以合适的尺寸加载。
-注意**必须**保证模板(src/templates/{template-name}.liquid)，数据(src/data/{template-name}.json)和字段定义(src/data/{template-name}.def.json)三者的一致性。
-
-# CSS样式规范
-- CSS样式中font-size优先使用em而非rem
-- 可以使用bootstrap3中定义的样式
-- 禁止使用container这个类名字
-- section内容如果限宽居中，最大宽度请使用1170px，例如.section-tpl .content{max-width:1170px;margin:0 auto;}
-- 所有的样式都要限定在这个section的作用域下，可以使用BEM命名方式，避免冲突。
-- 不要在SVG中添加class属性，因为SVG会被用户换掉
+- 模板中不需要引用bootstrap，jQuery等基础库，ZKEACMS已包含基础库。
+- **必须**保证模板(src/templates/{template-name}.liquid)，数据(src/data/{template-name}.json)和字段定义(src/data/{template-name}.def.json)三者的一致性。
 
 # 模板规范
 - 模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现“区块”，“模板”之类的字眼
@@ -32,6 +29,7 @@ prompt = """
 - 如果有javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
 - 绑定SVG图标时，由于完整的SVG图标代码都在属性中，所以不要在模板里面写"<svg>"标签以避免重复,也不要加[property="true"]，直接输出即可。例如：{{this.Model.svg | raw}}
 - 对于图片，链接的URL，要使用url tag，例如: `<img src="{% url image.src %}" />`
+
 
 ## Model binding示例：
 ``` src/templates/tpl.liquid
@@ -156,4 +154,3 @@ prompt = """
     }
 }
 ```
-"""

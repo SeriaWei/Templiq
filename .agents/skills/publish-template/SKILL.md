@@ -1,3 +1,10 @@
+---
+name: publish-template
+description: Publish the template to the CMS website. Use this skill when the user asks to publish a template.
+---
+
+# 模板发布
+
 请根据模板代码整理模板的相关信息，并把这个模板当作产品，提交到CMS网站。信息整理的基本要求如下：
 - 使用中文来整理模板信息
 - 注意不要出现bootstrap字眼
