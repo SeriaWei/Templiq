@@ -1,0 +1,105 @@
+/* ============================================================
+   FOOTER — Scriptor Note-Taking App
+   Dark minimal footer with gold ornamental divider
+   ============================================================ */
+.sr-footer {
+  padding: 5.6rem 0 2.4rem;
+  background: var(--sr-surface);
+  border-top: 1px solid var(--sr-border);
+}
+
+.sr-footer__main {
+  margin-bottom: 3.2rem;
+}
+
+.sr-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--sr-font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+}
+
+.sr-footer__brand-icon {
+  display: flex;
+  align-items: center;
+  color: var(--sr-accent-gold);
+}
+
+.sr-footer__desc {
+  font-size: 1.3rem;
+  color: var(--sr-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 260px;
+}
+
+.sr-footer__heading {
+  font-family: var(--sr-font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin: 0 0 1.6rem;
+  letter-spacing: 0.04em;
+}
+
+.sr-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sr-footer__links li {
+  margin-bottom: 0.8rem;
+}
+
+.sr-footer__links li a {
+  font-size: 1.3rem;
+  color: var(--sr-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 1.5;
+}
+
+.sr-footer__links li a:hover {
+  color: var(--sr-accent-gold);
+}
+
+.sr-footer__divider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.sr-footer__divider svg {
+  display: block;
+  width: 120px;
+  height: 8px;
+}
+
+.sr-footer__copy {
+  font-size: 1.2rem;
+  color: var(--sr-text-secondary);
+  opacity: 0.5;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .sr-footer {
+    padding: 4rem 0 2rem;
+  }
+
+  .sr-footer__desc {
+    max-width: 100%;
+    margin-bottom: 2.4rem;
+  }
+
+  .sr-footer__heading {
+    margin-top: 2rem;
+  }
+}

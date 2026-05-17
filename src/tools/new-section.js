@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createNewSection = createNewSection;
+exports.createNewSection = void 0;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 function createNewSection(customName) {
@@ -38,6 +38,7 @@ function createNewSection(customName) {
     console.log(`New field definition file created at ${newDefFile}`);
     return { sectionName, filePath: newSectionFile };
 }
+exports.createNewSection = createNewSection;
 if (require.main === module) {
     createNewSection();
 }

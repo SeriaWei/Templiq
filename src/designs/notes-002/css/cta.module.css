@@ -1,0 +1,128 @@
+/* ============================================================
+   CTA — Scriptor Note-Taking App
+   Bold conversion section with dark background
+   ============================================================ */
+.sr-cta {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--sr-bg);
+  overflow: hidden;
+}
+
+.sr-cta__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sr-cta__pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 800px 400px at 50% 30%, rgba(201, 168, 78, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 600px at 80% 70%, rgba(139, 47, 63, 0.02) 0%, transparent 50%);
+}
+
+.sr-cta__title {
+  font-family: var(--sr-font-heading);
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sr-text);
+  margin: 0 0 2rem;
+  letter-spacing: -0.02em;
+}
+
+.sr-cta__text {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: var(--sr-text-secondary);
+  max-width: 560px;
+  margin: 0 auto 3.6rem;
+}
+
+.sr-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.sr-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.4rem 3.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.sr-cta__btn--primary {
+  color: var(--sr-bg);
+  background: var(--sr-accent-gold);
+}
+
+.sr-cta__btn--primary:hover {
+  background: #dbb956;
+  color: var(--sr-bg);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 168, 78, 0.4);
+}
+
+.sr-cta__btn--outline {
+  color: var(--sr-text);
+  border: 1px solid var(--sr-border);
+}
+
+.sr-cta__btn--outline:hover {
+  border-color: var(--sr-accent-gold);
+  color: var(--sr-accent-gold);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.sr-cta__footnote {
+  font-size: 1.2rem;
+  color: var(--sr-text-secondary);
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .sr-cta {
+    padding: 6rem 0;
+  }
+
+  .sr-cta__title {
+    font-size: 3.6rem;
+  }
+
+  .sr-cta__text {
+    font-size: 1.6rem;
+    padding: 0 1.6rem;
+  }
+
+  .sr-cta__actions {
+    flex-direction: column;
+    padding: 0 1.6rem;
+  }
+
+  .sr-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

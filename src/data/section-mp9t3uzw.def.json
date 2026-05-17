@@ -1,0 +1,43 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title_prefix": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题前缀"
+    },
+    "title_accent": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题强调词"
+    },
+    "intro": {
+        "FieldType": "Paragraph",
+        "DisplayName": "介绍文本"
+    },
+    "steps": {
+        "FieldType": "Array",
+        "DisplayName": "步骤",
+        "Children": [
+            {
+                "number": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "步骤编号"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题",
+                    "IsRequired": true
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                },
+                "visual_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图示SVG"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标签文本"
+    },
+    "title_1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题词1"
+    },
+    "title_2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题词2(强调)"
+    },
+    "title_3": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题词3"
+    },
+    "title_4": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题词4"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "primary_btn_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文本"
+    },
+    "primary_btn_href": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接"
+    },
+    "primary_btn_svg": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "主按钮图标"
+    },
+    "secondary_btn_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮文本"
+    },
+    "secondary_btn_href": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮链接"
+    },
+    "scroll_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "滚动提示文本"
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title_prefix": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题前缀"
+    },
+    "title_accent": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题强调词"
+    },
+    "description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述文本"
+    },
+    "primary_btn_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文本"
+    },
+    "primary_btn_href": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接"
+    },
+    "primary_btn_svg": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "主按钮图标"
+    },
+    "secondary_btn_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮文本"
+    },
+    "secondary_btn_href": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮链接"
+    },
+    "footnote": {
+        "FieldType": "SingleLine",
+        "DisplayName": "脚注文本"
+    }
+}

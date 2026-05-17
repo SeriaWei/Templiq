@@ -1,0 +1,243 @@
+/* ============================================================
+   TESTIMONIALS — Scriptor Note-Taking App
+   Carousel with quote cards
+   ============================================================ */
+.sr-testimonials {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--sr-surface);
+  overflow: hidden;
+}
+
+.sr-testimonials__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 500px 400px at 80% 50%, rgba(139, 47, 63, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.sr-testimonials__title {
+  font-family: var(--sr-font-heading);
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sr-text);
+  margin: 0 0 5.6rem;
+  letter-spacing: -0.02em;
+}
+
+/* Carousel */
+.sr-testimonials__carousel {
+  position: relative;
+  background: rgba(36, 32, 26, 0.4);
+  border: 1px solid var(--sr-border);
+  border-radius: 8px;
+  padding: 5.6rem 4.8rem;
+  min-height: 320px;
+}
+
+.sr-testimonial {
+  display: none;
+  animation: testimonialFade 0.6s ease both;
+}
+
+.sr-testimonial.active {
+  display: block;
+}
+
+@keyframes testimonialFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sr-testimonial__ornament {
+  margin-bottom: 2.4rem;
+}
+
+.sr-testimonial__ornament svg {
+  display: block;
+  width: 40px;
+  height: auto;
+}
+
+.sr-testimonial__text {
+  font-family: var(--sr-font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--sr-text);
+  margin: 0 0 3.2rem;
+  font-style: italic;
+  max-width: 700px;
+}
+
+.sr-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.sr-testimonial__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--sr-accent-gold);
+  opacity: 0.9;
+}
+
+.sr-testimonial__name {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--sr-text);
+  line-height: 1.3;
+}
+
+.sr-testimonial__role {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--sr-text-secondary);
+  line-height: 1.3;
+}
+
+/* Controls */
+.sr-testimonials__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  margin-top: 4rem;
+}
+
+.sr-testimonials__ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid var(--sr-border);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--sr-text-secondary);
+  transition: all 0.3s ease;
+}
+
+.sr-testimonials__ctrl:hover {
+  border-color: var(--sr-accent-gold);
+  color: var(--sr-accent-gold);
+  background: rgba(201, 168, 78, 0.08);
+}
+
+.sr-testimonials__ctrl svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sr-testimonials__dots {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sr-testimonials__dots span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sr-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sr-testimonials__dots span.active {
+  background: var(--sr-accent-gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .sr-testimonials {
+    padding: 6rem 0;
+  }
+
+  .sr-testimonials__title {
+    font-size: 3.2rem;
+  }
+
+  .sr-testimonials__carousel {
+    padding: 3.2rem 2rem;
+    min-height: auto;
+  }
+
+  .sr-testimonial__text {
+    font-size: 1.6rem;
+  }
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.sr-stats {
+  padding: 6rem 0;
+  background: var(--sr-bg);
+  border-top: 1px solid var(--sr-border);
+  border-bottom: 1px solid var(--sr-border);
+}
+
+.sr-stat {
+  text-align: center;
+  padding: 1.6rem;
+}
+
+.sr-stat__number {
+  font-family: var(--sr-font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--sr-accent-gold);
+  line-height: 1;
+  display: inline;
+}
+
+.sr-stat__suffix {
+  font-family: var(--sr-font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--sr-accent-gold);
+  opacity: 0.6;
+  margin-left: 0.2rem;
+}
+
+.sr-stat__label {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--sr-text-secondary);
+  margin-top: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .sr-stats {
+    padding: 4rem 0;
+  }
+
+  .sr-stat__number {
+    font-size: 3.2rem;
+  }
+
+  .sr-stat__suffix {
+    font-size: 1.6rem;
+  }
+}

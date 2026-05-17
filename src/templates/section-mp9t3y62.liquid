@@ -1,0 +1,248 @@
+<!-- 用户评价 -->
+{% header %}
+<style>
+.section-mp9t3y62 {
+  --sr-bg: #0e0b08;
+  --sr-surface: #1a1612;
+  --sr-surface-raised: #24201a;
+  --sr-border: #332e27;
+  --sr-text: #e8e2d8;
+  --sr-text-secondary: #9c9488;
+  --sr-accent-gold: #c9a84e;
+  --sr-accent-gold-soft: rgba(201, 168, 78, 0.12);
+  --sr-accent-ruby: #8b2f3f;
+  --sr-font-heading: Georgia, "Times New Roman", Times, serif;
+  --sr-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sr-font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 10px;
+}
+.section-mp9t3y62 .sr-testimonials {
+  position: relative;
+  padding: 100px 0;
+  background: var(--sr-surface);
+  overflow: hidden;
+}
+.section-mp9t3y62 .sr-testimonials__bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(ellipse 500px 400px at 80% 50%, rgba(139, 47, 63, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+}
+.section-mp9t3y62 .sr-testimonials__title {
+  font-family: var(--sr-font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sr-text);
+  margin: 0 0 56px;
+  letter-spacing: -0.02em;
+}
+.section-mp9t3y62 .sr-testimonials__carousel {
+  position: relative;
+  background: rgba(36, 32, 26, 0.4);
+  border: 1px solid var(--sr-border);
+  border-radius: 8px;
+  padding: 56px 48px;
+  min-height: 320px;
+}
+.section-mp9t3y62 .sr-testimonial { display: none; }
+.section-mp9t3y62 .sr-testimonial.active { display: block; }
+.section-mp9t3y62 .sr-testimonial__ornament { margin-bottom: 24px; }
+.section-mp9t3y62 .sr-testimonial__ornament svg { display: block; width: 40px; height: auto; }
+.section-mp9t3y62 .sr-testimonial__text {
+  font-family: var(--sr-font-heading);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--sr-text);
+  margin: 0 0 32px;
+  font-style: italic;
+  max-width: 700px;
+}
+.section-mp9t3y62 .sr-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-mp9t3y62 .sr-testimonial__avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--sr-accent-gold);
+  opacity: 0.9;
+}
+.section-mp9t3y62 .sr-testimonial__name {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sr-text);
+  line-height: 1.3;
+}
+.section-mp9t3y62 .sr-testimonial__role {
+  display: block;
+  font-size: 12px;
+  color: var(--sr-text-secondary);
+  line-height: 1.3;
+}
+.section-mp9t3y62 .sr-testimonials__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+.section-mp9t3y62 .sr-testimonials__ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid var(--sr-border);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--sr-text-secondary);
+  transition: all 0.3s ease;
+}
+.section-mp9t3y62 .sr-testimonials__ctrl:hover {
+  border-color: var(--sr-accent-gold);
+  color: var(--sr-accent-gold);
+  background: rgba(201, 168, 78, 0.08);
+}
+.section-mp9t3y62 .sr-testimonials__ctrl svg { width: 18px; height: 18px; }
+.section-mp9t3y62 .sr-testimonials__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-mp9t3y62 .sr-testimonials__dots span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sr-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.section-mp9t3y62 .sr-testimonials__dots span.active {
+  background: var(--sr-accent-gold);
+  width: 24px;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .section-mp9t3y62 .sr-testimonials { padding: 60px 0; }
+  .section-mp9t3y62 .sr-testimonials__title { font-size: 32px; }
+  .section-mp9t3y62 .sr-testimonials__carousel { padding: 32px 20px; min-height: auto; }
+  .section-mp9t3y62 .sr-testimonial__text { font-size: 16px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mp9t3y62">
+<section class="sr-testimonials" id="testimonials">
+  <div class="sr-testimonials__bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% if this.Model.section_label %}
+        <p class="sr-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</p>
+        {% endif %}
+        <h2 class="sr-testimonials__title">
+          <span property="true" data-property="title_prefix" method="text">{{this.Model.title_prefix}}</span>
+          {% if this.Model.title_accent %} <span class="sr-text-gold" property="true" data-property="title_accent" method="text">{{this.Model.title_accent}}</span>{% endif %}
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="sr-testimonials__carousel" id="srTestimonialCarousel">
+          {% for testimonial in this.Model.testimonials %}
+          <div class="sr-testimonial{% if forloop.first %} active{% endif %}">
+            <div class="sr-testimonial__ornament">{{testimonial.ornament_svg | raw}}</div>
+            <p class="sr-testimonial__text" property="true" data-property="testimonials[{{forloop.index0}}].quote" method="text">{{testimonial.quote}}</p>
+            <div class="sr-testimonial__author">
+              <img property="true" data-property="testimonials[{{forloop.index0}}].avatar" method="attr" para="src" src="{% url testimonial.avatar %}" alt="{{testimonial.name}}" class="sr-testimonial__avatar" loading="lazy">
+              <div>
+                <strong class="sr-testimonial__name" property="true" data-property="testimonials[{{forloop.index0}}].name" method="text">{{testimonial.name}}</strong>
+                <span class="sr-testimonial__role" property="true" data-property="testimonials[{{forloop.index0}}].role" method="text">{{testimonial.role}}</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="sr-testimonials__controls">
+            <button class="sr-testimonials__ctrl" id="srTestPrev" aria-label="Previous">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="sr-testimonials__dots" id="srTestDots">
+              {% for testimonial in this.Model.testimonials %}
+              <span class="{% if forloop.first %}active{% endif %}"></span>
+              {% endfor %}
+            </div>
+            <button class="sr-testimonials__ctrl" id="srTestNext" aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function(){
+  var testimonials = document.querySelectorAll('.sr-testimonial');
+  var dots = document.querySelectorAll('.sr-testimonials__dots span');
+  var prevBtn = document.getElementById('srTestPrev');
+  var nextBtn = document.getElementById('srTestNext');
+  var currentTestimonial = 0;
+
+  if (testimonials.length && dots.length) {
+    function showTestimonial(index) {
+      testimonials.forEach(function (t) { t.classList.remove('active'); });
+      dots.forEach(function (d) { d.classList.remove('active'); });
+      testimonials[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentTestimonial = index;
+    }
+
+    var autoInterval = setInterval(function () {
+      var next = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(next);
+    }, 6000);
+
+    function resetAutoInterval() {
+      clearInterval(autoInterval);
+      autoInterval = setInterval(function () {
+        var n = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(n);
+      }, 6000);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        var prev = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(prev);
+        resetAutoInterval();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        var next = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(next);
+        resetAutoInterval();
+      });
+    }
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        showTestimonial(i);
+        resetAutoInterval();
+      });
+    });
+  }
+})();
+</script>
+{% endfooter %}
+</div>

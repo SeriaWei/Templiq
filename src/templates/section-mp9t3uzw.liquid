@@ -1,0 +1,188 @@
+<!-- 工作流程 -->
+{% header %}
+<style>
+.section-mp9t3uzw {
+  --sr-bg: #0e0b08;
+  --sr-surface: #1a1612;
+  --sr-surface-raised: #24201a;
+  --sr-border: #332e27;
+  --sr-text: #e8e2d8;
+  --sr-text-secondary: #9c9488;
+  --sr-accent-gold: #c9a84e;
+  --sr-accent-gold-soft: rgba(201, 168, 78, 0.12);
+  --sr-accent-ruby: #8b2f3f;
+  --sr-font-heading: Georgia, "Times New Roman", Times, serif;
+  --sr-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sr-font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 10px;
+}
+.section-mp9t3uzw .sr-how {
+  position: relative;
+  padding: 100px 0;
+  background: var(--sr-bg);
+  overflow: hidden;
+}
+.section-mp9t3uzw .sr-how__bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(ellipse 500px 700px at 50% 30%, rgba(201, 168, 78, 0.015) 0%, transparent 60%);
+  pointer-events: none;
+}
+.section-mp9t3uzw .sr-how__title {
+  font-family: var(--sr-font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sr-text);
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+.section-mp9t3uzw .sr-how__intro {
+  font-size: 18px;
+  color: var(--sr-text-secondary);
+  max-width: 500px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+.section-mp9t3uzw .sr-how__timeline { position: relative; }
+.section-mp9t3uzw .sr-how__track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--sr-accent-gold) 15%, var(--sr-accent-gold) 85%, transparent);
+  opacity: 0.2;
+  transform: translateX(-50%);
+}
+.section-mp9t3uzw .sr-how__step-row {
+  position: relative;
+  margin-bottom: 60px;
+  align-items: center;
+}
+.section-mp9t3uzw .sr-how__step-row:last-child { margin-bottom: 0; }
+.section-mp9t3uzw .sr-how__step { position: relative; padding: 24px; }
+.section-mp9t3uzw .sr-how__step--left { text-align: right; }
+.section-mp9t3uzw .sr-how__step-number {
+  font-family: var(--sr-font-heading);
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sr-accent-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+.section-mp9t3uzw .sr-how__step-marker { display: none; }
+.section-mp9t3uzw .sr-how__step-title {
+  font-family: var(--sr-font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.section-mp9t3uzw .sr-how__step-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--sr-text-secondary);
+  margin: 0;
+  max-width: 360px;
+}
+.section-mp9t3uzw .sr-how__step--left .sr-how__step-desc { margin-left: auto; }
+.section-mp9t3uzw .sr-how__visual { padding: 16px; }
+.section-mp9t3uzw .sr-how__visual svg {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 991px) {
+  .section-mp9t3uzw .sr-how__step--left { text-align: left; }
+  .section-mp9t3uzw .sr-how__step--left .sr-how__step-desc { margin-left: 0; }
+  .section-mp9t3uzw .sr-how__track { left: 20px; }
+  .section-mp9t3uzw .sr-how__step-marker {
+    display: block;
+    position: absolute;
+    left: -16px;
+    top: 30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sr-accent-gold);
+    border: 2px solid var(--sr-bg);
+    box-shadow: 0 0 0 3px rgba(201, 168, 78, 0.25);
+  }
+  .section-mp9t3uzw .sr-how__step { padding-left: 40px; }
+}
+@media (max-width: 768px) {
+  .section-mp9t3uzw .sr-how { padding: 60px 0; }
+  .section-mp9t3uzw .sr-how__title { font-size: 32px; }
+  .section-mp9t3uzw .sr-how__intro { font-size: 16px; margin-bottom: 40px; }
+  .section-mp9t3uzw .sr-how__step-title { font-size: 22px; }
+  .section-mp9t3uzw .sr-how__step-desc { font-size: 14px; }
+  .section-mp9t3uzw .sr-how__visual { display: none; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mp9t3uzw">
+<section class="sr-how" id="how">
+  <div class="sr-how__bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% if this.Model.section_label %}
+        <p class="sr-section-label sr-section-label--light" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</p>
+        {% endif %}
+        <h2 class="sr-how__title">
+          <span property="true" data-property="title_prefix" method="text">{{this.Model.title_prefix}}</span>
+          {% if this.Model.title_accent %} <span class="sr-text-gold" property="true" data-property="title_accent" method="text">{{this.Model.title_accent}}</span>{% endif %}
+        </h2>
+        {% if this.Model.intro %}
+        <p class="sr-how__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="sr-how__timeline">
+      <div class="sr-how__track"></div>
+      {% assign stepIndex = 0 %}
+      {% for step in this.Model.steps %}
+      {% assign isEven = stepIndex | modulo: 2 %}
+      <div class="row sr-how__step-row">
+        {% if isEven == 0 %}
+        <div class="col-md-4 col-md-offset-1">
+          <div class="sr-how__step sr-how__step--left">
+            <div class="sr-how__step-number" property="true" data-property="steps[{{forloop.index0}}].number" method="text">{{step.number}}</div>
+            <div class="sr-how__step-marker"></div>
+            <h3 class="sr-how__step-title" property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>
+            <p class="sr-how__step-desc" property="true" data-property="steps[{{forloop.index0}}].description" method="text">{{step.description}}</p>
+          </div>
+        </div>
+        <div class="col-md-5 col-md-offset-1">
+          <div class="sr-how__visual">{{step.visual_svg | raw}}</div>
+        </div>
+        {% else %}
+        <div class="col-md-5 col-md-offset-1">
+          <div class="sr-how__visual">{{step.visual_svg | raw}}</div>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <div class="sr-how__step sr-how__step--right">
+            <div class="sr-how__step-number" property="true" data-property="steps[{{forloop.index0}}].number" method="text">{{step.number}}</div>
+            <div class="sr-how__step-marker"></div>
+            <h3 class="sr-how__step-title" property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>
+            <p class="sr-how__step-desc" property="true" data-property="steps[{{forloop.index0}}].description" method="text">{{step.description}}</p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% assign stepIndex = stepIndex | plus: 1 %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+</div>

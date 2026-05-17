@@ -1,0 +1,35 @@
+{
+    "brand_icon": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "品牌图标"
+    },
+    "brand_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌名称"
+    },
+    "nav_links": {
+        "FieldType": "Array",
+        "DisplayName": "导航链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文本"
+                },
+                "href": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接地址",
+                    "IsRequired": true
+                }
+            }
+        ]
+    },
+    "cta_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "CTA按钮文本"
+    },
+    "cta_href": {
+        "FieldType": "SingleLine",
+        "DisplayName": "CTA链接地址"
+    }
+}

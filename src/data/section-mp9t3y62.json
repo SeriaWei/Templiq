@@ -1,0 +1,28 @@
+{
+    "section_label": "Voices",
+    "title_prefix": "From the",
+    "title_accent": "Scriptorium",
+    "testimonials": [
+        {
+            "ornament_svg": "<svg viewBox=\"0 0 40 16\" fill=\"none\" stroke=\"#c9a84e\" stroke-width=\"1.2\" opacity=\"0.6\"><path d=\"M0 8h12M16 8h8M28 8h12\"/><circle cx=\"14\" cy=\"8\" r=\"1.5\" fill=\"#c9a84e\"/><circle cx=\"26\" cy=\"8\" r=\"1.5\" fill=\"#c9a84e\"/></svg>",
+            "quote": "Scriptor has fundamentally changed how I approach research. The bidirectional linking and atomic organization turned my chaotic collection of notes into a proper knowledge graph. It is the closest thing to a second brain I have ever used.",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+            "name": "Dr. Elena Vasquez",
+            "role": "Research Scientist, MIT"
+        },
+        {
+            "ornament_svg": "<svg viewBox=\"0 0 40 16\" fill=\"none\" stroke=\"#c9a84e\" stroke-width=\"1.2\" opacity=\"0.6\"><path d=\"M0 8h12M16 8h8M28 8h12\"/><circle cx=\"14\" cy=\"8\" r=\"1.5\" fill=\"#c9a84e\"/><circle cx=\"26\" cy=\"8\" r=\"1.5\" fill=\"#c9a84e\"/></svg>",
+            "quote": "I have tried every note-taking app in existence. Scriptor is the first that does not get in my way. The dark theme is stunning, the editor is a joy, and the way it handles knowledge connections feels like magic.",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+            "name": "Marcus Chen",
+            "role": "Tech Lead, Vercel"
+        },
+        {
+            "ornament_svg": "<svg viewBox=\"0 0 40 16\" fill=\"none\" stroke=\"#c9a84e\" stroke-width=\"1.2\" opacity=\"0.6\"><path d=\"M0 8h12M16 8h8M28 8h12\"/><circle cx=\"14\" cy=\"8\" r=\"1.5\" fill=\"#c9a84e\"/><circle cx=\"26\" cy=\"8\" r=\"1.5\" fill=\"#c9a84e\"/></svg>",
+            "quote": "As a writer, my notebook is sacred. Scriptor treats it with the reverence it deserves. The typography is gorgeous, the focus mode is unparalleled, and I have never written this much, this consistently.",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+            "name": "Amara Okafor",
+            "role": "Author, The Digital Quill"
+        }
+    ]
+}

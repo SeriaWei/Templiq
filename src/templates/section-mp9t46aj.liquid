@@ -1,0 +1,131 @@
+<!-- 页脚 -->
+{% header %}
+<style>
+.section-mp9t46aj {
+  --sr-bg: #0e0b08;
+  --sr-surface: #1a1612;
+  --sr-surface-raised: #24201a;
+  --sr-border: #332e27;
+  --sr-text: #e8e2d8;
+  --sr-text-secondary: #9c9488;
+  --sr-accent-gold: #c9a84e;
+  --sr-accent-gold-soft: rgba(201, 168, 78, 0.12);
+  --sr-accent-ruby: #8b2f3f;
+  --sr-font-heading: Georgia, "Times New Roman", Times, serif;
+  --sr-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sr-font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 10px;
+}
+.section-mp9t46aj .sr-footer {
+  padding: 56px 0 24px;
+  background: var(--sr-surface);
+  border-top: 1px solid var(--sr-border);
+}
+.section-mp9t46aj .sr-footer__main { margin-bottom: 32px; }
+.section-mp9t46aj .sr-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sr-font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+.section-mp9t46aj .sr-footer__brand-icon {
+  display: flex;
+  align-items: center;
+  color: var(--sr-accent-gold);
+}
+.section-mp9t46aj .sr-footer__desc {
+  font-size: 13px;
+  color: var(--sr-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 260px;
+}
+.section-mp9t46aj .sr-footer__heading {
+  font-family: var(--sr-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+}
+.section-mp9t46aj .sr-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.section-mp9t46aj .sr-footer__links li { margin-bottom: 8px; }
+.section-mp9t46aj .sr-footer__links li a {
+  font-size: 13px;
+  color: var(--sr-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 1.5;
+}
+.section-mp9t46aj .sr-footer__links li a:hover { color: var(--sr-accent-gold); }
+.section-mp9t46aj .sr-footer__divider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.section-mp9t46aj .sr-footer__divider svg { display: block; width: 120px; height: 8px; }
+.section-mp9t46aj .sr-footer__copy {
+  font-size: 12px;
+  color: var(--sr-text-secondary);
+  opacity: 0.5;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+@media (max-width: 768px) {
+  .section-mp9t46aj .sr-footer { padding: 40px 0 20px; }
+  .section-mp9t46aj .sr-footer__desc { max-width: 100%; margin-bottom: 24px; }
+  .section-mp9t46aj .sr-footer__heading { margin-top: 20px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mp9t46aj">
+<footer class="sr-footer">
+  <div class="container">
+    <div class="row sr-footer__main">
+      <div class="col-md-4 col-sm-6">
+        <div class="sr-footer__brand">
+          <span class="sr-footer__brand-icon">{{this.Model.brand_icon | raw}}</span>
+          <span property="true" data-property="brand_text" method="text">{{this.Model.brand_text}}</span>
+        </div>
+        <p class="sr-footer__desc" property="true" data-property="brand_desc" method="text">{{this.Model.brand_desc}}</p>
+      </div>
+      {% for group in this.Model.link_groups %}
+      <div class="col-md-2 col-sm-6 col-md-offset-{% if forloop.first %}1{% else %}0{% endif %}">
+        <h4 class="sr-footer__heading" property="true" data-property="link_groups[{{forloop.index0}}].heading" method="text">{{group.heading}}</h4>
+        <ul class="sr-footer__links">
+          {% assign linkIndex = 0 %}
+          {% for link in group.links %}
+          <li>
+            <a property="true" data-property="link_groups[{{forloop.parentloop.index0}}].links[{{linkIndex}}].href" method="attr" para="href" href="{% url link.href %}">
+              <span property="true" data-property="link_groups[{{forloop.parentloop.index0}}].links[{{linkIndex}}].text" method="text">{{link.text}}</span>
+            </a>
+          </li>
+          {% assign linkIndex = linkIndex | plus: 1 %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sr-footer__divider">{{this.Model.divider_svg | raw}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="sr-footer__copy" property="true" data-property="copyright" method="text">{{this.Model.copyright}}</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>

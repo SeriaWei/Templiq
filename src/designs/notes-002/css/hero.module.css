@@ -1,0 +1,300 @@
+/* ============================================================
+   HERO — Scriptor Note-Taking App
+   Dark cinematic hero with atmospheric background
+   ============================================================ */
+.sr-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 8rem;
+}
+
+.sr-hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sr-hero__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 700px 500px at 30% 20%, rgba(201, 168, 78, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 600px at 70% 80%, rgba(139, 47, 63, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(201, 168, 78, 0.02) 0%, transparent 50%);
+}
+
+.sr-hero__noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+
+/* Floating orbs */
+.sr-hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.sr-hero__orb--1 {
+  width: 400px;
+  height: 400px;
+  top: -10%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(201, 168, 78, 0.06) 0%, transparent 70%);
+  animation: orbFloat 12s ease-in-out infinite;
+}
+
+.sr-hero__orb--2 {
+  width: 300px;
+  height: 300px;
+  bottom: -5%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(139, 47, 63, 0.04) 0%, transparent 70%);
+  animation: orbFloat 15s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+/* Content */
+.sr-hero__content {
+  position: relative;
+  z-index: 3;
+  padding: 6rem 0 10rem;
+  width: 100%;
+}
+
+.sr-hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-family: var(--sr-font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sr-accent-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.sr-hero__label-line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--sr-accent-gold);
+  opacity: 0.5;
+}
+
+.sr-hero__title {
+  margin: 0 0 2.8rem;
+}
+
+.sr-hero__title-word {
+  display: inline-block;
+  font-family: var(--sr-font-heading);
+  font-size: 7.2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--sr-text);
+  margin: 0 0.15em;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.sr-hero__title-word:nth-child(1) { animation-delay: 0.3s; }
+.sr-hero__title-word:nth-child(2) { animation-delay: 0.45s; }
+.sr-hero__title-word:nth-child(3) { animation-delay: 0.6s; }
+.sr-hero__title-word:nth-child(4) { animation-delay: 0.75s; }
+
+.sr-hero__title-word--accent {
+  color: var(--sr-accent-gold);
+  font-style: italic;
+  position: relative;
+}
+
+.sr-hero__title-word--accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 3px;
+  background: var(--sr-accent-gold);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.sr-hero__subtitle {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: var(--sr-text-secondary);
+  max-width: 640px;
+  margin: 0 auto 3.6rem;
+  animation: fadeInUp 0.8s ease 0.75s both;
+}
+
+.sr-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.95s both;
+}
+
+.sr-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1.2rem 2.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.sr-hero__btn--primary {
+  color: var(--sr-bg);
+  background: var(--sr-accent-gold);
+}
+
+.sr-hero__btn--primary:hover {
+  background: #dbb956;
+  color: var(--sr-bg);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 168, 78, 0.35);
+}
+
+.sr-hero__btn--outline {
+  color: var(--sr-text);
+  border: 1px solid var(--sr-border);
+}
+
+.sr-hero__btn--outline:hover {
+  border-color: var(--sr-accent-gold);
+  color: var(--sr-accent-gold);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* Scroll indicator */
+.sr-hero__scroll {
+  position: absolute;
+  bottom: 3.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeInUp 0.8s ease 1.2s both;
+}
+
+.sr-hero__scroll span {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sr-text-secondary);
+  opacity: 0.5;
+}
+
+.sr-hero__scroll-line {
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--sr-accent-gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+    transform-origin: top;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .sr-hero__title-word {
+    font-size: 4.8rem;
+  }
+
+  .sr-hero__subtitle {
+    font-size: 1.6rem;
+    padding: 0 1.6rem;
+  }
+
+  .sr-hero__label {
+    font-size: 1rem;
+  }
+
+  .sr-hero__actions {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1.6rem;
+  }
+
+  .sr-hero__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sr-hero__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sr-hero__title-word {
+    font-size: 3.6rem;
+  }
+}

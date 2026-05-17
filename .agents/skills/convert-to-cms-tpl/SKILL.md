@@ -32,6 +32,19 @@ description: Convert an design(Html pages in src/designs/<design-name> folder) t
 - 对于图片，链接的URL，要使用url tag，例如: `<img src="{% url image.src %}" />`
 - 如果属性中允许出现html标签，请使用raw过滤器，例如：<div>{{this.Model.html_content | raw}}</div>
 
+## CSS作用域规范
+必须保证CSS仅作用于当前Section，避免影响页面上其他元素。请遵循以下规则：
+
+1. **Section容器**：用`<div class="section-{template-name}">`包裹模板的HTML代码，作为CSS作用域的根容器。
+2. **CSS选择器前缀**：所有CSS选择器必须以`.section-{template-name}`开头，例如：
+   - `.sr-hero { ... }` → `.section-{template-name} .sr-hero { ... }`
+   - `.sr-features__title { ... }` → `.section-{template-name} .sr-features__title { ... }`
+3. **CSS变量**：将`:root`中的CSS变量定义改为定义在`.section-{template-name}`上。
+4. **禁止全局样式**：不得使用`html`、`body`、`:root`等全局选择器。原设计中的`html`字体基础设置(`font-size: 10px`)改为在`.section-{template-name}`上设置。原`body`的背景色、文字颜色等，若Section自身没有背景色则需添加到`.section-{template-name}`上。
+5. **rem单位转换**：由于不能设置`html { font-size: 10px }`（会影响Bootstrap等库），必须将所有`rem`单位值转换为`px`单位（乘以10）。例如：`1.6rem` → `16px`，`7.2rem` → `72px`，`3.2rem` → `32px`。
+6. **@keyframes命名**：全局的`@keyframes`需加上Section名称前缀以保证唯一性，例如：`orbFloat` → `section-mp9t3osg-orbFloat`。
+7. **背景透传**：如果design的`body`有背景色，而当前Section没有设置背景，则需将body的背景色添加到`.section-{template-name}`上，确保显示正确。
+
 
 ## Model binding示例：
 ``` src/templates/tpl.liquid

@@ -1,0 +1,196 @@
+<!-- 功能特点 -->
+{% header %}
+<style>
+.section-mp9t3rww {
+  --sr-bg: #0e0b08;
+  --sr-surface: #1a1612;
+  --sr-surface-raised: #24201a;
+  --sr-border: #332e27;
+  --sr-text: #e8e2d8;
+  --sr-text-secondary: #9c9488;
+  --sr-accent-gold: #c9a84e;
+  --sr-accent-gold-soft: rgba(201, 168, 78, 0.12);
+  --sr-accent-ruby: #8b2f3f;
+  --sr-font-heading: Georgia, "Times New Roman", Times, serif;
+  --sr-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sr-font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 10px;
+}
+.section-mp9t3rww .sr-features {
+  position: relative;
+  padding: 100px 0;
+  background: var(--sr-surface);
+  overflow: hidden;
+}
+.section-mp9t3rww .sr-features__bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 50%, rgba(201, 168, 78, 0.02) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 600px at 80% 30%, rgba(139, 47, 63, 0.015) 0%, transparent 60%);
+  pointer-events: none;
+}
+.section-mp9t3rww .sr-section-label {
+  font-family: var(--sr-font-heading);
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sr-accent-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-mp9t3rww .sr-text-gold { color: var(--sr-accent-gold); font-style: italic; }
+.section-mp9t3rww .sr-features__title {
+  font-family: var(--sr-font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sr-text);
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+.section-mp9t3rww .sr-features__intro {
+  font-size: 18px;
+  color: var(--sr-text-secondary);
+  max-width: 540px;
+  margin: 0 auto 56px;
+  line-height: 1.6;
+}
+.section-mp9t3rww .sr-feature-card {
+  background: rgba(36, 32, 26, 0.6);
+  border: 1px solid var(--sr-border);
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 24px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+.section-mp9t3rww .sr-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sr-accent-gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.section-mp9t3rww .sr-feature-card:hover {
+  border-color: rgba(201, 168, 78, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(201, 168, 78, 0.03);
+}
+.section-mp9t3rww .sr-feature-card:hover::before { opacity: 1; }
+.section-mp9t3rww .sr-feature-card__icon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.section-mp9t3rww .sr-feature-card__icon {
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sr-text);
+}
+.section-mp9t3rww .sr-feature-card__icon svg { width: 100%; height: 100%; }
+.section-mp9t3rww .sr-feature-card__number {
+  font-family: var(--sr-font-heading);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--sr-accent-gold);
+  opacity: 0.4;
+  font-style: italic;
+}
+.section-mp9t3rww .sr-feature-card__title {
+  font-family: var(--sr-font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.section-mp9t3rww .sr-feature-card__desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--sr-text-secondary);
+  margin: 0 0 20px;
+}
+.section-mp9t3rww .sr-feature-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sr-accent-gold);
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+.section-mp9t3rww .sr-feature-card__link:hover {
+  gap: 10px;
+  color: #dbb956;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .section-mp9t3rww .sr-features { padding: 60px 0; }
+  .section-mp9t3rww .sr-features__title { font-size: 32px; }
+  .section-mp9t3rww .sr-features__intro { font-size: 16px; padding: 0 16px; }
+  .section-mp9t3rww .sr-feature-card { padding: 24px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mp9t3rww">
+<section class="sr-features" id="features">
+  <div class="sr-features__bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% if this.Model.section_label %}
+        <p class="sr-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</p>
+        {% endif %}
+        <h2 class="sr-features__title">
+          <span property="true" data-property="title_prefix" method="text">{{this.Model.title_prefix}}</span>
+          {% if this.Model.title_accent %} <span class="sr-text-gold" property="true" data-property="title_accent" method="text">{{this.Model.title_accent}}</span>{% endif %}
+        </h2>
+        {% if this.Model.intro %}
+        <p class="sr-features__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row sr-features__grid">
+      {% assign idx = 0 %}
+      {% for card in this.Model.feature_cards %}
+      {% assign colClass = "col-md-4" %}
+      {% if forloop.length <= 2 %}{% assign colClass = "col-md-6" %}{% endif %}
+      {% if forloop.length == 1 %}{% assign colClass = "col-md-12" %}{% endif %}
+      <div class="{{colClass}} col-sm-6">
+        <div class="sr-feature-card" data-delay="{{ idx | times: 150 }}">
+          <div class="sr-feature-card__icon-row">
+            <div class="sr-feature-card__icon">{{card.icon | raw}}</div>
+            {% if card.number %}
+            <span class="sr-feature-card__number" property="true" data-property="feature_cards[{{forloop.index0}}].number" method="text">{{card.number}}</span>
+            {% endif %}
+          </div>
+          <h3 class="sr-feature-card__title" property="true" data-property="feature_cards[{{forloop.index0}}].title" method="text">{{card.title}}</h3>
+          {% if card.description %}
+          <p class="sr-feature-card__desc" property="true" data-property="feature_cards[{{forloop.index0}}].description" method="text">{{card.description}}</p>
+          {% endif %}
+          {% if card.link_text %}
+          <a property="true" data-property="feature_cards[{{forloop.index0}}].link_href" method="attr" para="href" href="{% url card.link_href %}" class="sr-feature-card__link">
+            <span property="true" data-property="feature_cards[{{forloop.index0}}].link_text" method="text">{{card.link_text}}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% assign idx = idx | plus: 1 %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+</div>

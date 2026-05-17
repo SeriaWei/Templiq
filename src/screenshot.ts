@@ -48,17 +48,27 @@ export async function capturePreview(templateName: string): Promise<{ originalFi
       }
     });
 
-    // Get the element's bounding box and adjust viewport height so nothing is clipped
+    // Get the element's bounding box to determine if it has visible dimensions
     const box = await contentElement.boundingBox();
-    if (box) {
+
+    let screenshotBuffer: Buffer;
+    if (box && box.width > 0 && box.height > 0) {
+      // Element has valid dimensions — adjust viewport and screenshot the element
       await page.setViewportSize({
         width: SCREENSHOT_WIDTH,
         height: Math.max(Math.ceil(box.height), 900)
       });
+      screenshotBuffer = await contentElement.screenshot({ type: 'png' });
+    } else {
+      // Element has zero/negligible dimensions (e.g., section is a fixed-position navbar
+      // that is taken out of document flow). Fall back to a viewport screenshot so the
+      // visible fixed content (like the navbar) is captured correctly.
+      await page.setViewportSize({
+        width: SCREENSHOT_WIDTH,
+        height: 600
+      });
+      screenshotBuffer = await page.screenshot({ type: 'png' });
     }
-
-    // Full-size screenshot of the content element
-    const screenshotBuffer = await contentElement.screenshot({ type: 'png' });
 
     // Ensure thumbs directory exists
     const thumbsDir = path.resolve(__dirname, 'public/thumbs');

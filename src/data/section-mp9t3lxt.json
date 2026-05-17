@@ -1,0 +1,24 @@
+{
+    "brand_icon": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 32 32\" fill=\"none\"><path d=\"M8 4h16l4 4v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8l4-4z\" stroke=\"currentColor\" stroke-width=\"1.8\" fill=\"none\"/><path d=\"M8 4v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4\" stroke=\"currentColor\" stroke-width=\"1.8\" fill=\"none\"/><line x1=\"10\" y1=\"16\" x2=\"22\" y2=\"16\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"10\" y1=\"21\" x2=\"18\" y2=\"21\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><circle cx=\"8\" cy=\"18\" r=\"1.5\" fill=\"currentColor\"/></svg>",
+    "brand_text": "Scriptor",
+    "nav_links": [
+        {
+            "text": "Home",
+            "href": "#hero"
+        },
+        {
+            "text": "Features",
+            "href": "#features"
+        },
+        {
+            "text": "Workflow",
+            "href": "#how"
+        },
+        {
+            "text": "Testimonials",
+            "href": "#testimonials"
+        }
+    ],
+    "cta_text": "Begin Writing",
+    "cta_href": "#cta"
+}

@@ -3,8 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.capturePreview = capturePreview;
-exports.closeBrowser = closeBrowser;
+exports.closeBrowser = exports.capturePreview = void 0;
 const playwright_1 = require("playwright");
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
@@ -45,16 +44,27 @@ async function capturePreview(templateName) {
                 toolbar.style.display = 'none';
             }
         });
-        // Get the element's bounding box and adjust viewport height so nothing is clipped
+        // Get the element's bounding box to determine if it has visible dimensions
         const box = await contentElement.boundingBox();
-        if (box) {
+        let screenshotBuffer;
+        if (box && box.width > 0 && box.height > 0) {
+            // Element has valid dimensions — adjust viewport and screenshot the element
             await page.setViewportSize({
                 width: SCREENSHOT_WIDTH,
                 height: Math.max(Math.ceil(box.height), 900)
             });
+            screenshotBuffer = await contentElement.screenshot({ type: 'png' });
         }
-        // Full-size screenshot of the content element
-        const screenshotBuffer = await contentElement.screenshot({ type: 'png' });
+        else {
+            // Element has zero/negligible dimensions (e.g., section is a fixed-position navbar
+            // that is taken out of document flow). Fall back to a viewport screenshot so the
+            // visible fixed content (like the navbar) is captured correctly.
+            await page.setViewportSize({
+                width: SCREENSHOT_WIDTH,
+                height: 600
+            });
+            screenshotBuffer = await page.screenshot({ type: 'png' });
+        }
         // Ensure thumbs directory exists
         const thumbsDir = path_1.default.resolve(__dirname, 'public/thumbs');
         if (!fs_1.default.existsSync(thumbsDir)) {
@@ -80,10 +90,12 @@ async function capturePreview(templateName) {
         await page.close();
     }
 }
+exports.capturePreview = capturePreview;
 async function closeBrowser() {
     if (browser) {
         await browser.close();
         browser = null;
     }
 }
+exports.closeBrowser = closeBrowser;
 //# sourceMappingURL=screenshot.js.map

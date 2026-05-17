@@ -1,0 +1,26 @@
+{
+    "section_label": "The Method",
+    "title_prefix": "From Thought to",
+    "title_accent": "Manuscript",
+    "intro": "A deliberate workflow that respects your creative process.",
+    "steps": [
+        {
+            "number": "01",
+            "title": "Capture",
+            "description": "Jot down a fleeting thought, paste a brilliant quote, or dictate an idea on the go. Capture is frictionless by design open Scriptor and write.",
+            "visual_svg": "<svg viewBox=\"0 0 280 180\" fill=\"none\"><rect x=\"10\" y=\"10\" width=\"260\" height=\"160\" rx=\"8\" fill=\"#1a1612\" stroke=\"#332e27\" stroke-width=\"1.2\"/><rect x=\"24\" y=\"24\" width=\"232\" height=\"14\" rx=\"3\" fill=\"#c9a84e\" opacity=\"0.08\"/><line x1=\"24\" y1=\"52\" x2=\"200\" y2=\"52\" stroke=\"#9c9488\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.5\"/><line x1=\"24\" y1=\"68\" x2=\"240\" y2=\"68\" stroke=\"#9c9488\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.4\"/><line x1=\"24\" y1=\"84\" x2=\"180\" y2=\"84\" stroke=\"#9c9488\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.6\"/><line x1=\"24\" y1=\"100\" x2=\"220\" y2=\"100\" stroke=\"#9c9488\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.3\"/><line x1=\"24\" y1=\"116\" x2=\"160\" y2=\"116\" stroke=\"#9c9488\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.5\"/><line x1=\"24\" y1=\"132\" x2=\"190\" y2=\"132\" stroke=\"#9c9488\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.4\"/><circle cx=\"248\" cy=\"150\" r=\"8\" fill=\"#c9a84e\" opacity=\"0.12\"/><path d=\"M244 150l3 3 5-5\" stroke=\"#c9a84e\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        },
+        {
+            "number": "02",
+            "title": "Cultivate",
+            "description": "Nurture your raw ideas into refined notes. Link related concepts, add tags, and let your collection grow organically into interconnected knowledge.",
+            "visual_svg": "<svg viewBox=\"0 0 280 180\" fill=\"none\"><rect x=\"10\" y=\"10\" width=\"120\" height=\"160\" rx=\"6\" fill=\"#1a1612\" stroke=\"#332e27\" stroke-width=\"1.2\"/><rect x=\"150\" y=\"10\" width=\"120\" height=\"74\" rx=\"6\" fill=\"#1a1612\" stroke=\"#332e27\" stroke-width=\"1.2\"/><rect x=\"150\" y=\"96\" width=\"120\" height=\"74\" rx=\"6\" fill=\"#1a1612\" stroke=\"#332e27\" stroke-width=\"1.2\"/><rect x=\"22\" y=\"24\" width=\"96\" height=\"8\" rx=\"2\" fill=\"#c9a84e\" opacity=\"0.12\"/><rect x=\"22\" y=\"42\" width=\"80\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.3\"/><rect x=\"22\" y=\"56\" width=\"90\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.2\"/><rect x=\"22\" y=\"128\" width=\"96\" height=\"8\" rx=\"2\" fill=\"#8b2f3f\" opacity=\"0.12\"/><rect x=\"22\" y=\"146\" width=\"70\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.3\"/><rect x=\"162\" y=\"24\" width=\"96\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.3\"/><rect x=\"162\" y=\"38\" width=\"70\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.2\"/><rect x=\"162\" y=\"110\" width=\"96\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.3\"/><rect x=\"162\" y=\"124\" width=\"80\" height=\"6\" rx=\"2\" fill=\"#9c9488\" opacity=\"0.2\"/></svg>"
+        },
+        {
+            "number": "03",
+            "title": "Share",
+            "description": "Publish your notes as elegant documents, share notebooks with collaborators, or export to your favorite tools. Your knowledge, amplified.",
+            "visual_svg": "<svg viewBox=\"0 0 280 180\" fill=\"none\"><rect x=\"10\" y=\"10\" width=\"260\" height=\"160\" rx=\"8\" fill=\"#1a1612\" stroke=\"#332e27\" stroke-width=\"1.2\"/><circle cx=\"80\" cy=\"70\" r=\"20\" fill=\"#8b2f3f\" opacity=\"0.08\"/><path d=\"M72 70l6 6 10-10\" stroke=\"#8b2f3f\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"160\" cy=\"70\" r=\"28\" fill=\"#c9a84e\" opacity=\"0.06\"/><path d=\"M150 70l6 6 12-12\" stroke=\"#c9a84e\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"120\" cy=\"130\" r=\"24\" fill=\"#e8e2d8\" opacity=\"0.04\"/><path d=\"M112 130l6 6 10-10\" stroke=\"#e8e2d8\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.3\"/><line x1=\"220\" y1=\"50\" x2=\"250\" y2=\"50\" stroke=\"#c9a84e\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.4\"/><line x1=\"230\" y1=\"50\" x2=\"230\" y2=\"130\" stroke=\"#c9a84e\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.4\"/><line x1=\"220\" y1=\"130\" x2=\"250\" y2=\"130\" stroke=\"#c9a84e\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.4\"/></svg>"
+        }
+    ]
+}

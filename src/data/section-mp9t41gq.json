@@ -1,0 +1,24 @@
+{
+    "stats": [
+        {
+            "number": "50",
+            "suffix": "K+",
+            "label": "Active Writers"
+        },
+        {
+            "number": "2",
+            "suffix": "M+",
+            "label": "Notes Created"
+        },
+        {
+            "number": "98",
+            "suffix": "%",
+            "label": "Uptime"
+        },
+        {
+            "number": "4.9",
+            "suffix": "★",
+            "label": "Avg. Rating"
+        }
+    ]
+}

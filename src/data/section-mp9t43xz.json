@@ -1,0 +1,12 @@
+{
+    "section_label": "Begin Your Practice",
+    "title_prefix": "Start Your",
+    "title_accent": "Writing Practice",
+    "description": "Join thousands of writers, researchers, and thinkers who have made Scriptor their creative sanctuary. Start free, upgrade when you need more.",
+    "primary_btn_text": "Create Free Account",
+    "primary_btn_href": "#",
+    "primary_btn_svg": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>",
+    "secondary_btn_text": "View Pricing",
+    "secondary_btn_href": "#",
+    "footnote": "No credit card required \u00b7 Free forever plan available \u00b7 Cancel anytime"
+}

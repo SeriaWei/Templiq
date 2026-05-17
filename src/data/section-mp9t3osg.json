@@ -1,0 +1,14 @@
+{
+    "label": "The Craft of Thought",
+    "title_1": "Where",
+    "title_2": "Ideas",
+    "title_3": "Become",
+    "title_4": "Legacy",
+    "subtitle": "Scriptor is a distraction-free sanctuary for the written word. Craft notes that endure with elegant markdown, atomic organization, and a space designed for deep focus.",
+    "primary_btn_text": "Start Your Manuscript",
+    "primary_btn_href": "#cta",
+    "primary_btn_svg": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>",
+    "secondary_btn_text": "Explore Features",
+    "secondary_btn_href": "#features",
+    "scroll_text": "Scroll to discover"
+}

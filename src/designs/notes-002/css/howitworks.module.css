@@ -1,0 +1,187 @@
+/* ============================================================
+   HOW IT WORKS — Scriptor Note-Taking App
+   Timeline layout with alternating content
+   ============================================================ */
+.sr-how {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--sr-bg);
+  overflow: hidden;
+}
+
+.sr-how__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 500px 700px at 50% 30%, rgba(201, 168, 78, 0.015) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.sr-how__title {
+  font-family: var(--sr-font-heading);
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sr-text);
+  margin: 0 0 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.sr-how__intro {
+  font-size: 1.8rem;
+  color: var(--sr-text-secondary);
+  max-width: 500px;
+  margin: 0 auto 6rem;
+  line-height: 1.6;
+}
+
+/* Timeline */
+.sr-how__timeline {
+  position: relative;
+}
+
+.sr-how__track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--sr-accent-gold) 15%,
+    var(--sr-accent-gold) 85%,
+    transparent
+  );
+  opacity: 0.2;
+  transform: translateX(-50%);
+}
+
+.sr-how__step-row {
+  position: relative;
+  margin-bottom: 6rem;
+  align-items: center;
+}
+
+.sr-how__step-row:last-child {
+  margin-bottom: 0;
+}
+
+.sr-how__step {
+  position: relative;
+  padding: 2.4rem;
+}
+
+.sr-how__step--left {
+  text-align: right;
+}
+
+.sr-how__step-number {
+  font-family: var(--sr-font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sr-accent-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+  opacity: 0.7;
+}
+
+.sr-how__step-marker {
+  display: none;
+}
+
+.sr-how__step-title {
+  font-family: var(--sr-font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--sr-text);
+  margin: 0 0 1.2rem;
+  line-height: 1.2;
+}
+
+.sr-how__step-desc {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--sr-text-secondary);
+  margin: 0;
+  max-width: 360px;
+}
+
+.sr-how__step--left .sr-how__step-desc {
+  margin-left: auto;
+}
+
+/* Visual SVG */
+.sr-how__visual {
+  padding: 1.6rem;
+}
+
+.sr-how__visual svg {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .sr-how__step--left {
+    text-align: left;
+  }
+
+  .sr-how__step--left .sr-how__step-desc {
+    margin-left: 0;
+  }
+
+  .sr-how__track {
+    left: 2rem;
+  }
+
+  .sr-how__step-marker {
+    display: block;
+    position: absolute;
+    left: -1.6rem;
+    top: 3rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sr-accent-gold);
+    border: 2px solid var(--sr-bg);
+    box-shadow: 0 0 0 3px rgba(201, 168, 78, 0.25);
+  }
+
+  .sr-how__step {
+    padding-left: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sr-how {
+    padding: 6rem 0;
+  }
+
+  .sr-how__title {
+    font-size: 3.2rem;
+  }
+
+  .sr-how__intro {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+
+  .sr-how__step-title {
+    font-size: 2.2rem;
+  }
+
+  .sr-how__step-desc {
+    font-size: 1.4rem;
+  }
+
+  .sr-how__visual {
+    display: none;
+  }
+}

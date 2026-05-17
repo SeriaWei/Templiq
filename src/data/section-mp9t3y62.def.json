@@ -1,0 +1,44 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title_prefix": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题前缀"
+    },
+    "title_accent": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题强调词"
+    },
+    "testimonials": {
+        "FieldType": "Array",
+        "DisplayName": "用户评价",
+        "Children": [
+            {
+                "ornament_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "装饰SVG"
+                },
+                "quote": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "引用内容",
+                    "IsRequired": true
+                },
+                "avatar": {
+                    "FieldType": "Media",
+                    "DisplayName": "头像"
+                },
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "姓名",
+                    "IsRequired": true
+                },
+                "role": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "角色/职位"
+                }
+            }
+        ]
+    }
+}

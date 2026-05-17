@@ -1,0 +1,74 @@
+<!-- 统计数据 -->
+{% header %}
+<style>
+.section-mp9t41gq {
+  --sr-bg: #0e0b08;
+  --sr-surface: #1a1612;
+  --sr-surface-raised: #24201a;
+  --sr-border: #332e27;
+  --sr-text: #e8e2d8;
+  --sr-text-secondary: #9c9488;
+  --sr-accent-gold: #c9a84e;
+  --sr-accent-gold-soft: rgba(201, 168, 78, 0.12);
+  --sr-accent-ruby: #8b2f3f;
+  --sr-font-heading: Georgia, "Times New Roman", Times, serif;
+  --sr-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sr-font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 10px;
+}
+.section-mp9t41gq .sr-stats {
+  padding: 60px 0;
+  background: var(--sr-bg);
+  border-top: 1px solid var(--sr-border);
+  border-bottom: 1px solid var(--sr-border);
+}
+.section-mp9t41gq .sr-stat { text-align: center; padding: 16px; }
+.section-mp9t41gq .sr-stat__number {
+  font-family: var(--sr-font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--sr-accent-gold);
+  line-height: 1;
+  display: inline;
+}
+.section-mp9t41gq .sr-stat__suffix {
+  font-family: var(--sr-font-heading);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--sr-accent-gold);
+  opacity: 0.6;
+  margin-left: 2px;
+}
+.section-mp9t41gq .sr-stat__label {
+  display: block;
+  font-size: 13px;
+  color: var(--sr-text-secondary);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .section-mp9t41gq .sr-stats { padding: 40px 0; }
+  .section-mp9t41gq .sr-stat__number { font-size: 32px; }
+  .section-mp9t41gq .sr-stat__suffix { font-size: 16px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mp9t41gq">
+<section class="sr-stats">
+  <div class="container">
+    <div class="row">
+      {% for stat in this.Model.stats %}
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="sr-stat">
+          <span class="sr-stat__number" property="true" data-property="stats[{{forloop.index0}}].number" method="text">{{stat.number}}</span>
+          <span class="sr-stat__suffix" property="true" data-property="stats[{{forloop.index0}}].suffix" method="text">{{stat.suffix}}</span>
+          <span class="sr-stat__label" property="true" data-property="stats[{{forloop.index0}}].label" method="text">{{stat.label}}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+</div>

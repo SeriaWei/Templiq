@@ -1,0 +1,36 @@
+{
+    "brand_icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 32 32\" fill=\"none\"><path d=\"M8 4h16l4 4v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8l4-4z\" stroke=\"currentColor\" stroke-width=\"1.6\" fill=\"none\"/><path d=\"M8 4v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4\" stroke=\"currentColor\" stroke-width=\"1.6\" fill=\"none\"/><circle cx=\"8\" cy=\"18\" r=\"1.5\" fill=\"currentColor\"/></svg>",
+    "brand_text": "Scriptor",
+    "brand_desc": "A sanctuary for the written word. Craft notes that endure.",
+    "link_groups": [
+        {
+            "heading": "Product",
+            "links": [
+                { "text": "Features", "href": "#" },
+                { "text": "Pricing", "href": "#" },
+                { "text": "Integrations", "href": "#" },
+                { "text": "Changelog", "href": "#" }
+            ]
+        },
+        {
+            "heading": "Company",
+            "links": [
+                { "text": "About", "href": "#" },
+                { "text": "Blog", "href": "#" },
+                { "text": "Careers", "href": "#" },
+                { "text": "Contact", "href": "#" }
+            ]
+        },
+        {
+            "heading": "Legal",
+            "links": [
+                { "text": "Privacy", "href": "#" },
+                { "text": "Terms", "href": "#" },
+                { "text": "Security", "href": "#" },
+                { "text": "Cookies", "href": "#" }
+            ]
+        }
+    ],
+    "divider_svg": "<svg viewBox=\"0 0 120 8\" fill=\"none\" stroke=\"#c9a84e\" stroke-width=\"1\" opacity=\"0.3\"><path d=\"M0 4h36M44 4h32M76 4h36\"/><circle cx=\"40\" cy=\"4\" r=\"2\" fill=\"#c9a84e\"/><circle cx=\"80\" cy=\"4\" r=\"2\" fill=\"#c9a84e\"/></svg>",
+    "copyright": "\u00a9 2026 Scriptor. All rights reserved. Crafted with intention."
+}

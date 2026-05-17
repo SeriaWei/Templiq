@@ -43,11 +43,12 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 # Others
 - Every design has its own folder. Should be saved in `src/designs/<design-name>`. design-name is <category>-<index>, for example: "retro-001".
 - Every design MUST be based on bootstrap3, Use the local bootstrap files in the `src/public` folder and do not use other third-party libraries.
-- Page designs by sections. Each section should be a separate component. For example, a page with a header, hero, features, and footer would have components(if js required): Header.js, Hero.js, Features.js, Footer.js. This promotes modularity and reusability.
-- Use CSS modules for styling. Each component should have its own CSS module file (e.g., Header.module.css) that defines styles scoped to that component. This prevents style conflicts and promotes maintainability.
+- Page designs by sections. Each section should be a separate component. For example, a page with a header, hero, features, and footer would have components(if js required): header.component.js, hero.component.js, features.component.js, footer.component.js. This promotes modularity and reusability.
+- Use CSS modules for styling. Each component should have its own CSS module file (e.g., header.module.css) that defines styles scoped to that component. This prevents style conflicts and promotes maintainability.
 - Use unsplash for images. Avoid generic stock photos; choose images that add character and context to the design.
 
 # Notes
 
 - Font font size of html tag is 10px. So, if you want to use font size in rem, you need to multiply it by 10. For example, if you want to use font size of 16px, you can use 1.6rem. But the font size of body tag is 16px, please note this.
 - CSS should avoid using syntax that requires compilation, such as nesting and variables in SCSS. Pure CSS or CSS modules can be used to write styles.
+- When designing, don't be limited by existing designs, such as functionality, style, layout, etc. The new design should have its own characteristics.

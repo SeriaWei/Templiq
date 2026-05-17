@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scriptor — The Art of Note-Taking</title>
+  <meta name="description" content="Scriptor reimagines note-taking as a craft. A dark, distraction-free space where your thoughts become timeless documents.">
+
+  <!-- Bootstrap 3 (local) -->
+  <link rel="stylesheet" href="../../public/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/bootstrap-theme.min.css">
+
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/navbar.module.css">
+  <link rel="stylesheet" href="css/hero.module.css">
+  <link rel="stylesheet" href="css/features.module.css">
+  <link rel="stylesheet" href="css/howitworks.module.css">
+  <link rel="stylesheet" href="css/testimonials.module.css">
+  <link rel="stylesheet" href="css/cta.module.css">
+  <link rel="stylesheet" href="css/footer.module.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="sr-navbar" id="srNavbar">
+    <div class="container">
+      <div class="sr-navbar__inner">
+        <a href="#" class="sr-navbar__brand">
+          <span class="sr-navbar__brand-icon">
+            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+              <path d="M8 4h16l4 4v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8l4-4z" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <path d="M8 4v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <line x1="10" y1="16" x2="22" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="10" y1="21" x2="18" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="8" cy="18" r="1.5" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="sr-navbar__brand-text">Scriptor</span>
+        </a>
+        <button class="sr-navbar__toggle" id="srNavToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="sr-navbar__right">
+          <ul class="sr-navbar__links" id="srNavLinks">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">Workflow</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+          <a href="#cta" class="sr-navbar__cta">Begin Writing</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="sr-hero" id="hero">
+    <div class="sr-hero__bg">
+      <div class="sr-hero__gradient"></div>
+      <div class="sr-hero__noise"></div>
+      <div class="sr-hero__orb sr-hero__orb--1"></div>
+      <div class="sr-hero__orb sr-hero__orb--2"></div>
+    </div>
+
+    <div class="sr-hero__content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="sr-hero__label">
+              <span class="sr-hero__label-line"></span>
+              The Craft of Thought
+              <span class="sr-hero__label-line"></span>
+            </div>
+            <h1 class="sr-hero__title">
+              <span class="sr-hero__title-word">Where</span>
+              <span class="sr-hero__title-word sr-hero__title-word--accent">Ideas</span>
+              <span class="sr-hero__title-word">Become</span>
+              <span class="sr-hero__title-word">Legacy</span>
+            </h1>
+            <p class="sr-hero__subtitle">
+              Scriptor is a distraction-free sanctuary for the written word. 
+              Craft notes that endure — with elegant markdown, atomic organization, 
+              and a space designed for deep focus.
+            </p>
+            <div class="sr-hero__actions">
+              <a href="#cta" class="sr-hero__btn sr-hero__btn--primary">
+                Start Your Manuscript
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#features" class="sr-hero__btn sr-hero__btn--outline">
+                Explore Features
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sr-hero__scroll">
+      <span>Scroll to discover</span>
+      <div class="sr-hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES
+  ============================================================ -->
+  <section class="sr-features" id="features">
+    <div class="sr-features__bg"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="sr-section-label">The Tools of the Trade</p>
+          <h2 class="sr-features__title">Crafted for <span class="sr-text-gold">Deep Work</span></h2>
+          <p class="sr-features__intro">
+            Every feature is a brushstroke. Together they form a masterwork of productivity.
+          </p>
+        </div>
+      </div>
+
+      <div class="row sr-features__grid">
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-feature-card" data-delay="0">
+            <div class="sr-feature-card__icon-row">
+              <div class="sr-feature-card__icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="6" y="8" width="36" height="32" rx="4" stroke="currentColor" stroke-width="1.6"/>
+                  <line x1="14" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <line x1="14" y1="26" x2="30" y2="26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <line x1="14" y1="34" x2="26" y2="34" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <circle cx="38" cy="14" r="6" fill="var(--sr-accent-gold)" opacity="0.2"/>
+                  <path d="M36 14l1.5 1.5 3-3" stroke="var(--sr-accent-gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="sr-feature-card__number">01</span>
+            </div>
+            <h3 class="sr-feature-card__title">Distraction-Free Editor</h3>
+            <p class="sr-feature-card__desc">
+              A clean, minimal writing environment with rich markdown support. No toolbars, no clutter — just you and your words.
+            </p>
+            <a href="#" class="sr-feature-card__link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-feature-card" data-delay="150">
+            <div class="sr-feature-card__icon-row">
+              <div class="sr-feature-card__icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="1.6"/>
+                  <rect x="14" y="14" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.6" opacity="0.4"/>
+                  <circle cx="24" cy="24" r="4" stroke="var(--sr-accent-gold)" stroke-width="1.6"/>
+                  <path d="M34 34l6 6" stroke="var(--sr-accent-gold)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="sr-feature-card__number">02</span>
+            </div>
+            <h3 class="sr-feature-card__title">Atomic Organization</h3>
+            <p class="sr-feature-card__desc">
+              Break down complex ideas into interconnected atoms. Tag, link, and weave your knowledge into a living web.
+            </p>
+            <a href="#" class="sr-feature-card__link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-feature-card" data-delay="300">
+            <div class="sr-feature-card__icon-row">
+              <div class="sr-feature-card__icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="4" y="12" width="40" height="28" rx="4" stroke="currentColor" stroke-width="1.6"/>
+                  <rect x="10" y="18" width="12" height="8" rx="2" fill="var(--sr-accent-gold)" opacity="0.15" stroke="var(--sr-accent-gold)" stroke-width="1"/>
+                  <rect x="26" y="18" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                  <circle cx="18" cy="36" r="3" fill="var(--sr-accent-gold)" opacity="0.3"/>
+                  <circle cx="30" cy="36" r="3" fill="var(--sr-accent-ruby)" opacity="0.3"/>
+                </svg>
+              </div>
+              <span class="sr-feature-card__number">03</span>
+            </div>
+            <h3 class="sr-feature-card__title">Bidirectional Links</h3>
+            <p class="sr-feature-card__desc">
+              Create a second brain with automatic backlinks. Every connection reveals new insights across your knowledge base.
+            </p>
+            <a href="#" class="sr-feature-card__link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-feature-card" data-delay="450">
+            <div class="sr-feature-card__icon-row">
+              <div class="sr-feature-card__icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M24 14v10l6 6" stroke="var(--sr-accent-gold)" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="36" cy="12" r="5" fill="var(--sr-accent-ruby)" opacity="0.2"/>
+                  <circle cx="36" cy="12" r="2" fill="var(--sr-accent-ruby)" opacity="0.5"/>
+                </svg>
+              </div>
+              <span class="sr-feature-card__number">04</span>
+            </div>
+            <h3 class="sr-feature-card__title">Version History</h3>
+            <p class="sr-feature-card__desc">
+              Every edit is preserved. Travel back in time, compare drafts, and never lose a single word you've written.
+            </p>
+            <a href="#" class="sr-feature-card__link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-feature-card" data-delay="600">
+            <div class="sr-feature-card__icon-row">
+              <div class="sr-feature-card__icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M8 36V12l16-8 16 8v24l-16 8-16-8z" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M24 4v40" stroke="currentColor" stroke-width="1.6" opacity="0.15"/>
+                  <path d="M12 18v12" stroke="var(--sr-accent-gold)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                  <path d="M36 18v12" stroke="var(--sr-accent-ruby)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                </svg>
+              </div>
+              <span class="sr-feature-card__number">05</span>
+            </div>
+            <h3 class="sr-feature-card__title">End-to-End Encrypted</h3>
+            <p class="sr-feature-card__desc">
+              Your thoughts are yours alone. Military-grade encryption ensures your notes remain private, always.
+            </p>
+            <a href="#" class="sr-feature-card__link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-feature-card" data-delay="750">
+            <div class="sr-feature-card__icon-row">
+              <div class="sr-feature-card__icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M16 24l6 6 10-12" stroke="var(--sr-accent-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="34" r="2" fill="var(--sr-accent-ruby)" opacity="0.3"/>
+                  <circle cx="36" cy="34" r="2" fill="var(--sr-accent-ruby)" opacity="0.3"/>
+                </svg>
+              </div>
+              <span class="sr-feature-card__number">06</span>
+            </div>
+            <h3 class="sr-feature-card__title">Smart Search & Filter</h3>
+            <p class="sr-feature-card__desc">
+              Find anything instantly. Full-text search, tag filters, and AI-powered suggestions surface exactly what you need.
+            </p>
+            <a href="#" class="sr-feature-card__link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS
+  ============================================================ -->
+  <section class="sr-how" id="how">
+    <div class="sr-how__bg"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="sr-section-label sr-section-label--light">The Method</p>
+          <h2 class="sr-how__title">From Thought to <span class="sr-text-gold">Manuscript</span></h2>
+          <p class="sr-how__intro">
+            A deliberate workflow that respects your creative process.
+          </p>
+        </div>
+      </div>
+
+      <div class="sr-how__timeline">
+        <div class="sr-how__track"></div>
+
+        <div class="row sr-how__step-row">
+          <div class="col-md-4 col-md-offset-1">
+            <div class="sr-how__step sr-how__step--left">
+              <div class="sr-how__step-number">01</div>
+              <div class="sr-how__step-marker"></div>
+              <h3 class="sr-how__step-title">Capture</h3>
+              <p class="sr-how__step-desc">
+                Jot down a fleeting thought, paste a brilliant quote, or dictate an idea on the go. Capture is frictionless by design — open Scriptor and write.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <div class="sr-how__visual">
+              <svg viewBox="0 0 280 180" fill="none">
+                <rect x="10" y="10" width="260" height="160" rx="8" fill="var(--sr-surface)" stroke="var(--sr-border)" stroke-width="1.2"/>
+                <rect x="24" y="24" width="232" height="14" rx="3" fill="var(--sr-accent-gold)" opacity="0.08"/>
+                <line x1="24" y1="52" x2="200" y2="52" stroke="var(--sr-text-secondary)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                <line x1="24" y1="68" x2="240" y2="68" stroke="var(--sr-text-secondary)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="24" y1="84" x2="180" y2="84" stroke="var(--sr-text-secondary)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                <line x1="24" y1="100" x2="220" y2="100" stroke="var(--sr-text-secondary)" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+                <line x1="24" y1="116" x2="160" y2="116" stroke="var(--sr-text-secondary)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                <line x1="24" y1="132" x2="190" y2="132" stroke="var(--sr-text-secondary)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                <circle cx="248" cy="150" r="8" fill="var(--sr-accent-gold)" opacity="0.12"/>
+                <path d="M244 150l3 3 5-5" stroke="var(--sr-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="row sr-how__step-row">
+          <div class="col-md-5 col-md-offset-1">
+            <div class="sr-how__visual">
+              <svg viewBox="0 0 280 180" fill="none">
+                <rect x="10" y="10" width="120" height="160" rx="6" fill="var(--sr-surface)" stroke="var(--sr-border)" stroke-width="1.2"/>
+                <rect x="150" y="10" width="120" height="74" rx="6" fill="var(--sr-surface)" stroke="var(--sr-border)" stroke-width="1.2"/>
+                <rect x="150" y="96" width="120" height="74" rx="6" fill="var(--sr-surface)" stroke="var(--sr-border)" stroke-width="1.2"/>
+                <rect x="22" y="24" width="96" height="8" rx="2" fill="var(--sr-accent-gold)" opacity="0.12"/>
+                <rect x="22" y="42" width="80" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.3"/>
+                <rect x="22" y="56" width="90" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.2"/>
+                <rect x="22" y="128" width="96" height="8" rx="2" fill="var(--sr-accent-ruby)" opacity="0.12"/>
+                <rect x="22" y="146" width="70" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.3"/>
+                <rect x="162" y="24" width="96" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.3"/>
+                <rect x="162" y="38" width="70" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.2"/>
+                <rect x="162" y="110" width="96" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.3"/>
+                <rect x="162" y="124" width="80" height="6" rx="2" fill="var(--sr-text-secondary)" opacity="0.2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-1">
+            <div class="sr-how__step sr-how__step--right">
+              <div class="sr-how__step-number">02</div>
+              <div class="sr-how__step-marker"></div>
+              <h3 class="sr-how__step-title">Cultivate</h3>
+              <p class="sr-how__step-desc">
+                Nurture your raw ideas into refined notes. Link related concepts, add tags, and let your collection grow organically into interconnected knowledge.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row sr-how__step-row">
+          <div class="col-md-4 col-md-offset-1">
+            <div class="sr-how__step sr-how__step--left">
+              <div class="sr-how__step-number">03</div>
+              <div class="sr-how__step-marker"></div>
+              <h3 class="sr-how__step-title">Share</h3>
+              <p class="sr-how__step-desc">
+                Publish your notes as elegant documents, share notebooks with collaborators, or export to your favorite tools. Your knowledge, amplified.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <div class="sr-how__visual">
+              <svg viewBox="0 0 280 180" fill="none">
+                <rect x="10" y="10" width="260" height="160" rx="8" fill="var(--sr-surface)" stroke="var(--sr-border)" stroke-width="1.2"/>
+                <circle cx="80" cy="70" r="20" fill="var(--sr-accent-ruby)" opacity="0.08"/>
+                <path d="M72 70l6 6 10-10" stroke="var(--sr-accent-ruby)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="160" cy="70" r="28" fill="var(--sr-accent-gold)" opacity="0.06"/>
+                <path d="M150 70l6 6 12-12" stroke="var(--sr-accent-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="120" cy="130" r="24" fill="currentColor" opacity="0.04"/>
+                <path d="M112 130l6 6 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+                <line x1="220" y1="50" x2="250" y2="50" stroke="var(--sr-accent-gold)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="230" y1="50" x2="230" y2="130" stroke="var(--sr-accent-gold)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="220" y1="130" x2="250" y2="130" stroke="var(--sr-accent-gold)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+  <section class="sr-testimonials" id="testimonials">
+    <div class="sr-testimonials__bg"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="sr-section-label">Voices</p>
+          <h2 class="sr-testimonials__title">From the <span class="sr-text-gold">Scriptorium</span></h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="sr-testimonials__carousel" id="srTestimonialCarousel">
+            <div class="sr-testimonial active">
+              <div class="sr-testimonial__ornament">
+                <svg viewBox="0 0 40 16" fill="none" stroke="var(--sr-accent-gold)" stroke-width="1.2" opacity="0.6">
+                  <path d="M0 8h12M16 8h8M28 8h12"/>
+                  <circle cx="14" cy="8" r="1.5" fill="var(--sr-accent-gold)"/>
+                  <circle cx="26" cy="8" r="1.5" fill="var(--sr-accent-gold)"/>
+                </svg>
+              </div>
+              <p class="sr-testimonial__text">
+                "Scriptor has fundamentally changed how I approach research. The bidirectional linking 
+                and atomic organization turned my chaotic collection of notes into a proper knowledge 
+                graph. It's the closest thing to a second brain I've ever used."
+              </p>
+              <div class="sr-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                  alt="Dr. Elena Vasquez"
+                  class="sr-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="sr-testimonial__name">Dr. Elena Vasquez</strong>
+                  <span class="sr-testimonial__role">Research Scientist, MIT</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sr-testimonial">
+              <div class="sr-testimonial__ornament">
+                <svg viewBox="0 0 40 16" fill="none" stroke="var(--sr-accent-gold)" stroke-width="1.2" opacity="0.6">
+                  <path d="M0 8h12M16 8h8M28 8h12"/>
+                  <circle cx="14" cy="8" r="1.5" fill="var(--sr-accent-gold)"/>
+                  <circle cx="26" cy="8" r="1.5" fill="var(--sr-accent-gold)"/>
+                </svg>
+              </div>
+              <p class="sr-testimonial__text">
+                "I've tried every note-taking app in existence. Scriptor is the first that doesn't 
+                get in my way. The dark theme is stunning, the editor is a joy, and the way it 
+                handles knowledge connections feels like magic."
+              </p>
+              <div class="sr-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80"
+                  alt="Marcus Chen"
+                  class="sr-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="sr-testimonial__name">Marcus Chen</strong>
+                  <span class="sr-testimonial__role">Tech Lead, Vercel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sr-testimonial">
+              <div class="sr-testimonial__ornament">
+                <svg viewBox="0 0 40 16" fill="none" stroke="var(--sr-accent-gold)" stroke-width="1.2" opacity="0.6">
+                  <path d="M0 8h12M16 8h8M28 8h12"/>
+                  <circle cx="14" cy="8" r="1.5" fill="var(--sr-accent-gold)"/>
+                  <circle cx="26" cy="8" r="1.5" fill="var(--sr-accent-gold)"/>
+                </svg>
+              </div>
+              <p class="sr-testimonial__text">
+                "As a writer, my notebook is sacred. Scriptor treats it with the reverence it 
+                deserves. The typography is gorgeous, the focus mode is unparalleled, and I've 
+                never written this much, this consistently."
+              </p>
+              <div class="sr-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                  alt="Amara Okafor"
+                  class="sr-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="sr-testimonial__name">Amara Okafor</strong>
+                  <span class="sr-testimonial__role">Author, 'The Digital Quill'</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sr-testimonials__controls">
+              <button class="sr-testimonials__ctrl" id="srTestPrev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="sr-testimonials__dots" id="srTestDots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="sr-testimonials__ctrl" id="srTestNext" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS / TRUST BAR
+  ============================================================ -->
+  <section class="sr-stats">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="sr-stat">
+            <span class="sr-stat__number" data-target="50">0</span>
+            <span class="sr-stat__suffix">K+</span>
+            <span class="sr-stat__label">Active Writers</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="sr-stat">
+            <span class="sr-stat__number" data-target="2">0</span>
+            <span class="sr-stat__suffix">M+</span>
+            <span class="sr-stat__label">Notes Created</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="sr-stat">
+            <span class="sr-stat__number" data-target="98">0</span>
+            <span class="sr-stat__suffix">%</span>
+            <span class="sr-stat__label">Uptime</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="sr-stat">
+            <span class="sr-stat__number" data-target="4.9">0</span>
+            <span class="sr-stat__suffix">★</span>
+            <span class="sr-stat__label">Avg. Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="sr-cta" id="cta">
+    <div class="sr-cta__bg">
+      <div class="sr-cta__pattern"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <p class="sr-section-label sr-section-label--light">Begin Your Practice</p>
+          <h2 class="sr-cta__title">
+            Start Your <span class="sr-text-gold">Writing Practice</span>
+          </h2>
+          <p class="sr-cta__text">
+            Join thousands of writers, researchers, and thinkers who have made Scriptor 
+            their creative sanctuary. Start free, upgrade when you need more.
+          </p>
+          <div class="sr-cta__actions">
+            <a href="#" class="sr-cta__btn sr-cta__btn--primary">
+              Create Free Account
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#" class="sr-cta__btn sr-cta__btn--outline">
+              View Pricing
+            </a>
+          </div>
+          <p class="sr-cta__footnote">No credit card required · Free forever plan available · Cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="sr-footer">
+    <div class="container">
+      <div class="row sr-footer__main">
+        <div class="col-md-4 col-sm-6">
+          <div class="sr-footer__brand">
+            <span class="sr-footer__brand-icon">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                <path d="M8 4h16l4 4v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8l4-4z" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                <path d="M8 4v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                <circle cx="8" cy="18" r="1.5" fill="currentColor"/>
+              </svg>
+            </span>
+            Scriptor
+          </div>
+          <p class="sr-footer__desc">
+            A sanctuary for the written word. Craft notes that endure.
+          </p>
+        </div>
+        <div class="col-md-2 col-sm-6 col-md-offset-1">
+          <h4 class="sr-footer__heading">Product</h4>
+          <ul class="sr-footer__links">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <h4 class="sr-footer__heading">Company</h4>
+          <ul class="sr-footer__links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <h4 class="sr-footer__heading">Legal</h4>
+          <ul class="sr-footer__links">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="sr-footer__divider">
+            <svg viewBox="0 0 120 8" fill="none" stroke="var(--sr-accent-gold)" stroke-width="1" opacity="0.3">
+              <path d="M0 4h36M44 4h32M76 4h36"/>
+              <circle cx="40" cy="4" r="2" fill="var(--sr-accent-gold)"/>
+              <circle cx="80" cy="4" r="2" fill="var(--sr-accent-gold)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="sr-footer__copy">&copy; 2026 Scriptor. All rights reserved. Crafted with intention.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 3 JS -->
+  <script src="../../public/jquery.min.js"></script>
+  <script src="../../public/bootstrap.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
