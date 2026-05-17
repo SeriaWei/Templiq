@@ -10,11 +10,27 @@
   height: 200px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .template-item .thumbnail:hover {
   border-color: #337ab7;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
   transform: translateY(-2px);
+}
+.template-item .thumbnail.selected {
+  border-color: #337ab7;
+  background-color: #e7f3ff;
+}
+.template-item .thumbnail .checkbox-wrapper {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+}
+.template-item .thumbnail .checkbox-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 }
 .template-item .caption {
   padding: 9px;
@@ -29,6 +45,93 @@
   object-fit: contain;
   background-color: #f5f5f5;
 }
+.batch-actions {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: none;
+}
+.batch-actions.active {
+  display: block;
+}
+.batch-actions .selected-count {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.batch-actions .action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.progress-modal .modal-body {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.progress-item {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.progress-item.pending {
+  background-color: #f5f5f5;
+}
+.progress-item.running {
+  background-color: #d9edf7;
+}
+.progress-item.success {
+  background-color: #dff0d8;
+}
+.progress-item.error {
+  background-color: #f2dede;
+}
+.progress-item .status-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-item .progress-bar-wrapper {
+  flex: 1;
+  margin-left: 10px;
+}
+.progress-item .progress-bar {
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-item .progress-bar-fill {
+  height: 100%;
+  background-color: #337ab7;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+.progress-item.running .progress-bar-fill {
+  width: 100%;
+  animation: progress-animation 2s ease-in-out infinite;
+}
+@keyframes progress-animation {
+  0% { width: 0%; margin-left: 0; }
+  50% { width: 70%; margin-left: 15%; }
+  100% { width: 0%; margin-left: 100%; }
+}
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #337ab7;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>
 
 <div class="container-fluid">
@@ -36,11 +139,23 @@
   <h3 class="pull-left">Templiq</h1>
   <a href="javascript:void(0)" style="margin-top: 10px;" class="pull-right btn btn-primary create-template-btn">创建新模板</a>
 </div>
+<div class="batch-actions" id="batchActions">
+  <div class="selected-count">已选择 <span id="selectedCount">0</span> 个模板</div>
+  <div class="action-buttons">
+    <button class="btn btn-success" id="batchCapture">保存缩略图</button>
+    <button class="btn btn-warning" id="batchPack">打包</button>
+    <button class="btn btn-info" id="batchUpload">上传</button>
+    <button class="btn btn-default" id="clearSelection">清除选择</button>
+  </div>
+</div>
   {% if examples and examples.size > 0 %}
     <div class="row">
       {% for example in examples %}
         <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 template-item">
-          <div class="thumbnail">
+          <div class="thumbnail" data-template="{{ example.name }}">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" class="template-checkbox" value="{{ example.name }}">
+            </div>
             <a href="/preview/{{ example.name }}">
               <img src="/thumbs/{{ example.name }}-m.png" alt="{{ example.title }}" onerror="this.src='/thumbs/default.svg'" class="img-responsive">
               <div class="caption text-center">
@@ -78,7 +193,171 @@
     </div>
   {% endif %}
 </div>
+
+<div class="modal fade" id="progressModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="progressModalTitle">批量操作进度</h4>
+      </div>
+      <div class="modal-body progress-modal">
+        <div id="progressSummary" style="margin-bottom: 15px;"></div>
+        <div id="progressList"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+(function() {
+  const checkboxes = document.querySelectorAll('.template-checkbox');
+  const batchActions = document.getElementById('batchActions');
+  const selectedCount = document.getElementById('selectedCount');
+  const clearSelection = document.getElementById('clearSelection');
+  const batchCapture = document.getElementById('batchCapture');
+  const batchPack = document.getElementById('batchPack');
+  const batchUpload = document.getElementById('batchUpload');
+  const progressModal = document.getElementById('progressModal');
+  const progressList = document.getElementById('progressList');
+  const progressSummary = document.getElementById('progressSummary');
+  const progressModalTitle = document.getElementById('progressModalTitle');
+
+  let selectedTemplates = [];
+
+  function updateSelectedCount() {
+    selectedTemplates = Array.from(checkboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
+    selectedCount.textContent = selectedTemplates.length;
+    batchActions.classList.toggle('active', selectedTemplates.length > 0);
+    document.querySelectorAll('.template-item .thumbnail').forEach(thumb => {
+      const cb = thumb.querySelector('.template-checkbox');
+      thumb.classList.toggle('selected', cb.checked);
+    });
+  }
+
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', updateSelectedCount);
+  });
+
+  thumbnails = document.querySelectorAll('.template-item .thumbnail');
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', function(e) {
+      if (e.target.type !== 'checkbox') {
+        const cb = this.querySelector('.template-checkbox');
+        cb.checked = !cb.checked;
+        updateSelectedCount();
+      }
+    });
+  });
+
+  clearSelection.addEventListener('click', function() {
+    checkboxes.forEach(cb => cb.checked = false);
+    updateSelectedCount();
+  });
+
+  function showProgressModal(title) {
+    progressModalTitle.textContent = title;
+    progressList.innerHTML = '';
+    progressSummary.innerHTML = '';
+    $(progressModal).modal('show');
+  }
+
+  function updateProgressItem(template, status, message) {
+    let item = document.getElementById('progress-item-' + template);
+    if (!item) {
+      item = document.createElement('div');
+      item.id = 'progress-item-' + template;
+      item.className = 'progress-item pending';
+      item.innerHTML = '<span class="status-icon"></span><strong>' + template + '</strong><span class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-bar-fill"></div></div></span>';
+      progressList.appendChild(item);
+    }
+    item.className = 'progress-item ' + status;
+    const iconEl = item.querySelector('.status-icon');
+    if (status === 'pending') {
+      iconEl.innerHTML = '';
+    } else if (status === 'running') {
+      iconEl.innerHTML = '<div class="spinner"></div>';
+    } else if (status === 'success') {
+      iconEl.innerHTML = '&#10004;';
+    } else if (status === 'error') {
+      iconEl.innerHTML = '&#10008;';
+    }
+    if (message) {
+      item.innerHTML = '<span class="status-icon"></span><strong>' + template + '</strong><span style="margin-left:10px;color:#666;">' + message + '</span><span class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-bar-fill"></div></div></span>';
+      const iconEl = item.querySelector('.status-icon');
+      if (status === 'success') {
+        iconEl.innerHTML = '&#10004;';
+      } else if (status === 'error') {
+        iconEl.innerHTML = '&#10008;';
+      }
+    }
+  }
+
+  function updateSummary(success, failed, total) {
+    progressSummary.innerHTML = '<strong>完成: ' + success + ' 成功, ' + failed + ' 失败 (共 ' + total + ' 个)</strong>';
+  }
+
+  async function performBatchOperation(operation, apiEndpoint, successMsg) {
+    if (selectedTemplates.length === 0) return;
+
+    showProgressModal(successMsg + ' - 批量操作');
+
+    let success = 0;
+    let failed = 0;
+
+    for (const template of selectedTemplates) {
+      updateProgressItem(template, 'running', '');
+
+      try {
+        const response = await fetch(apiEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ templateName: template })
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          updateProgressItem(template, 'success', data.filename || '完成');
+          success++;
+        } else {
+          updateProgressItem(template, 'error', data.error || '失败');
+          failed++;
+        }
+      } catch (error) {
+        updateProgressItem(template, 'error', error.message || '网络错误');
+        failed++;
+      }
+      updateSummary(success, failed, selectedTemplates.length);
+    }
+
+    setTimeout(() => {
+      alert(successMsg + '完成: ' + success + ' 成功, ' + failed + ' 失败');
+      checkboxes.forEach(cb => cb.checked = false);
+      updateSelectedCount();
+    }, 500);
+  }
+
+  batchCapture.addEventListener('click', function() {
+    if (selectedTemplates.length === 0) return;
+    performBatchOperation('capture', '/api/capture-preview', '保存缩略图');
+  });
+
+  batchPack.addEventListener('click', function() {
+    if (selectedTemplates.length === 0) return;
+    performBatchOperation('pack', '/api/pack', '打包');
+  });
+
+  batchUpload.addEventListener('click', function() {
+    if (selectedTemplates.length === 0) return;
+    performBatchOperation('upload', '/api/upload', '上传');
+  });
+})();
+
 document.querySelector('.create-template-btn').addEventListener('click', function() {
     fetch('/api/create-template', {
       method: 'POST',

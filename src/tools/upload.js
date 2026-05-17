@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.upload = void 0;
+exports.upload = upload;
 const backblaze_b2_1 = __importDefault(require("backblaze-b2"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
@@ -113,7 +113,6 @@ async function upload(template) {
         await uploadTemplate(uploader, bucketId, template);
     }
 }
-exports.upload = upload;
 if (require.main === module) {
     (async () => {
         // const uploader = new B2Uploader();

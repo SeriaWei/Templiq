@@ -3,12 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.closeBrowser = exports.capturePreview = void 0;
+exports.capturePreview = capturePreview;
+exports.closeBrowser = closeBrowser;
 const playwright_1 = require("playwright");
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const sharp_1 = __importDefault(require("sharp"));
-const SCREENSHOT_WIDTH = 1200;
+const SCREENSHOT_WIDTH = 1400;
 const THUMBNAIL_MAX_WIDTH = 500;
 let browser = null;
 async function getBrowser() {
@@ -26,7 +27,7 @@ async function capturePreview(templateName) {
     const page = await b.newPage();
     try {
         // Set viewport width; height will be adjusted after we know element size
-        await page.setViewportSize({ width: SCREENSHOT_WIDTH, height: 800 });
+        await page.setViewportSize({ width: SCREENSHOT_WIDTH, height: 900 });
         // Navigate to the preview page (same server, so already running)
         const url = `http://localhost:3000/preview/${encodeURIComponent(templateName)}`;
         await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
@@ -49,7 +50,7 @@ async function capturePreview(templateName) {
         if (box) {
             await page.setViewportSize({
                 width: SCREENSHOT_WIDTH,
-                height: Math.max(Math.ceil(box.height), 800)
+                height: Math.max(Math.ceil(box.height), 900)
             });
         }
         // Full-size screenshot of the content element
@@ -79,12 +80,10 @@ async function capturePreview(templateName) {
         await page.close();
     }
 }
-exports.capturePreview = capturePreview;
 async function closeBrowser() {
     if (browser) {
         await browser.close();
         browser = null;
     }
 }
-exports.closeBrowser = closeBrowser;
 //# sourceMappingURL=screenshot.js.map
