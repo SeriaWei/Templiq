@@ -1,0 +1,213 @@
+/* ============================================================
+   ABOUT — CrystaMem Memory Industry
+   ============================================================ */
+
+.cm-about {
+  position: relative;
+  padding: 12rem 0 0;
+  background: var(--color-bg, #070b17);
+  overflow: hidden;
+}
+
+/* Section label (shared) */
+.cm-section-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #00d4ff;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.cm-section-label--center {
+  text-align: center;
+  display: inline-block;
+}
+
+.cm-text-gradient {
+  color: transparent;
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Image */
+.cm-about__image-wrapper {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.cm-about__image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cm-about__image-decoration {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.cm-about__image-ring {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 20px;
+}
+
+/* Floating badge */
+.cm-about__floating-badge {
+  position: absolute;
+  bottom: -2rem;
+  right: -1rem;
+  z-index: 3;
+  background: linear-gradient(135deg, rgba(7, 11, 23, 0.95), rgba(12, 19, 38, 0.95));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.6rem 2.4rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cm-about__floating-badge-num {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #00d4ff;
+  line-height: 1;
+}
+
+.cm-about__floating-badge-label {
+  display: block;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.2rem;
+  color: #8899b4;
+  margin-top: 0.4rem;
+  letter-spacing: 0.08em;
+}
+
+/* Content */
+.cm-about__content {
+  padding-top: 2rem;
+}
+
+.cm-about__title {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #e8edf5;
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.04em;
+}
+
+.cm-about__desc {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #8899b4;
+  margin-bottom: 1.6rem;
+}
+
+/* Stats */
+.cm-about__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cm-about__stat {
+  text-align: center;
+  position: relative;
+}
+
+.cm-about__stat-num {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #e8edf5;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.cm-about__stat-label {
+  display: block;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.2rem;
+  color: #8899b4;
+  letter-spacing: 0.06em;
+}
+
+.cm-about__stat-suffix {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #00d4ff;
+  position: absolute;
+  top: 0;
+  right: -0.4rem;
+}
+
+/* Decorative divider */
+.cm-about__divider {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin-top: -1px;
+  overflow: hidden;
+}
+
+.cm-about__divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .cm-about {
+    padding: 6rem 0 0;
+  }
+
+  .cm-about__title {
+    font-size: 3rem;
+  }
+
+  .cm-about__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .cm-about__stat-num {
+    font-size: 2.8rem;
+  }
+
+  .cm-about__floating-badge {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: -2rem;
+    display: inline-block;
+  }
+}

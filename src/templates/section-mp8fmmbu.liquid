@@ -1,0 +1,184 @@
+<!-- 核心技术 -->
+{% header %}
+<style>
+.cm-section-label { font-size: 1.2rem; font-weight: 500; color: #00d4ff; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.2rem; display: inline-block; font-family: 'Orbitron', sans-serif; }
+.cm-text-gradient { color: transparent; background: linear-gradient(135deg, #00d4ff, #7c3aed); -webkit-background-clip: text; background-clip: text; }
+.cm-tech-card__metric-val { font-family: 'Orbitron', sans-serif; }
+.cm-tech__title, .cm-tech__intro, .cm-tech-card__title, .cm-tech-card__desc, .cm-tech-card__metric-unit, .cm-tech__pipeline-title, .cm-tech__pipeline-step span { font-family: 'Noto Sans SC', sans-serif; }
+.cm-tech {
+  position: relative;
+  padding: 10rem 0;
+  background: #0c1326;
+  overflow: hidden;
+}
+.cm-tech__bg-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cm-tech__title { font-size: 4.2rem; font-weight: 700; color: #e8edf5; margin-bottom: 1.6rem; letter-spacing: 0.04em; }
+.cm-tech__intro { font-size: 1.7rem; font-weight: 300; color: #8899b4; max-width: 54rem; margin: 0 auto 5rem; line-height: 1.7; }
+.cm-tech__grid { position: relative; z-index: 1; }
+.cm-tech-card {
+  text-align: center;
+  padding: 4rem 3rem;
+  background: rgba(7, 11, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.cm-tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.cm-tech-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+.cm-tech-card:hover::before { opacity: 1; }
+.cm-tech-card__icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+  width: 7rem;
+  height: 6rem;
+}
+.cm-tech-card__hex {
+  position: absolute;
+  inset: 0;
+  color: rgba(0, 212, 255, 0.15);
+  transition: all 0.4s ease;
+}
+.cm-tech-card:hover .cm-tech-card__hex { color: rgba(0, 212, 255, 0.35); transform: rotate(30deg); }
+.cm-tech-card__hex svg { width: 100%; height: 100%; }
+.cm-tech-card__icon-inner {
+  position: relative;
+  z-index: 1;
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #00d4ff;
+  transition: all 0.4s ease;
+}
+.cm-tech-card:hover .cm-tech-card__icon-inner { transform: scale(1.1); color: #33ddff; }
+.cm-tech-card__title { font-size: 2rem; font-weight: 700; color: #e8edf5; margin-bottom: 1.2rem; letter-spacing: 0.02em; }
+.cm-tech-card__desc { font-size: 1.4rem; font-weight: 300; color: #8899b4; line-height: 1.8; margin-bottom: 2rem; }
+.cm-tech-card__metric {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  padding: 0.6rem 1.6rem;
+  border-radius: 50px;
+}
+.cm-tech-card__metric-val { font-size: 2.4rem; font-weight: 700; color: #00d4ff; line-height: 1; }
+.cm-tech-card__metric-unit { font-size: 1.2rem; color: #8899b4; }
+.cm-tech__pipeline {
+  margin-top: 6rem;
+  padding: 4rem;
+  background: rgba(7, 11, 23, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+.cm-tech__pipeline-title { font-size: 1.8rem; font-weight: 500; color: #e8edf5; text-align: center; margin-bottom: 3rem; letter-spacing: 0.04em; }
+.cm-tech__pipeline-steps { display: flex; align-items: center; justify-content: center; gap: 1.6rem; flex-wrap: wrap; }
+.cm-tech__pipeline-step { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.cm-tech__pipeline-step-icon {
+  width: 5rem; height: 5rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 50%;
+  color: #00d4ff;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+}
+.cm-tech__pipeline-step:hover .cm-tech__pipeline-step-icon {
+  background: rgba(0, 212, 255, 0.12);
+  border-color: rgba(0, 212, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.1);
+}
+.cm-tech__pipeline-step span { font-size: 1.3rem; color: #8899b4; letter-spacing: 0.04em; }
+.cm-tech__pipeline-connector { width: 4rem; height: 1px; background: linear-gradient(90deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.1), transparent); flex-shrink: 0; }
+@media (max-width: 767px) {
+  .cm-tech { padding: 6rem 0; }
+  .cm-tech__title { font-size: 3rem; }
+}
+</style>
+{% endheader %}
+
+<section class="cm-tech">
+  <div class="cm-tech__bg-pattern"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h6 class="cm-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</h6>
+        <h2 class="cm-tech__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+        {% if this.Model.intro %}
+        <p class="cm-tech__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row cm-tech__grid">
+      {% for card in this.Model.tech_cards %}
+      <div class="col-md-4">
+        <div class="cm-tech-card">
+          <div class="cm-tech-card__icon-wrap">
+            <div class="cm-tech-card__hex">
+              {{card.svg_hex | raw}}
+            </div>
+            <div class="cm-tech-card__icon-inner">
+              {{card.svg_icon | raw}}
+            </div>
+          </div>
+          <h3 class="cm-tech-card__title" property="true" data-property="tech_cards[{{forloop.index0}}].title" method="text">{{card.title}}</h3>
+          <p class="cm-tech-card__desc" property="true" data-property="tech_cards[{{forloop.index0}}].desc" method="text">{{card.desc}}</p>
+          <div class="cm-tech-card__metric">
+            <span class="cm-tech-card__metric-val" property="true" data-property="tech_cards[{{forloop.index0}}].metric_val" method="text">{{card.metric_val}}</span>
+            <span class="cm-tech-card__metric-unit" property="true" data-property="tech_cards[{{forloop.index0}}].metric_unit" method="text">{{card.metric_unit}}</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cm-tech__pipeline">
+          {% if this.Model.pipeline_title %}
+          <div class="cm-tech__pipeline-title" property="true" data-property="pipeline_title" method="text">{{this.Model.pipeline_title}}</div>
+          {% endif %}
+          <div class="cm-tech__pipeline-steps">
+            {% for step in this.Model.pipeline_steps %}
+            <div class="cm-tech__pipeline-step">
+              <div class="cm-tech__pipeline-step-icon">
+                {{step.svg_icon | raw}}
+              </div>
+              <span property="true" data-property="pipeline_steps[{{forloop.index0}}].label" method="text">{{step.label}}</span>
+            </div>
+            {% if forloop.last == false %}
+            <div class="cm-tech__pipeline-connector"></div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

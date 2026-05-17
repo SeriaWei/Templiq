@@ -7,6 +7,7 @@ import sharp from 'sharp';
 import { packWidget } from './tools/pack';
 import { createNewSection } from './tools/new-section';
 import * as B2 from './tools/upload';
+import { capturePreview } from './screenshot';
 
 interface Example {
   name: string;
@@ -193,49 +194,24 @@ app.get('/preview/:template', async (req: Request, res: Response) => {
   }
 });
 
-app.post('/api/save-preview', async (req: Request, res: Response) => {
+app.post('/api/capture-preview', async (req: Request, res: Response) => {
   try {
-    const { originalImageData, thumbnailImageData, templateName } = req.body;
-    if (!originalImageData || !thumbnailImageData) {
-      return res.status(400).json({ success: false, error: '未提供图片数据' });
-    }
+    const { templateName } = req.body;
     if (!templateName) {
       return res.status(400).json({ success: false, error: '未提供模板名称' });
     }
 
-    const thumbsDir = path.resolve(__dirname, 'public/thumbs');
-    if (!fs.existsSync(thumbsDir)) {
-      fs.mkdirSync(thumbsDir, { recursive: true });
-    }
-
-    const originalBase64Data = originalImageData.replace(/^data:image\/[^;]+;base64,/, '');
-    const originalImageBuffer = Buffer.from(originalBase64Data, 'base64');
-    const originalFilename = `${templateName}.png`;
-    const originalFilePath = path.join(thumbsDir, originalFilename);
-    
-    await sharp(originalImageBuffer)
-      .png({ quality: 70, compressionLevel: 9 })
-      .toFile(originalFilePath);
-
-    const thumbnailBase64Data = thumbnailImageData.replace(/^data:image\/[^;]+;base64,/, '');
-    const thumbnailImageBuffer = Buffer.from(thumbnailBase64Data, 'base64');
-    const thumbnailFilename = `${templateName}-m.png`;
-    const thumbnailFilePath = path.join(thumbsDir, thumbnailFilename);
-    
-    await sharp(thumbnailImageBuffer)
-      .png({ quality: 90, compressionLevel: 9 })
-      .toFile(thumbnailFilePath);
+    const result = await capturePreview(templateName);
 
     res.json({
       success: true,
-      originalFilename,
-      thumbnailFilename
+      ...result
     });
   } catch (error) {
-    console.error('保存预览图失败:', error);
+    console.error('截图失败:', error);
     res.status(500).json({
       success: false,
-      error: error instanceof Error ? error.message : '保存预览图时发生未知错误'
+      error: error instanceof Error ? error.message : '截图时发生未知错误'
     });
   }
 });

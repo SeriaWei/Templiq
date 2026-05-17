@@ -1,0 +1,66 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "intro": {
+        "FieldType": "Paragraph",
+        "DisplayName": "简介"
+    },
+    "tech_cards": {
+        "FieldType": "Array",
+        "DisplayName": "技术卡片",
+        "Children": [
+            {
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "desc": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                },
+                "metric_val": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "指标数值"
+                },
+                "metric_unit": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "指标单位"
+                },
+                "svg_hex": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "六边形SVG"
+                },
+                "svg_icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                }
+            }
+        ]
+    },
+    "pipeline_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "流程标题"
+    },
+    "pipeline_steps": {
+        "FieldType": "Array",
+        "DisplayName": "流程步骤",
+        "Children": [
+            {
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "步骤名称"
+                },
+                "svg_icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "步骤图标SVG"
+                }
+            }
+        ]
+    }
+}

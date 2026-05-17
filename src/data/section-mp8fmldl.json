@@ -1,0 +1,67 @@
+{
+    "section_label": "产品中心",
+    "title": "全场景存储 产品矩阵",
+    "intro": "覆盖企业级到消费级，满足不同场景下的数据存储需求",
+    "products": [
+        {
+            "tag": "旗舰",
+            "tag_hot": false,
+            "title": "DDR5 内存模组",
+            "desc": "采用最新制程工艺，频率可达 8000MT/s，为数据中心与高性能计算提供极致带宽。",
+            "specs": [
+                {
+                    "spec": "容量: 16GB - 256GB"
+                },
+                {
+                    "spec": "频率: 4800 - 8000 MT/s"
+                },
+                {
+                    "spec": "时序: CL30 - CL40"
+                }
+            ],
+            "link_text": "详细了解",
+            "link": "#",
+            "svg_icon": "<svg viewBox=\"0 0 64 64\" fill=\"none\"><rect x=\"8\" y=\"8\" width=\"48\" height=\"40\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"14\" y=\"18\" width=\"8\" height=\"6\" rx=\"1\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"26\" y=\"18\" width=\"8\" height=\"6\" rx=\"1\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"38\" y=\"18\" width=\"8\" height=\"6\" rx=\"1\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"14\" y=\"28\" width=\"8\" height=\"6\" rx=\"1\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"26\" y=\"28\" width=\"8\" height=\"6\" rx=\"1\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"38\" y=\"28\" width=\"8\" height=\"6\" rx=\"1\" fill=\"currentColor\" opacity=\"0.3\"/><circle cx=\"32\" cy=\"44\" r=\"3\" fill=\"currentColor\" opacity=\"0.8\"/></svg>"
+        },
+        {
+            "tag": "热销",
+            "tag_hot": true,
+            "title": "NVMe SSD 固态硬盘",
+            "desc": "PCIe 5.0 接口，连续读取速度高达 14,000 MB/s，重新定义存储性能边界。",
+            "specs": [
+                {
+                    "spec": "容量: 512GB - 8TB"
+                },
+                {
+                    "spec": "接口: PCIe 5.0 x4"
+                },
+                {
+                    "spec": "速度: 14,000 MB/s 读取"
+                }
+            ],
+            "link_text": "详细了解",
+            "link": "#",
+            "svg_icon": "<svg viewBox=\"0 0 64 64\" fill=\"none\"><rect x=\"12\" y=\"8\" width=\"40\" height=\"48\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"18\" y=\"14\" width=\"28\" height=\"20\" rx=\"2\" fill=\"currentColor\" opacity=\"0.15\"/><circle cx=\"38\" cy=\"46\" r=\"4\" fill=\"currentColor\" opacity=\"0.8\"/><circle cx=\"32\" cy=\"46\" r=\"2\" fill=\"currentColor\" opacity=\"0.9\"/><line x1=\"18\" y1=\"42\" x2=\"32\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"0.4\"/><line x1=\"18\" y1=\"38\" x2=\"26\" y2=\"38\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"0.4\"/></svg>"
+        },
+        {
+            "tag": "工业级",
+            "tag_hot": false,
+            "title": "工业闪存存储",
+            "desc": "宽温设计，高可靠性，适用于工业控制、车载系统及物联网边缘计算设备。",
+            "specs": [
+                {
+                    "spec": "容量: 8GB - 2TB"
+                },
+                {
+                    "spec": "温度: -40°C ~ 85°C"
+                },
+                {
+                    "spec": "耐久: 3K P/E 周期"
+                }
+            ],
+            "link_text": "详细了解",
+            "link": "#",
+            "svg_icon": "<svg viewBox=\"0 0 64 64\" fill=\"none\"><rect x=\"20\" y=\"6\" width=\"24\" height=\"34\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"24\" y=\"44\" width=\"16\" height=\"14\" rx=\"2\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"32\" y1=\"24\" x2=\"32\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"27\" y1=\"29\" x2=\"37\" y2=\"29\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"26\" y=\"10\" width=\"12\" height=\"8\" rx=\"1\" fill=\"currentColor\" opacity=\"0.2\"/></svg>"
+        }
+    ]
+}

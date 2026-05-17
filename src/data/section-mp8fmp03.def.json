@@ -1,0 +1,107 @@
+{
+    "brand_icon": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌图标"
+    },
+    "brand_name": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌名称"
+    },
+    "desc": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述"
+    },
+    "social_links": {
+        "FieldType": "Array",
+        "DisplayName": "社交链接",
+        "Children": [
+            {
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "名称"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                },
+                "svg_icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                }
+            }
+        ]
+    },
+    "quick_links_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "快速链接标题"
+    },
+    "quick_links": {
+        "FieldType": "Array",
+        "DisplayName": "快速链接列表",
+        "Children": [
+            {
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                }
+            }
+        ]
+    },
+    "product_series_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "产品系列标题"
+    },
+    "product_series": {
+        "FieldType": "Array",
+        "DisplayName": "产品系列列表",
+        "Children": [
+            {
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                }
+            }
+        ]
+    },
+    "contact_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "联系我们标题"
+    },
+    "contact_items": {
+        "FieldType": "Array",
+        "DisplayName": "联系方式",
+        "Children": [
+            {
+                "svg_icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "内容"
+                }
+            }
+        ]
+    },
+
+    "copyright": {
+        "FieldType": "SingleLine",
+        "DisplayName": "版权信息"
+    },
+    "privacy_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "隐私政策链接"
+    },
+    "terms_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "服务条款链接"
+    }
+}

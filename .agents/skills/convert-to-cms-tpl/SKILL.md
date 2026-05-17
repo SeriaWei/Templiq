@@ -18,6 +18,7 @@ description: Convert an design(Html pages in src/designs/<design-name> folder) t
 
 - 模板中不需要引用bootstrap，jQuery等基础库，ZKEACMS已包含基础库。
 - **必须**保证模板(src/templates/{template-name}.liquid)，数据(src/data/{template-name}.json)和字段定义(src/data/{template-name}.def.json)三者的一致性。
+- 同一个模板可能会在一个页面中多次使用，模板中的JavaScript要确保只处理当前模板实例，要避免处理到其他模板实例，以免冲突。
 
 # 模板规范
 - 模板的第一行用HTML注释写上模板的中文名字，要简短，不要出现“区块”，“模板”之类的字眼

@@ -1,0 +1,160 @@
+/* ============================================================
+   TESTIMONIALS — CrystaMem Memory Industry
+   ============================================================ */
+
+.cm-testimonials {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--color-bg, #070b17);
+}
+
+.cm-testimonials__title {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 4.2rem;
+  font-weight: 700;
+  color: #e8edf5;
+  margin-bottom: 5rem;
+  letter-spacing: 0.04em;
+}
+
+/* Carousel */
+.cm-testimonials__carousel {
+  position: relative;
+}
+
+.cm-testimonial {
+  text-align: center;
+  display: none;
+  animation: fadeIn 0.6s ease;
+}
+
+.cm-testimonial.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cm-testimonial__quote-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 2.4rem;
+  color: rgba(0, 212, 255, 0.15);
+}
+
+.cm-testimonial__text {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #c8d0dc;
+  max-width: 70rem;
+  margin: 0 auto 3.2rem;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.cm-testimonial__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.cm-testimonial__avatar {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 212, 255, 0.15);
+}
+
+.cm-testimonial__name {
+  display: block;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e8edf5;
+  margin-bottom: 0.2rem;
+}
+
+.cm-testimonial__role {
+  display: block;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.3rem;
+  color: #8899b4;
+  letter-spacing: 0.02em;
+}
+
+/* Controls */
+.cm-testimonials__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  margin-top: 4rem;
+}
+
+.cm-testimonials__btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 4.8rem;
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #8899b4;
+  transition: all 0.3s ease;
+  padding: 1.2rem;
+}
+
+.cm-testimonials__btn:hover {
+  border-color: #00d4ff;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.cm-testimonials__dots {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.cm-testimonials__dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cm-testimonials__dots span.active {
+  background: #00d4ff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+  width: 2.4rem;
+  border-radius: 4px;
+}
+
+.cm-testimonials__dots span:hover {
+  background: rgba(0, 212, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .cm-testimonials {
+    padding: 6rem 0;
+  }
+
+  .cm-testimonials__title {
+    font-size: 3rem;
+  }
+
+  .cm-testimonial__text {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+}

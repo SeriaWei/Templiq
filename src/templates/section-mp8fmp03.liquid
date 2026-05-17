@@ -1,0 +1,106 @@
+<!-- 页脚 -->
+{% header %}
+<style>
+.cm-footer, .cm-footer__brand-name, .cm-footer__desc, .cm-footer__heading, .cm-footer__links li a, .cm-footer__contact li, .cm-footer__copyright { font-family: 'Noto Sans SC', sans-serif; }
+.cm-footer { position: relative; background: #0c1326; }
+.cm-footer__wave { position: relative; width: 100%; height: 60px; margin-bottom: -1px; overflow: hidden; }
+.cm-footer__wave svg { width: 100%; height: 100%; display: block; }
+.cm-footer__main { padding: 6rem 0 4rem; }
+.cm-footer__brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; }
+.cm-footer__brand-icon { font-size: 2.8rem; line-height: 1; color: #00d4ff; text-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+.cm-footer__brand-name { font-size: 2.2rem; font-weight: 700; color: #e8edf5; letter-spacing: 0.05em; }
+.cm-footer__desc { font-size: 1.4rem; line-height: 1.8; color: #6b7a99; margin-bottom: 2.4rem; max-width: 32rem; }
+.cm-footer__social { display: flex; gap: 1.2rem; }
+.cm-footer__social-link {
+  width: 4rem; height: 4rem;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%; color: #8899b4;
+  transition: all 0.3s ease;
+  padding: 1rem;
+}
+.cm-footer__social-link:hover { border-color: #00d4ff; color: #00d4ff; background: rgba(0, 212, 255, 0.06); transform: translateY(-2px); text-decoration: none; }
+.cm-footer__heading { font-size: 1.5rem; font-weight: 700; color: #e8edf5; margin-bottom: 2rem; letter-spacing: 0.04em; }
+.cm-footer__links { list-style: none; padding: 0; margin: 0; }
+.cm-footer__links li { margin-bottom: 0.8rem; }
+.cm-footer__links li a { font-size: 1.4rem; color: #6b7a99; text-decoration: none; transition: all 0.3s ease; }
+.cm-footer__links li a:hover { color: #00d4ff; padding-left: 4px; }
+.cm-footer__contact { list-style: none; padding: 0; margin: 0 0 2.4rem; }
+.cm-footer__contact li { font-size: 1.4rem; color: #6b7a99; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; line-height: 1.5; }
+.cm-footer__contact li svg { width: 1.6rem; height: 1.6rem; flex-shrink: 0; color: #00d4ff; opacity: 0.6; }
+
+.cm-footer__bottom { border-top: 1px solid rgba(255, 255, 255, 0.04); padding: 2rem 0; }
+.cm-footer__copyright { font-size: 1.3rem; color: #4a5a7a; margin: 0; letter-spacing: 0.03em; }
+.cm-footer__copyright a { color: #6b7a99; text-decoration: none; transition: color 0.3s ease; }
+.cm-footer__copyright a:hover { color: #00d4ff; }
+@media (max-width: 767px) {
+  .cm-footer__main { padding: 4rem 0 2rem; }
+  .cm-footer__heading { margin-top: 2rem; }
+}
+</style>
+{% endheader %}
+
+<footer class="cm-footer">
+  <div class="cm-footer__wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#070b17"/>
+    </svg>
+  </div>
+  <div class="cm-footer__main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="cm-footer__brand">
+            <span class="cm-footer__brand-icon" property="true" data-property="brand_icon" method="text">{{this.Model.brand_icon}}</span>
+            <span class="cm-footer__brand-name" property="true" data-property="brand_name" method="text">{{this.Model.brand_name}}</span>
+          </div>
+          <p class="cm-footer__desc" property="true" data-property="desc" method="text">{{this.Model.desc}}</p>
+          <div class="cm-footer__social">
+            {% for social in this.Model.social_links %}
+            <a property="true" data-property="social_links[{{forloop.index0}}].url" method="attr" para="href" href="{% url social.url %}" class="cm-footer__social-link" aria-label="{{social.name}}">
+              {{social.svg_icon | raw}}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h5 class="cm-footer__heading" property="true" data-property="quick_links_label" method="text">{{this.Model.quick_links_label}}</h5>
+          <ul class="cm-footer__links">
+            {% for link in this.Model.quick_links %}
+            <li><a property="true" data-property="quick_links[{{forloop.index0}}].url" method="attr" para="href" href="{% url link.url %}">{{link.label}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5 class="cm-footer__heading" property="true" data-property="product_series_label" method="text">{{this.Model.product_series_label}}</h5>
+          <ul class="cm-footer__links">
+            {% for series in this.Model.product_series %}
+            <li><a property="true" data-property="product_series[{{forloop.index0}}].url" method="attr" para="href" href="{% url series.url %}">{{series.label}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="cm-footer__heading" property="true" data-property="contact_label" method="text">{{this.Model.contact_label}}</h5>
+          <ul class="cm-footer__contact">
+            {% for contact in this.Model.contact_items %}
+            <li>
+              {{contact.svg_icon | raw}}
+              <span property="true" data-property="contact_items[{{forloop.index0}}].text" method="text">{{contact.text}}</span>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cm-footer__bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="cm-footer__copyright" property="true" data-property="copyright" method="text">{{this.Model.copyright}} | <a property="true" data-property="privacy_link" method="attr" para="href" href="{% url this.Model.privacy_link %}">隐私政策</a> · <a property="true" data-property="terms_link" method="attr" para="href" href="{% url this.Model.terms_link %}">服务条款</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

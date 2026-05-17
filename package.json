@@ -19,6 +19,7 @@
     "express": "^4.18.1",
     "liquidjs": "^10.0.0",
     "node-fetch": "^3.3.2",
+    "playwright": "^1.60.0",
     "sharp": "^0.34.1"
   },
   "devDependencies": {

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晶存科技 · CrystaMem — 存储记忆 赋能未来</title>
+  <meta name="description" content="晶存科技 — 高端存储解决方案领导者，专注内存、固态硬盘与闪存产品的研发与制造。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 3 (local) -->
+  <link rel="stylesheet" href="../../public/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/bootstrap-theme.min.css">
+
+  <!-- CSS Modules (Section-Scoped) -->
+  <link rel="stylesheet" href="css/Navbar.module.css">
+  <link rel="stylesheet" href="css/Hero.module.css">
+  <link rel="stylesheet" href="css/About.module.css">
+  <link rel="stylesheet" href="css/Products.module.css">
+  <link rel="stylesheet" href="css/Technology.module.css">
+  <link rel="stylesheet" href="css/Testimonials.module.css">
+  <link rel="stylesheet" href="css/Footer.module.css">
+
+  <!-- HTML5 shim & Respond.js for IE8 -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="cm-navbar" id="cmNavbar">
+    <div class="container">
+      <div class="cm-navbar__inner">
+        <a href="#" class="cm-navbar__brand">
+          <span class="cm-navbar__brand-icon">◇</span>
+          <span class="cm-navbar__brand-text">晶存科技</span>
+          <span class="cm-navbar__brand-en">CrystaMem</span>
+        </a>
+        <button class="cm-navbar__toggle" id="navToggle" aria-label="切换菜单">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="cm-navbar__links" id="navLinks">
+          <li><a href="#hero" class="active">首页</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#products">产品中心</a></li>
+          <li><a href="#technology">核心技术</a></li>
+          <li><a href="#testimonials">客户认可</a></li>
+          <li><a href="#footer">联系我们</a></li>
+        </ul>
+        <a href="#footer" class="cm-navbar__cta">咨询报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="cm-hero" id="hero">
+    <!-- Animated background canvas -->
+    <canvas id="heroCanvas" class="cm-hero__canvas"></canvas>
+
+    <div class="cm-hero__overlay"></div>
+
+    <div class="cm-hero__content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="cm-hero__badge">
+              <span class="cm-hero__badge-dot"></span>
+              高端存储解决方案领导者
+            </div>
+            <h1 class="cm-hero__title">
+              <span class="cm-hero__title-line">存储记忆</span>
+              <span class="cm-hero__title-line cm-hero__title-line--accent">赋能未来</span>
+            </h1>
+            <p class="cm-hero__subtitle">
+              从晶圆到数据中心，晶存科技以领先的半导体技术，为全球客户提供安全、高速、可靠的存储解决方案。
+            </p>
+            <div class="cm-hero__actions">
+              <a href="#products" class="cm-hero__btn cm-hero__btn--primary">
+                探索产品
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#about" class="cm-hero__btn cm-hero__btn--outline">
+                了解更多
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="cm-hero__scroll">
+      <span>向下探索</span>
+      <div class="cm-hero__scroll-arrow"></div>
+    </div>
+
+    <!-- Decorative crystal elements -->
+    <div class="cm-hero__crystal cm-hero__crystal--1"></div>
+    <div class="cm-hero__crystal cm-hero__crystal--2"></div>
+    <div class="cm-hero__crystal cm-hero__crystal--3"></div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="cm-about" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="cm-about__image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
+              alt="晶存科技晶圆实验室"
+              class="cm-about__image"
+              loading="lazy"
+            >
+            <div class="cm-about__image-decoration">
+              <div class="cm-about__image-ring"></div>
+            </div>
+            <!-- Floating badge -->
+            <div class="cm-about__floating-badge">
+              <span class="cm-about__floating-badge-num">20+</span>
+              <span class="cm-about__floating-badge-label">年行业深耕</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-md-offset-1">
+          <div class="cm-about__content">
+            <h6 class="cm-section-label">关于晶存</h6>
+            <h2 class="cm-about__title">
+              以芯为核<br>
+              <span class="cm-text-gradient">存储无限可能</span>
+            </h2>
+            <p class="cm-about__desc">
+              晶存科技（CrystaMem）成立于2005年，是一家专注于半导体存储器研发、制造与销售的高科技企业。我们致力于为数据中心、企业级应用、消费电子及工业控制等领域提供全方位的存储解决方案。
+            </p>
+            <p class="cm-about__desc">
+              从先进的3D NAND闪存技术到高速DDR5内存模组，晶存科技始终坚持技术创新与品质至上的理念，产品已远销全球80多个国家和地区，服务超过2000家企业客户。
+            </p>
+            <div class="cm-about__stats">
+              <div class="cm-about__stat">
+                <span class="cm-about__stat-num" data-count="2005">0</span>
+                <span class="cm-about__stat-label">成立年份</span>
+              </div>
+              <div class="cm-about__stat">
+                <span class="cm-about__stat-num" data-count="2000">0</span>
+                <span class="cm-about__stat-label">服务客户</span>
+                <span class="cm-about__stat-suffix">+</span>
+              </div>
+              <div class="cm-about__stat">
+                <span class="cm-about__stat-num" data-count="80">0</span>
+                <span class="cm-about__stat-label">覆盖国家</span>
+                <span class="cm-about__stat-suffix">+</span>
+              </div>
+              <div class="cm-about__stat">
+                <span class="cm-about__stat-num" data-count="300">0</span>
+                <span class="cm-about__stat-label">技术专利</span>
+                <span class="cm-about__stat-suffix">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative divider -->
+    <div class="cm-about__divider">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 Q180,0 360,40 Q540,80 720,40 Q900,0 1080,40 Q1260,80 1440,40 L1440,80 L0,80 Z" fill="var(--color-bg)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section class="cm-products" id="products">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="cm-section-label cm-section-label--center">产品中心</h6>
+          <h2 class="cm-products__title">全场景存储 <span class="cm-text-gradient">产品矩阵</span></h2>
+          <p class="cm-products__intro">
+            覆盖企业级到消费级，满足不同场景下的数据存储需求
+          </p>
+        </div>
+      </div>
+
+      <div class="row cm-products__grid">
+        <!-- Product 1: DDR5 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="cm-product-card">
+            <div class="cm-product-card__visual">
+              <div class="cm-product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="8" y="12" width="48" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                  <rect x="14" y="18" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+                  <rect x="26" y="18" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+                  <rect x="38" y="18" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+                  <rect x="14" y="28" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+                  <rect x="26" y="28" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+                  <rect x="38" y="28" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+                  <circle cx="32" cy="44" r="3" fill="currentColor" opacity="0.8"/>
+                </svg>
+              </div>
+              <div class="cm-product-card__glow"></div>
+            </div>
+            <div class="cm-product-card__body">
+              <span class="cm-product-card__tag">旗舰</span>
+              <h3 class="cm-product-card__title">DDR5 内存模组</h3>
+              <p class="cm-product-card__desc">
+                采用最新制程工艺，频率可达 8000MT/s，为数据中心与高性能计算提供极致带宽。
+              </p>
+              <ul class="cm-product-card__specs">
+                <li>容量: 16GB - 256GB</li>
+                <li>频率: 4800 - 8000 MT/s</li>
+                <li>时序: CL30 - CL40</li>
+              </ul>
+              <a href="#" class="cm-product-card__link">
+                详细了解 <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: SSD -->
+        <div class="col-md-4 col-sm-6">
+          <div class="cm-product-card cm-product-card--featured">
+            <div class="cm-product-card__visual">
+              <div class="cm-product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="12" y="8" width="40" height="48" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <rect x="18" y="14" width="28" height="20" rx="2" fill="currentColor" opacity="0.15"/>
+                  <circle cx="38" cy="46" r="4" fill="currentColor" opacity="0.8"/>
+                  <circle cx="32" cy="46" r="2" fill="var(--color-bg)" opacity="0.9"/>
+                  <line x1="18" y1="42" x2="32" y2="42" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="18" y1="38" x2="26" y2="38" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                </svg>
+              </div>
+              <div class="cm-product-card__glow"></div>
+            </div>
+            <div class="cm-product-card__body">
+              <span class="cm-product-card__tag cm-product-card__tag--hot">热销</span>
+              <h3 class="cm-product-card__title">NVMe SSD 固态硬盘</h3>
+              <p class="cm-product-card__desc">
+                PCIe 5.0 接口，连续读取速度高达 14,000 MB/s，重新定义存储性能边界。
+              </p>
+              <ul class="cm-product-card__specs">
+                <li>容量: 512GB - 8TB</li>
+                <li>接口: PCIe 5.0 x4</li>
+                <li>速度: 14,000 MB/s 读取</li>
+              </ul>
+              <a href="#" class="cm-product-card__link">
+                详细了解 <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Flash -->
+        <div class="col-md-4 col-sm-6">
+          <div class="cm-product-card">
+            <div class="cm-product-card__visual">
+              <div class="cm-product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="20" y="6" width="24" height="34" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <rect x="24" y="44" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <line x1="32" y1="24" x2="32" y2="34" stroke="currentColor" stroke-width="2"/>
+                  <line x1="27" y1="29" x2="37" y2="29" stroke="currentColor" stroke-width="2"/>
+                  <rect x="26" y="10" width="12" height="8" rx="1" fill="currentColor" opacity="0.2"/>
+                </svg>
+              </div>
+              <div class="cm-product-card__glow"></div>
+            </div>
+            <div class="cm-product-card__body">
+              <span class="cm-product-card__tag">工业级</span>
+              <h3 class="cm-product-card__title">工业闪存存储</h3>
+              <p class="cm-product-card__desc">
+                宽温设计，高可靠性，适用于工业控制、车载系统及物联网边缘计算设备。
+              </p>
+              <ul class="cm-product-card__specs">
+                <li>容量: 8GB - 2TB</li>
+                <li>温度: -40°C ~ 85°C</li>
+                <li>耐久: 3K P/E 周期</li>
+              </ul>
+              <a href="#" class="cm-product-card__link">
+                详细了解 <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TECHNOLOGY ==================== -->
+  <section class="cm-tech" id="technology">
+    <!-- Background decorative pattern -->
+    <div class="cm-tech__bg-pattern"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="cm-section-label cm-section-label--center">核心技术</h6>
+          <h2 class="cm-tech__title">三大核心 <span class="cm-text-gradient">技术优势</span></h2>
+          <p class="cm-tech__intro">
+            持续投入研发创新，构建从芯片设计到系统集成的完整技术体系
+          </p>
+        </div>
+      </div>
+
+      <div class="row cm-tech__grid">
+        <div class="col-md-4">
+          <div class="cm-tech-card">
+            <div class="cm-tech-card__icon-wrap">
+              <div class="cm-tech-card__hex">
+                <svg viewBox="0 0 60 52">
+                  <polygon points="30,2 56,15 56,37 30,50 4,37 4,15" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="cm-tech-card__icon-inner">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="cm-tech-card__title">3D NAND 堆叠技术</h3>
+            <p class="cm-tech-card__desc">
+              独创的 238 层 3D NAND 闪存堆叠工艺，在同等尺寸下实现 2 倍存储密度提升，大幅降低单位比特成本。
+            </p>
+            <div class="cm-tech-card__metric">
+              <span class="cm-tech-card__metric-val">238</span>
+              <span class="cm-tech-card__metric-unit">层堆叠</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="cm-tech-card">
+            <div class="cm-tech-card__icon-wrap">
+              <div class="cm-tech-card__hex">
+                <svg viewBox="0 0 60 52">
+                  <polygon points="30,2 56,15 56,37 30,50 4,37 4,15" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="cm-tech-card__icon-inner">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <rect x="4" y="8" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 17L16 21L20 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="16" y1="8" x2="16" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="cm-tech-card__title">LPDDR5X 低功耗技术</h3>
+            <p class="cm-tech-card__desc">
+              采用先进的动态电压频率调节技术，在 8.5Gbps 数据传输率下功耗降低 30%，为移动设备提供持久续航。
+            </p>
+            <div class="cm-tech-card__metric">
+              <span class="cm-tech-card__metric-val">-30%</span>
+              <span class="cm-tech-card__metric-unit">功耗降低</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="cm-tech-card">
+            <div class="cm-tech-card__icon-wrap">
+              <div class="cm-tech-card__hex">
+                <svg viewBox="0 0 60 52">
+                  <polygon points="30,2 56,15 56,37 30,50 4,37 4,15" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="cm-tech-card__icon-inner">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M16 4V28" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                  <path d="M6 14H26" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                  <rect x="12" y="10" width="8" height="12" rx="1" fill="currentColor" opacity="0.2"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="cm-tech-card__title">QuantumECC 纠错引擎</h3>
+            <p class="cm-tech-card__desc">
+              基于 LDPC 算法的第四代纠错码引擎，错误校正能力提升 4 倍，确保企业级 数据完整性与可靠性。
+            </p>
+            <div class="cm-tech-card__metric">
+              <span class="cm-tech-card__metric-val">4x</span>
+              <span class="cm-tech-card__metric-unit">纠错能力</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech pipeline -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="cm-tech__pipeline">
+            <div class="cm-tech__pipeline-title">从晶圆到成品 · 全链路品质管控</div>
+            <div class="cm-tech__pipeline-steps">
+              <div class="cm-tech__pipeline-step">
+                <div class="cm-tech__pipeline-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <span>晶圆制造</span>
+              </div>
+              <div class="cm-tech__pipeline-connector"></div>
+              <div class="cm-tech__pipeline-step">
+                <div class="cm-tech__pipeline-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="4" y="4" width="16" height="16" rx="2"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </div>
+                <span>封装测试</span>
+              </div>
+              <div class="cm-tech__pipeline-connector"></div>
+              <div class="cm-tech__pipeline-step">
+                <div class="cm-tech__pipeline-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                </div>
+                <span>品质验证</span>
+              </div>
+              <div class="cm-tech__pipeline-connector"></div>
+              <div class="cm-tech__pipeline-step">
+                <div class="cm-tech__pipeline-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="9 11 12 14 22 4"/>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                  </svg>
+                </div>
+                <span>交付服务</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="cm-testimonials" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="cm-section-label cm-section-label--center">客户认可</h6>
+          <h2 class="cm-testimonials__title">他们选择 <span class="cm-text-gradient">晶存科技</span></h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="cm-testimonials__carousel" id="testimonialCarousel">
+            <div class="cm-testimonial active">
+              <div class="cm-testimonial__quote-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+              </div>
+              <p class="cm-testimonial__text">
+                "晶存科技的 DDR5 内存模组让我们的云计算平台性能提升了 40% 以上，其稳定性在持续 90 天的压力测试中表现卓越，是值得信赖的合作伙伴。"
+              </p>
+              <div class="cm-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                  alt="张伟"
+                  class="cm-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="cm-testimonial__name">张伟</strong>
+                  <span class="cm-testimonial__role">阿里云 · 基础设施总监</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cm-testimonial">
+              <div class="cm-testimonial__quote-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+              </div>
+              <p class="cm-testimonial__text">
+                "在工业机器人项目中，晶存的宽温闪存产品在极端环境下表现稳定，大大降低了我们的现场维护成本。技术团队的专业响应速度令人印象深刻。"
+              </p>
+              <div class="cm-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                  alt="李梅"
+                  class="cm-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="cm-testimonial__name">李梅</strong>
+                  <span class="cm-testimonial__role">大疆创新 · 供应链副总裁</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cm-testimonial">
+              <div class="cm-testimonial__quote-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+              </div>
+              <p class="cm-testimonial__text">
+                "晶存的 NVMe SSD 为企业级存储提供了前所未有的性能体验。14GB/s 的速度让我们的数据库查询延迟降低了 60%，彻底改变了数据密集型应用的架构设计。"
+              </p>
+              <div class="cm-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80"
+                  alt="Michael Chen"
+                  class="cm-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="cm-testimonial__name">Michael Chen</strong>
+                  <span class="cm-testimonial__role">字节跳动 · 存储架构师</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <div class="cm-testimonials__controls">
+              <button class="cm-testimonials__btn" id="testimonialPrev" aria-label="上一条">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"/>
+                </svg>
+              </button>
+              <div class="cm-testimonials__dots" id="testimonialDots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="cm-testimonials__btn" id="testimonialNext" aria-label="下一条">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER / CONTACT ==================== -->
+  <footer class="cm-footer" id="footer">
+    <!-- Top decorative wave -->
+    <div class="cm-footer__wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-bg-alt)"/>
+      </svg>
+    </div>
+
+    <div class="cm-footer__main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="cm-footer__brand">
+              <span class="cm-footer__brand-icon">◇</span>
+              <span class="cm-footer__brand-name">晶存科技</span>
+            </div>
+            <p class="cm-footer__desc">
+              以领先的半导体存储技术，守护每一比特数据的价值。让数字世界的信息永不丢失。
+            </p>
+            <div class="cm-footer__social">
+              <a href="#" class="cm-footer__social-link" aria-label="微信">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22 1.018 2.82 4.368 4.09 7.222 2.853.214-.094.478-.08.697.035l1.512.884a.255.255 0 0 0 .13.043.23.23 0 0 0 .23-.23c0-.056-.023-.112-.038-.166l-.31-1.176a.572.572 0 0 1 .166-.645C22.48 17.996 24 16.342 24 14.332c0-3.358-3.406-5.474-7.062-5.474zm-1.075 2.035c.5 0 .904.411.904.918a.91.91 0 0 1-.904.917.91.91 0 0 1-.904-.917c0-.507.405-.918.904-.918zm4.518 0c.5 0 .904.411.904.918a.91.91 0 0 1-.904.917.91.91 0 0 1-.904-.917c0-.507.405-.918.904-.918z"/></svg>
+              </a>
+              <a href="#" class="cm-footer__social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="#" class="cm-footer__social-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-md-offset-1">
+            <h5 class="cm-footer__heading">快速链接</h5>
+            <ul class="cm-footer__links">
+              <li><a href="#hero">首页</a></li>
+              <li><a href="#about">关于我们</a></li>
+              <li><a href="#products">产品中心</a></li>
+              <li><a href="#technology">核心技术</a></li>
+              <li><a href="#testimonials">客户认可</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2">
+            <h5 class="cm-footer__heading">产品系列</h5>
+            <ul class="cm-footer__links">
+              <li><a href="#">DDR5 内存</a></li>
+              <li><a href="#">NVMe SSD</a></li>
+              <li><a href="#">工业闪存</a></li>
+              <li><a href="#">嵌入式存储</a></li>
+              <li><a href="#">企业级方案</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5 class="cm-footer__heading">联系我们</h5>
+            <ul class="cm-footer__contact">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                深圳市南山区科技园晶存大厦
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                400-888-9999
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                contact@crystamem.cn
+              </li>
+            </ul>
+            <div class="cm-footer__newsletter">
+              <input type="email" placeholder="订阅行业资讯" class="cm-footer__newsletter-input">
+              <button class="cm-footer__newsletter-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cm-footer__bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="cm-footer__copyright">
+              © 2026 晶存科技 CrystaMem. All Rights Reserved. | 
+              <a href="#">隐私政策</a> · <a href="#">服务条款</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../public/jquery.min.js"></script>
+  <script src="../../public/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

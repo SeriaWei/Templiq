@@ -50,3 +50,4 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 # Notes
 
 - Font font size of html tag is 10px. So, if you want to use font size in rem, you need to multiply it by 10. For example, if you want to use font size of 16px, you can use 1.6rem. But the font size of body tag is 16px, please note this.
+- CSS should avoid using syntax that requires compilation, such as nesting and variables in SCSS. Pure CSS or CSS modules can be used to write styles.

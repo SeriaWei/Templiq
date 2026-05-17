@@ -12,8 +12,6 @@
   <!-- Bootstrap 3 JavaScript -->
   <script src="/jquery.min.js"></script>
   <script src="/bootstrap.min.js"></script>
-  <!-- html2canvas -->
-  <script src="/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -49,74 +47,31 @@
         });
     });
     document.getElementById('savePreview').addEventListener('click', async function () {
-      let content = document.querySelector('main.content');
       const templateName = '{{templateName}}';
-      const originalWidth = content.style.width;
-
-      const images = content.getElementsByTagName('img');
-      const imagePromises = Array.from(images).map(img => {
-        if (img.complete) return Promise.resolve();
-        return new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      });
+      const btn = this;
+      btn.disabled = true;
+      btn.textContent = '截图生成中...';
 
       try {
-        await Promise.all(imagePromises);
-        // 生成原始尺寸图片
-        const canvas = await html2canvas(content, {
-          useCORS: true,
-          allowTaint: true,
-          windowWidth: 1200
-        });
-        const originalImageData = canvas.toDataURL('image/png');        
-
-        const thumbnailCanvas = await html2canvas(content, {
-          useCORS: true,
-          allowTaint: true,
-          windowWidth: 1200
-        });
-
-        const maxWidth = 500;
-        const scale = Math.min(1, maxWidth / thumbnailCanvas.width);
-        const scaledWidth = thumbnailCanvas.width * scale;
-        const scaledHeight = thumbnailCanvas.height * scale;
-
-        const scaledCanvas = document.createElement('canvas');
-        scaledCanvas.width = scaledWidth;
-        scaledCanvas.height = scaledHeight;
-        const ctx = scaledCanvas.getContext('2d');
-        ctx.drawImage(thumbnailCanvas, 0, 0, scaledWidth, scaledHeight);
-
-        const thumbnailImageData = scaledCanvas.toDataURL('image/png');
-
-        content.style.width = originalWidth;
-        
-        fetch('/api/save-preview', {
+        const response = await fetch('/api/capture-preview', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            originalImageData,
-            thumbnailImageData,
-            templateName
-          })
-        })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              alert('缩略图保存成功！');
-            } else {
-              alert('保存失败：' + data.error);
-            }
-          })
-          .catch(error => {
-            alert('保存失败：' + error.message);
-          });
+          body: JSON.stringify({ templateName })
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          alert('缩略图保存成功！');
+        } else {
+          alert('截图失败：' + data.error);
+        }
       } catch (error) {
-        console.error('Error capturing preview:', error);
+        alert('截图失败：' + error.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '保存缩略图';
       }
     });
     document.getElementById('packTemplate').addEventListener('click', async function () {

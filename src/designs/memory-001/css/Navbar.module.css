@@ -1,0 +1,218 @@
+/* ============================================================
+   NAVBAR — CrystaMem Memory Industry
+   ============================================================ */
+
+.cm-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.8rem 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: transparent;
+}
+
+.cm-navbar--scrolled {
+  padding: 0.8rem 0;
+  background: rgba(7, 11, 23, 0.92);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.cm-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.cm-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: #e8edf5;
+  transition: color 0.3s;
+}
+
+.cm-navbar__brand:hover,
+.cm-navbar__brand:focus {
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+.cm-navbar__brand-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.cm-navbar__brand-text {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.cm-navbar__brand-en {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8899b4;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Nav Links */
+.cm-navbar__links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.4rem;
+}
+
+.cm-navbar__links li a {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #c8d0dc;
+  padding: 0.6rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.03em;
+}
+
+.cm-navbar__links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  transition: transform 0.3s ease;
+  border-radius: 1px;
+}
+
+.cm-navbar__links li a:hover,
+.cm-navbar__links li a.active {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.cm-navbar__links li a:hover::after,
+.cm-navbar__links li a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* CTA Button */
+.cm-navbar__cta {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #070b17;
+  background: linear-gradient(135deg, #00d4ff, #00a8cc);
+  padding: 0.8rem 2.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
+}
+
+.cm-navbar__cta:hover {
+  background: linear-gradient(135deg, #33ddff, #00b8e6);
+  color: #070b17;
+  text-decoration: none;
+  box-shadow: 0 6px 30px rgba(0, 212, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Mobile Toggle */
+.cm-navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cm-navbar__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #e8edf5;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.cm-navbar__toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.cm-navbar__toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.cm-navbar__toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .cm-navbar__cta {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .cm-navbar {
+    padding: 1.2rem 0;
+  }
+
+  .cm-navbar--scrolled {
+    padding: 0.6rem 0;
+  }
+
+  .cm-navbar__toggle {
+    display: flex;
+  }
+
+  .cm-navbar__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(7, 11, 23, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 6rem 2rem;
+    border-left: 1px solid rgba(0, 212, 255, 0.1);
+  }
+
+  .cm-navbar__links.open {
+    right: 0;
+  }
+
+  .cm-navbar__links li a {
+    font-size: 1.8rem;
+    padding: 1.2rem 2rem;
+  }
+}

@@ -1,0 +1,344 @@
+<!-- Hero 主视觉 -->
+{% header %}
+<style>
+.cm-hero, .cm-hero__badge, .cm-hero__title-line, .cm-hero__subtitle, .cm-hero__btn, .cm-hero__scroll span { font-family: 'Noto Sans SC', sans-serif; }
+.cm-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #070b17;
+}
+.cm-hero__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.cm-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0, 212, 255, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(124, 58, 237, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
+}
+.cm-hero__content {
+  position: relative;
+  z-index: 3;
+  padding: 8rem 0 6rem;
+  width: 100%;
+}
+.cm-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  padding: 0.6rem 2rem;
+  border-radius: 100px;
+  margin-bottom: 3rem;
+  letter-spacing: 0.08em;
+}
+.cm-hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #00d4ff;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.cm-hero__title {
+  margin: 0 0 2.4rem;
+}
+.cm-hero__title-line {
+  display: block;
+  font-size: 7.2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: #e8edf5;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+}
+.cm-hero__title-line--accent {
+  color: transparent;
+  background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 8rem;
+}
+.cm-hero__subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #8899b4;
+  line-height: 1.8;
+  max-width: 66rem;
+  margin: 0 auto 4rem;
+  letter-spacing: 0.03em;
+}
+.cm-hero__actions {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cm-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1.2rem 3.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.04em;
+}
+.cm-hero__btn--primary {
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  color: #070b17;
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+}
+.cm-hero__btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.45);
+  color: #070b17;
+  text-decoration: none;
+}
+.cm-hero__btn--outline {
+  background: transparent;
+  color: #e8edf5;
+  border: 1px solid rgba(232, 237, 245, 0.2);
+}
+.cm-hero__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(232, 237, 245, 0.4);
+  color: #e8edf5;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.cm-hero__scroll {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.cm-hero__scroll span {
+  font-size: 1.2rem;
+  color: #8899b4;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.cm-hero__scroll-arrow {
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, #00d4ff, transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.6; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+.cm-hero__crystal {
+  position: absolute;
+  z-index: 2;
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  transform: rotate(45deg);
+  opacity: 0.5;
+}
+.cm-hero__crystal--1 {
+  top: 15%;
+  left: 8%;
+  width: 8rem;
+  height: 8rem;
+  border-color: rgba(0, 212, 255, 0.08);
+  animation: floatSlow 20s ease-in-out infinite;
+}
+.cm-hero__crystal--2 {
+  bottom: 20%;
+  right: 10%;
+  width: 5rem;
+  height: 5rem;
+  border-color: rgba(124, 58, 237, 0.12);
+  animation: floatSlow 25s ease-in-out infinite reverse;
+}
+.cm-hero__crystal--3 {
+  top: 30%;
+  right: 25%;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-color: rgba(245, 158, 11, 0.1);
+  animation: floatSlow 18s ease-in-out infinite 5s;
+}
+@keyframes floatSlow {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(-20px); }
+}
+@media (max-width: 767px) {
+  .cm-hero__title-line { font-size: 4.2rem; }
+  .cm-hero__title-line--accent { font-size: 4.8rem; }
+  .cm-hero__subtitle { font-size: 1.5rem; }
+  .cm-hero__btn { font-size: 1.4rem; padding: 1rem 2.4rem; }
+}
+</style>
+{% endheader %}
+
+<section class="cm-hero">
+  <canvas class="cm-hero__canvas"></canvas>
+  <div class="cm-hero__overlay"></div>
+  <div class="cm-hero__content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          {% if this.Model.badge %}
+          <div class="cm-hero__badge">
+            <span class="cm-hero__badge-dot"></span>
+            <span property="true" data-property="badge" method="text">{{this.Model.badge}}</span>
+          </div>
+          {% endif %}
+          <h1 class="cm-hero__title">
+            {% if this.Model.title_line1 %}
+            <span class="cm-hero__title-line" property="true" data-property="title_line1" method="text">{{this.Model.title_line1}}</span>
+            {% endif %}
+            {% if this.Model.title_line2 %}
+            <span class="cm-hero__title-line cm-hero__title-line--accent" property="true" data-property="title_line2" method="text">{{this.Model.title_line2}}</span>
+            {% endif %}
+          </h1>
+          {% if this.Model.subtitle %}
+          <p class="cm-hero__subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+          {% endif %}
+          <div class="cm-hero__actions">
+            <a property="true" data-property="btn_primary" method="attr" para="href" href="{% url this.Model.btn_primary_link %}" class="cm-hero__btn cm-hero__btn--primary">
+              {{this.Model.btn_primary_text}}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a property="true" data-property="btn_outline" method="attr" para="href" href="{% url this.Model.btn_outline_link %}" class="cm-hero__btn cm-hero__btn--outline">
+              {{this.Model.btn_outline_text}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cm-hero__scroll cm-hero__scroll-indicator">
+    <span property="true" data-property="scroll_text" method="text">{{this.Model.scroll_text}}</span>
+    <div class="cm-hero__scroll-arrow"></div>
+  </div>
+  <div class="cm-hero__crystal cm-hero__crystal--1"></div>
+  <div class="cm-hero__crystal cm-hero__crystal--2"></div>
+  <div class="cm-hero__crystal cm-hero__crystal--3"></div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function(){
+  var mouseX = -1000, mouseY = -1000;
+  document.addEventListener('mousemove', function(e) { mouseX = e.clientX; mouseY = e.clientY; });
+  document.addEventListener('mouseleave', function() { mouseX = -1000; mouseY = -1000; });
+
+  var sections = document.querySelectorAll('.cm-hero');
+  sections.forEach(function(section){
+    var canvas = section.querySelector('.cm-hero__canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var animationId;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function Particle(x, y) {
+      this.x = x || Math.random() * canvas.width;
+      this.y = y || Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 0.4;
+      this.speedY = (Math.random() - 0.5) * 0.4;
+      this.opacity = Math.random() * 0.4 + 0.1;
+      this.hue = Math.random() > 0.7 ? 40 : 190;
+    }
+    Particle.prototype.update = function() {
+      this.x += this.speedX; this.y += this.speedY;
+      if (this.x < 0) this.x = canvas.width;
+      if (this.x > canvas.width) this.x = 0;
+      if (this.y < 0) this.y = canvas.height;
+      if (this.y > canvas.height) this.y = 0;
+      var dx = this.x - mouseX, dy = this.y - mouseY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        var force = (120 - dist) / 120;
+        this.x += (dx / dist) * force * 0.5;
+        this.y += (dy / dist) * force * 0.5;
+      }
+    };
+    Particle.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      var color = this.hue === 190 ? '0, 212, 255' : '245, 158, 11';
+      ctx.fillStyle = 'rgba(' + color + ', ' + this.opacity + ')';
+      ctx.fill();
+      if (this.size > 1.5) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + color + ', ' + (this.opacity * 0.08) + ')';
+        ctx.fill();
+      }
+    };
+    var count = Math.min(Math.floor(canvas.width * canvas.height / 8000), 120);
+    for (var i = 0; i < count; i++) particles.push(new Particle());
+    function drawConnections() {
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            var opacity = (1 - dist / 150) * 0.12;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(0, 212, 255, ' + opacity + ')';
+            ctx.stroke();
+          }
+        }
+      }
+    }
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawConnections();
+      particles.forEach(function(p) { p.update(); p.draw(); });
+      animationId = requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) cancelAnimationFrame(animationId);
+      else animateParticles();
+    });
+  });
+})();
+</script>
+{% endfooter %}

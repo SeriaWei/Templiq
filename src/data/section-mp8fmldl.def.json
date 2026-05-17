@@ -1,0 +1,62 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "intro": {
+        "FieldType": "Paragraph",
+        "DisplayName": "简介"
+    },
+    "products": {
+        "FieldType": "Array",
+        "DisplayName": "产品列表",
+        "Children": [
+            {
+                "tag": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签文字"
+                },
+                "tag_hot": {
+                    "FieldType": "Checkbox",
+                    "DisplayName": "热销标签"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "产品名称"
+                },
+                "desc": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "产品描述"
+                },
+                "specs": {
+                    "FieldType": "Array",
+                    "DisplayName": "规格列表",
+                    "Children": [
+                        {
+                            "spec": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "规格项"
+                            }
+                        }
+                    ]
+                },
+                "link_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文字"
+                },
+                "link": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接地址"
+                },
+                "svg_icon": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "SVG图标"
+                }
+            }
+        ]
+    }
+}

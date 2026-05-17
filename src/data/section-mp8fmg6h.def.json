@@ -1,0 +1,58 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title_line1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第一行"
+    },
+    "title_line2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第二行（渐变）"
+    },
+    "desc1": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述第一段"
+    },
+    "desc2": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述第二段"
+    },
+    "image_src": {
+        "FieldType": "Media",
+        "DisplayName": "图片"
+    },
+    "image_alt": {
+        "FieldType": "SingleLine",
+        "DisplayName": "图片替代文本"
+    },
+    "badge_num": {
+        "FieldType": "SingleLine",
+        "DisplayName": "浮动标签数字"
+    },
+    "badge_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "浮动标签文字"
+    },
+    "stats": {
+        "FieldType": "Array",
+        "DisplayName": "统计数据",
+        "Children": [
+            {
+                "num": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数字"
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                },
+                "suffix": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "后缀"
+                }
+            }
+        ]
+    }
+}

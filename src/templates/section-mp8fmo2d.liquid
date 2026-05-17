@@ -1,0 +1,134 @@
+<!-- 客户评价 -->
+{% header %}
+<style>
+.cm-section-label { font-size: 1.2rem; font-weight: 500; color: #00d4ff; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.2rem; display: inline-block; font-family: 'Orbitron', sans-serif; }
+.cm-testimonials__title, .cm-testimonial__text, .cm-testimonial__name, .cm-testimonial__role { font-family: 'Noto Sans SC', sans-serif; }
+.cm-testimonials {
+  position: relative;
+  padding: 10rem 0;
+  background: #070b17;
+}
+.cm-testimonials__title { font-size: 4.2rem; font-weight: 700; color: #e8edf5; margin-bottom: 5rem; letter-spacing: 0.04em; }
+.cm-testimonials__carousel { position: relative; }
+.cm-testimonial { text-align: center; display: none; }
+.cm-testimonial.active { display: block; }
+.cm-testimonial__quote-icon { width: 4rem; height: 4rem; margin: 0 auto 2.4rem; color: #00d4ff; }
+.cm-testimonial__text { font-size: 2rem; font-weight: 300; line-height: 1.8; color: #c8d0dc; max-width: 70rem; margin: 0 auto 3.2rem; letter-spacing: 0.02em; font-style: italic; }
+.cm-testimonial__author { display: flex; align-items: center; justify-content: center; gap: 1.2rem; }
+.cm-testimonial__avatar { width: 5.6rem; height: 5.6rem; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0, 212, 255, 0.15); }
+.cm-testimonial__name { display: block; font-size: 1.6rem; font-weight: 500; color: #e8edf5; margin-bottom: 0.2rem; }
+.cm-testimonial__role { display: block; font-size: 1.3rem; color: #8899b4; letter-spacing: 0.02em; }
+.cm-testimonials__controls { display: flex; align-items: center; justify-content: center; gap: 2.4rem; margin-top: 4rem; }
+.cm-testimonials__btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 4.8rem; height: 4.8rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #8899b4;
+  transition: all 0.3s ease;
+  padding: 1.2rem;
+}
+.cm-testimonials__btn:hover { border-color: #00d4ff; color: #00d4ff; background: rgba(0, 212, 255, 0.06); }
+.cm-testimonials__dots { display: flex; gap: 0.8rem; }
+.cm-testimonials__dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.12); cursor: pointer; transition: all 0.3s ease; }
+.cm-testimonials__dots span.active { background: #00d4ff; box-shadow: 0 0 12px rgba(0, 212, 255, 0.4); width: 2.4rem; border-radius: 4px; }
+.cm-testimonials__dots span:hover { background: rgba(0, 212, 255, 0.4); }
+@media (max-width: 767px) {
+  .cm-testimonials { padding: 6rem 0; }
+  .cm-testimonials__title { font-size: 3rem; }
+  .cm-testimonial__text { font-size: 1.6rem; padding: 0 1rem; }
+}
+</style>
+{% endheader %}
+
+<section class="cm-testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h6 class="cm-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</h6>
+        <h2 class="cm-testimonials__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="cm-testimonials__carousel">
+          {% for testimonial in this.Model.testimonials %}
+          <div class="cm-testimonial{% if forloop.first %} active{% endif %}">
+            <div class="cm-testimonial__quote-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+            </div>
+            <p class="cm-testimonial__text" property="true" data-property="testimonials[{{forloop.index0}}].text" method="text">{{testimonial.text}}</p>
+            <div class="cm-testimonial__author">
+              <img property="true" data-property="testimonials[{{forloop.index0}}].avatar" method="attr" para="src" src="{% url testimonial.avatar %}" alt="{{testimonial.name}}" class="cm-testimonial__avatar" loading="lazy">
+              <div>
+                <strong class="cm-testimonial__name" property="true" data-property="testimonials[{{forloop.index0}}].name" method="text">{{testimonial.name}}</strong>
+                <span class="cm-testimonial__role" property="true" data-property="testimonials[{{forloop.index0}}].role" method="text">{{testimonial.role}}</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="cm-testimonials__controls">
+            <button class="cm-testimonials__btn cm-testimonials__btn-prev" aria-label="上一条">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="cm-testimonials__dots">
+              {% for testimonial in this.Model.testimonials %}
+              <span{% if forloop.first %} class="active"{% endif %}></span>
+              {% endfor %}
+            </div>
+            <button class="cm-testimonials__btn cm-testimonials__btn-next" aria-label="下一条">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function(){
+  var carousels = document.querySelectorAll('.cm-testimonials__carousel');
+  carousels.forEach(function(carousel){
+    var items = carousel.querySelectorAll('.cm-testimonial');
+    var dots = carousel.querySelectorAll('.cm-testimonials__dots span');
+    var prevBtn = carousel.querySelector('.cm-testimonials__btn-prev');
+    var nextBtn = carousel.querySelector('.cm-testimonials__btn-next');
+    if (!items.length || !prevBtn || !nextBtn) return;
+    var current = 0;
+
+    function show(idx) {
+      items.forEach(function(t){ t.classList.remove('active'); });
+      dots.forEach(function(d){ d.classList.remove('active'); });
+      items[idx].classList.add('active');
+      dots[idx].classList.add('active');
+      current = idx;
+    }
+
+    var interval = setInterval(function(){ show((current + 1) % items.length); }, 6000);
+
+    prevBtn.addEventListener('click', function(){
+      clearInterval(interval);
+      show((current - 1 + items.length) % items.length);
+      interval = setInterval(function(){ show((current + 1) % items.length); }, 6000);
+    });
+
+    nextBtn.addEventListener('click', function(){
+      clearInterval(interval);
+      show((current + 1) % items.length);
+      interval = setInterval(function(){ show((current + 1) % items.length); }, 6000);
+    });
+
+    dots.forEach(function(dot, idx){
+      dot.addEventListener('click', function(){
+        clearInterval(interval);
+        show(idx);
+        interval = setInterval(function(){ show((current + 1) % items.length); }, 6000);
+      });
+    });
+  });
+})();
+</script>
+{% endfooter %}

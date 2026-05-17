@@ -31,10 +31,10 @@ const liquidjs_1 = require("liquidjs");
 const body_parser_1 = __importDefault(require("body-parser"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
-const sharp_1 = __importDefault(require("sharp"));
 const pack_1 = require("./tools/pack");
 const new_section_1 = require("./tools/new-section");
 const B2 = __importStar(require("./tools/upload"));
+const screenshot_1 = require("./screenshot");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 app.use(body_parser_1.default.json({ limit: '5mb' }));
@@ -189,44 +189,23 @@ app.get('/preview/:template', async (req, res) => {
         }
     }
 });
-app.post('/api/save-preview', async (req, res) => {
+app.post('/api/capture-preview', async (req, res) => {
     try {
-        const { originalImageData, thumbnailImageData, templateName } = req.body;
-        if (!originalImageData || !thumbnailImageData) {
-            return res.status(400).json({ success: false, error: '未提供图片数据' });
-        }
+        const { templateName } = req.body;
         if (!templateName) {
             return res.status(400).json({ success: false, error: '未提供模板名称' });
         }
-        const thumbsDir = path_1.default.resolve(__dirname, 'public/thumbs');
-        if (!fs_1.default.existsSync(thumbsDir)) {
-            fs_1.default.mkdirSync(thumbsDir, { recursive: true });
-        }
-        const originalBase64Data = originalImageData.replace(/^data:image\/[^;]+;base64,/, '');
-        const originalImageBuffer = Buffer.from(originalBase64Data, 'base64');
-        const originalFilename = `${templateName}.png`;
-        const originalFilePath = path_1.default.join(thumbsDir, originalFilename);
-        await (0, sharp_1.default)(originalImageBuffer)
-            .png({ quality: 70, compressionLevel: 9 })
-            .toFile(originalFilePath);
-        const thumbnailBase64Data = thumbnailImageData.replace(/^data:image\/[^;]+;base64,/, '');
-        const thumbnailImageBuffer = Buffer.from(thumbnailBase64Data, 'base64');
-        const thumbnailFilename = `${templateName}-m.png`;
-        const thumbnailFilePath = path_1.default.join(thumbsDir, thumbnailFilename);
-        await (0, sharp_1.default)(thumbnailImageBuffer)
-            .png({ quality: 90, compressionLevel: 9 })
-            .toFile(thumbnailFilePath);
+        const result = await (0, screenshot_1.capturePreview)(templateName);
         res.json({
             success: true,
-            originalFilename,
-            thumbnailFilename
+            ...result
         });
     }
     catch (error) {
-        console.error('保存预览图失败:', error);
+        console.error('截图失败:', error);
         res.status(500).json({
             success: false,
-            error: error instanceof Error ? error.message : '保存预览图时发生未知错误'
+            error: error instanceof Error ? error.message : '截图时发生未知错误'
         });
     }
 });

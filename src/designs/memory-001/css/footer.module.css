@@ -1,0 +1,234 @@
+/* ============================================================
+   FOOTER — CrystaMem Memory Industry
+   ============================================================ */
+
+.cm-footer {
+  position: relative;
+  background: var(--color-bg-alt, #0c1326);
+}
+
+/* Top wave */
+.cm-footer__wave {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-bottom: -1px;
+  overflow: hidden;
+}
+
+.cm-footer__wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Main Footer */
+.cm-footer__main {
+  padding: 6rem 0 4rem;
+}
+
+.cm-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.cm-footer__brand-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.cm-footer__brand-name {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e8edf5;
+  letter-spacing: 0.05em;
+}
+
+.cm-footer__desc {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #6b7a99;
+  margin-bottom: 2.4rem;
+  max-width: 32rem;
+}
+
+/* Social links */
+.cm-footer__social {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.cm-footer__social-link {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  color: #8899b4;
+  transition: all 0.3s ease;
+  padding: 1rem;
+}
+
+.cm-footer__social-link:hover {
+  border-color: #00d4ff;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.06);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Footer Headings */
+.cm-footer__heading {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e8edf5;
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
+}
+
+/* Footer Links */
+.cm-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cm-footer__links li {
+  margin-bottom: 0.8rem;
+}
+
+.cm-footer__links li a {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.4rem;
+  color: #6b7a99;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0;
+}
+
+.cm-footer__links li a:hover {
+  color: #00d4ff;
+  padding-left: 4px;
+}
+
+/* Contact */
+.cm-footer__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.4rem;
+}
+
+.cm-footer__contact li {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.4rem;
+  color: #6b7a99;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.cm-footer__contact li svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  color: #00d4ff;
+  opacity: 0.6;
+}
+
+/* Newsletter */
+.cm-footer__newsletter {
+  display: flex;
+  gap: 0;
+  margin-top: 1.6rem;
+}
+
+.cm-footer__newsletter-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  padding: 1rem 1.6rem;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.3rem;
+  color: #e8edf5;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.cm-footer__newsletter-input::placeholder {
+  color: #4a5a7a;
+}
+
+.cm-footer__newsletter-input:focus {
+  border-color: rgba(0, 212, 255, 0.2);
+}
+
+.cm-footer__newsletter-btn {
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  border: none;
+  border-radius: 0 8px 8px 0;
+  padding: 0 1.6rem;
+  color: #070b17;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.cm-footer__newsletter-btn svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.cm-footer__newsletter-btn:hover {
+  background: linear-gradient(135deg, #33ddff, #00b8e6);
+}
+
+/* Bottom Bar */
+.cm-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 2rem 0;
+}
+
+.cm-footer__copyright {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.3rem;
+  color: #4a5a7a;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.cm-footer__copyright a {
+  color: #6b7a99;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cm-footer__copyright a:hover {
+  color: #00d4ff;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .cm-footer__main {
+    padding: 4rem 0 2rem;
+  }
+
+  .cm-footer__heading {
+    margin-top: 2rem;
+  }
+}

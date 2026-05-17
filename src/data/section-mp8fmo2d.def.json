@@ -1,0 +1,34 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "testimonials": {
+        "FieldType": "Array",
+        "DisplayName": "客户评价",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "评价内容"
+                },
+                "avatar": {
+                    "FieldType": "Media",
+                    "DisplayName": "头像"
+                },
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "姓名"
+                },
+                "role": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "职位"
+                }
+            }
+        ]
+    }
+}
