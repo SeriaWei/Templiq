@@ -260,6 +260,15 @@
     updateSelectedCount();
   });
 
+  // 页面加载时重置所有checkbox为未选中状态
+  function resetCheckboxes() {
+    checkboxes.forEach(cb => cb.checked = false);
+    updateSelectedCount();
+  }
+  
+  // 在DOM加载完成后立即执行重置
+  resetCheckboxes();
+
   function showProgressModal(title) {
     progressModalTitle.textContent = title;
     progressList.innerHTML = '';
