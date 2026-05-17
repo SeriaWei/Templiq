@@ -17,7 +17,7 @@ Before coding, understand the context and commit to a BOLD aesthetic direction:
 
 **CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
 
-Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
+Then implement working code (HTML/CSS/JS) that is:
 - Production-grade and functional
 - Visually striking and memorable
 - Cohesive with a clear aesthetic point-of-view
@@ -42,7 +42,7 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 
 # Others
 - Every design has its own folder. Should be saved in `src/designs/<design-name>`. design-name is <category>-<index>, for example: "retro-001".
-- Every design MUST be based on bootstrap3. Use the local bootstrap files in the `src/public` folder.
+- Every design MUST be based on bootstrap3, Use the local bootstrap files in the `src/public` folder and do not use other third-party libraries.
 - Page designs by sections. Each section should be a separate component. For example, a page with a header, hero, features, and footer would have components(if js required): Header.js, Hero.js, Features.js, Footer.js. This promotes modularity and reusability.
 - Use CSS modules for styling. Each component should have its own CSS module file (e.g., Header.module.css) that defines styles scoped to that component. This prevents style conflicts and promotes maintainability.
 - Use unsplash for images. Avoid generic stock photos; choose images that add character and context to the design.
