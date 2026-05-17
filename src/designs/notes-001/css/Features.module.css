@@ -1,0 +1,115 @@
+/* ============================================================
+   FEATURES — Noty Note-Taking App
+   ============================================================ */
+.nn-features {
+  padding: 10rem 0;
+  background: var(--color-surface);
+  position: relative;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nn-features__title {
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.nn-features__intro {
+  font-size: 1.7rem;
+  color: var(--color-text-muted);
+  max-width: 50rem;
+  margin: 0 auto 5rem;
+}
+
+.nn-features__grid {
+  margin-top: 2rem;
+}
+
+.nn-feature-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 3.2rem 2.8rem;
+  margin-bottom: 2.4rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.nn-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.nn-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(44, 40, 35, 0.06);
+  border-color: rgba(217, 75, 42, 0.15);
+}
+
+.nn-feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.nn-feature-card__icon {
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 14px;
+  background: var(--color-accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.nn-feature-card__icon svg {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.nn-feature-card:hover .nn-feature-card__icon {
+  background: var(--color-accent);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.nn-feature-card__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+.nn-feature-card__desc {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .nn-features {
+    padding: 6rem 0;
+  }
+
+  .nn-features__title {
+    font-size: 3rem;
+  }
+}

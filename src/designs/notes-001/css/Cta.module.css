@@ -1,0 +1,134 @@
+/* ============================================================
+   CTA — Noty Note-Taking App
+   ============================================================ */
+.nn-cta {
+  padding: 10rem 0;
+  background: var(--color-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.nn-cta__grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+
+.nn-cta::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 75, 42, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.nn-cta__title {
+  font-family: var(--font-heading);
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1.6rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.nn-cta__text {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 55rem;
+  margin: 0 auto 3.6rem;
+  line-height: 1.7;
+}
+
+.nn-cta__form {
+  display: flex;
+  max-width: 46rem;
+  margin: 0 auto;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.nn-cta__input {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  padding: 1.2rem 2rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.nn-cta__input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nn-cta__input:focus {
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(217, 75, 42, 0.15);
+}
+
+.nn-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 1.2rem 2.8rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(217, 75, 42, 0.3);
+}
+
+.nn-cta__btn:hover {
+  background: #c43d1e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(217, 75, 42, 0.4);
+}
+
+.nn-cta__footnote {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .nn-cta {
+    padding: 6rem 0;
+  }
+
+  .nn-cta__title {
+    font-size: 3.2rem;
+  }
+
+  .nn-cta__form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .nn-cta__btn {
+    justify-content: center;
+  }
+}

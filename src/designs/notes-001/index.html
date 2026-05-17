@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noty — Beautiful Notes, Brilliant Ideas</title>
+  <meta name="description" content="Noty is a modern note-taking app that combines the warmth of analog thinking with the power of digital organization.">
+
+  <!-- Bootstrap 3 (local) -->
+  <link rel="stylesheet" href="../../public/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/bootstrap-theme.min.css">
+
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/navbar.module.css">
+  <link rel="stylesheet" href="css/hero.module.css">
+  <link rel="stylesheet" href="css/features.module.css">
+  <link rel="stylesheet" href="css/howitworks.module.css">
+  <link rel="stylesheet" href="css/testimonials.module.css">
+  <link rel="stylesheet" href="css/pricing.module.css">
+  <link rel="stylesheet" href="css/cta.module.css">
+  <link rel="stylesheet" href="css/footer.module.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="nn-navbar" id="nnNavbar">
+    <div class="container">
+      <div class="nn-navbar__inner">
+        <a href="#" class="nn-navbar__brand">
+          <span class="nn-navbar__brand-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <path d="M6 4h14l8 8v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M20 4v8h8" stroke="currentColor" stroke-width="2" fill="none"/>
+              <line x1="10" y1="14" x2="20" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="10" y1="20" x2="18" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="nn-navbar__brand-text">Noty</span>
+        </a>
+        <button class="nn-navbar__toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nn-navbar__links" id="navLinks">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#testimonials">Stories</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <a href="#cta" class="nn-navbar__cta">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="nn-hero" id="hero">
+    <div class="nn-hero__bg"></div>
+    <div class="nn-hero__grain"></div>
+
+    <!-- Floating sticky notes -->
+    <div class="nn-hero__notes">
+      <div class="nn-hero__note nn-hero__note--yellow">
+        <svg viewBox="0 0 120 120"><line x1="20" y1="40" x2="100" y2="40" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="56" x2="100" y2="56" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="72" x2="80" y2="72" stroke="rgba(0,0,0,0.08)" stroke-width="2"/></svg>
+        <span>Ideas flow<br>like water</span>
+      </div>
+      <div class="nn-hero__note nn-hero__note--pink">
+        <svg viewBox="0 0 120 120"><line x1="20" y1="40" x2="100" y2="40" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="56" x2="100" y2="56" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="72" x2="60" y2="72" stroke="rgba(0,0,0,0.08)" stroke-width="2"/></svg>
+        <span>Capture<br>every thought</span>
+      </div>
+      <div class="nn-hero__note nn-hero__note--blue">
+        <svg viewBox="0 0 120 120"><line x1="20" y1="40" x2="100" y2="40" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="56" x2="100" y2="56" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="72" x2="90" y2="72" stroke="rgba(0,0,0,0.08)" stroke-width="2"/></svg>
+        <span>Organize<br>with ease</span>
+      </div>
+      <div class="nn-hero__note nn-hero__note--green">
+        <svg viewBox="0 0 120 120"><line x1="20" y1="40" x2="100" y2="40" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="56" x2="100" y2="56" stroke="rgba(0,0,0,0.08)" stroke-width="2"/><line x1="20" y1="72" x2="70" y2="72" stroke="rgba(0,0,0,0.08)" stroke-width="2"/></svg>
+        <span>Share<br>instantly</span>
+      </div>
+    </div>
+
+    <div class="nn-hero__content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="nn-hero__badge">
+              <span class="nn-hero__badge-dot"></span>
+              The thoughtful way to take notes
+            </div>
+            <h1 class="nn-hero__title">
+              <span class="nn-hero__title-line">Where Ideas</span>
+              <span class="nn-hero__title-line nn-hero__title-line--accent">Find Their Home</span>
+            </h1>
+            <p class="nn-hero__subtitle">
+              Noty blends the warmth of pen and paper with the power of modern tools. 
+              Capture ideas, organize thoughts, and bring your projects to life — beautifully.
+            </p>
+            <div class="nn-hero__actions">
+              <a href="#cta" class="nn-hero__btn nn-hero__btn--primary">
+                Start Writing Free
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#features" class="nn-hero__btn nn-hero__btn--outline">
+                See Features
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="nn-hero__scroll">
+      <span>Discover more</span>
+      <div class="nn-hero__scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section class="nn-features" id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="nn-section-label">Why Noty</h6>
+          <h2 class="nn-features__title">Everything You Need to <span class="nn-text-accent">Think Better</span></h2>
+          <p class="nn-features__intro">
+            From quick capture to deep work, Noty adapts to the way your mind works.
+          </p>
+        </div>
+      </div>
+
+      <div class="row nn-features__grid">
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-feature-card">
+            <div class="nn-feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 18h20M14 26h16M14 34h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="nn-feature-card__title">Rich Markdown</h3>
+            <p class="nn-feature-card__desc">
+              Write with powerful markdown that comes alive. Support for code blocks, math, diagrams, and more.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-feature-card">
+            <div class="nn-feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="nn-feature-card__title">Smart Organization</h3>
+            <p class="nn-feature-card__desc">
+              Notebooks, tags, and a powerful search. Find any note in seconds, even years later.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-feature-card">
+            <div class="nn-feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 14v10l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="nn-feature-card__title">Real-time Sync</h3>
+            <p class="nn-feature-card__desc">
+              Seamlessly sync across all your devices. Start on your phone, continue on your laptop.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-feature-card">
+            <div class="nn-feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M8 40V16l16-8 16 8v24l-16 8-16-8z" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 8v32" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <line x1="12" y1="18" x2="36" y2="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="nn-feature-card__title">Templates & More</h3>
+            <p class="nn-feature-card__desc">
+              Start fast with beautiful templates for meeting notes, journals, project plans, and more.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-feature-card">
+            <div class="nn-feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M10 12h28a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2"/>
+                <path d="M18 12v24" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <rect x="21" y="18" width="16" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+                <rect x="21" y="24" width="12" height="2" rx="1" fill="currentColor" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="nn-feature-card__title">Offline First</h3>
+            <p class="nn-feature-card__desc">
+              Your notes are always there, even without internet. Changes sync when you're back online.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-feature-card">
+            <div class="nn-feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 4L28 16h12l-10 8 4 14-10-8-10 8 4-14-10-8h12L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="nn-feature-card__title">AI-Powered</h3>
+            <p class="nn-feature-card__desc">
+              Smart suggestions, automatic summaries, and intelligent search — your notes work for you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="nn-how" id="how">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="nn-section-label nn-section-label--light">Simple Workflow</h6>
+          <h2 class="nn-how__title">Three Steps to <span class="nn-text-accent">Clarity</span></h2>
+          <p class="nn-how__intro">
+            Getting started takes seconds. The impact lasts a lifetime.
+          </p>
+        </div>
+      </div>
+
+      <div class="row nn-how__steps">
+        <div class="col-md-4">
+          <div class="nn-how-step">
+            <div class="nn-how-step__number">01</div>
+            <div class="nn-how-step__visual">
+              <svg viewBox="0 0 200 140" fill="none">
+                <rect x="20" y="20" width="160" height="100" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+                <rect x="36" y="36" width="128" height="12" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+                <line x1="36" y1="58" x2="120" y2="58" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="36" y1="72" x2="140" y2="72" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="36" y1="86" x2="100" y2="86" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="170" cy="110" r="18" fill="var(--color-accent)" opacity="0.1"/>
+                <path d="M164 110l4 4 8-8" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="nn-how-step__title">Write Naturally</h3>
+            <p class="nn-how-step__desc">
+              Open Noty and start typing. Our distraction-free editor feels like paper, works like magic.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="nn-how-step">
+            <div class="nn-how-step__number">02</div>
+            <div class="nn-how-step__visual">
+              <svg viewBox="0 0 200 140" fill="none">
+                <rect x="10" y="20" width="80" height="100" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+                <rect x="110" y="20" width="80" height="46" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+                <rect x="110" y="74" width="80" height="46" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+                <rect x="22" y="36" width="56" height="8" rx="2" fill="var(--color-accent2)" opacity="0.2"/>
+                <rect x="122" y="34" width="56" height="6" rx="2" fill="var(--color-accent3)" opacity="0.2"/>
+                <rect x="122" y="88" width="56" height="6" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+              </svg>
+            </div>
+            <h3 class="nn-how-step__title">Organize Smartly</h3>
+            <p class="nn-how-step__desc">
+              Drag, tag, and stack your notes into collections. Your brain's natural structure, mirrored digitally.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="nn-how-step">
+            <div class="nn-how-step__number">03</div>
+            <div class="nn-how-step__visual">
+              <svg viewBox="0 0 200 140" fill="none">
+                <rect x="20" y="20" width="160" height="100" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+                <circle cx="60" cy="58" r="18" fill="var(--color-accent3)" opacity="0.15"/>
+                <path d="M54 58l4 4 8-8" stroke="var(--color-accent3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="120" cy="58" r="24" fill="var(--color-accent)" opacity="0.08"/>
+                <path d="M112 58l6 6 10-10" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="100" cy="98" r="28" fill="var(--color-accent2)" opacity="0.06"/>
+                <path d="M92 98l6 6 10-10" stroke="var(--color-accent2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M140 42l12 12" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+                <path d="M152 42l-12 12" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="nn-how-step__title">Share & Collaborate</h3>
+            <p class="nn-how-step__desc">
+              Share notebooks with your team, publish notes to the web, or keep them private — you decide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="nn-testimonials" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="nn-section-label">Loved by Creators</h6>
+          <h2 class="nn-testimonials__title">Stories from the <span class="nn-text-accent">Noty Community</span></h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="nn-testimonials__carousel" id="testimonialCarousel">
+            <div class="nn-testimonial active">
+              <div class="nn-testimonial__quote-mark">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+              </div>
+              <p class="nn-testimonial__text">
+                "Noty completely changed how I approach my daily journaling and project planning. 
+                It's the first tool that actually feels like an extension of my brain. The markdown 
+                editor is a dream and the organization system is pure genius."
+              </p>
+              <div class="nn-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80"
+                  alt="James Mitchell"
+                  class="nn-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="nn-testimonial__name">James Mitchell</strong>
+                  <span class="nn-testimonial__role">Product Designer, Figma</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="nn-testimonial">
+              <div class="nn-testimonial__quote-mark">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+              </div>
+              <p class="nn-testimonial__text">
+                "I've tried every note app out there, but Noty is the only one that stuck. 
+                The offline-first approach means I never lose a thought, and the sync is 
+                flawless. It's become my second brain."
+              </p>
+              <div class="nn-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
+                  alt="Sarah Chen"
+                  class="nn-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="nn-testimonial__name">Sarah Chen</strong>
+                  <span class="nn-testimonial__role">Engineering Lead, Stripe</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="nn-testimonial">
+              <div class="nn-testimonial__quote-mark">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+              </div>
+              <p class="nn-testimonial__text">
+                "As a writer, I need tools that inspire rather than distract. Noty's minimal 
+                design and beautiful typography make me want to write more. I've doubled my 
+                daily output since switching."
+              </p>
+              <div class="nn-testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80"
+                  alt="Marcus Johnson"
+                  class="nn-testimonial__avatar"
+                  loading="lazy"
+                >
+                <div>
+                  <strong class="nn-testimonial__name">Marcus Johnson</strong>
+                  <span class="nn-testimonial__role">Author & Tech Journalist</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="nn-testimonials__controls">
+              <button class="nn-testimonials__btn" id="testimonialPrev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"/>
+                </svg>
+              </button>
+              <div class="nn-testimonials__dots" id="testimonialDots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="nn-testimonials__btn" id="testimonialNext" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section class="nn-pricing" id="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h6 class="nn-section-label nn-section-label--light">Simple Pricing</h6>
+          <h2 class="nn-pricing__title">A Plan for <span class="nn-text-accent">Every Thinker</span></h2>
+          <p class="nn-pricing__intro">
+            Start free, upgrade when you need more. No hidden fees, no surprises.
+          </p>
+        </div>
+      </div>
+
+      <div class="row nn-pricing__grid">
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-pricing-card">
+            <div class="nn-pricing-card__header">
+              <h3 class="nn-pricing-card__name">Free</h3>
+              <div class="nn-pricing-card__price">
+                <span class="nn-pricing-card__currency">$</span>
+                <span class="nn-pricing-card__amount">0</span>
+              </div>
+              <p class="nn-pricing-card__period">Forever free</p>
+            </div>
+            <ul class="nn-pricing-card__features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited notes
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                3 notebooks
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Markdown editor
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Sync across 2 devices
+              </li>
+              <li class="nn-pricing-card__feature--muted">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                AI features
+              </li>
+              <li class="nn-pricing-card__feature--muted">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                Collaboration
+              </li>
+            </ul>
+            <a href="#cta" class="nn-pricing-card__btn">Get Started</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-pricing-card nn-pricing-card--featured">
+            <div class="nn-pricing-card__badge">Most Popular</div>
+            <div class="nn-pricing-card__header">
+              <h3 class="nn-pricing-card__name">Pro</h3>
+              <div class="nn-pricing-card__price">
+                <span class="nn-pricing-card__currency">$</span>
+                <span class="nn-pricing-card__amount">8</span>
+              </div>
+              <p class="nn-pricing-card__period">per month, billed annually</p>
+            </div>
+            <ul class="nn-pricing-card__features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited everything
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited notebooks
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Full markdown + diagrams
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited device sync
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                AI summaries & search
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Team collaboration
+              </li>
+            </ul>
+            <a href="#cta" class="nn-pricing-card__btn nn-pricing-card__btn--primary">Start Free Trial</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nn-pricing-card">
+            <div class="nn-pricing-card__header">
+              <h3 class="nn-pricing-card__name">Team</h3>
+              <div class="nn-pricing-card__price">
+                <span class="nn-pricing-card__currency">$</span>
+                <span class="nn-pricing-card__amount">15</span>
+              </div>
+              <p class="nn-pricing-card__period">per user / month</p>
+            </div>
+            <ul class="nn-pricing-card__features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Everything in Pro
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Team workspaces
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Admin controls
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom templates
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                API access
+              </li>
+            </ul>
+            <a href="#cta" class="nn-pricing-card__btn">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="nn-cta" id="cta">
+    <div class="nn-cta__grain"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <h6 class="nn-section-label nn-section-label--light">Start Today</h6>
+          <h2 class="nn-cta__title">Your Best Ideas Are <span class="nn-text-accent">Waiting</span></h2>
+          <p class="nn-cta__text">
+            Join 50,000+ thinkers who have made Noty their creative home. 
+            Start writing for free — no credit card required.
+          </p>
+          <form class="nn-cta__form">
+            <input type="email" class="nn-cta__input" placeholder="Enter your email address" required>
+            <button type="submit" class="nn-cta__btn">
+              Get Started Free
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+          <p class="nn-cta__footnote">Free forever. No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="nn-footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="nn-footer__brand">
+            <span class="nn-footer__brand-icon">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                <path d="M6 4h14l8 8v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M20 4v8h8" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </span>
+            <span class="nn-footer__brand-name">Noty</span>
+          </div>
+          <p class="nn-footer__desc">
+            The thoughtful note-taking app for people who love ideas. 
+            Capture, organize, and share your thoughts with elegance.
+          </p>
+          <div class="nn-footer__social">
+            <a href="#" class="nn-footer__social-link" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="nn-footer__social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <a href="#" class="nn-footer__social-link" aria-label="Discord">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-md-offset-1">
+          <h5 class="nn-footer__heading">Product</h5>
+          <ul class="nn-footer__links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h5 class="nn-footer__heading">Company</h5>
+          <ul class="nn-footer__links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="nn-footer__heading">Support</h5>
+          <ul class="nn-footer__links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nn-footer__divider"></div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="nn-footer__copyright">
+            &copy; 2026 Noty. Crafted with care. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../public/jquery.min.js"></script>
+  <script src="../../public/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

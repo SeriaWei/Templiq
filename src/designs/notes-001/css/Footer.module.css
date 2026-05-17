@@ -1,0 +1,128 @@
+/* ============================================================
+   FOOTER — Noty Note-Taking App
+   ============================================================ */
+.nn-footer {
+  background: var(--color-bg-alt);
+  padding: 6rem 0 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.nn-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.nn-footer__brand-icon {
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.nn-footer__brand-name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.nn-footer__desc {
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+  max-width: 30rem;
+}
+
+.nn-footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.nn-footer__social-link {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.3s ease;
+}
+
+.nn-footer__social-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  text-decoration: none;
+}
+
+.nn-footer__social-link svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.nn-footer__heading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.nn-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nn-footer__links li {
+  margin-bottom: 0.8rem;
+}
+
+.nn-footer__links li a {
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nn-footer__links li a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.nn-footer__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 3rem 0 2.4rem;
+}
+
+.nn-footer__copyright {
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .nn-footer {
+    padding: 4rem 0 2rem;
+  }
+
+  .nn-footer__brand,
+  .nn-footer__desc,
+  .nn-footer__social {
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nn-footer__heading {
+    margin-top: 2.4rem;
+  }
+}
