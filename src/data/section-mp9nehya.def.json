@@ -1,0 +1,75 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "标题"
+    },
+    "intro": {
+        "FieldType": "Paragraph",
+        "DisplayName": "简介"
+    },
+    "plans": {
+        "FieldType": "Array",
+        "DisplayName": "定价方案",
+        "Children": [
+            {
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "方案名称",
+                    "IsRequired": true
+                },
+                "currency": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "货币符号",
+                    "IsRequired": true
+                },
+                "amount": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "金额",
+                    "IsRequired": true
+                },
+                "period": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "周期说明",
+                    "IsRequired": true
+                },
+                "badge": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "徽章文本"
+                },
+                "featured": {
+                    "FieldType": "Checkbox",
+                    "DisplayName": "是否推荐"
+                },
+                "btn_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮文本"
+                },
+                "btn_link": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮链接"
+                },
+                "features": {
+                    "FieldType": "Array",
+                    "DisplayName": "功能列表",
+                    "Children": [
+                        {
+                            "text": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "功能文本",
+                                "IsRequired": true
+                            },
+                            "included": {
+                                "FieldType": "Checkbox",
+                                "DisplayName": "是否包含"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

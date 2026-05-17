@@ -1,0 +1,309 @@
+<!-- 定价方案 -->
+{% header %}
+<style>
+.section-mp9nehya {
+  padding: 10rem 0;
+  background: #faf7f2;
+  border-top: 1px solid #e8e0d6;
+  border-bottom: 1px solid #e8e0d6;
+}
+
+.section-mp9nehya .nn-pricing__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #2c2823;
+  margin: 0 0 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mp9nehya .nn-pricing__intro {
+  font-size: 1.7rem;
+  color: #8a7f73;
+  max-width: 50rem;
+  margin: 0 auto 5rem;
+}
+
+.section-mp9nehya .nn-pricing__grid {
+  margin-top: 2rem;
+}
+
+.section-mp9nehya .nn-pricing-card {
+  background: #ffffff;
+  border: 1px solid #e8e0d6;
+  border-radius: 20px;
+  padding: 3.6rem 3rem;
+  margin-bottom: 2.4rem;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.section-mp9nehya .nn-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(44, 40, 35, 0.06);
+}
+
+.section-mp9nehya .nn-pricing-card--featured {
+  border-color: #d94b2a;
+  border-width: 2px;
+  box-shadow: 0 8px 32px rgba(217, 75, 42, 0.08);
+}
+
+.section-mp9nehya .nn-pricing-card--featured:hover {
+  box-shadow: 0 16px 48px rgba(217, 75, 42, 0.12);
+}
+
+.section-mp9nehya .nn-pricing-card__badge {
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d94b2a;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.4rem 1.6rem;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.section-mp9nehya .nn-pricing-card__header {
+  text-align: center;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid #e8e0d6;
+  margin-bottom: 2.4rem;
+}
+
+.section-mp9nehya .nn-pricing-card__name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c2823;
+  margin: 0 0 1.6rem;
+}
+
+.section-mp9nehya .nn-pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-mp9nehya .nn-pricing-card__currency {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #8a7f73;
+}
+
+.section-mp9nehya .nn-pricing-card__amount {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 5.6rem;
+  font-weight: 700;
+  color: #2c2823;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.section-mp9nehya .nn-pricing-card__period {
+  font-size: 1.3rem;
+  color: #8a7f73;
+  margin: 0;
+}
+
+.section-mp9nehya .nn-pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.4rem;
+}
+
+.section-mp9nehya .nn-pricing-card__features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  color: #2c2823;
+  padding: 0.8rem 0;
+}
+
+.section-mp9nehya .nn-pricing-card__features li svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #d94b2a;
+  flex-shrink: 0;
+}
+
+.section-mp9nehya .nn-pricing-card__feature--muted {
+  opacity: 0.4;
+}
+
+.section-mp9nehya .nn-pricing-card__feature--muted svg {
+  color: #8a7f73 !important;
+}
+
+.section-mp9nehya .nn-pricing-card__btn {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2823;
+  background: #faf7f2;
+  border: 1.5px solid #e8e0d6;
+  padding: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.section-mp9nehya .nn-pricing-card__btn:hover {
+  border-color: #d94b2a;
+  color: #d94b2a;
+  text-decoration: none;
+}
+
+.section-mp9nehya .nn-pricing-card__btn--primary {
+  background: #d94b2a;
+  color: #fff;
+  border-color: #d94b2a;
+  box-shadow: 0 4px 16px rgba(217, 75, 42, 0.2);
+}
+
+.section-mp9nehya .nn-pricing-card__btn--primary:hover {
+  background: #c43d1e;
+  color: #fff;
+  border-color: #c43d1e;
+  box-shadow: 0 6px 24px rgba(217, 75, 42, 0.3);
+  text-decoration: none;
+}
+
+.section-mp9nehya .nn-section-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #d94b2a;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.section-mp9nehya .nn-section-label::before,
+.section-mp9nehya .nn-section-label::after {
+  content: '';
+  display: inline-block;
+  width: 2.4rem;
+  height: 1px;
+  background: #d94b2a;
+  vertical-align: middle;
+  margin: 0 1rem;
+  opacity: 0.4;
+}
+
+.section-mp9nehya .nn-text-accent {
+  color: #d94b2a;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .section-mp9nehya {
+    padding: 6rem 0;
+  }
+
+  .section-mp9nehya .nn-pricing__title {
+    font-size: 3rem;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mp9nehya" id="pricing">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% if this.Model.section_label %}
+        <h6 class="nn-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</h6>
+        {% endif %}
+        {% if this.Model.title %}
+        <h2 class="nn-pricing__title" property="true" data-property="title" method="html">{{this.Model.title | raw}}</h2>
+        {% endif %}
+        {% if this.Model.intro %}
+        <p class="nn-pricing__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if this.Model.plans %}
+    <div class="row nn-pricing__grid">
+      {% assign plan_index = forloop.index0 %}
+      {% for plan in this.Model.plans %}
+      <div class="col-md-4 col-sm-6">
+        <div class="nn-pricing-card{% if plan.featured %} nn-pricing-card--featured{% endif %}">
+          {% if plan.badge %}
+          <div class="nn-pricing-card__badge" property="true" data-property="plans[{{forloop.index0}}].badge" method="text">{{plan.badge}}</div>
+          {% endif %}
+          <div class="nn-pricing-card__header">
+            {% if plan.name %}
+            <h3 class="nn-pricing-card__name" property="true" data-property="plans[{{forloop.index0}}].name" method="text">{{plan.name}}</h3>
+            {% endif %}
+            <div class="nn-pricing-card__price">
+              <span class="nn-pricing-card__currency" property="true" data-property="plans[{{forloop.index0}}].currency" method="text">{{plan.currency}}</span>
+              <span class="nn-pricing-card__amount" property="true" data-property="plans[{{forloop.index0}}].amount" method="text">{{plan.amount}}</span>
+            </div>
+            {% if plan.period %}
+            <p class="nn-pricing-card__period" property="true" data-property="plans[{{forloop.index0}}].period" method="text">{{plan.period}}</p>
+            {% endif %}
+          </div>
+          {% if plan.features %}
+          <ul class="nn-pricing-card__features">
+            {% assign feature_index = forloop.index0 %}
+            {% for feature in plan.features %}
+            <li class="{% unless feature.included %}nn-pricing-card__feature--muted{% endunless %}">
+              {% if feature.included %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              {% else %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              {% endif %}
+              <span property="true" data-property="plans[{{forloop.index0}}].features[{{forloop.index0}}].text" method="text">{{feature.text}}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if plan.btn_text %}
+          <a property="true" data-property="plans[{{forloop.index0}}].btn_text" method="text" href="{% url plan.btn_link %}" class="nn-pricing-card__btn{% if plan.featured %} nn-pricing-card__btn--primary{% endif %}">{{plan.btn_text}}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mp9nehya');
+  if (!section || !('IntersectionObserver' in window)) return;
+  var revealElements = section.querySelectorAll('.nn-pricing-card');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+{% endfooter %}
+

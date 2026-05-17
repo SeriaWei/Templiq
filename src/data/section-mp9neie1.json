@@ -1,0 +1,82 @@
+{
+    "brand_name": "Noty",
+    "brand_desc": "The thoughtful note-taking app for people who love ideas. Capture, organize, and share your thoughts with elegance.",
+    "copyright": "© 2026 Noty. Crafted with care. All rights reserved.",
+    "link_groups": [
+        {
+            "heading": "Product",
+            "links": [
+                {
+                    "text": "Features",
+                    "url": "#features"
+                },
+                {
+                    "text": "Pricing",
+                    "url": "#pricing"
+                },
+                {
+                    "text": "Integrations",
+                    "url": "#"
+                },
+                {
+                    "text": "Changelog",
+                    "url": "#"
+                },
+                {
+                    "text": "Roadmap",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "heading": "Company",
+            "links": [
+                {
+                    "text": "About",
+                    "url": "#"
+                },
+                {
+                    "text": "Blog",
+                    "url": "#"
+                },
+                {
+                    "text": "Careers",
+                    "url": "#"
+                },
+                {
+                    "text": "Press Kit",
+                    "url": "#"
+                },
+                {
+                    "text": "Contact",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "heading": "Support",
+            "links": [
+                {
+                    "text": "Help Center",
+                    "url": "#"
+                },
+                {
+                    "text": "Documentation",
+                    "url": "#"
+                },
+                {
+                    "text": "Community",
+                    "url": "#"
+                },
+                {
+                    "text": "Status",
+                    "url": "#"
+                },
+                {
+                    "text": "Privacy & Terms",
+                    "url": "#"
+                }
+            ]
+        }
+    ]
+}

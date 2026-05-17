@@ -1,0 +1,45 @@
+{
+    "brand_name": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌名称"
+    },
+    "brand_desc": {
+        "FieldType": "Paragraph",
+        "DisplayName": "品牌描述"
+    },
+    "copyright": {
+        "FieldType": "SingleLine",
+        "DisplayName": "版权信息"
+    },
+    "link_groups": {
+        "FieldType": "Array",
+        "DisplayName": "链接分组",
+        "Children": [
+            {
+                "heading": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "分组标题",
+                    "IsRequired": true
+                },
+                "links": {
+                    "FieldType": "Array",
+                    "DisplayName": "链接列表",
+                    "Children": [
+                        {
+                            "text": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "链接文本",
+                                "IsRequired": true
+                            },
+                            "url": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "链接地址",
+                                "IsRequired": true
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

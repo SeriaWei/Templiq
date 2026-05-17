@@ -1,0 +1,115 @@
+{
+    "section_label": "Simple Pricing",
+    "title": "A Plan for <span class=\"nn-text-accent\">Every Thinker</span>",
+    "intro": "Start free, upgrade when you need more. No hidden fees, no surprises.",
+    "plans": [
+        {
+            "name": "Free",
+            "currency": "$",
+            "amount": "0",
+            "period": "Forever free",
+            "badge": "",
+            "featured": false,
+            "btn_text": "Get Started",
+            "btn_link": "#cta",
+            "features": [
+                {
+                    "text": "Unlimited notes",
+                    "included": true
+                },
+                {
+                    "text": "3 notebooks",
+                    "included": true
+                },
+                {
+                    "text": "Markdown editor",
+                    "included": true
+                },
+                {
+                    "text": "Sync across 2 devices",
+                    "included": true
+                },
+                {
+                    "text": "AI features",
+                    "included": false
+                },
+                {
+                    "text": "Collaboration",
+                    "included": false
+                }
+            ]
+        },
+        {
+            "name": "Pro",
+            "currency": "$",
+            "amount": "8",
+            "period": "per month, billed annually",
+            "badge": "Most Popular",
+            "featured": true,
+            "btn_text": "Start Free Trial",
+            "btn_link": "#cta",
+            "features": [
+                {
+                    "text": "Unlimited everything",
+                    "included": true
+                },
+                {
+                    "text": "Unlimited notebooks",
+                    "included": true
+                },
+                {
+                    "text": "Full markdown + diagrams",
+                    "included": true
+                },
+                {
+                    "text": "Unlimited device sync",
+                    "included": true
+                },
+                {
+                    "text": "AI summaries & search",
+                    "included": true
+                },
+                {
+                    "text": "Team collaboration",
+                    "included": true
+                }
+            ]
+        },
+        {
+            "name": "Team",
+            "currency": "$",
+            "amount": "15",
+            "period": "per user / month",
+            "badge": "",
+            "featured": false,
+            "btn_text": "Contact Sales",
+            "btn_link": "#cta",
+            "features": [
+                {
+                    "text": "Everything in Pro",
+                    "included": true
+                },
+                {
+                    "text": "Team workspaces",
+                    "included": true
+                },
+                {
+                    "text": "Admin controls",
+                    "included": true
+                },
+                {
+                    "text": "Priority support",
+                    "included": true
+                },
+                {
+                    "text": "Custom templates",
+                    "included": true
+                },
+                {
+                    "text": "API access",
+                    "included": true
+                }
+            ]
+        }
+    ]
+}

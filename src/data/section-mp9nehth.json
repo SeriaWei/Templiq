@@ -1,0 +1,24 @@
+{
+    "section_label": "Loved by Creators",
+    "title": "Stories from the <span class=\"nn-text-accent\">Noty Community</span>",
+    "testimonials": [
+        {
+            "quote": "\"Noty completely changed how I approach my daily journaling and project planning. It's the first tool that actually feels like an extension of my brain. The markdown editor is a dream and the organization system is pure genius.\"",
+            "author_name": "James Mitchell",
+            "author_role": "Product Designer, Figma",
+            "author_avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80"
+        },
+        {
+            "quote": "\"I've tried every note app out there, but Noty is the only one that stuck. The offline-first approach means I never lose a thought, and the sync is flawless. It's become my second brain.\"",
+            "author_name": "Sarah Chen",
+            "author_role": "Engineering Lead, Stripe",
+            "author_avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
+        },
+        {
+            "quote": "\"As a writer, I need tools that inspire rather than distract. Noty's minimal design and beautiful typography make me want to write more. I've doubled my daily output since switching.\"",
+            "author_name": "Marcus Johnson",
+            "author_role": "Author & Tech Journalist",
+            "author_avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80"
+        }
+    ]
+}

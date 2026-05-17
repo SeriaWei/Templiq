@@ -1,0 +1,206 @@
+<!-- 使用步骤 -->
+{% header %}
+<style>
+.section-mp9nehjp {
+  padding: 10rem 0;
+  background: #2c2823;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-mp9nehjp::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60rem;
+  height: 60rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 75, 42, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.section-mp9nehjp .nn-section-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.section-mp9nehjp .nn-section-label::before,
+.section-mp9nehjp .nn-section-label::after {
+  content: '';
+  display: inline-block;
+  width: 2.4rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  vertical-align: middle;
+  margin: 0 1rem;
+}
+
+.section-mp9nehjp .nn-how__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mp9nehjp .nn-how__intro {
+  font-size: 1.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 50rem;
+  margin: 0 auto 5rem;
+}
+
+.section-mp9nehjp .nn-how__steps {
+  position: relative;
+  z-index: 1;
+}
+
+.section-mp9nehjp .nn-how-step {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.section-mp9nehjp .nn-how-step__number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #d94b2a;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.section-mp9nehjp .nn-how-step__visual {
+  margin-bottom: 2.4rem;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.section-mp9nehjp .nn-how-step__visual svg {
+  width: 100%;
+  height: auto;
+  max-width: 20rem;
+}
+
+.section-mp9nehjp .nn-how-step:hover .nn-how-step__visual {
+  transform: translateY(-4px);
+}
+
+.section-mp9nehjp .nn-how-step__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-mp9nehjp .nn-how-step__desc {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.section-mp9nehjp .nn-text-accent {
+  color: #d94b2a;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .section-mp9nehjp {
+    padding: 6rem 0;
+  }
+
+  .section-mp9nehjp .nn-how__title {
+    font-size: 3rem;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mp9nehjp" id="how">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% if this.Model.section_label %}
+        <h6 class="nn-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</h6>
+        {% endif %}
+        {% if this.Model.title %}
+        <h2 class="nn-how__title" property="true" data-property="title" method="html">{{this.Model.title | raw}}</h2>
+        {% endif %}
+        {% if this.Model.intro %}
+        <p class="nn-how__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if this.Model.steps %}
+    <div class="row nn-how__steps">
+      {% assign step_index = forloop.index0 %}
+      {% for step in this.Model.steps %}
+      <div class="col-md-4">
+        <div class="nn-how-step">
+          {% if step.number %}
+          <div class="nn-how-step__number" property="true" data-property="steps[{{forloop.index0}}].number" method="text">{{step.number}}</div>
+          {% endif %}
+          <div class="nn-how-step__visual">
+            <svg viewBox="0 0 200 140" fill="none">
+              <rect x="20" y="20" width="160" height="100" rx="8" fill="#faf7f2" stroke="#e8e0d6" stroke-width="1.5"/>
+              <rect x="36" y="36" width="128" height="12" rx="2" fill="#d94b2a" opacity="0.15"/>
+              <line x1="36" y1="58" x2="120" y2="58" stroke="#8a7f73" stroke-width="2" stroke-linecap="round"/>
+              <line x1="36" y1="72" x2="140" y2="72" stroke="#8a7f73" stroke-width="2" stroke-linecap="round"/>
+              <line x1="36" y1="86" x2="100" y2="86" stroke="#8a7f73" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="170" cy="110" r="18" fill="#d94b2a" opacity="0.1"/>
+              <path d="M164 110l4 4 8-8" stroke="#d94b2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          {% if step.title %}
+          <h3 class="nn-how-step__title" property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>
+          {% endif %}
+          {% if step.desc %}
+          <p class="nn-how-step__desc" property="true" data-property="steps[{{forloop.index0}}].desc" method="text">{{step.desc}}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mp9nehjp');
+  if (!section || !('IntersectionObserver' in window)) return;
+  var revealElements = section.querySelectorAll('.nn-how-step');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+{% endfooter %}
+

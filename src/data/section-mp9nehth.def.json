@@ -1,0 +1,37 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "标题"
+    },
+    "testimonials": {
+        "FieldType": "Array",
+        "DisplayName": "推荐列表",
+        "Children": [
+            {
+                "quote": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "引用内容",
+                    "IsRequired": true
+                },
+                "author_name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "作者姓名",
+                    "IsRequired": true
+                },
+                "author_role": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "作者职位"
+                },
+                "author_avatar": {
+                    "FieldType": "Media",
+                    "DisplayName": "作者头像",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

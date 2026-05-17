@@ -1,0 +1,74 @@
+{
+    "badge_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "徽章文本"
+    },
+    "title_line_1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第一行"
+    },
+    "title_line_2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第二行"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "btn_primary_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文本"
+    },
+    "btn_primary_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接"
+    },
+    "btn_outline_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮文本"
+    },
+    "btn_outline_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮链接"
+    },
+    "scroll_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "滚动提示文本"
+    },
+    "notes": {
+        "FieldType": "Array",
+        "DisplayName": "便签列表",
+        "Children": [
+            {
+                "color": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "便签颜色",
+                    "IsRequired": true,
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "黄色",
+                            "Value": "yellow"
+                        },
+                        {
+                            "DisplayText": "粉色",
+                            "Value": "pink"
+                        },
+                        {
+                            "DisplayText": "蓝色",
+                            "Value": "blue"
+                        },
+                        {
+                            "DisplayText": "绿色",
+                            "Value": "green"
+                        }
+                    ]
+                },
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "便签文本",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

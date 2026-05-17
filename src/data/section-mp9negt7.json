@@ -1,0 +1,29 @@
+{
+    "badge_text": "The thoughtful way to take notes",
+    "title_line_1": "Where Ideas",
+    "title_line_2": "Find Their Home",
+    "subtitle": "Noty blends the warmth of pen and paper with the power of modern tools. Capture ideas, organize thoughts, and bring your projects to life — beautifully.",
+    "btn_primary_text": "Start Writing Free",
+    "btn_primary_link": "#cta",
+    "btn_outline_text": "See Features",
+    "btn_outline_link": "#features",
+    "scroll_text": "Discover more",
+    "notes": [
+        {
+            "color": "yellow",
+            "text": "Ideas flow<br>like water"
+        },
+        {
+            "color": "pink",
+            "text": "Capture<br>every thought"
+        },
+        {
+            "color": "blue",
+            "text": "Organize<br>with ease"
+        },
+        {
+            "color": "green",
+            "text": "Share<br>instantly"
+        }
+    ]
+}

@@ -28,8 +28,9 @@ description: Convert an design(Html pages in src/designs/<design-name> folder) t
 - 嵌套循环时不要使用forloop.parentloop来取索引，而是在父循环中定义一个变量来保存索引，例如：{% assign index = forloop.index0 %}，然后在子循环中使用这个变量
 - 注意添加条件判断以避免生成空标签
 - 如果有javascript要放到footer中 {% footer %}<script type="text/javascript"></script>{% endfooter %}
-- 绑定SVG图标时，由于完整的SVG图标代码都在属性中，所以不要在模板里面写"<svg>"标签以避免重复,也不要加[property="true"]，直接输出即可。例如：{{this.Model.svg | raw}}
+- 绑定SVG图标时，由于完整的SVG图标代码都在属性中，所以不要在模板里面写"<svg>"标签以避免重复,也不要加[property="true"]，直接输出即可。例如：<div>{{this.Model.svg | raw}}</div>
 - 对于图片，链接的URL，要使用url tag，例如: `<img src="{% url image.src %}" />`
+- 如果属性中允许出现html标签，请使用raw过滤器，例如：<div>{{this.Model.html_content | raw}}</div>
 
 
 ## Model binding示例：

@@ -1,0 +1,210 @@
+<!-- 功能特性 -->
+{% header %}
+<style>
+.section-mp9neh6i {
+  padding: 10rem 0;
+  background: #ffffff;
+  position: relative;
+  border-top: 1px solid #e8e0d6;
+  border-bottom: 1px solid #e8e0d6;
+}
+
+.section-mp9neh6i .nn-features__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #2c2823;
+  margin: 0 0 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mp9neh6i .nn-features__intro {
+  font-size: 1.7rem;
+  color: #8a7f73;
+  max-width: 50rem;
+  margin: 0 auto 5rem;
+}
+
+.section-mp9neh6i .nn-features__grid {
+  margin-top: 2rem;
+}
+
+.section-mp9neh6i .nn-feature-card {
+  background: #faf7f2;
+  border: 1px solid #e8e0d6;
+  border-radius: 16px;
+  padding: 3.2rem 2.8rem;
+  margin-bottom: 2.4rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-mp9neh6i .nn-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #d94b2a;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.section-mp9neh6i .nn-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(44, 40, 35, 0.06);
+  border-color: rgba(217, 75, 42, 0.15);
+}
+
+.section-mp9neh6i .nn-feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.section-mp9neh6i .nn-feature-card__icon {
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 14px;
+  background: #f5e8e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: #d94b2a;
+  transition: all 0.3s ease;
+}
+
+.section-mp9neh6i .nn-feature-card__icon svg {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.section-mp9neh6i .nn-feature-card:hover .nn-feature-card__icon {
+  background: #d94b2a;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.section-mp9neh6i .nn-feature-card__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c2823;
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+.section-mp9neh6i .nn-feature-card__desc {
+  font-size: 1.5rem;
+  color: #8a7f73;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.section-mp9neh6i .nn-section-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #d94b2a;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.section-mp9neh6i .nn-section-label::before,
+.section-mp9neh6i .nn-section-label::after {
+  content: '';
+  display: inline-block;
+  width: 2.4rem;
+  height: 1px;
+  background: #d94b2a;
+  vertical-align: middle;
+  margin: 0 1rem;
+  opacity: 0.4;
+}
+
+.section-mp9neh6i .nn-text-accent {
+  color: #d94b2a;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .section-mp9neh6i {
+    padding: 6rem 0;
+  }
+
+  .section-mp9neh6i .nn-features__title {
+    font-size: 3rem;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mp9neh6i" id="features">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% if this.Model.section_label %}
+        <h6 class="nn-section-label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</h6>
+        {% endif %}
+        {% if this.Model.title %}
+        <h2 class="nn-features__title" property="true" data-property="title" method="html">{{this.Model.title | raw}}</h2>
+        {% endif %}
+        {% if this.Model.intro %}
+        <p class="nn-features__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if this.Model.feature_cards %}
+    <div class="row nn-features__grid">
+      {% assign card_index = forloop.index0 %}
+      {% for card in this.Model.feature_cards %}
+      <div class="col-md-4 col-sm-6">
+        <div class="nn-feature-card">
+          <div class="nn-feature-card__icon">
+            {{card.icon_svg | raw}}
+          </div>
+          {% if card.title %}
+          <h3 class="nn-feature-card__title" property="true" data-property="feature_cards[{{forloop.index0}}].title" method="text">{{card.title}}</h3>
+          {% endif %}
+          {% if card.desc %}
+          <p class="nn-feature-card__desc" property="true" data-property="feature_cards[{{forloop.index0}}].desc" method="text">{{card.desc}}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mp9neh6i');
+  if (!section || !('IntersectionObserver' in window)) return;
+  var revealElements = section.querySelectorAll('.nn-feature-card');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+{% endfooter %}
+

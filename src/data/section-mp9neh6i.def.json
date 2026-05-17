@@ -1,0 +1,37 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "title": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "标题"
+    },
+    "intro": {
+        "FieldType": "Paragraph",
+        "DisplayName": "简介"
+    },
+    "feature_cards": {
+        "FieldType": "Array",
+        "DisplayName": "功能卡片",
+        "Children": [
+            {
+                "icon_svg": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "图标SVG",
+                    "IsRequired": true
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题",
+                    "IsRequired": true
+                },
+                "desc": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

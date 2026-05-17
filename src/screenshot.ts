@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import sharp from 'sharp';
 
-const SCREENSHOT_WIDTH = 1200;
+const SCREENSHOT_WIDTH = 1400;
 const THUMBNAIL_MAX_WIDTH = 500;
 
 let browser: Browser | null = null;
@@ -25,7 +25,7 @@ export async function capturePreview(templateName: string): Promise<{ originalFi
 
   try {
     // Set viewport width; height will be adjusted after we know element size
-    await page.setViewportSize({ width: SCREENSHOT_WIDTH, height: 800 });
+    await page.setViewportSize({ width: SCREENSHOT_WIDTH, height: 900 });
 
     // Navigate to the preview page (same server, so already running)
     const url = `http://localhost:3000/preview/${encodeURIComponent(templateName)}`;
@@ -53,7 +53,7 @@ export async function capturePreview(templateName: string): Promise<{ originalFi
     if (box) {
       await page.setViewportSize({
         width: SCREENSHOT_WIDTH,
-        height: Math.max(Math.ceil(box.height), 800)
+        height: Math.max(Math.ceil(box.height), 900)
       });
     }
 

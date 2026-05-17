@@ -1,0 +1,22 @@
+{
+    "section_label": "Simple Workflow",
+    "title": "Three Steps to <span class=\"nn-text-accent\">Clarity</span>",
+    "intro": "Getting started takes seconds. The impact lasts a lifetime.",
+    "steps": [
+        {
+            "number": "01",
+            "title": "Write Naturally",
+            "desc": "Open Noty and start typing. Our distraction-free editor feels like paper, works like magic."
+        },
+        {
+            "number": "02",
+            "title": "Organize Smartly",
+            "desc": "Drag, tag, and stack your notes into collections. Your brain's natural structure, mirrored digitally."
+        },
+        {
+            "number": "03",
+            "title": "Share & Collaborate",
+            "desc": "Share notebooks with your team, publish notes to the web, or keep them private — you decide."
+        }
+    ]
+}
