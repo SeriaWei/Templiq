@@ -19,6 +19,20 @@ Templiq 是一个专门为 ZKEACMS 内容管理系统开发的模板创建和打
 npm install
 ```
 
+### Playwright 初始化
+
+安装完成后，需要初始化 Playwright 浏览器：
+
+```bash
+npx playwright install
+```
+
+或者只安装 Chromium（推荐）：
+
+```bash
+npx playwright install chromium
+```
+
 ## 配置
 
 创建 `.env` 文件（参考 `.env.example`）并配置以下环境变量：
