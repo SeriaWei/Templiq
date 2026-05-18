@@ -1,0 +1,40 @@
+{
+    "label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "image_src": {
+        "FieldType": "Media",
+        "DisplayName": "展示图片"
+    },
+    "number": {
+        "FieldType": "SingleLine",
+        "DisplayName": "编号"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "卡片标题"
+    },
+    "description": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述",
+        "IsRequired": true
+    },
+    "list_items": {
+        "FieldType": "Array",
+        "DisplayName": "特点列表",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "特点文字",
+                    "IsRequired": true
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,239 @@
+<!-- 视觉画廊 -->
+{% header %}
+<style>
+.section-mpb79za5 {
+  --ae-bg: #000000;
+  --ae-bg-alt: #0a0a0a;
+  --ae-surface: #1d1d1f;
+  --ae-surface-hover: #2d2d2f;
+  --ae-text-primary: #f5f5f7;
+  --ae-text-secondary: #b0b0b3;
+  --ae-text-tertiary: #8e8e92;
+  --ae-accent: #0071e3;
+  --ae-accent-hover: #0077ed;
+  --ae-accent-glow: rgba(0, 113, 227, 0.15);
+  --ae-border: #2d2d2f;
+  --ae-border-light: #3d3d3f;
+  --ae-success: #30d158;
+  --ae-gradient-start: #0071e3;
+  --ae-gradient-end: #40a9ff;
+  --ae-card-bg: rgba(29, 29, 31, 0.8);
+  --ae-font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ae-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --ae-nav-height: 56px;
+  --ae-container-padding: 24px;
+  --ae-radius-sm: 8px;
+  --ae-radius-md: 14px;
+  --ae-radius-lg: 20px;
+  --ae-radius-xl: 28px;
+  color: var(--ae-text-primary);
+  background: var(--ae-bg-alt);
+  font-family: var(--ae-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  padding: 60px 0 80px;
+  position: relative;
+}
+
+.section-mpb79za5 * {
+  box-sizing: border-box;
+}
+
+.section-mpb79za5 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-mpb79za5 a {
+  color: var(--ae-accent);
+  transition: color 0.3s ease;
+}
+
+.section-mpb79za5 a:hover,
+.section-mpb79za5 a:focus {
+  color: var(--ae-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpb79za5 .container {
+  padding-left: var(--ae-container-padding);
+  padding-right: var(--ae-container-padding);
+  max-width: 1170px;
+}
+
+.section-mpb79za5 .ae-gallery__label {
+  font-family: var(--ae-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ae-accent);
+  margin-bottom: 8px;
+}
+
+.section-mpb79za5 .ae-gallery__heading {
+  font-family: var(--ae-font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin: 0 0 32px;
+  line-height: 1.15;
+}
+
+/* Masonry layout */
+.section-mpb79za5 .ae-gallery__masonry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 0 var(--ae-container-padding);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-mpb79za5 .ae-gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ae-radius-md);
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.section-mpb79za5 .ae-gallery__item--tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.section-mpb79za5 .ae-gallery__item--wide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+
+.section-mpb79za5 .ae-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.6s ease;
+  display: block;
+}
+
+.section-mpb79za5 .ae-gallery__item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.7) saturate(1.1);
+}
+
+.section-mpb79za5 .ae-gallery__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.section-mpb79za5 .ae-gallery__item:hover .ae-gallery__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-mpb79za5 .ae-gallery__overlay-text {
+  font-family: var(--ae-font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .section-mpb79za5 {
+    padding: 100px 0 120px;
+  }
+  .section-mpb79za5 .ae-gallery__heading {
+    font-size: 44px;
+    margin-bottom: 40px;
+  }
+  .section-mpb79za5 .ae-gallery__masonry {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .section-mpb79za5 .ae-gallery__item--wide {
+    grid-column: span 2;
+  }
+  .section-mpb79za5 .ae-gallery__item--tall {
+    grid-row: span 2;
+  }
+  .section-mpb79za5 {
+    --ae-container-padding: 40px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpb79za5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        {% if this.Model.label %}
+        <div class="ae-gallery__label" property="true" data-property="label" method="text">{{this.Model.label}}</div>
+        {% endif %}
+        {% if this.Model.heading %}
+        <h2 class="ae-gallery__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if this.Model.items.size > 0 %}
+  <div class="ae-gallery__masonry">
+    {% assign index = 0 %}
+    {% for item in this.Model.items %}
+    {% assign currentIndex = index %}
+    {% assign index = index | plus: 1 %}
+    {% if item.size == "tall" %}
+    <div class="ae-gallery__item ae-gallery__item--tall">
+    {% elsif item.size == "wide" %}
+    <div class="ae-gallery__item ae-gallery__item--wide">
+    {% else %}
+    <div class="ae-gallery__item">
+    {% endif %}
+      {% if item.image_src %}
+      <img property="true" data-property="items[{{currentIndex}}].image_src" method="attr" para="src" src="{% url item.image_src %}" alt="{{item.overlay_text}}" loading="lazy" />
+      {% endif %}
+      {% if item.overlay_text %}
+      <div class="ae-gallery__overlay">
+        <span class="ae-gallery__overlay-text" property="true" data-property="items[{{currentIndex}}].overlay_text" method="text">{{item.overlay_text}}</span>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mpb79za5');
+  if (!section) return;
+
+  var galleryItems = section.querySelectorAll('.ae-gallery__item');
+
+  galleryItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      this.style.transition = 'filter 0.3s ease';
+      this.style.filter = 'brightness(1.2)';
+      setTimeout(function (el) {
+        el.style.filter = '';
+      }, 300, this);
+    });
+  });
+})();
+</script>
+{% endfooter %}

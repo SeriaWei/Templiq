@@ -1,0 +1,183 @@
+/* ============================================================
+   FOOTER — Aether
+   Minimal dark footer with newsletter signup
+   ============================================================ */
+
+.ae-footer {
+  position: relative;
+  background: var(--ae-bg);
+  padding: 6rem 0 3rem;
+  border-top: 0.5px solid var(--ae-border);
+}
+
+.ae-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--ae-font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.ae-footer__brand svg {
+  opacity: 0.7;
+}
+
+.ae-footer__desc {
+  font-family: var(--ae-font-body);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 28rem;
+}
+
+.ae-footer__heading {
+  font-family: var(--ae-font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ae-text-primary);
+  margin: 0 0 1.6rem;
+}
+
+.ae-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+}
+
+.ae-footer__links li {
+  margin-bottom: 0.8rem;
+}
+
+.ae-footer__links li a {
+  font-family: var(--ae-font-body);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ae-footer__links li a:hover {
+  color: var(--ae-text-primary);
+}
+
+/* Newsletter */
+.ae-footer__newsletter-text {
+  font-family: var(--ae-font-body);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  margin-bottom: 1.6rem;
+}
+
+.ae-footer__form {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.ae-footer__input {
+  flex: 1;
+  background: var(--ae-surface);
+  border: 0.5px solid var(--ae-border);
+  border-radius: var(--ae-radius-sm);
+  padding: 1.2rem 1.6rem;
+  font-family: var(--ae-font-body);
+  font-size: 1.4rem;
+  color: var(--ae-text-primary);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.ae-footer__input::placeholder {
+  color: var(--ae-text-secondary);
+}
+
+.ae-footer__input:focus {
+  border-color: var(--ae-accent);
+}
+
+.ae-footer__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ae-accent);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.ae-footer__submit:hover {
+  background: var(--ae-accent-hover);
+  transform: scale(1.05);
+}
+
+/* Bottom bar */
+.ae-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2.4rem;
+  border-top: 0.5px solid var(--ae-border);
+  text-align: center;
+}
+
+.ae-footer__copyright {
+  font-family: var(--ae-font-body);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  margin: 0;
+}
+
+.ae-footer__legal {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ae-footer__legal a {
+  font-family: var(--ae-font-body);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ae-footer__legal a:hover {
+  color: var(--ae-text-primary);
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .ae-footer {
+    padding: 8rem 0 3rem;
+  }
+
+  .ae-footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .ae-footer__desc {
+    margin-bottom: 0;
+  }
+}

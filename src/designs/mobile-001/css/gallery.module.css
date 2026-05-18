@@ -1,0 +1,121 @@
+/* ============================================================
+   GALLERY — Aether
+   Full-width masonry-style image gallery
+   ============================================================ */
+
+.ae-gallery {
+  padding: 6rem 0 8rem;
+  position: relative;
+  background: var(--ae-bg-alt);
+}
+
+.ae-gallery__label {
+  font-family: var(--ae-font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ae-accent);
+  margin-bottom: 0.8rem;
+}
+
+.ae-gallery__heading {
+  font-family: var(--ae-font-heading);
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin: 0 0 3.2rem;
+  line-height: 1.15;
+}
+
+/* Masonry layout */
+.ae-gallery__masonry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 0 var(--ae-container-padding);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ae-gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ae-radius-md);
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.ae-gallery__item--tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.ae-gallery__item--wide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+
+.ae-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.6s ease;
+  display: block;
+}
+
+.ae-gallery__item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.7) saturate(1.1);
+}
+
+.ae-gallery__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.6rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.ae-gallery__item:hover .ae-gallery__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ae-gallery__overlay-text {
+  font-family: var(--ae-font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .ae-gallery {
+    padding: 10rem 0 12rem;
+  }
+
+  .ae-gallery__heading {
+    font-size: 4.4rem;
+    margin-bottom: 4rem;
+  }
+
+  .ae-gallery__masonry {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .ae-gallery__item--wide {
+    grid-column: span 2;
+  }
+
+  .ae-gallery__item--tall {
+    grid-row: span 2;
+  }
+}

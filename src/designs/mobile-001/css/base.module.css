@@ -1,0 +1,130 @@
+/* ============================================================
+   BASE — Aether Design System
+   Apple-inspired minimal aesthetics
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --ae-bg: #000000;
+  --ae-bg-alt: #0a0a0a;
+  --ae-surface: #1d1d1f;
+  --ae-surface-hover: #2d2d2f;
+  --ae-text-primary: #f5f5f7;
+  --ae-text-secondary: #b0b0b3;
+  --ae-text-tertiary: #8e8e92;
+  --ae-accent: #0071e3;
+  --ae-accent-hover: #0077ed;
+  --ae-accent-glow: rgba(0, 113, 227, 0.15);
+  --ae-border: #2d2d2f;
+  --ae-border-light: #3d3d3f;
+  --ae-success: #30d158;
+  --ae-gradient-start: #0071e3;
+  --ae-gradient-end: #40a9ff;
+  --ae-card-bg: rgba(29, 29, 31, 0.8);
+
+  /* Typography */
+  --ae-font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ae-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Sizes */
+  --ae-nav-height: 56px;
+  --ae-container-padding: 24px;
+  --ae-radius-sm: 8px;
+  --ae-radius-md: 14px;
+  --ae-radius-lg: 20px;
+  --ae-radius-xl: 28px;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--ae-font-body);
+  color: var(--ae-text-primary);
+  background: var(--ae-bg);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--ae-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ae-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ae-surface);
+  border-radius: 2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--ae-accent);
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--ae-accent-hover);
+  text-decoration: none;
+}
+
+.container {
+  padding-left: var(--ae-container-padding);
+  padding-right: var(--ae-container-padding);
+}
+
+/* Section label pattern */
+.ae-section-label {
+  display: inline-block;
+  font-family: var(--ae-font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ae-accent);
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-left: 2.8rem;
+}
+
+.ae-section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 1.5px;
+  background: var(--ae-accent);
+  border-radius: 1px;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  :root {
+    --ae-container-padding: 40px;
+  }
+}

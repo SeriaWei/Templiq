@@ -1,0 +1,39 @@
+{
+    "chip_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "徽标文字"
+    },
+    "title_line_1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第一行"
+    },
+    "title_line_2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第二行"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题",
+        "IsRequired": true
+    },
+    "btn_primary_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主要按钮文字"
+    },
+    "btn_primary_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主要按钮链接"
+    },
+    "btn_ghost_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮文字"
+    },
+    "btn_ghost_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮链接"
+    },
+    "scroll_hint_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "滚动提示文字"
+    }
+}

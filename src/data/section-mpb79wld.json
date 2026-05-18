@@ -1,0 +1,19 @@
+{
+    "label": "重新定义",
+    "heading": "为极致体验而生",
+    "image_src": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700&q=80&auto=format",
+    "number": "01",
+    "title": "设计即本质",
+    "description": "精密加工的单体铝合金机身，经过 28 道工序打磨。无缝曲面在光影中流转，每一个角度都在诉说着对细节的偏执。",
+    "list_items": [
+        {
+            "text": "航空级铝合金"
+        },
+        {
+            "text": "纳米级抛光工艺"
+        },
+        {
+            "text": "抗指纹疏油涂层"
+        }
+    ]
+}

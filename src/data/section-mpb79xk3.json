@@ -1,0 +1,26 @@
+{
+    "label": "核心亮点",
+    "heading": "前所未见",
+    "items": [
+        {
+            "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 48 48\" fill=\"none\"><rect x=\"6\" y=\"10\" width=\"36\" height=\"28\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"/><circle cx=\"24\" cy=\"26\" r=\"8\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v8l4 4\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>",
+            "title": "全天续航",
+            "description": "智能电源管理系统，一次充电可持续使用 18 小时，陪伴您从日出到日落。"
+        },
+        {
+            "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 48 48\" fill=\"none\"><path d=\"M24 4L28 14h12L30 22l4 12-10-6-10 6 4-12L8 14h12L24 4z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" fill=\"none\"/></svg>",
+            "title": "超凡性能",
+            "description": "自研 Aether 芯片，3nm 制程工艺，性能提升 40%，能耗降低 30%。"
+        },
+        {
+            "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 48 48\" fill=\"none\"><circle cx=\"24\" cy=\"24\" r=\"18\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 12v12l8 8\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M32 6a18 18 0 0110 10\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.4\"/></svg>",
+            "title": "超快充电",
+            "description": "120W 极速闪充技术，15 分钟即可充至 80%，让等待成为过去式。"
+        },
+        {
+            "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 48 48\" fill=\"none\"><path d=\"M12 32v6a4 4 0 004 4h16a4 4 0 004-4v-6\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 4v24M16 16l8 8 8-8\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.6\"/></svg>",
+            "title": "磁吸生态",
+            "description": "全新 MagConnect 磁吸系统，无缝连接各类配件，拓展无限可能。"
+        }
+    ]
+}

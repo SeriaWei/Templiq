@@ -1,0 +1,45 @@
+{
+    "label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "items": {
+        "FieldType": "Array",
+        "DisplayName": "图片列表",
+        "Children": [
+            {
+                "image_src": {
+                    "FieldType": "Media",
+                    "DisplayName": "图片",
+                    "IsRequired": true
+                },
+                "overlay_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "叠加文字"
+                },
+                "size": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "尺寸",
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "标准",
+                            "Value": "normal"
+                        },
+                        {
+                            "DisplayText": "高 Tall",
+                            "Value": "tall"
+                        },
+                        {
+                            "DisplayText": "宽 Wide",
+                            "Value": "wide"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

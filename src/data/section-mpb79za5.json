@@ -1,0 +1,31 @@
+{
+    "label": "视觉盛宴",
+    "heading": "每一面，都是艺术",
+    "items": [
+        {
+            "image_src": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=600&q=80&auto=format",
+            "overlay_text": "纯粹线条",
+            "size": "tall"
+        },
+        {
+            "image_src": "https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=800&q=80&auto=format",
+            "overlay_text": "光影之舞",
+            "size": "wide"
+        },
+        {
+            "image_src": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80&auto=format",
+            "overlay_text": "极致触感",
+            "size": "normal"
+        },
+        {
+            "image_src": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80&auto=format",
+            "overlay_text": "精准工艺",
+            "size": "tall"
+        },
+        {
+            "image_src": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80&auto=format",
+            "overlay_text": "静谧之美",
+            "size": "wide"
+        }
+    ]
+}

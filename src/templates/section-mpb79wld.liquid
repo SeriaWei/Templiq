@@ -1,0 +1,391 @@
+<!-- 产品展示 -->
+{% header %}
+<style>
+.section-mpb79wld {
+  --ae-bg: #000000;
+  --ae-bg-alt: #0a0a0a;
+  --ae-surface: #1d1d1f;
+  --ae-surface-hover: #2d2d2f;
+  --ae-text-primary: #f5f5f7;
+  --ae-text-secondary: #b0b0b3;
+  --ae-text-tertiary: #8e8e92;
+  --ae-accent: #0071e3;
+  --ae-accent-hover: #0077ed;
+  --ae-accent-glow: rgba(0, 113, 227, 0.15);
+  --ae-border: #2d2d2f;
+  --ae-border-light: #3d3d3f;
+  --ae-success: #30d158;
+  --ae-gradient-start: #0071e3;
+  --ae-gradient-end: #40a9ff;
+  --ae-card-bg: rgba(29, 29, 31, 0.8);
+  --ae-font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ae-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --ae-nav-height: 56px;
+  --ae-container-padding: 24px;
+  --ae-radius-sm: 8px;
+  --ae-radius-md: 14px;
+  --ae-radius-lg: 20px;
+  --ae-radius-xl: 28px;
+  color: var(--ae-text-primary);
+  background: var(--ae-bg-alt);
+  font-family: var(--ae-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  padding: 80px 0 60px;
+  position: relative;
+}
+
+.section-mpb79wld * {
+  box-sizing: border-box;
+}
+
+.section-mpb79wld img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-mpb79wld a {
+  color: var(--ae-accent);
+  transition: color 0.3s ease;
+}
+
+.section-mpb79wld a:hover,
+.section-mpb79wld a:focus {
+  color: var(--ae-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpb79wld .container {
+  padding-left: var(--ae-container-padding);
+  padding-right: var(--ae-container-padding);
+  max-width: 1170px;
+}
+
+.section-mpb79wld .ae-showcase__label {
+  font-family: var(--ae-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ae-accent);
+  margin-bottom: 8px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.section-mpb79wld .ae-showcase__label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 1.5px;
+  background: var(--ae-accent);
+  border-radius: 1px;
+}
+
+.section-mpb79wld .ae-showcase__heading {
+  font-family: var(--ae-font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin: 0 0 40px;
+  line-height: 1.15;
+}
+
+.section-mpb79wld .ae-showcase__card {
+  margin-bottom: 30px;
+}
+
+.section-mpb79wld .ae-showcase__card--image {
+  position: relative;
+}
+
+.section-mpb79wld .ae-showcase__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ae-radius-lg);
+  background: var(--ae-surface);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-mpb79wld .ae-showcase__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section-mpb79wld .ae-showcase__image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.section-mpb79wld .ae-showcase__mock-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+}
+
+.section-mpb79wld .ae-showcase__mock-shape--1 {
+  width: 200px;
+  height: 200px;
+  background: var(--ae-accent);
+  top: 20%;
+  right: 10%;
+  animation: section-mpb79wld-mockFloat 8s ease-in-out infinite alternate;
+}
+
+.section-mpb79wld .ae-showcase__mock-shape--2 {
+  width: 120px;
+  height: 120px;
+  background: #30d158;
+  bottom: 20%;
+  left: 15%;
+  animation: section-mpb79wld-mockFloat 10s ease-in-out infinite alternate-reverse;
+}
+
+.section-mpb79wld .ae-showcase__mock-shape--3 {
+  width: 80px;
+  height: 80px;
+  background: #40a9ff;
+  top: 30%;
+  left: 20%;
+  animation: section-mpb79wld-mockFloat 6s ease-in-out infinite alternate;
+}
+
+.section-mpb79wld .ae-showcase__mock-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  animation: section-mpb79wld-ringPulse 4s ease-in-out infinite;
+}
+
+.section-mpb79wld .ae-showcase__mock-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ae-accent);
+  opacity: 0.15;
+  animation: section-mpb79wld-dotDrift 6s linear infinite;
+}
+
+.section-mpb79wld .ae-showcase__mock-dot--1 { top: 30%; left: 60%; }
+.section-mpb79wld .ae-showcase__mock-dot--2 { top: 60%; left: 30%; animation-delay: 2s; }
+.section-mpb79wld .ae-showcase__mock-dot--3 { top: 45%; left: 70%; animation-delay: 4s; }
+
+@keyframes section-mpb79wld-mockFloat {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, -20px); }
+}
+
+@keyframes section-mpb79wld-ringPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.06; }
+  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.02; }
+}
+
+@keyframes section-mpb79wld-dotDrift {
+  0% { transform: translate(0, 0); opacity: 0.15; }
+  50% { opacity: 0.3; }
+  100% { transform: translate(30px, -30px); opacity: 0.15; }
+}
+
+.section-mpb79wld .ae-showcase__card--text {
+  padding: 20px 0;
+}
+
+.section-mpb79wld .ae-showcase__number {
+  font-family: var(--ae-font-heading);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--ae-accent);
+  opacity: 0.55;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.section-mpb79wld .ae-showcase__title {
+  font-family: var(--ae-font-heading);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.section-mpb79wld .ae-showcase__divider {
+  width: 40px;
+  height: 2px;
+  background: var(--ae-accent);
+  margin-bottom: 20px;
+  border-radius: 1px;
+}
+
+.section-mpb79wld .ae-showcase__desc {
+  font-family: var(--ae-font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.section-mpb79wld .ae-showcase__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-mpb79wld .ae-showcase__list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ae-font-body);
+  font-size: 14px;
+  color: var(--ae-text-secondary);
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--ae-border);
+}
+
+.section-mpb79wld .ae-showcase__list-item:last-child {
+  border-bottom: none;
+}
+
+.section-mpb79wld .ae-showcase__list-item svg {
+  color: var(--ae-accent);
+  flex-shrink: 0;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .section-mpb79wld {
+    padding: 120px 0 80px;
+  }
+  .section-mpb79wld .ae-showcase__heading {
+    font-size: 44px;
+    margin-bottom: 60px;
+  }
+  .section-mpb79wld .ae-showcase__card--text {
+    padding: 40px 0 40px 40px;
+  }
+  .section-mpb79wld .ae-showcase__title {
+    font-size: 30px;
+  }
+  .section-mpb79wld {
+    --ae-container-padding: 40px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpb79wld">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {% if this.Model.label %}
+        <div class="ae-showcase__label" property="true" data-property="label" method="text">{{this.Model.label}}</div>
+        {% endif %}
+        {% if this.Model.heading %}
+        <h2 class="ae-showcase__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="ae-showcase__card ae-showcase__card--image">
+          <div class="ae-showcase__image-wrapper">
+            <div class="ae-showcase__image-placeholder">
+              <div class="ae-showcase__mock-shape ae-showcase__mock-shape--1"></div>
+              <div class="ae-showcase__mock-shape ae-showcase__mock-shape--2"></div>
+              <div class="ae-showcase__mock-shape ae-showcase__mock-shape--3"></div>
+              <div class="ae-showcase__mock-ring"></div>
+              <div class="ae-showcase__mock-dot ae-showcase__mock-dot--1"></div>
+              <div class="ae-showcase__mock-dot ae-showcase__mock-dot--2"></div>
+              <div class="ae-showcase__mock-dot ae-showcase__mock-dot--3"></div>
+            </div>
+            {% if this.Model.image_src %}
+            <img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.title}}" class="ae-showcase__image" loading="lazy" />
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="ae-showcase__card ae-showcase__card--text">
+          {% if this.Model.number %}
+          <div class="ae-showcase__number" property="true" data-property="number" method="text">{{this.Model.number}}</div>
+          {% endif %}
+          {% if this.Model.title %}
+          <h3 class="ae-showcase__title" property="true" data-property="title" method="text">{{this.Model.title}}</h3>
+          {% endif %}
+          <div class="ae-showcase__divider"></div>
+          {% if this.Model.description %}
+          <p class="ae-showcase__desc" property="true" data-property="description" method="text">{{this.Model.description}}</p>
+          {% endif %}
+          {% if this.Model.list_items.size > 0 %}
+          <ul class="ae-showcase__list">
+            {% for item in this.Model.list_items %}
+            <li class="ae-showcase__list-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              <span property="true" data-property="list_items[{{forloop.index0}}].text" method="text">{{item.text}}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mpb79wld');
+  if (!section) return;
+
+  var revealElements = section.querySelectorAll('.ae-showcase__card');
+
+  if (revealElements.length === 0) return;
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    }
+  );
+
+  revealElements.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    observer.observe(el);
+  });
+})();
+</script>
+{% endfooter %}

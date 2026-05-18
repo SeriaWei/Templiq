@@ -1,0 +1,269 @@
+<!-- 核心亮点 -->
+{% header %}
+<style>
+.section-mpb79xk3 {
+  --ae-bg: #000000;
+  --ae-bg-alt: #0a0a0a;
+  --ae-surface: #1d1d1f;
+  --ae-surface-hover: #2d2d2f;
+  --ae-text-primary: #f5f5f7;
+  --ae-text-secondary: #b0b0b3;
+  --ae-text-tertiary: #8e8e92;
+  --ae-accent: #0071e3;
+  --ae-accent-hover: #0077ed;
+  --ae-accent-glow: rgba(0, 113, 227, 0.15);
+  --ae-border: #2d2d2f;
+  --ae-border-light: #3d3d3f;
+  --ae-success: #30d158;
+  --ae-gradient-start: #0071e3;
+  --ae-gradient-end: #40a9ff;
+  --ae-card-bg: rgba(29, 29, 31, 0.8);
+  --ae-font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ae-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --ae-nav-height: 56px;
+  --ae-container-padding: 24px;
+  --ae-radius-sm: 8px;
+  --ae-radius-md: 14px;
+  --ae-radius-lg: 20px;
+  --ae-radius-xl: 28px;
+  color: var(--ae-text-primary);
+  background: #000000;
+  font-family: var(--ae-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-mpb79xk3 * {
+  box-sizing: border-box;
+}
+
+.section-mpb79xk3 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-mpb79xk3 a {
+  color: var(--ae-accent);
+  transition: color 0.3s ease;
+}
+
+.section-mpb79xk3 a:hover,
+.section-mpb79xk3 a:focus {
+  color: var(--ae-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpb79xk3 .container {
+  padding-left: var(--ae-container-padding);
+  padding-right: var(--ae-container-padding);
+  max-width: 1170px;
+}
+
+.section-mpb79xk3 .ae-features__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 800px 400px at 50% 0%, rgba(0, 113, 227, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 500px at 80% 80%, rgba(48, 209, 88, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section-mpb79xk3 .ae-features__label {
+  font-family: var(--ae-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ae-accent);
+  margin-bottom: 8px;
+}
+
+.section-mpb79xk3 .ae-features__heading {
+  font-family: var(--ae-font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin: 0 0 40px;
+  line-height: 1.15;
+}
+
+.section-mpb79xk3 .ae-features__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.section-mpb79xk3 .ae-features__card {
+  background: var(--ae-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 0.5px solid var(--ae-border);
+  border-radius: var(--ae-radius-md);
+  padding: 32px 24px;
+  margin-bottom: 16px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-mpb79xk3 .ae-features__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.section-mpb79xk3 .ae-features__card:hover,
+.section-mpb79xk3 .ae-features__card:focus-within {
+  border-color: var(--ae-border-light);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.section-mpb79xk3 .ae-features__card:hover::before {
+  opacity: 1;
+}
+
+.section-mpb79xk3 .ae-features__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(0, 113, 227, 0.08);
+  color: var(--ae-accent);
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.section-mpb79xk3 .ae-features__card:hover .ae-features__icon {
+  background: rgba(0, 113, 227, 0.15);
+}
+
+.section-mpb79xk3 .ae-features__card-title {
+  font-family: var(--ae-font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ae-text-primary);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.section-mpb79xk3 .ae-features__card-desc {
+  font-family: var(--ae-font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ae-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .section-mpb79xk3 {
+    padding: 120px 0;
+  }
+  .section-mpb79xk3 .ae-features__heading {
+    font-size: 44px;
+    margin-bottom: 60px;
+  }
+  .section-mpb79xk3 .ae-features__card {
+    padding: 40px 32px;
+    margin-bottom: 0;
+  }
+  .section-mpb79xk3 .ae-features__card-title {
+    font-size: 22px;
+  }
+  .section-mpb79xk3 {
+    --ae-container-padding: 40px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpb79xk3">
+  <div class="ae-features__bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        {% if this.Model.label %}
+        <div class="ae-features__label" property="true" data-property="label" method="text">{{this.Model.label}}</div>
+        {% endif %}
+        {% if this.Model.heading %}
+        <h2 class="ae-features__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row ae-features__grid">
+      {% for item in this.Model.items %}
+      {% assign itemIndex = forloop.index0 %}
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="ae-features__card">
+          {% if item.icon_svg %}
+          <div class="ae-features__icon">{{item.icon_svg | raw}}</div>
+          {% endif %}
+          {% if item.title %}
+          <h3 class="ae-features__card-title" property="true" data-property="items[{{itemIndex}}].title" method="text">{{item.title}}</h3>
+          {% endif %}
+          {% if item.description %}
+          <p class="ae-features__card-desc" property="true" data-property="items[{{itemIndex}}].description" method="text">{{item.description}}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mpb79xk3');
+  if (!section) return;
+
+  var revealElements = section.querySelectorAll('.ae-features__card');
+
+  if (revealElements.length === 0) return;
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    }
+  );
+
+  revealElements.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    observer.observe(el);
+  });
+})();
+</script>
+{% endfooter %}
