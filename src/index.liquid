@@ -247,7 +247,9 @@
   thumbnails = document.querySelectorAll('.template-item .thumbnail');
   thumbnails.forEach(thumb => {
     thumb.addEventListener('click', function(e) {
-      if (e.target.type !== 'checkbox') {
+      // 检查点击的元素是否是链接、图片或其他不应该触发表单选择的元素
+      const isLinkOrChild = e.target.closest('a');
+      if (e.target.type !== 'checkbox' && !isLinkOrChild) {
         const cb = this.querySelector('.template-checkbox');
         cb.checked = !cb.checked;
         updateSelectedCount();
