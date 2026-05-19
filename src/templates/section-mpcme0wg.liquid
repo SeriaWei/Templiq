@@ -1,0 +1,399 @@
+<!-- 工作流程 -->
+{% header %}
+<style>
+
+.section-mpcme0wg {
+  --l-bg: #F7F3EE;
+  --l-surface: #FFFFFF;
+  --l-surface-alt: #FDFBF9;
+  --l-text: #1A1A2E;
+  --l-text-secondary: #6B6B7B;
+  --l-text-tertiary: #9A9AA8;
+  --l-accent: #C44536;
+  --l-accent-hover: #A8372A;
+  --l-accent-alt: #D4A853;
+  --l-primary: #1E3A5F;
+  --l-border: #E3DCD2;
+  --l-border-light: #EFEAE2;
+  --l-success: #3A9D6E;
+  --l-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --l-font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --l-radius-sm: 6px;
+  --l-radius-md: 12px;
+  --l-radius-lg: 20px;
+  --l-shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.06);
+  --l-shadow-md: 0 4px 16px rgba(26, 26, 46, 0.08);
+
+  font-family: var(--l-font-body);
+  color: var(--l-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpcme0wg * {
+  box-sizing: border-box;
+}
+
+.section-mpcme0wg .lg-howitworks {
+  position: relative;
+  background: var(--l-bg);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.section-mpcme0wg .lg-howitworks__header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-mpcme0wg .lg-section__label {
+  font-family: var(--l-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--l-accent);
+  margin-bottom: 12px;
+}
+
+.section-mpcme0wg .lg-section__heading {
+  font-family: var(--l-font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--l-text);
+  margin: 0 0 16px;
+}
+
+.section-mpcme0wg .lg-section__sub {
+  font-size: 18px;
+  color: var(--l-text-secondary);
+  max-width: 540px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.section-mpcme0wg .lg-howitworks__timeline {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-mpcme0wg .lg-howitworks__timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--l-border) 5%, var(--l-border) 95%, transparent);
+  transform: translateX(-50%);
+}
+
+.section-mpcme0wg .lg-howitworks__step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.section-mpcme0wg .lg-howitworks__step:last-child {
+  margin-bottom: 0;
+}
+
+.section-mpcme0wg .lg-howitworks__step--left {
+  flex-direction: row;
+}
+
+.section-mpcme0wg .lg-howitworks__step--right {
+  flex-direction: row-reverse;
+}
+
+.section-mpcme0wg .lg-howitworks__step-content {
+  width: calc(50% - 40px);
+  padding: 32px;
+  background: var(--l-surface);
+  border: 1px solid var(--l-border-light);
+  border-radius: var(--l-radius-lg);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-mpcme0wg .lg-howitworks__step-content:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--l-shadow-md);
+}
+
+.section-mpcme0wg .lg-howitworks__step--left .lg-howitworks__step-content {
+  text-align: right;
+}
+
+.section-mpcme0wg .lg-howitworks__step--right .lg-howitworks__step-content {
+  text-align: left;
+}
+
+.section-mpcme0wg .lg-howitworks__step-number {
+  position: absolute;
+  left: 50%;
+  top: 32px;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--l-surface);
+  border: 2px solid var(--l-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--l-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--l-text-secondary);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.section-mpcme0wg .lg-howitworks__step:hover .lg-howitworks__step-number {
+  border-color: var(--l-accent);
+  color: var(--l-accent);
+  background: rgba(196, 69, 54, 0.06);
+}
+
+.section-mpcme0wg .lg-howitworks__step-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--l-accent);
+  background: rgba(196, 69, 54, 0.08);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.section-mpcme0wg .lg-howitworks__step-title {
+  font-family: var(--l-font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--l-text);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.section-mpcme0wg .lg-howitworks__step-desc {
+  font-size: 15px;
+  color: var(--l-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.section-mpcme0wg .lg-howitworks__step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.section-mpcme0wg .lg-howitworks__step-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.section-mpcme0wg .lg-howitworks__step--left .lg-howitworks__step-icon {
+  margin-left: auto;
+}
+
+.section-mpcme0wg .lg-howitworks__step--right .lg-howitworks__step-icon {
+  margin-right: auto;
+}
+
+.section-mpcme0wg .lg-howitworks__step-icon--s1 { background: linear-gradient(135deg, var(--l-primary), #2A5280); }
+.section-mpcme0wg .lg-howitworks__step-icon--s2 { background: linear-gradient(135deg, var(--l-accent-alt), #E0C06E); }
+.section-mpcme0wg .lg-howitworks__step-icon--s3 { background: linear-gradient(135deg, var(--l-accent), #D4604A); }
+.section-mpcme0wg .lg-howitworks__step-icon--s4 { background: linear-gradient(135deg, var(--l-success), #4DB88A); }
+
+@media (max-width: 767px) {
+  .section-mpcme0wg .lg-howitworks {
+    padding: 60px 0;
+  }
+
+  .section-mpcme0wg .lg-howitworks__header {
+    margin-bottom: 40px;
+  }
+
+  .section-mpcme0wg .lg-section__heading {
+    font-size: 32px;
+  }
+
+  .section-mpcme0wg .lg-section__sub {
+    font-size: 16px;
+  }
+
+  .section-mpcme0wg .lg-howitworks__timeline::before {
+    left: 24px;
+  }
+
+  .section-mpcme0wg .lg-howitworks__step {
+    flex-direction: column !important;
+    padding-left: 60px;
+    margin-bottom: 30px;
+  }
+
+  .section-mpcme0wg .lg-howitworks__step-content {
+    width: 100%;
+    padding: 24px;
+    text-align: left !important;
+  }
+
+  .section-mpcme0wg .lg-howitworks__step-number {
+    left: 24px;
+    top: 24px;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .section-mpcme0wg .lg-howitworks__step-icon {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .section-mpcme0wg .lg-howitworks__step-title {
+    font-size: 20px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpcme0wg">
+  <div class="lg-howitworks">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-howitworks__header">
+            {% if this.Model.section_label %}
+            <div class="lg-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>
+            {% endif %}
+            {% if this.Model.heading %}
+            <h2 class="lg-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+            {% endif %}
+            {% if this.Model.subtitle %}
+            <p class="lg-section__sub" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if this.Model.steps.size > 0 %}
+      <div class="lg-howitworks__timeline">
+        {% for step in this.Model.steps %}
+        {% assign step_index = forloop.index0 %}
+        {% assign mod = step_index | modulo: 2 %}
+        {% if mod == 0 %}
+        <div class="lg-howitworks__step lg-howitworks__step--left">
+          <div class="lg-howitworks__step-content">
+            {% if step.icon_svg %}
+            <div class="lg-howitworks__step-icon lg-howitworks__step-icon--{{step.icon_style}}">
+              {{step.icon_svg | raw}}
+            </div>
+            {% endif %}
+            {% if step.step_label %}
+            <span class="lg-howitworks__step-label" property="true" data-property="steps[{{forloop.index0}}].step_label" method="text">{{step.step_label}}</span>
+            {% endif %}
+            {% if step.title %}
+            <h3 class="lg-howitworks__step-title" property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>
+            {% endif %}
+            {% if step.desc %}
+            <p class="lg-howitworks__step-desc" property="true" data-property="steps[{{forloop.index0}}].desc" method="text">{{step.desc}}</p>
+            {% endif %}
+          </div>
+          <span class="lg-howitworks__step-number" property="true" data-property="steps[{{forloop.index0}}].step_label" method="text">{{step.step_label | replace: "Step ", ""}}</span>
+        </div>
+        {% else %}
+        <div class="lg-howitworks__step lg-howitworks__step--right">
+          <span class="lg-howitworks__step-number" property="true" data-property="steps[{{forloop.index0}}].step_label" method="text">{{step.step_label | replace: "Step ", ""}}</span>
+          <div class="lg-howitworks__step-content">
+            {% if step.icon_svg %}
+            <div class="lg-howitworks__step-icon lg-howitworks__step-icon--{{step.icon_style}}">
+              {{step.icon_svg | raw}}
+            </div>
+            {% endif %}
+            {% if step.step_label %}
+            <span class="lg-howitworks__step-label" property="true" data-property="steps[{{forloop.index0}}].step_label" method="text">{{step.step_label}}</span>
+            {% endif %}
+            {% if step.title %}
+            <h3 class="lg-howitworks__step-title" property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>
+            {% endif %}
+            {% if step.desc %}
+            <p class="lg-howitworks__step-desc" property="true" data-property="steps[{{forloop.index0}}].desc" method="text">{{step.desc}}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  'use strict';
+  var section = document.querySelector('.section-mpcme0wg');
+  if (!section) return;
+
+  var steps = section.querySelectorAll('.lg-howitworks__step');
+  if (steps.length === 0) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var content = entry.target.querySelector('.lg-howitworks__step-content');
+        var number = entry.target.querySelector('.lg-howitworks__step-number');
+
+        if (content) {
+          content.style.opacity = '1';
+          content.style.transform = 'translateX(0)';
+        }
+
+        if (number) {
+          number.style.opacity = '1';
+          number.style.transform = 'translateX(-50%) scale(1)';
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  steps.forEach(function(step) {
+    var content = step.querySelector('.lg-howitworks__step-content');
+    var number = step.querySelector('.lg-howitworks__step-number');
+
+    if (content) {
+      var offset = step.classList.contains('lg-howitworks__step--left') ? '-30px' : '30px';
+      content.style.opacity = '0';
+      content.style.transform = 'translateX(' + offset + ')';
+      content.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    }
+
+    if (number) {
+      number.style.opacity = '0';
+      number.style.transform = 'translateX(-50%) scale(0.6)';
+      number.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    }
+
+    observer.observe(step);
+  });
+})();
+</script>
+{% endfooter %}

@@ -1,0 +1,421 @@
+<!-- 功能特点 -->
+{% header %}
+<style>
+
+.section-mpcmdzve {
+  --l-bg: #F7F3EE;
+  --l-bg-alt: #EFE8DE;
+  --l-surface: #FFFFFF;
+  --l-surface-alt: #FDFBF9;
+  --l-text: #1A1A2E;
+  --l-text-secondary: #6B6B7B;
+  --l-text-tertiary: #9A9AA8;
+  --l-accent: #C44536;
+  --l-accent-hover: #A8372A;
+  --l-accent-alt: #D4A853;
+  --l-primary: #1E3A5F;
+  --l-border: #E3DCD2;
+  --l-border-light: #EFEAE2;
+  --l-success: #3A9D6E;
+  --l-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --l-font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --l-radius-sm: 6px;
+  --l-radius-md: 12px;
+  --l-radius-lg: 20px;
+  --l-shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.06);
+  --l-shadow-md: 0 4px 16px rgba(26, 26, 46, 0.08);
+
+  font-family: var(--l-font-body);
+  color: var(--l-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpcmdzve * {
+  box-sizing: border-box;
+}
+
+.section-mpcmdzve .lg-features {
+  position: relative;
+  background: var(--l-surface-alt);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.section-mpcmdzve .lg-features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--l-border), transparent);
+}
+
+.section-mpcmdzve .lg-features__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-mpcmdzve .lg-section__label {
+  font-family: var(--l-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--l-accent);
+  margin-bottom: 12px;
+}
+
+.section-mpcmdzve .lg-section__heading {
+  font-family: var(--l-font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--l-text);
+  margin: 0 0 16px;
+}
+
+.section-mpcmdzve .lg-section__sub {
+  font-size: 18px;
+  color: var(--l-text-secondary);
+  max-width: 540px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.section-mpcmdzve .lg-features__grid {
+  position: relative;
+}
+
+.section-mpcmdzve .lg-features__bg-number {
+  position: absolute;
+  font-family: var(--l-font-display);
+  font-size: 280px;
+  font-weight: 700;
+  color: var(--l-text);
+  opacity: 0.025;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+.section-mpcmdzve .lg-features__bg-number--1 {
+  top: -60px;
+  right: 5%;
+}
+
+.section-mpcmdzve .lg-features__bg-number--2 {
+  bottom: -40px;
+  left: 5%;
+}
+
+.section-mpcmdzve .lg-features__card {
+  position: relative;
+  z-index: 1;
+  background: var(--l-surface);
+  border: 1px solid var(--l-border-light);
+  border-radius: var(--l-radius-lg);
+  padding: 36px 32px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+}
+
+.section-mpcmdzve .lg-features__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--l-shadow-md);
+}
+
+.section-mpcmdzve .lg-features__card-number {
+  font-family: var(--l-font-display);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--l-accent);
+  opacity: 0.15;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.section-mpcmdzve .lg-features__card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #fff;
+  position: relative;
+}
+
+.section-mpcmdzve .lg-features__card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.section-mpcmdzve .lg-features__card-icon--terracotta {
+  background: linear-gradient(135deg, var(--l-accent), #D4604A);
+}
+
+.section-mpcmdzve .lg-features__card-icon--gold {
+  background: linear-gradient(135deg, var(--l-accent-alt), #E0C06E);
+}
+
+.section-mpcmdzve .lg-features__card-icon--navy {
+  background: linear-gradient(135deg, var(--l-primary), #2A5280);
+}
+
+.section-mpcmdzve .lg-features__card-icon--green {
+  background: linear-gradient(135deg, var(--l-success), #4DB88A);
+}
+
+.section-mpcmdzve .lg-features__card-divider {
+  width: 32px;
+  height: 2px;
+  background: var(--l-accent-alt);
+  margin: 16px 0;
+  border-radius: 1px;
+}
+
+.section-mpcmdzve .lg-features__card-title {
+  font-family: var(--l-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--l-text);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.section-mpcmdzve .lg-features__card-desc {
+  font-size: 15px;
+  color: var(--l-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.section-mpcmdzve .lg-features__highlight {
+  margin-top: 60px;
+  padding: 40px;
+  background: var(--l-bg);
+  border-radius: var(--l-radius-lg);
+  border: 1px solid var(--l-border-light);
+  position: relative;
+  z-index: 1;
+}
+
+.section-mpcmdzve .lg-features__highlight-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.section-mpcmdzve .lg-features__highlight-icon {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--l-accent), var(--l-accent-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.section-mpcmdzve .lg-features__highlight-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.section-mpcmdzve .lg-features__highlight-text {
+  flex: 1;
+}
+
+.section-mpcmdzve .lg-features__highlight-title {
+  font-family: var(--l-font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--l-text);
+  margin-bottom: 4px;
+}
+
+.section-mpcmdzve .lg-features__highlight-desc {
+  font-size: 15px;
+  color: var(--l-text-secondary);
+  margin: 0;
+}
+
+.section-mpcmdzve .lg-features__highlight-badge {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--l-accent);
+  background: rgba(196, 69, 54, 0.08);
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 69, 54, 0.15);
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .section-mpcmdzve .lg-features {
+    padding: 60px 0;
+  }
+
+  .section-mpcmdzve .lg-features__header {
+    margin-bottom: 40px;
+  }
+
+  .section-mpcmdzve .lg-section__heading {
+    font-size: 32px;
+  }
+
+  .section-mpcmdzve .lg-section__sub {
+    font-size: 16px;
+  }
+
+  .section-mpcmdzve .lg-features__card {
+    padding: 28px 24px;
+    margin-bottom: 20px;
+  }
+
+  .section-mpcmdzve .lg-features__highlight {
+    padding: 24px;
+  }
+
+  .section-mpcmdzve .lg-features__highlight-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .section-mpcmdzve .lg-features__bg-number {
+    font-size: 160px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpcmdzve">
+  <div class="lg-features">
+    {% if this.Model.bg_text_1 %}
+    <div class="lg-features__bg-number lg-features__bg-number--1" property="true" data-property="bg_text_1" method="text">{{this.Model.bg_text_1}}</div>
+    {% endif %}
+    {% if this.Model.bg_text_2 %}
+    <div class="lg-features__bg-number lg-features__bg-number--2" property="true" data-property="bg_text_2" method="text">{{this.Model.bg_text_2}}</div>
+    {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-features__header">
+            {% if this.Model.section_label %}
+            <div class="lg-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>
+            {% endif %}
+            {% if this.Model.heading %}
+            <h2 class="lg-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+            {% endif %}
+            {% if this.Model.subtitle %}
+            <p class="lg-section__sub" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if this.Model.cards.size > 0 %}
+      <div class="row lg-features__grid">
+        {% assign index = 0 %}
+        {% for card in this.Model.cards %}
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="lg-features__card">
+            {% if card.number %}
+            <span class="lg-features__card-number" property="true" data-property="cards[{{forloop.index0}}].number" method="text">{{card.number}}</span>
+            {% endif %}
+            {% if card.icon_svg %}
+            <div class="lg-features__card-icon lg-features__card-icon--{{card.icon_style}}">
+              {{card.icon_svg | raw}}
+            </div>
+            {% endif %}
+            <div class="lg-features__card-divider"></div>
+            {% if card.title %}
+            <h3 class="lg-features__card-title" property="true" data-property="cards[{{forloop.index0}}].title" method="text">{{card.title}}</h3>
+            {% endif %}
+            {% if card.desc %}
+            <p class="lg-features__card-desc" property="true" data-property="cards[{{forloop.index0}}].desc" method="text">{{card.desc}}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if this.Model.highlight_title %}
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-features__highlight">
+            <div class="lg-features__highlight-inner">
+              <div class="lg-features__highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+              </div>
+              <div class="lg-features__highlight-text">
+                <div class="lg-features__highlight-title" property="true" data-property="highlight_title" method="text">{{this.Model.highlight_title}}</div>
+                {% if this.Model.highlight_desc %}
+                <p class="lg-features__highlight-desc" property="true" data-property="highlight_desc" method="text">{{this.Model.highlight_desc}}</p>
+                {% endif %}
+              </div>
+              {% if this.Model.highlight_badge %}
+              <span class="lg-features__highlight-badge" property="true" data-property="highlight_badge" method="text">{{this.Model.highlight_badge}}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  'use strict';
+  var section = document.querySelector('.section-mpcmdzve');
+  if (!section) return;
+
+  var revealElements = section.querySelectorAll('.lg-features__card, .lg-features__highlight');
+
+  if (revealElements.length === 0) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  revealElements.forEach(function(el) {
+    var hasStagger = el.classList.contains('lg-features__card');
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+
+    if (hasStagger) {
+      var parent = el.closest('.row');
+      if (parent) {
+        var index = Array.from(parent.children).indexOf(el.closest('.col-md-3'));
+        el.style.transitionDelay = (index * 0.1) + 's';
+      }
+    }
+
+    el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+{% endfooter %}

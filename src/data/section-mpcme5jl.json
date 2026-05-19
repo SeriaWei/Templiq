@@ -1,0 +1,59 @@
+{
+    "brand_text": "Lin",
+    "brand_accent": "gua",
+    "brand_desc": "Making English fluency accessible to everyone. Learn naturally, speak confidently, explore the world.",
+    "column_1_title": "Product",
+    "column_2_title": "Resources",
+    "newsletter_text": "Get weekly language tips, success stories, and exclusive offers delivered to your inbox.",
+    "copyright": "© 2026 Lingua. All rights reserved.",
+    "column_1_links": [
+        {
+            "text": "Features",
+            "url": "#"
+        },
+        {
+            "text": "Pricing",
+            "url": "#"
+        },
+        {
+            "text": "For Teams",
+            "url": "#"
+        },
+        {
+            "text": "For Schools",
+            "url": "#"
+        }
+    ],
+    "column_2_links": [
+        {
+            "text": "Blog",
+            "url": "#"
+        },
+        {
+            "text": "Language Tips",
+            "url": "#"
+        },
+        {
+            "text": "Help Center",
+            "url": "#"
+        },
+        {
+            "text": "Community",
+            "url": "#"
+        }
+    ],
+    "legal_links": [
+        {
+            "text": "Privacy Policy",
+            "url": "#"
+        },
+        {
+            "text": "Terms of Service",
+            "url": "#"
+        },
+        {
+            "text": "Cookie Policy",
+            "url": "#"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "brand_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌名前半"
+    },
+    "brand_accent": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌名强调"
+    },
+    "brand_desc": {
+        "FieldType": "Paragraph",
+        "DisplayName": "品牌描述"
+    },
+    "column_1_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "第一列标题"
+    },
+    "column_2_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "第二列标题"
+    },
+    "newsletter_text": {
+        "FieldType": "Paragraph",
+        "DisplayName": "新闻通讯文本"
+    },
+    "copyright": {
+        "FieldType": "SingleLine",
+        "DisplayName": "版权信息"
+    },
+    "column_1_links": {
+        "FieldType": "Array",
+        "DisplayName": "第一列链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文本"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接URL"
+                }
+            }
+        ]
+    },
+    "column_2_links": {
+        "FieldType": "Array",
+        "DisplayName": "第二列链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文本"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接URL"
+                }
+            }
+        ]
+    },
+    "legal_links": {
+        "FieldType": "Array",
+        "DisplayName": "法律链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接文本"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接URL"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "section_label": "Features",
+    "heading": "The Lingua Difference",
+    "subtitle": "Every tool designed to make you speak with confidence — from your very first lesson.",
+    "cards": [
+        {
+            "number": "01",
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z\"/><path d=\"M19 10v2a7 7 0 01-14 0v-2\"/><line x1=\"12\" y1=\"19\" x2=\"12\" y2=\"23\"/><line x1=\"8\" y1=\"23\" x2=\"16\" y2=\"23\"/></svg>",
+            "icon_style": "terracotta",
+            "title": "AI Speech Coach",
+            "desc": "Real-time pronunciation analysis with phoneme-level feedback. Master every sound from schwa to stress patterns."
+        },
+        {
+            "number": "02",
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 19.5A2.5 2.5 0 016.5 17H20\"/><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z\"/><path d=\"M8 8h8M8 12h6M8 16h4\"/></svg>",
+            "icon_style": "gold",
+            "title": "Immersive Stories",
+            "desc": "Learn through interactive narratives set in New York, London, Sydney and beyond. Every story builds real-world skills."
+        },
+        {
+            "number": "03",
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20\"/><path d=\"M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z\"/></svg>",
+            "icon_style": "navy",
+            "title": "Cultural Insights",
+            "desc": "Beyond grammar — understand idioms, humor, etiquette, and context. Speak English the way native speakers really do."
+        },
+        {
+            "number": "04",
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"/></svg>",
+            "icon_style": "green",
+            "title": "Smart Recall",
+            "desc": "Spaced repetition powered by cognitive science. Words move from short-term memory to lasting fluency — naturally."
+        }
+    ],
+    "highlight_title": "AI Conversation Partner",
+    "highlight_desc": "Practice real conversations anytime with our advanced AI that adapts to your level, corrects your grammar, and expands your vocabulary naturally — just like talking to a patient, encouraging friend.",
+    "highlight_badge": "Coming Soon",
+    "bg_text_1": "Lingua",
+    "bg_text_2": "Learn"
+}

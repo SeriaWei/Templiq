@@ -1,0 +1,80 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "cards": {
+        "FieldType": "Array",
+        "DisplayName": "功能卡片",
+        "Children": [
+            {
+                "number": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "编号"
+                },
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "icon_style": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "图标样式",
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "Terracotta (红色)",
+                            "Value": "terracotta"
+                        },
+                        {
+                            "DisplayText": "Gold (金色)",
+                            "Value": "gold"
+                        },
+                        {
+                            "DisplayText": "Navy (深蓝)",
+                            "Value": "navy"
+                        },
+                        {
+                            "DisplayText": "Green (绿色)",
+                            "Value": "green"
+                        }
+                    ]
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "desc": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                }
+            }
+        ]
+    },
+    "highlight_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "高亮区域标题"
+    },
+    "highlight_desc": {
+        "FieldType": "Paragraph",
+        "DisplayName": "高亮区域描述"
+    },
+    "highlight_badge": {
+        "FieldType": "SingleLine",
+        "DisplayName": "高亮徽章"
+    },
+    "bg_text_1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "背景文字1"
+    },
+    "bg_text_2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "背景文字2"
+    }
+}

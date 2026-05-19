@@ -1,0 +1,60 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "steps": {
+        "FieldType": "Array",
+        "DisplayName": "步骤",
+        "Children": [
+            {
+                "step_label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "步骤标签"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "desc": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                },
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "icon_style": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "图标样式",
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "S1 (深蓝)",
+                            "Value": "s1"
+                        },
+                        {
+                            "DisplayText": "S2 (金色)",
+                            "Value": "s2"
+                        },
+                        {
+                            "DisplayText": "S3 (红色)",
+                            "Value": "s3"
+                        },
+                        {
+                            "DisplayText": "S4 (绿色)",
+                            "Value": "s4"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

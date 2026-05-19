@@ -1,0 +1,366 @@
+<!-- 用户评价 -->
+{% header %}
+<style>
+
+.section-mpcme2nv {
+  --l-bg: #F7F3EE;
+  --l-bg-alt: #EFE8DE;
+  --l-surface: #FFFFFF;
+  --l-surface-alt: #FDFBF9;
+  --l-text: #1A1A2E;
+  --l-text-secondary: #6B6B7B;
+  --l-text-tertiary: #9A9AA8;
+  --l-accent: #C44536;
+  --l-accent-alt: #D4A853;
+  --l-primary: #1E3A5F;
+  --l-border: #E3DCD2;
+  --l-border-light: #EFEAE2;
+  --l-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --l-font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --l-radius-sm: 6px;
+  --l-radius-md: 12px;
+  --l-radius-lg: 20px;
+  --l-shadow-md: 0 4px 16px rgba(26, 26, 46, 0.08);
+
+  font-family: var(--l-font-body);
+  color: var(--l-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpcme2nv * {
+  box-sizing: border-box;
+}
+
+.section-mpcme2nv img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section-mpcme2nv .lg-testimonials {
+  position: relative;
+  background: var(--l-surface-alt);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.section-mpcme2nv .lg-testimonials::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--l-border), transparent);
+}
+
+.section-mpcme2nv .lg-testimonials__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-mpcme2nv .lg-section__label {
+  font-family: var(--l-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--l-accent);
+  margin-bottom: 12px;
+}
+
+.section-mpcme2nv .lg-section__heading {
+  font-family: var(--l-font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--l-text);
+  margin: 0 0 16px;
+}
+
+.section-mpcme2nv .lg-section__sub {
+  font-size: 18px;
+  color: var(--l-text-secondary);
+  max-width: 540px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.section-mpcme2nv .lg-testimonials__grid {
+  display: flex;
+  gap: 24px;
+}
+
+.section-mpcme2nv .lg-testimonials__card {
+  flex: 1;
+  background: var(--l-surface);
+  border: 1px solid var(--l-border-light);
+  border-radius: var(--l-radius-lg);
+  padding: 32px;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-mpcme2nv .lg-testimonials__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--l-shadow-md);
+}
+
+.section-mpcme2nv .lg-testimonials__quote-mark {
+  font-family: var(--l-font-display);
+  font-size: 80px;
+  line-height: 1;
+  color: var(--l-accent);
+  opacity: 0.12;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.section-mpcme2nv .lg-testimonials__star {
+  width: 16px;
+  height: 16px;
+  color: var(--l-accent-alt);
+  display: inline-block;
+}
+
+.section-mpcme2nv .lg-testimonials__star svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.section-mpcme2nv .lg-testimonials__stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+
+.section-mpcme2nv .lg-testimonials__quote {
+  font-size: 16px;
+  color: var(--l-text);
+  line-height: 1.7;
+  margin: 0 0 20px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.section-mpcme2nv .lg-testimonials__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-mpcme2nv .lg-testimonials__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--l-border-light);
+  flex-shrink: 0;
+}
+
+.section-mpcme2nv .lg-testimonials__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-mpcme2nv .lg-testimonials__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--l-text);
+  line-height: 1.3;
+}
+
+.section-mpcme2nv .lg-testimonials__role {
+  font-size: 12px;
+  color: var(--l-text-tertiary);
+}
+
+.section-mpcme2nv .lg-testimonials__flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.section-mpcme2nv .lg-testimonials__metrics {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--l-border-light);
+}
+
+.section-mpcme2nv .lg-testimonials__metric-item {
+  text-align: center;
+}
+
+.section-mpcme2nv .lg-testimonials__metric-number {
+  font-family: var(--l-font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--l-primary);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.section-mpcme2nv .lg-testimonials__metric-number span {
+  color: var(--l-accent-alt);
+}
+
+.section-mpcme2nv .lg-testimonials__metric-label {
+  font-size: 12px;
+  color: var(--l-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 991px) {
+  .section-mpcme2nv .lg-testimonials__grid {
+    flex-wrap: wrap;
+  }
+
+  .section-mpcme2nv .lg-testimonials__card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 767px) {
+  .section-mpcme2nv .lg-testimonials {
+    padding: 60px 0;
+  }
+
+  .section-mpcme2nv .lg-testimonials__card {
+    flex: 1 1 100%;
+    margin-bottom: 16px;
+  }
+
+  .section-mpcme2nv .lg-section__heading {
+    font-size: 32px;
+  }
+
+  .section-mpcme2nv .lg-section__sub {
+    font-size: 16px;
+  }
+
+  .section-mpcme2nv .lg-testimonials__metrics {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .section-mpcme2nv .lg-testimonials__metric-number {
+    font-size: 28px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpcme2nv">
+  <div class="lg-testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-testimonials__header">
+            {% if this.Model.section_label %}
+            <div class="lg-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>
+            {% endif %}
+            {% if this.Model.heading %}
+            <h2 class="lg-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>
+            {% endif %}
+            {% if this.Model.subtitle %}
+            <p class="lg-section__sub" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if this.Model.testimonials.size > 0 %}
+      <div class="lg-testimonials__grid">
+        {% for testimonial in this.Model.testimonials %}
+        <div class="lg-testimonials__card">
+          <span class="lg-testimonials__quote-mark">"</span>
+          <div class="lg-testimonials__stars">
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          </div>
+          {% if testimonial.quote %}
+          <p class="lg-testimonials__quote" property="true" data-property="testimonials[{{forloop.index0}}].quote" method="text">{{testimonial.quote}}</p>
+          {% endif %}
+          <div class="lg-testimonials__author">
+            {% if testimonial.avatar_src %}
+            <img src="{% url testimonial.avatar_src %}" alt="{{testimonial.name}}" class="lg-testimonials__avatar" loading="lazy" property="true" data-property="testimonials[{{forloop.index0}}].avatar_src" method="attr" para="src">
+            {% endif %}
+            <div class="lg-testimonials__info">
+              {% if testimonial.name %}
+              <div class="lg-testimonials__name" property="true" data-property="testimonials[{{forloop.index0}}].name" method="text">{{testimonial.name}}</div>
+              {% endif %}
+              {% if testimonial.role %}
+              <div class="lg-testimonials__role" property="true" data-property="testimonials[{{forloop.index0}}].role" method="text">{{testimonial.role}}</div>
+              {% endif %}
+            </div>
+            {% if testimonial.flag_src %}
+            <img src="{% url testimonial.flag_src %}" alt="" class="lg-testimonials__flag" loading="lazy" property="true" data-property="testimonials[{{forloop.index0}}].flag_src" method="attr" para="src">
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if this.Model.metrics.size > 0 %}
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-testimonials__metrics">
+            {% for metric in this.Model.metrics %}
+            <div class="lg-testimonials__metric-item">
+              <div class="lg-testimonials__metric-number" property="true" data-property="metrics[{{forloop.index0}}].number" method="text">{{metric.number}}{% if metric.suffix %}<span property="true" data-property="metrics[{{forloop.index0}}].suffix" method="text">{{metric.suffix}}</span>{% endif %}</div>
+              <div class="lg-testimonials__metric-label" property="true" data-property="metrics[{{forloop.index0}}].label" method="text">{{metric.label}}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  'use strict';
+  var section = document.querySelector('.section-mpcme2nv');
+  if (!section) return;
+
+  var cards = section.querySelectorAll('.lg-testimonials__card');
+  if (cards.length === 0) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  cards.forEach(function(card) {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease';
+    observer.observe(card);
+  });
+})();
+</script>
+{% endfooter %}

@@ -1,0 +1,314 @@
+<!-- 行动号召 -->
+{% header %}
+<style>
+
+.section-mpcme3oy {
+  --l-bg-dark: #1B2838;
+  --l-accent: #C44536;
+  --l-accent-alt: #D4A853;
+  --l-text-light: #F5F0E8;
+  --l-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --l-font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --l-radius-md: 12px;
+
+  font-family: var(--l-font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpcme3oy * {
+  box-sizing: border-box;
+}
+
+.section-mpcme3oy a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.section-mpcme3oy .lg-cta {
+  position: relative;
+  background: var(--l-bg-dark);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.section-mpcme3oy .lg-cta__bg-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.section-mpcme3oy .lg-cta__bg-pattern::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.06), transparent 70%);
+}
+
+.section-mpcme3oy .lg-cta__bg-pattern::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 60vmin;
+  height: 60vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 69, 54, 0.05), transparent 70%);
+}
+
+.section-mpcme3oy .lg-cta__globe-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+}
+
+.section-mpcme3oy .lg-cta__globe-lines svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-mpcme3oy .lg-cta__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-mpcme3oy .lg-cta__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--l-accent-alt);
+  background: rgba(212, 168, 83, 0.1);
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(212, 168, 83, 0.15);
+  margin-bottom: 24px;
+}
+
+.section-mpcme3oy .lg-cta__title {
+  font-family: var(--l-font-display);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--l-text-light);
+  margin: 0 0 16px;
+}
+
+.section-mpcme3oy .lg-cta__title span {
+  color: var(--l-accent-alt);
+  font-style: italic;
+}
+
+.section-mpcme3oy .lg-cta__subtitle {
+  font-size: 18px;
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.65;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+
+.section-mpcme3oy .lg-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-mpcme3oy .lg-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--l-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: var(--l-radius-md);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.section-mpcme3oy .lg-cta__btn--primary {
+  background: var(--l-accent-alt);
+  color: var(--l-bg-dark);
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.3);
+}
+
+.section-mpcme3oy .lg-cta__btn--primary:hover {
+  background: #E0C06E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(212, 168, 83, 0.4);
+  color: var(--l-bg-dark);
+  text-decoration: none;
+}
+
+.section-mpcme3oy .lg-cta__btn--ghost {
+  background: transparent;
+  color: var(--l-text-light);
+  border: 2px solid rgba(245, 240, 232, 0.2);
+}
+
+.section-mpcme3oy .lg-cta__btn--ghost:hover {
+  border-color: var(--l-text-light);
+  color: var(--l-text-light);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.section-mpcme3oy .lg-cta__btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.section-mpcme3oy .lg-cta__btn:hover .lg-cta__btn-icon {
+  transform: translateX(4px);
+}
+
+.section-mpcme3oy .lg-cta__note {
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.35);
+  margin-top: 24px;
+}
+
+.section-mpcme3oy .lg-cta__note a {
+  color: rgba(212, 168, 83, 0.6);
+  border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+}
+
+.section-mpcme3oy .lg-cta__note a:hover {
+  color: var(--l-accent-alt);
+  border-color: var(--l-accent-alt);
+}
+
+@media (max-width: 767px) {
+  .section-mpcme3oy .lg-cta {
+    padding: 70px 0;
+  }
+
+  .section-mpcme3oy .lg-cta__title {
+    font-size: 36px;
+  }
+
+  .section-mpcme3oy .lg-cta__subtitle {
+    font-size: 16px;
+  }
+
+  .section-mpcme3oy .lg-cta__btn {
+    padding: 14px 28px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpcme3oy">
+  <div class="lg-cta">
+    <div class="lg-cta__bg-pattern"></div>
+    <div class="lg-cta__globe-lines">
+      <svg viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
+        <ellipse cx="720" cy="300" rx="500" ry="200" stroke="currentColor" stroke-width="0.5"/>
+        <ellipse cx="720" cy="300" rx="600" ry="240" stroke="currentColor" stroke-width="0.3"/>
+        <ellipse cx="720" cy="300" rx="700" ry="280" stroke="currentColor" stroke-width="0.2"/>
+        <path d="M220 300 Q720 100 1220 300" stroke="currentColor" stroke-width="0.4"/>
+        <path d="M220 300 Q720 500 1220 300" stroke="currentColor" stroke-width="0.3"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-cta__content">
+            {% if this.Model.label_text %}
+            <div class="lg-cta__label" property="true" data-property="label_text" method="text">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              {{this.Model.label_text}}
+            </div>
+            {% endif %}
+            <h2 class="lg-cta__title">
+              {% if this.Model.title_line_1 %}{{this.Model.title_line_1}}{% endif %}
+              {% if this.Model.title_line_2 %} <span property="true" data-property="title_line_2" method="text">{{this.Model.title_line_2}}</span>{% endif %}<br>
+              {% if this.Model.title_accent %}<span property="true" data-property="title_accent" method="text">{{this.Model.title_accent}}</span>{% endif %}
+            </h2>
+            {% if this.Model.subtitle %}
+            <p class="lg-cta__subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+            {% endif %}
+            <div class="lg-cta__actions">
+              {% if this.Model.btn_primary_text %}
+              <a href="{% url this.Model.btn_primary_link %}" class="lg-cta__btn lg-cta__btn--primary" property="true" data-property="btn_primary_text" method="text">
+                {{this.Model.btn_primary_text}}
+                <span class="lg-cta__btn-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </a>
+              {% endif %}
+              {% if this.Model.btn_ghost_text %}
+              <a href="{% url this.Model.btn_ghost_link %}" class="lg-cta__btn lg-cta__btn--ghost" property="true" data-property="btn_ghost_text" method="text">
+                {{this.Model.btn_ghost_text}}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
+              {% endif %}
+            </div>
+            <p class="lg-cta__note">
+              {% if this.Model.note_text %}
+              <span property="true" data-property="note_text" method="text">{{this.Model.note_text}}</span>
+              <br>
+              {% endif %}
+              {% if this.Model.terms_text %}
+              <a href="{% url this.Model.terms_link %}" property="true" data-property="terms_text" method="text">{{this.Model.terms_text}}</a>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  'use strict';
+  var section = document.querySelector('.section-mpcme3oy');
+  if (!section) return;
+
+  var content = section.querySelector('.lg-cta__content');
+  if (!content) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  content.style.opacity = '0';
+  content.style.transform = 'translateY(30px)';
+  content.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+  observer.observe(content);
+})();
+</script>
+{% endfooter %}

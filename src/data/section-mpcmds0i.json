@@ -1,0 +1,27 @@
+{
+    "badge_text": "Now Available Worldwide",
+    "title_line_1": "Speak the World",
+    "title_line_2": "with Lingua",
+    "subtitle": "Break through language barriers with AI-powered learning that adapts to you. Real conversations, real progress — from your first word to fluent confidence.",
+    "btn_primary_text": "Start Free Trial",
+    "btn_primary_link": "#cta",
+    "btn_ghost_text": "Learn More",
+    "btn_ghost_link": "#features",
+    "stats": [
+        {
+            "number": "2M",
+            "suffix": "+",
+            "label": "Active Learners"
+        },
+        {
+            "number": "98",
+            "suffix": "%",
+            "label": "Satisfaction Rate"
+        },
+        {
+            "number": "15",
+            "suffix": "m",
+            "label": "Daily Practice"
+        }
+    ]
+}

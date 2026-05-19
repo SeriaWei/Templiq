@@ -1,0 +1,50 @@
+{
+    "section_label": "Success Stories",
+    "heading": "From Learners to Speakers",
+    "subtitle": "Real people, real transformations. Here's what Lingua learners are saying.",
+    "testimonials": [
+        {
+            "quote": "I was terrified of speaking English at work. After three months with Lingua, I led my first presentation — in English. The AI speech coach was a game-changer.",
+            "avatar_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format",
+            "name": "Sofia Chen",
+            "role": "Marketing Manager, Mexico City",
+            "flag_src": "https://cdn-icons-png.flaticon.com/64/555/555635.png"
+        },
+        {
+            "quote": "The immersive stories are brilliant. I learned idioms and cultural nuances that textbooks never teach. Now I can laugh at British humor — and make it!",
+            "avatar_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format",
+            "name": "Hiro Tanaka",
+            "role": "Software Engineer, Tokyo",
+            "flag_src": "https://cdn-icons-png.flaticon.com/64/555/555604.png"
+        },
+        {
+            "quote": "Fifteen minutes a day, and within six months I went from 'Hello, my name is' to having full conversations with my English-speaking colleagues.",
+            "avatar_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80&auto=format",
+            "name": "Maria García",
+            "role": "Nurse, Barcelona",
+            "flag_src": "https://cdn-icons-png.flaticon.com/64/555/555591.png"
+        }
+    ],
+    "metrics": [
+        {
+            "number": "2.3M",
+            "suffix": "+",
+            "label": "Global Learners"
+        },
+        {
+            "number": "92",
+            "suffix": "%",
+            "label": "Reach Fluency Goal"
+        },
+        {
+            "number": "156",
+            "suffix": "",
+            "label": "Countries Reached"
+        },
+        {
+            "number": "4.8",
+            "suffix": "/5",
+            "label": "App Store Rating"
+        }
+    ]
+}

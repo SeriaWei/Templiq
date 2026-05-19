@@ -1,0 +1,50 @@
+{
+    "label_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标签文本"
+    },
+    "title_line_1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第一行"
+    },
+    "title_line_2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第二行"
+    },
+    "title_accent": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题强调文本"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "btn_primary_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文本"
+    },
+    "btn_primary_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接"
+    },
+    "btn_ghost_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮文本"
+    },
+    "btn_ghost_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮链接"
+    },
+    "note_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "底部备注"
+    },
+    "terms_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "条款链接"
+    },
+    "terms_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "条款文本"
+    }
+}
