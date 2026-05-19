@@ -1,0 +1,242 @@
+/* ============================================================
+   BASE — Lingua Design System
+   Scholarly Warmth meets Modern Editorial aesthetics
+   ============================================================ */
+
+
+:root {
+  /* Colors */
+  --l-bg: #F7F3EE;
+  --l-bg-alt: #EFE8DE;
+  --l-bg-dark: #1B2838;
+  --l-surface: #FFFFFF;
+  --l-surface-alt: #FDFBF9;
+
+  --l-text: #1A1A2E;
+  --l-text-secondary: #6B6B7B;
+  --l-text-tertiary: #9A9AA8;
+  --l-text-light: #F5F0E8;
+
+  --l-accent: #C44536;
+  --l-accent-hover: #A8372A;
+  --l-accent-alt: #D4A853;
+  --l-accent-glow: rgba(196, 69, 54, 0.12);
+
+  --l-primary: #1E3A5F;
+  --l-primary-light: #2A5280;
+  --l-border: #E3DCD2;
+  --l-border-light: #EFEAE2;
+
+  --l-success: #3A9D6E;
+
+  /* Typography */
+  --l-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --l-font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Sizes */
+  --l-nav-height: 64px;
+  --l-container-padding: 24px;
+  --l-radius-sm: 6px;
+  --l-radius-md: 12px;
+  --l-radius-lg: 20px;
+
+  /* Shadows */
+  --l-shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.06);
+  --l-shadow-md: 0 4px 16px rgba(26, 26, 46, 0.08);
+  --l-shadow-lg: 0 12px 40px rgba(26, 26, 46, 0.1);
+  --l-shadow-card: 0 2px 8px rgba(26, 26, 46, 0.04);
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--l-font-body);
+  color: var(--l-text);
+  background: var(--l-bg);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--l-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--l-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--l-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--l-text-tertiary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--l-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--l-accent-hover);
+  text-decoration: none;
+}
+
+/* ============================================================
+   Section shared styles
+   ============================================================ */
+
+.lg-section {
+  padding: 10rem 0;
+  position: relative;
+}
+
+.lg-section__label {
+  font-family: var(--l-font-body);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--l-accent);
+  margin-bottom: 1.2rem;
+}
+
+.lg-section__heading {
+  font-family: var(--l-font-display);
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--l-text);
+  margin: 0 0 1.6rem;
+}
+
+.lg-section__sub {
+  font-size: 1.8rem;
+  color: var(--l-text-secondary);
+  max-width: 54rem;
+  line-height: 1.6;
+}
+
+/* Ornamental divider */
+.lg-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 2.4rem 0;
+}
+
+.lg-ornament__line {
+  flex: 1;
+  height: 1px;
+  background: var(--l-border);
+  max-width: 8rem;
+}
+
+.lg-ornament__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--l-accent-alt);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+
+@keyframes lg-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lg-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lg-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes lg-pulse-subtle {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes lg-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lg-draw-line {
+  from {
+    stroke-dashoffset: 600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================================================
+   Responsive utilities
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .lg-section {
+    padding: 6rem 0;
+  }
+
+  .lg-section__heading {
+    font-size: 3.2rem;
+  }
+
+  .lg-section__sub {
+    font-size: 1.6rem;
+  }
+}

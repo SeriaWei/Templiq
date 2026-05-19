@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Lingua — 用英语，打开世界</title>
+  <meta name="description" content="Lingua 以创新的方式学习英语。AI 语音分析、沉浸式故事、文化洞察 — 让你的英语学习之旅充满乐趣与收获。">
+
+  <!-- Bootstrap 3 (local) -->
+  <link rel="stylesheet" href="../../public/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/bootstrap-theme.min.css">
+
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/base.module.css">
+  <link rel="stylesheet" href="css/navbar.module.css">
+  <link rel="stylesheet" href="css/hero.module.css">
+  <link rel="stylesheet" href="css/features.module.css">
+  <link rel="stylesheet" href="css/howitworks.module.css">
+  <link rel="stylesheet" href="css/testimonials.module.css">
+  <link rel="stylesheet" href="css/cta.module.css">
+  <link rel="stylesheet" href="css/footer.module.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="lg-navbar" id="lgNavbar">
+    <div class="lg-navbar__inner">
+      <a href="#" class="lg-navbar__brand">
+        <span class="lg-navbar__brand-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M10 16c0 0 2-4 6-4s6 4 6 4-2 4-6 4-6-4-6-4z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M8 16h16" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+            <path d="M16 4v24" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+            <circle cx="16" cy="16" r="3" fill="currentColor" opacity="0.15"/>
+          </svg>
+        </span>
+        <span class="lg-navbar__brand-text">Lin<span>gua</span></span>
+      </a>
+      <button class="lg-navbar__toggle" id="lgNavToggle" aria-label="Toggle menu">
+        <span class="lg-navbar__toggle-bar"></span>
+        <span class="lg-navbar__toggle-bar"></span>
+      </button>
+      <ul class="lg-navbar__links" id="lgNavLinks">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#howitworks">How It Works</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#cta" class="lg-navbar__cta">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="lg-hero" id="hero">
+    <!-- Background -->
+    <div class="lg-hero__bg-texture"></div>
+    <div class="lg-hero__latitudes">
+      <div class="lg-hero__latitudes-line"></div>
+      <div class="lg-hero__latitudes-line"></div>
+      <div class="lg-hero__latitudes-line"></div>
+      <div class="lg-hero__latitudes-line"></div>
+    </div>
+
+    <!-- Globe decorative bg -->
+    <div class="lg-hero__globe-bg">
+      <svg viewBox="0 0 400 400" fill="none">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+        <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="0.3" opacity="0.2"/>
+        <circle cx="200" cy="200" r="130" stroke="currentColor" stroke-width="0.3" opacity="0.15"/>
+        <ellipse cx="200" cy="200" rx="190" ry="40" stroke="currentColor" stroke-width="0.3" opacity="0.15"/>
+        <ellipse cx="200" cy="200" rx="190" ry="80" stroke="currentColor" stroke-width="0.3" opacity="0.12"/>
+        <ellipse cx="200" cy="200" rx="40" ry="190" stroke="currentColor" stroke-width="0.3" opacity="0.12"/>
+        <ellipse cx="200" cy="200" rx="80" ry="190" stroke="currentColor" stroke-width="0.3" opacity="0.1"/>
+        <!-- Continent hints -->
+        <path d="M120 120 Q140 110 160 120 Q170 130 165 150 Q155 160 140 155 Q125 145 120 120Z" stroke="currentColor" stroke-width="0.4" fill="none" opacity="0.2"/>
+        <path d="M240 140 Q260 135 280 145 Q290 160 285 180 Q270 185 255 175 Q245 160 240 140Z" stroke="currentColor" stroke-width="0.4" fill="none" opacity="0.2"/>
+        <path d="M180 240 Q200 230 220 240 Q230 255 225 270 Q210 278 195 272 Q182 260 180 240Z" stroke="currentColor" stroke-width="0.4" fill="none" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <!-- Compass rose -->
+    <div class="lg-hero__compass">
+      <svg viewBox="0 0 100 100" fill="none">
+        <polygon points="50,5 56,42 95,50 56,58 50,95 44,58 5,50 44,42" fill="currentColor"/>
+        <polygon points="50,5 56,42 50,50 44,42" fill="currentColor" opacity="0.5"/>
+        <polygon points="50,95 44,58 50,50 56,58" fill="currentColor" opacity="0.3"/>
+        <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div class="lg-hero__content">
+      <div class="container">
+        <div class="lg-hero__inner">
+          <div class="lg-hero__text">
+            <div class="lg-hero__badge">
+              <span class="lg-hero__badge-dot"></span>
+              Now Available Worldwide
+            </div>
+            <h1 class="lg-hero__title">
+              <span class="lg-hero__title-line">Speak the World</span>
+              <span class="lg-hero__title-line lg-hero__title-line--accent">with Lingua</span>
+            </h1>
+            <p class="lg-hero__subtitle">
+              Break through language barriers with AI-powered learning that adapts to you.
+              Real conversations, real progress — from your first word to fluent confidence.
+            </p>
+            <div class="lg-hero__actions">
+              <a href="#cta" class="lg-hero__btn lg-hero__btn--primary">
+                Start Free Trial
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#features" class="lg-hero__btn lg-hero__btn--ghost">Learn More</a>
+            </div>
+            <div class="lg-hero__stats">
+              <div class="lg-hero__stat-item">
+                <div class="lg-hero__stat-number">2M<span>+</span></div>
+                <div class="lg-hero__stat-label">Active Learners</div>
+              </div>
+              <div class="lg-hero__stat-item">
+                <div class="lg-hero__stat-number">98<span>%</span></div>
+                <div class="lg-hero__stat-label">Satisfaction Rate</div>
+              </div>
+              <div class="lg-hero__stat-item">
+                <div class="lg-hero__stat-number">15<span>m</span></div>
+                <div class="lg-hero__stat-label">Daily Practice</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg-hero__visual">
+            <div class="lg-hero__phone">
+              <div class="lg-hero__phone-notch"></div>
+              <div class="lg-hero__phone-screen">
+                <div class="lg-hero__app-header">
+                  <div class="lg-hero__app-logo">
+                    <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+                      <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                      <path d="M10 16c0 0 2-4 6-4s6 4 6 4-2 4-6 4-6-4-6-4z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                    </svg>
+                    Lingua
+                  </div>
+                  <div class="lg-hero__app-greeting">
+                    Good Morning!
+                    <small>Let's continue your lesson</small>
+                  </div>
+                </div>
+                <div class="lg-hero__app-cards">
+                  <div class="lg-hero__app-card">
+                    <div class="lg-hero__app-card-icon lg-hero__app-card-icon--blue">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+                        <path d="M19 10v2a7 7 0 01-14 0v-2"/>
+                      </svg>
+                    </div>
+                    <div class="lg-hero__app-card-content">
+                      <div class="lg-hero__app-card-title">Pronunciation Drill</div>
+                      <div class="lg-hero__app-card-desc">AI analysis ready</div>
+                    </div>
+                    <div class="lg-hero__app-card-bar">
+                      <div class="lg-hero__app-card-bar-fill"></div>
+                    </div>
+                  </div>
+                  <div class="lg-hero__app-card">
+                    <div class="lg-hero__app-card-icon lg-hero__app-card-icon--gold">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                      </svg>
+                    </div>
+                    <div class="lg-hero__app-card-content">
+                      <div class="lg-hero__app-card-title">Daily Story</div>
+                      <div class="lg-hero__app-card-desc">"A Day in London"</div>
+                    </div>
+                    <div class="lg-hero__app-card-bar">
+                      <div class="lg-hero__app-card-bar-fill" style="width: 42%;"></div>
+                    </div>
+                  </div>
+                  <div class="lg-hero__app-card">
+                    <div class="lg-hero__app-card-icon lg-hero__app-card-icon--green">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <div class="lg-hero__app-card-content">
+                      <div class="lg-hero__app-card-title">Streak</div>
+                      <div class="lg-hero__app-card-desc">12 days · keep going!</div>
+                    </div>
+                    <div class="lg-hero__app-card-bar">
+                      <div class="lg-hero__app-card-bar-fill" style="width: 85%; background: var(--l-success);"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lg-hero__app-bottom-nav">
+                  <span class="lg-hero__app-nav-icon lg-hero__app-nav-icon--active">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                  </span>
+                  <span class="lg-hero__app-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                  </span>
+                  <span class="lg-hero__app-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                  </span>
+                  <span class="lg-hero__app-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                </div>
+              </div>
+              <div class="lg-hero__phone-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg-hero__scroll">
+      <span>Scroll</span>
+      <div class="lg-hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section class="lg-features" id="features">
+    <div class="lg-features__bg-number lg-features__bg-number--1">Lingua</div>
+    <div class="lg-features__bg-number lg-features__bg-number--2">Learn</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-features__header">
+            <div class="lg-section__label">Features</div>
+            <h2 class="lg-section__heading">The Lingua Difference</h2>
+            <p class="lg-section__sub" style="margin: 0 auto;">
+              Every tool designed to make you speak with confidence — from your very first lesson.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row lg-features__grid">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="lg-features__card">
+            <span class="lg-features__card-number">01</span>
+            <div class="lg-features__card-icon lg-features__card-icon--terracotta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+                <path d="M19 10v2a7 7 0 01-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+            </div>
+            <div class="lg-features__card-divider"></div>
+            <h3 class="lg-features__card-title">AI Speech Coach</h3>
+            <p class="lg-features__card-desc">
+              Real-time pronunciation analysis with phoneme-level feedback. Master every sound from schwa to stress patterns.
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="lg-features__card">
+            <span class="lg-features__card-number">02</span>
+            <div class="lg-features__card-icon lg-features__card-icon--gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                <path d="M8 8h8M8 12h6M8 16h4"/>
+              </svg>
+            </div>
+            <div class="lg-features__card-divider"></div>
+            <h3 class="lg-features__card-title">Immersive Stories</h3>
+            <p class="lg-features__card-desc">
+              Learn through interactive narratives set in New York, London, Sydney and beyond. Every story builds real-world skills.
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="lg-features__card">
+            <span class="lg-features__card-number">03</span>
+            <div class="lg-features__card-icon lg-features__card-icon--navy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+            </div>
+            <div class="lg-features__card-divider"></div>
+            <h3 class="lg-features__card-title">Cultural Insights</h3>
+            <p class="lg-features__card-desc">
+              Beyond grammar — understand idioms, humor, etiquette, and context. Speak English the way native speakers really do.
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="lg-features__card">
+            <span class="lg-features__card-number">04</span>
+            <div class="lg-features__card-icon lg-features__card-icon--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="lg-features__card-divider"></div>
+            <h3 class="lg-features__card-title">Smart Recall</h3>
+            <p class="lg-features__card-desc">
+              Spaced repetition powered by cognitive science. Words move from short-term memory to lasting fluency — naturally.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-features__highlight">
+            <div class="lg-features__highlight-inner">
+              <div class="lg-features__highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+              </div>
+              <div class="lg-features__highlight-text">
+                <div class="lg-features__highlight-title">AI Conversation Partner</div>
+                <p class="lg-features__highlight-desc">
+                  Practice real conversations anytime with our advanced AI that adapts to your level, corrects your grammar, and expands your vocabulary naturally — just like talking to a patient, encouraging friend.
+                </p>
+              </div>
+              <span class="lg-features__highlight-badge">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="lg-howitworks" id="howitworks">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-howitworks__header">
+            <div class="lg-section__label">Your Journey</div>
+            <h2 class="lg-section__heading">How It Works</h2>
+            <p class="lg-section__sub" style="margin: 0 auto;">
+              Four simple steps from beginner to confident speaker. Your path, your pace.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg-howitworks__timeline">
+        <!-- Step 1 -->
+        <div class="lg-howitworks__step lg-howitworks__step--left">
+          <div class="lg-howitworks__step-content">
+            <div class="lg-howitworks__step-icon lg-howitworks__step-icon--s1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <span class="lg-howitworks__step-label">Step 01</span>
+            <h3 class="lg-howitworks__step-title">Take Your Placement</h3>
+            <p class="lg-howitworks__step-desc">
+              A quick, adaptive assessment identifies your strengths and areas to grow. No pressure, no judgment — just a clear starting point.
+            </p>
+          </div>
+          <span class="lg-howitworks__step-number">1</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="lg-howitworks__step lg-howitworks__step--right">
+          <div class="lg-howitworks__step-content">
+            <div class="lg-howitworks__step-icon lg-howitworks__step-icon--s2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+            </div>
+            <span class="lg-howitworks__step-label">Step 02</span>
+            <h3 class="lg-howitworks__step-title">Daily Discoveries</h3>
+            <p class="lg-howitworks__step-desc">
+              Personalized lessons delivered each day — a mix of vocabulary, grammar, listening, and speaking. Just 15 minutes a day.
+            </p>
+          </div>
+          <span class="lg-howitworks__step-number">2</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="lg-howitworks__step lg-howitworks__step--left">
+          <div class="lg-howitworks__step-content">
+            <div class="lg-howitworks__step-icon lg-howitworks__step-icon--s3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+            </div>
+            <span class="lg-howitworks__step-label">Step 03</span>
+            <h3 class="lg-howitworks__step-title">Practice Freely</h3>
+            <p class="lg-howitworks__step-desc">
+              Role-play real-world scenarios: ordering coffee, making small talk, job interviews. Our AI responds naturally, building your confidence.
+            </p>
+          </div>
+          <span class="lg-howitworks__step-number">3</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="lg-howitworks__step lg-howitworks__step--right">
+          <div class="lg-howitworks__step-content">
+            <div class="lg-howitworks__step-icon lg-howitworks__step-icon--s4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <span class="lg-howitworks__step-label">Step 04</span>
+            <h3 class="lg-howitworks__step-title">See Your Progress</h3>
+            <p class="lg-howitworks__step-desc">
+              Rich analytics track your growth — fluency scores, vocabulary expansion, pronunciation accuracy. Celebrate every milestone.
+            </p>
+          </div>
+          <span class="lg-howitworks__step-number">4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="lg-testimonials" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-testimonials__header">
+            <div class="lg-section__label">Success Stories</div>
+            <h2 class="lg-section__heading">From Learners to Speakers</h2>
+            <p class="lg-section__sub" style="margin: 0 auto;">
+              Real people, real transformations. Here's what Lingua learners are saying.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg-testimonials__grid">
+        <!-- Card 1 -->
+        <div class="lg-testimonials__card">
+          <span class="lg-testimonials__quote-mark">"</span>
+          <div class="lg-testimonials__stars">
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          </div>
+          <p class="lg-testimonials__quote">
+            "I was terrified of speaking English at work. After three months with Lingua, I led my first presentation — in English. The AI speech coach was a game-changer."
+          </p>
+          <div class="lg-testimonials__author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format" alt="Sofia Chen" class="lg-testimonials__avatar" loading="lazy">
+            <div class="lg-testimonials__info">
+              <div class="lg-testimonials__name">Sofia Chen</div>
+              <div class="lg-testimonials__role">Marketing Manager, Mexico City</div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/64/555/555635.png" alt="Mexico flag" class="lg-testimonials__flag">
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="lg-testimonials__card">
+          <span class="lg-testimonials__quote-mark">"</span>
+          <div class="lg-testimonials__stars">
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          </div>
+          <p class="lg-testimonials__quote">
+            "The immersive stories are brilliant. I learned idioms and cultural nuances that textbooks never teach. Now I can laugh at British humor — and make it!"
+          </p>
+          <div class="lg-testimonials__author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format" alt="Hiro Tanaka" class="lg-testimonials__avatar" loading="lazy">
+            <div class="lg-testimonials__info">
+              <div class="lg-testimonials__name">Hiro Tanaka</div>
+              <div class="lg-testimonials__role">Software Engineer, Tokyo</div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/64/555/555604.png" alt="Japan flag" class="lg-testimonials__flag">
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="lg-testimonials__card">
+          <span class="lg-testimonials__quote-mark">"</span>
+          <div class="lg-testimonials__stars">
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lg-testimonials__star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          </div>
+          <p class="lg-testimonials__quote">
+            "Fifteen minutes a day, and within six months I went from 'Hello, my name is' to having full conversations with my English-speaking colleagues."
+          </p>
+          <div class="lg-testimonials__author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80&auto=format" alt="Maria García" class="lg-testimonials__avatar" loading="lazy">
+            <div class="lg-testimonials__info">
+              <div class="lg-testimonials__name">Maria García</div>
+              <div class="lg-testimonials__role">Nurse, Barcelona</div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/64/555/555591.png" alt="Spain flag" class="lg-testimonials__flag">
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-testimonials__metrics">
+            <div class="lg-testimonials__metric-item">
+              <div class="lg-testimonials__metric-number">2.3M<span>+</span></div>
+              <div class="lg-testimonials__metric-label">Global Learners</div>
+            </div>
+            <div class="lg-testimonials__metric-item">
+              <div class="lg-testimonials__metric-number">92<span>%</span></div>
+              <div class="lg-testimonials__metric-label">Reach Fluency Goal</div>
+            </div>
+            <div class="lg-testimonials__metric-item">
+              <div class="lg-testimonials__metric-number">156</div>
+              <div class="lg-testimonials__metric-label">Countries Reached</div>
+            </div>
+            <div class="lg-testimonials__metric-item">
+              <div class="lg-testimonials__metric-number">4.8<span>/5</span></div>
+              <div class="lg-testimonials__metric-label">App Store Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="lg-cta" id="cta">
+    <div class="lg-cta__bg-pattern"></div>
+    <div class="lg-cta__globe-lines">
+      <svg viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
+        <ellipse cx="720" cy="300" rx="500" ry="200" stroke="currentColor" stroke-width="0.5"/>
+        <ellipse cx="720" cy="300" rx="600" ry="240" stroke="currentColor" stroke-width="0.3"/>
+        <ellipse cx="720" cy="300" rx="700" ry="280" stroke="currentColor" stroke-width="0.2"/>
+        <path d="M220 300 Q720 100 1220 300" stroke="currentColor" stroke-width="0.4"/>
+        <path d="M220 300 Q720 500 1220 300" stroke="currentColor" stroke-width="0.3"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-cta__content">
+            <div class="lg-cta__label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              Free 7-Day Trial
+            </div>
+            <h2 class="lg-cta__title">
+              Your <span>English journey</span><br>
+              starts today
+            </h2>
+            <p class="lg-cta__subtitle">
+              Join millions of learners discovering the joy of real English fluency. Start speaking from day one — no credit card required.
+            </p>
+            <div class="lg-cta__actions">
+              <a href="#" class="lg-cta__btn lg-cta__btn--primary">
+                Start Free Trial
+                <span class="lg-cta__btn-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </a>
+              <a href="#" class="lg-cta__btn lg-cta__btn--ghost">
+                Download the App
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="lg-cta__note">
+              Free for 7 days, then $9.99/month. Cancel anytime.
+              <br>
+              <a href="#">See full terms</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="lg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="lg-footer__brand">
+            <span class="lg-footer__brand-icon">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                <path d="M10 16c0 0 2-4 6-4s6 4 6 4-2 4-6 4-6-4-6-4z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                <path d="M8 16h16" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+                <circle cx="16" cy="16" r="3" fill="currentColor" opacity="0.15"/>
+              </svg>
+            </span>
+            <span>Lin<span>gua</span></span>
+          </div>
+          <p class="lg-footer__desc">
+            Making English fluency accessible to everyone. Learn naturally, speak confidently, explore the world.
+          </p>
+          <div class="lg-footer__social">
+            <a href="#" class="lg-footer__social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="lg-footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="lg-footer__social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-2A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98" fill="var(--l-bg)"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1">
+          <h4 class="lg-footer__col-title">Product</h4>
+          <ul class="lg-footer__links">
+            <li><a href="#">Features <span class="lg-footer__link-arrow">→</span></a></li>
+            <li><a href="#">Pricing <span class="lg-footer__link-arrow">→</span></a></li>
+            <li><a href="#">For Teams <span class="lg-footer__link-arrow">→</span></a></li>
+            <li><a href="#">For Schools <span class="lg-footer__link-arrow">→</span></a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+          <h4 class="lg-footer__col-title">Resources</h4>
+          <ul class="lg-footer__links">
+            <li><a href="#">Blog <span class="lg-footer__link-arrow">→</span></a></li>
+            <li><a href="#">Language Tips <span class="lg-footer__link-arrow">→</span></a></li>
+            <li><a href="#">Help Center <span class="lg-footer__link-arrow">→</span></a></li>
+            <li><a href="#">Community <span class="lg-footer__link-arrow">→</span></a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-1">
+          <h4 class="lg-footer__col-title">Stay in Touch</h4>
+          <p class="lg-footer__newsletter-text">Get weekly language tips, success stories, and exclusive offers delivered to your inbox.</p>
+          <form class="lg-footer__form" onsubmit="return false;">
+            <input type="email" class="lg-footer__input" placeholder="Enter your email" aria-label="Email address">
+            <button type="submit" class="lg-footer__submit" aria-label="Subscribe">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="lg-footer__bottom">
+            <p class="lg-footer__copyright">© 2026 Lingua. All rights reserved.</p>
+            <div class="lg-footer__legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../public/jquery.min.js"></script>
+  <script src="../../public/bootstrap.min.js"></script>
+  <script src="js/navbar.component.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

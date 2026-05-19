@@ -1,0 +1,572 @@
+/* ============================================================
+   HERO — Lingua
+   Editorial full-viewport hero with warm atmosphere
+   ============================================================ */
+
+.lg-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--l-bg);
+  overflow: hidden;
+  padding: 12rem 0 8rem;
+}
+
+/* ============================================================
+   Background decorative elements
+   ============================================================ */
+
+.lg-hero__bg-texture {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(212, 168, 83, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(196, 69, 54, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(30, 58, 95, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Globe decorative lines */
+.lg-hero__globe-bg {
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70vmin;
+  height: 70vmin;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+.lg-hero__globe-bg svg {
+  width: 100%;
+  height: 100%;
+  animation: lg-spin-slow 120s linear infinite;
+}
+
+/* Compass rose decorative */
+.lg-hero__compass {
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+  width: 12vmin;
+  height: 12vmin;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.lg-hero__compass svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Subtle latitude lines */
+.lg-hero__latitudes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lg-hero__latitudes-line {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  height: 1px;
+  background: var(--l-accent-alt);
+  opacity: 0.06;
+}
+
+.lg-hero__latitudes-line:nth-child(1) { top: 20%; }
+.lg-hero__latitudes-line:nth-child(2) { top: 40%; }
+.lg-hero__latitudes-line:nth-child(3) { top: 60%; }
+.lg-hero__latitudes-line:nth-child(4) { top: 80%; }
+
+/* ============================================================
+   Content
+   ============================================================ */
+
+.lg-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.lg-hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.lg-hero__text {
+  flex: 1 1 50%;
+  max-width: 58rem;
+}
+
+.lg-hero__visual {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.lg-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--l-accent);
+  background: rgba(196, 69, 54, 0.08);
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  margin-bottom: 2.4rem;
+  border: 1px solid rgba(196, 69, 54, 0.15);
+}
+
+.lg-hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--l-accent);
+  animation: lg-pulse-subtle 2s ease-in-out infinite;
+}
+
+.lg-hero__title {
+  font-family: var(--l-font-display);
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--l-text);
+  margin: 0 0 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.lg-hero__title-line {
+  display: block;
+}
+
+.lg-hero__title-line--accent {
+  color: var(--l-accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.lg-hero__subtitle {
+  font-size: 1.8rem;
+  color: var(--l-text-secondary);
+  line-height: 1.65;
+  max-width: 44rem;
+  margin-bottom: 3.2rem;
+}
+
+.lg-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.lg-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--l-font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.4rem 3.2rem;
+  border-radius: var(--l-radius-md);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.lg-hero__btn--primary {
+  background: var(--l-accent);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(196, 69, 54, 0.25);
+}
+
+.lg-hero__btn--primary:hover {
+  background: var(--l-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(196, 69, 54, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.lg-hero__btn--ghost {
+  background: transparent;
+  color: var(--l-text);
+  border: 2px solid var(--l-border);
+}
+
+.lg-hero__btn--ghost:hover {
+  border-color: var(--l-accent);
+  color: var(--l-accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ============================================================
+   Phone mockup
+   ============================================================ */
+
+.lg-hero__phone {
+  width: 280px;
+  height: 580px;
+  background: var(--l-primary);
+  border-radius: 36px;
+  padding: 12px;
+  position: relative;
+  box-shadow:
+    0 20px 60px rgba(26, 26, 46, 0.15),
+    0 0 0 1px rgba(30, 58, 95, 0.1),
+    inset 0 0 0 1px rgba(245, 240, 232, 0.08);
+  animation: lg-float 6s ease-in-out infinite;
+}
+
+.lg-hero__phone-notch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: var(--l-primary);
+  border-radius: 0 0 16px 16px;
+  z-index: 3;
+}
+
+.lg-hero__phone-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #2A5280 0%, #1E3A5F 50%, #162D4A 100%);
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App UI Mockup inside phone */
+.lg-hero__app-header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.lg-hero__app-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--l-text-light);
+  font-family: var(--l-font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.lg-hero__app-greeting {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: var(--l-font-display);
+  line-height: 1.2;
+}
+
+.lg-hero__app-greeting small {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.6;
+  font-family: var(--l-font-body);
+  margin-top: 0.4rem;
+}
+
+.lg-hero__app-cards {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.lg-hero__app-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  animation: lg-fade-up 0.6s ease backwards;
+}
+
+.lg-hero__app-card:nth-child(1) { animation-delay: 0.8s; }
+.lg-hero__app-card:nth-child(2) { animation-delay: 1s; }
+.lg-hero__app-card:nth-child(3) { animation-delay: 1.2s; }
+
+.lg-hero__app-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lg-hero__app-card-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lg-hero__app-card-icon--blue { background: rgba(42, 82, 128, 0.6); }
+.lg-hero__app-card-icon--gold { background: rgba(212, 168, 83, 0.3); }
+.lg-hero__app-card-icon--green { background: rgba(58, 157, 110, 0.3); }
+
+.lg-hero__app-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.lg-hero__app-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.lg-hero__app-card-desc {
+  font-size: 1rem;
+  opacity: 0.5;
+  margin-top: 0.2rem;
+}
+
+.lg-hero__app-card-bar {
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.lg-hero__app-card-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--l-accent-alt);
+  width: 65%;
+}
+
+.lg-hero__app-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 1.6rem 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lg-hero__app-nav-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4;
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+
+.lg-hero__app-nav-icon--active {
+  opacity: 0.9;
+}
+
+.lg-hero__app-nav-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Phone glow */
+.lg-hero__phone-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 168, 83, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   Stats row in hero
+   ============================================================ */
+
+.lg-hero__stats {
+  display: flex;
+  gap: 4rem;
+  margin-top: 4rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid var(--l-border);
+}
+
+.lg-hero__stat-item {
+  text-align: left;
+}
+
+.lg-hero__stat-number {
+  font-family: var(--l-font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--l-primary);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.lg-hero__stat-number span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--l-accent-alt);
+}
+
+.lg-hero__stat-label {
+  font-size: 1.2rem;
+  color: var(--l-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   Scroll indicator
+   ============================================================ */
+
+.lg-hero__scroll {
+  position: absolute;
+  bottom: 3.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--l-text-tertiary);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 2;
+  animation: lg-fade-up 1s ease 1.5s backwards;
+}
+
+.lg-hero__scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--l-text-tertiary), transparent);
+  animation: lg-scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes lg-scroll-pulse {
+  0%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 991px) {
+  .lg-hero__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+
+  .lg-hero__text {
+    max-width: 100%;
+  }
+
+  .lg-hero__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lg-hero__actions {
+    justify-content: center;
+  }
+
+  .lg-hero__stats {
+    justify-content: center;
+  }
+
+  .lg-hero__title {
+    font-size: 4.8rem;
+  }
+
+  .lg-hero__phone {
+    width: 220px;
+    height: 460px;
+    padding: 10px;
+  }
+
+  .lg-hero__phone-notch {
+    width: 100px;
+    height: 22px;
+  }
+
+  .lg-hero__phone-screen {
+    border-radius: 20px;
+  }
+
+  .lg-hero__app-header {
+    padding: 3.2rem 1.6rem 1.6rem;
+  }
+
+  .lg-hero__app-greeting {
+    font-size: 1.8rem;
+  }
+
+  .lg-hero__app-cards {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .lg-hero__globe-bg {
+    width: 100vmin;
+    height: 100vmin;
+    right: -30%;
+    top: 40%;
+  }
+}
+
+@media (max-width: 767px) {
+  .lg-hero {
+    min-height: auto;
+    padding: 10rem 0 4rem;
+  }
+
+  .lg-hero__title {
+    font-size: 3.6rem;
+  }
+
+  .lg-hero__stats {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .lg-hero__stat-item {
+    text-align: center;
+  }
+}

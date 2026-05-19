@@ -1,0 +1,218 @@
+/* ============================================================
+   NAVBAR — Lingua
+   Warm transparent navigation with scroll-activated solid bg
+   ============================================================ */
+
+.lg-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--l-nav-height);
+  display: flex;
+  align-items: center;
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.lg-navbar--solid {
+  background: rgba(247, 243, 238, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--l-border-light);
+  box-shadow: 0 1px 4px rgba(26, 26, 46, 0.04);
+}
+
+.lg-navbar__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lg-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--l-text);
+  transition: color 0.3s ease;
+}
+
+.lg-navbar__brand:hover {
+  color: var(--l-accent);
+  text-decoration: none;
+}
+
+.lg-navbar__brand-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lg-navbar__brand-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lg-navbar__brand-text {
+  font-family: var(--l-font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.lg-navbar__brand-text span {
+  color: var(--l-accent);
+}
+
+.lg-navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1002;
+}
+
+.lg-navbar__toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--l-text);
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.lg-navbar__toggle--active .lg-navbar__toggle-bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.lg-navbar__toggle--active .lg-navbar__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.lg-navbar__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.4rem;
+}
+
+.lg-navbar__links li a {
+  font-family: var(--l-font-body);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--l-text-secondary);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--l-radius-sm);
+  transition: color 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.lg-navbar__links li a:hover,
+.lg-navbar__links li a.active {
+  color: var(--l-text);
+  background: rgba(196, 69, 54, 0.06);
+}
+
+.lg-navbar__links li a.active {
+  color: var(--l-accent);
+  font-weight: 600;
+}
+
+.lg-navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--l-font-body);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff !important;
+  background: var(--l-accent) !important;
+  padding: 0.9rem 2rem !important;
+  border-radius: var(--l-radius-md) !important;
+  transition: background 0.3s ease, transform 0.3s ease !important;
+  letter-spacing: 0.02em;
+}
+
+.lg-navbar__cta:hover {
+  background: var(--l-accent-hover) !important;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+/* Mobile overlay */
+.lg-navbar__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(247, 243, 238, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.lg-navbar__overlay--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lg-navbar__overlay-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.lg-navbar__overlay-links li {
+  margin: 2rem 0;
+}
+
+.lg-navbar__overlay-links li a {
+  font-family: var(--l-font-display);
+  font-size: 3.6rem;
+  font-weight: 500;
+  color: var(--l-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lg-navbar__overlay-links li a:hover {
+  color: var(--l-accent);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .lg-navbar__links {
+    display: none;
+  }
+
+  .lg-navbar__toggle {
+    display: flex;
+  }
+}

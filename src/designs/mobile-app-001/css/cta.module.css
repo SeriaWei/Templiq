@@ -1,0 +1,198 @@
+/* ============================================================
+   CTA — Lingua
+   Bold, cinematic call-to-action section
+   ============================================================ */
+
+.lg-cta {
+  position: relative;
+  background: var(--l-bg-dark);
+  padding: 12rem 0;
+  overflow: hidden;
+}
+
+/* Decorative background */
+.lg-cta__bg-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lg-cta__bg-pattern::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.06), transparent 70%);
+}
+
+.lg-cta__bg-pattern::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 60vmin;
+  height: 60vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 69, 54, 0.05), transparent 70%);
+}
+
+/* Globe lines in bg */
+.lg-cta__globe-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+}
+
+.lg-cta__globe-lines svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content */
+.lg-cta__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.lg-cta__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--l-accent-alt);
+  background: rgba(212, 168, 83, 0.1);
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  border: 1px solid rgba(212, 168, 83, 0.15);
+  margin-bottom: 2.4rem;
+}
+
+.lg-cta__title {
+  font-family: var(--l-font-display);
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--l-text-light);
+  margin: 0 0 1.6rem;
+}
+
+.lg-cta__title span {
+  color: var(--l-accent-alt);
+  font-style: italic;
+}
+
+.lg-cta__subtitle {
+  font-size: 1.8rem;
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.65;
+  max-width: 48rem;
+  margin: 0 auto 3.6rem;
+}
+
+.lg-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.lg-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--l-font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.6rem 3.6rem;
+  border-radius: var(--l-radius-md);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.lg-cta__btn--primary {
+  background: var(--l-accent-alt);
+  color: var(--l-bg-dark);
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.3);
+}
+
+.lg-cta__btn--primary:hover {
+  background: #E0C06E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(212, 168, 83, 0.4);
+  color: var(--l-bg-dark);
+  text-decoration: none;
+}
+
+.lg-cta__btn--ghost {
+  background: transparent;
+  color: var(--l-text-light);
+  border: 2px solid rgba(245, 240, 232, 0.2);
+}
+
+.lg-cta__btn--ghost:hover {
+  border-color: var(--l-text-light);
+  color: var(--l-text-light);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.lg-cta__btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.lg-cta__btn:hover .lg-cta__btn-icon {
+  transform: translateX(4px);
+}
+
+/* Bottom note */
+.lg-cta__note {
+  font-size: 1.3rem;
+  color: rgba(245, 240, 232, 0.35);
+  margin-top: 2.4rem;
+}
+
+.lg-cta__note a {
+  color: rgba(212, 168, 83, 0.6);
+  border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+}
+
+.lg-cta__note a:hover {
+  color: var(--l-accent-alt);
+  border-color: var(--l-accent-alt);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .lg-cta {
+    padding: 7rem 0;
+  }
+
+  .lg-cta__title {
+    font-size: 3.6rem;
+  }
+
+  .lg-cta__subtitle {
+    font-size: 1.6rem;
+  }
+
+  .lg-cta__btn {
+    padding: 1.4rem 2.8rem;
+  }
+}
