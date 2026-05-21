@@ -1,0 +1,398 @@
+<!-- 英雄区域 -->
+{% header %}
+<style>
+.section-mpfecy8x {
+  --neon-cyan: #00f5ff;
+  --neon-purple: #bf00ff;
+  --neon-pink: #ff00aa;
+  --dark-bg: #0a0a0f;
+  --darker-bg: #050508;
+  --card-bg: rgba(20, 20, 30, 0.8);
+  --text-main: #e0e0e0;
+  --text-muted: #888899;
+  background: var(--dark-bg);
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+}
+
+.section-mpfecy8x .ssd-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.section-mpfecy8x .ssd-hero__grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: mpfecy8x-gridMove 20s linear infinite;
+}
+
+@keyframes mpfecy8x-gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.section-mpfecy8x .ssd-hero__glow-1,
+.section-mpfecy8x .ssd-hero__glow-2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.3;
+  animation: mpfecy8x-float 8s ease-in-out infinite;
+}
+
+.section-mpfecy8x .ssd-hero__glow-1 {
+  top: -200px;
+  left: -200px;
+  background: var(--neon-cyan);
+}
+
+.section-mpfecy8x .ssd-hero__glow-2 {
+  bottom: -200px;
+  right: -200px;
+  background: var(--neon-purple);
+  animation-delay: -4s;
+}
+
+@keyframes mpfecy8x-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.section-mpfecy8x .ssd-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.section-mpfecy8x .ssd-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 30px;
+  animation: mpfecy8x-tagPulse 2s ease-in-out infinite;
+}
+
+@keyframes mpfecy8x-tagPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 245, 255, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(0, 245, 255, 0.6); }
+}
+
+.section-mpfecy8x .ssd-hero__tag-icon {
+  font-size: 18px;
+}
+
+.section-mpfecy8x .ssd-hero__title {
+  font-size: 70px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.section-mpfecy8x .ssd-hero__title-line {
+  display: block;
+}
+
+.section-mpfecy8x .ssd-hero__title-line--glitch {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 30px var(--neon-cyan);
+  animation: mpfecy8x-glitch 3s infinite;
+}
+
+@keyframes mpfecy8x-glitch {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-2px, 2px); }
+  94% { transform: translate(2px, -2px); }
+  96% { transform: translate(-2px, -2px); }
+  98% { transform: translate(2px, 2px); }
+}
+
+.section-mpfecy8x .ssd-hero__desc {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+.section-mpfecy8x .ssd-hero__actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.section-mpfecy8x .ssd-hero__btn {
+  padding: 15px 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+}
+
+.section-mpfecy8x .ssd-hero__btn--primary {
+  position: relative;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  color: var(--dark-bg);
+  overflow: hidden;
+}
+
+.section-mpfecy8x .ssd-hero__btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.section-mpfecy8x .ssd-hero__btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.4);
+}
+
+.section-mpfecy8x .ssd-hero__btn--primary:hover::before {
+  left: 100%;
+}
+
+.section-mpfecy8x .ssd-hero__btn--ghost {
+  border: 2px solid var(--text-muted);
+  color: var(--text-main);
+  background: transparent;
+}
+
+.section-mpfecy8x .ssd-hero__btn--ghost:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+.section-mpfecy8x .ssd-hero__speedometer {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  position: relative;
+}
+
+.section-mpfecy8x .ssd-hero__speedometer::before,
+.section-mpfecy8x .ssd-hero__speedometer::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon-cyan);
+}
+
+.section-mpfecy8x .ssd-hero__speedometer::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.section-mpfecy8x .ssd-hero__speedometer::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+.section-mpfecy8x .ssd-hero__speed-value {
+  font-size: 60px;
+  font-weight: bold;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 30px var(--neon-cyan);
+  line-height: 1;
+}
+
+.section-mpfecy8x .ssd-hero__speed-label {
+  font-size: 16px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 10px;
+}
+
+.section-mpfecy8x .ssd-hero__speed-bar {
+  margin-top: 20px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-mpfecy8x .ssd-hero__speed-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+  box-shadow: 0 0 20px var(--neon-cyan);
+  transition: width 2s ease-out;
+}
+
+.section-mpfecy8x .ssd-hero__scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-mpfecy8x .ssd-hero__scroll-line {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--neon-cyan), transparent);
+  margin: 10px auto 0;
+  animation: mpfecy8x-scrollLine 1.5s ease-in-out infinite;
+}
+
+@keyframes mpfecy8x-scrollLine {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.5; transform: scaleY(0.5); }
+}
+
+@media (max-width: 768px) {
+  .section-mpfecy8x .ssd-hero__title {
+    font-size: 40px;
+  }
+
+  .section-mpfecy8x .ssd-hero__desc {
+    font-size: 16px;
+  }
+
+  .section-mpfecy8x .ssd-hero__speed-value {
+    font-size: 40px;
+  }
+
+  .section-mpfecy8x .ssd-hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+{% endheader %}
+
+<div class="section-mpfecy8x">
+<section class="ssd-hero">
+  <div class="ssd-hero__grid-bg"></div>
+  <div class="ssd-hero__glow-1"></div>
+  <div class="ssd-hero__glow-2"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ssd-hero__content">
+          {% if this.Model.tag_text %}
+          <div class="ssd-hero__tag">
+            {% if this.Model.tag_icon %}
+            <span class="ssd-hero__tag-icon" property="true" data-property="tag_icon" method="text">{{this.Model.tag_icon}}</span>
+            {% endif %}
+            <span property="true" data-property="tag_text" method="text">{{this.Model.tag_text}}</span>
+          </div>
+          {% endif %}
+
+          <h1 class="ssd-hero__title">
+            {% if this.Model.title_line1 %}
+            <span class="ssd-hero__title-line" property="true" data-property="title_line1" method="text">{{this.Model.title_line1}}</span>
+            {% endif %}
+            {% if this.Model.title_line2 %}
+            <span class="ssd-hero__title-line ssd-hero__title-line--glitch" property="true" data-property="title_line2" method="text">{{this.Model.title_line2}}</span>
+            {% endif %}
+          </h1>
+
+          {% if this.Model.description %}
+          <p class="ssd-hero__desc" property="true" data-property="description" method="text">{{this.Model.description}}</p>
+          {% endif %}
+
+          <div class="ssd-hero__actions">
+            {% if this.Model.primary_btn_text %}
+            <a property="true" data-property="primary_btn_href" method="attr" para="href" href="{% url this.Model.primary_btn_href %}" class="ssd-hero__btn ssd-hero__btn--primary">
+              <span property="true" data-property="primary_btn_text" method="text">{{this.Model.primary_btn_text}}</span>
+            </a>
+            {% endif %}
+            {% if this.Model.secondary_btn_text %}
+            <a property="true" data-property="secondary_btn_href" method="attr" para="href" href="{% url this.Model.secondary_btn_href %}" class="ssd-hero__btn ssd-hero__btn--ghost">
+              <span property="true" data-property="secondary_btn_text" method="text">{{this.Model.secondary_btn_text}}</span>
+            </a>
+            {% endif %}
+          </div>
+
+          <div class="ssd-hero__speedometer">
+            {% if this.Model.speed_value %}
+            <div class="ssd-hero__speed-value" id="speedValue" property="true" data-property="speed_value" method="text">{{this.Model.speed_value}}</div>
+            {% endif %}
+            {% if this.Model.speed_label %}
+            <div class="ssd-hero__speed-label" property="true" data-property="speed_label" method="text">{{this.Model.speed_label}}</div>
+            {% endif %}
+            <div class="ssd-hero__speed-bar">
+              <div class="ssd-hero__speed-bar-fill" id="speedBar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if this.Model.scroll_hint %}
+  <div class="ssd-hero__scroll-hint">
+    <span property="true" data-property="scroll_hint" method="text">{{this.Model.scroll_hint}}</span>
+    <div class="ssd-hero__scroll-line"></div>
+  </div>
+  {% endif %}
+</section>
+</div>
+
+{% footer %}
+<script type="text/javascript">
+(function() {
+  var section = document.querySelector('.section-mpfecy8x');
+  if (!section) return;
+
+  var speedValue = section.querySelector('#speedValue');
+  var speedBar = section.querySelector('#speedBar');
+
+  if (speedBar) {
+    setTimeout(function() {
+      speedBar.style.width = '100%';
+    }, 500);
+  }
+})();
+</script>
+{% endfooter %}

@@ -1,0 +1,159 @@
+<!-- CTA 区域 -->
+{% header %}
+<style>
+.section-mpfed2xe {
+  --neon-cyan: #00f5ff;
+  --neon-purple: #bf00ff;
+  --dark-bg: #0a0a0f;
+  background: var(--dark-bg);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+}
+
+.section-mpfed2xe .ssd-cta__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(191, 0, 255, 0.1));
+}
+
+.section-mpfed2xe .ssd-cta__bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.section-mpfed2xe .ssd-cta__content {
+  position: relative;
+  z-index: 1;
+}
+
+.section-mpfed2xe .ssd-cta__title {
+  font-size: 45px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+}
+
+.section-mpfed2xe .ssd-cta__desc {
+  font-size: 20px;
+  color: #888899;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.section-mpfed2xe .ssd-cta__actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-mpfed2xe .ssd-cta__btn {
+  padding: 18px 45px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+}
+
+.section-mpfed2xe .ssd-cta__btn--primary {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  color: var(--dark-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-mpfed2xe .ssd-cta__btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.section-mpfed2xe .ssd-cta__btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.4);
+}
+
+.section-mpfed2xe .ssd-cta__btn--primary:hover::before {
+  left: 100%;
+}
+
+.section-mpfed2xe .ssd-cta__btn--ghost {
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: transparent;
+}
+
+.section-mpfed2xe .ssd-cta__btn--ghost:hover {
+  background: rgba(0, 245, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .section-mpfed2xe .ssd-cta__title {
+    font-size: 30px;
+  }
+
+  .section-mpfed2xe .ssd-cta__desc {
+    font-size: 16px;
+  }
+
+  .section-mpfed2xe .ssd-cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+{% endheader %}
+
+<div class="section-mpfed2xe">
+<div class="ssd-cta__bg"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center ssd-cta__content">
+      {% if this.Model.title %}
+      <h2 class="ssd-cta__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+      {% endif %}
+      {% if this.Model.description %}
+      <p class="ssd-cta__desc" property="true" data-property="description" method="text">{{this.Model.description}}</p>
+      {% endif %}
+      <div class="ssd-cta__actions">
+        {% if this.Model.primary_btn_text %}
+        <a property="true" data-property="primary_btn_href" method="attr" para="href" href="{% url this.Model.primary_btn_href %}" class="ssd-cta__btn ssd-cta__btn--primary">
+          <span property="true" data-property="primary_btn_text" method="text">{{this.Model.primary_btn_text}}</span>
+        </a>
+        {% endif %}
+        {% if this.Model.secondary_btn_text %}
+        <a property="true" data-property="secondary_btn_href" method="attr" para="href" href="{% url this.Model.secondary_btn_href %}" class="ssd-cta__btn ssd-cta__btn--ghost">
+          <span property="true" data-property="secondary_btn_text" method="text">{{this.Model.secondary_btn_text}}</span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>

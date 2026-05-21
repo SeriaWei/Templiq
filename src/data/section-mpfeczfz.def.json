@@ -1,0 +1,34 @@
+{
+    "section_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "features": {
+        "FieldType": "Array",
+        "DisplayName": "特性列表",
+        "Children": [
+            {
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "特性标题"
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "特性描述"
+                },
+                "metric_value": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数值"
+                },
+                "metric_unit": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "单位"
+                }
+            }
+        ]
+    }
+}

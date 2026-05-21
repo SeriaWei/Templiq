@@ -1,0 +1,244 @@
+<!-- 页脚 -->
+{% header %}
+<style>
+.section-mpfed45b {
+  --neon-cyan: #00f5ff;
+  --darker-bg: #050508;
+  --text-muted: #888899;
+  --text-main: #e0e0e0;
+  background: var(--darker-bg);
+  padding: 80px 0 30px;
+  border-top: 1px solid rgba(0, 245, 255, 0.1);
+  font-family: 'Courier New', monospace;
+}
+
+.section-mpfed45b .ssd-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.section-mpfed45b .ssd-footer__brand-logo {
+  font-size: 25px;
+  color: var(--neon-cyan);
+}
+
+.section-mpfed45b .ssd-footer__brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.section-mpfed45b .ssd-footer__brand-accent {
+  color: var(--neon-cyan);
+}
+
+.section-mpfed45b .ssd-footer__tagline {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.section-mpfed45b .ssd-footer__social {
+  display: flex;
+  gap: 15px;
+}
+
+.section-mpfed45b .ssd-footer__social-link {
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.section-mpfed45b .ssd-footer__social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.section-mpfed45b .ssd-footer__social-link:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+.section-mpfed45b .ssd-footer__heading {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.section-mpfed45b .ssd-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-mpfed45b .ssd-footer__links li {
+  margin-bottom: 10px;
+}
+
+.section-mpfed45b .ssd-footer__links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.section-mpfed45b .ssd-footer__links a:hover {
+  color: var(--neon-cyan);
+}
+
+.section-mpfed45b .ssd-footer__contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-mpfed45b .ssd-footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.section-mpfed45b .ssd-footer__contact svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--neon-cyan);
+  margin-top: 2px;
+}
+
+.section-mpfed45b .ssd-footer__bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 50px;
+}
+
+.section-mpfed45b .ssd-footer__copyright {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.section-mpfed45b .ssd-footer__copyright a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+}
+</style>
+{% endheader %}
+
+<div class="section-mpfed45b">
+<div class="container">
+  <div class="row ssd-footer__top">
+    <div class="col-md-4">
+      <div class="ssd-footer__brand">
+        {% if this.Model.brand_logo %}
+        <span class="ssd-footer__brand-logo" property="true" data-property="brand_logo" method="text">{{this.Model.brand_logo}}</span>
+        {% endif %}
+        {% if this.Model.brand_name %}
+        <span class="ssd-footer__brand-name">
+          <span property="true" data-property="brand_name" method="text">{{this.Model.brand_name}}</span>
+          {% if this.Model.brand_accent %}
+          <span class="ssd-footer__brand-accent" property="true" data-property="brand_accent" method="text">{{this.Model.brand_accent}}</span>
+          {% endif %}
+        </span>
+        {% endif %}
+      </div>
+      {% if this.Model.tagline %}
+      <p class="ssd-footer__tagline" property="true" data-property="tagline" method="text">{{this.Model.tagline}}</p>
+      {% endif %}
+      {% if this.Model.social_links and this.Model.social_links.size > 0 %}
+      <div class="ssd-footer__social">
+        {% assign social_index = 0 %}
+        {% for link in this.Model.social_links %}
+        <a property="true" data-property="social_links[{{social_index}}].href" method="attr" para="href" href="{% url link.href %}" class="ssd-footer__social-link" aria-label="{{link.label}}">
+          {% if link.icon == 'twitter' %}
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          {% elsif link.icon == 'youtube' %}
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          {% elsif link.icon == 'github' %}
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          {% endif %}
+        </a>
+        {% assign social_index = social_index | plus: 1 %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if this.Model.product_links and this.Model.product_links.size > 0 %}
+    <div class="col-md-2 col-md-offset-1">
+      <h5 class="ssd-footer__heading">产品</h5>
+      <ul class="ssd-footer__links">
+        {% assign product_index = 0 %}
+        {% for link in this.Model.product_links %}
+        <li>
+          <a property="true" data-property="product_links[{{product_index}}].href" method="attr" para="href" href="{% url link.href %}" property="true" data-property="product_links[{{product_index}}].text" method="text">{{link.text}}</a>
+        </li>
+        {% assign product_index = product_index | plus: 1 %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if this.Model.support_links and this.Model.support_links.size > 0 %}
+    <div class="col-md-2">
+      <h5 class="ssd-footer__heading">支持</h5>
+      <ul class="ssd-footer__links">
+        {% assign support_index = 0 %}
+        {% for link in this.Model.support_links %}
+        <li>
+          <a property="true" data-property="support_links[{{support_index}}].href" method="attr" para="href" href="{% url link.href %}" property="true" data-property="support_links[{{support_index}}].text" method="text">{{link.text}}</a>
+        </li>
+        {% assign support_index = support_index | plus: 1 %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if this.Model.contact_items and this.Model.contact_items.size > 0 %}
+    <div class="col-md-3">
+      <h5 class="ssd-footer__heading">联系我们</h5>
+      <ul class="ssd-footer__contact">
+        {% assign contact_index = 0 %}
+        {% for contact in this.Model.contact_items %}
+        <li>
+          {% if contact.icon == 'location' %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {% elsif contact.icon == 'phone' %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          {% endif %}
+          <span property="true" data-property="contact_items[{{contact_index}}].text" method="text">{{contact.text}}</span>
+        </li>
+        {% assign contact_index = contact_index | plus: 1 %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="row ssd-footer__bottom">
+    <div class="col-md-12">
+      <p class="ssd-footer__copyright">
+        <span property="true" data-property="copyright_text" method="text">{{this.Model.copyright_text}}</span>
+        |
+        <a property="true" data-property="privacy_link" method="attr" para="href" href="{% url this.Model.privacy_link %}">隐私政策</a>
+        ·
+        <a property="true" data-property="terms_link" method="attr" para="href" href="{% url this.Model.terms_link %}">服务条款</a>
+      </p>
+    </div>
+  </div>
+</div>
+</div>

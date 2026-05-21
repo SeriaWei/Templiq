@@ -1,0 +1,21 @@
+{
+    "stats": [
+        {
+            "value": 5000000,
+            "label": "全球用户"
+        },
+        {
+            "value": 99.9,
+            "label": "% 可靠性",
+            "is_decimal": true
+        },
+        {
+            "value": 50,
+            "label": "+ 国家地区"
+        },
+        {
+            "value": 24,
+            "label": "个月质保"
+        }
+    ]
+}

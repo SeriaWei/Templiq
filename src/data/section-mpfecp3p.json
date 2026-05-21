@@ -1,0 +1,29 @@
+{
+    "brand_logo": "∞",
+    "brand_name": "Nexa",
+    "brand_accent": "Drive",
+    "nav_items": [
+        {
+            "text": "首页",
+            "href": "#hero"
+        },
+        {
+            "text": "核心优势",
+            "href": "#features"
+        },
+        {
+            "text": "产品系列",
+            "href": "#products"
+        },
+        {
+            "text": "数据统计",
+            "href": "#stats"
+        },
+        {
+            "text": "联系我们",
+            "href": "#footer"
+        }
+    ],
+    "cta_text": "立即购买",
+    "cta_href": "#products"
+}
