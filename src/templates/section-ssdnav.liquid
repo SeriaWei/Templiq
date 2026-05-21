@@ -1,0 +1,247 @@
+<!-- 导航栏 -->
+{% header %}
+<style>
+.section-ssdnav {
+  --neon-cyan: #00f5ff;
+  --neon-purple: #bf00ff;
+  --neon-pink: #ff00aa;
+  --dark-bg: #0a0a0f;
+  --card-bg: rgba(20, 20, 30, 0.8);
+  --text-main: #e0e0e0;
+  --text-muted: #888899;
+  background: transparent;
+}
+
+.section-ssdnav .nd-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  background: linear-gradient(to bottom, rgba(10, 10, 15, 0.95), rgba(10, 10, 15, 0.7));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+.section-ssdnav .nd-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-ssdnav .nd-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.section-ssdnav .nd-navbar__brand-logo {
+  font-size: 30px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 20px var(--neon-cyan);
+  animation: ssdnav-logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes ssdnav-logoPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.section-ssdnav .nd-navbar__brand-name {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-family: 'Courier New', monospace;
+}
+
+.section-ssdnav .nd-navbar__brand-accent {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.section-ssdnav .nd-navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.section-ssdnav .nd-navbar__toggle-line {
+  width: 30px;
+  height: 2px;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+  transition: all 0.3s ease;
+}
+
+.section-ssdnav .nd-navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.section-ssdnav .nd-navbar__links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.section-ssdnav .nd-navbar__links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  transition: width 0.3s ease;
+}
+
+.section-ssdnav .nd-navbar__links a:hover,
+.section-ssdnav .nd-navbar__links a.active {
+  color: var(--neon-cyan);
+}
+
+.section-ssdnav .nd-navbar__links a:hover::after,
+.section-ssdnav .nd-navbar__links a.active::after {
+  width: 100%;
+}
+
+.section-ssdnav .nd-navbar__cta {
+  padding: 10px 25px;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.section-ssdnav .nd-navbar__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.section-ssdnav .nd-navbar__cta:hover {
+  background: var(--neon-cyan);
+  color: var(--dark-bg);
+  box-shadow: 0 0 30px var(--neon-cyan);
+}
+
+.section-ssdnav .nd-navbar__cta:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 992px) {
+  .section-ssdnav .nd-navbar__toggle {
+    display: flex;
+  }
+
+  .section-ssdnav .nd-navbar__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+  }
+
+  .section-ssdnav .nd-navbar__links.active {
+    display: flex;
+  }
+}
+</style>
+{% endheader %}
+
+<div class="section-ssdnav">
+<nav class="nd-navbar" id="ndNavbar">
+  <div class="container">
+    <div class="nd-navbar__inner">
+      {% if this.Model.brand_logo or this.Model.brand_name %}
+      <a href="#" class="nd-navbar__brand">
+        {% if this.Model.brand_logo %}
+        <span class="nd-navbar__brand-logo" property="true" data-property="brand_logo" method="text">{{this.Model.brand_logo}}</span>
+        {% endif %}
+        {% if this.Model.brand_name %}
+        <span class="nd-navbar__brand-name">
+          <span property="true" data-property="brand_name" method="text">{{this.Model.brand_name}}</span>
+          {% if this.Model.brand_accent %}
+          <span class="nd-navbar__brand-accent" property="true" data-property="brand_accent" method="text">{{this.Model.brand_accent}}</span>
+          {% endif %}
+        </span>
+        {% endif %}
+      </a>
+      {% endif %}
+      
+      <button class="nd-navbar__toggle" id="navToggle" aria-label="Toggle Menu">
+        <span class="nd-navbar__toggle-line"></span>
+        <span class="nd-navbar__toggle-line"></span>
+        <span class="nd-navbar__toggle-line"></span>
+      </button>
+      
+      {% if this.Model.nav_items and this.Model.nav_items.size > 0 %}
+      <ul class="nd-navbar__links" id="navLinks">
+        {% assign index = 0 %}
+        {% for item in this.Model.nav_items %}
+        <li>
+          <a property="true" data-property="nav_items[{{index}}].href" method="attr" para="href" href="{% url item.href %}" {% if index == 0 %}class="active"{% endif %}>
+            <span property="true" data-property="nav_items[{{index}}].text" method="text">{{item.text}}</span>
+          </a>
+        </li>
+        {% assign index = index | plus: 1 %}
+        {% endfor %}
+      </ul>
+      {% endif %}
+      
+      {% if this.Model.cta_text and this.Model.cta_href %}
+      <a property="true" data-property="cta_href" method="attr" para="href" href="{% url this.Model.cta_href %}" class="nd-navbar__cta">
+        <span property="true" data-property="cta_text" method="text">{{this.Model.cta_text}}</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+</div>
+
+{% footer %}
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var navToggle = document.querySelector('.section-ssdnav #navToggle');
+  var navLinks = document.querySelector('.section-ssdnav #navLinks');
+  
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+    });
+  }
+});
+</script>
+{% endfooter %}
