@@ -1,0 +1,109 @@
+.nd-cta {
+  padding: 12rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nd-cta__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(191, 0, 255, 0.1));
+}
+
+.nd-cta__bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+.nd-cta__title {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nd-cta__desc {
+  font-size: 2rem;
+  color: var(--text-muted);
+  margin-bottom: 4rem;
+  line-height: 1.8;
+}
+
+.nd-cta__actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nd-cta__btn {
+  padding: 1.8rem 4.5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nd-cta__btn--primary {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  color: var(--dark-bg);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.nd-cta__btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.nd-cta__btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.4);
+}
+
+.nd-cta__btn--primary:hover::before {
+  left: 100%;
+}
+
+.nd-cta__btn--ghost {
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: transparent;
+}
+
+.nd-cta__btn--ghost:hover {
+  background: rgba(0, 245, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .nd-cta__title {
+    font-size: 3rem;
+  }
+
+  .nd-cta__desc {
+    font-size: 1.6rem;
+  }
+}

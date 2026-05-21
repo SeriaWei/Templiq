@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaDrive · 极速存储 超越极限</title>
+  <meta name="description" content="NexaDrive — 下一代 SSD 存储技术，重新定义数据传输速度与存储可靠性。">
+
+  <link rel="stylesheet" href="../../public/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/bootstrap-theme.min.css">
+
+  <link rel="stylesheet" href="css/navbar.module.css">
+  <link rel="stylesheet" href="css/hero.module.css">
+  <link rel="stylesheet" href="css/features.module.css">
+  <link rel="stylesheet" href="css/products.module.css">
+  <link rel="stylesheet" href="css/stats.module.css">
+  <link rel="stylesheet" href="css/cta.module.css">
+  <link rel="stylesheet" href="css/footer.module.css">
+
+</head>
+<body>
+
+  <nav class="nd-navbar" id="ndNavbar">
+    <div class="container">
+      <div class="nd-navbar__inner">
+        <a href="#" class="nd-navbar__brand">
+          <span class="nd-navbar__brand-logo">∞</span>
+          <span class="nd-navbar__brand-name">Nexa<span class="nd-navbar__brand-accent">Drive</span></span>
+        </a>
+        <button class="nd-navbar__toggle" id="navToggle" aria-label="Toggle Menu">
+          <span class="nd-navbar__toggle-line"></span>
+          <span class="nd-navbar__toggle-line"></span>
+          <span class="nd-navbar__toggle-line"></span>
+        </button>
+        <ul class="nd-navbar__links" id="navLinks">
+          <li><a href="#hero" class="active">首页</a></li>
+          <li><a href="#features">核心优势</a></li>
+          <li><a href="#products">产品系列</a></li>
+          <li><a href="#stats">数据说话</a></li>
+          <li><a href="#footer">联系我们</a></li>
+        </ul>
+        <a href="#products" class="nd-navbar__cta">立即购买</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="nd-hero" id="hero">
+    <div class="nd-hero__grid-bg"></div>
+    <div class="nd-hero__glow-1"></div>
+    <div class="nd-hero__glow-2"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="nd-hero__content">
+            <div class="nd-hero__tag">
+              <span class="nd-hero__tag-icon">⚡</span>
+              PCIe 6.0 时代来临
+            </div>
+            <h1 class="nd-hero__title">
+              <span class="nd-hero__title-line">极速存储</span>
+              <span class="nd-hero__title-line nd-hero__title-line--glitch">超越极限</span>
+            </h1>
+            <p class="nd-hero__desc">
+              以 24,000 MB/s 连续读取速度，让数据不再等待。
+              <br>NexaDrive — 重新定义固态硬盘的未来。
+            </p>
+            <div class="nd-hero__actions">
+              <a href="#products" class="nd-hero__btn nd-hero__btn--primary">
+                <span class="nd-hero__btn-text">探索产品</span>
+                <span class="nd-hero__btn-glow"></span>
+              </a>
+              <a href="#features" class="nd-hero__btn nd-hero__btn--ghost">
+                技术细节
+              </a>
+            </div>
+            <div class="nd-hero__speedometer">
+              <div class="nd-hero__speed-value" id="speedValue">0</div>
+              <div class="nd-hero__speed-label">MB/s 读取速度</div>
+              <div class="nd-hero__speed-bar">
+                <div class="nd-hero__speed-bar-fill" id="speedBar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nd-hero__scroll-hint">
+      <span>向下滚动</span>
+      <div class="nd-hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="nd-features" id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="nd-section-title">
+            <span class="nd-section-title__accent">[</span> 核心优势 <span class="nd-section-title__accent">]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="row nd-features__grid">
+        <div class="col-md-3 col-sm-6">
+          <div class="nd-feature-card">
+            <div class="nd-feature-card__icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M8 32L56 8v48L8 32z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="32" r="8" fill="currentColor" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="nd-feature-card__title">极速性能</h3>
+            <p class="nd-feature-card__desc">
+              PCIe 6.0 x4 接口，NVMe 2.0 协议，连续读取高达 24,000 MB/s
+            </p>
+            <div class="nd-feature-card__metric">24,000 <span class="nd-feature-card__metric-unit">MB/s</span></div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="nd-feature-card">
+            <div class="nd-feature-card__icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="8" width="40" height="48" rx="4" stroke="currentColor" stroke-width="2"/>
+                <rect x="18" y="16" width="28" height="8" rx="2" fill="currentColor" opacity="0.2"/>
+                <rect x="18" y="30" width="18" height="6" rx="1" fill="currentColor" opacity="0.2"/>
+              </svg>
+            </div>
+            <h3 class="nd-feature-card__title">超大容量</h3>
+            <p class="nd-feature-card__desc">
+              从 1TB 到 64TB，满足从个人到企业级的所有存储需求
+            </p>
+            <div class="nd-feature-card__metric">64 <span class="nd-feature-card__metric-unit">TB Max</span></div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="nd-feature-card">
+            <div class="nd-feature-card__icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 16v16l12 12" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="nd-feature-card__title">持久耐用</h3>
+            <p class="nd-feature-card__desc">
+              5000 P/E 写入周期，配合独家磨损平衡算法，使用寿命提升 200%
+            </p>
+            <div class="nd-feature-card__metric">5000 <span class="nd-feature-card__metric-unit">P/E</span></div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="nd-feature-card">
+            <div class="nd-feature-card__icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <rect x="8" y="20" width="48" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 32h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="nd-feature-card__title">低温冷静</h3>
+            <p class="nd-feature-card__desc">
+              石墨烯散热技术配合智能温控，满负载运行低至 45°C
+            </p>
+            <div class="nd-feature-card__metric">45 <span class="nd-feature-card__metric-unit">°C</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nd-products" id="products">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="nd-section-title nd-section-title--inverse">
+            产品系列
+          </h2>
+          <p class="nd-products__subtitle">为每一种应用场景量身定制</p>
+        </div>
+      </div>
+
+      <div class="row nd-products__grid">
+        <div class="col-md-4 col-sm-6">
+          <div class="nd-product-card">
+            <div class="nd-product-card__badge">入门级</div>
+            <div class="nd-product-card__header">
+              <h3 class="nd-product-card__name">X1 Lite</h3>
+              <div class="nd-product-card__price">¥599<span class="nd-product-card__price-unit">起</span></div>
+            </div>
+            <ul class="nd-product-card__specs">
+              <li>容量: 1TB - 4TB</li>
+              <li>读取: 7,400 MB/s</li>
+              <li>写入: 6,500 MB/s</li>
+              <li>接口: PCIe 4.0 x4</li>
+            </ul>
+            <button class="nd-product-card__btn">了解详情</button>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nd-product-card nd-product-card--featured">
+            <div class="nd-product-card__ribbon">爆款推荐</div>
+            <div class="nd-product-card__header">
+              <h3 class="nd-product-card__name">X3 Pro</h3>
+              <div class="nd-product-card__price">¥1,299<span class="nd-product-card__price-unit">起</span></div>
+            </div>
+            <ul class="nd-product-card__specs">
+              <li>容量: 2TB - 16TB</li>
+              <li>读取: 14,000 MB/s</li>
+              <li>写入: 12,000 MB/s</li>
+              <li>接口: PCIe 5.0 x4</li>
+            </ul>
+            <button class="nd-product-card__btn nd-product-card__btn--primary">立即购买</button>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="nd-product-card">
+            <div class="nd-product-card__badge">旗舰级</div>
+            <div class="nd-product-card__header">
+              <h3 class="nd-product-card__name">X5 Ultra</h3>
+              <div class="nd-product-card__price">¥3,999<span class="nd-product-card__price-unit">起</span></div>
+            </div>
+            <ul class="nd-product-card__specs">
+              <li>容量: 4TB - 64TB</li>
+              <li>读取: 24,000 MB/s</li>
+              <li>写入: 20,000 MB/s</li>
+              <li>接口: PCIe 6.0 x4</li>
+            </ul>
+            <button class="nd-product-card__btn">了解详情</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nd-stats" id="stats">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 nd-stat-item">
+          <div class="nd-stat-item__value" data-target="5000000">0</div>
+          <div class="nd-stat-item__label">全球用户</div>
+        </div>
+        <div class="col-md-3 col-sm-6 nd-stat-item">
+          <div class="nd-stat-item__value" data-target="99.9">0</div>
+          <div class="nd-stat-item__label">% 可靠性</div>
+        </div>
+        <div class="col-md-3 col-sm-6 nd-stat-item">
+          <div class="nd-stat-item__value" data-target="50">0</div>
+          <div class="nd-stat-item__label">+ 国家地区</div>
+        </div>
+        <div class="col-md-3 col-sm-6 nd-stat-item">
+          <div class="nd-stat-item__value" data-target="24">0</div>
+          <div class="nd-stat-item__label">个月质保</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nd-cta" id="cta">
+    <div class="nd-cta__bg"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <h2 class="nd-cta__title">准备好迎接极速体验了吗？</h2>
+          <p class="nd-cta__desc">
+            立即升级您的存储系统，让数据传输不再成为瓶颈。
+            <br>首发期间购买享 20% 优惠 + 免费安装服务。
+          </p>
+          <div class="nd-cta__actions">
+            <a href="#" class="nd-cta__btn nd-cta__btn--primary">立即购买</a>
+            <a href="#" class="nd-cta__btn nd-cta__btn--ghost">预约演示</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="nd-footer" id="footer">
+    <div class="container">
+      <div class="row nd-footer__top">
+        <div class="col-md-4">
+          <div class="nd-footer__brand">
+            <span class="nd-footer__brand-logo">∞</span>
+            <span class="nd-footer__brand-name">Nexa<span class="nd-footer__brand-accent">Drive</span></span>
+          </div>
+          <p class="nd-footer__tagline">
+            极速存储，超越想象。
+          </p>
+          <div class="nd-footer__social">
+            <a href="#" class="nd-footer__social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="#" class="nd-footer__social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" class="nd-footer__social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-md-offset-1">
+          <h5 class="nd-footer__heading">产品</h5>
+          <ul class="nd-footer__links">
+            <li><a href="#">X1 Lite</a></li>
+            <li><a href="#">X3 Pro</a></li>
+            <li><a href="#">X5 Ultra</a></li>
+            <li><a href="#">企业级方案</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h5 class="nd-footer__heading">支持</h5>
+          <ul class="nd-footer__links">
+            <li><a href="#">技术文档</a></li>
+            <li><a href="#">驱动下载</a></li>
+            <li><a href="#">常见问题</a></li>
+            <li><a href="#">联系客服</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="nd-footer__heading">联系我们</h5>
+          <ul class="nd-footer__contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              上海市浦东新区张江高科技园区
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              400-999-8888
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row nd-footer__bottom">
+        <div class="col-md-12">
+          <p class="nd-footer__copyright">
+            © 2026 NexaDrive. All Rights Reserved. | 
+            <a href="#">隐私政策</a> · <a href="#">服务条款</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../public/jquery.min.js"></script>
+  <script src="../../public/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
