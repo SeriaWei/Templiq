@@ -1,0 +1,197 @@
+{% header %}
+<style>
+.section-mpgvo6ri {
+    --neon-cyan: #00f5ff;
+    --neon-purple: #bf00ff;
+    --dark-bg: #0a0a0f;
+    --card-bg: rgba(20,20,30,0.8);
+    --text-main: #e0e0e0;
+    --text-muted: #888899;
+
+    background-color: var(--dark-bg);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-mpgvo6ri::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(0, 245, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(191, 0, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.section-mpgvo6ri__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-mpgvo6ri__title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-main);
+    margin: 0 0 60px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section-mpgvo6ri__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    margin: 16px auto 0;
+    box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.section-mpgvo6ri__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.section-mpgvo6ri__card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 245, 255, 0.15);
+    border-radius: 12px;
+    padding: 36px 24px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+.section-mpgvo6ri__card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--neon-cyan), transparent, var(--neon-purple));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.section-mpgvo6ri__card:hover {
+    transform: translateY(-8px);
+    border-color: transparent;
+    box-shadow: 0 0 24px rgba(0, 245, 255, 0.3),
+                0 0 48px rgba(191, 0, 255, 0.15);
+}
+
+.section-mpgvo6ri__card:hover::before {
+    opacity: 1;
+}
+
+.section-mpgvo6ri__card-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-cyan);
+    filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.5));
+    transition: filter 0.4s ease;
+}
+
+.section-mpgvo6ri__card:hover .section-mpgvo6ri__card-icon {
+    filter: drop-shadow(0 0 16px rgba(0, 245, 255, 0.8));
+}
+
+.section-mpgvo6ri__card-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.section-mpgvo6ri__card-metric {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    line-height: 1;
+    margin-bottom: 4px;
+    text-shadow: 0 0 12px rgba(0, 245, 255, 0.4);
+    font-family: 'Courier New', monospace;
+}
+
+.section-mpgvo6ri__card-metric-unit {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--neon-purple);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+    text-shadow: 0 0 8px rgba(191, 0, 255, 0.3);
+}
+
+.section-mpgvo6ri__card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 10px;
+    letter-spacing: 1px;
+}
+
+.section-mpgvo6ri__card-description {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .section-mpgvo6ri__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-mpgvo6ri__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-mpgvo6ri {
+        padding: 48px 0;
+    }
+    .section-mpgvo6ri__grid {
+        grid-template-columns: 1fr;
+    }
+    .section-mpgvo6ri__card-metric {
+        font-size: 32px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgvo6ri">
+    <div class="section-mpgvo6ri__container">
+        <h2 class="section-mpgvo6ri__title" property="true" data-property="section_title">{{ this.Model.section_title }}</h2>
+        <div class="section-mpgvo6ri__grid">
+            {% for item in this.Model.features %}
+            <div class="section-mpgvo6ri__card">
+                <div class="section-mpgvo6ri__card-icon" property="true" data-property="features[{{forloop.index0}}].icon_svg">
+                    {{ item.icon_svg }}
+                </div>
+                <div class="section-mpgvo6ri__card-metric" property="true" data-property="features[{{forloop.index0}}].metric_value">{{ item.metric_value }}</div>
+                <span class="section-mpgvo6ri__card-metric-unit" property="true" data-property="features[{{forloop.index0}}].metric_unit">{{ item.metric_unit }}</span>
+                <h3 class="section-mpgvo6ri__card-title" property="true" data-property="features[{{forloop.index0}}].title">{{ item.title }}</h3>
+                <p class="section-mpgvo6ri__card-description" property="true" data-property="features[{{forloop.index0}}].description">{{ item.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

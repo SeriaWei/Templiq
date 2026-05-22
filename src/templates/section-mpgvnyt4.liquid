@@ -1,0 +1,492 @@
+{% header %}
+<style>
+  .section-mpgvnyt4 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--dark-bg, #0a0a0f);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  .section-mpgvnyt4 *,
+  .section-mpgvnyt4 *::before,
+  .section-mpgvnyt4 *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── 网格背景 ── */
+  .section-mpgvnyt4 .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 245, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ── 发光圆形浮动效果 ── */
+  .section-mpgvnyt4 .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .section-mpgvnyt4 .hero-glow--cyan {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 245, 255, 0.25), transparent 70%);
+    top: -120px;
+    right: -80px;
+    animation: section-mpgvnyt4-glowFloat 8s ease-in-out infinite alternate;
+  }
+
+  .section-mpgvnyt4 .hero-glow--purple {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(191, 0, 255, 0.2), transparent 70%);
+    bottom: -100px;
+    left: -60px;
+    animation: section-mpgvnyt4-glowFloat 10s ease-in-out infinite alternate-reverse;
+  }
+
+  .section-mpgvnyt4 .hero-glow--small {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 245, 255, 0.15), transparent 70%);
+    top: 40%;
+    left: 60%;
+    animation: section-mpgvnyt4-glowFloat 6s ease-in-out infinite alternate;
+  }
+
+  @keyframes section-mpgvnyt4-glowFloat {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(40px, -30px) scale(1.15);
+    }
+  }
+
+  /* ── 内容容器 ── */
+  .section-mpgvnyt4 .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ── 标签 ── */
+  .section-mpgvnyt4 .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    border-radius: 100px;
+    background: rgba(0, 245, 255, 0.06);
+    margin-bottom: 32px;
+    animation: section-mpgvnyt4-tagPulse 2.5s ease-in-out infinite;
+  }
+
+  .section-mpgvnyt4 .hero-tag-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-mpgvnyt4 .hero-tag-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--neon-cyan, #00f5ff);
+  }
+
+  .section-mpgvnyt4 .hero-tag-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--neon-cyan, #00f5ff);
+  }
+
+  @keyframes section-mpgvnyt4-tagPulse {
+    0%, 100% {
+      border-color: rgba(0, 245, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0, 245, 255, 0.05);
+    }
+    50% {
+      border-color: rgba(0, 245, 255, 0.7);
+      box-shadow: 0 0 24px rgba(0, 245, 255, 0.15);
+    }
+  }
+
+  /* ── 标题 ── */
+  .section-mpgvnyt4 .hero-title {
+    margin-bottom: 16px;
+  }
+
+  .section-mpgvnyt4 .hero-title-line {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--text-main, #e0e0e0);
+  }
+
+  .section-mpgvnyt4 .hero-title-line--highlight {
+    background: linear-gradient(135deg, var(--neon-cyan, #00f5ff), var(--neon-purple, #bf00ff));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+    animation: section-mpgvnyt4-glitch 4s ease-in-out infinite;
+  }
+
+  .section-mpgvnyt4 .hero-title-line--highlight::before,
+  .section-mpgvnyt4 .hero-title-line--highlight::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-mpgvnyt4 .hero-title-line--highlight::before {
+    animation: section-mpgvnyt4-glitchShift 4s ease-in-out infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    color: var(--neon-cyan, #00f5ff);
+  }
+
+  .section-mpgvnyt4 .hero-title-line--highlight::after {
+    animation: section-mpgvnyt4-glitchShift2 4s ease-in-out infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    color: var(--neon-purple, #bf00ff);
+  }
+
+  @keyframes section-mpgvnyt4-glitch {
+    0%, 90%, 100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(-2px, 1px);
+    }
+    94% {
+      transform: translate(2px, -1px);
+    }
+    96% {
+      transform: translate(-1px, 1px);
+    }
+    98% {
+      transform: translate(0);
+    }
+  }
+
+  @keyframes section-mpgvnyt4-glitchShift {
+    0%, 90%, 100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(3px, 0);
+    }
+    94% {
+      transform: translate(-3px, 0);
+    }
+    96% {
+      transform: translate(2px, 0);
+    }
+  }
+
+  @keyframes section-mpgvnyt4-glitchShift2 {
+    0%, 90%, 100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(-3px, 0);
+    }
+    94% {
+      transform: translate(3px, 0);
+    }
+    96% {
+      transform: translate(-2px, 0);
+    }
+  }
+
+  /* ── 描述 ── */
+  .section-mpgvnyt4 .hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-muted, #888899);
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+
+  /* ── 按钮组 ── */
+  .section-mpgvnyt4 .hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .section-mpgvnyt4 .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 36px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  .section-mpgvnyt4 .hero-btn--primary {
+    background: linear-gradient(135deg, var(--neon-cyan, #00f5ff), var(--neon-purple, #bf00ff));
+    color: var(--dark-bg, #0a0a0f);
+    box-shadow: 0 0 24px rgba(0, 245, 255, 0.25);
+  }
+
+  .section-mpgvnyt4 .hero-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(0, 245, 255, 0.4);
+  }
+
+  .section-mpgvnyt4 .hero-btn--secondary {
+    background: transparent;
+    color: var(--text-main, #e0e0e0);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .section-mpgvnyt4 .hero-btn--secondary:hover {
+    border-color: var(--neon-cyan, #00f5ff);
+    color: var(--neon-cyan, #00f5ff);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+  }
+
+  /* ── 速度表 ── */
+  .section-mpgvnyt4 .hero-speed-meter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .section-mpgvnyt4 .hero-speed-bar-track {
+    width: 400px;
+    max-width: 90vw;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .section-mpgvnyt4 .hero-speed-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--neon-cyan, #00f5ff), var(--neon-purple, #bf00ff));
+    border-radius: 3px;
+    box-shadow: 0 0 16px rgba(0, 245, 255, 0.4);
+    transition: width 0.1s linear;
+  }
+
+  .section-mpgvnyt4 .hero-speed-value {
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--neon-cyan, #00f5ff), var(--neon-purple, #bf00ff));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .section-mpgvnyt4 .hero-speed-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted, #888899);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── 滚动提示 ── */
+  .section-mpgvnyt4 .hero-scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted, #888899);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  .section-mpgvnyt4 .hero-scroll-hint-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid var(--text-muted, #888899);
+    border-bottom: 2px solid var(--text-muted, #888899);
+    transform: rotate(45deg);
+    animation: section-mpgvnyt4-scrollBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes section-mpgvnyt4-scrollBounce {
+    0%, 100% {
+      transform: rotate(45deg) translate(0, 0);
+      opacity: 0.4;
+    }
+    50% {
+      transform: rotate(45deg) translate(4px, 4px);
+      opacity: 1;
+    }
+  }
+
+  /* ── 响应式 ── */
+  @media (max-width: 768px) {
+    .section-mpgvnyt4 .hero-title-line {
+      font-size: 40px;
+    }
+    .section-mpgvnyt4 .hero-speed-value {
+      font-size: 36px;
+    }
+    .section-mpgvnyt4 .hero-speed-bar-track {
+      width: 280px;
+    }
+    .section-mpgvnyt4 .hero-description {
+      font-size: 16px;
+    }
+    .section-mpgvnyt4 .hero-btn {
+      padding: 12px 28px;
+      font-size: 14px;
+    }
+    .section-mpgvnyt4 .hero-glow--cyan {
+      width: 300px;
+      height: 300px;
+    }
+    .section-mpgvnyt4 .hero-glow--purple {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-mpgvnyt4 .hero-title-line {
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    .section-mpgvnyt4 .hero-speed-value {
+      font-size: 28px;
+    }
+    .section-mpgvnyt4 .hero-speed-bar-track {
+      width: 220px;
+    }
+    .section-mpgvnyt4 .hero-tag {
+      padding: 6px 14px;
+    }
+    .section-mpgvnyt4 .hero-tag-text {
+      font-size: 11px;
+    }
+    .section-mpgvnyt4 .hero-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+    .section-mpgvnyt4 .hero-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+{% endheader %}
+
+<section class="section-mpgvnyt4">
+  <div class="hero-grid-bg"></div>
+
+  <div class="hero-glow hero-glow--cyan"></div>
+  <div class="hero-glow hero-glow--purple"></div>
+  <div class="hero-glow hero-glow--small"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag" property="true" data-property="tag_icon">
+      <span class="hero-tag-icon" property="true" data-property="tag_icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </span>
+      <span class="hero-tag-text" property="true" data-property="tag_text">新一代存储</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-title-line" property="true" data-property="title_line1">极速存储</span>
+      <br>
+      <span class="hero-title-line hero-title-line--highlight" data-text="超越极限" property="true" data-property="title_line2">超越极限</span>
+    </h1>
+
+    <p class="hero-description" property="true" data-property="description">
+      采用先进 PCIe 5.0 控制器与 3D TLC NAND 闪存，顺序读取速度高达 24000 MB/s，为创作者和游戏玩家带来前所未有的极致体验。
+    </p>
+
+    <div class="hero-speed-meter">
+      <div class="hero-speed-bar-track">
+        <div class="hero-speed-bar-fill" id="section-mpgvnyt4-speedFill"></div>
+      </div>
+      <span class="hero-speed-value" property="true" data-property="speed_value">24000 MB/s</span>
+      <span class="hero-speed-label" property="true" data-property="speed_label">顺序读取速度</span>
+    </div>
+
+    <div class="hero-buttons">
+      <a class="hero-btn hero-btn--primary" href="{% url primary_btn_href %}" property="true" data-property="primary_btn_text">
+        {{ primary_btn_text | default: '立即购买' }}
+      </a>
+      <a class="hero-btn hero-btn--secondary" href="{% url secondary_btn_href %}" property="true" data-property="secondary_btn_text">
+        {{ secondary_btn_text | default: '了解详情' }}
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" property="true" data-property="scroll_hint">
+    <span>向下滚动</span>
+    <div class="hero-scroll-hint-arrow"></div>
+  </div>
+</section>
+
+{% footer %}
+<script>
+  (function() {
+    var fill = document.getElementById('section-mpgvnyt4-speedFill');
+    if (fill) {
+      setTimeout(function() {
+        fill.style.width = '100%';
+      }, 300);
+    }
+  })();
+</script>
+{% endfooter %}

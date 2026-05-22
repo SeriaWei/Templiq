@@ -1,0 +1,18 @@
+{
+    "stats": {
+        "FieldType": "Array",
+        "DisplayName": "统计数据",
+        "Children": [
+            {
+                "value": {
+                    "FieldType": "Number",
+                    "DisplayName": "数值"
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                }
+            }
+        ]
+    }
+}

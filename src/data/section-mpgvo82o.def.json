@@ -1,0 +1,54 @@
+{
+    "section_title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "subtitle": {
+        "FieldType": "SingleLine",
+        "DisplayName": "副标题"
+    },
+    "products": {
+        "FieldType": "Array",
+        "DisplayName": "产品列表",
+        "Children": [
+            {
+                "badge": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                },
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "产品名称"
+                },
+                "price": {
+                    "FieldType": "Number",
+                    "DisplayName": "价格"
+                },
+                "price_unit": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "价格单位"
+                },
+                "specs": {
+                    "FieldType": "Array",
+                    "DisplayName": "规格列表",
+                    "Children": [
+                        {
+                            "spec": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "规格"
+                            }
+                        }
+                    ]
+                },
+                "btn_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮文字"
+                },
+                "is_featured": {
+                    "FieldType": "Checkbox",
+                    "DisplayName": "是否推荐"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "section_title": "产品系列",
+    "subtitle": "为每一种应用场景量身定制",
+    "products": [
+        {
+            "badge": "入门级",
+            "name": "X1 Lite",
+            "price": 599,
+            "price_unit": "起",
+            "specs": [
+                "容量: 1TB - 4TB",
+                "读取: 7,400 MB/s",
+                "写入: 6,500 MB/s",
+                "接口: PCIe 4.0 x4"
+            ],
+            "btn_text": "了解详情",
+            "is_featured": false
+        },
+        {
+            "badge": "爆款推荐",
+            "name": "X3 Pro",
+            "price": 1299,
+            "price_unit": "起",
+            "specs": [
+                "容量: 2TB - 16TB",
+                "读取: 14,000 MB/s",
+                "写入: 12,000 MB/s",
+                "接口: PCIe 5.0 x4"
+            ],
+            "btn_text": "立即购买",
+            "is_featured": true
+        },
+        {
+            "badge": "旗舰级",
+            "name": "X5 Ultra",
+            "price": 3999,
+            "price_unit": "起",
+            "specs": [
+                "容量: 4TB - 64TB",
+                "读取: 24,000 MB/s",
+                "写入: 20,000 MB/s",
+                "接口: PCIe 6.0 x4"
+            ],
+            "btn_text": "了解详情",
+            "is_featured": false
+        }
+    ]
+}

@@ -1,0 +1,317 @@
+{% header %}
+<style>
+.section-mpgvo82o {
+    --neon-cyan: #00f5ff;
+    --neon-purple: #bf00ff;
+    --darker-bg: #050508;
+    --card-bg: rgba(20,20,30,0.8);
+
+    background-color: var(--darker-bg);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', 'Microsoft YaHei', monospace;
+}
+
+.section-mpgvo82o::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 25% 40%, rgba(0, 245, 255, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 75% 60%, rgba(191, 0, 255, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.section-mpgvo82o__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-mpgvo82o__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-mpgvo82o__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+.section-mpgvo82o__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    margin: 16px auto 0;
+    box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.section-mpgvo82o__subtitle {
+    font-size: 16px;
+    color: #888899;
+    margin: 20px 0 0 0;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.section-mpgvo82o__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+
+.section-mpgvo82o__col {
+    width: 33.333%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .section-mpgvo82o__col {
+        width: 50%;
+    }
+    .section-mpgvo82o__col:last-child {
+        width: 100%;
+        margin-top: 24px;
+    }
+    .section-mpgvo82o__col:last-child .section-mpgvo82o__card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-mpgvo82o__col {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .section-mpgvo82o__title {
+        font-size: 26px;
+    }
+    .section-mpgvo82o__header {
+        margin-bottom: 36px;
+    }
+    .section-mpgvo82o {
+        padding: 48px 0;
+    }
+}
+
+.section-mpgvo82o__card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 245, 255, 0.12);
+    border-radius: 12px;
+    padding: 40px 28px 32px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-mpgvo82o__card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--neon-cyan), transparent, var(--neon-purple));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.section-mpgvo82o__card:hover {
+    transform: translateY(-8px);
+    border-color: transparent;
+    box-shadow: 0 0 24px rgba(0, 245, 255, 0.25),
+                0 0 48px rgba(191, 0, 255, 0.12);
+}
+
+.section-mpgvo82o__card:hover::before {
+    opacity: 1;
+}
+
+.section-mpgvo82o__card--featured {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 16px rgba(0, 245, 255, 0.2),
+                0 0 32px rgba(191, 0, 255, 0.1),
+                inset 0 0 16px rgba(0, 245, 255, 0.05);
+    transform: scale(1.04);
+}
+
+.section-mpgvo82o__card--featured:hover {
+    transform: scale(1.04) translateY(-8px);
+    box-shadow: 0 0 32px rgba(0, 245, 255, 0.4),
+                0 0 64px rgba(191, 0, 255, 0.2),
+                inset 0 0 20px rgba(0, 245, 255, 0.08);
+}
+
+.section-mpgvo82o__ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.section-mpgvo82o__ribbon-text {
+    position: absolute;
+    top: 18px;
+    right: -28px;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 36px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.4);
+    white-space: nowrap;
+}
+
+.section-mpgvo82o__badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--neon-cyan);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 4px;
+    padding: 3px 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    background: rgba(0, 245, 255, 0.06);
+    box-shadow: 0 0 8px rgba(0, 245, 255, 0.15);
+}
+
+.section-mpgvo82o__name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.section-mpgvo82o__price-wrap {
+    margin-bottom: 20px;
+}
+
+.section-mpgvo82o__price {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+}
+
+.section-mpgvo82o__price-unit {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--neon-purple);
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px rgba(191, 0, 255, 0.3);
+    margin-left: 4px;
+}
+
+.section-mpgvo82o__specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    flex: 1;
+}
+
+.section-mpgvo82o__spec {
+    font-size: 13px;
+    color: #999aaa;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.06);
+    letter-spacing: 1px;
+}
+
+.section-mpgvo82o__spec:last-child {
+    border-bottom: none;
+}
+
+.section-mpgvo82o__spec::before {
+    content: '>';
+    color: var(--neon-cyan);
+    margin-right: 8px;
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+.section-mpgvo82o__btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    border: none;
+    border-radius: 6px;
+    padding: 12px 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 16px rgba(0, 245, 255, 0.2);
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.section-mpgvo82o__btn:hover {
+    box-shadow: 0 0 28px rgba(0, 245, 255, 0.5),
+                0 0 48px rgba(191, 0, 255, 0.2);
+    transform: translateY(-2px);
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgvo82o">
+    <div class="section-mpgvo82o__container">
+        <div class="section-mpgvo82o__header">
+            <h2 class="section-mpgvo82o__title" property="true" data-property="section_title">{{ this.Model.section_title }}</h2>
+            <p class="section-mpgvo82o__subtitle" property="true" data-property="subtitle">{{ this.Model.subtitle }}</p>
+        </div>
+        <div class="section-mpgvo82o__row">
+            {% for product in this.Model.products %}
+            <div class="section-mpgvo82o__col">
+                <div class="section-mpgvo82o__card{% if product.is_featured %} section-mpgvo82o__card--featured{% endif %}">
+                    {% if product.is_featured %}
+                    <div class="section-mpgvo82o__ribbon">
+                        <span class="section-mpgvo82o__ribbon-text">推荐</span>
+                    </div>
+                    {% endif %}
+                    <span class="section-mpgvo82o__badge" property="true" data-property="products[{{forloop.index0}}].badge">{{ product.badge }}</span>
+                    <h3 class="section-mpgvo82o__name" property="true" data-property="products[{{forloop.index0}}].name">{{ product.name }}</h3>
+                    <div class="section-mpgvo82o__price-wrap">
+                        <span class="section-mpgvo82o__price" property="true" data-property="products[{{forloop.index0}}].price">{{ product.price }}</span>
+                        <span class="section-mpgvo82o__price-unit" property="true" data-property="products[{{forloop.index0}}].price_unit">{{ product.price_unit }}</span>
+                    </div>
+                    <ul class="section-mpgvo82o__specs">
+                        {% for spec in product.specs %}
+                        <li class="section-mpgvo82o__spec" property="true" data-property="products[{{forloop.parentloop.index0}}].specs[{{forloop.index0}}].spec">{{ spec.spec }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button class="section-mpgvo82o__btn" property="true" data-property="products[{{forloop.index0}}].btn_text">{{ product.btn_text }}</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
