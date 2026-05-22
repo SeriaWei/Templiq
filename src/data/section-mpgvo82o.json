@@ -8,10 +8,10 @@
             "price": 599,
             "price_unit": "起",
             "specs": [
-                "容量: 1TB - 4TB",
-                "读取: 7,400 MB/s",
-                "写入: 6,500 MB/s",
-                "接口: PCIe 4.0 x4"
+                {"spec": "容量: 1TB - 4TB"},
+                {"spec": "读取: 7,400 MB/s"},
+                {"spec": "写入: 6,500 MB/s"},
+                {"spec": "接口: PCIe 4.0 x4"}
             ],
             "btn_text": "了解详情",
             "is_featured": false
@@ -22,10 +22,10 @@
             "price": 1299,
             "price_unit": "起",
             "specs": [
-                "容量: 2TB - 16TB",
-                "读取: 14,000 MB/s",
-                "写入: 12,000 MB/s",
-                "接口: PCIe 5.0 x4"
+                {"spec": "容量: 2TB - 16TB"},
+                {"spec": "读取: 14,000 MB/s"},
+                {"spec": "写入: 12,000 MB/s"},
+                {"spec": "接口: PCIe 5.0 x4"}
             ],
             "btn_text": "立即购买",
             "is_featured": true
@@ -36,10 +36,10 @@
             "price": 3999,
             "price_unit": "起",
             "specs": [
-                "容量: 4TB - 64TB",
-                "读取: 24,000 MB/s",
-                "写入: 20,000 MB/s",
-                "接口: PCIe 6.0 x4"
+                {"spec": "容量: 4TB - 64TB"},
+                {"spec": "读取: 24,000 MB/s"},
+                {"spec": "写入: 20,000 MB/s"},
+                {"spec": "接口: PCIe 6.0 x4"}
             ],
             "btn_text": "了解详情",
             "is_featured": false
