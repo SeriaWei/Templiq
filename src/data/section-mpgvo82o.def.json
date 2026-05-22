@@ -30,15 +30,7 @@
                 },
                 "specs": {
                     "FieldType": "Array",
-                    "DisplayName": "规格列表",
-                    "Children": [
-                        {
-                            "spec": {
-                                "FieldType": "SingleLine",
-                                "DisplayName": "规格"
-                            }
-                        }
-                    ]
+                    "DisplayName": "规格列表"
                 },
                 "btn_text": {
                     "FieldType": "SingleLine",

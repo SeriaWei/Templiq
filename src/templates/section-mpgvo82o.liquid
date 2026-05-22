@@ -306,7 +306,7 @@
                     </div>
                     <ul class="section-mpgvo82o__specs">
                         {% for spec in product.specs %}
-                        <li class="section-mpgvo82o__spec" property="true" data-property="products[{{forloop.parentloop.index0}}].specs[{{forloop.index0}}].spec">{{ spec.spec }}</li>
+                        <li class="section-mpgvo82o__spec" property="true" data-property="products[{{forloop.parentloop.index0}}].specs[{{forloop.index0}}]">{{ spec }}</li>
                         {% endfor %}
                     </ul>
                     <button class="section-mpgvo82o__btn" property="true" data-property="products[{{forloop.index0}}].btn_text">{{ product.btn_text }}</button>
