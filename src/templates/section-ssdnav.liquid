@@ -1,16 +1,18 @@
 <!-- 导航栏 -->
 {% header %}
 <style>
-.section-mpfecp3p {
+.section-ssdnav {
   --neon-cyan: #00f5ff;
   --neon-purple: #bf00ff;
+  --neon-pink: #ff00aa;
   --dark-bg: #0a0a0f;
+  --card-bg: rgba(20, 20, 30, 0.8);
   --text-main: #e0e0e0;
   --text-muted: #888899;
   background: transparent;
 }
 
-.section-mpfecp3p .ssd-navbar {
+.section-ssdnav .nd-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,13 +24,13 @@
   border-bottom: 1px solid rgba(0, 245, 255, 0.1);
 }
 
-.section-mpfecp3p .ssd-navbar__inner {
+.section-ssdnav .nd-navbar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.section-mpfecp3p .ssd-navbar__brand {
+.section-ssdnav .nd-navbar__brand {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -36,31 +38,31 @@
   color: white;
 }
 
-.section-mpfecp3p .ssd-navbar__brand-logo {
+.section-ssdnav .nd-navbar__brand-logo {
   font-size: 30px;
   color: var(--neon-cyan);
   text-shadow: 0 0 20px var(--neon-cyan);
-  animation: mpfecp3p-logoPulse 2s ease-in-out infinite;
+  animation: ssdnav-logoPulse 2s ease-in-out infinite;
 }
 
-@keyframes mpfecp3p-logoPulse {
+@keyframes ssdnav-logoPulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
 }
 
-.section-mpfecp3p .ssd-navbar__brand-name {
+.section-ssdnav .nd-navbar__brand-name {
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0.1em;
   font-family: 'Courier New', monospace;
 }
 
-.section-mpfecp3p .ssd-navbar__brand-accent {
+.section-ssdnav .nd-navbar__brand-accent {
   color: var(--neon-cyan);
   text-shadow: 0 0 10px var(--neon-cyan);
 }
 
-.section-mpfecp3p .ssd-navbar__toggle {
+.section-ssdnav .nd-navbar__toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -70,7 +72,7 @@
   padding: 5px;
 }
 
-.section-mpfecp3p .ssd-navbar__toggle-line {
+.section-ssdnav .nd-navbar__toggle-line {
   width: 30px;
   height: 2px;
   background: var(--neon-cyan);
@@ -78,7 +80,7 @@
   transition: all 0.3s ease;
 }
 
-.section-mpfecp3p .ssd-navbar__links {
+.section-ssdnav .nd-navbar__links {
   display: flex;
   list-style: none;
   gap: 30px;
@@ -87,7 +89,7 @@
   padding: 0;
 }
 
-.section-mpfecp3p .ssd-navbar__links a {
+.section-ssdnav .nd-navbar__links a {
   color: var(--text-main);
   text-decoration: none;
   font-size: 14px;
@@ -99,7 +101,7 @@
   font-family: 'Courier New', monospace;
 }
 
-.section-mpfecp3p .ssd-navbar__links a::after {
+.section-ssdnav .nd-navbar__links a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -110,17 +112,17 @@
   transition: width 0.3s ease;
 }
 
-.section-mpfecp3p .ssd-navbar__links a:hover,
-.section-mpfecp3p .ssd-navbar__links a.active {
+.section-ssdnav .nd-navbar__links a:hover,
+.section-ssdnav .nd-navbar__links a.active {
   color: var(--neon-cyan);
 }
 
-.section-mpfecp3p .ssd-navbar__links a:hover::after,
-.section-mpfecp3p .ssd-navbar__links a.active::after {
+.section-ssdnav .nd-navbar__links a:hover::after,
+.section-ssdnav .nd-navbar__links a.active::after {
   width: 100%;
 }
 
-.section-mpfecp3p .ssd-navbar__cta {
+.section-ssdnav .nd-navbar__cta {
   padding: 10px 25px;
   border: 2px solid var(--neon-cyan);
   color: var(--neon-cyan);
@@ -134,7 +136,7 @@
   font-family: 'Courier New', monospace;
 }
 
-.section-mpfecp3p .ssd-navbar__cta::before {
+.section-ssdnav .nd-navbar__cta::before {
   content: '';
   position: absolute;
   top: 0;
@@ -145,22 +147,22 @@
   transition: left 0.5s ease;
 }
 
-.section-mpfecp3p .ssd-navbar__cta:hover {
+.section-ssdnav .nd-navbar__cta:hover {
   background: var(--neon-cyan);
   color: var(--dark-bg);
   box-shadow: 0 0 30px var(--neon-cyan);
 }
 
-.section-mpfecp3p .ssd-navbar__cta:hover::before {
+.section-ssdnav .nd-navbar__cta:hover::before {
   left: 100%;
 }
 
 @media (max-width: 992px) {
-  .section-mpfecp3p .ssd-navbar__toggle {
+  .section-ssdnav .nd-navbar__toggle {
     display: flex;
   }
 
-  .section-mpfecp3p .ssd-navbar__links {
+  .section-ssdnav .nd-navbar__links {
     display: none;
     position: absolute;
     top: 100%;
@@ -172,37 +174,41 @@
     border-bottom: 1px solid rgba(0, 245, 255, 0.2);
   }
 
-  .section-mpfecp3p .ssd-navbar__links.active {
+  .section-ssdnav .nd-navbar__links.active {
     display: flex;
   }
 }
 </style>
 {% endheader %}
 
-<div class="section-mpfecp3p">
-<nav class="ssd-navbar">
+<div class="section-ssdnav">
+<nav class="nd-navbar" id="ndNavbar">
   <div class="container">
-    <div class="ssd-navbar__inner">
-      <a href="#" class="ssd-navbar__brand">
+    <div class="nd-navbar__inner">
+      {% if this.Model.brand_logo or this.Model.brand_name %}
+      <a href="#" class="nd-navbar__brand">
         {% if this.Model.brand_logo %}
-        <span class="ssd-navbar__brand-logo" property="true" data-property="brand_logo" method="text">{{this.Model.brand_logo}}</span>
+        <span class="nd-navbar__brand-logo" property="true" data-property="brand_logo" method="text">{{this.Model.brand_logo}}</span>
         {% endif %}
         {% if this.Model.brand_name %}
-        <span class="ssd-navbar__brand-name">
+        <span class="nd-navbar__brand-name">
           <span property="true" data-property="brand_name" method="text">{{this.Model.brand_name}}</span>
           {% if this.Model.brand_accent %}
-          <span class="ssd-navbar__brand-accent" property="true" data-property="brand_accent" method="text">{{this.Model.brand_accent}}</span>
+          <span class="nd-navbar__brand-accent" property="true" data-property="brand_accent" method="text">{{this.Model.brand_accent}}</span>
           {% endif %}
         </span>
         {% endif %}
       </a>
-      <button class="ssd-navbar__toggle" id="navToggle" aria-label="Toggle Menu">
-        <span class="ssd-navbar__toggle-line"></span>
-        <span class="ssd-navbar__toggle-line"></span>
-        <span class="ssd-navbar__toggle-line"></span>
+      {% endif %}
+      
+      <button class="nd-navbar__toggle" id="navToggle" aria-label="Toggle Menu">
+        <span class="nd-navbar__toggle-line"></span>
+        <span class="nd-navbar__toggle-line"></span>
+        <span class="nd-navbar__toggle-line"></span>
       </button>
+      
       {% if this.Model.nav_items and this.Model.nav_items.size > 0 %}
-      <ul class="ssd-navbar__links" id="navLinks">
+      <ul class="nd-navbar__links" id="navLinks">
         {% assign index = 0 %}
         {% for item in this.Model.nav_items %}
         <li>
@@ -214,8 +220,9 @@
         {% endfor %}
       </ul>
       {% endif %}
+      
       {% if this.Model.cta_text and this.Model.cta_href %}
-      <a property="true" data-property="cta_href" method="attr" para="href" href="{% url this.Model.cta_href %}" class="ssd-navbar__cta">
+      <a property="true" data-property="cta_href" method="attr" para="href" href="{% url this.Model.cta_href %}" class="nd-navbar__cta">
         <span property="true" data-property="cta_text" method="text">{{this.Model.cta_text}}</span>
       </a>
       {% endif %}
@@ -226,16 +233,15 @@
 
 {% footer %}
 <script type="text/javascript">
-(function() {
-  var section = document.querySelector('.section-mpfecp3p');
-  if (!section) return;
-  var navToggle = section.querySelector('#navToggle');
-  var navLinks = section.querySelector('#navLinks');
+document.addEventListener('DOMContentLoaded', function() {
+  var navToggle = document.querySelector('.section-ssdnav #navToggle');
+  var navLinks = document.querySelector('.section-ssdnav #navLinks');
+  
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function() {
       navLinks.classList.toggle('active');
     });
   }
-})();
+});
 </script>
 {% endfooter %}
