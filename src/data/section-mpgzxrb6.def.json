@@ -1,0 +1,38 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "bg_image": {
+        "FieldType": "Media",
+        "DisplayName": "背景图片"
+    },
+    "stats": {
+        "FieldType": "Array",
+        "DisplayName": "统计数据",
+        "Children": [
+            {
+                "prefix": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "前缀"
+                },
+                "value": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数值"
+                },
+                "suffix": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "后缀"
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                }
+            }
+        ]
+    }
+}

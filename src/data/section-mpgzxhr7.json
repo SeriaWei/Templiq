@@ -1,0 +1,33 @@
+{
+    "section_label": "Product Categories",
+    "heading": "Sourcing Across Industries",
+    "subtitle": "From raw materials to finished machinery — our network spans every link of the global supply chain.",
+    "cards": [
+        {
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><rect x=\"4\" y=\"14\" width=\"40\" height=\"28\" rx=\"2\" fill=\"none\"/><path d=\"M16 14V10a4 4 0 014-4h8a4 4 0 014 4v4\" fill=\"none\"/><path d=\"M4 24h40\" opacity=\"0.3\"/><circle cx=\"14\" cy=\"30\" r=\"2\" fill=\"currentColor\" opacity=\"0.4\"/><circle cx=\"34\" cy=\"30\" r=\"2\" fill=\"currentColor\" opacity=\"0.4\"/></svg>",
+            "title": "Industrial Machinery",
+            "description": "Manufacturing equipment, CNC tools, automation systems",
+            "link": "#"
+        },
+        {
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M8 40V12a4 4 0 014-4h24a4 4 0 014 4v28\" fill=\"none\"/><path d=\"M8 28h32\" opacity=\"0.3\"/><path d=\"M8 20h32\" opacity=\"0.3\"/><circle cx=\"16\" cy=\"36\" r=\"3\" fill=\"none\"/><circle cx=\"32\" cy=\"36\" r=\"3\" fill=\"none\"/><path d=\"M16 33v6M32 33v6\" stroke-width=\"1\"/></svg>",
+            "title": "Chemicals &amp; Raw Materials",
+            "description": "Industrial chemicals, polymers, base metals, compounds",
+            "link": "#"
+        },
+        {
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M4 24h40\" opacity=\"0.2\"/><path d=\"M24 4v40\" opacity=\"0.2\"/><rect x=\"10\" y=\"10\" width=\"28\" height=\"28\" rx=\"3\" fill=\"none\"/><rect x=\"16\" y=\"16\" width=\"16\" height=\"16\" rx=\"2\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"24\" cy=\"24\" r=\"4\" fill=\"currentColor\" opacity=\"0.3\"/></svg>",
+            "title": "Electronics &amp; Components",
+            "description": "PCBs, semiconductors, sensors, wiring, connectors",
+            "link": "#"
+        },
+        {
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M6 34L24 8l18 26H6z\" fill=\"none\"/><path d=\"M14 34L24 18l10 16H14z\" fill=\"none\" opacity=\"0.4\"/><path d=\"M20 34L24 26l4 8H20z\" fill=\"none\"/><path d=\"M4 38h40\" stroke-width=\"1.5\"/><path d=\"M12 38v4M24 38v4M36 38v4\" stroke-width=\"1\"/></svg>",
+            "title": "Construction &amp; Building",
+            "description": "Steel profiles, cement, piping, fixtures, architectural elements",
+            "link": "#"
+        }
+    ],
+    "view_all_text": "View All Categories",
+    "view_all_link": "#"
+}

@@ -1,0 +1,129 @@
+/* ============================================================
+   SERVICES — Marex
+   Service offering cards with decorative background pattern
+   ============================================================ */
+
+.mx-services {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--mx-bg-alt);
+  overflow: hidden;
+}
+
+.mx-services__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212, 168, 75, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(212, 168, 75, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.mx-services__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mx-services__grid {
+  margin-top: 2rem;
+}
+
+/* Card */
+.mx-services__card {
+  position: relative;
+  background: var(--mx-bg-card);
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-md);
+  padding: 3.6rem 2.8rem 3rem;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.mx-services__card:hover {
+  border-color: var(--mx-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--mx-shadow-gold);
+}
+
+.mx-services__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--mx-accent);
+  transition: height 0.4s ease;
+}
+
+.mx-services__card:hover::before {
+  height: 100%;
+}
+
+.mx-services__card-number {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.6rem;
+  font-family: var(--mx-font-display);
+  font-size: 4.8rem;
+  font-weight: 900;
+  color: var(--mx-text-muted);
+  line-height: 1;
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+}
+
+.mx-services__card:hover .mx-services__card-number {
+  opacity: 0.25;
+}
+
+.mx-services__card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 2rem;
+  color: var(--mx-accent);
+  opacity: 0.85;
+  transition: transform 0.4s ease;
+}
+
+.mx-services__card:hover .mx-services__card-icon {
+  transform: scale(1.05);
+}
+
+.mx-services__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mx-services__card-title {
+  font-family: var(--mx-font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--mx-text);
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.mx-services__card:hover .mx-services__card-title {
+  color: var(--mx-accent);
+}
+
+.mx-services__card-desc {
+  font-size: 1.4rem;
+  color: var(--mx-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mx-services {
+    padding: 6rem 0;
+  }
+
+  .mx-services__card {
+    padding: 2.8rem 2.4rem;
+  }
+}

@@ -1,0 +1,277 @@
+<!-- 产品分类 -->
+{% header %}
+<style>
+
+.section-mpgzxhr7 {
+  --mx-bg: #0A0E17;
+  --mx-bg-alt: #111827;
+  --mx-bg-card: #141C2B;
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-text-tertiary: #5C6B7F;
+  --mx-text-muted: #3A485C;
+  --mx-accent: #D4A84B;
+  --mx-accent-hover: #E0B85C;
+  --mx-accent-dim: rgba(212, 168, 75, 0.08);
+  --mx-border: #1E293D;
+  --mx-border-accent: rgba(212, 168, 75, 0.2);
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --mx-radius-sm: 4px;
+  --mx-radius-md: 8px;
+  --mx-shadow-gold: 0 4px 24px rgba(212, 168, 75, 0.08);
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpgzxhr7 .mx-categories {
+  position: relative;
+  padding: 100px 0;
+  background: var(--mx-bg-alt);
+  overflow: hidden;
+}
+
+.section-mpgzxhr7 .mx-categories__ornament {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--mx-accent), transparent);
+  opacity: 0.3;
+}
+
+.section-mpgzxhr7 .mx-categories__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-mpgzxhr7 .mx-section__label {
+  font-family: var(--mx-font-display);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 16px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.section-mpgzxhr7 .mx-section__label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--mx-accent);
+  margin-right: 12px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.section-mpgzxhr7 .mx-section__heading {
+  font-family: var(--mx-font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--mx-text);
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mpgzxhr7 .mx-section__sub {
+  font-size: 17px;
+  color: var(--mx-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.section-mpgzxhr7 .mx-categories__grid {
+  margin-top: 20px;
+}
+
+.section-mpgzxhr7 .mx-categories__card {
+  display: block;
+  position: relative;
+  background: var(--mx-bg-card);
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-md);
+  padding: 36px 28px;
+  margin-bottom: 24px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.section-mpgzxhr7 .mx-categories__card:hover {
+  border-color: var(--mx-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--mx-shadow-gold);
+  text-decoration: none;
+}
+
+.section-mpgzxhr7 .mx-categories__card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(212, 168, 75, 0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.section-mpgzxhr7 .mx-categories__card:hover .mx-categories__card-bg {
+  opacity: 1;
+}
+
+.section-mpgzxhr7 .mx-categories__card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: var(--mx-accent);
+  opacity: 0.8;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.section-mpgzxhr7 .mx-categories__card:hover .mx-categories__card-icon {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.section-mpgzxhr7 .mx-categories__card-title {
+  font-family: var(--mx-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mx-text);
+  margin: 0 0 8px;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+}
+
+.section-mpgzxhr7 .mx-categories__card:hover .mx-categories__card-title {
+  color: var(--mx-accent);
+}
+
+.section-mpgzxhr7 .mx-categories__card-desc {
+  font-size: 14px;
+  color: var(--mx-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.section-mpgzxhr7 .mx-categories__card-arrow {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  color: var(--mx-text-tertiary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.section-mpgzxhr7 .mx-categories__card:hover .mx-categories__card-arrow {
+  color: var(--mx-accent);
+  transform: translateX(4px);
+}
+
+.section-mpgzxhr7 .mx-categories__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mx-font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  padding: 12px 28px;
+  border: 1px solid var(--mx-border-accent);
+  border-radius: var(--mx-radius-sm);
+  transition: all 0.35s ease;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.section-mpgzxhr7 .mx-categories__all:hover {
+  background: var(--mx-accent-dim);
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpgzxhr7 .mx-categories__all svg {
+  transition: transform 0.3s ease;
+}
+
+.section-mpgzxhr7 .mx-categories__all:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .section-mpgzxhr7 .mx-categories {
+    padding: 60px 0;
+  }
+  .section-mpgzxhr7 .mx-categories__card {
+    padding: 28px 24px;
+    min-height: auto;
+  }
+  .section-mpgzxhr7 .mx-section__heading {
+    font-size: 26px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgzxhr7">
+  <div class="mx-categories">
+    <div class="mx-categories__ornament"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-categories__header">
+            {% if this.Model.section_label %}<div class="mx-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>{% endif %}
+            {% if this.Model.heading %}<h2 class="mx-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+            {% if this.Model.subtitle %}<p class="mx-section__sub" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-categories__grid">
+        {% for item in this.Model.cards %}
+        {% assign index = forloop.index0 %}
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <a property="true" data-property="cards[{{index}}].link" method="attr" para="href" href="{% url item.link %}" class="mx-categories__card">
+            <div class="mx-categories__card-bg"></div>
+            {% if item.icon_svg %}
+            <div class="mx-categories__card-icon">{{item.icon_svg | raw}}</div>
+            {% endif %}
+            {% if item.title %}<h3 class="mx-categories__card-title" property="true" data-property="cards[{{index}}].title" method="text">{{item.title}}</h3>{% endif %}
+            {% if item.description %}<p class="mx-categories__card-desc" property="true" data-property="cards[{{index}}].description" method="text">{{item.description}}</p>{% endif %}
+            <span class="mx-categories__card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% if this.Model.view_all_text %}
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a property="true" data-property="view_all_link" method="attr" para="href" href="{% url this.Model.view_all_link %}" class="mx-categories__all">
+            {{this.Model.view_all_text}}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

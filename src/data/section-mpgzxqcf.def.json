@@ -1,0 +1,38 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "services": {
+        "FieldType": "Array",
+        "DisplayName": "服务列表",
+        "Children": [
+            {
+                "number": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "编号"
+                },
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                }
+            }
+        ]
+    }
+}

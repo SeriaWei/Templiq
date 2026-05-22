@@ -169,3 +169,7 @@ description: Convert an design(Html pages in src/designs/<design-name> folder) t
     }
 }
 ```
+
+# 数据验证
+
+运行 `npm run test` 命令, 会自动验证数据文件(.json)，字段定义文件(.def.json)的正确性和一致性。请确保所有文件都通过验证，修复任何错误或不一致之处。

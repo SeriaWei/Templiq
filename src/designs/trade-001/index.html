@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Marex — Global Trade, Elevated</title>
+  <meta name="description" content="Marex connects global manufacturers with premium international buyers. Industrial sourcing, quality assurance, and cross-border logistics — all from one trusted platform.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 3 (local) -->
+  <link rel="stylesheet" href="../../public/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/bootstrap-theme.min.css">
+
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/base.module.css">
+  <link rel="stylesheet" href="css/navbar.module.css">
+  <link rel="stylesheet" href="css/hero.module.css">
+  <link rel="stylesheet" href="css/categories.module.css">
+  <link rel="stylesheet" href="css/showcase.module.css">
+  <link rel="stylesheet" href="css/services.module.css">
+  <link rel="stylesheet" href="css/stats.module.css">
+  <link rel="stylesheet" href="css/contact.module.css">
+  <link rel="stylesheet" href="css/footer.module.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="mx-navbar" id="mxNavbar">
+    <div class="mx-navbar__inner">
+      <a href="#" class="mx-navbar__brand">
+        <span class="mx-navbar__brand-mark">
+          <svg viewBox="0 0 40 40" fill="none">
+            <rect x="2" y="2" width="36" height="36" rx="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M8 20h24M20 8v24M14 8l12 24M26 8L14 32" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+            <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.6"/>
+          </svg>
+        </span>
+        <span class="mx-navbar__brand-text">Marex</span>
+        <span class="mx-navbar__brand-tag">International Trade</span>
+      </a>
+      <button class="mx-navbar__toggle" id="mxNavToggle" aria-label="Toggle menu">
+        <span class="mx-navbar__toggle-bar"></span>
+        <span class="mx-navbar__toggle-bar"></span>
+      </button>
+      <ul class="mx-navbar__links" id="mxNavLinks">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="mx-navbar__cta">Inquire Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="mx-hero" id="hero">
+    <!-- Container grid background -->
+    <div class="mx-hero__grid">
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+    </div>
+
+    <!-- Map decorative bg -->
+    <div class="mx-hero__map-bg">
+      <svg viewBox="0 0 800 500" fill="none" preserveAspectRatio="xMidYMid slice">
+        <!-- Simplified world map outlines -->
+        <path d="M100 150 Q120 130 150 140 Q170 155 160 175 Q140 180 120 170 Q105 160 100 150Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M180 120 Q210 105 240 115 Q260 130 250 150 Q230 160 210 155 Q190 145 180 120Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M320 140 Q350 125 380 135 Q400 150 390 170 Q370 180 345 172 Q325 160 320 140Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M440 160 Q470 145 500 155 Q520 170 510 190 Q490 200 465 192 Q445 180 440 160Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M560 180 Q590 165 620 175 Q640 190 630 210 Q610 220 585 212 Q565 200 560 180Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M150 250 Q180 235 210 245 Q230 260 220 280 Q200 290 175 282 Q155 270 150 250Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M280 270 Q310 255 340 265 Q360 280 350 300 Q330 310 305 302 Q285 290 280 270Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M420 290 Q450 275 480 285 Q500 300 490 320 Q470 330 445 322 Q425 310 420 290Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M540 240 Q570 225 600 235 Q620 250 610 270 Q590 280 565 272 Q545 260 540 240Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <!-- Trade routes -->
+        <path d="M150 150 Q250 180 350 155 Q450 130 550 165" stroke="currentColor" stroke-width="0.5" opacity="0.08" fill="none" stroke-dasharray="4 6"/>
+        <path d="M200 260 Q350 230 500 265" stroke="currentColor" stroke-width="0.5" opacity="0.06" fill="none" stroke-dasharray="4 6"/>
+        <path d="M120 200 Q280 240 440 200 Q600 160 650 200" stroke="currentColor" stroke-width="0.5" opacity="0.05" fill="none" stroke-dasharray="4 6"/>
+        <!-- Port dots -->
+        <circle cx="150" cy="150" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="380" cy="150" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="560" cy="180" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="280" cy="270" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="500" cy="290" r="3" fill="currentColor" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <!-- Cargo container decorative -->
+    <div class="mx-hero__container-deco">
+      <div class="mx-hero__container-box">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Specular highlight -->
+    <div class="mx-hero__flare"></div>
+
+    <div class="mx-hero__content">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="mx-hero__inner">
+              <div class="mx-hero__badge">
+                <span class="mx-hero__badge-dot"></span>
+                Verified Global Sourcing Network
+              </div>
+              <h1 class="mx-hero__title">
+                <span class="mx-hero__title-line">Where Industry</span>
+                <span class="mx-hero__title-line mx-hero__title-line--accent">Meets World</span>
+              </h1>
+              <p class="mx-hero__subtitle">
+                From precision components to bulk commodities — Marex connects verified manufacturers with international buyers. Quality assured, logistics optimized, borders transcended.
+              </p>
+              <div class="mx-hero__actions">
+                <a href="#categories" class="mx-hero__btn mx-hero__btn--primary">
+                  Explore Products
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <a href="#services" class="mx-hero__btn mx-hero__btn--ghost">
+                  Our Services
+                </a>
+              </div>
+              <div class="mx-hero__stats">
+                <div class="mx-hero__stat-item">
+                  <div class="mx-hero__stat-number"><span class="mx-hero__stat-counter" data-target="128">0</span><span class="mx-hero__stat-plus">+</span></div>
+                  <div class="mx-hero__stat-label">Countries Served</div>
+                </div>
+                <div class="mx-hero__stat-item">
+                  <div class="mx-hero__stat-number"><span class="mx-hero__stat-counter" data-target="3400">0</span><span class="mx-hero__stat-plus">+</span></div>
+                  <div class="mx-hero__stat-label">Verified Suppliers</div>
+                </div>
+                <div class="mx-hero__stat-item">
+                  <div class="mx-hero__stat-number"><span class="mx-hero__stat-counter" data-target="98">0</span><span>%</span></div>
+                  <div class="mx-hero__stat-label">On-Time Delivery</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-hero__scroll">
+      <span>Discover</span>
+      <div class="mx-hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORIES ==================== -->
+  <section class="mx-categories" id="categories">
+    <div class="mx-categories__ornament"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-categories__header">
+            <div class="mx-section__label">Product Categories</div>
+            <h2 class="mx-section__heading">Sourcing Across Industries</h2>
+            <p class="mx-section__sub">
+              From raw materials to finished machinery — our network spans every link of the global supply chain.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-categories__grid">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <a href="#" class="mx-categories__card">
+            <div class="mx-categories__card-bg"></div>
+            <div class="mx-categories__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="14" width="40" height="28" rx="2" fill="none"/>
+                <path d="M16 14V10a4 4 0 014-4h8a4 4 0 014 4v4" fill="none"/>
+                <path d="M4 24h40" opacity="0.3"/>
+                <circle cx="14" cy="30" r="2" fill="currentColor" opacity="0.4"/>
+                <circle cx="34" cy="30" r="2" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="mx-categories__card-title">Industrial Machinery</h3>
+            <p class="mx-categories__card-desc">Manufacturing equipment, CNC tools, automation systems</p>
+            <span class="mx-categories__card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <a href="#" class="mx-categories__card">
+            <div class="mx-categories__card-bg"></div>
+            <div class="mx-categories__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M8 40V12a4 4 0 014-4h24a4 4 0 014 4v28" fill="none"/>
+                <path d="M8 28h32" opacity="0.3"/>
+                <path d="M8 20h32" opacity="0.3"/>
+                <circle cx="16" cy="36" r="3" fill="none"/>
+                <circle cx="32" cy="36" r="3" fill="none"/>
+                <path d="M16 33v6M32 33v6" stroke-width="1"/>
+              </svg>
+            </div>
+            <h3 class="mx-categories__card-title">Chemicals &amp; Raw Materials</h3>
+            <p class="mx-categories__card-desc">Industrial chemicals, polymers, base metals, compounds</p>
+            <span class="mx-categories__card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <a href="#" class="mx-categories__card">
+            <div class="mx-categories__card-bg"></div>
+            <div class="mx-categories__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M4 24h40" opacity="0.2"/>
+                <path d="M24 4v40" opacity="0.2"/>
+                <rect x="10" y="10" width="28" height="28" rx="3" fill="none"/>
+                <rect x="16" y="16" width="16" height="16" rx="2" fill="none" opacity="0.4"/>
+                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="mx-categories__card-title">Electronics &amp; Components</h3>
+            <p class="mx-categories__card-desc">PCBs, semiconductors, sensors, wiring, connectors</p>
+            <span class="mx-categories__card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <a href="#" class="mx-categories__card">
+            <div class="mx-categories__card-bg"></div>
+            <div class="mx-categories__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M6 34L24 8l18 26H6z" fill="none"/>
+                <path d="M14 34L24 18l10 16H14z" fill="none" opacity="0.4"/>
+                <path d="M20 34L24 26l4 8H20z" fill="none"/>
+                <path d="M4 38h40" stroke-width="1.5"/>
+                <path d="M12 38v4M24 38v4M36 38v4" stroke-width="1"/>
+              </svg>
+            </div>
+            <h3 class="mx-categories__card-title">Construction &amp; Building</h3>
+            <p class="mx-categories__card-desc">Steel profiles, cement, piping, fixtures, architectural elements</p>
+            <span class="mx-categories__card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a href="#" class="mx-categories__all">View All Categories
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SHOWCASE ==================== -->
+  <section class="mx-showcase" id="showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-showcase__header">
+            <div class="mx-section__label mx-section__label--light">Featured Products</div>
+            <h2 class="mx-section__heading mx-section__heading--light">Premium Inventory</h2>
+            <p class="mx-section__sub mx-section__sub--light">
+              Hand-picked products from our most trusted manufacturing partners, available for immediate inquiry.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-showcase__grid">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="mx-showcase__card">
+            <div class="mx-showcase__card-image">
+              <div class="mx-showcase__card-img" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&q=80&fit=crop');"></div>
+              <div class="mx-showcase__card-overlay">
+                <span class="mx-showcase__card-badge">Premium</span>
+              </div>
+            </div>
+            <div class="mx-showcase__card-body">
+              <div class="mx-showcase__card-category">Industrial Machinery</div>
+              <h3 class="mx-showcase__card-title">CNC Precision Lathe Series XT-900</h3>
+              <p class="mx-showcase__card-desc">5-axis machining center ±0.002mm precision. CE, ISO 9001 certified.</p>
+              <div class="mx-showcase__card-meta">
+                <span class="mx-showcase__card-origin">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                  Made in Germany
+                </span>
+                <span class="mx-showcase__card-moq">MOQ: 1 unit</span>
+              </div>
+              <a href="#" class="mx-showcase__card-cta">Request Quote
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="mx-showcase__card">
+            <div class="mx-showcase__card-image">
+              <div class="mx-showcase__card-img" style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=600&q=80&fit=crop');"></div>
+              <div class="mx-showcase__card-overlay">
+                <span class="mx-showcase__card-badge mx-showcase__card-badge--gold">Bestseller</span>
+              </div>
+            </div>
+            <div class="mx-showcase__card-body">
+              <div class="mx-showcase__card-category">Chemicals</div>
+              <h3 class="mx-showcase__card-title">Industrial-Grade Titanium Dioxide R-996</h3>
+              <p class="mx-showcase__card-desc">99.8% purity, rutile grade. Ideal for paints, plastics, and coatings.</p>
+              <div class="mx-showcase__card-meta">
+                <span class="mx-showcase__card-origin">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                  Made in China
+                </span>
+                <span class="mx-showcase__card-moq">MOQ: 20 MT</span>
+              </div>
+              <a href="#" class="mx-showcase__card-cta">Request Quote
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="mx-showcase__card">
+            <div class="mx-showcase__card-image">
+              <div class="mx-showcase__card-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop');"></div>
+              <div class="mx-showcase__card-overlay">
+                <span class="mx-showcase__card-badge">New</span>
+              </div>
+            </div>
+            <div class="mx-showcase__card-body">
+              <div class="mx-showcase__card-category">Electronics</div>
+              <h3 class="mx-showcase__card-title">Industrial IoT Gateway IG-4000</h3>
+              <p class="mx-showcase__card-desc">Multi-protocol gateway. 4G LTE, Modbus, OPC-UA. Edge computing ready.</p>
+              <div class="mx-showcase__card-meta">
+                <span class="mx-showcase__card-origin">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                  Made in Taiwan
+                </span>
+                <span class="mx-showcase__card-moq">MOQ: 50 units</span>
+              </div>
+              <a href="#" class="mx-showcase__card-cta">Request Quote
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a href="#" class="mx-showcase__all">Browse Full Catalog
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="mx-services" id="services">
+    <div class="mx-services__bg-pattern"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-services__header">
+            <div class="mx-section__label">Why Marex</div>
+            <h2 class="mx-section__heading">Full-Spectrum Trade Services</h2>
+            <p class="mx-section__sub">
+              Beyond matching buyers and sellers — we engineer the entire transaction for security, speed, and peace of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-services__grid">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="mx-services__card">
+            <span class="mx-services__card-number">01</span>
+            <div class="mx-services__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M8 24h6l4-8 4 16 4-8 4 8 4-8h6" fill="none"/>
+                <path d="M4 36h40v4H4z" fill="none"/>
+              </svg>
+            </div>
+            <h3 class="mx-services__card-title">Supplier Verification</h3>
+            <p class="mx-services__card-desc">On-site audits, financial checks, and certification verification for every partner in our network.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="mx-services__card">
+            <span class="mx-services__card-number">02</span>
+            <div class="mx-services__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M4 12h40v24H4z" fill="none"/>
+                <path d="M4 20h40" opacity="0.3"/>
+                <path d="M28 12v24" opacity="0.2"/>
+                <circle cx="16" cy="30" r="2" fill="currentColor" opacity="0.4"/>
+                <circle cx="32" cy="30" r="2" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="mx-services__card-title">Quality Assurance</h3>
+            <p class="mx-services__card-desc">Third-party inspections, pre-shipment testing, and compliance certification for all major markets.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="mx-services__card">
+            <span class="mx-services__card-number">03</span>
+            <div class="mx-services__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M8 14l16-8 16 8v18l-16 8-16-8V14z" fill="none"/>
+                <path d="M8 20l16 8 16-8" opacity="0.4"/>
+                <path d="M24 12v16" opacity="0.4"/>
+                <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="mx-services__card-title">Logistics &amp; Shipping</h3>
+            <p class="mx-services__card-desc">End-to-end freight management — sea, air, rail, and road. Real-time tracking included.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="mx-services__card">
+            <span class="mx-services__card-number">04</span>
+            <div class="mx-services__card-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <circle cx="24" cy="24" r="18" fill="none"/>
+                <path d="M16 24l6 6 10-10" fill="none"/>
+                <path d="M6 6l6 6M42 6l-6 6M6 42l6-6M42 42l-6-6" opacity="0.2"/>
+              </svg>
+            </div>
+            <h3 class="mx-services__card-title">Trade Finance</h3>
+            <p class="mx-services__card-desc">Secure payment escrow, letter of credit facilitation, and supply chain financing solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS ==================== -->
+  <section class="mx-stats" id="stats">
+    <div class="mx-stats__overlay"></div>
+    <div class="mx-stats__bg-image" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&fit=crop');"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-stats__header">
+            <div class="mx-section__label mx-section__label--light">Marex by the Numbers</div>
+            <h2 class="mx-section__heading mx-section__heading--light">Built on Trust, Measured in Results</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-stats__grid">
+        <div class="col-xs-6 col-md-3">
+          <div class="mx-stats__item">
+            <div class="mx-stats__number"><span data-target="15">0</span>+</div>
+            <div class="mx-stats__label">Years in Operation</div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <div class="mx-stats__item">
+            <div class="mx-stats__number"><span data-target="128">0</span>+</div>
+            <div class="mx-stats__label">Countries Reached</div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <div class="mx-stats__item">
+            <div class="mx-stats__number">$<span data-target="2.8">0</span>B+</div>
+            <div class="mx-stats__label">Trade Volume</div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <div class="mx-stats__item">
+            <div class="mx-stats__number"><span data-target="3400">0</span>+</div>
+            <div class="mx-stats__label">Verified Partners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT / INQUIRY ==================== -->
+  <section class="mx-contact" id="contact">
+    <div class="mx-contact__bg-texture"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="mx-contact__inner">
+            <div class="mx-contact__header">
+              <div class="mx-section__label">Get in Touch</div>
+              <h2 class="mx-section__heading">Send an Inquiry</h2>
+              <p class="mx-section__sub">
+                Ready to source or sell? Our trade specialists respond within 24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mx-footer" id="footer">
+    <div class="mx-footer__grid-lines">
+      <div class="mx-footer__gl"></div>
+      <div class="mx-footer__gl"></div>
+      <div class="mx-footer__gl"></div>
+      <div class="mx-footer__gl"></div>
+    </div>
+    <div class="container">
+      <div class="row mx-footer__main">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="mx-footer__brand">
+            <div class="mx-footer__logo">
+              <svg viewBox="0 0 40 40" fill="none">
+                <rect x="2" y="2" width="36" height="36" rx="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M8 20h24M20 8v24M14 8l12 24M26 8L14 32" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              </svg>
+              <span>Marex</span>
+            </div>
+            <p class="mx-footer__about">
+              Connecting global industry since 2010. Marex is a premier B2B trade platform serving verified manufacturers and buyers across 128 countries.
+            </p>
+            <div class="mx-footer__social">
+              <a href="#" class="mx-footer__social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="#" class="mx-footer__social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+              </a>
+              <a href="#" class="mx-footer__social-link" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-2">
+          <h4 class="mx-footer__heading">Categories</h4>
+          <ul class="mx-footer__links">
+            <li><a href="#">Industrial Machinery</a></li>
+            <li><a href="#">Chemicals</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Construction</a></li>
+            <li><a href="#">Raw Materials</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-2">
+          <h4 class="mx-footer__heading">Services</h4>
+          <ul class="mx-footer__links">
+            <li><a href="#">Verification</a></li>
+            <li><a href="#">Quality Control</a></li>
+            <li><a href="#">Logistics</a></li>
+            <li><a href="#">Trade Finance</a></li>
+            <li><a href="#">Insurance</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h4 class="mx-footer__heading">Contact</h4>
+          <ul class="mx-footer__contact">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Unit 1208, World Trade Tower, Shanghai, China
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              +86 21 6888 9900
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              trade@marex-global.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-footer__bottom">
+            <span>&copy; 2026 Marex International Trade Co. All rights reserved.</span>
+            <div class="mx-footer__legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Compliance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../public/jquery.min.js"></script>
+  <script src="../../public/bootstrap.min.js"></script>
+  <script src="js/navbar.component.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

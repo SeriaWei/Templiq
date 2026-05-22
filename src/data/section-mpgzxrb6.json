@@ -1,0 +1,31 @@
+{
+    "section_label": "Marex by the Numbers",
+    "heading": "Built on Trust, Measured in Results",
+    "bg_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&fit=crop",
+    "stats": [
+        {
+            "prefix": "",
+            "value": "15",
+            "suffix": "+",
+            "label": "Years in Operation"
+        },
+        {
+            "prefix": "",
+            "value": "128",
+            "suffix": "+",
+            "label": "Countries Reached"
+        },
+        {
+            "prefix": "$",
+            "value": "2.8",
+            "suffix": "B+",
+            "label": "Trade Volume"
+        },
+        {
+            "prefix": "",
+            "value": "3400",
+            "suffix": "+",
+            "label": "Verified Partners"
+        }
+    ]
+}

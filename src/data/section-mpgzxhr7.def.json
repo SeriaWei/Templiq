@@ -1,0 +1,46 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "cards": {
+        "FieldType": "Array",
+        "DisplayName": "分类卡片",
+        "Children": [
+            {
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "描述"
+                },
+                "link": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                }
+            }
+        ]
+    },
+    "view_all_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "查看全部文字"
+    },
+    "view_all_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "查看全部链接"
+    }
+}

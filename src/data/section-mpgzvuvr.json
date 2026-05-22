@@ -1,0 +1,27 @@
+{
+    "badge_text": "Verified Global Sourcing Network",
+    "title_line1": "Where Industry",
+    "title_line2": "Meets World",
+    "subtitle": "From precision components to bulk commodities — Marex connects verified manufacturers with international buyers. Quality assured, logistics optimized, borders transcended.",
+    "primary_btn_text": "Explore Products",
+    "primary_btn_link": "#categories",
+    "secondary_btn_text": "Our Services",
+    "secondary_btn_link": "#services",
+    "stats_items": [
+        {
+            "value": "128",
+            "suffix": "+",
+            "label": "Countries Served"
+        },
+        {
+            "value": "3400",
+            "suffix": "+",
+            "label": "Verified Suppliers"
+        },
+        {
+            "value": "98",
+            "suffix": "%",
+            "label": "On-Time Delivery"
+        }
+    ]
+}

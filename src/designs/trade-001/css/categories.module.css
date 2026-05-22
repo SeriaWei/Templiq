@@ -1,0 +1,167 @@
+/* ============================================================
+   CATEGORIES — Marex
+   Grid of industrial product category cards with gold accents
+   ============================================================ */
+
+.mx-categories {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--mx-bg-alt);
+  overflow: hidden;
+}
+
+.mx-categories__ornament {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--mx-accent), transparent);
+  opacity: 0.3;
+}
+
+.mx-categories__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mx-categories__grid {
+  margin-top: 2rem;
+}
+
+/* Card */
+.mx-categories__card {
+  display: block;
+  position: relative;
+  background: var(--mx-bg-card);
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-md);
+  padding: 3.6rem 2.8rem;
+  margin-bottom: 24px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.mx-categories__card:hover {
+  border-color: var(--mx-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--mx-shadow-gold);
+  text-decoration: none;
+}
+
+.mx-categories__card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(212, 168, 75, 0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.mx-categories__card:hover .mx-categories__card-bg {
+  opacity: 1;
+}
+
+.mx-categories__card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+  color: var(--mx-accent);
+  opacity: 0.8;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.mx-categories__card:hover .mx-categories__card-icon {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.mx-categories__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mx-categories__card-title {
+  font-family: var(--mx-font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--mx-text);
+  margin: 0 0 0.8rem;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+}
+
+.mx-categories__card:hover .mx-categories__card-title {
+  color: var(--mx-accent);
+}
+
+.mx-categories__card-desc {
+  font-size: 1.4rem;
+  color: var(--mx-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mx-categories__card-arrow {
+  position: absolute;
+  bottom: 2.4rem;
+  right: 2.8rem;
+  color: var(--mx-text-tertiary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mx-categories__card:hover .mx-categories__card-arrow {
+  color: var(--mx-accent);
+  transform: translateX(4px);
+}
+
+/* View all link */
+.mx-categories__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mx-font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  padding: 12px 28px;
+  border: 1px solid var(--mx-border-accent);
+  border-radius: var(--mx-radius-sm);
+  transition: all 0.35s ease;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.mx-categories__all:hover {
+  background: var(--mx-accent-dim);
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+.mx-categories__all svg {
+  transition: transform 0.3s ease;
+}
+
+.mx-categories__all:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mx-categories {
+    padding: 6rem 0;
+  }
+
+  .mx-categories__card {
+    padding: 2.8rem 2.4rem;
+    min-height: auto;
+  }
+}

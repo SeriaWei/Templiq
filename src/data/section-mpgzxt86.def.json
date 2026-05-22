@@ -1,0 +1,98 @@
+{
+    "logo_svg": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "Logo SVG"
+    },
+    "about_text": {
+        "FieldType": "Paragraph",
+        "DisplayName": "关于我们"
+    },
+    "social_links": {
+        "FieldType": "Array",
+        "DisplayName": "社交链接",
+        "Children": [
+            {
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                },
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                }
+            }
+        ]
+    },
+    "link_columns": {
+        "FieldType": "Array",
+        "DisplayName": "链接列",
+        "Children": [
+            {
+                "heading": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "列标题"
+                },
+                "links": {
+                    "FieldType": "Array",
+                    "DisplayName": "链接列表",
+                    "Children": [
+                        {
+                            "text": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "文字"
+                            },
+                            "url": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "链接"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "contact_heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "联系标题"
+    },
+    "contact_items": {
+        "FieldType": "Array",
+        "DisplayName": "联系信息",
+        "Children": [
+            {
+                "icon_svg": {
+                    "FieldType": "HtmlBox",
+                    "DisplayName": "图标SVG"
+                },
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "内容"
+                }
+            }
+        ]
+    },
+    "bottom_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "底部版权"
+    },
+    "legal_links": {
+        "FieldType": "Array",
+        "DisplayName": "法律链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "文字"
+                },
+                "url": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                }
+            }
+        ]
+    }
+}

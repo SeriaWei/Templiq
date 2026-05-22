@@ -1,0 +1,207 @@
+/* ============================================================
+   FOOTER — Marex
+   Dark industrial footer with grid lines and contact info
+   ============================================================ */
+
+.mx-footer {
+  position: relative;
+  padding: 6rem 0 3rem;
+  background: var(--mx-bg-dark);
+  border-top: 1px solid var(--mx-border);
+}
+
+.mx-footer__grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mx-footer__gl {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--mx-border), transparent);
+  opacity: 0.15;
+}
+
+.mx-footer__main {
+  position: relative;
+  z-index: 2;
+}
+
+/* Brand */
+.mx-footer__brand {
+  margin-bottom: 3rem;
+}
+
+.mx-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.6rem;
+}
+
+.mx-footer__logo svg {
+  width: 32px;
+  height: 32px;
+  color: var(--mx-accent);
+}
+
+.mx-footer__logo span {
+  font-family: var(--mx-font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mx-text);
+}
+
+.mx-footer__about {
+  font-size: 1.35rem;
+  color: var(--mx-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 320px;
+}
+
+/* Social links */
+.mx-footer__social {
+  display: flex;
+  gap: 12px;
+}
+
+.mx-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-sm);
+  color: var(--mx-text-tertiary);
+  transition: all 0.3s ease;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.mx-footer__social-link:hover {
+  border-color: var(--mx-accent);
+  color: var(--mx-accent);
+  background: var(--mx-accent-dim);
+  text-decoration: none;
+}
+
+.mx-footer__social-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Headings */
+.mx-footer__heading {
+  font-family: var(--mx-font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mx-text);
+  margin: 0 0 1.6rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--mx-border);
+}
+
+/* Links list */
+.mx-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mx-footer__links li {
+  margin-bottom: 0.8rem;
+}
+
+.mx-footer__links li a {
+  font-size: 1.35rem;
+  color: var(--mx-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.mx-footer__links li a:hover {
+  color: var(--mx-accent);
+  padding-left: 4px;
+}
+
+/* Contact list */
+.mx-footer__contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mx-footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1.35rem;
+  color: var(--mx-text-secondary);
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.mx-footer__contact li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--mx-accent);
+  opacity: 0.7;
+}
+
+/* Bottom bar */
+.mx-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 2.4rem 0 0;
+  margin-top: 4rem;
+  border-top: 1px solid var(--mx-border);
+  font-size: 1.2rem;
+  color: var(--mx-text-tertiary);
+}
+
+.mx-footer__legal {
+  display: flex;
+  gap: 20px;
+}
+
+.mx-footer__legal a {
+  color: var(--mx-text-tertiary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mx-footer__legal a:hover {
+  color: var(--mx-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mx-footer {
+    padding: 4rem 0 2rem;
+  }
+
+  .mx-footer__brand {
+    margin-bottom: 2rem;
+  }
+
+  .mx-footer__heading {
+    margin-top: 2rem;
+  }
+
+  .mx-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "section_label": "Featured Products",
+    "heading": "Premium Inventory",
+    "subtitle": "Hand-picked products from our most trusted manufacturing partners, available for immediate inquiry.",
+    "products": [
+        {
+            "image_url": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&q=80&fit=crop",
+            "badge_text": "Premium",
+            "badge_class": "",
+            "category": "Industrial Machinery",
+            "title": "CNC Precision Lathe Series XT-900",
+            "description": "5-axis machining center ±0.002mm precision. CE, ISO 9001 certified.",
+            "origin_label": "Made in Germany",
+            "moq_text": "MOQ: 1 unit",
+            "quote_text": "Request Quote",
+            "quote_link": "#"
+        },
+        {
+            "image_url": "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=600&q=80&fit=crop",
+            "badge_text": "Bestseller",
+            "badge_class": "mx-showcase__card-badge--gold",
+            "category": "Chemicals",
+            "title": "Industrial-Grade Titanium Dioxide R-996",
+            "description": "99.8% purity, rutile grade. Ideal for paints, plastics, and coatings.",
+            "origin_label": "Made in China",
+            "moq_text": "MOQ: 20 MT",
+            "quote_text": "Request Quote",
+            "quote_link": "#"
+        },
+        {
+            "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop",
+            "badge_text": "New",
+            "badge_class": "",
+            "category": "Electronics",
+            "title": "Industrial IoT Gateway IG-4000",
+            "description": "Multi-protocol gateway. 4G LTE, Modbus, OPC-UA. Edge computing ready.",
+            "origin_label": "Made in Taiwan",
+            "moq_text": "MOQ: 50 units",
+            "quote_text": "Request Quote",
+            "quote_link": "#"
+        }
+    ],
+    "view_all_text": "Browse Full Catalog",
+    "view_all_link": "#"
+}

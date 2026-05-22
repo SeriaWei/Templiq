@@ -1,0 +1,70 @@
+{
+    "section_label": {
+        "FieldType": "SingleLine",
+        "DisplayName": "区域标签"
+    },
+    "heading": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "products": {
+        "FieldType": "Array",
+        "DisplayName": "产品列表",
+        "Children": [
+            {
+                "image_url": {
+                    "FieldType": "Media",
+                    "DisplayName": "产品图片"
+                },
+                "badge_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "徽章文字"
+                },
+                "badge_class": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "徽章样式类"
+                },
+                "category": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "分类"
+                },
+                "title": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "产品标题"
+                },
+                "description": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "产品描述"
+                },
+                "origin_label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "产地"
+                },
+                "moq_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "起订量"
+                },
+                "quote_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "询价按钮文字"
+                },
+                "quote_link": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "询价链接"
+                }
+            }
+        ]
+    },
+    "view_all_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "查看全部文字"
+    },
+    "view_all_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "查看全部链接"
+    }
+}

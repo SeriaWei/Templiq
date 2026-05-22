@@ -1,0 +1,493 @@
+<!-- 外贸大主页 -->
+{% header %}
+<style>
+
+.section-mpgzvuvr {
+  --mx-bg: #0A0E17;
+  --mx-bg-alt: #111827;
+  --mx-bg-card: #141C2B;
+  --mx-bg-surface: #1A2436;
+  --mx-bg-dark: #060912;
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-text-tertiary: #5C6B7F;
+  --mx-text-muted: #3A485C;
+  --mx-accent: #D4A84B;
+  --mx-accent-hover: #E0B85C;
+  --mx-accent-glow: rgba(212, 168, 75, 0.12);
+  --mx-accent-dim: rgba(212, 168, 75, 0.08);
+  --mx-border: #1E293D;
+  --mx-border-light: #2A3650;
+  --mx-border-accent: rgba(212, 168, 75, 0.2);
+  --mx-success: #3A9D6E;
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --mx-nav-height: 72px;
+  --mx-radius-sm: 4px;
+  --mx-radius-md: 8px;
+  --mx-radius-lg: 12px;
+  --mx-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --mx-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --mx-shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5);
+  --mx-shadow-gold: 0 4px 24px rgba(212, 168, 75, 0.08);
+  font-size: 10px;
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  background: var(--mx-bg);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpgzvuvr * {
+  box-sizing: border-box;
+}
+
+.section-mpgzvuvr a {
+  color: var(--mx-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.section-mpgzvuvr a:hover,
+.section-mpgzvuvr a:focus {
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpgzvuvr .mx-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--mx-bg);
+  overflow: hidden;
+  padding: 140px 0 100px;
+}
+
+.section-mpgzvuvr .mx-hero__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.section-mpgzvuvr .mx-hero__grid-line--v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--mx-border), transparent);
+  opacity: 0.3;
+}
+
+.section-mpgzvuvr .mx-hero__grid-line--v:nth-child(1) { left: 15%; }
+.section-mpgzvuvr .mx-hero__grid-line--v:nth-child(2) { left: 50%; }
+.section-mpgzvuvr .mx-hero__grid-line--v:nth-child(3) { left: 70%; }
+.section-mpgzvuvr .mx-hero__grid-line--v:nth-child(4) { left: 85%; }
+
+.section-mpgzvuvr .mx-hero__grid-line--h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--mx-border), transparent);
+  opacity: 0.2;
+}
+
+.section-mpgzvuvr .mx-hero__grid-line--h:nth-child(5) { top: 25%; }
+.section-mpgzvuvr .mx-hero__grid-line--h:nth-child(6) { top: 50%; }
+.section-mpgzvuvr .mx-hero__grid-line--h:nth-child(7) { top: 75%; }
+
+.section-mpgzvuvr .mx-hero__map-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 900px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.section-mpgzvuvr .mx-hero__map-bg svg {
+  width: 100%;
+  height: auto;
+}
+
+.section-mpgzvuvr .mx-hero__container-deco {
+  position: absolute;
+  right: 6%;
+  bottom: 20%;
+  width: 80px;
+  height: 100px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.section-mpgzvuvr .mx-hero__container-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.section-mpgzvuvr .mx-hero__container-box span {
+  background: var(--mx-accent);
+  border-radius: 1px;
+}
+
+.section-mpgzvuvr .mx-hero__container-box span:nth-child(2n) {
+  opacity: 0.5;
+}
+
+.section-mpgzvuvr .mx-hero__container-box span:nth-child(3n) {
+  opacity: 0.3;
+}
+
+.section-mpgzvuvr .mx-hero__flare {
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(212, 168, 75, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.section-mpgzvuvr .mx-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+
+.section-mpgzvuvr .mx-hero__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-mpgzvuvr .mx-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  border: 1px solid var(--mx-border-accent);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  background: var(--mx-accent-dim);
+}
+
+.section-mpgzvuvr .mx-hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mx-accent);
+}
+
+.section-mpgzvuvr .mx-hero__title {
+  margin: 0 0 24px;
+}
+
+.section-mpgzvuvr .mx-hero__title-line {
+  display: block;
+  font-family: var(--mx-font-display);
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.08;
+  text-transform: uppercase;
+  color: var(--mx-text);
+}
+
+.section-mpgzvuvr .mx-hero__title-line--accent {
+  color: var(--mx-accent);
+  font-size: 84px;
+  background: linear-gradient(135deg, var(--mx-accent), #E8C870, var(--mx-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-mpgzvuvr .mx-hero__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--mx-text-secondary);
+  max-width: 620px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+.section-mpgzvuvr .mx-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.section-mpgzvuvr .mx-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mx-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--mx-radius-sm);
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+.section-mpgzvuvr .mx-hero__btn--primary {
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+  border: 1px solid var(--mx-accent);
+}
+
+.section-mpgzvuvr .mx-hero__btn--primary:hover {
+  background: var(--mx-accent-hover);
+  border-color: var(--mx-accent-hover);
+  color: var(--mx-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--mx-shadow-gold);
+}
+
+.section-mpgzvuvr .mx-hero__btn--primary:hover svg {
+  transform: translateX(4px);
+}
+
+.section-mpgzvuvr .mx-hero__btn--ghost {
+  background: transparent;
+  color: var(--mx-text);
+  border: 1px solid var(--mx-border-light);
+}
+
+.section-mpgzvuvr .mx-hero__btn--ghost:hover {
+  border-color: var(--mx-accent);
+  color: var(--mx-accent);
+  transform: translateY(-2px);
+}
+
+.section-mpgzvuvr .mx-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.section-mpgzvuvr .mx-hero__stat-item {
+  text-align: center;
+}
+
+.section-mpgzvuvr .mx-hero__stat-number {
+  font-family: var(--mx-font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--mx-text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.section-mpgzvuvr .mx-hero__stat-number span {
+  color: var(--mx-accent);
+  font-weight: 500;
+}
+
+.section-mpgzvuvr .mx-hero__stat-label {
+  font-size: 12px;
+  color: var(--mx-text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.section-mpgzvuvr .mx-hero__scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-mpgzvuvr .mx-hero__scroll span {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mx-text-tertiary);
+  font-weight: 500;
+}
+
+.section-mpgzvuvr .mx-hero__scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--mx-text-tertiary), transparent);
+}
+
+.section-mpgzvuvr ::selection {
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+}
+
+@keyframes section-mpgzvuvr-pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.section-mpgzvuvr .mx-hero__badge-dot {
+  animation: section-mpgzvuvr-pulse-glow 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .section-mpgzvuvr .mx-hero {
+    padding: 120px 0 80px;
+  }
+  .section-mpgzvuvr .mx-hero__title-line {
+    font-size: 42px;
+  }
+  .section-mpgzvuvr .mx-hero__title-line--accent {
+    font-size: 48px;
+  }
+  .section-mpgzvuvr .mx-hero__subtitle {
+    font-size: 15px;
+  }
+  .section-mpgzvuvr .mx-hero__stats {
+    gap: 24px;
+  }
+  .section-mpgzvuvr .mx-hero__stat-number {
+    font-size: 24px;
+  }
+  .section-mpgzvuvr .mx-hero__container-deco {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-mpgzvuvr .mx-hero__title-line {
+    font-size: 32px;
+  }
+  .section-mpgzvuvr .mx-hero__title-line--accent {
+    font-size: 36px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgzvuvr">
+  <div class="mx-hero">
+    <div class="mx-hero__grid">
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--v"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+      <div class="mx-hero__grid-line mx-hero__grid-line--h"></div>
+    </div>
+
+    <div class="mx-hero__map-bg">
+      <svg viewBox="0 0 800 500" fill="none" preserveAspectRatio="xMidYMid slice">
+        <path d="M100 150 Q120 130 150 140 Q170 155 160 175 Q140 180 120 170 Q105 160 100 150Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M180 120 Q210 105 240 115 Q260 130 250 150 Q230 160 210 155 Q190 145 180 120Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M320 140 Q350 125 380 135 Q400 150 390 170 Q370 180 345 172 Q325 160 320 140Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M440 160 Q470 145 500 155 Q520 170 510 190 Q490 200 465 192 Q445 180 440 160Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M560 180 Q590 165 620 175 Q640 190 630 210 Q610 220 585 212 Q565 200 560 180Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M150 250 Q180 235 210 245 Q230 260 220 280 Q200 290 175 282 Q155 270 150 250Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M280 270 Q310 255 340 265 Q360 280 350 300 Q330 310 305 302 Q285 290 280 270Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M420 290 Q450 275 480 285 Q500 300 490 320 Q470 330 445 322 Q425 310 420 290Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M540 240 Q570 225 600 235 Q620 250 610 270 Q590 280 565 272 Q545 260 540 240Z" stroke="currentColor" stroke-width="0.4" opacity="0.15" fill="none"/>
+        <path d="M150 150 Q250 180 350 155 Q450 130 550 165" stroke="currentColor" stroke-width="0.5" opacity="0.08" fill="none" stroke-dasharray="4 6"/>
+        <path d="M200 260 Q350 230 500 265" stroke="currentColor" stroke-width="0.5" opacity="0.06" fill="none" stroke-dasharray="4 6"/>
+        <path d="M120 200 Q280 240 440 200 Q600 160 650 200" stroke="currentColor" stroke-width="0.5" opacity="0.05" fill="none" stroke-dasharray="4 6"/>
+        <circle cx="150" cy="150" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="380" cy="150" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="560" cy="180" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="280" cy="270" r="3" fill="currentColor" opacity="0.2"/>
+        <circle cx="500" cy="290" r="3" fill="currentColor" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <div class="mx-hero__container-deco">
+      <div class="mx-hero__container-box">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="mx-hero__flare"></div>
+
+    <div class="mx-hero__content">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="mx-hero__inner">
+              {% if this.Model.badge_text %}
+              <div class="mx-hero__badge">
+                <span class="mx-hero__badge-dot"></span>
+                {{this.Model.badge_text}}
+              </div>
+              {% endif %}
+              <h1 class="mx-hero__title">
+                {% if this.Model.title_line1 %}
+                <span class="mx-hero__title-line" property="true" data-property="title_line1" method="text">{{this.Model.title_line1}}</span>
+                {% endif %}
+                {% if this.Model.title_line2 %}
+                <span class="mx-hero__title-line mx-hero__title-line--accent" property="true" data-property="title_line2" method="text">{{this.Model.title_line2}}</span>
+                {% endif %}
+              </h1>
+              {% if this.Model.subtitle %}
+              <p class="mx-hero__subtitle" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>
+              {% endif %}
+              <div class="mx-hero__actions">
+                {% if this.Model.primary_btn_text %}
+                <a property="true" data-property="primary_btn_link" method="attr" para="href" href="{% url this.Model.primary_btn_link %}" class="mx-hero__btn mx-hero__btn--primary">
+                  {{this.Model.primary_btn_text}}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                {% endif %}
+                {% if this.Model.secondary_btn_text %}
+                <a property="true" data-property="secondary_btn_link" method="attr" para="href" href="{% url this.Model.secondary_btn_link %}" class="mx-hero__btn mx-hero__btn--ghost">{{this.Model.secondary_btn_text}}</a>
+                {% endif %}
+              </div>
+              <div class="mx-hero__stats">
+                {% for item in this.Model.stats_items %}
+                {% assign index = forloop.index0 %}
+                <div class="mx-hero__stat-item">
+                  <div class="mx-hero__stat-number">
+                    <span property="true" data-property="stats_items[{{index}}].value" method="text">{{item.value}}</span>
+                    {% if item.suffix %}<span property="true" data-property="stats_items[{{index}}].suffix" method="text">{{item.suffix}}</span>{% endif %}
+                  </div>
+                  <div class="mx-hero__stat-label" property="true" data-property="stats_items[{{index}}].label" method="text">{{item.label}}</div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-hero__scroll">
+      <span>Discover</span>
+      <div class="mx-hero__scroll-line"></div>
+    </div>
+  </div>
+</section>

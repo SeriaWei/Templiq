@@ -1,0 +1,161 @@
+<!-- 数据统计 -->
+{% header %}
+<style>
+
+.section-mpgzxrb6 {
+  --mx-bg-dark: #060912;
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-accent: #D4A84B;
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpgzxrb6 .mx-section__label {
+  font-family: var(--mx-font-display);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 16px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.section-mpgzxrb6 .mx-section__label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--mx-accent);
+  margin-right: 12px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.section-mpgzxrb6 .mx-section__heading {
+  font-family: var(--mx-font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--mx-text);
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mpgzxrb6 .mx-stats {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: var(--mx-bg-dark);
+}
+
+.section-mpgzxrb6 .mx-stats__bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.section-mpgzxrb6 .mx-stats__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 14, 23, 0.92) 0%,
+    rgba(10, 14, 23, 0.7) 50%,
+    rgba(10, 14, 23, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.section-mpgzxrb6 .mx-stats__header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-mpgzxrb6 .mx-stats__grid {
+  position: relative;
+  z-index: 2;
+}
+
+.section-mpgzxrb6 .mx-stats__item {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.section-mpgzxrb6 .mx-stats__number {
+  font-family: var(--mx-font-display);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--mx-accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.section-mpgzxrb6 .mx-stats__label {
+  font-size: 13px;
+  color: var(--mx-text-secondary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .section-mpgzxrb6 .mx-stats {
+    padding: 60px 0;
+  }
+  .section-mpgzxrb6 .mx-stats__number {
+    font-size: 32px;
+  }
+  .section-mpgzxrb6 .mx-section__heading {
+    font-size: 26px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgzxrb6">
+  <div class="mx-stats">
+    <div class="mx-stats__overlay"></div>
+    {% if this.Model.bg_image %}
+    <div class="mx-stats__bg-image" style="background-image: url('{% url this.Model.bg_image %}');"></div>
+    {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-stats__header">
+            {% if this.Model.section_label %}<div class="mx-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>{% endif %}
+            {% if this.Model.heading %}<h2 class="mx-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="row mx-stats__grid">
+        {% for item in this.Model.stats %}
+        {% assign index = forloop.index0 %}
+        <div class="col-xs-6 col-md-3">
+          <div class="mx-stats__item">
+            <div class="mx-stats__number">
+              {% if item.prefix %}<span property="true" data-property="stats[{{index}}].prefix" method="text">{{item.prefix}}</span>{% endif %}
+              <span property="true" data-property="stats[{{index}}].value" method="text">{{item.value}}</span>
+              {% if item.suffix %}<span property="true" data-property="stats[{{index}}].suffix" method="text">{{item.suffix}}</span>{% endif %}
+            </div>
+            <div class="mx-stats__label" property="true" data-property="stats[{{index}}].label" method="text">{{item.label}}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

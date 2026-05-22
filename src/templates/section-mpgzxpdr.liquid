@@ -1,0 +1,339 @@
+<!-- 产品展示 -->
+{% header %}
+<style>
+
+.section-mpgzxpdr {
+  --mx-bg: #0A0E17;
+  --mx-bg-card: #141C2B;
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-text-tertiary: #5C6B7F;
+  --mx-accent: #D4A84B;
+  --mx-accent-hover: #E0B85C;
+  --mx-accent-dim: rgba(212, 168, 75, 0.08);
+  --mx-border: #1E293D;
+  --mx-border-accent: rgba(212, 168, 75, 0.2);
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --mx-radius-sm: 4px;
+  --mx-radius-md: 8px;
+  --mx-shadow-gold: 0 4px 24px rgba(212, 168, 75, 0.08);
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpgzxpdr .mx-section__label {
+  font-family: var(--mx-font-display);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 16px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.section-mpgzxpdr .mx-section__label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--mx-accent);
+  margin-right: 12px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.section-mpgzxpdr .mx-section__heading {
+  font-family: var(--mx-font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--mx-text);
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mpgzxpdr .mx-section__sub {
+  font-size: 17px;
+  color: var(--mx-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.section-mpgzxpdr .mx-showcase {
+  position: relative;
+  padding: 100px 0;
+  background: var(--mx-bg);
+}
+
+.section-mpgzxpdr .mx-showcase__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-mpgzxpdr .mx-showcase__grid {
+  margin-top: 20px;
+}
+
+.section-mpgzxpdr .mx-showcase__card {
+  background: var(--mx-bg-card);
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+}
+
+.section-mpgzxpdr .mx-showcase__card:hover {
+  border-color: var(--mx-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--mx-shadow-gold);
+}
+
+.section-mpgzxpdr .mx-showcase__card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.section-mpgzxpdr .mx-showcase__card-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.section-mpgzxpdr .mx-showcase__card:hover .mx-showcase__card-img {
+  transform: scale(1.05);
+}
+
+.section-mpgzxpdr .mx-showcase__card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(to bottom, rgba(10, 14, 23, 0.6), transparent);
+}
+
+.section-mpgzxpdr .mx-showcase__card-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+}
+
+.section-mpgzxpdr .mx-showcase__card-badge--gold {
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+}
+
+.section-mpgzxpdr .mx-showcase__card-body {
+  padding: 24px;
+}
+
+.section-mpgzxpdr .mx-showcase__card-category {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 8px;
+}
+
+.section-mpgzxpdr .mx-showcase__card-title {
+  font-family: var(--mx-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--mx-text);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.section-mpgzxpdr .mx-showcase__card-desc {
+  font-size: 13.5px;
+  color: var(--mx-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.section-mpgzxpdr .mx-showcase__card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--mx-border);
+  margin-bottom: 16px;
+}
+
+.section-mpgzxpdr .mx-showcase__card-origin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--mx-text-tertiary);
+}
+
+.section-mpgzxpdr .mx-showcase__card-origin svg {
+  opacity: 0.5;
+  width: 14px;
+  height: 14px;
+}
+
+.section-mpgzxpdr .mx-showcase__card-moq {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mx-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.section-mpgzxpdr .mx-showcase__card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  padding: 8px 0;
+  transition: gap 0.3s ease;
+  text-decoration: none;
+}
+
+.section-mpgzxpdr .mx-showcase__card-cta:hover {
+  gap: 10px;
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpgzxpdr .mx-showcase__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mx-font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  padding: 12px 28px;
+  border: 1px solid var(--mx-border-accent);
+  border-radius: var(--mx-radius-sm);
+  transition: all 0.35s ease;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.section-mpgzxpdr .mx-showcase__all:hover {
+  background: var(--mx-accent-dim);
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+.section-mpgzxpdr .mx-showcase__all svg {
+  transition: transform 0.3s ease;
+}
+
+.section-mpgzxpdr .mx-showcase__all:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .section-mpgzxpdr .mx-showcase {
+    padding: 60px 0;
+  }
+  .section-mpgzxpdr .mx-showcase__card-image {
+    height: 180px;
+  }
+  .section-mpgzxpdr .mx-showcase__card-body {
+    padding: 18px;
+  }
+  .section-mpgzxpdr .mx-showcase__card-title {
+    font-size: 15px;
+  }
+  .section-mpgzxpdr .mx-section__heading {
+    font-size: 26px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgzxpdr">
+  <div class="mx-showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-showcase__header">
+            {% if this.Model.section_label %}<div class="mx-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>{% endif %}
+            {% if this.Model.heading %}<h2 class="mx-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+            {% if this.Model.subtitle %}<p class="mx-section__sub" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-showcase__grid">
+        {% for item in this.Model.products %}
+        {% assign index = forloop.index0 %}
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="mx-showcase__card">
+            <div class="mx-showcase__card-image">
+              {% if item.image_url %}
+              <div class="mx-showcase__card-img" style="background-image: url('{% url item.image_url %}');"></div>
+              {% endif %}
+              <div class="mx-showcase__card-overlay">
+                {% if item.badge_text %}<span class="mx-showcase__card-badge{% if item.badge_class %} {{item.badge_class}}{% endif %}" property="true" data-property="products[{{index}}].badge_text" method="text">{{item.badge_text}}</span>{% endif %}
+              </div>
+            </div>
+            <div class="mx-showcase__card-body">
+              {% if item.category %}<div class="mx-showcase__card-category" property="true" data-property="products[{{index}}].category" method="text">{{item.category}}</div>{% endif %}
+              {% if item.title %}<h3 class="mx-showcase__card-title" property="true" data-property="products[{{index}}].title" method="text">{{item.title}}</h3>{% endif %}
+              {% if item.description %}<p class="mx-showcase__card-desc" property="true" data-property="products[{{index}}].description" method="text">{{item.description}}</p>{% endif %}
+              <div class="mx-showcase__card-meta">
+                <span class="mx-showcase__card-origin">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                  <span property="true" data-property="products[{{index}}].origin_label" method="text">{{item.origin_label}}</span>
+                </span>
+                {% if item.moq_text %}<span class="mx-showcase__card-moq" property="true" data-property="products[{{index}}].moq_text" method="text">{{item.moq_text}}</span>{% endif %}
+              </div>
+              {% if item.quote_text %}
+              <a property="true" data-property="products[{{index}}].quote_link" method="attr" para="href" href="{% url item.quote_link %}" class="mx-showcase__card-cta">
+                {{item.quote_text}}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% if this.Model.view_all_text %}
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a property="true" data-property="view_all_link" method="attr" para="href" href="{% url this.Model.view_all_link %}" class="mx-showcase__all">
+            {{this.Model.view_all_text}}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

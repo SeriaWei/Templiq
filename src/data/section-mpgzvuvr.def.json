@@ -1,0 +1,54 @@
+{
+    "badge_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "徽章文字"
+    },
+    "title_line1": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第一行"
+    },
+    "title_line2": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题第二行(金色)"
+    },
+    "subtitle": {
+        "FieldType": "Paragraph",
+        "DisplayName": "副标题"
+    },
+    "primary_btn_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主要按钮文字"
+    },
+    "primary_btn_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主要按钮链接"
+    },
+    "secondary_btn_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮文字"
+    },
+    "secondary_btn_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次要按钮链接"
+    },
+    "stats_items": {
+        "FieldType": "Array",
+        "DisplayName": "统计数据",
+        "Children": [
+            {
+                "value": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数值"
+                },
+                "suffix": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "后缀"
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                }
+            }
+        ]
+    }
+}

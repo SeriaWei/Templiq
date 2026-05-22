@@ -1,0 +1,212 @@
+/* ============================================================
+   SHOWCASE — Marex
+   Product showcase cards with industrial imagery
+   ============================================================ */
+
+.mx-showcase {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--mx-bg);
+}
+
+.mx-showcase__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mx-showcase__grid {
+  margin-top: 2rem;
+}
+
+/* Card */
+.mx-showcase__card {
+  background: var(--mx-bg-card);
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+}
+
+.mx-showcase__card:hover {
+  border-color: var(--mx-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--mx-shadow-gold);
+}
+
+/* Image */
+.mx-showcase__card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.mx-showcase__card-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.mx-showcase__card:hover .mx-showcase__card-img {
+  transform: scale(1.05);
+}
+
+.mx-showcase__card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(to bottom, rgba(10, 14, 23, 0.6), transparent);
+}
+
+.mx-showcase__card-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+}
+
+.mx-showcase__card-badge--gold {
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+}
+
+/* Body */
+.mx-showcase__card-body {
+  padding: 2.4rem;
+}
+
+.mx-showcase__card-category {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 0.8rem;
+}
+
+.mx-showcase__card-title {
+  font-family: var(--mx-font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--mx-text);
+  margin: 0 0 0.8rem;
+  line-height: 1.35;
+}
+
+.mx-showcase__card-desc {
+  font-size: 1.35rem;
+  color: var(--mx-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+
+.mx-showcase__card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--mx-border);
+  margin-bottom: 1.6rem;
+}
+
+.mx-showcase__card-origin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.2rem;
+  color: var(--mx-text-tertiary);
+}
+
+.mx-showcase__card-origin svg {
+  opacity: 0.5;
+}
+
+.mx-showcase__card-moq {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--mx-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mx-showcase__card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  padding: 8px 0;
+  transition: gap 0.3s ease;
+  text-decoration: none;
+}
+
+.mx-showcase__card-cta:hover {
+  gap: 10px;
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+/* View all link */
+.mx-showcase__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mx-font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  padding: 12px 28px;
+  border: 1px solid var(--mx-border-accent);
+  border-radius: var(--mx-radius-sm);
+  transition: all 0.35s ease;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.mx-showcase__all:hover {
+  background: var(--mx-accent-dim);
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+.mx-showcase__all svg {
+  transition: transform 0.3s ease;
+}
+
+.mx-showcase__all:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mx-showcase {
+    padding: 6rem 0;
+  }
+
+  .mx-showcase__card-image {
+    height: 180px;
+  }
+
+  .mx-showcase__card-body {
+    padding: 1.8rem;
+  }
+
+  .mx-showcase__card-title {
+    font-size: 1.5rem;
+  }
+}

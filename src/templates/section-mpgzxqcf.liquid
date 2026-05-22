@@ -1,0 +1,225 @@
+<!-- 服务体系 -->
+{% header %}
+<style>
+
+.section-mpgzxqcf {
+  --mx-bg: #0A0E17;
+  --mx-bg-alt: #111827;
+  --mx-bg-card: #141C2B;
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-text-muted: #3A485C;
+  --mx-accent: #D4A84B;
+  --mx-accent-hover: #E0B85C;
+  --mx-accent-dim: rgba(212, 168, 75, 0.08);
+  --mx-border: #1E293D;
+  --mx-border-accent: rgba(212, 168, 75, 0.2);
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --mx-radius-sm: 4px;
+  --mx-radius-md: 8px;
+  --mx-shadow-gold: 0 4px 24px rgba(212, 168, 75, 0.08);
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpgzxqcf .mx-section__label {
+  font-family: var(--mx-font-display);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 16px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.section-mpgzxqcf .mx-section__label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--mx-accent);
+  margin-right: 12px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.section-mpgzxqcf .mx-section__heading {
+  font-family: var(--mx-font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--mx-text);
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-mpgzxqcf .mx-section__sub {
+  font-size: 17px;
+  color: var(--mx-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.section-mpgzxqcf .mx-services {
+  position: relative;
+  padding: 100px 0;
+  background: var(--mx-bg-alt);
+  overflow: hidden;
+}
+
+.section-mpgzxqcf .mx-services__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212, 168, 75, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(212, 168, 75, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section-mpgzxqcf .mx-services__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-mpgzxqcf .mx-services__grid {
+  margin-top: 20px;
+}
+
+.section-mpgzxqcf .mx-services__card {
+  position: relative;
+  background: var(--mx-bg-card);
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-md);
+  padding: 36px 28px 30px;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.section-mpgzxqcf .mx-services__card:hover {
+  border-color: var(--mx-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--mx-shadow-gold);
+}
+
+.section-mpgzxqcf .mx-services__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--mx-accent);
+  transition: height 0.4s ease;
+}
+
+.section-mpgzxqcf .mx-services__card:hover::before {
+  height: 100%;
+}
+
+.section-mpgzxqcf .mx-services__card-number {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: var(--mx-font-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--mx-text-muted);
+  line-height: 1;
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+}
+
+.section-mpgzxqcf .mx-services__card:hover .mx-services__card-number {
+  opacity: 0.25;
+}
+
+.section-mpgzxqcf .mx-services__card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+  color: var(--mx-accent);
+  opacity: 0.85;
+  transition: transform 0.4s ease;
+}
+
+.section-mpgzxqcf .mx-services__card:hover .mx-services__card-icon {
+  transform: scale(1.05);
+}
+
+.section-mpgzxqcf .mx-services__card-title {
+  font-family: var(--mx-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--mx-text);
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.section-mpgzxqcf .mx-services__card:hover .mx-services__card-title {
+  color: var(--mx-accent);
+}
+
+.section-mpgzxqcf .mx-services__card-desc {
+  font-size: 14px;
+  color: var(--mx-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-mpgzxqcf .mx-services {
+    padding: 60px 0;
+  }
+  .section-mpgzxqcf .mx-services__card {
+    padding: 28px 24px;
+  }
+  .section-mpgzxqcf .mx-section__heading {
+    font-size: 26px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgzxqcf">
+  <div class="mx-services">
+    <div class="mx-services__bg-pattern"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-services__header">
+            {% if this.Model.section_label %}<div class="mx-section__label" property="true" data-property="section_label" method="text">{{this.Model.section_label}}</div>{% endif %}
+            {% if this.Model.heading %}<h2 class="mx-section__heading" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+            {% if this.Model.subtitle %}<p class="mx-section__sub" property="true" data-property="subtitle" method="text">{{this.Model.subtitle}}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-services__grid">
+        {% for item in this.Model.services %}
+        {% assign index = forloop.index0 %}
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="mx-services__card">
+            {% if item.number %}<span class="mx-services__card-number" property="true" data-property="services[{{index}}].number" method="text">{{item.number}}</span>{% endif %}
+            {% if item.icon_svg %}
+            <div class="mx-services__card-icon">{{item.icon_svg | raw}}</div>
+            {% endif %}
+            {% if item.title %}<h3 class="mx-services__card-title" property="true" data-property="services[{{index}}].title" method="text">{{item.title}}</h3>{% endif %}
+            {% if item.description %}<p class="mx-services__card-desc" property="true" data-property="services[{{index}}].description" method="text">{{item.description}}</p>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

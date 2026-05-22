@@ -1,0 +1,228 @@
+/* ============================================================
+   BASE — Marex Design System
+   Industrial Luxury: raw global trade meets refined detailing
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+:root {
+  /* Colors — Deep marine & industrial metals */
+  --mx-bg: #0A0E17;
+  --mx-bg-alt: #111827;
+  --mx-bg-card: #141C2B;
+  --mx-bg-surface: #1A2436;
+  --mx-bg-dark: #060912;
+
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-text-tertiary: #5C6B7F;
+  --mx-text-muted: #3A485C;
+
+  --mx-accent: #D4A84B;
+  --mx-accent-hover: #E0B85C;
+  --mx-accent-glow: rgba(212, 168, 75, 0.12);
+  --mx-accent-dim: rgba(212, 168, 75, 0.08);
+
+  --mx-border: #1E293D;
+  --mx-border-light: #2A3650;
+  --mx-border-accent: rgba(212, 168, 75, 0.2);
+
+  --mx-success: #3A9D6E;
+  --mx-warning: #D4A84B;
+  --mx-error: #C44536;
+
+  /* Typography */
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Sizes */
+  --mx-nav-height: 72px;
+  --mx-radius-sm: 4px;
+  --mx-radius-md: 8px;
+  --mx-radius-lg: 12px;
+
+  /* Shadows */
+  --mx-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --mx-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --mx-shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5);
+  --mx-shadow-card: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --mx-shadow-gold: 0 4px 24px rgba(212, 168, 75, 0.08);
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  background: var(--mx-bg);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--mx-accent);
+  color: var(--mx-bg);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mx-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mx-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mx-text-tertiary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--mx-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--mx-accent-hover);
+  text-decoration: none;
+}
+
+/* Section typography shared across components */
+.mx-section__label {
+  font-family: var(--mx-font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mx-accent);
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+.mx-section__label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--mx-accent);
+  margin-right: 12px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.mx-section__label--light {
+  color: var(--mx-accent);
+}
+
+.mx-section__label--light::before {
+  background: var(--mx-accent);
+}
+
+.mx-section__heading {
+  font-family: var(--mx-font-display);
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--mx-text);
+  margin: 0 0 1.6rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.mx-section__heading--light {
+  color: var(--mx-text);
+}
+
+.mx-section__sub {
+  font-size: 1.7rem;
+  color: var(--mx-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 5rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.mx-section__sub--light {
+  color: var(--mx-text-secondary);
+}
+
+/* Keyframe animations */
+@keyframes mx-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mx-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mx-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes mx-pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes mx-dash-move {
+  to { stroke-dashoffset: -20; }
+}
+
+@keyframes mx-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes mx-count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mx-scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .mx-section__heading {
+    font-size: 2.6rem;
+  }
+  .mx-section__sub {
+    font-size: 1.5rem;
+  }
+}

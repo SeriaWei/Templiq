@@ -1,0 +1,31 @@
+{
+    "section_label": "Why Marex",
+    "heading": "Full-Spectrum Trade Services",
+    "subtitle": "Beyond matching buyers and sellers — we engineer the entire transaction for security, speed, and peace of mind.",
+    "services": [
+        {
+            "number": "01",
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M8 24h6l4-8 4 16 4-8 4 8 4-8h6\" fill=\"none\"/><path d=\"M4 36h40v4H4z\" fill=\"none\"/></svg>",
+            "title": "Supplier Verification",
+            "description": "On-site audits, financial checks, and certification verification for every partner in our network."
+        },
+        {
+            "number": "02",
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M4 12h40v24H4z\" fill=\"none\"/><path d=\"M4 20h40\" opacity=\"0.3\"/><path d=\"M28 12v24\" opacity=\"0.2\"/><circle cx=\"16\" cy=\"30\" r=\"2\" fill=\"currentColor\" opacity=\"0.4\"/><circle cx=\"32\" cy=\"30\" r=\"2\" fill=\"currentColor\" opacity=\"0.4\"/></svg>",
+            "title": "Quality Assurance",
+            "description": "Third-party inspections, pre-shipment testing, and compliance certification for all major markets."
+        },
+        {
+            "number": "03",
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M8 14l16-8 16 8v18l-16 8-16-8V14z\" fill=\"none\"/><path d=\"M8 20l16 8 16-8\" opacity=\"0.4\"/><path d=\"M24 12v16\" opacity=\"0.4\"/><circle cx=\"24\" cy=\"24\" r=\"3\" fill=\"currentColor\" opacity=\"0.3\"/></svg>",
+            "title": "Logistics &amp; Shipping",
+            "description": "End-to-end freight management — sea, air, rail, and road. Real-time tracking included."
+        },
+        {
+            "number": "04",
+            "icon_svg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><circle cx=\"24\" cy=\"24\" r=\"18\" fill=\"none\"/><path d=\"M16 24l6 6 10-10\" fill=\"none\"/><path d=\"M6 6l6 6M42 6l-6 6M6 42l6-6M42 42l-6-6\" opacity=\"0.2\"/></svg>",
+            "title": "Trade Finance",
+            "description": "Secure payment escrow, letter of credit facilitation, and supply chain financing solutions."
+        }
+    ]
+}

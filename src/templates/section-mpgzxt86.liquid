@@ -1,0 +1,300 @@
+<!-- 页脚 -->
+{% header %}
+<style>
+
+.section-mpgzxt86 {
+  --mx-bg-dark: #060912;
+  --mx-text: #E8EDF5;
+  --mx-text-secondary: #8896A8;
+  --mx-text-tertiary: #5C6B7F;
+  --mx-accent: #D4A84B;
+  --mx-accent-hover: #E0B85C;
+  --mx-accent-dim: rgba(212, 168, 75, 0.08);
+  --mx-border: #1E293D;
+  --mx-font-display: 'Cinzel', 'Georgia', serif;
+  --mx-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --mx-radius-sm: 4px;
+  font-family: var(--mx-font-body);
+  color: var(--mx-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-mpgzxt86 .mx-footer {
+  position: relative;
+  padding: 60px 0 30px;
+  background: var(--mx-bg-dark);
+  border-top: 1px solid var(--mx-border);
+}
+
+.section-mpgzxt86 .mx-footer__grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.section-mpgzxt86 .mx-footer__gl {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--mx-border), transparent);
+  opacity: 0.15;
+}
+
+.section-mpgzxt86 .mx-footer__main {
+  position: relative;
+  z-index: 2;
+}
+
+.section-mpgzxt86 .mx-footer__brand {
+  margin-bottom: 30px;
+}
+
+.section-mpgzxt86 .mx-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-mpgzxt86 .mx-footer__logo svg {
+  width: 32px;
+  height: 32px;
+  color: var(--mx-accent);
+}
+
+.section-mpgzxt86 .mx-footer__logo span {
+  font-family: var(--mx-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mx-text);
+}
+
+.section-mpgzxt86 .mx-footer__about {
+  font-size: 13.5px;
+  color: var(--mx-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 320px;
+}
+
+.section-mpgzxt86 .mx-footer__social {
+  display: flex;
+  gap: 12px;
+}
+
+.section-mpgzxt86 .mx-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--mx-border);
+  border-radius: var(--mx-radius-sm);
+  color: var(--mx-text-tertiary);
+  transition: all 0.3s ease;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.section-mpgzxt86 .mx-footer__social-link:hover {
+  border-color: var(--mx-accent);
+  color: var(--mx-accent);
+  background: var(--mx-accent-dim);
+  text-decoration: none;
+}
+
+.section-mpgzxt86 .mx-footer__social-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-mpgzxt86 .mx-footer__heading {
+  font-family: var(--mx-font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mx-text);
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--mx-border);
+}
+
+.section-mpgzxt86 .mx-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-mpgzxt86 .mx-footer__links li {
+  margin-bottom: 8px;
+}
+
+.section-mpgzxt86 .mx-footer__links li a {
+  font-size: 13.5px;
+  color: var(--mx-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.section-mpgzxt86 .mx-footer__links li a:hover {
+  color: var(--mx-accent);
+  padding-left: 4px;
+}
+
+.section-mpgzxt86 .mx-footer__contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-mpgzxt86 .mx-footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--mx-text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.section-mpgzxt86 .mx-footer__contact li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--mx-accent);
+  opacity: 0.7;
+}
+
+.section-mpgzxt86 .mx-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--mx-border);
+  font-size: 12px;
+  color: var(--mx-text-tertiary);
+}
+
+.section-mpgzxt86 .mx-footer__legal {
+  display: flex;
+  gap: 20px;
+}
+
+.section-mpgzxt86 .mx-footer__legal a {
+  color: var(--mx-text-tertiary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.section-mpgzxt86 .mx-footer__legal a:hover {
+  color: var(--mx-accent);
+}
+
+@media (max-width: 768px) {
+  .section-mpgzxt86 .mx-footer {
+    padding: 40px 0 20px;
+  }
+  .section-mpgzxt86 .mx-footer__brand {
+    margin-bottom: 20px;
+  }
+  .section-mpgzxt86 .mx-footer__heading {
+    margin-top: 20px;
+  }
+  .section-mpgzxt86 .mx-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgzxt86">
+  <footer class="mx-footer">
+    <div class="mx-footer__grid-lines">
+      <div class="mx-footer__gl"></div>
+      <div class="mx-footer__gl"></div>
+      <div class="mx-footer__gl"></div>
+      <div class="mx-footer__gl"></div>
+    </div>
+    <div class="container">
+      <div class="row mx-footer__main">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="mx-footer__brand">
+            {% if this.Model.logo_svg %}
+            <div class="mx-footer__logo">{{this.Model.logo_svg | raw}}</div>
+            {% endif %}
+            {% if this.Model.about_text %}
+            <p class="mx-footer__about" property="true" data-property="about_text" method="text">{{this.Model.about_text}}</p>
+            {% endif %}
+            {% if this.Model.social_links %}
+            <div class="mx-footer__social">
+              {% for item in this.Model.social_links %}
+              {% assign sindex = forloop.index0 %}
+              <a property="true" data-property="social_links[{{sindex}}].url" method="attr" para="href" href="{% url item.url %}" class="mx-footer__social-link" aria-label="{{item.label}}">
+                {{item.icon_svg | raw}}
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {% for column in this.Model.link_columns %}
+        {% assign cindex = forloop.index0 %}
+        <div class="col-xs-12 col-sm-6 col-md-2">
+          {% if column.heading %}<h4 class="mx-footer__heading" property="true" data-property="link_columns[{{cindex}}].heading" method="text">{{column.heading}}</h4>{% endif %}
+          <ul class="mx-footer__links">
+            {% for link in column.links %}
+            {% assign lindex = forloop.index0 %}
+            <li>
+              <a property="true" data-property="link_columns[{{cindex}}].links[{{lindex}}].url" method="attr" para="href" href="{% url link.url %}">
+                <span property="true" data-property="link_columns[{{cindex}}].links[{{lindex}}].text" method="text">{{link.text}}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          {% if this.Model.contact_heading %}<h4 class="mx-footer__heading" property="true" data-property="contact_heading" method="text">{{this.Model.contact_heading}}</h4>{% endif %}
+          <ul class="mx-footer__contact">
+            {% for item in this.Model.contact_items %}
+            {% assign ciindex = forloop.index0 %}
+            <li>
+              {{item.icon_svg | raw}}
+              <span property="true" data-property="contact_items[{{ciindex}}].text" method="text">{{item.text}}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="mx-footer__bottom">
+            {% if this.Model.bottom_text %}<span property="true" data-property="bottom_text" method="text">{{this.Model.bottom_text}}</span>{% endif %}
+            {% if this.Model.legal_links %}
+            <div class="mx-footer__legal">
+              {% for item in this.Model.legal_links %}
+              {% assign liindex = forloop.index0 %}
+              <a property="true" data-property="legal_links[{{liindex}}].url" method="attr" para="href" href="{% url item.url %}">
+                <span property="true" data-property="legal_links[{{liindex}}].text" method="text">{{item.text}}</span>
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
