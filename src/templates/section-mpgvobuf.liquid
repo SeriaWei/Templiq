@@ -1,0 +1,421 @@
+<!-- 赛博朋克页脚 -->
+{% header %}
+<style>
+.section-mpgvobuf {
+  --neon-cyan: #00f5ff;
+  --darker-bg: #050508;
+  --text-muted: #888899;
+  background: var(--darker-bg);
+  color: #c0c0cc;
+  font-family: 'Courier New', monospace;
+  padding: 60px 0 0;
+  border-top: 1px solid rgba(0, 245, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-mpgvobuf::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  box-shadow: 0 0 20px var(--neon-cyan), 0 0 60px var(--neon-cyan);
+}
+
+.section-mpgvobuf .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-mpgvobuf .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.section-mpgvobuf [class*="col-md-"] {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.section-mpgvobuf .col-md-4 {
+  width: 33.333%;
+}
+
+.section-mpgvobuf .col-md-2 {
+  width: 16.666%;
+}
+
+.section-mpgvobuf .col-md-offset-1 {
+  margin-left: 8.333%;
+}
+
+.section-mpgvobuf .col-md-3 {
+  width: 25%;
+}
+
+.section-mpgvobuf .col-md-12 {
+  width: 100%;
+}
+
+.section-mpgvobuf__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-mpgvobuf__brand-logo {
+  font-size: 32px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  animation: section-mpgvobuf__glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes section-mpgvobuf__glow {
+  from { text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
+  to { text-shadow: 0 0 20px var(--neon-cyan), 0 0 60px var(--neon-cyan); }
+}
+
+.section-mpgvobuf__brand-name {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.section-mpgvobuf__brand-accent {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.section-mpgvobuf__tagline {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+.section-mpgvobuf__social {
+  display: flex;
+  gap: 12px;
+}
+
+.section-mpgvobuf__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 4px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.section-mpgvobuf__social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.section-mpgvobuf__social-link:hover {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.section-mpgvobuf__heading {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.15);
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.3);
+}
+
+.section-mpgvobuf__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-mpgvobuf__links li {
+  margin-bottom: 10px;
+}
+
+.section-mpgvobuf__links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 14px;
+}
+
+.section-mpgvobuf__links a::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--neon-cyan);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-mpgvobuf__links a:hover {
+  color: var(--neon-cyan);
+  padding-left: 20px;
+}
+
+.section-mpgvobuf__links a:hover::before {
+  opacity: 1;
+}
+
+.section-mpgvobuf__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-mpgvobuf__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+.section-mpgvobuf__contact li svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--neon-cyan);
+}
+
+.section-mpgvobuf__divider {
+  margin-top: 40px;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.2), transparent);
+}
+
+.section-mpgvobuf__bottom {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-mpgvobuf__copyright {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.section-mpgvobuf__legal-links {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.section-mpgvobuf__legal-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.section-mpgvobuf__legal-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--neon-cyan);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.section-mpgvobuf__legal-links a:hover {
+  color: var(--neon-cyan);
+}
+
+.section-mpgvobuf__legal-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.section-mpgvobuf__legal-links .separator {
+  color: rgba(0, 245, 255, 0.3);
+}
+
+@media (max-width: 992px) {
+  .section-mpgvobuf .col-md-4,
+  .section-mpgvobuf .col-md-2,
+  .section-mpgvobuf .col-md-3 {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+
+  .section-mpgvobuf .col-md-offset-1 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-mpgvobuf {
+    padding: 40px 0 0;
+  }
+
+  .section-mpgvobuf .col-md-4,
+  .section-mpgvobuf .col-md-2,
+  .section-mpgvobuf .col-md-3 {
+    width: 100%;
+  }
+
+  .section-mpgvobuf__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgvobuf">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="section-mpgvobuf__brand">
+          {% if this.Model.brand_logo %}
+          <span class="section-mpgvobuf__brand-logo" property="true" data-property="brand_logo" method="text">{{this.Model.brand_logo}}</span>
+          {% endif %}
+          <span class="section-mpgvobuf__brand-name">
+            {% if this.Model.brand_name %}
+            <span property="true" data-property="brand_name" method="text">{{this.Model.brand_name}}</span>
+            {% endif %}
+            {% if this.Model.brand_accent %}
+            <span class="section-mpgvobuf__brand-accent" property="true" data-property="brand_accent" method="text">{{this.Model.brand_accent}}</span>
+            {% endif %}
+          </span>
+        </div>
+        {% if this.Model.tagline %}
+        <p class="section-mpgvobuf__tagline" property="true" data-property="tagline" method="text">{{this.Model.tagline}}</p>
+        {% endif %}
+        {% if this.Model.social_links and this.Model.social_links.size > 0 %}
+        <div class="section-mpgvobuf__social">
+          {% assign social_idx = 0 %}
+          {% for link in this.Model.social_links %}
+          <a property="true" data-property="social_links[{{social_idx}}].href" method="attr" para="href" href="{% url link.href %}" class="section-mpgvobuf__social-link" aria-label="{{link.label}}" target="_blank" rel="noopener noreferrer">
+            {% if link.icon == 'twitter' %}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            {% elsif link.icon == 'youtube' %}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            {% elsif link.icon == 'github' %}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            {% endif %}
+          </a>
+          {% assign social_idx = social_idx | plus: 1 %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if this.Model.product_links and this.Model.product_links.size > 0 %}
+      <div class="col-md-2 col-md-offset-1">
+        <h5 class="section-mpgvobuf__heading">产品</h5>
+        <ul class="section-mpgvobuf__links">
+          {% assign product_idx = 0 %}
+          {% for link in this.Model.product_links %}
+          <li>
+            <a property="true" data-property="product_links[{{product_idx}}].href" method="attr" para="href" href="{% url link.href %}">
+              <span property="true" data-property="product_links[{{product_idx}}].text" method="text">{{link.text}}</span>
+            </a>
+          </li>
+          {% assign product_idx = product_idx | plus: 1 %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if this.Model.support_links and this.Model.support_links.size > 0 %}
+      <div class="col-md-2">
+        <h5 class="section-mpgvobuf__heading">支持</h5>
+        <ul class="section-mpgvobuf__links">
+          {% assign support_idx = 0 %}
+          {% for link in this.Model.support_links %}
+          <li>
+            <a property="true" data-property="support_links[{{support_idx}}].href" method="attr" para="href" href="{% url link.href %}">
+              <span property="true" data-property="support_links[{{support_idx}}].text" method="text">{{link.text}}</span>
+            </a>
+          </li>
+          {% assign support_idx = support_idx | plus: 1 %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if this.Model.contact_items and this.Model.contact_items.size > 0 %}
+      <div class="col-md-3">
+        <h5 class="section-mpgvobuf__heading">联系我们</h5>
+        <ul class="section-mpgvobuf__contact">
+          {% assign contact_idx = 0 %}
+          {% for item in this.Model.contact_items %}
+          <li>
+            {% if item.icon == 'location' %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            {% elsif item.icon == 'phone' %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            {% endif %}
+            <span property="true" data-property="contact_items[{{contact_idx}}].text" method="text">{{item.text}}</span>
+          </li>
+          {% assign contact_idx = contact_idx | plus: 1 %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+
+    <hr class="section-mpgvobuf__divider">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-mpgvobuf__bottom">
+          {% if this.Model.copyright_text %}
+          <p class="section-mpgvobuf__copyright" property="true" data-property="copyright_text" method="text">{{this.Model.copyright_text}}</p>
+          {% endif %}
+          <div class="section-mpgvobuf__legal-links">
+            <a property="true" data-property="privacy_link" method="attr" para="href" href="{% url this.Model.privacy_link %}">隐私政策</a>
+            <span class="separator">/</span>
+            <a property="true" data-property="terms_link" method="attr" para="href" href="{% url this.Model.terms_link %}">服务条款</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,191 @@
+<!-- CTA 区域 -->
+{% header %}
+<style>
+.section-mpgvoaj7 {
+    --neon-cyan: #00f5ff;
+    --neon-purple: #bf00ff;
+    --dark-bg: #0a0a0f;
+
+    position: relative;
+    padding: 100px 0;
+    background: var(--dark-bg);
+    overflow: hidden;
+}
+
+.section-mpgvoaj7__bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(0, 245, 255, 0.06) 0%, transparent 70%),
+                radial-gradient(ellipse at 50% 50%, rgba(191, 0, 255, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.section-mpgvoaj7__bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 245, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.section-mpgvoaj7__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.section-mpgvoaj7__title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+}
+
+.section-mpgvoaj7__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    margin: 20px auto 0;
+    box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.section-mpgvoaj7__description {
+    font-size: 16px;
+    color: #888899;
+    line-height: 1.8;
+    margin: 0 auto 40px;
+    max-width: 640px;
+    letter-spacing: 1px;
+}
+
+.section-mpgvoaj7__actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-mpgvoaj7__btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.section-mpgvoaj7__btn--primary {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-mpgvoaj7__btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.section-mpgvoaj7__btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 32px rgba(0, 245, 255, 0.5), 0 0 48px rgba(191, 0, 255, 0.25);
+}
+
+.section-mpgvoaj7__btn--primary:hover::before {
+    left: 100%;
+}
+
+.section-mpgvoaj7__btn--secondary {
+    color: var(--neon-cyan);
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.15);
+}
+
+.section-mpgvoaj7__btn--secondary:hover {
+    background: rgba(0, 245, 255, 0.08);
+    box-shadow: 0 0 24px rgba(0, 245, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+    .section-mpgvoaj7 {
+        padding: 70px 0;
+    }
+
+    .section-mpgvoaj7__title {
+        font-size: 32px;
+    }
+
+    .section-mpgvoaj7__description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-mpgvoaj7 {
+        padding: 50px 0;
+    }
+
+    .section-mpgvoaj7__title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .section-mpgvoaj7__description {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .section-mpgvoaj7__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-mpgvoaj7__btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgvoaj7">
+    <div class="section-mpgvoaj7__bg-gradient"></div>
+    <div class="section-mpgvoaj7__bg-grid"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="section-mpgvoaj7__inner">
+                    <h2 class="section-mpgvoaj7__title" property="true" data-property="title">{{ this.Model.title }}</h2>
+                    <p class="section-mpgvoaj7__description" property="true" data-property="description">{{ this.Model.description }}</p>
+                    <div class="section-mpgvoaj7__actions">
+                        <a class="section-mpgvoaj7__btn section-mpgvoaj7__btn--primary" property="true" data-property="primary_btn_text" href="{{ this.Model.primary_btn_href }}">{{ this.Model.primary_btn_text }}</a>
+                        <a class="section-mpgvoaj7__btn section-mpgvoaj7__btn--secondary" property="true" data-property="secondary_btn_text" href="{{ this.Model.secondary_btn_href }}">{{ this.Model.secondary_btn_text }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

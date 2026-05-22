@@ -1,0 +1,33 @@
+{
+    "section_title": "核心优势",
+    "features": [
+        {
+            "icon_svg": "speed",
+            "title": "极速性能",
+            "description": "PCIe 6.0 x4 接口，NVMe 2.0 协议，连续读取高达 24,000 MB/s",
+            "metric_value": "24,000",
+            "metric_unit": "MB/s"
+        },
+        {
+            "icon_svg": "storage",
+            "title": "超大容量",
+            "description": "从 1TB 到 64TB，满足从个人到企业级的所有存储需求",
+            "metric_value": "64",
+            "metric_unit": "TB Max"
+        },
+        {
+            "icon_svg": "durable",
+            "title": "持久耐用",
+            "description": "5000 P/E 写入周期，配合独家磨损平衡算法，使用寿命提升 200%",
+            "metric_value": "5000",
+            "metric_unit": "P/E"
+        },
+        {
+            "icon_svg": "cool",
+            "title": "低温冷静",
+            "description": "石墨烯散热技术配合智能温控，满负载运行低至 45°C",
+            "metric_value": "45",
+            "metric_unit": "°C"
+        }
+    ]
+}

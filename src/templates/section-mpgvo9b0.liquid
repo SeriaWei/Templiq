@@ -1,0 +1,203 @@
+<!-- 数据统计 -->
+{% header %}
+<style>
+:root {
+  --neon-cyan: #00f5ff;
+  --dark-bg: #0a0a0f;
+  --darker-bg: #050508;
+}
+.section-mpgvo9b0 *,
+.section-mpgvo9b0 *::before,
+.section-mpgvo9b0 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.section-mpgvo9b0 {
+  position: relative;
+  padding: 80px 0;
+  background: var(--dark-bg);
+  overflow: hidden;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+.section-mpgvo9b0__divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+}
+.section-mpgvo9b0__divider--top {
+  top: 0;
+}
+.section-mpgvo9b0__divider--bottom {
+  bottom: 0;
+}
+.section-mpgvo9b0__divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 10px;
+  background: radial-gradient(ellipse, rgba(0, 245, 255, 0.5), transparent 70%);
+  pointer-events: none;
+}
+.section-mpgvo9b0__divider--top::after {
+  top: -5px;
+}
+.section-mpgvo9b0__divider--bottom::after {
+  bottom: -5px;
+}
+.section-mpgvo9b0__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+.section-mpgvo9b0__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.section-mpgvo9b0__stat {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 245, 255, 0.08);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+.section-mpgvo9b0__stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.section-mpgvo9b0__stat:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  background: rgba(0, 245, 255, 0.03);
+}
+.section-mpgvo9b0__stat:hover::before {
+  opacity: 1;
+}
+.section-mpgvo9b0__stat-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+.section-mpgvo9b0__stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+@media (max-width: 992px) {
+  .section-mpgvo9b0__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-mpgvo9b0__stat-value {
+    font-size: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .section-mpgvo9b0 {
+    padding: 48px 0;
+  }
+  .section-mpgvo9b0__grid {
+    grid-template-columns: 1fr;
+  }
+  .section-mpgvo9b0__stat-value {
+    font-size: 36px;
+  }
+}
+</style>
+{% endheader %}
+
+<section class="section-mpgvo9b0">
+  <div class="section-mpgvo9b0__divider section-mpgvo9b0__divider--top"></div>
+
+  <div class="section-mpgvo9b0__container">
+    <div class="section-mpgvo9b0__grid">
+      {% for stat in this.Model.stats %}
+      <div class="section-mpgvo9b0__stat">
+        <div class="section-mpgvo9b0__stat-value" property="true" data-property="stats[{{forloop.index | minus:1}}].value" method="text" data-target-value="{{stat.value}}">{{stat.value}}</div>
+        <div class="section-mpgvo9b0__stat-label" property="true" data-property="stats[{{forloop.index | minus:1}}].label" method="text">{{stat.label}}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section-mpgvo9b0__divider section-mpgvo9b0__divider--bottom"></div>
+</section>
+
+{% footer %}
+<script>
+(function() {
+  var section = document.querySelector('.section-mpgvo9b0');
+  if (!section) return;
+
+  var valueEls = section.querySelectorAll('.section-mpgvo9b0__stat-value');
+  if (valueEls.length === 0) return;
+
+  var animated = false;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        valueEls.forEach(function(el) {
+          var target = parseFloat(el.getAttribute('data-target-value')) || 0;
+          animateValue(el, 0, target, 2000);
+        });
+        observer.unobserve(section);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(section);
+
+  function formatNumber(num) {
+    if (num % 1 !== 0) {
+      return num.toFixed(1);
+    }
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function animateValue(el, start, end, duration) {
+    var startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = start + (end - start) * eased;
+
+      el.textContent = formatNumber(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = formatNumber(end);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+})();
+</script>
+{% endfooter %}

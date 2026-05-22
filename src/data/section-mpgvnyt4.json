@@ -1,0 +1,14 @@
+{
+    "tag_icon": "⚡",
+    "tag_text": "PCIe 6.0 时代来临",
+    "title_line1": "极速存储",
+    "title_line2": "超越极限",
+    "description": "以 24,000 MB/s 连续读取速度，让数据不再等待。NexaDrive — 重新定义固态硬盘的未来。",
+    "primary_btn_text": "探索产品",
+    "primary_btn_href": "#products",
+    "secondary_btn_text": "技术细节",
+    "secondary_btn_href": "#features",
+    "speed_value": 24000,
+    "speed_label": "MB/s 读取速度",
+    "scroll_hint": "向下滚动"
+}

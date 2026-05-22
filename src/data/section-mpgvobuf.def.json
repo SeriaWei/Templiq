@@ -1,0 +1,98 @@
+{
+    "brand_logo": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌标志"
+    },
+    "brand_name": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌名称"
+    },
+    "brand_accent": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌高亮文字"
+    },
+    "tagline": {
+        "FieldType": "SingleLine",
+        "DisplayName": "品牌标语"
+    },
+    "social_links": {
+        "FieldType": "Array",
+        "DisplayName": "社交媒体链接",
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "图标"
+                },
+                "href": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标签"
+                }
+            }
+        ]
+    },
+    "product_links": {
+        "FieldType": "Array",
+        "DisplayName": "产品链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "文字"
+                },
+                "href": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                }
+            }
+        ]
+    },
+    "support_links": {
+        "FieldType": "Array",
+        "DisplayName": "支持链接",
+        "Children": [
+            {
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "文字"
+                },
+                "href": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "链接"
+                }
+            }
+        ]
+    },
+    "contact_items": {
+        "FieldType": "Array",
+        "DisplayName": "联系方式",
+        "Children": [
+            {
+                "icon": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "图标"
+                },
+                "text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "文字"
+                }
+            }
+        ]
+    },
+    "copyright_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "版权文字"
+    },
+    "privacy_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "隐私政策链接"
+    },
+    "terms_link": {
+        "FieldType": "SingleLine",
+        "DisplayName": "服务条款链接"
+    }
+}
