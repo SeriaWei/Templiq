@@ -52,3 +52,21 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - Font font size of html tag is 10px. So, if you want to use font size in rem, you need to multiply it by 10. For example, if you want to use font size of 16px, you can use 1.6rem. But the font size of body tag is 16px, please note this.
 - CSS should avoid using syntax that requires compilation, such as nesting and variables in SCSS. Pure CSS or CSS modules can be used to write styles.
 - When designing, don't be limited by existing designs, such as functionality, style, layout, etc. The new design should have its own characteristics.
+
+# Verify all image URLs and replace broken ones
+
+Unsplash images can become 404 over time (photo removed, ID changed, etc.). Always verify every image URL before and after deployment.
+
+## Steps to verify
+
+1. **Collect all image URLs** — Use `grep_search` to find all `images.unsplash.com` references across the design's files.
+
+2. **Check via fetch** — Use `fetch_webpage` on any suspected broken URL. A `HTTP error 404` response confirms it's broken.
+
+3. **Find replacements** — Search Unsplash for alternative photo IDs that fit the same category (lighting, furniture, objects, etc.). Verify each candidate with `fetch_webpage` before using it.
+
+
+## Common causes
+- Unsplash photo was deleted or made private by the uploader
+- Photo ID was mistyped (usually a 25-char alphanumeric hash after `/photo-`)
+- URL params (`?w=...&q=...&auto=format...`) are malformed — always validate the base ID works without params first

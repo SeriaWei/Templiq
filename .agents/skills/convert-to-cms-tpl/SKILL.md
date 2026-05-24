@@ -172,4 +172,20 @@ description: Convert an design(Html pages in src/designs/<design-name> folder) t
 
 # 数据验证
 
-运行 `npm run test` 命令, 会自动验证数据文件(.json)，字段定义文件(.def.json)的正确性和一致性。请确保所有文件都通过验证，修复任何错误或不一致之处。
+完成模板转换后，运行以下命令验证模板、数据和字段定义的一致性，可用逗号分隔指定多个模板，只验证这些模板：
+
+```bash
+# PowerShell
+$env:TEST_TEMPLATE="section-mpgzxt86,section-87r39g"; npm run test:render
+```
+
+包含的检查项：
+- 模板文件 `.liquid` 是否存在
+- 数据文件 `.json` 是否存在
+- 字段定义文件 `.def.json` 是否存在
+- 模板能否正常渲染
+- 渲染输出包含正确的 Section class 名
+- 渲染输出是有效的 HTML
+- Schema 定义本身合法（字段类型、必填属性等）
+- 数据与 Schema 定义一致（无多余字段、数组/非数组类型匹配等）
+

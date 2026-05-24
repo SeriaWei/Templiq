@@ -8,6 +8,7 @@
     "dev": "ts-node src/app.ts",
     "build": "tsc",
     "test": "jest",
+    "test:render": "jest src/tools/__tests__/render.test.ts",
     "new": "ts-node src/tools/new-section.ts",
     "pack": "ts-node src/tools/pack.ts",
     "upload": "ts-node src/tools/upload.ts"
