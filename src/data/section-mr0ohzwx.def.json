@@ -1,0 +1,61 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题",
+		"IsRequired": true
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"products": {
+		"FieldType": "Array",
+		"DisplayName": "款式列表",
+		"Children": [
+			{
+				"badge": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标签"
+				},
+				"name": {
+					"FieldType": "SingleLine",
+					"DisplayName": "名称"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				},
+				"price": {
+					"FieldType": "SingleLine",
+					"DisplayName": "价格"
+				},
+				"image_src": {
+					"FieldType": "Media",
+					"DisplayName": "图片"
+				},
+				"image_alt": {
+					"FieldType": "SingleLine",
+					"DisplayName": "图片描述"
+				},
+				"tone": {
+					"FieldType": "Dropdown",
+					"DisplayName": "色调",
+					"FieldOptions": [
+						{
+							"DisplayText": "浅色",
+							"Value": "light"
+						},
+						{
+							"DisplayText": "深色",
+							"Value": "dark"
+						}
+					]
+				}
+			}
+		]
+	}
+}

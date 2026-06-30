@@ -1,0 +1,25 @@
+{
+	"kicker": "Race ready",
+	"title": "两种地形设定，同一副推进核心。",
+	"copy": "选择偏竞速的 Fireline，或选择更适合湿滑训练的 Moss Grid。两款都支持 35 至 50 公里山径赛事的补给站快换节奏。",
+	"products": [
+		{
+			"badge": "Dry ridge",
+			"name": "Fireline Red",
+			"description": "适合干燥山脊、砂石爬升和高温比赛日，鞋面排水孔更大。",
+			"price": "¥1,280",
+			"image_src": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1200&q=85&auto=format&fit=crop",
+			"image_alt": "白色跑鞋侧面展示",
+			"tone": "light"
+		},
+		{
+			"badge": "Wet forest",
+			"name": "Moss Grid Black",
+			"description": "适合潮湿林道、泥地转弯和低温训练，外底橡胶软度提升 8%。",
+			"price": "¥1,360",
+			"image_src": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&q=85&auto=format&fit=crop",
+			"image_alt": "红色跑鞋鞋面细节",
+			"tone": "dark"
+		}
+	]
+}
