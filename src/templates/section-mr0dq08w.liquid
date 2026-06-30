@@ -1,0 +1,160 @@
+<!-- 制茶工艺 -->
+{% header %}
+<style>
+.section-mr0dq08w {
+    --tea-ink: #172416;
+    --tea-ink-soft: #4d6047;
+    --tea-leaf: #526f2d;
+    --tea-leaf-dark: #294315;
+    --tea-lime: #d8e86e;
+    --tea-mist: #eef1df;
+    --tea-paper: #f8f3df;
+    --tea-rice: #fffaf0;
+    --tea-line: rgba(23, 36, 22, .16);
+    color: var(--tea-ink);
+    background: var(--tea-paper);
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.section-mr0dq08w .gt-process {
+    position: relative;
+    padding: 80px 0 90px;
+    background: linear-gradient(180deg, rgba(255,250,240,.75), rgba(238,241,223,.72));
+}
+
+.section-mr0dq08w .gt-process:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--tea-line);
+}
+
+.section-mr0dq08w .gt-kicker {
+    margin: 0 0 14px;
+    color: var(--tea-leaf-dark);
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.section-mr0dq08w .gt-section-title {
+    margin: 0;
+    color: var(--tea-ink);
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.04;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.section-mr0dq08w .gt-process__steps {
+    margin-top: 50px;
+}
+
+.section-mr0dq08w .gt-process__step {
+    position: relative;
+    min-height: 280px;
+    padding: 24px;
+    border: 1px solid var(--tea-line);
+    background: rgba(255,250,240,.8);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.section-mr0dq08w .gt-process__step:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 0 rgba(82,111,45,.18);
+}
+
+.section-mr0dq08w .gt-process__step:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--tea-ink);
+    background: var(--tea-lime);
+}
+
+.section-mr0dq08w .gt-process__step span {
+    display: inline-block;
+    padding: 4px 8px;
+    background: var(--tea-ink);
+    color: var(--tea-rice);
+    font-size: 12px;
+}
+
+.section-mr0dq08w .gt-process__step h3 {
+    margin: 70px 0 12px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.section-mr0dq08w .gt-process__step p {
+    margin: 0;
+    color: var(--tea-ink-soft);
+}
+
+.section-mr0dq08w .gt-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: section-mr0dq08w-rise .75s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+
+@keyframes section-mr0dq08w-rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .section-mr0dq08w .gt-process__step {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-mr0dq08w .gt-process {
+        padding: 50px 0;
+    }
+
+    .section-mr0dq08w .gt-section-title {
+        font-size: clamp(30px, 13vw, 48px);
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0dq08w">
+    <section class="gt-process" aria-labelledby="processTitle-mr0dq08w">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center gt-reveal">
+                    {% if this.Model.kicker %}<p class="gt-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 id="processTitle-mr0dq08w" class="gt-section-title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                </div>
+            </div>
+            {% if this.Model.steps %}
+            <div class="row gt-process__steps">
+                {% for step in this.Model.steps %}
+                <div class="col-md-3 col-sm-6 gt-reveal" style="animation-delay: {{forloop.index0 | times: 0.08}}s;">
+                    <article class="gt-process__step">
+                        {% if step.label %}<span property="true" data-property="steps[{{forloop.index0}}].label" method="text">{{step.label}}</span>{% endif %}
+                        {% if step.title %}<h3 property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>{% endif %}
+                        {% if step.description %}<p property="true" data-property="steps[{{forloop.index0}}].description" method="text">{{step.description}}</p>{% endif %}
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</div>

@@ -1,0 +1,58 @@
+{
+	"section_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点ID"
+	},
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"image": {
+		"FieldType": "Media",
+		"DisplayName": "风味图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片描述"
+	},
+	"flavor_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "风味标签"
+	},
+	"bars": {
+		"FieldType": "Array",
+		"DisplayName": "风味强度",
+		"Children": [
+			{
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "名称"
+				},
+				"percent": {
+					"FieldType": "SingleLine",
+					"DisplayName": "百分比"
+				}
+			}
+		]
+	},
+	"recipes": {
+		"FieldType": "Array",
+		"DisplayName": "冲泡方式",
+		"Children": [
+			{
+				"method": {
+					"FieldType": "SingleLine",
+					"DisplayName": "方式"
+				},
+				"detail": {
+					"FieldType": "SingleLine",
+					"DisplayName": "参数"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"kicker": "Quiet craft",
+	"title": "少一点火气，多一点鲜爽。",
+	"steps": [
+		{
+			"label": "摊青",
+			"title": "竹匾薄摊",
+			"description": "让青草气慢慢散掉，保留嫩叶的清甜。"
+		},
+		{
+			"label": "杀青",
+			"title": "轻压快炒",
+			"description": "锅温迅速锁住叶绿素，茶汤颜色更通透。"
+		},
+		{
+			"label": "理条",
+			"title": "手工收锋",
+			"description": "条索紧直，冲泡后叶底舒展而不碎。"
+		},
+		{
+			"label": "复焙",
+			"title": "低温回香",
+			"description": "栗香沉下来，杯底留一层干净甜韵。"
+		}
+	]
+}

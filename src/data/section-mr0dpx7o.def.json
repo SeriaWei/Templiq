@@ -1,0 +1,66 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"lead": {
+		"FieldType": "Paragraph",
+		"DisplayName": "导语"
+	},
+	"primary_link_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文字"
+	},
+	"primary_link_url": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_link_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文字"
+	},
+	"secondary_link_url": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"hero_image": {
+		"FieldType": "Media",
+		"DisplayName": "主图"
+	},
+	"hero_image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主图描述"
+	},
+	"tin_label": {
+		"FieldType": "HtmlBox",
+		"DisplayName": "茶罐文字"
+	},
+	"top_note": {
+		"FieldType": "SingleLine",
+		"DisplayName": "上标签"
+	},
+	"bottom_note": {
+		"FieldType": "SingleLine",
+		"DisplayName": "下标签"
+	},
+	"metrics": {
+		"FieldType": "Array",
+		"DisplayName": "核心指标",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "数值"
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}

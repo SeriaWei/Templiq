@@ -1,0 +1,176 @@
+<!-- 风味笔记 -->
+{% header %}
+<style>
+.section-mr0dq1pd {
+    --tea-ink: #172416;
+    --tea-lime: #d8e86e;
+    --tea-rice: #fffaf0;
+    color: var(--tea-rice);
+    background: var(--tea-ink);
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.section-mr0dq1pd .gt-tasting {
+    background: var(--tea-ink);
+    color: var(--tea-rice);
+}
+
+.section-mr0dq1pd .gt-tasting__row {
+    display: flex;
+    align-items: stretch;
+}
+
+.section-mr0dq1pd .gt-tasting__visual {
+    min-height: 680px;
+    padding: 0;
+}
+
+.section-mr0dq1pd .gt-tasting__visual img {
+    width: 100%;
+    height: 100%;
+    min-height: 680px;
+    object-fit: cover;
+    filter: saturate(.75) contrast(1.12);
+}
+
+.section-mr0dq1pd .gt-tasting__copy {
+    padding: 80px 9vw 80px 6vw;
+    background: radial-gradient(circle at 92% 10%, rgba(216,232,110,.18), transparent 280px), linear-gradient(135deg, rgba(255,250,240,.08), transparent 38%);
+}
+
+.section-mr0dq1pd .gt-kicker {
+    margin: 0 0 14px;
+    color: var(--tea-rice);
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.section-mr0dq1pd .gt-section-title {
+    margin: 0;
+    color: var(--tea-rice);
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.04;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.section-mr0dq1pd .gt-tasting__bars {
+    margin-top: 40px;
+}
+
+.section-mr0dq1pd .gt-tasting__bars div {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.section-mr0dq1pd .gt-tasting__bars span {
+    color: rgba(255,250,240,.76);
+}
+
+.section-mr0dq1pd .gt-tasting__bars i {
+    display: block;
+    height: 10px;
+    background: linear-gradient(90deg, var(--tea-lime), #fff4b0);
+    box-shadow: 0 0 20px rgba(216,232,110,.25);
+}
+
+.section-mr0dq1pd .gt-tasting__recipe {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 12px 20px;
+    margin: 40px 0 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,250,240,.2);
+}
+
+.section-mr0dq1pd .gt-tasting__recipe dt {
+    color: var(--tea-lime);
+    font-weight: 500;
+}
+
+.section-mr0dq1pd .gt-tasting__recipe dd {
+    margin: 0;
+    color: rgba(255,250,240,.74);
+}
+
+.section-mr0dq1pd .gt-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: section-mr0dq1pd-rise .75s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+
+@keyframes section-mr0dq1pd-rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .section-mr0dq1pd .gt-tasting__row {
+        display: block;
+    }
+
+    .section-mr0dq1pd .gt-tasting__visual,
+    .section-mr0dq1pd .gt-tasting__visual img {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-mr0dq1pd .gt-tasting__copy {
+        padding: 50px 20px;
+    }
+
+    .section-mr0dq1pd .gt-section-title {
+        font-size: clamp(30px, 13vw, 48px);
+    }
+
+    .section-mr0dq1pd .gt-tasting__recipe {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0dq1pd">
+    <section class="gt-tasting" {% if this.Model.section_id %}property="true" data-property="section_id" method="attr" para="id" id="{{this.Model.section_id}}"{% endif %} aria-labelledby="tastingTitle-mr0dq1pd">
+        <div class="container-fluid">
+            <div class="row gt-tasting__row">
+                <div class="col-md-6 gt-tasting__visual gt-reveal">
+                    {% if this.Model.image %}<img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="{{this.Model.image_alt}}">{% endif %}
+                </div>
+                <div class="col-md-6 gt-tasting__copy gt-reveal" style="animation-delay: .12s;">
+                    {% if this.Model.kicker %}<p class="gt-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 id="tastingTitle-mr0dq1pd" class="gt-section-title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.bars %}
+                    <div class="gt-tasting__bars" aria-label="{{this.Model.flavor_label}}">
+                        {% for bar in this.Model.bars %}
+                        <div>
+                            {% if bar.label %}<span property="true" data-property="bars[{{forloop.index0}}].label" method="text">{{bar.label}}</span>{% endif %}
+                            {% if bar.percent %}<i property="true" data-property="bars[{{forloop.index0}}].percent" method="attr" para="style" style="width: {{bar.percent}};"></i>{% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if this.Model.recipes %}
+                    <dl class="gt-tasting__recipe">
+                        {% for recipe in this.Model.recipes %}
+                        {% if recipe.method %}<dt property="true" data-property="recipes[{{forloop.index0}}].method" method="text">{{recipe.method}}</dt>{% endif %}
+                        {% if recipe.detail %}<dd property="true" data-property="recipes[{{forloop.index0}}].detail" method="text">{{recipe.detail}}</dd>{% endif %}
+                        {% endfor %}
+                    </dl>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

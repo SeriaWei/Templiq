@@ -1,0 +1,23 @@
+{
+	"kicker": "Terrace origin",
+	"title": "来自 780 米云线下的早春茶园。",
+	"image": "https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?auto=format&fit=crop&w=1400&q=85",
+	"image_alt": "山地茶园与茶树",
+	"facts": [
+		{
+			"number": "01",
+			"title": "砂砾黄壤",
+			"description": "排水快，根系向下，茶汤更利落。"
+		},
+		{
+			"number": "02",
+			"title": "昼夜温差 11°C",
+			"description": "慢生长带来更集中的氨基酸甜感。"
+		},
+		{
+			"number": "03",
+			"title": "清明前采摘",
+			"description": "嫩芽纤维细，苦涩低，第一泡香气最亮。"
+		}
+	]
+}

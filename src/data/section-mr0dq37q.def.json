@@ -1,0 +1,62 @@
+{
+	"section_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点ID"
+	},
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"intro": {
+		"FieldType": "Paragraph",
+		"DisplayName": "简介"
+	},
+	"seal_text": {
+		"FieldType": "HtmlBox",
+		"DisplayName": "封签文字"
+	},
+	"pack_name": {
+		"FieldType": "SingleLine",
+		"DisplayName": "包装名称"
+	},
+	"pack_latin": {
+		"FieldType": "SingleLine",
+		"DisplayName": "包装英文"
+	},
+	"buy_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "购买按钮文字"
+	},
+	"options_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "规格组描述"
+	},
+	"options": {
+		"FieldType": "Array",
+		"DisplayName": "产品规格",
+		"Children": [
+			{
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "规格名称"
+				},
+				"size": {
+					"FieldType": "SingleLine",
+					"DisplayName": "净含量"
+				},
+				"price": {
+					"FieldType": "SingleLine",
+					"DisplayName": "价格"
+				},
+				"cups": {
+					"FieldType": "SingleLine",
+					"DisplayName": "杯数"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,158 @@
+.gt-product {
+  padding: 9rem 0 10rem;
+}
+
+.gt-product__shell {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--tea-line);
+  background: rgba(255,250,240,.68);
+}
+
+.gt-product__pack {
+  position: relative;
+  width: min(34rem, 82vw);
+  height: 47rem;
+  margin: 5rem auto;
+  border: 1px solid rgba(23,36,22,.34);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.42), transparent 18%, transparent 72%, rgba(23,36,22,.18)),
+    linear-gradient(145deg, #eff5c8, #7a963e 48%, #223913 49%, #486b24);
+  box-shadow: 2.2rem 2.2rem 0 rgba(216,232,110,.58), 0 2.4rem 5rem rgba(23,36,22,.18);
+}
+
+.gt-product__pack:before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  right: 2rem;
+  height: 3.8rem;
+  border: 1px solid rgba(23,36,22,.3);
+  border-radius: 50%;
+  background: linear-gradient(90deg, #fcffe6, #6e8f36);
+}
+
+.gt-product__seal {
+  position: absolute;
+  top: 5.6rem;
+  right: 3rem;
+  width: 9rem;
+  height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,250,240,.7);
+  color: var(--tea-rice);
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: .08em;
+}
+
+.gt-product__name {
+  position: absolute;
+  left: 3.2rem;
+  bottom: 9rem;
+  writing-mode: vertical-rl;
+  color: var(--tea-rice);
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: .14em;
+}
+
+.gt-product__latin {
+  position: absolute;
+  left: 3.6rem;
+  bottom: 3.2rem;
+  color: rgba(255,250,240,.72);
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .2em;
+}
+
+.gt-product__intro {
+  max-width: 56rem;
+  margin: 2.4rem 0 0;
+  color: var(--tea-ink-soft);
+  font-size: 1.8rem;
+}
+
+.gt-product__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.gt-product__options button {
+  min-height: 6.2rem;
+  border: 1px solid var(--tea-line);
+  background: rgba(255,250,240,.78);
+  color: var(--tea-ink);
+  font-size: 1.6rem;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.gt-product__options button:hover,
+.gt-product__options button:focus,
+.gt-product__options button.is-active {
+  background: var(--tea-leaf-dark);
+  color: var(--tea-rice);
+  transform: translateY(-2px);
+}
+
+.gt-product__summary {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-top: 3rem;
+}
+
+.gt-product__summary strong {
+  font-family: Georgia, serif;
+  font-size: 5.6rem;
+  line-height: 1;
+}
+
+.gt-product__summary span,
+.gt-product__summary em {
+  color: var(--tea-ink-soft);
+  font-style: normal;
+}
+
+.gt-product__buy {
+  margin-top: 2.6rem;
+}
+
+@media (max-width: 991px) {
+  .gt-product__shell {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .gt-product {
+    padding: 5rem 0 6rem;
+  }
+
+  .gt-product__shell {
+    margin: 0;
+  }
+
+  .gt-product__options {
+    grid-template-columns: 1fr;
+  }
+
+  .gt-product__summary {
+    display: block;
+  }
+
+  .gt-product__summary span,
+  .gt-product__summary em {
+    display: block;
+    margin-top: .5rem;
+  }
+}

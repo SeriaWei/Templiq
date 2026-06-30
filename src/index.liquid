@@ -187,7 +187,7 @@
 <div class="batch-actions" id="batchActions" aria-hidden="true">
   <div class="selected-count">已选择 <span id="selectedCount">0</span> 个模板</div>
   <div class="action-buttons">
-    <button class="btn btn-success" id="batchCapture">保存缩略图</button>
+    <button class="btn btn-success" id="batchCapture">生成缩略图</button>
     <button class="btn btn-warning" id="batchPack">打包</button>
     <button class="btn btn-info" id="batchUpload">上传</button>
     <button class="btn btn-default" id="clearSelection">清除选择</button>
@@ -394,7 +394,7 @@
 
   batchCapture.addEventListener('click', function() {
     if (selectedTemplates.length === 0) return;
-    performBatchOperation('capture', '/api/capture-preview', '保存缩略图');
+    performBatchOperation('capture', '/api/capture-preview', '生成缩略图');
   });
 
   batchPack.addEventListener('click', function() {

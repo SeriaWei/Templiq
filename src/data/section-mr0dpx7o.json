@@ -1,0 +1,28 @@
+{
+	"kicker": "Spring flush / pan-fired green tea",
+	"title": "青岚前茶",
+	"lead": "一罐把清晨山雾、栗香和微微海风收住的绿茶。低温慢焙，入口鲜，回甘干净。",
+	"primary_link_text": "选择规格",
+	"primary_link_url": "#product",
+	"secondary_link_text": "查看风味",
+	"secondary_link_url": "#tasting",
+	"hero_image": "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=85",
+	"hero_image_alt": "玻璃杯中的绿茶茶汤",
+	"tin_label": "QING<br>LAN",
+	"top_note": "明前一芽二叶",
+	"bottom_note": "栗香 / 兰花 / 雨后竹叶",
+	"metrics": [
+		{
+			"value": "38h",
+			"label": "摊青静置"
+		},
+		{
+			"value": "82°C",
+			"label": "推荐水温"
+		},
+		{
+			"value": "4.7g",
+			"label": "单杯投茶"
+		}
+	]
+}

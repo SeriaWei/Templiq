@@ -1,0 +1,30 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"steps": {
+		"FieldType": "Array",
+		"DisplayName": "工艺步骤",
+		"Children": [
+			{
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标签"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}
