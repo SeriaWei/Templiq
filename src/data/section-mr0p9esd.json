@@ -1,0 +1,35 @@
+{
+	"eyebrow": "Four room modes",
+	"title": "不挑房间，挑一面空墙就够了。",
+	"summary": "LumaArc Pico 会根据环境亮度、投射距离和画面倾角自动选择场景曲线。你只需要移动机器，画面对齐、色温和清晰度会自己跟上。",
+	"scene_items": [
+		{
+			"number": "01",
+			"title": "卧室剧场",
+			"text": "暖色白平衡和低亮护眼模式，适合夜间电影与睡前纪录片。",
+			"image": "",
+			"image_alt": ""
+		},
+		{
+			"number": "",
+			"title": "",
+			"text": "",
+			"image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=900&q=85&auto=format&fit=crop",
+			"image_alt": "影院座椅和大银幕"
+		},
+		{
+			"number": "02",
+			"title": "露营银幕",
+			"text": "内置电池可播放 160 分钟，幕布、帐篷外墙或车尾门都能成像。",
+			"image": "",
+			"image_alt": ""
+		},
+		{
+			"number": "03",
+			"title": "临时会议",
+			"text": "USB-C 一线投屏，自动锐化细字，表格和线框图不用反复调焦。",
+			"image": "",
+			"image_alt": ""
+		}
+	]
+}

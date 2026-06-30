@@ -1,0 +1,43 @@
+{
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题",
+		"IsRequired": true
+	},
+	"summary": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"scene_items": {
+		"FieldType": "Array",
+		"DisplayName": "场景列表",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "场景标题"
+				},
+				"text": {
+					"FieldType": "Paragraph",
+					"DisplayName": "场景说明"
+				},
+				"image": {
+					"FieldType": "Media",
+					"DisplayName": "图片"
+				},
+				"image_alt": {
+					"FieldType": "SingleLine",
+					"DisplayName": "图片描述"
+				}
+			}
+		]
+	}
+}

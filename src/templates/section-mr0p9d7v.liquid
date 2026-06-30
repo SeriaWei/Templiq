@@ -1,0 +1,186 @@
+<!-- 口袋影院首屏 -->
+{% header %}
+<style>
+.section-mr0p9d7v {
+    position: relative;
+    overflow: hidden;
+    min-height: 720px;
+    padding: 86px 0 78px;
+    background: linear-gradient(118deg, rgba(23, 19, 15, 0.08) 0 1px, transparent 1px 46px), radial-gradient(circle at 10% 24%, rgba(255, 122, 64, 0.36), transparent 26%), linear-gradient(132deg, #f4ead6 0%, #f0c95f 50%, #1f4f4a 100%);
+    color: #17130f;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0p9d7v .la-hero__beam {
+    position: absolute;
+    right: -8%;
+    top: -18%;
+    width: 72%;
+    height: 118%;
+    background: linear-gradient(105deg, rgba(255, 248, 216, 0), rgba(255, 248, 216, 0.72), rgba(255, 122, 64, 0));
+    transform: skewX(-18deg);
+    mix-blend-mode: screen;
+}
+.section-mr0p9d7v .la-hero__layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+.section-mr0p9d7v .la-hero__eyebrow {
+    margin: 0 0 20px;
+    color: #54291d;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0p9d7v .la-hero__title {
+    margin: 0;
+    max-width: 640px;
+    color: #17130f;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+.section-mr0p9d7v .la-hero__lead {
+    max-width: 560px;
+    margin: 28px 0 0;
+    color: #2d342d;
+    font-size: 18px;
+    line-height: 1.85;
+}
+.section-mr0p9d7v .la-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+.section-mr0p9d7v .la-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid #17130f;
+    border-radius: 0;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+}
+.section-mr0p9d7v .la-button:hover,
+.section-mr0p9d7v .la-button:focus {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.section-mr0p9d7v .la-button--solid {
+    background: #17130f;
+    color: #fff3dc;
+}
+.section-mr0p9d7v .la-button--line {
+    background: rgba(255, 243, 220, 0.34);
+    color: #17130f;
+}
+.section-mr0p9d7v .la-hero__stage {
+    position: relative;
+    margin: 0 0 0 auto;
+    max-width: 520px;
+    transform: rotate(2deg);
+}
+.section-mr0p9d7v .la-hero__stage::before {
+    content: "";
+    position: absolute;
+    inset: 28px 24px -26px -24px;
+    border: 2px solid #ff6e3a;
+}
+.section-mr0p9d7v .la-hero__stage img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 610px;
+    object-fit: cover;
+    box-shadow: 0 36px 80px rgba(23, 19, 15, 0.28);
+}
+.section-mr0p9d7v .la-hero__stage figcaption {
+    position: absolute;
+    left: -18px;
+    bottom: 30px;
+    padding: 11px 14px;
+    background: #ff6e3a;
+    color: #fff3dc;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+}
+@media (max-width: 991px) {
+    .section-mr0p9d7v {
+        min-height: 0;
+        padding: 58px 0;
+    }
+    .section-mr0p9d7v .la-hero__layout {
+        display: block;
+    }
+    .section-mr0p9d7v .la-hero__title {
+        font-size: 58px;
+    }
+    .section-mr0p9d7v .la-hero__stage {
+        margin: 44px 0 0;
+        max-width: none;
+    }
+    .section-mr0p9d7v .la-hero__stage img {
+        height: 440px;
+    }
+}
+@media (max-width: 640px) {
+    .section-mr0p9d7v .la-hero__title {
+        font-size: 43px;
+    }
+    .section-mr0p9d7v .la-hero__lead {
+        font-size: 16px;
+    }
+    .section-mr0p9d7v .la-hero__stage img {
+        height: 340px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0p9d7v">
+    <div class="la-hero__beam" aria-hidden="true"></div>
+    <div class="container">
+        <div class="row la-hero__layout">
+            <div class="col-md-6 col-sm-7">
+                {% if this.Model.eyebrow %}
+                <p class="la-hero__eyebrow" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>
+                {% endif %}
+                {% if this.Model.title %}
+                <h1 class="la-hero__title" property="true" data-property="title" method="text">{{this.Model.title}}</h1>
+                {% endif %}
+                {% if this.Model.lead %}
+                <p class="la-hero__lead" property="true" data-property="lead" method="text">{{this.Model.lead}}</p>
+                {% endif %}
+                <div class="la-hero__actions">
+                    {% if this.Model.primary_text %}
+                    <a class="la-button la-button--solid" property="true" data-property="primary_link" method="attr" para="href" href="{% url this.Model.primary_link %}">{{this.Model.primary_text}}</a>
+                    {% endif %}
+                    {% if this.Model.secondary_text %}
+                    <a class="la-button la-button--line" property="true" data-property="secondary_link" method="attr" para="href" href="{% url this.Model.secondary_link %}">{{this.Model.secondary_text}}</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-5">
+                <figure class="la-hero__stage">
+                    {% if this.Model.image %}
+                    <img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="{{this.Model.image_alt}}">
+                    {% endif %}
+                    {% if this.Model.caption %}
+                    <figcaption property="true" data-property="caption" method="text">{{this.Model.caption}}</figcaption>
+                    {% endif %}
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>

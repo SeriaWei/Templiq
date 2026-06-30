@@ -1,0 +1,42 @@
+{
+	"image": {
+		"FieldType": "Media",
+		"DisplayName": "展示图片",
+		"IsRequired": true
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片描述"
+	},
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题",
+		"IsRequired": true
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"spec_items": {
+		"FieldType": "Array",
+		"DisplayName": "参数列表",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "数值",
+					"IsRequired": true
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "名称",
+					"IsRequired": true
+				}
+			}
+		]
+	}
+}

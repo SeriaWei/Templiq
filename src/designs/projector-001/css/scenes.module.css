@@ -1,0 +1,92 @@
+.la-scenes {
+  position: relative;
+  padding: 92px 0 98px;
+  background: #17130f;
+  color: #fff3dc;
+}
+
+.la-scenes__intro {
+  margin-bottom: 36px;
+}
+
+.la-scenes__kicker {
+  color: #ffba5d;
+}
+
+.la-scenes__title,
+.la-optics__title,
+.la-order__title {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", Georgia, serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.la-scenes__text {
+  margin: 8px 0 0;
+  color: rgba(255, 243, 220, 0.76);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.la-scenes__grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.la-scenes__card {
+  min-height: 280px;
+  margin-bottom: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 243, 220, 0.24);
+  background: linear-gradient(160deg, rgba(255, 243, 220, 0.08), rgba(255, 243, 220, 0.02));
+}
+
+.la-scenes__card span {
+  display: block;
+  margin-bottom: 58px;
+  color: #ffba5d;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 13px;
+}
+
+.la-scenes__card h3 {
+  margin: 0 0 14px;
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.la-scenes__card p {
+  margin: 0;
+  color: rgba(255, 243, 220, 0.72);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.la-scenes__card--image {
+  padding: 0;
+  overflow: hidden;
+  border-color: transparent;
+}
+
+.la-scenes__card--image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.1);
+}
+
+@media (max-width: 767px) {
+  .la-scenes {
+    padding: 64px 0;
+  }
+
+  .la-scenes__title,
+  .la-optics__title,
+  .la-order__title {
+    font-size: 38px;
+  }
+}

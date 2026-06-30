@@ -1,0 +1,141 @@
+<!-- 光学技术参数 -->
+{% header %}
+<style>
+.section-mr0p9g8a {
+    padding: 96px 0;
+    background: #f4ead6;
+    color: #17130f;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0p9g8a .la-optics__layout {
+    display: flex;
+    align-items: center;
+}
+.section-mr0p9g8a .la-optics__photo {
+    margin: 0;
+}
+.section-mr0p9g8a .la-optics__photo img {
+    display: block;
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    box-shadow: 24px 24px 0 #1f4f4a;
+}
+.section-mr0p9g8a .la-optics__panel {
+    margin-left: 48px;
+    padding: 38px 0 38px 54px;
+    border-left: 2px solid #17130f;
+}
+.section-mr0p9g8a .la-optics__kicker {
+    margin: 0 0 20px;
+    color: #1f4f4a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0p9g8a .la-optics__title {
+    margin: 0;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: 0;
+}
+.section-mr0p9g8a .la-optics__copy {
+    margin: 24px 0 0;
+    color: #3f3a30;
+    font-size: 18px;
+    line-height: 1.85;
+}
+.section-mr0p9g8a .la-optics__specs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+.section-mr0p9g8a .la-optics__specs div {
+    padding: 20px;
+    border: 1px solid rgba(23, 19, 15, 0.22);
+    background: rgba(255, 255, 255, 0.24);
+}
+.section-mr0p9g8a .la-optics__specs strong {
+    display: block;
+    color: #ff6e3a;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 42px;
+    line-height: 1;
+}
+.section-mr0p9g8a .la-optics__specs span {
+    display: block;
+    margin-top: 8px;
+    color: #4a473e;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+@media (max-width: 991px) {
+    .section-mr0p9g8a .la-optics__layout {
+        display: block;
+    }
+    .section-mr0p9g8a .la-optics__panel {
+        margin: 56px 0 0;
+    }
+}
+@media (max-width: 640px) {
+    .section-mr0p9g8a {
+        padding: 64px 0;
+    }
+    .section-mr0p9g8a .la-optics__photo img {
+        height: 360px;
+        box-shadow: 12px 12px 0 #1f4f4a;
+    }
+    .section-mr0p9g8a .la-optics__panel {
+        padding-left: 24px;
+    }
+    .section-mr0p9g8a .la-optics__specs {
+        grid-template-columns: 1fr;
+    }
+    .section-mr0p9g8a .la-optics__title {
+        font-size: 38px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0p9g8a">
+    <div class="container">
+        <div class="row la-optics__layout">
+            <div class="col-md-6">
+                <figure class="la-optics__photo">
+                    {% if this.Model.image %}
+                    <img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="{{this.Model.image_alt}}">
+                    {% endif %}
+                </figure>
+            </div>
+            <div class="col-md-6">
+                <div class="la-optics__panel">
+                    {% if this.Model.eyebrow %}
+                    <p class="la-optics__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>
+                    {% endif %}
+                    {% if this.Model.title %}
+                    <h2 class="la-optics__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+                    {% endif %}
+                    {% if this.Model.copy %}
+                    <p class="la-optics__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>
+                    {% endif %}
+                    {% if this.Model.spec_items %}
+                    <div class="la-optics__specs">
+                        {% for item in this.Model.spec_items %}
+                        <div>
+                            <strong property="true" data-property="spec_items[{{forloop.index0}}].value" method="text">{{item.value}}</strong>
+                            <span property="true" data-property="spec_items[{{forloop.index0}}].label" method="text">{{item.label}}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
