@@ -1,0 +1,46 @@
+{
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "流程图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片替代文字"
+	},
+	"label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"heading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"ticker_items": {
+		"FieldType": "Array",
+		"DisplayName": "底部状态",
+		"Children": [
+			{
+				"text": {
+					"FieldType": "SingleLine",
+					"DisplayName": "文字"
+				}
+			}
+		]
+	},
+	"steps": {
+		"FieldType": "Array",
+		"DisplayName": "流程步骤",
+		"Children": [
+			{
+				"time": {
+					"FieldType": "SingleLine",
+					"DisplayName": "时间"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				}
+			}
+		]
+	}
+}

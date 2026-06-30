@@ -1,0 +1,224 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  color: #151611;
+  background: #f4f1e8;
+  font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, .76), rgba(255, 255, 255, 0) 35%),
+    radial-gradient(circle at 12% 18%, rgba(136, 171, 165, .22), transparent 28%),
+    radial-gradient(circle at 86% 8%, rgba(196, 112, 70, .16), transparent 24%),
+    #f4f1e8;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .23;
+  background-image:
+    linear-gradient(rgba(21, 22, 17, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 22, 17, .055) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.cc-page {
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.cc-kicker {
+  margin: 0 0 1.4rem;
+  color: #8b4b2c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.cc-section-copy h2,
+.cc-specs h2,
+.cc-ritual h2,
+.cc-commerce h2 {
+  margin: 0 0 2rem;
+  color: #11120e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.4rem;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
+}
+
+.cc-section-copy p,
+.cc-ritual__content > p,
+.cc-commerce__copy > p {
+  max-width: 56rem;
+  color: rgba(21, 22, 17, .72);
+  font-size: 1.7rem;
+}
+
+.cc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 15rem;
+  height: 5.2rem;
+  border: 1px solid #151611;
+  border-radius: 999px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+
+.cc-button:hover,
+.cc-button:focus {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.cc-button--ink {
+  background: #151611;
+  color: #fffaf0;
+  box-shadow: 0 18px 38px rgba(21, 22, 17, .22);
+}
+
+.cc-button--ink:hover,
+.cc-button--ink:focus {
+  color: #fffaf0;
+  box-shadow: 0 22px 48px rgba(21, 22, 17, .28);
+}
+
+.cc-button--ghost {
+  background: rgba(255, 255, 255, .34);
+  color: #151611;
+  backdrop-filter: blur(12px);
+}
+
+.cc-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: ccReveal .85s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+
+.cc-cup {
+  --cup-body: #e8e3d4;
+  --cup-shadow: #b9ad98;
+  position: relative;
+  width: 18rem;
+  height: 44rem;
+}
+
+.cc-cup__cap,
+.cc-cup__body,
+.cc-cup__shine,
+.cc-cup__mark {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cc-cup__cap {
+  top: 0;
+  width: 11.6rem;
+  height: 5.2rem;
+  border-radius: 2.2rem 2.2rem 1.2rem 1.2rem;
+  background: linear-gradient(90deg, #25251f, #565145 46%, #141511);
+  box-shadow: inset 1.5rem 0 2rem rgba(255, 255, 255, .12), 0 1.2rem 1.8rem rgba(21, 22, 17, .24);
+}
+
+.cc-cup__body {
+  top: 4.2rem;
+  width: 15.8rem;
+  height: 37.4rem;
+  border-radius: 3.2rem 3.2rem 4.6rem 4.6rem / 4rem 4rem 8rem 8rem;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, .32) 48%, rgba(0, 0, 0, .16) 100%),
+    var(--cup-body);
+  box-shadow:
+    inset -2.8rem 0 3.2rem rgba(0, 0, 0, .13),
+    inset 2rem 0 2.6rem rgba(255, 255, 255, .42),
+    2.4rem 3.8rem 5rem rgba(21, 22, 17, .2);
+}
+
+.cc-cup__body::after {
+  content: "";
+  position: absolute;
+  left: 1.8rem;
+  right: 1.8rem;
+  bottom: 1rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .14);
+  filter: blur(3px);
+}
+
+.cc-cup__shine {
+  top: 8.4rem;
+  width: 2rem;
+  height: 23rem;
+  margin-left: -4.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .54);
+  filter: blur(1px);
+}
+
+.cc-cup__mark {
+  top: 23rem;
+  color: rgba(21, 22, 17, .58);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  letter-spacing: .46em;
+  writing-mode: vertical-rl;
+}
+
+@keyframes ccReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .cc-section-copy h2,
+  .cc-specs h2,
+  .cc-ritual h2,
+  .cc-commerce h2 {
+    font-size: 4.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cc-button {
+    min-width: 13.8rem;
+    height: 4.8rem;
+  }
+
+  .cc-section-copy h2,
+  .cc-specs h2,
+  .cc-ritual h2,
+  .cc-commerce h2 {
+    font-size: 3.4rem;
+  }
+}

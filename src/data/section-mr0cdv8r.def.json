@@ -1,0 +1,17 @@
+{
+	"kicker": { "FieldType": "SingleLine", "DisplayName": "眉标" },
+	"heading": { "FieldType": "SingleLine", "DisplayName": "标题" },
+	"summary": { "FieldType": "Paragraph", "DisplayName": "说明" },
+	"cards": {
+		"FieldType": "Array",
+		"DisplayName": "材质特性",
+		"Children": [
+			{
+				"number": { "FieldType": "SingleLine", "DisplayName": "编号" },
+				"title": { "FieldType": "SingleLine", "DisplayName": "标题" },
+				"description": { "FieldType": "Paragraph", "DisplayName": "描述" },
+				"class_name": { "FieldType": "SingleLine", "DisplayName": "样式类名" }
+			}
+		]
+	}
+}

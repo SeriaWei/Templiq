@@ -1,0 +1,211 @@
+<!-- 尺寸参数 -->
+{% header %}
+<style>
+.section-mr0cdy7m {
+    color: #151611;
+    background:
+        linear-gradient(90deg, transparent 0 49.9%, rgba(21, 22, 17, .09) 50%, transparent 50.1%),
+        #ebe5d7;
+    background-size: 120px 100%;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.section-mr0cdy7m .cc-specs {
+    padding: 100px 0;
+}
+.section-mr0cdy7m .cc-kicker {
+    margin: 0 0 14px;
+    color: #8b4b2c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+.section-mr0cdy7m .cc-specs h2 {
+    margin: 0 0 20px;
+    color: #11120e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: 0;
+}
+.section-mr0cdy7m .cc-specs__row {
+    margin-top: 50px;
+}
+.section-mr0cdy7m .cc-specs__gauge,
+.section-mr0cdy7m .cc-specs__list,
+.section-mr0cdy7m .cc-specs__temperature {
+    min-height: 340px;
+    border: 1px solid rgba(21, 22, 17, .18);
+    background: rgba(255, 250, 240, .56);
+    box-shadow: 0 20px 50px rgba(21, 22, 17, .08);
+}
+.section-mr0cdy7m .cc-specs__gauge {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    overflow: hidden;
+}
+.section-mr0cdy7m .cc-specs__gauge::before {
+    content: "";
+    position: absolute;
+    inset: 32px;
+    border: 1px solid rgba(21, 22, 17, .15);
+    border-radius: 50%;
+}
+.section-mr0cdy7m .cc-specs__needle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 120px;
+    background: #8b4b2c;
+    transform: translate(-50%, -95%) rotate(54deg);
+    transform-origin: bottom center;
+}
+.section-mr0cdy7m .cc-specs__gauge strong {
+    position: relative;
+    z-index: 1;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 70px;
+    font-weight: 400;
+}
+.section-mr0cdy7m .cc-specs__gauge p {
+    position: relative;
+    z-index: 1;
+    max-width: 160px;
+    margin: 0;
+    text-align: center;
+    color: rgba(21, 22, 17, .6);
+}
+.section-mr0cdy7m .cc-specs__list {
+    padding: 32px;
+}
+.section-mr0cdy7m .cc-specs__list dl {
+    margin: 0;
+}
+.section-mr0cdy7m .cc-specs__list dt,
+.section-mr0cdy7m .cc-specs__list dd {
+    float: left;
+    min-height: 54px;
+    margin: 0;
+    padding-top: 13px;
+    border-bottom: 1px solid rgba(21, 22, 17, .16);
+}
+.section-mr0cdy7m .cc-specs__list dt {
+    width: 34%;
+    color: rgba(21, 22, 17, .48);
+    font-weight: 400;
+}
+.section-mr0cdy7m .cc-specs__list dd {
+    width: 66%;
+    font-weight: 700;
+    text-align: right;
+}
+.section-mr0cdy7m .cc-specs__list dl::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.section-mr0cdy7m .cc-specs__temperature {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+    gap: 14px;
+    padding: 30px;
+}
+.section-mr0cdy7m .cc-specs__temperature span {
+    align-self: start;
+    color: rgba(21, 22, 17, .52);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    text-align: center;
+}
+.section-mr0cdy7m .cc-specs__temperature div {
+    position: relative;
+    height: 200px;
+    border: 1px solid rgba(21, 22, 17, .16);
+    background: rgba(255, 255, 255, .26);
+}
+.section-mr0cdy7m .cc-specs__temperature i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: linear-gradient(180deg, #8cb8be, #d8aa84);
+}
+.section-mr0cdy7m .cc-specs__caption {
+    margin: 16px 0 0;
+    color: rgba(21, 22, 17, .62);
+    text-align: center;
+}
+.section-mr0cdy7m .cc-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: section-mr0cdy7m-reveal .85s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+@keyframes section-mr0cdy7m-reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 991px) {
+    .section-mr0cdy7m .cc-specs { padding: 70px 0; }
+    .section-mr0cdy7m .cc-specs h2 { font-size: 42px; }
+    .section-mr0cdy7m .cc-specs__gauge,
+    .section-mr0cdy7m .cc-specs__list,
+    .section-mr0cdy7m .cc-specs__temperature { margin-bottom: 20px; }
+}
+@media (max-width: 767px) {
+    .section-mr0cdy7m .cc-specs h2 { font-size: 34px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0cdy7m">
+    <section class="cc-specs" aria-labelledby="section-mr0cdy7m-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center cc-reveal">
+                    {% if this.Model.kicker %}<p class="cc-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.heading %}<h2 id="section-mr0cdy7m-title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                </div>
+            </div>
+            <div class="row cc-specs__row">
+                <div class="col-md-4 col-sm-6 cc-reveal">
+                    <div class="cc-specs__gauge">
+                        <span class="cc-specs__needle"></span>
+                        {% if this.Model.gauge_value %}<strong property="true" data-property="gauge_value" method="text">{{this.Model.gauge_value}}</strong>{% endif %}
+                        {% if this.Model.gauge_label %}<p property="true" data-property="gauge_label" method="text">{{this.Model.gauge_label}}</p>{% endif %}
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 cc-reveal" style="animation-delay: .1s;">
+                    <div class="cc-specs__list">
+                        <dl>
+                            {% for spec in this.Model.spec_items %}
+                            {% if spec.name %}<dt property="true" data-property="spec_items[{{forloop.index0}}].name" method="text">{{spec.name}}</dt>{% endif %}
+                            {% if spec.value %}<dd property="true" data-property="spec_items[{{forloop.index0}}].value" method="text">{{spec.value}}</dd>{% endif %}
+                            {% endfor %}
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 cc-reveal" style="animation-delay: .2s;">
+                    <div class="cc-specs__temperature">
+                        {% for point in this.Model.temperature_points %}
+                        {% if point.label %}<span property="true" data-property="temperature_points[{{forloop.index0}}].label" method="text">{{point.label}}</span>{% endif %}
+                        <div><i property="true" data-property="temperature_points[{{forloop.index0}}].height_style" method="attr" para="style" style="{{point.height_style}}"></i></div>
+                        {% endfor %}
+                    </div>
+                    {% if this.Model.caption %}<p class="cc-specs__caption" property="true" data-property="caption" method="text">{{this.Model.caption}}</p>{% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

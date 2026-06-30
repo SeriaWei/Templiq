@@ -1,0 +1,322 @@
+<!-- 礼罐选择 -->
+{% header %}
+<style>
+.section-mr0dq37q {
+    --tea-ink: #172416;
+    --tea-ink-soft: #4d6047;
+    --tea-leaf-dark: #294315;
+    --tea-lime: #d8e86e;
+    --tea-paper: #f8f3df;
+    --tea-rice: #fffaf0;
+    --tea-line: rgba(23, 36, 22, .16);
+    color: var(--tea-ink);
+    background: var(--tea-paper);
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.section-mr0dq37q .gt-product {
+    padding: 90px 0 100px;
+}
+
+.section-mr0dq37q .gt-product__shell {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--tea-line);
+    background: rgba(255,250,240,.68);
+}
+
+.section-mr0dq37q .gt-product__pack {
+    position: relative;
+    width: min(340px, 82vw);
+    height: 470px;
+    margin: 50px auto;
+    border: 1px solid rgba(23,36,22,.34);
+    background: linear-gradient(90deg, rgba(255,255,255,.42), transparent 18%, transparent 72%, rgba(23,36,22,.18)), linear-gradient(145deg, #eff5c8, #7a963e 48%, #223913 49%, #486b24);
+    box-shadow: 22px 22px 0 rgba(216,232,110,.58), 0 24px 50px rgba(23,36,22,.18);
+}
+
+.section-mr0dq37q .gt-product__pack:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    right: 20px;
+    height: 38px;
+    border: 1px solid rgba(23,36,22,.3);
+    border-radius: 50%;
+    background: linear-gradient(90deg, #fcffe6, #6e8f36);
+}
+
+.section-mr0dq37q .gt-product__seal {
+    position: absolute;
+    top: 56px;
+    right: 30px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255,250,240,.7);
+    color: var(--tea-rice);
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: .08em;
+}
+
+.section-mr0dq37q .gt-product__name {
+    position: absolute;
+    left: 32px;
+    bottom: 90px;
+    writing-mode: vertical-rl;
+    color: var(--tea-rice);
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: .14em;
+}
+
+.section-mr0dq37q .gt-product__latin {
+    position: absolute;
+    left: 36px;
+    bottom: 32px;
+    color: rgba(255,250,240,.72);
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    letter-spacing: .2em;
+}
+
+.section-mr0dq37q .gt-kicker {
+    margin: 0 0 14px;
+    color: var(--tea-leaf-dark);
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.section-mr0dq37q .gt-section-title {
+    margin: 0;
+    color: var(--tea-ink);
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.04;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.section-mr0dq37q .gt-product__intro {
+    max-width: 560px;
+    margin: 24px 0 0;
+    color: var(--tea-ink-soft);
+    font-size: 18px;
+}
+
+.section-mr0dq37q .gt-product__options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-mr0dq37q .gt-product__options button {
+    min-height: 62px;
+    border: 1px solid var(--tea-line);
+    background: rgba(255,250,240,.78);
+    color: var(--tea-ink);
+    font-size: 16px;
+    transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.section-mr0dq37q .gt-product__options button:hover,
+.section-mr0dq37q .gt-product__options button:focus,
+.section-mr0dq37q .gt-product__options button.is-active {
+    background: var(--tea-leaf-dark);
+    color: var(--tea-rice);
+    transform: translateY(-2px);
+}
+
+.section-mr0dq37q .gt-product__summary {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.section-mr0dq37q .gt-product__summary strong {
+    font-family: Georgia, serif;
+    font-size: 56px;
+    line-height: 1;
+}
+
+.section-mr0dq37q .gt-product__summary span,
+.section-mr0dq37q .gt-product__summary em {
+    color: var(--tea-ink-soft);
+    font-style: normal;
+}
+
+.section-mr0dq37q .gt-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 1px solid var(--tea-ink);
+    border-radius: 0;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.section-mr0dq37q .gt-button--solid {
+    color: var(--tea-rice);
+    background: var(--tea-ink);
+    box-shadow: 8px 8px 0 var(--tea-lime);
+}
+
+.section-mr0dq37q .gt-button--solid:hover,
+.section-mr0dq37q .gt-button--solid:focus {
+    color: var(--tea-rice);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--tea-lime);
+}
+
+.section-mr0dq37q .gt-product__buy {
+    margin-top: 26px;
+}
+
+.section-mr0dq37q .gt-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: section-mr0dq37q-rise .75s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+
+@keyframes section-mr0dq37q-rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .section-mr0dq37q .gt-product__shell {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-mr0dq37q .gt-product {
+        padding: 50px 0 60px;
+    }
+
+    .section-mr0dq37q .gt-product__shell {
+        margin: 0;
+    }
+
+    .section-mr0dq37q .gt-section-title {
+        font-size: clamp(30px, 13vw, 48px);
+    }
+
+    .section-mr0dq37q .gt-product__options {
+        grid-template-columns: 1fr;
+    }
+
+    .section-mr0dq37q .gt-product__summary {
+        display: block;
+    }
+
+    .section-mr0dq37q .gt-product__summary span,
+    .section-mr0dq37q .gt-product__summary em {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .section-mr0dq37q .gt-button {
+        width: 100%;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0dq37q">
+    <section class="gt-product" {% if this.Model.section_id %}property="true" data-property="section_id" method="attr" para="id" id="{{this.Model.section_id}}"{% endif %} aria-labelledby="productTitle-mr0dq37q">
+        <div class="container">
+            <div class="row gt-product__shell">
+                <div class="col-md-5 col-sm-12 gt-reveal">
+                    <div class="gt-product__pack" aria-hidden="true">
+                        {% if this.Model.seal_text %}<span class="gt-product__seal" property="true" data-property="seal_text" method="html">{{this.Model.seal_text | raw}}</span>{% endif %}
+                        {% if this.Model.pack_name %}<span class="gt-product__name" property="true" data-property="pack_name" method="text">{{this.Model.pack_name}}</span>{% endif %}
+                        {% if this.Model.pack_latin %}<span class="gt-product__latin" property="true" data-property="pack_latin" method="text">{{this.Model.pack_latin}}</span>{% endif %}
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12 gt-reveal" style="animation-delay: .12s;">
+                    {% if this.Model.kicker %}<p class="gt-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 id="productTitle-mr0dq37q" class="gt-section-title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.intro %}<p class="gt-product__intro" property="true" data-property="intro" method="text">{{this.Model.intro}}</p>{% endif %}
+                    {% if this.Model.options %}
+                    <div class="gt-product__options" role="group" aria-label="{{this.Model.options_label}}">
+                        {% for option in this.Model.options %}
+                        <button class="{% if forloop.first %}is-active{% endif %}" type="button" data-size="{{option.size}}" data-price="{{option.price}}" data-cups="{{option.cups}}" property="true" data-property="options[{{forloop.index0}}].label" method="text">{{option.label}}</button>
+                        {% endfor %}
+                    </div>
+                    <div class="gt-product__summary" aria-live="polite">
+                        {% for option in this.Model.options %}
+                        {% if forloop.first %}
+                        <strong data-role="price">{{option.price}}</strong>
+                        <span data-role="cups">{{option.cups}}</span>
+                        <em data-role="size">{{option.size}}</em>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if this.Model.buy_text %}<button class="gt-button gt-button--solid gt-product__buy" type="button" property="true" data-property="buy_text" method="text">{{this.Model.buy_text}}</button>{% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% footer %}
+<script type="text/javascript">
+(function () {
+    var sections = document.querySelectorAll('.section-mr0dq37q');
+
+    function initProductSection(section) {
+        var optionButtons = section.querySelectorAll('.gt-product__options button');
+        var price = section.querySelector('[data-role="price"]');
+        var cups = section.querySelector('[data-role="cups"]');
+        var size = section.querySelector('[data-role="size"]');
+
+        if (!optionButtons.length || !price || !cups || !size) {
+            return;
+        }
+
+        for (var buttonIndex = 0; buttonIndex < optionButtons.length; buttonIndex += 1) {
+            optionButtons[buttonIndex].addEventListener('click', function (event) {
+                for (var index = 0; index < optionButtons.length; index += 1) {
+                    optionButtons[index].classList.remove('is-active');
+                }
+
+                var button = event.currentTarget;
+                button.classList.add('is-active');
+                price.textContent = button.getAttribute('data-price');
+                cups.textContent = button.getAttribute('data-cups');
+                size.textContent = button.getAttribute('data-size');
+            });
+        }
+    }
+
+    for (var sectionIndex = 0; sectionIndex < sections.length; sectionIndex += 1) {
+        initProductSection(sections[sectionIndex]);
+    }
+}());
+</script>
+{% endfooter %}

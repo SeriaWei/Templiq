@@ -1,0 +1,110 @@
+{
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "产品标识"
+	},
+	"heading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主标题"
+	},
+	"lead": {
+		"FieldType": "Paragraph",
+		"DisplayName": "产品介绍"
+	},
+	"primary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文字"
+	},
+	"primary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文字"
+	},
+	"secondary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"hero_image": {
+		"FieldType": "Media",
+		"DisplayName": "主视觉图片"
+	},
+	"hero_image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主视觉图片描述"
+	},
+	"top_badge_value": {
+		"FieldType": "SingleLine",
+		"DisplayName": "上标签数值"
+	},
+	"top_badge_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "上标签说明"
+	},
+	"bottom_badge_value": {
+		"FieldType": "SingleLine",
+		"DisplayName": "下标签数值"
+	},
+	"bottom_badge_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "下标签说明"
+	},
+	"profile_image": {
+		"FieldType": "Media",
+		"DisplayName": "声学图片"
+	},
+	"profile_image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "声学图片描述"
+	},
+	"profile_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "声学标签"
+	},
+	"profile_heading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "声学标题"
+	},
+	"profile_text": {
+		"FieldType": "Paragraph",
+		"DisplayName": "声学说明"
+	},
+	"features": {
+		"FieldType": "Array",
+		"DisplayName": "卖点列表",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	},
+	"specs": {
+		"FieldType": "Array",
+		"DisplayName": "规格参数",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "参数值"
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "参数名称"
+				}
+			}
+		]
+	}
+}

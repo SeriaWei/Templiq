@@ -1,0 +1,28 @@
+{
+	"kicker": "24h cold / 12h hot · 480ml",
+	"title": "澄刻杯",
+	"lead": "把一整天的饮水节奏压进一只安静、结实、好看的杯子里。",
+	"primary_text": "选择配色",
+	"primary_url": "#commerce",
+	"secondary_text": "查看参数",
+	"secondary_url": "#specs",
+	"metrics": [
+		{
+			"value": "316L",
+			"label": "医用级内胆"
+		},
+		{
+			"value": "212g",
+			"label": "裸杯重量"
+		},
+		{
+			"value": "6色",
+			"label": "矿物涂层"
+		}
+	],
+	"image_src": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1100&q=85",
+	"image_alt": "澄刻杯产品静物图",
+	"product_mark": "CLEAR",
+	"top_tag": "单手开合",
+	"bottom_tag": "不挂味杯口"
+}

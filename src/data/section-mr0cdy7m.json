@@ -1,0 +1,20 @@
+{
+	"kicker": "Measured details",
+	"heading": "每个尺寸都为随身而定。",
+	"gauge_value": "86%",
+	"gauge_label": "杯口亲肤抛光覆盖率",
+	"spec_items": [
+		{ "name": "容量", "value": "480ml" },
+		{ "name": "高度", "value": "18.6cm" },
+		{ "name": "直径", "value": "6.8cm" },
+		{ "name": "重量", "value": "212g" },
+		{ "name": "材质", "value": "316L / Tritan / 硅胶" }
+	],
+	"temperature_points": [
+		{ "label": "0h", "height_style": "height: 96%;" },
+		{ "label": "6h", "height_style": "height: 72%;" },
+		{ "label": "12h", "height_style": "height: 48%;" },
+		{ "label": "24h", "height_style": "height: 25%;" }
+	],
+	"caption": "冷饮 24 小时后仍低于 10°C，热饮 12 小时后约 47°C。"
+}

@@ -1,0 +1,58 @@
+{
+	"label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"heading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"summary": {
+		"FieldType": "Paragraph",
+		"DisplayName": "简介"
+	},
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "产品图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片替代文字"
+	},
+	"button_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "按钮文字"
+	},
+	"button_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "按钮链接"
+	},
+	"editions": {
+		"FieldType": "Array",
+		"DisplayName": "版本列表",
+		"Children": [
+			{
+				"name": {
+					"FieldType": "SingleLine",
+					"DisplayName": "版本名称"
+				},
+				"display_name": {
+					"FieldType": "SingleLine",
+					"DisplayName": "显示名称"
+				},
+				"detail": {
+					"FieldType": "SingleLine",
+					"DisplayName": "版本详情"
+				},
+				"price": {
+					"FieldType": "SingleLine",
+					"DisplayName": "价格"
+				},
+				"note": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}

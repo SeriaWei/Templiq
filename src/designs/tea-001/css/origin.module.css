@@ -1,0 +1,135 @@
+.gt-origin {
+  padding: 7rem 0 9rem;
+}
+
+.gt-origin__grid {
+  display: flex;
+  align-items: stretch;
+}
+
+.gt-origin__panel {
+  position: relative;
+  min-height: 58rem;
+  overflow: hidden;
+  border: 1px solid var(--tea-line);
+  background: var(--tea-rice);
+}
+
+.gt-origin__panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(.18) saturate(.85) contrast(1.08);
+}
+
+.gt-origin__panel:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(23,36,22,.82), rgba(23,36,22,.18) 50%, rgba(248,243,223,.7));
+}
+
+.gt-origin__map {
+  position: absolute;
+  z-index: 1;
+  top: 7rem;
+  right: 7rem;
+  width: 23rem;
+  height: 23rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,250,240,.7);
+}
+
+.gt-origin__pin {
+  position: absolute;
+  left: 48%;
+  top: 42%;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--tea-lime);
+  box-shadow: 0 0 0 1.2rem rgba(216,232,110,.24);
+}
+
+.gt-origin__contour {
+  position: absolute;
+  border: 1px solid rgba(255,250,240,.5);
+  border-radius: 48% 52% 44% 56%;
+  transform: rotate(-18deg);
+}
+
+.gt-origin__contour--one { inset: 3rem; }
+.gt-origin__contour--two { inset: 5.6rem 4.2rem 4rem 6rem; }
+.gt-origin__contour--three { inset: 8rem 7rem 7rem 5rem; }
+
+.gt-origin__facts {
+  position: absolute;
+  z-index: 2;
+  left: 3rem;
+  bottom: 3rem;
+  width: calc(100% - 6rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255,250,240,.42);
+}
+
+.gt-origin__facts article {
+  min-height: 17rem;
+  padding: 2rem;
+  background: rgba(255,250,240,.86);
+}
+
+.gt-origin__facts span {
+  display: block;
+  color: var(--tea-leaf);
+  font-family: Georgia, serif;
+  font-size: 3rem;
+}
+
+.gt-origin__facts strong {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.gt-origin__facts p {
+  margin: .9rem 0 0;
+  color: var(--tea-ink-soft);
+}
+
+@media (max-width: 991px) {
+  .gt-origin__grid {
+    display: block;
+  }
+
+  .gt-origin__panel {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .gt-origin {
+    padding: 5rem 0;
+  }
+
+  .gt-origin__panel {
+    min-height: 76rem;
+  }
+
+  .gt-origin__map {
+    top: 3rem;
+    right: 3rem;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .gt-origin__facts {
+    grid-template-columns: 1fr;
+    left: 1.6rem;
+    bottom: 1.6rem;
+    width: calc(100% - 3.2rem);
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"product_mark": { "FieldType": "SingleLine", "DisplayName": "杯身标识" },
+	"kicker": { "FieldType": "SingleLine", "DisplayName": "眉标" },
+	"heading": { "FieldType": "SingleLine", "DisplayName": "标题" },
+	"summary": { "FieldType": "Paragraph", "DisplayName": "说明" },
+	"price": { "FieldType": "SingleLine", "DisplayName": "价格" },
+	"price_label": { "FieldType": "SingleLine", "DisplayName": "价格标签" },
+	"finishes": {
+		"FieldType": "Array",
+		"DisplayName": "杯身配色",
+		"Children": [
+			{
+				"label": { "FieldType": "SingleLine", "DisplayName": "配色名称" },
+				"swatch_style": { "FieldType": "SingleLine", "DisplayName": "色块样式" },
+				"body_color": { "FieldType": "SingleLine", "DisplayName": "杯身颜色" },
+				"shadow_color": { "FieldType": "SingleLine", "DisplayName": "阴影颜色" },
+				"active_class": { "FieldType": "SingleLine", "DisplayName": "默认选中类名" }
+			}
+		]
+	},
+	"button_text": { "FieldType": "SingleLine", "DisplayName": "按钮文字" }
+}

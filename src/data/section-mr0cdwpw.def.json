@@ -1,0 +1,18 @@
+{
+	"image_src": { "FieldType": "Media", "DisplayName": "场景图片" },
+	"image_alt": { "FieldType": "SingleLine", "DisplayName": "图片描述" },
+	"kicker": { "FieldType": "SingleLine", "DisplayName": "眉标" },
+	"heading": { "FieldType": "SingleLine", "DisplayName": "标题" },
+	"summary": { "FieldType": "Paragraph", "DisplayName": "说明" },
+	"timeline_items": {
+		"FieldType": "Array",
+		"DisplayName": "使用场景",
+		"Children": [
+			{
+				"time": { "FieldType": "SingleLine", "DisplayName": "时间" },
+				"title": { "FieldType": "SingleLine", "DisplayName": "标题" },
+				"description": { "FieldType": "Paragraph", "DisplayName": "描述" }
+			}
+		]
+	}
+}

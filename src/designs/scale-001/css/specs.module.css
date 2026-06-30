@@ -1,0 +1,131 @@
+.lw-specs {
+  padding: 9rem 0 7rem;
+  background: #f8f1e3;
+}
+
+.lw-specs__intro {
+  position: sticky;
+  top: 4rem;
+  padding-right: 2rem;
+}
+
+.lw-specs__title,
+.lw-ritual__title,
+.lw-config__title {
+  margin: 0;
+  color: #211b16;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.8rem;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.lw-specs__text,
+.lw-config__text {
+  margin: 2.2rem 0 0;
+  color: #655b50;
+  font-size: 1.7rem;
+  line-height: 1.75;
+}
+
+.lw-specs__grid {
+  margin-top: -1.5rem;
+}
+
+.lw-spec-card {
+  min-height: 28rem;
+  margin: 1.5rem 0;
+  padding: 2.8rem;
+  border: 1px solid rgba(33, 27, 22, 0.16);
+  background: #ede5d6;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.lw-spec-card:hover {
+  transform: translateY(-0.6rem);
+  border-color: rgba(169, 67, 42, 0.45);
+  box-shadow: 0 2.4rem 4rem rgba(58, 43, 33, 0.13);
+}
+
+.lw-spec-card--dark {
+  background: #211b16;
+  color: #f8f1e3;
+}
+
+.lw-spec-card--line {
+  background:
+    linear-gradient(135deg, transparent 0 47%, rgba(169, 67, 42, 0.16) 47.2% 52%, transparent 52.2%),
+    #f8f1e3;
+}
+
+.lw-spec-card__number {
+  display: inline-flex;
+  width: 4.2rem;
+  height: 4.2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor;
+  color: #a9432a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+}
+
+.lw-spec-card--dark .lw-spec-card__number {
+  color: #d96b43;
+}
+
+.lw-spec-card h3 {
+  margin: 5.5rem 0 1.2rem;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.lw-spec-card p {
+  margin: 0;
+  color: #655b50;
+  line-height: 1.75;
+}
+
+.lw-spec-card--dark p {
+  color: #d8ccb9;
+}
+
+@media (max-width: 991px) {
+  .lw-specs {
+    padding: 7rem 0 5rem;
+  }
+
+  .lw-specs__intro {
+    position: static;
+    margin-bottom: 3rem;
+  }
+
+  .lw-specs__title,
+  .lw-ritual__title,
+  .lw-config__title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .lw-specs {
+    padding: 5.6rem 0 4rem;
+  }
+
+  .lw-specs__title,
+  .lw-ritual__title,
+  .lw-config__title {
+    font-size: 3.4rem;
+  }
+
+  .lw-spec-card {
+    min-height: 22rem;
+    padding: 2.2rem;
+  }
+
+  .lw-spec-card h3 {
+    margin-top: 3.4rem;
+  }
+}

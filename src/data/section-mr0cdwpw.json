@@ -1,0 +1,12 @@
+{
+	"image_src": "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=85",
+	"image_alt": "户外场景中的随行水杯",
+	"kicker": "Daily ritual",
+	"heading": "从早八通勤，到夜晚露台。",
+	"summary": "澄刻杯把清晨咖啡、午后温水和夜晚露营串成稳定的饮水节奏。",
+	"timeline_items": [
+		{ "time": "07:30", "title": "冰美式不冒汗", "description": "杯身不凝水，文件、键盘和包内夹层都保持干爽。" },
+		{ "time": "14:00", "title": "温水不烫手", "description": "办公室补水不用频繁起身，480ml 刚好覆盖一段专注时间。" },
+		{ "time": "21:20", "title": "户外也稳", "description": "窄底兼容车载杯架，杯盖挂环可扣在背包外侧。" }
+	]
+}

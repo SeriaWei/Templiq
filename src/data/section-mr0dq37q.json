@@ -1,0 +1,31 @@
+{
+	"section_id": "product",
+	"kicker": "Product selection",
+	"title": "春摘绿茶礼罐",
+	"intro": "铝膜小袋独立充氮，开封后香气损耗更慢。适合作为办公室日饮、轻礼或冷泡茶基底。",
+	"seal_text": "2026<br>SPRING",
+	"pack_name": "青岚前茶",
+	"pack_latin": "QINGLAN GREEN",
+	"buy_text": "加入品鉴清单",
+	"options_label": "选择产品规格",
+	"options": [
+		{
+			"label": "60g 单罐",
+			"size": "60g",
+			"price": "¥128",
+			"cups": "约 13 杯"
+		},
+		{
+			"label": "120g 双罐",
+			"size": "120g",
+			"price": "¥228",
+			"cups": "约 26 杯"
+		},
+		{
+			"label": "180g 礼盒",
+			"size": "180g",
+			"price": "¥318",
+			"cups": "约 39 杯"
+		}
+	]
+}

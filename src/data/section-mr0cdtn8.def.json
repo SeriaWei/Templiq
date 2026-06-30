@@ -1,0 +1,66 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"lead": {
+		"FieldType": "Paragraph",
+		"DisplayName": "导语"
+	},
+	"primary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文字"
+	},
+	"primary_url": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文字"
+	},
+	"secondary_url": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"metrics": {
+		"FieldType": "Array",
+		"DisplayName": "核心卖点",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "数值"
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	},
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "产品图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片描述"
+	},
+	"product_mark": {
+		"FieldType": "SingleLine",
+		"DisplayName": "杯身标识"
+	},
+	"top_tag": {
+		"FieldType": "SingleLine",
+		"DisplayName": "上方标签"
+	},
+	"bottom_tag": {
+		"FieldType": "SingleLine",
+		"DisplayName": "下方标签"
+	}
+}

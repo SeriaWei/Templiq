@@ -1,0 +1,25 @@
+{
+	"kicker": "Choose your finish",
+	"title": "两种质感，同一套萃取核心。",
+	"text": "桌面版适合家庭吧台与小型工作室，Pro 版增加连续供水和商用清洁程序，适合高峰期稳定出杯。",
+	"models": [
+		{
+			"badge": "Home Studio",
+			"name": "Aster Brew One",
+			"description": "哑光陶白机身，1.2 L 水箱，适合日常 1 至 4 杯冲煮。",
+			"price": "¥3,980",
+			"image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85&auto=format&fit=crop",
+			"image_alt": "温热咖啡杯与吧台场景",
+			"is_dark": false
+		},
+		{
+			"badge": "Coffee Bar",
+			"name": "Aster Brew One Pro",
+			"description": "黑钛机身，连续供水模块，支持门店配方锁定与清洁提醒。",
+			"price": "¥6,880",
+			"image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85&auto=format&fit=crop",
+			"image_alt": "咖啡手冲萃取现场",
+			"is_dark": true
+		}
+	]
+}

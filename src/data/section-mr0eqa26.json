@@ -1,0 +1,28 @@
+{
+	"kicker": "Precision brewing system",
+	"title": "让水像有记忆一样流动。",
+	"copy": "Aster Brew One 将手冲动作拆解为温度、流量、停顿与轨迹。你可以保留自己的配方，也可以直接调用为浅烘、厌氧处理和深烘豆设计的参数组。",
+	"feature_cards": [
+		{
+			"number": "01",
+			"title": "双传感温控",
+			"description": "壶内与出水口同步检测，预判注水降温，连续冲煮时也能稳定在目标区间。",
+			"image": "",
+			"image_alt": ""
+		},
+		{
+			"number": "",
+			"title": "",
+			"description": "",
+			"image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=900&q=85&auto=format&fit=crop",
+			"image_alt": "咖啡粉与冲煮器具细节"
+		},
+		{
+			"number": "02",
+			"title": "螺旋注水臂",
+			"description": "92 mm 半径覆盖常见滤杯，0.8 至 5.2 ml/s 的流速控制减少局部过萃。",
+			"image": "",
+			"image_alt": ""
+		}
+	]
+}

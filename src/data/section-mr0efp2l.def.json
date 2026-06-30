@@ -1,0 +1,70 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"heading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"summary": {
+		"FieldType": "Paragraph",
+		"DisplayName": "简介"
+	},
+	"primary_link_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文字"
+	},
+	"primary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_link_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文字"
+	},
+	"secondary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"dial_value": {
+		"FieldType": "SingleLine",
+		"DisplayName": "圆形读数"
+	},
+	"dial_unit": {
+		"FieldType": "SingleLine",
+		"DisplayName": "圆形读数单位"
+	},
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "产品图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片替代文字"
+	},
+	"plate_brand": {
+		"FieldType": "SingleLine",
+		"DisplayName": "面板品牌"
+	},
+	"plate_reading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "面板读数"
+	},
+	"quick_stats": {
+		"FieldType": "Array",
+		"DisplayName": "快捷数据",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "数值"
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}

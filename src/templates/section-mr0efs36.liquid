@@ -1,0 +1,187 @@
+<!-- 冲煮流程 -->
+{% header %}
+<style>
+.section-mr0efs36 {
+    color: #f8f1e3;
+    background: #211b16;
+    font-family: Candara, Corbel, "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 16px;
+}
+
+.section-mr0efs36 .lw-ritual {
+    padding: 85px 0;
+    color: #f8f1e3;
+    background:
+        linear-gradient(90deg, rgba(248, 241, 227, 0.06) 1px, transparent 1px),
+        #211b16;
+    background-size: 58px 58px;
+}
+
+.section-mr0efs36 .lw-ritual__row {
+    display: flex;
+    align-items: stretch;
+}
+
+.section-mr0efs36 .lw-ritual__imagewrap {
+    position: relative;
+    min-height: 580px;
+    overflow: hidden;
+    border: 1px solid rgba(248, 241, 227, 0.18);
+}
+
+.section-mr0efs36 .lw-ritual__image {
+    width: 100%;
+    height: 580px;
+    object-fit: cover;
+    filter: grayscale(0.18) contrast(1.08) brightness(0.84);
+    transform: scale(1.02);
+}
+
+.section-mr0efs36 .lw-ritual__ticker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 15px 18px;
+    color: #211b16;
+    background: #d96b43;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+}
+
+.section-mr0efs36 .lw-ritual__panel {
+    height: 100%;
+    padding: 45px 0 45px 46px;
+}
+
+.section-mr0efs36 .lw-ritual__label {
+    margin: 0 0 18px;
+    color: #a9432a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-mr0efs36 .lw-ritual__title {
+    margin: 0;
+    color: #f8f1e3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.section-mr0efs36 .lw-ritual__steps {
+    margin-top: 50px;
+    border-top: 1px solid rgba(248, 241, 227, 0.16);
+}
+
+.section-mr0efs36 .lw-ritual__step {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(248, 241, 227, 0.16);
+}
+
+.section-mr0efs36 .lw-ritual__step span {
+    color: #d96b43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.section-mr0efs36 .lw-ritual__step p {
+    margin: 0;
+    color: #d8ccb9;
+    line-height: 1.72;
+}
+
+@media (max-width: 991px) {
+    .section-mr0efs36 .lw-ritual {
+        padding: 65px 0;
+    }
+
+    .section-mr0efs36 .lw-ritual__row {
+        display: block;
+    }
+
+    .section-mr0efs36 .lw-ritual__panel {
+        padding: 40px 0 0;
+    }
+
+    .section-mr0efs36 .lw-ritual__title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-mr0efs36 .lw-ritual {
+        padding: 50px 0;
+    }
+
+    .section-mr0efs36 .lw-ritual__imagewrap,
+    .section-mr0efs36 .lw-ritual__image {
+        min-height: 380px;
+        height: 380px;
+    }
+
+    .section-mr0efs36 .lw-ritual__ticker {
+        overflow: hidden;
+        font-size: 10px;
+    }
+
+    .section-mr0efs36 .lw-ritual__title {
+        font-size: 34px;
+    }
+
+    .section-mr0efs36 .lw-ritual__step {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0efs36">
+    <section class="lw-ritual" aria-labelledby="section-mr0efs36-title">
+        <div class="container">
+            <div class="row lw-ritual__row">
+                <div class="col-md-7">
+                    <div class="lw-ritual__imagewrap">
+                        {% if this.Model.image_src %}<img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}" class="lw-ritual__image">{% endif %}
+                        {% if this.Model.ticker_items.size > 0 %}
+                        <div class="lw-ritual__ticker">
+                            {% for item in this.Model.ticker_items %}
+                            {% if item.text %}<span property="true" data-property="ticker_items[{{forloop.index0}}].text" method="text">{{item.text}}</span>{% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="lw-ritual__panel">
+                        {% if this.Model.label %}<p class="lw-ritual__label" property="true" data-property="label" method="text">{{this.Model.label}}</p>{% endif %}
+                        {% if this.Model.heading %}<h2 id="section-mr0efs36-title" class="lw-ritual__title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                        {% if this.Model.steps.size > 0 %}
+                        <div class="lw-ritual__steps">
+                            {% for step in this.Model.steps %}
+                            <div class="lw-ritual__step">
+                                {% if step.time %}<span property="true" data-property="steps[{{forloop.index0}}].time" method="text">{{step.time}}</span>{% endif %}
+                                {% if step.description %}<p property="true" data-property="steps[{{forloop.index0}}].description" method="text">{{step.description}}</p>{% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,55 @@
+{
+	"eyebrow": "AURALITH H7 / ACTIVE SILENCE HEADPHONES",
+	"heading": "把城市音量，拧成一条细线。",
+	"lead": "H7 为通勤、开放办公室和夜间创作设计。双层主动降噪、48mm 钛膜单元和柔压耳罩，让音乐保留边缘，让噪声退到背景。",
+	"primary_text": "预约试听",
+	"primary_link": "mailto:sales@example.com?subject=Auralith%20H7%20Inquiry",
+	"secondary_text": "查看参数",
+	"secondary_link": "#product-specs",
+	"hero_image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=980&q=84",
+	"hero_image_alt": "黑色头戴式耳机特写",
+	"top_badge_value": "-42dB",
+	"top_badge_label": "Hybrid ANC",
+	"bottom_badge_value": "68h",
+	"bottom_badge_label": "Battery",
+	"profile_image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=84",
+	"profile_image_alt": "银色耳机与音频设备",
+	"profile_label": "ACOUSTIC PROFILE",
+	"profile_heading": "低频有轮廓，人声不被推到玻璃后面。",
+	"profile_text": "钛膜驱动单元搭配独立声腔缓冲层，强化瞬态响应，同时压住封闭式耳机常见的箱体感。",
+	"features": [
+		{
+			"number": "01",
+			"title": "三段环境穿透",
+			"description": "语音、交通、全环境三种模式，旋钮切换，不需要打开手机。"
+		},
+		{
+			"number": "02",
+			"title": "亲肤蛋白耳罩",
+			"description": "慢回弹内衬分散夹力，连续佩戴两小时仍保持稳定密封。"
+		},
+		{
+			"number": "03",
+			"title": "双设备低延迟",
+			"description": "笔记本会议与手机音乐自动接管，游戏模式延迟低至 46ms。"
+		}
+	],
+	"specs": [
+		{
+			"value": "48mm",
+			"label": "钛膜动圈单元"
+		},
+		{
+			"value": "-42dB",
+			"label": "混合主动降噪"
+		},
+		{
+			"value": "68h",
+			"label": "最长播放续航"
+		},
+		{
+			"value": "238g",
+			"label": "轻量化机身"
+		}
+	]
+}

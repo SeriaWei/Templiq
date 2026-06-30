@@ -21,7 +21,7 @@
   {% if isPreview %}
   <div class="btn-group" style="position: fixed;right: 0;top: 0;z-index: 1000;">
     <a href="/" class="btn btn-primary">返回列表</a>
-    <button id="savePreview" class="btn btn-primary">保存缩略图</button>
+    <button id="savePreview" class="btn btn-primary">生成缩略图</button>
     <button id="packTemplate" class="btn btn-primary">打包</button>
     <button id="uploadTemplate" class="btn btn-primary">上传</button>
   </div>
@@ -72,7 +72,7 @@
         alert('截图失败：' + error.message);
       } finally {
         btn.disabled = false;
-        btn.textContent = '保存缩略图';
+        btn.textContent = '生成缩略图';
       }
     });
     document.getElementById('packTemplate').addEventListener('click', async function () {

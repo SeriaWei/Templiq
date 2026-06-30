@@ -1,0 +1,54 @@
+{
+	"background_image": {
+		"FieldType": "Media",
+		"DisplayName": "背景图片"
+	},
+	"background_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "背景图片描述"
+	},
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "产品名称"
+	},
+	"title": {
+		"FieldType": "Paragraph",
+		"DisplayName": "主标题"
+	},
+	"lead": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明文字"
+	},
+	"primary_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文字"
+	},
+	"primary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文字"
+	},
+	"secondary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"metrics": {
+		"FieldType": "Array",
+		"DisplayName": "关键参数",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "数值"
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "名称"
+				}
+			}
+		]
+	}
+}

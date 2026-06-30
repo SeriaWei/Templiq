@@ -44,7 +44,7 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - Every design has its own folder. Should be saved in `src/designs/<design-name>`. design-name is <category>-<index>, for example: "retro-001".
 - Every design MUST be based on bootstrap3, Use the local bootstrap files in the `src/public` folder and do not use other third-party libraries, fonts etc.
 - Page designs by sections. Each section should be a separate component. For example, a page with a header, hero, features, and footer would have components(if js required): header.component.js, hero.component.js, features.component.js, footer.component.js. This promotes modularity and reusability.
-- Use CSS modules for styling. Each component should have its own CSS module file (e.g., header.module.css) that defines styles scoped to that component. This prevents style conflicts and promotes maintainability.
+- Use CSS modules for styling. Each component should have its own CSS module file (e.g., header.module.css) that defines styles scoped to that component. Avoid global/shared styles unless absolutely necessary.
 - Use unsplash for images. Avoid generic stock photos; choose images that add character and context to the design.
 
 # Notes

@@ -1,0 +1,25 @@
+{
+	"background_image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1800&q=88&auto=format&fit=crop",
+	"background_alt": "咖啡师正在使用手冲器具萃取咖啡",
+	"eyebrow": "Aster Brew One",
+	"title": "把手冲的温度、流速和时间交给一台安静的机器。",
+	"lead": "专为精品咖啡吧台与家庭玩家设计的精准手冲咖啡机，内置螺旋注水路径、0.5°C 温控和 6 段萃取曲线，让每一次冲煮都有可复现的层次。",
+	"primary_label": "查看型号",
+	"primary_link": "#models",
+	"secondary_label": "了解萃取系统",
+	"secondary_link": "#precision",
+	"metrics": [
+		{
+			"value": "0.5°C",
+			"label": "温控精度"
+		},
+		{
+			"value": "6",
+			"label": "预设曲线"
+		},
+		{
+			"value": "92 mm",
+			"label": "环形注水半径"
+		}
+	]
+}

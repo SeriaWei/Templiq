@@ -1,0 +1,36 @@
+{
+	"section_id": "tasting",
+	"kicker": "Tasting notebook",
+	"title": "第一口像山路上的冷雾，第二口才露出甜。",
+	"image": "https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=1400&q=85",
+	"image_alt": "茶具与热茶静物",
+	"flavor_label": "风味强度",
+	"bars": [
+		{
+			"label": "鲜爽",
+			"percent": "92%"
+		},
+		{
+			"label": "栗香",
+			"percent": "76%"
+		},
+		{
+			"label": "花香",
+			"percent": "58%"
+		},
+		{
+			"label": "苦涩",
+			"percent": "18%"
+		}
+	],
+	"recipes": [
+		{
+			"method": "玻璃杯泡法",
+			"detail": "4.7g 茶 / 180ml 水 / 82°C / 75 秒"
+		},
+		{
+			"method": "盖碗泡法",
+			"detail": "5g 茶 / 110ml 水 / 85°C / 快进快出"
+		}
+	]
+}

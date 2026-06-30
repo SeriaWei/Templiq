@@ -1,0 +1,38 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"image": {
+		"FieldType": "Media",
+		"DisplayName": "产地图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片描述"
+	},
+	"facts": {
+		"FieldType": "Array",
+		"DisplayName": "产地信息",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "序号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}
