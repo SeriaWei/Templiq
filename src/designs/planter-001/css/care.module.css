@@ -1,0 +1,125 @@
+.vd-care {
+  position: relative;
+  overflow: hidden;
+  padding: 108px 0;
+  background: #f6f0df;
+  color: #18221d;
+}
+
+.vd-care::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(211, 238, 109, 0.38), rgba(36, 85, 75, 0.18));
+}
+
+.vd-care__layout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.vd-care__photo {
+  position: relative;
+  margin: 0;
+}
+
+.vd-care__photo::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: -28px;
+  bottom: -28px;
+  height: 56px;
+  border: 2px solid #24554b;
+  border-top: 0;
+}
+
+.vd-care__photo img {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  box-shadow: 0 28px 70px rgba(24, 34, 29, 0.18);
+}
+
+.vd-care__panel {
+  margin-left: 30px;
+  padding: 48px;
+  background: #18221d;
+  color: #f6f0df;
+}
+
+.vd-care__kicker {
+  color: #d3ee6d;
+}
+
+.vd-care__copy {
+  max-width: 600px;
+  margin: 24px 0 0;
+  color: rgba(246, 240, 223, 0.76);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.vd-care__specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.vd-care__specs div {
+  min-height: 112px;
+  padding: 18px;
+  border: 1px solid rgba(246, 240, 223, 0.22);
+}
+
+.vd-care__specs strong {
+  display: block;
+  color: #d3ee6d;
+  font-family: Cambria, Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.vd-care__specs span {
+  display: block;
+  margin-top: 12px;
+  color: rgba(246, 240, 223, 0.66);
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .vd-care__layout {
+    display: block;
+  }
+
+  .vd-care__panel {
+    margin: 44px 0 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .vd-care {
+    padding: 70px 0;
+  }
+
+  .vd-care__photo img {
+    height: 360px;
+  }
+
+  .vd-care__panel {
+    padding: 30px;
+  }
+
+  .vd-care__specs {
+    grid-template-columns: 1fr;
+  }
+}

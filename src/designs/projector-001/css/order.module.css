@@ -1,0 +1,66 @@
+.la-order {
+  padding: 92px 0 104px;
+  background:
+    linear-gradient(90deg, rgba(255, 110, 58, 0.12) 0 1px, transparent 1px 42px),
+    #1f4f4a;
+  color: #fff3dc;
+}
+
+.la-order__shell {
+  padding: 52px;
+  border: 1px solid rgba(255, 243, 220, 0.34);
+  background: rgba(23, 19, 15, 0.24);
+}
+
+.la-order__kicker {
+  color: #ffba5d;
+}
+
+.la-order__copy {
+  max-width: 680px;
+  margin: 24px 0 0;
+  color: rgba(255, 243, 220, 0.78);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.la-order__price {
+  min-height: 260px;
+  padding: 30px;
+  border: 1px solid rgba(255, 243, 220, 0.36);
+  background: #fff3dc;
+  color: #17130f;
+}
+
+.la-order__price span {
+  display: block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.la-order__price strong {
+  display: block;
+  margin: 20px 0 28px;
+  font-family: Didot, "Bodoni 72", Georgia, serif;
+  font-size: 58px;
+  line-height: 1;
+}
+
+.la-order__price .la-button {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .la-order {
+    padding: 64px 0;
+  }
+
+  .la-order__shell {
+    padding: 28px;
+  }
+
+  .la-order__price {
+    margin-top: 30px;
+  }
+}

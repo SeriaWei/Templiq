@@ -1,0 +1,38 @@
+{
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"cards": {
+		"FieldType": "Array",
+		"DisplayName": "配方卡片",
+		"Children": [
+			{
+				"origin": {
+					"FieldType": "SingleLine",
+					"DisplayName": "豆源"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"copy": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				},
+				"is_accent": {
+					"FieldType": "Checkbox",
+					"DisplayName": "突出显示"
+				}
+			}
+		]
+	}
+}

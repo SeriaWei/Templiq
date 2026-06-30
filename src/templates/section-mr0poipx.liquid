@@ -1,0 +1,124 @@
+<!-- 种植胶囊 -->
+{% header %}
+<style>
+.section-mr0poipx {
+    position: relative;
+    padding: 92px 0 98px;
+    background: #18221d;
+    color: #f6f0df;
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0poipx .vd-capsule__intro {
+    margin-bottom: 36px;
+}
+.section-mr0poipx .vd-capsule__kicker {
+    margin: 0 0 18px;
+    color: #d3ee6d;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0poipx .vd-capsule__title {
+    margin: 0;
+    font-family: Cambria, Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 0;
+}
+.section-mr0poipx .vd-capsule__text {
+    margin: 8px 0 0;
+    color: rgba(246, 240, 223, 0.76);
+    font-size: 18px;
+    line-height: 1.8;
+}
+.section-mr0poipx .vd-capsule__grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.section-mr0poipx .vd-capsule__card {
+    min-height: 286px;
+    margin-bottom: 24px;
+    padding: 28px;
+    border: 1px solid rgba(246, 240, 223, 0.22);
+    background: linear-gradient(160deg, rgba(211, 238, 109, 0.11), rgba(246, 240, 223, 0.02));
+}
+.section-mr0poipx .vd-capsule__card span {
+    display: block;
+    margin-bottom: 58px;
+    color: #d3ee6d;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+}
+.section-mr0poipx .vd-capsule__card h3 {
+    margin: 0 0 14px;
+    font-size: 23px;
+    font-weight: 600;
+}
+.section-mr0poipx .vd-capsule__card p {
+    margin: 0;
+    color: rgba(246, 240, 223, 0.72);
+    font-size: 16px;
+    line-height: 1.7;
+}
+.section-mr0poipx .vd-capsule__card--image {
+    padding: 0;
+    overflow: hidden;
+    border-color: transparent;
+}
+.section-mr0poipx .vd-capsule__card--image img {
+    width: 100%;
+    height: 286px;
+    object-fit: cover;
+    filter: saturate(0.95) contrast(1.08);
+}
+@media (max-width: 767px) {
+    .section-mr0poipx {
+        padding: 64px 0;
+    }
+    .section-mr0poipx .vd-capsule__title {
+        font-size: 38px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0poipx">
+    <div class="container">
+        <div class="row vd-capsule__intro">
+            <div class="col-md-5 col-sm-6">
+                {% if this.Model.eyebrow %}
+                <p class="vd-capsule__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>
+                {% endif %}
+                {% if this.Model.title %}
+                <h2 class="vd-capsule__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+                {% endif %}
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-6">
+                {% if this.Model.text %}
+                <p class="vd-capsule__text" property="true" data-property="text" method="text">{{this.Model.text}}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% if this.Model.cards.size > 0 %}
+        <div class="row vd-capsule__grid">
+            {% for item in this.Model.cards %}
+            <div class="col-md-3 col-sm-6">
+                {% if item.image != blank %}
+                <article class="vd-capsule__card vd-capsule__card--image">
+                    <img property="true" data-property="cards[{{forloop.index0}}].image" method="attr" para="src" src="{% url item.image %}" alt="{{item.title}}">
+                </article>
+                {% else %}
+                <article class="vd-capsule__card">
+                    {% if item.number %}<span property="true" data-property="cards[{{forloop.index0}}].number" method="text">{{item.number}}</span>{% endif %}
+                    {% if item.title %}<h3 property="true" data-property="cards[{{forloop.index0}}].title" method="text">{{item.title}}</h3>{% endif %}
+                    {% if item.copy %}<p property="true" data-property="cards[{{forloop.index0}}].copy" method="text">{{item.copy}}</p>{% endif %}
+                </article>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

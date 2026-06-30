@@ -1,0 +1,25 @@
+{
+	"image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=85&auto=format&fit=crop",
+	"image_alt": "星空下的户外夜间观影氛围",
+	"eyebrow": "Optical engine",
+	"title": "小机身里，塞进一套安静的光学工厂。",
+	"copy": "三色激光模组提供 108% DCI-P3 色域，ToF 传感器每秒扫描 30 次墙面距离，配合微型液冷均热板把噪声控制在 28 dB。",
+	"spec_items": [
+		{
+			"value": "900",
+			"label": "ANSI lumens"
+		},
+		{
+			"value": "0.23",
+			"label": "throw ratio"
+		},
+		{
+			"value": "12ms",
+			"label": "game latency"
+		},
+		{
+			"value": "780g",
+			"label": "travel weight"
+		}
+	]
+}

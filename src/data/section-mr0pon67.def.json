@@ -1,0 +1,30 @@
+{
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"price_label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "价格标签"
+	},
+	"price": {
+		"FieldType": "SingleLine",
+		"DisplayName": "价格"
+	},
+	"button_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "按钮文本"
+	},
+	"button_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "按钮链接"
+	}
+}

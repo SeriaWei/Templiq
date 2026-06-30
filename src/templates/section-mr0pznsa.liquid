@@ -1,0 +1,119 @@
+<!-- 首发预约 -->
+{% header %}
+<style>
+.section-mr0pznsa {
+    padding: 92px 0;
+    background: #24433d;
+    color: #fff7e8;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pznsa .bd-order__shell {
+    padding: 44px;
+    border: 1px solid rgba(255, 247, 232, 0.24);
+    background: linear-gradient(90deg, rgba(255, 247, 232, 0.08) 1px, transparent 1px) 0 0 / 32px 32px, rgba(34, 23, 17, 0.22);
+}
+.section-mr0pznsa .bd-order__kicker {
+    margin: 0 0 18px;
+    color: #d59b63;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pznsa .bd-order__title {
+    margin: 0;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: 0;
+}
+.section-mr0pznsa .bd-order__copy {
+    max-width: 650px;
+    margin: 22px 0 0;
+    color: rgba(255, 247, 232, 0.76);
+    font-size: 17px;
+    line-height: 1.8;
+}
+.section-mr0pznsa .bd-order__price {
+    height: 100%;
+    min-height: 260px;
+    padding: 30px;
+    background: #fff7e8;
+    color: #221711;
+    text-align: center;
+}
+.section-mr0pznsa .bd-order__price span {
+    display: block;
+    color: #763421;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pznsa .bd-order__price strong {
+    display: block;
+    margin: 32px 0;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 54px;
+    line-height: 1;
+}
+.section-mr0pznsa .bd-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid #221711;
+    border-radius: 0;
+    background: #221711;
+    color: #fff7e8;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 220ms ease;
+}
+.section-mr0pznsa .bd-button:hover,
+.section-mr0pznsa .bd-button:focus {
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: #fff7e8;
+}
+@media (max-width: 767px) {
+    .section-mr0pznsa {
+        padding: 64px 0;
+    }
+    .section-mr0pznsa .bd-order__shell {
+        padding: 24px;
+    }
+    .section-mr0pznsa .bd-order__title {
+        font-size: 38px;
+    }
+    .section-mr0pznsa .bd-order__price {
+        margin-top: 26px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pznsa" id="order">
+    <div class="container">
+        <div class="bd-order__shell">
+            <div class="row">
+                <div class="col-md-7 col-sm-7">
+                    {% if this.Model.eyebrow %}<p class="bd-order__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 class="bd-order__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.copy %}<p class="bd-order__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>{% endif %}
+                </div>
+                <div class="col-md-5 col-sm-5">
+                    <div class="bd-order__price">
+                        {% if this.Model.price_label %}<span property="true" data-property="price_label" method="text">{{this.Model.price_label}}</span>{% endif %}
+                        {% if this.Model.price %}<strong property="true" data-property="price" method="text">{{this.Model.price}}</strong>{% endif %}
+                        {% if this.Model.button_text %}<a class="bd-button" property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}">{{this.Model.button_text}}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

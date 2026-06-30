@@ -1,0 +1,183 @@
+<!-- 鞋底结构 -->
+{% header %}
+<style>
+.section-mr0ohygh {
+    overflow: hidden;
+    padding: 94px 0 104px;
+    background: #141612;
+    color: #f7f0df;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.section-mr0ohygh .rv-traction__intro {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 46px;
+}
+
+.section-mr0ohygh .rv-traction__kicker {
+    margin: 0 0 14px;
+    color: #d84c2a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-mr0ohygh .rv-traction__title {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: 0;
+}
+
+.section-mr0ohygh .rv-traction__text {
+    margin: 0;
+    color: rgba(247, 240, 223, 0.74);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.section-mr0ohygh .rv-traction__grid {
+    display: flex;
+}
+
+.section-mr0ohygh .rv-traction__card {
+    min-height: 390px;
+    padding: 34px;
+    border: 1px solid rgba(247, 240, 223, 0.22);
+    background:
+        linear-gradient(145deg, rgba(247, 240, 223, 0.07), rgba(247, 240, 223, 0.02)),
+        repeating-linear-gradient(45deg, rgba(247, 240, 223, 0.05) 0 1px, transparent 1px 16px);
+}
+
+.section-mr0ohygh .rv-traction__number {
+    display: inline-block;
+    margin-bottom: 96px;
+    color: #d84c2a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+}
+
+.section-mr0ohygh .rv-traction__card h3 {
+    margin: 0 0 15px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.section-mr0ohygh .rv-traction__card p {
+    margin: 0;
+    color: rgba(247, 240, 223, 0.72);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.section-mr0ohygh .rv-traction__card--image {
+    padding: 0;
+    overflow: hidden;
+    background: #293525;
+}
+
+.section-mr0ohygh .rv-traction__card--image img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    filter: grayscale(0.15) contrast(1.12);
+    transition: transform 620ms ease;
+}
+
+.section-mr0ohygh .rv-traction__card--image:hover img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 991px) {
+    .section-mr0ohygh {
+        padding: 72px 0;
+    }
+
+    .section-mr0ohygh .rv-traction__intro,
+    .section-mr0ohygh .rv-traction__grid {
+        display: block;
+    }
+
+    .section-mr0ohygh .rv-traction__title {
+        margin-bottom: 24px;
+        font-size: 46px;
+    }
+
+    .section-mr0ohygh .rv-traction__card {
+        min-height: 0;
+        margin-bottom: 18px;
+    }
+
+    .section-mr0ohygh .rv-traction__number {
+        margin-bottom: 42px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-mr0ohygh .rv-traction__title {
+        font-size: 38px;
+    }
+
+    .section-mr0ohygh .rv-traction__text {
+        font-size: 16px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0ohygh" id="traction">
+    <div class="container">
+        <div class="row rv-traction__intro">
+            <div class="col-md-5 col-sm-6">
+                {% if this.Model.kicker %}
+                <p property="true" data-property="kicker" method="text" class="rv-traction__kicker">{{this.Model.kicker}}</p>
+                {% endif %}
+                {% if this.Model.title %}
+                <h2 property="true" data-property="title" method="text" class="rv-traction__title">{{this.Model.title}}</h2>
+                {% endif %}
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-6">
+                {% if this.Model.text %}
+                <p property="true" data-property="text" method="text" class="rv-traction__text">{{this.Model.text}}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row rv-traction__grid">
+            {% if this.Model.features.size > 0 %}
+            <div class="col-md-4 col-sm-4">
+                {% assign first_feature = this.Model.features[0] %}
+                <article class="rv-traction__card">
+                    {% if first_feature.number %}<span property="true" data-property="features[0].number" method="text" class="rv-traction__number">{{first_feature.number}}</span>{% endif %}
+                    {% if first_feature.title %}<h3 property="true" data-property="features[0].title" method="text">{{first_feature.title}}</h3>{% endif %}
+                    {% if first_feature.description %}<p property="true" data-property="features[0].description" method="text">{{first_feature.description}}</p>{% endif %}
+                </article>
+            </div>
+            {% endif %}
+            <div class="col-md-4 col-sm-4">
+                {% if this.Model.image_src %}
+                <article class="rv-traction__card rv-traction__card--image">
+                    <img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}">
+                </article>
+                {% endif %}
+            </div>
+            {% if this.Model.features.size > 1 %}
+            <div class="col-md-4 col-sm-4">
+                {% assign second_feature = this.Model.features[1] %}
+                <article class="rv-traction__card">
+                    {% if second_feature.number %}<span property="true" data-property="features[1].number" method="text" class="rv-traction__number">{{second_feature.number}}</span>{% endif %}
+                    {% if second_feature.title %}<h3 property="true" data-property="features[1].title" method="text">{{second_feature.title}}</h3>{% endif %}
+                    {% if second_feature.description %}<p property="true" data-property="features[1].description" method="text">{{second_feature.description}}</p>{% endif %}
+                </article>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

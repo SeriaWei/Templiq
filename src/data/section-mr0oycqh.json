@@ -1,0 +1,29 @@
+{
+	"anchor_id": "burr",
+	"kicker": "38 mm conical burr",
+	"title": "刀盘慢一点，风味更清楚。",
+	"text": "Volt Mill 将转速控制在 420 rpm，降低研磨热量和细粉堆积。刀盘经氮化处理后硬度提升，浅烘豆不易卡顿，深烘豆也能保持干净的甜感。",
+	"cards": [
+		{
+			"number": "01",
+			"title": "低速扭矩",
+			"text": "18 N·cm 峰值扭矩自动补偿硬豆阻力，减少停机和二次研磨。",
+			"image_src": "",
+			"image_alt": ""
+		},
+		{
+			"number": "",
+			"title": "",
+			"text": "",
+			"image_src": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1200&q=85&auto=format&fit=crop",
+			"image_alt": "咖啡豆近景"
+		},
+		{
+			"number": "02",
+			"title": "可拆清洁",
+			"text": "刀仓 30 秒快拆，随附磁吸毛刷，外出使用后也能快速清粉。",
+			"image_src": "",
+			"image_alt": ""
+		}
+	]
+}

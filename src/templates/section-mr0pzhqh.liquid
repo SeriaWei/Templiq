@@ -1,0 +1,117 @@
+<!-- 咖啡制作流程 -->
+{% header %}
+<style>
+.section-mr0pzhqh {
+    padding: 92px 0 98px;
+    background: #221711;
+    color: #fff7e8;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pzhqh .bd-workflow__intro {
+    margin-bottom: 36px;
+}
+.section-mr0pzhqh .bd-workflow__kicker {
+    margin: 0 0 18px;
+    color: #d59b63;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pzhqh .bd-workflow__title {
+    margin: 0;
+    font-family: Cambria, Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 0;
+}
+.section-mr0pzhqh .bd-workflow__copy {
+    margin: 8px 0 0;
+    color: rgba(255, 247, 232, 0.76);
+    font-size: 18px;
+    line-height: 1.8;
+}
+.section-mr0pzhqh .bd-workflow__grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.section-mr0pzhqh .bd-workflow__card {
+    min-height: 286px;
+    margin-bottom: 24px;
+    padding: 28px;
+    border: 1px solid rgba(255, 247, 232, 0.22);
+    background: linear-gradient(160deg, rgba(213, 155, 99, 0.14), rgba(255, 247, 232, 0.03));
+}
+.section-mr0pzhqh .bd-workflow__card span {
+    display: block;
+    margin-bottom: 58px;
+    color: #d59b63;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+}
+.section-mr0pzhqh .bd-workflow__card h3 {
+    margin: 0 0 14px;
+    font-size: 23px;
+    font-weight: 600;
+}
+.section-mr0pzhqh .bd-workflow__card p {
+    margin: 0;
+    color: rgba(255, 247, 232, 0.72);
+    font-size: 16px;
+    line-height: 1.7;
+}
+.section-mr0pzhqh .bd-workflow__card--image {
+    padding: 0;
+    overflow: hidden;
+    border-color: transparent;
+}
+.section-mr0pzhqh .bd-workflow__card--image img {
+    width: 100%;
+    height: 286px;
+    object-fit: cover;
+    filter: saturate(0.94) contrast(1.08);
+}
+@media (max-width: 767px) {
+    .section-mr0pzhqh {
+        padding: 64px 0;
+    }
+    .section-mr0pzhqh .bd-workflow__title {
+        font-size: 38px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pzhqh">
+    <div class="container">
+        <div class="row bd-workflow__intro">
+            <div class="col-md-5 col-sm-6">
+                {% if this.Model.eyebrow %}<p class="bd-workflow__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                {% if this.Model.title %}<h2 class="bd-workflow__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-6">
+                {% if this.Model.copy %}<p class="bd-workflow__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>{% endif %}
+            </div>
+        </div>
+        {% if this.Model.cards.size > 0 %}
+        <div class="row bd-workflow__grid">
+            {% for item in this.Model.cards %}
+            <div class="col-md-3 col-sm-6">
+                {% if item.image != blank %}
+                <article class="bd-workflow__card bd-workflow__card--image">
+                    <img property="true" data-property="cards[{{forloop.index0}}].image" method="attr" para="src" src="{% url item.image %}" alt="{{item.title}}">
+                </article>
+                {% else %}
+                <article class="bd-workflow__card">
+                    {% if item.number %}<span property="true" data-property="cards[{{forloop.index0}}].number" method="text">{{item.number}}</span>{% endif %}
+                    {% if item.title %}<h3 property="true" data-property="cards[{{forloop.index0}}].title" method="text">{{item.title}}</h3>{% endif %}
+                    {% if item.copy %}<p property="true" data-property="cards[{{forloop.index0}}].copy" method="text">{{item.copy}}</p>{% endif %}
+                </article>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{
+	"eyebrow": "Seed capsule library",
+	"title": "每颗胶囊，都预设了自己的生长配方。",
+	"text": "可降解种植胶囊内置基质、缓释营养和 RFID 配方卡。插入舱位后，灯谱、泵水周期与收割提醒会自动同步到控制器。",
+	"cards": [
+		{
+			"number": "01",
+			"title": "香草厨房",
+			"copy": "罗勒、欧芹、百里香和薄荷，适合日常沙拉、意面和气泡水。",
+			"image": ""
+		},
+		{
+			"number": "",
+			"title": "新鲜香草植物特写",
+			"copy": "",
+			"image": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=900&q=85&auto=format&fit=crop"
+		},
+		{
+			"number": "02",
+			"title": "嫩叶沙拉",
+			"copy": "芝麻菜、红叶生菜和羽衣甘蓝，28 天进入可连续采摘期。",
+			"image": ""
+		},
+		{
+			"number": "03",
+			"title": "低矮果菜",
+			"copy": "樱桃番茄和小辣椒配合矮化光谱，适合窗边台面长期养护。",
+			"image": ""
+		}
+	]
+}

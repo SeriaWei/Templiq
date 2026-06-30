@@ -1,0 +1,31 @@
+{
+	"eyebrow": "Four-step rhythm",
+	"title": "早高峰也能稳定复刻一杯好喝的浓缩。",
+	"copy": "从豆仓到奶杯，每个模块都会记录温度、重量和时间。常用配方可一键召回，新豆子也能用引导曲线快速找到甜感区间。",
+	"cards": [
+		{
+			"number": "01",
+			"title": "称豆",
+			"copy": "隐藏式 0.1 g 秤盘自动扣除粉碗重量，并同步目标粉量。",
+			"image": ""
+		},
+		{
+			"number": "02",
+			"title": "研磨",
+			"copy": "64 mm 平刀盘支持 90 档微调，换豆后可保存粒径偏移。",
+			"image": ""
+		},
+		{
+			"number": "",
+			"title": "咖啡师制作浓缩咖啡",
+			"copy": "",
+			"image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85&auto=format&fit=crop"
+		},
+		{
+			"number": "03",
+			"title": "萃取",
+			"copy": "压力曲线、预浸泡和出液重量同时显示，减少反复试错。",
+			"image": ""
+		}
+	]
+}

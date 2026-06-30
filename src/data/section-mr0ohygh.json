@@ -1,0 +1,19 @@
+{
+	"kicker": "Outsole geometry",
+	"title": "鞋底不是花纹，是路线选择。",
+	"text": "前掌采用 4.5 mm 倒向推进齿，后跟使用横向制动齿，中足开槽保留岩面触感。鞋底橡胶根据受力区域调整硬度，减少长距离下坡后的脚踝摆动。",
+	"image_src": "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=85&auto=format&fit=crop",
+	"image_alt": "户外跑鞋鞋底与岩面细节",
+	"features": [
+		{
+			"number": "01",
+			"title": "推进齿区",
+			"description": "前掌内外侧齿纹错位排列，爬升时形成连续抓地边缘，减少碎石路面打滑。"
+		},
+		{
+			"number": "02",
+			"title": "横切稳定片",
+			"description": "嵌入式碳纤维片从足弓延展到外侧，降低横坡落脚时的扭转损耗。"
+		}
+	]
+}

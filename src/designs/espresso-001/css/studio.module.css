@@ -1,0 +1,76 @@
+.bd-studio {
+  overflow: hidden;
+  padding: 102px 0;
+  background: #d7b577;
+  color: #221711;
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+
+.bd-studio__layout {
+  display: flex;
+  align-items: center;
+}
+
+.bd-studio__title {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", Georgia, serif;
+  font-size: 58px;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.bd-studio__copy {
+  margin: 26px 0 0;
+  color: #3d2d24;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.bd-studio__photo {
+  position: relative;
+  margin: 0;
+}
+
+.bd-studio__photo::after {
+  content: "";
+  position: absolute;
+  right: -44px;
+  top: -44px;
+  width: 220px;
+  height: 220px;
+  border: 18px solid rgba(184, 48, 31, 0.55);
+}
+
+.bd-studio__photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  box-shadow: -28px 28px 0 rgba(34, 23, 17, 0.14);
+}
+
+@media (max-width: 991px) {
+  .bd-studio__layout {
+    display: block;
+  }
+
+  .bd-studio__photo {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bd-studio {
+    padding: 64px 0;
+  }
+
+  .bd-studio__title {
+    font-size: 40px;
+  }
+
+  .bd-studio__photo img {
+    height: 340px;
+  }
+}

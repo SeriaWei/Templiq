@@ -1,0 +1,64 @@
+.vd-bundle {
+  padding: 92px 0 104px;
+  background: linear-gradient(90deg, rgba(211, 238, 109, 0.12) 0 1px, transparent 1px 42px), #24554b;
+  color: #f6f0df;
+}
+
+.vd-bundle__shell {
+  padding: 52px;
+  border: 1px solid rgba(246, 240, 223, 0.34);
+  background: rgba(24, 34, 29, 0.24);
+}
+
+.vd-bundle__kicker {
+  color: #d3ee6d;
+}
+
+.vd-bundle__copy {
+  max-width: 680px;
+  margin: 24px 0 0;
+  color: rgba(246, 240, 223, 0.78);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.vd-bundle__price {
+  min-height: 260px;
+  padding: 30px;
+  border: 1px solid rgba(246, 240, 223, 0.36);
+  background: #f6f0df;
+  color: #18221d;
+}
+
+.vd-bundle__price span {
+  display: block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.vd-bundle__price strong {
+  display: block;
+  margin: 20px 0 28px;
+  font-family: Cambria, Georgia, serif;
+  font-size: 58px;
+  line-height: 1;
+}
+
+.vd-bundle .vd-button {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .vd-bundle {
+    padding: 64px 0;
+  }
+
+  .vd-bundle__shell {
+    padding: 28px;
+  }
+
+  .vd-bundle__price {
+    margin-top: 30px;
+  }
+}

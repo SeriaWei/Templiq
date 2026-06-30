@@ -1,0 +1,95 @@
+<!-- 桌面模块布局 -->
+{% header %}
+<style>
+.section-mr0pzmal {
+    overflow: hidden;
+    padding: 102px 0;
+    background: #d7b577;
+    color: #221711;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pzmal .bd-studio__layout {
+    display: flex;
+    align-items: center;
+}
+.section-mr0pzmal .bd-studio__kicker {
+    margin: 0 0 18px;
+    color: #763421;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pzmal .bd-studio__title {
+    margin: 0;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 58px;
+    line-height: 0.98;
+    letter-spacing: 0;
+}
+.section-mr0pzmal .bd-studio__copy {
+    margin: 26px 0 0;
+    color: #3d2d24;
+    font-size: 18px;
+    line-height: 1.8;
+}
+.section-mr0pzmal .bd-studio__photo {
+    position: relative;
+    margin: 0;
+}
+.section-mr0pzmal .bd-studio__photo::after {
+    content: "";
+    position: absolute;
+    right: -44px;
+    top: -44px;
+    width: 220px;
+    height: 220px;
+    border: 18px solid rgba(184, 48, 31, 0.55);
+}
+.section-mr0pzmal .bd-studio__photo img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    box-shadow: -28px 28px 0 rgba(34, 23, 17, 0.14);
+}
+@media (max-width: 991px) {
+    .section-mr0pzmal .bd-studio__layout {
+        display: block;
+    }
+    .section-mr0pzmal .bd-studio__photo {
+        margin-top: 36px;
+    }
+}
+@media (max-width: 640px) {
+    .section-mr0pzmal {
+        padding: 64px 0;
+    }
+    .section-mr0pzmal .bd-studio__title {
+        font-size: 40px;
+    }
+    .section-mr0pzmal .bd-studio__photo img {
+        height: 340px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pzmal">
+    <div class="container">
+        <div class="row bd-studio__layout">
+            <div class="col-md-5 col-sm-6">
+                {% if this.Model.eyebrow %}<p class="bd-studio__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                {% if this.Model.title %}<h2 class="bd-studio__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                {% if this.Model.copy %}<p class="bd-studio__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>{% endif %}
+            </div>
+            <div class="col-md-7 col-sm-6">
+                <figure class="bd-studio__photo">
+                    {% if this.Model.image %}<img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="{{this.Model.image_alt}}">{% endif %}
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>

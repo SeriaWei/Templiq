@@ -1,0 +1,130 @@
+.vm-lineup {
+  padding: 96px 0 112px;
+  background: #efe2cc;
+  color: #241a13;
+}
+
+.vm-lineup__intro {
+  display: flex;
+  align-items: end;
+  margin-bottom: 42px;
+}
+
+.vm-lineup__kicker,
+.vm-lineup__text,
+.vm-lineup__detail span,
+.vm-lineup__detail p,
+.vm-lineup__detail strong {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.vm-lineup__kicker {
+  margin: 0 0 14px;
+  color: #a55229;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vm-lineup__title {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.vm-lineup__text {
+  margin: 0;
+  color: #65513f;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.vm-lineup__item {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  min-height: 360px;
+  background: #fff6e7;
+  border: 1px solid rgba(36, 26, 19, 0.12);
+}
+
+.vm-lineup__item--dark {
+  background: #221913;
+  color: #fff1d7;
+}
+
+.vm-lineup__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.vm-lineup__detail {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vm-lineup__detail span {
+  color: #b35e2f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.vm-lineup__item--dark .vm-lineup__detail span,
+.vm-lineup__item--dark .vm-lineup__detail strong {
+  color: #f0b35f;
+}
+
+.vm-lineup__detail h3 {
+  margin: 18px 0 16px;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.vm-lineup__detail p {
+  margin: 0 0 24px;
+  color: #665345;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.vm-lineup__item--dark .vm-lineup__detail p {
+  color: rgba(255, 241, 215, 0.72);
+}
+
+.vm-lineup__detail strong {
+  color: #8f4624;
+  font-size: 28px;
+}
+
+@media (max-width: 991px) {
+  .vm-lineup__intro {
+    display: block;
+  }
+
+  .vm-lineup__text {
+    margin-top: 22px;
+  }
+
+  .vm-lineup__item {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .vm-lineup {
+    padding: 64px 0;
+  }
+
+  .vm-lineup__title {
+    font-size: 34px;
+  }
+}

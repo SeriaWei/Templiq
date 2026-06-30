@@ -1,0 +1,24 @@
+{
+	"anchor_id": "grind",
+	"image_src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&q=85&auto=format&fit=crop",
+	"image_alt": "手冲咖啡制作场景",
+	"kicker": "72-click calibration",
+	"title": "一圈刻度，覆盖三种日常萃取。",
+	"scale_items": [
+		{
+			"range": "12-22",
+			"name": "摩卡壶",
+			"text": "紧凑粉层，适合高压短时萃取。"
+		},
+		{
+			"range": "28-44",
+			"name": "手冲",
+			"text": "更清晰的层次和更稳定的流速。"
+		},
+		{
+			"range": "54-68",
+			"name": "冷萃",
+			"text": "粗研磨降低苦味，长时间浸泡更干净。"
+		}
+	]
+}

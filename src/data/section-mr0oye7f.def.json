@@ -1,0 +1,42 @@
+{
+	"anchor_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点"
+	},
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片描述"
+	},
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "Paragraph",
+		"DisplayName": "标题"
+	},
+	"scale_items": {
+		"FieldType": "Array",
+		"DisplayName": "刻度项",
+		"Children": [
+			{
+				"range": {
+					"FieldType": "SingleLine",
+					"DisplayName": "刻度范围"
+				},
+				"name": {
+					"FieldType": "SingleLine",
+					"DisplayName": "萃取方式"
+				},
+				"text": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}

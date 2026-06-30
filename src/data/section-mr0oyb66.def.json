@@ -1,0 +1,47 @@
+{
+	"anchor_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点"
+	},
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "Paragraph",
+		"DisplayName": "主标题",
+		"IsRequired": true
+	},
+	"lead": {
+		"FieldType": "Paragraph",
+		"DisplayName": "导语"
+	},
+	"primary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文字"
+	},
+	"primary_url": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文字"
+	},
+	"secondary_url": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "主图"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主图描述"
+	},
+	"image_caption": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片角标"
+	}
+}

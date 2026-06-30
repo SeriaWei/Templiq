@@ -1,0 +1,43 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题",
+		"IsRequired": true
+	},
+	"text": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"image_src": {
+		"FieldType": "Media",
+		"DisplayName": "结构图片"
+	},
+	"image_alt": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片描述"
+	},
+	"features": {
+		"FieldType": "Array",
+		"DisplayName": "结构卖点",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				}
+			}
+		]
+	}
+}

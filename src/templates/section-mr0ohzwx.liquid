@@ -1,0 +1,197 @@
+<!-- 跑鞋款式 -->
+{% header %}
+<style>
+.section-mr0ohzwx {
+    position: relative;
+    padding: 98px 0 110px;
+    background:
+        linear-gradient(90deg, rgba(20, 22, 18, 0.08) 1px, transparent 1px),
+        linear-gradient(180deg, #f7f0df 0%, #e3ddc9 100%);
+    background-size: 38px 38px, auto;
+    color: #141612;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.section-mr0ohzwx .rv-variants__summary {
+    position: sticky;
+    top: 28px;
+    padding-right: 22px;
+}
+
+.section-mr0ohzwx .rv-variants__kicker {
+    margin: 0 0 14px;
+    color: #d84c2a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-mr0ohzwx .rv-variants__title {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.section-mr0ohzwx .rv-variants__copy {
+    margin: 24px 0 0;
+    color: #4c5144;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.section-mr0ohzwx .rv-variants__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.section-mr0ohzwx .rv-variants__item {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    min-height: 300px;
+    border: 1px solid rgba(20, 22, 18, 0.18);
+    background: rgba(247, 240, 223, 0.78);
+    box-shadow: 0 24px 60px rgba(32, 34, 25, 0.12);
+}
+
+.section-mr0ohzwx .rv-variants__item--dark {
+    background: #20261c;
+    color: #f7f0df;
+}
+
+.section-mr0ohzwx .rv-variants__image {
+    overflow: hidden;
+    background: #cfc2a9;
+}
+
+.section-mr0ohzwx .rv-variants__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    transition: transform 620ms ease;
+}
+
+.section-mr0ohzwx .rv-variants__item:hover .rv-variants__image img {
+    transform: scale(1.05);
+}
+
+.section-mr0ohzwx .rv-variants__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 42px;
+}
+
+.section-mr0ohzwx .rv-variants__badge {
+    align-self: flex-start;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    border: 1px solid currentColor;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-mr0ohzwx .rv-variants__detail h3 {
+    margin: 0 0 14px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.section-mr0ohzwx .rv-variants__detail p {
+    margin: 0;
+    color: #4c5144;
+    font-size: 16px;
+    line-height: 1.72;
+}
+
+.section-mr0ohzwx .rv-variants__item--dark .rv-variants__detail p {
+    color: rgba(247, 240, 223, 0.72);
+}
+
+.section-mr0ohzwx .rv-variants__detail strong {
+    margin-top: 24px;
+    color: #d84c2a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 18px;
+}
+
+@media (max-width: 991px) {
+    .section-mr0ohzwx {
+        padding: 74px 0;
+    }
+
+    .section-mr0ohzwx .rv-variants__summary {
+        position: static;
+        margin-bottom: 34px;
+    }
+
+    .section-mr0ohzwx .rv-variants__title {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-mr0ohzwx .rv-variants__item {
+        grid-template-columns: 1fr;
+    }
+
+    .section-mr0ohzwx .rv-variants__detail {
+        padding: 30px;
+    }
+
+    .section-mr0ohzwx .rv-variants__detail h3 {
+        font-size: 34px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0ohzwx" id="variants">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="rv-variants__summary">
+                    {% if this.Model.kicker %}
+                    <p property="true" data-property="kicker" method="text" class="rv-variants__kicker">{{this.Model.kicker}}</p>
+                    {% endif %}
+                    {% if this.Model.title %}
+                    <h2 property="true" data-property="title" method="text" class="rv-variants__title">{{this.Model.title}}</h2>
+                    {% endif %}
+                    {% if this.Model.copy %}
+                    <p property="true" data-property="copy" method="text" class="rv-variants__copy">{{this.Model.copy}}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="rv-variants__list">
+                    {% for product in this.Model.products %}
+                    <article class="rv-variants__item{% if product.tone == 'dark' %} rv-variants__item--dark{% endif %}">
+                        {% assign product_index = forloop.index0 %}
+                        {% if product.image_src %}
+                        <div class="rv-variants__image">
+                            <img property="true" data-property="products[{{product_index}}].image_src" method="attr" para="src" src="{% url product.image_src %}" alt="{{product.image_alt}}">
+                        </div>
+                        {% endif %}
+                        <div class="rv-variants__detail">
+                            {% if product.badge %}<span property="true" data-property="products[{{product_index}}].badge" method="text" class="rv-variants__badge">{{product.badge}}</span>{% endif %}
+                            {% if product.name %}<h3 property="true" data-property="products[{{product_index}}].name" method="text">{{product.name}}</h3>{% endif %}
+                            {% if product.description %}<p property="true" data-property="products[{{product_index}}].description" method="text">{{product.description}}</p>{% endif %}
+                            {% if product.price %}<strong property="true" data-property="products[{{product_index}}].price" method="text">{{product.price}}</strong>{% endif %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
