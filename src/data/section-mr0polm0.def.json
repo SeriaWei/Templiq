@@ -1,0 +1,34 @@
+{
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"steps": {
+		"FieldType": "Array",
+		"DisplayName": "节奏步骤",
+		"Children": [
+			{
+				"time": {
+					"FieldType": "SingleLine",
+					"DisplayName": "时间"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"copy": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				}
+			}
+		]
+	}
+}

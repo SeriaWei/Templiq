@@ -1,0 +1,118 @@
+<!-- 首发种植套装 -->
+{% header %}
+<style>
+.section-mr0pon67 {
+    padding: 92px 0 104px;
+    background: linear-gradient(90deg, rgba(211, 238, 109, 0.12) 0 1px, transparent 1px 42px), #24554b;
+    color: #f6f0df;
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pon67 .vd-bundle__shell {
+    padding: 52px;
+    border: 1px solid rgba(246, 240, 223, 0.34);
+    background: rgba(24, 34, 29, 0.24);
+}
+.section-mr0pon67 .vd-bundle__kicker {
+    margin: 0 0 18px;
+    color: #d3ee6d;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pon67 .vd-bundle__title {
+    margin: 0;
+    font-family: Cambria, Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 0;
+}
+.section-mr0pon67 .vd-bundle__copy {
+    max-width: 680px;
+    margin: 24px 0 0;
+    color: rgba(246, 240, 223, 0.78);
+    font-size: 18px;
+    line-height: 1.85;
+}
+.section-mr0pon67 .vd-bundle__price {
+    min-height: 260px;
+    padding: 30px;
+    border: 1px solid rgba(246, 240, 223, 0.36);
+    background: #f6f0df;
+    color: #18221d;
+}
+.section-mr0pon67 .vd-bundle__price span {
+    display: block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.section-mr0pon67 .vd-bundle__price strong {
+    display: block;
+    margin: 20px 0 28px;
+    font-family: Cambria, Georgia, serif;
+    font-size: 58px;
+    line-height: 1;
+}
+.section-mr0pon67 .vd-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    width: 100%;
+    padding: 0 24px;
+    border: 1px solid #18221d;
+    border-radius: 0;
+    background: #18221d;
+    color: #f6f0df;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 220ms ease;
+}
+.section-mr0pon67 .vd-button:hover,
+.section-mr0pon67 .vd-button:focus {
+    transform: translateY(-2px);
+    color: #f6f0df;
+    text-decoration: none;
+}
+@media (max-width: 767px) {
+    .section-mr0pon67 {
+        padding: 64px 0;
+    }
+    .section-mr0pon67 .vd-bundle__shell {
+        padding: 28px;
+    }
+    .section-mr0pon67 .vd-bundle__price {
+        margin-top: 30px;
+    }
+    .section-mr0pon67 .vd-bundle__title {
+        font-size: 38px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pon67">
+    <div class="container">
+        <div class="vd-bundle__shell">
+            <div class="row">
+                <div class="col-md-7 col-sm-7">
+                    {% if this.Model.eyebrow %}<p class="vd-bundle__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 class="vd-bundle__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.copy %}<p class="vd-bundle__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>{% endif %}
+                </div>
+                <div class="col-md-5 col-sm-5">
+                    <div class="vd-bundle__price">
+                        {% if this.Model.price_label %}<span property="true" data-property="price_label" method="text">{{this.Model.price_label}}</span>{% endif %}
+                        {% if this.Model.price %}<strong property="true" data-property="price" method="text">{{this.Model.price}}</strong>{% endif %}
+                        {% if this.Model.button_text %}<a class="vd-button" property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}">{{this.Model.button_text}}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

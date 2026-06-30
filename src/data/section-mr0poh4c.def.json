@@ -1,0 +1,38 @@
+{
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"lead": {
+		"FieldType": "Paragraph",
+		"DisplayName": "导语"
+	},
+	"primary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮文本"
+	},
+	"primary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "主按钮链接"
+	},
+	"secondary_text": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮文本"
+	},
+	"secondary_link": {
+		"FieldType": "SingleLine",
+		"DisplayName": "次按钮链接"
+	},
+	"image": {
+		"FieldType": "Media",
+		"DisplayName": "展示图片"
+	},
+	"caption": {
+		"FieldType": "SingleLine",
+		"DisplayName": "图片说明"
+	}
+}

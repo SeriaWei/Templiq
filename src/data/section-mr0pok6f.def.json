@@ -1,0 +1,34 @@
+{
+	"image": {
+		"FieldType": "Media",
+		"DisplayName": "展示图片"
+	},
+	"eyebrow": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"specs": {
+		"FieldType": "Array",
+		"DisplayName": "规格",
+		"Children": [
+			{
+				"value": {
+					"FieldType": "SingleLine",
+					"DisplayName": "数值"
+				},
+				"label": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标签"
+				}
+			}
+		]
+	}
+}

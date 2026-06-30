@@ -1,0 +1,160 @@
+<!-- 闭环养护 -->
+{% header %}
+<style>
+.section-mr0pok6f {
+    position: relative;
+    overflow: hidden;
+    padding: 108px 0;
+    background: #f6f0df;
+    color: #18221d;
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pok6f::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(211, 238, 109, 0.38), rgba(36, 85, 75, 0.18));
+}
+.section-mr0pok6f .vd-care__layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+.section-mr0pok6f .vd-care__photo {
+    position: relative;
+    margin: 0;
+}
+.section-mr0pok6f .vd-care__photo::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: -28px;
+    bottom: -28px;
+    height: 56px;
+    border: 2px solid #24554b;
+    border-top: 0;
+}
+.section-mr0pok6f .vd-care__photo img {
+    display: block;
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    box-shadow: 0 28px 70px rgba(24, 34, 29, 0.18);
+}
+.section-mr0pok6f .vd-care__panel {
+    margin-left: 30px;
+    padding: 48px;
+    background: #18221d;
+    color: #f6f0df;
+}
+.section-mr0pok6f .vd-care__kicker {
+    margin: 0 0 18px;
+    color: #d3ee6d;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pok6f .vd-care__title {
+    margin: 0;
+    font-family: Cambria, Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 0;
+}
+.section-mr0pok6f .vd-care__copy {
+    max-width: 600px;
+    margin: 24px 0 0;
+    color: rgba(246, 240, 223, 0.76);
+    font-size: 18px;
+    line-height: 1.85;
+}
+.section-mr0pok6f .vd-care__specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 34px;
+}
+.section-mr0pok6f .vd-care__specs div {
+    min-height: 112px;
+    padding: 18px;
+    border: 1px solid rgba(246, 240, 223, 0.22);
+}
+.section-mr0pok6f .vd-care__specs strong {
+    display: block;
+    color: #d3ee6d;
+    font-family: Cambria, Georgia, serif;
+    font-size: 42px;
+    line-height: 1;
+}
+.section-mr0pok6f .vd-care__specs span {
+    display: block;
+    margin-top: 12px;
+    color: rgba(246, 240, 223, 0.66);
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+@media (max-width: 991px) {
+    .section-mr0pok6f .vd-care__layout {
+        display: block;
+    }
+    .section-mr0pok6f .vd-care__panel {
+        margin: 44px 0 0;
+    }
+}
+@media (max-width: 640px) {
+    .section-mr0pok6f {
+        padding: 70px 0;
+    }
+    .section-mr0pok6f .vd-care__photo img {
+        height: 360px;
+    }
+    .section-mr0pok6f .vd-care__panel {
+        padding: 30px;
+    }
+    .section-mr0pok6f .vd-care__specs {
+        grid-template-columns: 1fr;
+    }
+    .section-mr0pok6f .vd-care__title {
+        font-size: 38px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pok6f">
+    <div class="container">
+        <div class="row vd-care__layout">
+            <div class="col-md-6">
+                {% if this.Model.image %}
+                <figure class="vd-care__photo">
+                    <img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="Verdant Dock 传感养护">
+                </figure>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                <div class="vd-care__panel">
+                    {% if this.Model.eyebrow %}<p class="vd-care__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 class="vd-care__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.copy %}<p class="vd-care__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>{% endif %}
+                    {% if this.Model.specs.size > 0 %}
+                    <div class="vd-care__specs">
+                        {% for item in this.Model.specs %}
+                        <div>
+                            {% if item.value %}<strong property="true" data-property="specs[{{forloop.index0}}].value" method="text">{{item.value}}</strong>{% endif %}
+                            {% if item.label %}<span property="true" data-property="specs[{{forloop.index0}}].label" method="text">{{item.label}}</span>{% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
