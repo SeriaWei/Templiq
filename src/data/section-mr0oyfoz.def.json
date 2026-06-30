@@ -1,0 +1,34 @@
+{
+	"anchor_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点"
+	},
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "Paragraph",
+		"DisplayName": "标题"
+	},
+	"steps": {
+		"FieldType": "Array",
+		"DisplayName": "步骤",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"text": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				}
+			}
+		]
+	}
+}

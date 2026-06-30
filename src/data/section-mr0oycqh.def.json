@@ -1,0 +1,46 @@
+{
+	"anchor_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点"
+	},
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "Paragraph",
+		"DisplayName": "标题"
+	},
+	"text": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"cards": {
+		"FieldType": "Array",
+		"DisplayName": "内容卡片",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"text": {
+					"FieldType": "Paragraph",
+					"DisplayName": "说明"
+				},
+				"image_src": {
+					"FieldType": "Media",
+					"DisplayName": "图片"
+				},
+				"image_alt": {
+					"FieldType": "SingleLine",
+					"DisplayName": "图片描述"
+				}
+			}
+		]
+	}
+}

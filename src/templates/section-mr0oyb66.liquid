@@ -1,0 +1,164 @@
+<!-- 便携研磨首屏 -->
+{% header %}
+<style>
+.section-mr0oyb66 {
+    position: relative;
+    min-height: 760px;
+    overflow: hidden;
+    padding: 86px 0 94px;
+    background: radial-gradient(circle at 78% 18%, rgba(190, 88, 38, 0.26), transparent 30%), linear-gradient(135deg, #1d1b17 0%, #34271d 49%, #ede4d3 50%, #d7c0a1 100%);
+    color: #fff2d8;
+    font-family: Cambria, Georgia, serif;
+}
+.section-mr0oyb66 .vm-hero__dial {
+    position: absolute;
+    right: -150px;
+    top: -130px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 242, 216, 0.36);
+    background: repeating-conic-gradient(from 10deg, rgba(255,255,255,0.22) 0deg 1deg, transparent 1deg 11deg);
+    opacity: 0.8;
+    animation: section-mr0oyb66-dial 28s linear infinite;
+}
+.section-mr0oyb66 .vm-hero__layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+.section-mr0oyb66 .vm-hero__copy {
+    max-width: 560px;
+}
+.section-mr0oyb66 .vm-hero__eyebrow,
+.section-mr0oyb66 .vm-hero__lead,
+.section-mr0oyb66 .vm-hero__button,
+.section-mr0oyb66 .vm-hero__photo figcaption {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+.section-mr0oyb66 .vm-hero__eyebrow {
+    margin: 0 0 18px;
+    color: #e6a45b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+}
+.section-mr0oyb66 .vm-hero__title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 0.98;
+    letter-spacing: 0;
+    font-weight: 700;
+}
+.section-mr0oyb66 .vm-hero__lead {
+    max-width: 510px;
+    margin: 28px 0 0;
+    color: rgba(255, 242, 216, 0.82);
+    font-size: 17px;
+    line-height: 1.8;
+}
+.section-mr0oyb66 .vm-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+.section-mr0oyb66 .vm-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 22px;
+    border: 1px solid rgba(255, 242, 216, 0.42);
+    color: #fff2d8;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.section-mr0oyb66 .vm-hero__button:hover,
+.section-mr0oyb66 .vm-hero__button:focus {
+    color: #1f1b16;
+    text-decoration: none;
+    background: #f0b35f;
+    border-color: #f0b35f;
+}
+.section-mr0oyb66 .vm-hero__button--primary {
+    background: #f0b35f;
+    border-color: #f0b35f;
+    color: #211a13;
+}
+.section-mr0oyb66 .vm-hero__photo {
+    position: relative;
+    margin: 0 0 0 auto;
+    max-width: 500px;
+    padding: 16px;
+    background: rgba(255, 242, 216, 0.12);
+    border: 1px solid rgba(255, 242, 216, 0.28);
+    box-shadow: 0 38px 90px rgba(20, 14, 10, 0.35);
+}
+.section-mr0oyb66 .vm-hero__photo img {
+    display: block;
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.05);
+}
+.section-mr0oyb66 .vm-hero__photo figcaption {
+    position: absolute;
+    left: -30px;
+    bottom: 36px;
+    padding: 12px 18px;
+    background: #1f1b16;
+    color: #f0b35f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+@keyframes section-mr0oyb66-dial {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@media (max-width: 991px) {
+    .section-mr0oyb66 { min-height: auto; padding: 64px 0; }
+    .section-mr0oyb66 .vm-hero__layout { display: block; }
+    .section-mr0oyb66 .vm-hero__title { font-size: 48px; }
+    .section-mr0oyb66 .vm-hero__photo { margin-top: 42px; }
+}
+@media (max-width: 767px) {
+    .section-mr0oyb66 { padding: 46px 0 52px; }
+    .section-mr0oyb66 .vm-hero__title { font-size: 38px; }
+    .section-mr0oyb66 .vm-hero__lead { font-size: 15px; }
+    .section-mr0oyb66 .vm-hero__photo img { height: 360px; }
+    .section-mr0oyb66 .vm-hero__photo figcaption { left: 18px; bottom: 28px; }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0oyb66" id="{{this.Model.anchor_id}}">
+    <div class="vm-hero__dial" aria-hidden="true"></div>
+    <div class="container">
+        <div class="row vm-hero__layout">
+            <div class="col-md-6 col-sm-6">
+                <div class="vm-hero__copy">
+                    {% if this.Model.eyebrow %}<p class="vm-hero__eyebrow" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                    {% if this.Model.title %}<h1 class="vm-hero__title" property="true" data-property="title" method="text">{{this.Model.title}}</h1>{% endif %}
+                    {% if this.Model.lead %}<p class="vm-hero__lead" property="true" data-property="lead" method="text">{{this.Model.lead}}</p>{% endif %}
+                    <div class="vm-hero__actions">
+                        {% if this.Model.primary_text %}<a class="vm-hero__button vm-hero__button--primary" property="true" data-property="primary_url" method="attr" para="href" href="{% url this.Model.primary_url %}">{{this.Model.primary_text}}</a>{% endif %}
+                        {% if this.Model.secondary_text %}<a class="vm-hero__button vm-hero__button--ghost" property="true" data-property="secondary_url" method="attr" para="href" href="{% url this.Model.secondary_url %}">{{this.Model.secondary_text}}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <figure class="vm-hero__photo">
+                    {% if this.Model.image_src %}<img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}">{% endif %}
+                    {% if this.Model.image_caption %}<figcaption property="true" data-property="image_caption" method="text">{{this.Model.image_caption}}</figcaption>{% endif %}
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>

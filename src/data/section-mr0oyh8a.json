@@ -1,0 +1,26 @@
+{
+	"anchor_id": "lineup",
+	"kicker": "Two travel kits",
+	"title": "选择你的研磨半径。",
+	"text": "两个版本使用同一套电机和刀盘。Solo 更轻，适合通勤；Field 加入硬壳收纳盒与折叠滤杯，适合露营和短途旅行。",
+	"products": [
+		{
+			"badge": "Commute kit",
+			"name": "Volt Mill Solo",
+			"description": "研磨机、磁吸接粉杯、USB-C 线、清洁刷。",
+			"price": "¥699",
+			"image_src": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&q=85&auto=format&fit=crop",
+			"image_alt": "咖啡杯与咖啡豆桌面场景",
+			"is_dark": false
+		},
+		{
+			"badge": "Field kit",
+			"name": "Volt Mill Field",
+			"description": "Solo 全套、硬壳包、折叠滤杯、密封豆罐。",
+			"price": "¥899",
+			"image_src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=85&auto=format&fit=crop",
+			"image_alt": "手冲咖啡器具",
+			"is_dark": true
+		}
+	]
+}

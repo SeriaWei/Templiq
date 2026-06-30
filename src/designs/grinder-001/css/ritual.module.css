@@ -1,0 +1,110 @@
+.vm-ritual {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  background: linear-gradient(90deg, #c96f36 0%, #c96f36 32%, #f5ead6 32%, #f5ead6 100%);
+  color: #241a13;
+}
+
+.vm-ritual:before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  bottom: -44%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 244, 222, 0.34);
+}
+
+.vm-ritual__heading {
+  position: relative;
+  z-index: 1;
+  color: #fff4de;
+}
+
+.vm-ritual__kicker,
+.vm-ritual__steps span,
+.vm-ritual__steps p {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.vm-ritual__kicker {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vm-ritual__title {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.vm-ritual__steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.vm-ritual__steps article {
+  min-height: 280px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(36, 26, 19, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.vm-ritual__steps span {
+  display: inline-block;
+  margin-bottom: 54px;
+  color: #a55229;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.vm-ritual__steps h3 {
+  margin: 0 0 16px;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.vm-ritual__steps p {
+  margin: 0;
+  color: #6c5542;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+@media (max-width: 991px) {
+  .vm-ritual {
+    background: linear-gradient(180deg, #c96f36 0%, #c96f36 34%, #f5ead6 34%, #f5ead6 100%);
+  }
+
+  .vm-ritual__heading {
+    margin-bottom: 38px;
+  }
+}
+
+@media (max-width: 767px) {
+  .vm-ritual {
+    padding: 64px 0;
+  }
+
+  .vm-ritual__title {
+    font-size: 32px;
+  }
+
+  .vm-ritual__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .vm-ritual__steps article {
+    min-height: auto;
+  }
+}

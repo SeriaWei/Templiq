@@ -1,0 +1,112 @@
+<!-- 三步日常 -->
+{% header %}
+<style>
+.section-mr0oyfoz {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background: linear-gradient(90deg, #c96f36 0%, #c96f36 32%, #f5ead6 32%, #f5ead6 100%);
+    color: #241a13;
+    font-family: Cambria, Georgia, serif;
+}
+.section-mr0oyfoz:before {
+    content: "";
+    position: absolute;
+    left: -8%;
+    bottom: -44%;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 244, 222, 0.34);
+}
+.section-mr0oyfoz .vm-ritual__heading {
+    position: relative;
+    z-index: 1;
+    color: #fff4de;
+}
+.section-mr0oyfoz .vm-ritual__kicker,
+.section-mr0oyfoz .vm-ritual__steps span,
+.section-mr0oyfoz .vm-ritual__steps p {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+.section-mr0oyfoz .vm-ritual__kicker {
+    margin: 0 0 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.section-mr0oyfoz .vm-ritual__title {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+.section-mr0oyfoz .vm-ritual__steps {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.section-mr0oyfoz .vm-ritual__steps article {
+    min-height: 280px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(36, 26, 19, 0.12);
+    backdrop-filter: blur(10px);
+}
+.section-mr0oyfoz .vm-ritual__steps span {
+    display: inline-block;
+    margin-bottom: 54px;
+    color: #a55229;
+    font-size: 12px;
+    font-weight: 700;
+}
+.section-mr0oyfoz .vm-ritual__steps h3 {
+    margin: 0 0 16px;
+    font-size: 25px;
+    line-height: 1.2;
+}
+.section-mr0oyfoz .vm-ritual__steps p {
+    margin: 0;
+    color: #6c5542;
+    font-size: 14px;
+    line-height: 1.75;
+}
+@media (max-width: 991px) {
+    .section-mr0oyfoz { background: linear-gradient(180deg, #c96f36 0%, #c96f36 34%, #f5ead6 34%, #f5ead6 100%); }
+    .section-mr0oyfoz .vm-ritual__heading { margin-bottom: 38px; }
+}
+@media (max-width: 767px) {
+    .section-mr0oyfoz { padding: 64px 0; }
+    .section-mr0oyfoz .vm-ritual__title { font-size: 32px; }
+    .section-mr0oyfoz .vm-ritual__steps { grid-template-columns: 1fr; }
+    .section-mr0oyfoz .vm-ritual__steps article { min-height: auto; }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0oyfoz" id="{{this.Model.anchor_id}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="vm-ritual__heading">
+                    {% if this.Model.kicker %}<p class="vm-ritual__kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 class="vm-ritual__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-8">
+                <div class="vm-ritual__steps">
+                    {% for step in this.Model.steps %}
+                    <article>
+                        {% if step.number %}<span property="true" data-property="steps[{{forloop.index0}}].number" method="text">{{step.number}}</span>{% endif %}
+                        {% if step.title %}<h3 property="true" data-property="steps[{{forloop.index0}}].title" method="text">{{step.title}}</h3>{% endif %}
+                        {% if step.text %}<p property="true" data-property="steps[{{forloop.index0}}].text" method="text">{{step.text}}</p>{% endif %}
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

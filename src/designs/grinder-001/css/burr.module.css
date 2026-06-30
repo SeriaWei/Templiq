@@ -1,0 +1,110 @@
+.vm-burr {
+  padding: 96px 0;
+  background: #ede4d3;
+  color: #251d16;
+}
+
+.vm-burr__intro {
+  display: flex;
+  align-items: end;
+  margin-bottom: 44px;
+}
+
+.vm-burr__kicker,
+.vm-burr__text,
+.vm-burr__card p,
+.vm-burr__card span {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.vm-burr__kicker {
+  margin: 0 0 14px;
+  color: #9a4d25;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vm-burr__title {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.vm-burr__text {
+  margin: 0;
+  color: #665345;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.vm-burr__grid {
+  display: flex;
+}
+
+.vm-burr__card {
+  min-height: 330px;
+  padding: 36px;
+  background: #f8f0df;
+  border: 1px solid rgba(60, 44, 32, 0.14);
+}
+
+.vm-burr__card span {
+  display: inline-block;
+  margin-bottom: 56px;
+  color: #b05e2e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.vm-burr__card h3 {
+  margin: 0 0 18px;
+  font-size: 28px;
+}
+
+.vm-burr__card p {
+  margin: 0;
+  color: #665345;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.vm-burr__card--image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.vm-burr__card--image img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .vm-burr__intro,
+  .vm-burr__grid {
+    display: block;
+  }
+
+  .vm-burr__text {
+    margin-top: 22px;
+  }
+
+  .vm-burr__card {
+    min-height: auto;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .vm-burr {
+    padding: 64px 0;
+  }
+
+  .vm-burr__title {
+    font-size: 34px;
+  }
+}

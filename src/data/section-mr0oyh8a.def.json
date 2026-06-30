@@ -1,0 +1,54 @@
+{
+	"anchor_id": {
+		"FieldType": "SingleLine",
+		"DisplayName": "锚点"
+	},
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"title": {
+		"FieldType": "Paragraph",
+		"DisplayName": "标题"
+	},
+	"text": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明"
+	},
+	"products": {
+		"FieldType": "Array",
+		"DisplayName": "产品套装",
+		"Children": [
+			{
+				"badge": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标签"
+				},
+				"name": {
+					"FieldType": "SingleLine",
+					"DisplayName": "名称"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				},
+				"price": {
+					"FieldType": "SingleLine",
+					"DisplayName": "价格"
+				},
+				"image_src": {
+					"FieldType": "Media",
+					"DisplayName": "图片"
+				},
+				"image_alt": {
+					"FieldType": "SingleLine",
+					"DisplayName": "图片描述"
+				},
+				"is_dark": {
+					"FieldType": "Checkbox",
+					"DisplayName": "深色样式"
+				}
+			}
+		]
+	}
+}

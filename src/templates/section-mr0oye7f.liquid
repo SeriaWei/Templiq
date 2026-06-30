@@ -1,0 +1,113 @@
+<!-- 研磨刻度 -->
+{% header %}
+<style>
+.section-mr0oye7f {
+    padding: 110px 0;
+    background: #201913;
+    color: #fff1d7;
+    font-family: Cambria, Georgia, serif;
+}
+.section-mr0oye7f .vm-grind__layout {
+    display: flex;
+    align-items: center;
+}
+.section-mr0oye7f .vm-grind__image {
+    margin: 0;
+    border: 1px solid rgba(255, 241, 215, 0.18);
+    padding: 14px;
+}
+.section-mr0oye7f .vm-grind__image img {
+    display: block;
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+}
+.section-mr0oye7f .vm-grind__kicker,
+.section-mr0oye7f .vm-grind__scale span,
+.section-mr0oye7f .vm-grind__scale p {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+.section-mr0oye7f .vm-grind__kicker {
+    margin: 0 0 16px;
+    color: #e0a35c;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.section-mr0oye7f .vm-grind__title {
+    margin: 0 0 36px;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: 0;
+}
+.section-mr0oye7f .vm-grind__scale {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(255, 241, 215, 0.2);
+    border-left: 1px solid rgba(255, 241, 215, 0.2);
+}
+.section-mr0oye7f .vm-grind__scale article {
+    min-height: 210px;
+    padding: 28px 24px;
+    border-right: 1px solid rgba(255, 241, 215, 0.2);
+    border-bottom: 1px solid rgba(255, 241, 215, 0.2);
+}
+.section-mr0oye7f .vm-grind__scale strong {
+    display: block;
+    color: #f0b35f;
+    font-size: 38px;
+    line-height: 1;
+}
+.section-mr0oye7f .vm-grind__scale span {
+    display: block;
+    margin-top: 18px;
+    color: #fff1d7;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+.section-mr0oye7f .vm-grind__scale p {
+    margin: 14px 0 0;
+    color: rgba(255, 241, 215, 0.72);
+    font-size: 14px;
+    line-height: 1.7;
+}
+@media (max-width: 991px) {
+    .section-mr0oye7f .vm-grind__layout { display: block; }
+    .section-mr0oye7f .vm-grind__image { margin-bottom: 36px; }
+}
+@media (max-width: 767px) {
+    .section-mr0oye7f { padding: 66px 0; }
+    .section-mr0oye7f .vm-grind__image img { height: 340px; }
+    .section-mr0oye7f .vm-grind__title { font-size: 34px; }
+    .section-mr0oye7f .vm-grind__scale { grid-template-columns: 1fr; }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0oye7f" id="{{this.Model.anchor_id}}">
+    <div class="container">
+        <div class="row vm-grind__layout">
+            <div class="col-md-5 col-sm-5">
+                <figure class="vm-grind__image">
+                    {% if this.Model.image_src %}<img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}">{% endif %}
+                </figure>
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-7">
+                {% if this.Model.kicker %}<p class="vm-grind__kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                {% if this.Model.title %}<h2 class="vm-grind__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                <div class="vm-grind__scale">
+                    {% for item in this.Model.scale_items %}
+                    <article>
+                        {% if item.range %}<strong property="true" data-property="scale_items[{{forloop.index0}}].range" method="text">{{item.range}}</strong>{% endif %}
+                        {% if item.name %}<span property="true" data-property="scale_items[{{forloop.index0}}].name" method="text">{{item.name}}</span>{% endif %}
+                        {% if item.text %}<p property="true" data-property="scale_items[{{forloop.index0}}].text" method="text">{{item.text}}</p>{% endif %}
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
