@@ -1,0 +1,202 @@
+html {
+  font-size: 10px;
+}
+
+body.ab-page {
+  margin: 0;
+  color: #231b16;
+  background: #f5efe4;
+  font-family: "Avenir Next", "Gill Sans", "Microsoft YaHei", sans-serif;
+}
+
+.ab-hero {
+  position: relative;
+  min-height: 92vh;
+  overflow: hidden;
+  color: #fff8eb;
+  isolation: isolate;
+}
+
+.ab-hero__image {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1800&q=88&auto=format&fit=crop");
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.03);
+  animation: abHeroDrift 16s ease-in-out infinite alternate;
+  z-index: -3;
+}
+
+.ab-hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(22, 14, 9, 0.88) 0%, rgba(39, 23, 14, 0.7) 46%, rgba(22, 14, 9, 0.22) 100%),
+    radial-gradient(circle at 72% 22%, rgba(206, 129, 55, 0.45), transparent 32%),
+    linear-gradient(180deg, rgba(10, 7, 5, 0.1), rgba(10, 7, 5, 0.56));
+  z-index: -2;
+}
+
+.ab-hero__content {
+  padding: 112px 0 76px;
+  max-width: 760px;
+}
+
+.ab-hero__eyebrow {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 248, 235, 0.42);
+  border-radius: 999px;
+  color: #ffd79c;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(255, 248, 235, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.ab-hero__title {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", Georgia, "STSong", serif;
+  font-size: 72px;
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.ab-hero__lead {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: rgba(255, 248, 235, 0.82);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.ab-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.ab-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 3px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.ab-hero__button:hover,
+.ab-hero__button:focus {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.ab-hero__button--solid {
+  color: #24150e;
+  background: #f2b15f;
+  box-shadow: 0 18px 38px rgba(207, 116, 39, 0.34);
+}
+
+.ab-hero__button--solid:hover,
+.ab-hero__button--solid:focus {
+  color: #24150e;
+  background: #ffd190;
+}
+
+.ab-hero__button--line {
+  border: 1px solid rgba(255, 248, 235, 0.42);
+  color: #fff8eb;
+  background: rgba(255, 248, 235, 0.06);
+}
+
+.ab-hero__button--line:hover,
+.ab-hero__button--line:focus {
+  color: #fff8eb;
+  background: rgba(255, 248, 235, 0.14);
+}
+
+.ab-hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  max-width: 650px;
+  margin-top: 58px;
+  border: 1px solid rgba(255, 248, 235, 0.22);
+  background: rgba(255, 248, 235, 0.18);
+}
+
+.ab-hero__metric {
+  padding: 20px;
+  background: rgba(27, 17, 11, 0.54);
+  backdrop-filter: blur(12px);
+}
+
+.ab-hero__metric strong {
+  display: block;
+  color: #ffe5bf;
+  font-family: Didot, Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.ab-hero__metric span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 248, 235, 0.7);
+  font-size: 13px;
+}
+
+@keyframes abHeroDrift {
+  from {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-18px, 10px, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .ab-hero {
+    min-height: auto;
+  }
+
+  .ab-hero__veil {
+    background: linear-gradient(180deg, rgba(22, 14, 9, 0.9), rgba(22, 14, 9, 0.62));
+  }
+
+  .ab-hero__content {
+    padding: 74px 0 48px;
+  }
+
+  .ab-hero__title {
+    font-size: 43px;
+    line-height: 1.03;
+  }
+
+  .ab-hero__lead {
+    font-size: 16px;
+  }
+
+  .ab-hero__actions {
+    display: block;
+  }
+
+  .ab-hero__button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .ab-hero__metrics {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+}

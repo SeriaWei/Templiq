@@ -1,0 +1,179 @@
+<!-- 型号选择 -->
+{% header %}
+<style>
+.section-mr0eqbiy {
+    padding: 98px 0 106px;
+    color: #f8efe0;
+    background: radial-gradient(circle at 18% 8%, rgba(222, 156, 73, 0.28), transparent 28%), linear-gradient(140deg, #1d1714 0%, #352218 54%, #173b39 100%);
+    font-family: "Avenir Next", "Gill Sans", "Microsoft YaHei", sans-serif;
+}
+
+.section-mr0eqbiy .ab-models__sticky {
+    position: sticky;
+    top: 36px;
+    padding-right: 36px;
+}
+
+.section-mr0eqbiy .ab-models__kicker {
+    margin: 0 0 14px;
+    color: #f0b56d;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-mr0eqbiy .ab-models__title {
+    margin: 0;
+    font-family: Didot, "Bodoni 72", Georgia, "STSong", serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: 0;
+}
+
+.section-mr0eqbiy .ab-models__text {
+    margin: 24px 0 0;
+    color: rgba(248, 239, 224, 0.72);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.section-mr0eqbiy .ab-models__list {
+    display: grid;
+    gap: 22px;
+}
+
+.section-mr0eqbiy .ab-models__item {
+    display: grid;
+    grid-template-columns: 46% 54%;
+    min-height: 310px;
+    overflow: hidden;
+    border: 1px solid rgba(248, 239, 224, 0.18);
+    background: rgba(248, 239, 224, 0.08);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+}
+
+.section-mr0eqbiy .ab-models__item--dark {
+    background: rgba(11, 32, 31, 0.58);
+}
+
+.section-mr0eqbiy .ab-models__photo {
+    min-height: 310px;
+    background: #1d1714;
+}
+
+.section-mr0eqbiy .ab-models__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+    object-fit: cover;
+}
+
+.section-mr0eqbiy .ab-models__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px;
+}
+
+.section-mr0eqbiy .ab-models__badge {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 7px 12px;
+    border: 1px solid rgba(248, 239, 224, 0.24);
+    color: #f0b56d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.section-mr0eqbiy .ab-models__detail h3 {
+    margin: 0 0 12px;
+    color: #fff8ec;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.section-mr0eqbiy .ab-models__detail p {
+    margin: 0;
+    color: rgba(248, 239, 224, 0.72);
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.section-mr0eqbiy .ab-models__price {
+    margin-top: 28px;
+    color: #ffd99d;
+    font-family: Didot, Georgia, serif;
+    font-size: 34px;
+}
+
+@media (max-width: 991px) {
+    .section-mr0eqbiy .ab-models__sticky {
+        position: static;
+        margin-bottom: 34px;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-mr0eqbiy {
+        padding: 62px 0 70px;
+    }
+
+    .section-mr0eqbiy .ab-models__title {
+        font-size: 37px;
+    }
+
+    .section-mr0eqbiy .ab-models__item {
+        display: block;
+    }
+
+    .section-mr0eqbiy .ab-models__photo,
+    .section-mr0eqbiy .ab-models__photo img {
+        min-height: 230px;
+    }
+
+    .section-mr0eqbiy .ab-models__detail {
+        padding: 28px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0eqbiy" id="models">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="ab-models__sticky">
+                    {% if this.Model.kicker %}<p property="true" data-property="kicker" method="text" class="ab-models__kicker">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 property="true" data-property="title" method="text" class="ab-models__title">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.text %}<p property="true" data-property="text" method="text" class="ab-models__text">{{this.Model.text}}</p>{% endif %}
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="ab-models__list">
+                    {% for item in this.Model.models %}
+                    <article class="ab-models__item{% if item.is_dark %} ab-models__item--dark{% endif %}">
+                        {% if item.image %}
+                        <div class="ab-models__photo">
+                            <img property="true" data-property="models[{{forloop.index0}}].image" method="attr" para="src" src="{% url item.image %}" alt="{{item.image_alt}}">
+                        </div>
+                        {% endif %}
+                        <div class="ab-models__detail">
+                            {% if item.badge %}<span property="true" data-property="models[{{forloop.index0}}].badge" method="text" class="ab-models__badge">{{item.badge}}</span>{% endif %}
+                            {% if item.name %}<h3 property="true" data-property="models[{{forloop.index0}}].name" method="text">{{item.name}}</h3>{% endif %}
+                            {% if item.description %}<p property="true" data-property="models[{{forloop.index0}}].description" method="text">{{item.description}}</p>{% endif %}
+                            {% if item.price %}<div property="true" data-property="models[{{forloop.index0}}].price" method="text" class="ab-models__price">{{item.price}}</div>{% endif %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

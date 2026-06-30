@@ -1,0 +1,142 @@
+.ab-models {
+  padding: 98px 0 106px;
+  color: #f8efe0;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(222, 156, 73, 0.28), transparent 28%),
+    linear-gradient(140deg, #1d1714 0%, #352218 54%, #173b39 100%);
+}
+
+.ab-models__sticky {
+  position: sticky;
+  top: 36px;
+  padding-right: 36px;
+}
+
+.ab-models__kicker {
+  margin: 0 0 14px;
+  color: #f0b56d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ab-models__title {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", Georgia, "STSong", serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.ab-models__text {
+  margin: 24px 0 0;
+  color: rgba(248, 239, 224, 0.72);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.ab-models__list {
+  display: grid;
+  gap: 22px;
+}
+
+.ab-models__item {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 310px;
+  overflow: hidden;
+  border: 1px solid rgba(248, 239, 224, 0.18);
+  background: rgba(248, 239, 224, 0.08);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+}
+
+.ab-models__item--dark {
+  background: rgba(11, 32, 31, 0.58);
+}
+
+.ab-models__photo {
+  min-height: 310px;
+  background: #1d1714;
+}
+
+.ab-models__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 310px;
+  object-fit: cover;
+}
+
+.ab-models__detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px;
+}
+
+.ab-models__badge {
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  border: 1px solid rgba(248, 239, 224, 0.24);
+  color: #f0b56d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ab-models__detail h3 {
+  margin: 0 0 12px;
+  color: #fff8ec;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.ab-models__detail p {
+  margin: 0;
+  color: rgba(248, 239, 224, 0.72);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.ab-models__price {
+  margin-top: 28px;
+  color: #ffd99d;
+  font-family: Didot, Georgia, serif;
+  font-size: 34px;
+}
+
+@media (max-width: 991px) {
+  .ab-models__sticky {
+    position: static;
+    margin-bottom: 34px;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .ab-models {
+    padding: 62px 0 70px;
+  }
+
+  .ab-models__title {
+    font-size: 37px;
+  }
+
+  .ab-models__item {
+    display: block;
+  }
+
+  .ab-models__photo,
+  .ab-models__photo img {
+    min-height: 230px;
+  }
+
+  .ab-models__detail {
+    padding: 28px;
+  }
+}

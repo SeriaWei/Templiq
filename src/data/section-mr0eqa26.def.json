@@ -1,0 +1,42 @@
+{
+	"kicker": {
+		"FieldType": "SingleLine",
+		"DisplayName": "引导文字"
+	},
+	"title": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"copy": {
+		"FieldType": "Paragraph",
+		"DisplayName": "说明文字"
+	},
+	"feature_cards": {
+		"FieldType": "Array",
+		"DisplayName": "功能卡片",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				},
+				"image": {
+					"FieldType": "Media",
+					"DisplayName": "图片"
+				},
+				"image_alt": {
+					"FieldType": "SingleLine",
+					"DisplayName": "图片描述"
+				}
+			}
+		]
+	}
+}

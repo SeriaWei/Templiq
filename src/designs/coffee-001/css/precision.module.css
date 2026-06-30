@@ -1,0 +1,127 @@
+.ab-precision {
+  position: relative;
+  padding: 86px 0 98px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(199, 112, 49, 0.08) 0 25%, transparent 25% 50%, rgba(22, 71, 67, 0.08) 50% 75%, transparent 75%),
+    #f5efe4;
+  background-size: 34px 34px, auto;
+}
+
+.ab-precision__intro {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 42px;
+}
+
+.ab-precision__kicker {
+  margin: 0 0 14px;
+  color: #997042;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ab-precision__title {
+  margin: 0;
+  color: #231b16;
+  font-family: Didot, "Bodoni 72", Georgia, "STSong", serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.ab-precision__copy {
+  margin: 0;
+  color: #6f5a49;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.ab-precision__grid {
+  display: flex;
+  align-items: stretch;
+}
+
+.ab-precision__card {
+  min-height: 365px;
+  height: 100%;
+  padding: 34px;
+  border: 1px solid rgba(65, 42, 28, 0.18);
+  background: rgba(255, 252, 244, 0.82);
+  box-shadow: 0 26px 70px rgba(60, 34, 18, 0.08);
+}
+
+.ab-precision__card--image {
+  padding: 0;
+  overflow: hidden;
+  background: #24150e;
+}
+
+.ab-precision__card--image img {
+  display: block;
+  width: 100%;
+  height: 365px;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.08);
+  transition: transform 0.6s ease;
+}
+
+.ab-precision__card--image:hover img {
+  transform: scale(1.05);
+}
+
+.ab-precision__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 84px;
+  border: 1px solid rgba(35, 27, 22, 0.22);
+  border-radius: 50%;
+  color: #b46c31;
+  font-family: Didot, Georgia, serif;
+  font-size: 22px;
+}
+
+.ab-precision__card h3 {
+  margin: 0 0 14px;
+  color: #24150e;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.ab-precision__card p {
+  margin: 0;
+  color: #705746;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+@media (max-width: 767px) {
+  .ab-precision {
+    padding: 58px 0 64px;
+  }
+
+  .ab-precision__intro,
+  .ab-precision__grid {
+    display: block;
+  }
+
+  .ab-precision__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+  .ab-precision__card {
+    min-height: 0;
+    margin-bottom: 16px;
+  }
+
+  .ab-precision__icon {
+    margin-bottom: 52px;
+  }
+}
