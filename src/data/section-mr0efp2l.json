@@ -1,0 +1,29 @@
+{
+	"kicker": "LINEWEIGHT S1 / POUR-OVER SCALE",
+	"heading": "把每一次注水，压进 0.1 克的秩序里。",
+	"summary": "为手冲吧台、精品咖啡馆和偏执的家庭玩家设计。毫秒响应、双计时曲线、哑黑陶瓷面板，让萃取节奏不再凭感觉漂移。",
+	"primary_link_text": "选择版本",
+	"primary_link": "#configure",
+	"secondary_link_text": "查看规格",
+	"secondary_link": "#specs",
+	"dial_value": "92.4",
+	"dial_unit": "g",
+	"image_src": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=980&q=82",
+	"image_alt": "咖啡冲煮器具与咖啡豆",
+	"plate_brand": "S1",
+	"plate_reading": "02:31 / 178.6g",
+	"quick_stats": [
+		{
+			"value": "0.1g",
+			"label": "细分精度"
+		},
+		{
+			"value": "18ms",
+			"label": "响应速度"
+		},
+		{
+			"value": "36h",
+			"label": "连续续航"
+		}
+	]
+}

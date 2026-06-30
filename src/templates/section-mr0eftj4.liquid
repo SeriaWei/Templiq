@@ -1,0 +1,278 @@
+<!-- 版本选择 -->
+{% header %}
+<style>
+.section-mr0eftj4 {
+    color: #211b16;
+    background: #e5dccb;
+    font-family: Candara, Corbel, "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 16px;
+}
+
+.section-mr0eftj4 .lw-config {
+    padding: 80px 0 90px;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(217, 107, 67, 0.16), transparent 260px),
+        #e5dccb;
+}
+
+.section-mr0eftj4 .lw-config__label {
+    margin: 0 0 18px;
+    color: #a9432a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-mr0eftj4 .lw-config__title {
+    margin: 0;
+    color: #211b16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.section-mr0eftj4 .lw-config__text {
+    margin: 22px 0 0;
+    color: #655b50;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.section-mr0eftj4 .lw-config__chooser {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.section-mr0eftj4 .lw-config__option {
+    min-height: 108px;
+    padding: 18px;
+    border: 1px solid rgba(33, 27, 22, 0.22);
+    background: rgba(248, 241, 227, 0.72);
+    color: #211b16;
+    text-align: left;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+.section-mr0eftj4 .lw-config__option:hover,
+.section-mr0eftj4 .lw-config__option:focus {
+    transform: translateY(-3px);
+    border-color: #a9432a;
+    outline: none;
+}
+
+.section-mr0eftj4 .lw-config__option.is-active {
+    background: #211b16;
+    color: #f8f1e3;
+}
+
+.section-mr0eftj4 .lw-config__option span,
+.section-mr0eftj4 .lw-config__option strong {
+    display: block;
+}
+
+.section-mr0eftj4 .lw-config__option span {
+    margin-bottom: 22px;
+    color: #a9432a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.section-mr0eftj4 .lw-config__option.is-active span {
+    color: #d96b43;
+}
+
+.section-mr0eftj4 .lw-config__option strong {
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.section-mr0eftj4 .lw-config__summary {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 26px;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid rgba(33, 27, 22, 0.18);
+    background: #f8f1e3;
+    box-shadow: 0 24px 50px rgba(58, 43, 33, 0.13);
+}
+
+.section-mr0eftj4 .lw-config__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: saturate(0.8) contrast(1.08);
+}
+
+.section-mr0eftj4 .lw-config__edition {
+    margin: 0;
+    color: #a9432a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.section-mr0eftj4 .lw-config__price {
+    margin: 11px 0 0;
+    color: #211b16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 56px;
+    line-height: 1;
+}
+
+.section-mr0eftj4 .lw-config__note {
+    margin: 14px 0 20px;
+    color: #655b50;
+    line-height: 1.7;
+}
+
+.section-mr0eftj4 .lw-config__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 128px;
+    min-height: 46px;
+    padding: 0 20px;
+    background: #a9432a;
+    color: #fff7ec;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.section-mr0eftj4 .lw-config__button:hover,
+.section-mr0eftj4 .lw-config__button:focus {
+    background: #211b16;
+    color: #fff7ec;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 991px) {
+    .section-mr0eftj4 .lw-config {
+        padding: 60px 0;
+    }
+
+    .section-mr0eftj4 .lw-config__chooser {
+        margin-top: 30px;
+    }
+
+    .section-mr0eftj4 .lw-config__title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 720px) {
+    .section-mr0eftj4 .lw-config__chooser,
+    .section-mr0eftj4 .lw-config__summary {
+        grid-template-columns: 1fr;
+    }
+
+    .section-mr0eftj4 .lw-config__option {
+        min-height: 88px;
+    }
+
+    .section-mr0eftj4 .lw-config__option span {
+        margin-bottom: 10px;
+    }
+
+    .section-mr0eftj4 .lw-config__image {
+        height: 240px;
+    }
+
+    .section-mr0eftj4 .lw-config__price {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-mr0eftj4 .lw-config__title {
+        font-size: 34px;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0eftj4">
+    <section class="lw-config" id="configure" aria-labelledby="section-mr0eftj4-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    {% if this.Model.label %}<p class="lw-config__label" property="true" data-property="label" method="text">{{this.Model.label}}</p>{% endif %}
+                    {% if this.Model.heading %}<h2 id="section-mr0eftj4-title" class="lw-config__title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                    {% if this.Model.summary %}<p class="lw-config__text" property="true" data-property="summary" method="text">{{this.Model.summary}}</p>{% endif %}
+                </div>
+                <div class="col-md-7">
+                    {% if this.Model.editions.size > 0 %}
+                    <div class="lw-config__chooser" role="group" aria-label="选择产品版本">
+                        {% for edition in this.Model.editions %}
+                        <button class="lw-config__option{% if forloop.first %} is-active{% endif %}" type="button" data-edition-name="{{edition.display_name}}" data-price="{{edition.price}}" data-note="{{edition.note}}">
+                            {% if edition.name %}<span property="true" data-property="editions[{{forloop.index0}}].name" method="text">{{edition.name}}</span>{% endif %}
+                            {% if edition.detail %}<strong property="true" data-property="editions[{{forloop.index0}}].detail" method="text">{{edition.detail}}</strong>{% endif %}
+                        </button>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="lw-config__summary" aria-live="polite">
+                        {% if this.Model.image_src %}<img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}" class="lw-config__image">{% endif %}
+                        <div>
+                            {% for edition in this.Model.editions %}{% if forloop.first %}
+                            <p class="lw-config__edition" property="true" data-property="editions[0].display_name" method="text">{{edition.display_name}}</p>
+                            <p class="lw-config__price" property="true" data-property="editions[0].price" method="text">{{edition.price}}</p>
+                            <p class="lw-config__note" property="true" data-property="editions[0].note" method="text">{{edition.note}}</p>
+                            {% endif %}{% endfor %}
+                            {% if this.Model.button_text %}<a class="lw-config__button" property="true" data-property="button_link" method="attr" para="href" href="{% url this.Model.button_link %}"><span property="true" data-property="button_text" method="text">{{this.Model.button_text}}</span></a>{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% footer %}
+<script type="text/javascript">
+(function () {
+    var roots = document.querySelectorAll('.section-mr0eftj4');
+
+    var selectEdition = function (currentRoot, option) {
+        var scopedOptions = currentRoot.querySelectorAll('.lw-config__option');
+
+        for (var index = 0; index < scopedOptions.length; index += 1) {
+            scopedOptions[index].classList.remove('is-active');
+        }
+
+        option.classList.add('is-active');
+        currentRoot.querySelector('.lw-config__edition').textContent = option.getAttribute('data-edition-name');
+        currentRoot.querySelector('.lw-config__price').textContent = option.getAttribute('data-price');
+        currentRoot.querySelector('.lw-config__note').textContent = option.getAttribute('data-note');
+    };
+
+    for (var rootIndex = 0; rootIndex < roots.length; rootIndex += 1) {
+        var root = roots[rootIndex];
+        var options = root.querySelectorAll('.lw-config__option');
+        var editionName = root.querySelector('.lw-config__edition');
+        var editionPrice = root.querySelector('.lw-config__price');
+        var editionNote = root.querySelector('.lw-config__note');
+
+        if (!options.length || !editionName || !editionPrice || !editionNote) {
+            continue;
+        }
+
+        for (var index = 0; index < options.length; index += 1) {
+            options[index].addEventListener('click', function (event) {
+                selectEdition(event.currentTarget.closest('.section-mr0eftj4'), event.currentTarget);
+            });
+        }
+    }
+}());
+</script>
+{% endfooter %}

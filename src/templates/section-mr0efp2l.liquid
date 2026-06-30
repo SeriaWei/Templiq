@@ -1,0 +1,350 @@
+<!-- 精密秤首屏 -->
+{% header %}
+<style>
+.section-mr0efp2l {
+    color: #211b16;
+    background: #f2eee5;
+    font-family: Candara, Corbel, "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.section-mr0efp2l .lw-hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 74px 0 58px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 82% 15%, rgba(208, 84, 45, 0.28), transparent 280px),
+        linear-gradient(135deg, #f2eee5 0%, #d7cfc0 54%, #241f1b 54.2%, #241f1b 100%);
+}
+
+.section-mr0efp2l .lw-hero__grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.16;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px);
+    background-size: 7px 9px, 11px 13px;
+    mix-blend-mode: multiply;
+}
+
+.section-mr0efp2l .lw-hero__row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 132px);
+}
+
+.section-mr0efp2l .lw-hero__copy {
+    max-width: 580px;
+    animation: section-mr0efp2l-lwRise 760ms ease both;
+}
+
+.section-mr0efp2l .lw-hero__kicker {
+    margin: 0 0 18px;
+    color: #a9432a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-mr0efp2l .lw-hero__title {
+    margin: 0;
+    max-width: 560px;
+    color: #231d18;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 72px;
+    line-height: 0.93;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.section-mr0efp2l .lw-hero__text {
+    max-width: 480px;
+    margin: 26px 0 0;
+    color: #51483e;
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.section-mr0efp2l .lw-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 33px 0 0;
+}
+
+.section-mr0efp2l .lw-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 138px;
+    min-height: 48px;
+    padding: 0 20px;
+    border: 1px solid #211b16;
+    color: #211b16;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.section-mr0efp2l .lw-hero__button:hover,
+.section-mr0efp2l .lw-hero__button:focus {
+    color: #211b16;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.section-mr0efp2l .lw-hero__button--primary {
+    background: #211b16;
+    color: #f8f1e3;
+}
+
+.section-mr0efp2l .lw-hero__button--primary:hover,
+.section-mr0efp2l .lw-hero__button--primary:focus {
+    background: #a9432a;
+    color: #fff7ec;
+}
+
+.section-mr0efp2l .lw-hero__button--ghost:hover,
+.section-mr0efp2l .lw-hero__button--ghost:focus {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.section-mr0efp2l .lw-hero__quickstats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 480px;
+    margin: 40px 0 0;
+}
+
+.section-mr0efp2l .lw-hero__quickstats div {
+    padding: 17px 14px;
+    border-top: 1px solid rgba(33, 27, 22, 0.32);
+    background: rgba(255, 250, 239, 0.42);
+}
+
+.section-mr0efp2l .lw-hero__quickstats dt {
+    color: #211b16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.section-mr0efp2l .lw-hero__quickstats dd {
+    margin: 8px 0 0;
+    color: #70665a;
+    font-size: 13px;
+}
+
+.section-mr0efp2l .lw-hero__stage {
+    position: relative;
+    min-height: 580px;
+    animation: section-mr0efp2l-lwFloatIn 900ms 160ms ease both;
+}
+
+.section-mr0efp2l .lw-hero__image {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: min(45vw, 520px);
+    height: 580px;
+    object-fit: cover;
+    filter: saturate(0.82) contrast(1.08);
+    box-shadow: -24px 24px 0 #a9432a, 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.section-mr0efp2l .lw-hero__dial {
+    position: absolute;
+    z-index: 3;
+    top: 70px;
+    left: -20px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(248, 241, 227, 0.6);
+    border-radius: 50%;
+    background: rgba(33, 27, 22, 0.86);
+    color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 41px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+.section-mr0efp2l .lw-hero__dial span {
+    margin-left: 2.5px;
+    font-size: 16px;
+    align-self: center;
+}
+
+.section-mr0efp2l .lw-hero__plate {
+    position: absolute;
+    z-index: 4;
+    right: 70px;
+    bottom: 22px;
+    width: 360px;
+    height: 126px;
+    padding: 24px 26px;
+    color: #f6e7c8;
+    background: linear-gradient(145deg, #141210, #2b2520 72%, #44352a);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.42);
+}
+
+.section-mr0efp2l .lw-hero__plate-brand {
+    display: block;
+    color: #d96b43;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+}
+
+.section-mr0efp2l .lw-hero__plate-line {
+    display: block;
+    height: 1px;
+    margin: 17px 0 15px;
+    background: linear-gradient(90deg, #d96b43, rgba(246, 231, 200, 0.15));
+}
+
+.section-mr0efp2l .lw-hero__plate-reading {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+}
+
+@keyframes section-mr0efp2l-lwRise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes section-mr0efp2l-lwFloatIn {
+    from { opacity: 0; transform: translateX(30px) rotate(1deg); }
+    to { opacity: 1; transform: translateX(0) rotate(0); }
+}
+
+@media (max-width: 991px) {
+    .section-mr0efp2l .lw-hero {
+        min-height: auto;
+        padding: 52px 0;
+        background: linear-gradient(160deg, #f2eee5 0%, #d7cfc0 62%, #241f1b 62.2%, #241f1b 100%);
+    }
+
+    .section-mr0efp2l .lw-hero__row {
+        display: block;
+        min-height: 0;
+    }
+
+    .section-mr0efp2l .lw-hero__title {
+        font-size: 54px;
+    }
+
+    .section-mr0efp2l .lw-hero__stage {
+        min-height: 470px;
+        margin-top: 40px;
+    }
+
+    .section-mr0efp2l .lw-hero__image {
+        width: 82vw;
+        height: 420px;
+    }
+
+    .section-mr0efp2l .lw-hero__plate {
+        right: 10px;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-mr0efp2l .lw-hero {
+        padding: 40px 0 34px;
+    }
+
+    .section-mr0efp2l .lw-hero__title {
+        font-size: 42px;
+        line-height: 1;
+    }
+
+    .section-mr0efp2l .lw-hero__text {
+        font-size: 16px;
+    }
+
+    .section-mr0efp2l .lw-hero__quickstats {
+        grid-template-columns: 1fr;
+    }
+
+    .section-mr0efp2l .lw-hero__stage {
+        min-height: 390px;
+    }
+
+    .section-mr0efp2l .lw-hero__image {
+        width: calc(100vw - 40px);
+        height: 340px;
+        box-shadow: -10px 10px 0 #a9432a, 0 20px 50px rgba(0, 0, 0, 0.32);
+    }
+
+    .section-mr0efp2l .lw-hero__dial {
+        left: 0;
+        top: 30px;
+        width: 108px;
+        height: 108px;
+        font-size: 30px;
+    }
+
+    .section-mr0efp2l .lw-hero__plate {
+        width: calc(100vw - 50px);
+        height: auto;
+        right: 0;
+        padding: 18px;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0efp2l">
+    <section class="lw-hero" aria-labelledby="section-mr0efp2l-title">
+        <div class="lw-hero__grain"></div>
+        <div class="container">
+            <div class="row lw-hero__row">
+                <div class="col-md-6 col-sm-7">
+                    <div class="lw-hero__copy">
+                        {% if this.Model.kicker %}<p class="lw-hero__kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                        {% if this.Model.heading %}<h1 id="section-mr0efp2l-title" class="lw-hero__title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h1>{% endif %}
+                        {% if this.Model.summary %}<p class="lw-hero__text" property="true" data-property="summary" method="text">{{this.Model.summary}}</p>{% endif %}
+                        <div class="lw-hero__actions" aria-label="产品操作">
+                            {% if this.Model.primary_link_text %}<a class="lw-hero__button lw-hero__button--primary" property="true" data-property="primary_link" method="attr" para="href" href="{% url this.Model.primary_link %}"><span property="true" data-property="primary_link_text" method="text">{{this.Model.primary_link_text}}</span></a>{% endif %}
+                            {% if this.Model.secondary_link_text %}<a class="lw-hero__button lw-hero__button--ghost" property="true" data-property="secondary_link" method="attr" para="href" href="{% url this.Model.secondary_link %}"><span property="true" data-property="secondary_link_text" method="text">{{this.Model.secondary_link_text}}</span></a>{% endif %}
+                        </div>
+                        {% if this.Model.quick_stats.size > 0 %}
+                        <dl class="lw-hero__quickstats">
+                            {% for stat in this.Model.quick_stats %}
+                            <div>
+                                {% if stat.value %}<dt property="true" data-property="quick_stats[{{forloop.index0}}].value" method="text">{{stat.value}}</dt>{% endif %}
+                                {% if stat.label %}<dd property="true" data-property="quick_stats[{{forloop.index0}}].label" method="text">{{stat.label}}</dd>{% endif %}
+                            </div>
+                            {% endfor %}
+                        </dl>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-5">
+                    <div class="lw-hero__stage" aria-label="Lineweight S1 产品图">
+                        {% if this.Model.dial_value %}<div class="lw-hero__dial"><span property="true" data-property="dial_value" method="text">{{this.Model.dial_value}}</span>{% if this.Model.dial_unit %}<span property="true" data-property="dial_unit" method="text">{{this.Model.dial_unit}}</span>{% endif %}</div>{% endif %}
+                        {% if this.Model.image_src %}<img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}" class="lw-hero__image">{% endif %}
+                        <div class="lw-hero__plate">
+                            {% if this.Model.plate_brand %}<span class="lw-hero__plate-brand" property="true" data-property="plate_brand" method="text">{{this.Model.plate_brand}}</span>{% endif %}
+                            <span class="lw-hero__plate-line"></span>
+                            {% if this.Model.plate_reading %}<span class="lw-hero__plate-reading" property="true" data-property="plate_reading" method="text">{{this.Model.plate_reading}}</span>{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

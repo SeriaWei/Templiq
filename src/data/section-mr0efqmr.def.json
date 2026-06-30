@@ -1,0 +1,52 @@
+{
+	"label": {
+		"FieldType": "SingleLine",
+		"DisplayName": "眉标"
+	},
+	"heading": {
+		"FieldType": "SingleLine",
+		"DisplayName": "标题"
+	},
+	"summary": {
+		"FieldType": "Paragraph",
+		"DisplayName": "简介"
+	},
+	"spec_cards": {
+		"FieldType": "Array",
+		"DisplayName": "规格卡片",
+		"Children": [
+			{
+				"number": {
+					"FieldType": "SingleLine",
+					"DisplayName": "编号"
+				},
+				"title": {
+					"FieldType": "SingleLine",
+					"DisplayName": "标题"
+				},
+				"description": {
+					"FieldType": "Paragraph",
+					"DisplayName": "描述"
+				},
+				"style": {
+					"FieldType": "Dropdown",
+					"DisplayName": "样式",
+					"FieldOptions": [
+						{
+							"DisplayText": "默认",
+							"Value": "default"
+						},
+						{
+							"DisplayText": "深色",
+							"Value": "dark"
+						},
+						{
+							"DisplayText": "斜线",
+							"Value": "line"
+						}
+					]
+				}
+			}
+		]
+	}
+}

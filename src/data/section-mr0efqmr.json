@@ -1,0 +1,31 @@
+{
+	"label": "CALIBRATION NOTES",
+	"heading": "不是厨房秤，是萃取仪表。",
+	"summary": "Lineweight S1 把重量、时间、流速三件事放在同一套显示逻辑中，减少读数切换，让吧台动作保持连续。",
+	"spec_cards": [
+		{
+			"number": "01",
+			"title": "双计时萃取轴",
+			"description": "预浸与主萃取分轨记录，自动识别断水间隔，复盘时看得见节奏断点。",
+			"style": "default"
+		},
+		{
+			"number": "02",
+			"title": "磁吸隔热面板",
+			"description": "陶瓷涂层上盖可拆洗，承受 92°C 热水壶底部短时接触，不烫伤传感器。",
+			"style": "dark"
+		},
+		{
+			"number": "03",
+			"title": "低光吧台显示",
+			"description": "琥珀色矩阵屏在暗光环境中保留高对比，读数清楚但不刺眼。",
+			"style": "line"
+		},
+		{
+			"number": "04",
+			"title": "蓝牙批次日志",
+			"description": "同步粉量、水量、注水节点与结束重量，方便固定配方或训练新人。",
+			"style": "default"
+		}
+	]
+}

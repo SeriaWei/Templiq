@@ -1,0 +1,176 @@
+<!-- 萃取规格 -->
+{% header %}
+<style>
+.section-mr0efqmr {
+    color: #211b16;
+    background: #f8f1e3;
+    font-family: Candara, Corbel, "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 16px;
+}
+
+.section-mr0efqmr .lw-specs {
+    padding: 90px 0 70px;
+    background: #f8f1e3;
+}
+
+.section-mr0efqmr .lw-specs__intro {
+    position: sticky;
+    top: 40px;
+    padding-right: 20px;
+}
+
+.section-mr0efqmr .lw-specs__label {
+    margin: 0 0 18px;
+    color: #a9432a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-mr0efqmr .lw-specs__title {
+    margin: 0;
+    color: #211b16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.section-mr0efqmr .lw-specs__text {
+    margin: 22px 0 0;
+    color: #655b50;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.section-mr0efqmr .lw-specs__grid {
+    margin-top: -15px;
+}
+
+.section-mr0efqmr .lw-spec-card {
+    min-height: 280px;
+    margin: 15px 0;
+    padding: 28px;
+    border: 1px solid rgba(33, 27, 22, 0.16);
+    background: #ede5d6;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.section-mr0efqmr .lw-spec-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(169, 67, 42, 0.45);
+    box-shadow: 0 24px 40px rgba(58, 43, 33, 0.13);
+}
+
+.section-mr0efqmr .lw-spec-card--dark {
+    background: #211b16;
+    color: #f8f1e3;
+}
+
+.section-mr0efqmr .lw-spec-card--line {
+    background:
+        linear-gradient(135deg, transparent 0 47%, rgba(169, 67, 42, 0.16) 47.2% 52%, transparent 52.2%),
+        #f8f1e3;
+}
+
+.section-mr0efqmr .lw-spec-card__number {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid currentColor;
+    color: #a9432a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+}
+
+.section-mr0efqmr .lw-spec-card--dark .lw-spec-card__number {
+    color: #d96b43;
+}
+
+.section-mr0efqmr .lw-spec-card h3 {
+    margin: 55px 0 12px;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.section-mr0efqmr .lw-spec-card p {
+    margin: 0;
+    color: #655b50;
+    line-height: 1.75;
+}
+
+.section-mr0efqmr .lw-spec-card--dark p {
+    color: #d8ccb9;
+}
+
+@media (max-width: 991px) {
+    .section-mr0efqmr .lw-specs {
+        padding: 70px 0 50px;
+    }
+
+    .section-mr0efqmr .lw-specs__intro {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .section-mr0efqmr .lw-specs__title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-mr0efqmr .lw-specs {
+        padding: 56px 0 40px;
+    }
+
+    .section-mr0efqmr .lw-specs__title {
+        font-size: 34px;
+    }
+
+    .section-mr0efqmr .lw-spec-card {
+        min-height: 220px;
+        padding: 22px;
+    }
+
+    .section-mr0efqmr .lw-spec-card h3 {
+        margin-top: 34px;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0efqmr">
+    <section class="lw-specs" id="specs" aria-labelledby="section-mr0efqmr-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="lw-specs__intro">
+                        {% if this.Model.label %}<p class="lw-specs__label" property="true" data-property="label" method="text">{{this.Model.label}}</p>{% endif %}
+                        {% if this.Model.heading %}<h2 id="section-mr0efqmr-title" class="lw-specs__title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                        {% if this.Model.summary %}<p class="lw-specs__text" property="true" data-property="summary" method="text">{{this.Model.summary}}</p>{% endif %}
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    {% if this.Model.spec_cards.size > 0 %}
+                    <div class="row lw-specs__grid">
+                        {% for card in this.Model.spec_cards %}
+                        <div class="col-sm-6">
+                            <article class="lw-spec-card{% if card.style == 'dark' %} lw-spec-card--dark{% endif %}{% if card.style == 'line' %} lw-spec-card--line{% endif %}">
+                                {% if card.number %}<span class="lw-spec-card__number" property="true" data-property="spec_cards[{{forloop.index0}}].number" method="text">{{card.number}}</span>{% endif %}
+                                {% if card.title %}<h3 property="true" data-property="spec_cards[{{forloop.index0}}].title" method="text">{{card.title}}</h3>{% endif %}
+                                {% if card.description %}<p property="true" data-property="spec_cards[{{forloop.index0}}].description" method="text">{{card.description}}</p>{% endif %}
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

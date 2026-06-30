@@ -1,0 +1,32 @@
+{
+	"label": "BUILD YOUR SET",
+	"heading": "选择你的吧台版本。",
+	"summary": "所有版本都包含 S1 主机、陶瓷隔热盖、USB-C 编织线和 200g 校准砝码。",
+	"image_src": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=82",
+	"image_alt": "咖啡吧台上的杯具与器具",
+	"button_text": "预约试用",
+	"button_link": "mailto:sales@example.com?subject=Lineweight%20S1%20Inquiry",
+	"editions": [
+		{
+			"name": "Studio",
+			"display_name": "Studio Edition",
+			"detail": "哑黑 / 2kg",
+			"price": "¥899",
+			"note": "适合家庭和独立工作室"
+		},
+		{
+			"name": "Bar",
+			"display_name": "Bar Edition",
+			"detail": "钢灰 / 3kg",
+			"price": "¥1,280",
+			"note": "适合高频出杯咖啡吧台"
+		},
+		{
+			"name": "Lab",
+			"display_name": "Lab Edition",
+			"detail": "陶白 / 3kg",
+			"price": "¥1,680",
+			"note": "适合培训、比赛和研发台"
+		}
+	]
+}

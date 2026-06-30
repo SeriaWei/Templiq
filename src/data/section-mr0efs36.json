@@ -1,0 +1,31 @@
+{
+	"image_src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=82",
+	"image_alt": "手冲咖啡萃取过程",
+	"label": "BREW FLOW",
+	"heading": "从第一滴水开始，屏幕只显示你当下需要的数字。",
+	"ticker_items": [
+		{
+			"text": "FLOW 3.2G/S"
+		},
+		{
+			"text": "TARE LOCKED"
+		},
+		{
+			"text": "BREW 02:18"
+		}
+	],
+	"steps": [
+		{
+			"time": "00:00",
+			"description": "放上分享壶自动去皮，进入预浸倒计时。"
+		},
+		{
+			"time": "00:35",
+			"description": "侦测第二段注水，切换到实时流速。"
+		},
+		{
+			"time": "02:45",
+			"description": "到达目标水量后轻震提醒，无需盯屏。"
+		}
+	]
+}
