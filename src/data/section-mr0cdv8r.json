@@ -1,0 +1,25 @@
+{
+	"kicker": "Material study",
+	"heading": "杯壁很薄，隔温很狠。",
+	"summary": "内外双层真空结构把温度留在杯中，外壁保持干爽。杯口做了微弧倒角，冰水、咖啡、气泡水都不会带出金属感。",
+	"cards": [
+		{
+			"number": "01",
+			"title": "陶瓷感涂层",
+			"description": "细砂触感，防滑耐磨，日常磕碰不显狼狈。",
+			"class_name": ""
+		},
+		{
+			"number": "02",
+			"title": "隐藏式茶滤",
+			"description": "可拆滤网贴合杯颈，泡茶、柠檬水都利落。",
+			"class_name": "cc-material__card--lift"
+		},
+		{
+			"number": "03",
+			"title": "防漏杯盖",
+			"description": "三段硅胶密封，倒置十分钟不渗水。",
+			"class_name": ""
+		}
+	]
+}

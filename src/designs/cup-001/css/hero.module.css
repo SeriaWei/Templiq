@@ -1,0 +1,243 @@
+.cc-hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 8.4rem 0 6.4rem;
+  overflow: hidden;
+}
+
+.cc-hero__grain {
+  position: absolute;
+  inset: 0;
+  opacity: .18;
+  background-image:
+    radial-gradient(circle at 20% 20%, #151611 0 1px, transparent 1px),
+    radial-gradient(circle at 80% 40%, #151611 0 1px, transparent 1px);
+  background-size: 18px 18px, 26px 26px;
+  pointer-events: none;
+}
+
+.cc-hero__waterline {
+  position: absolute;
+  left: -5vw;
+  right: -5vw;
+  bottom: 9vh;
+  height: 13rem;
+  background: rgba(126, 176, 185, .22);
+  transform: rotate(-2.5deg);
+  box-shadow: 0 -1px 0 rgba(21, 22, 17, .12), 0 1px 0 rgba(255, 255, 255, .4);
+}
+
+.cc-hero__row {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 14.8rem);
+}
+
+.cc-hero__copy {
+  position: relative;
+  z-index: 2;
+  padding-top: 4rem;
+}
+
+.cc-hero__title {
+  margin: 0;
+  color: #10110d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13.6rem;
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: 0;
+}
+
+.cc-hero__lead {
+  max-width: 46rem;
+  margin: 2.6rem 0 0;
+  color: rgba(21, 22, 17, .76);
+  font-size: 2.1rem;
+  line-height: 1.55;
+}
+
+.cc-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 3.4rem;
+}
+
+.cc-hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 49rem;
+  margin-top: 4.6rem;
+}
+
+.cc-hero__metrics div {
+  min-height: 9.8rem;
+  padding: 1.8rem 1.6rem;
+  border: 1px solid rgba(21, 22, 17, .16);
+  background: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(14px);
+}
+
+.cc-hero__metrics strong {
+  display: block;
+  color: #151611;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.cc-hero__metrics span {
+  display: block;
+  margin-top: .7rem;
+  color: rgba(21, 22, 17, .58);
+  font-size: 1.3rem;
+}
+
+.cc-hero__stage {
+  position: relative;
+  min-height: 66rem;
+}
+
+.cc-hero__halo {
+  position: absolute;
+  top: 8rem;
+  right: 2rem;
+  width: 44rem;
+  height: 44rem;
+  border: 1px solid rgba(21, 22, 17, .16);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .7), rgba(126, 176, 185, .14) 54%, transparent 55%);
+  animation: ccFloat 7s ease-in-out infinite;
+}
+
+.cc-hero__photo {
+  position: absolute;
+  right: -2rem;
+  bottom: 3rem;
+  width: 34rem;
+  height: 48rem;
+  object-fit: cover;
+  border: 1px solid rgba(21, 22, 17, .18);
+  filter: saturate(.84) contrast(1.05);
+  transform: rotate(4deg);
+  box-shadow: 2.6rem 3.4rem 7rem rgba(21, 22, 17, .25);
+}
+
+.cc-hero__product {
+  position: absolute;
+  top: 8.4rem;
+  left: 6rem;
+  z-index: 2;
+  transform: rotate(-7deg);
+}
+
+.cc-cup--large {
+  width: 22rem;
+  height: 50rem;
+}
+
+.cc-cup--large .cc-cup__cap {
+  width: 13.8rem;
+}
+
+.cc-cup--large .cc-cup__body {
+  width: 18.4rem;
+  height: 43rem;
+}
+
+.cc-hero__tag {
+  position: absolute;
+  z-index: 3;
+  padding: 1.1rem 1.6rem;
+  border: 1px solid rgba(21, 22, 17, .22);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, .76);
+  color: #151611;
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: 0 1.4rem 3rem rgba(21, 22, 17, .12);
+  backdrop-filter: blur(12px);
+}
+
+.cc-hero__tag--top {
+  top: 10.5rem;
+  right: 5rem;
+}
+
+.cc-hero__tag--bottom {
+  left: 3rem;
+  bottom: 10rem;
+}
+
+@keyframes ccFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-18px) scale(1.03); }
+}
+
+@media (max-width: 991px) {
+  .cc-hero {
+    min-height: auto;
+    padding-top: 5rem;
+  }
+
+  .cc-hero__row {
+    display: block;
+    min-height: 0;
+  }
+
+  .cc-hero__title {
+    font-size: 9.2rem;
+  }
+
+  .cc-hero__stage {
+    min-height: 58rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cc-hero {
+    padding: 4.2rem 0 3.4rem;
+  }
+
+  .cc-hero__title {
+    font-size: 6.6rem;
+  }
+
+  .cc-hero__lead {
+    font-size: 1.8rem;
+  }
+
+  .cc-hero__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-hero__stage {
+    min-height: 49rem;
+  }
+
+  .cc-hero__photo {
+    right: 0;
+    width: 23rem;
+    height: 34rem;
+  }
+
+  .cc-hero__product {
+    left: 1rem;
+    top: 4rem;
+    transform: scale(.78) rotate(-7deg);
+    transform-origin: top left;
+  }
+
+  .cc-hero__tag--top {
+    right: 1rem;
+  }
+
+  .cc-hero__tag--bottom {
+    left: 1rem;
+    bottom: 5rem;
+  }
+}

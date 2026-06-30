@@ -1,0 +1,130 @@
+.cc-commerce {
+  padding: 10rem 0;
+  background: #fffaf0;
+}
+
+.cc-commerce__shell {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(21, 22, 17, .18);
+  background:
+    linear-gradient(90deg, rgba(139, 75, 44, .08), transparent 42%),
+    #f7f1e4;
+  box-shadow: 0 3rem 7rem rgba(21, 22, 17, .12);
+}
+
+.cc-commerce__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 54rem;
+  padding: 5rem 0;
+}
+
+.cc-commerce__visual::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 7rem;
+  width: 30rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgba(21, 22, 17, .18);
+  filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.cc-cup--shop {
+  margin-top: 2rem;
+  transform: rotate(3deg);
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.cc-cup--shop.is-changing {
+  filter: blur(3px);
+  transform: rotate(3deg) translateY(-8px);
+}
+
+.cc-commerce__copy {
+  padding: 7rem 7rem 7rem 2rem;
+}
+
+.cc-commerce__price {
+  margin: 2.8rem 0 2rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.6rem;
+  line-height: 1;
+}
+
+.cc-commerce__price span {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #8b4b2c;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.cc-commerce__swatches {
+  display: flex;
+  gap: 1rem;
+  margin: 2.6rem 0 3.2rem;
+}
+
+.cc-commerce__swatches button {
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 1px solid rgba(21, 22, 17, .28);
+  border-radius: 50%;
+  background: var(--swatch);
+  box-shadow: inset 0 0 0 .6rem rgba(255, 255, 255, .34);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cc-commerce__swatches button:hover,
+.cc-commerce__swatches button:focus,
+.cc-commerce__swatches button.is-active {
+  transform: translateY(-3px);
+  box-shadow: inset 0 0 0 .6rem rgba(255, 255, 255, .34), 0 0 0 .4rem rgba(21, 22, 17, .12);
+  outline: none;
+}
+
+.cc-commerce__swatches [data-finish="mist"] { --swatch: #e8e3d4; }
+.cc-commerce__swatches [data-finish="clay"] { --swatch: #b86842; }
+.cc-commerce__swatches [data-finish="sage"] { --swatch: #8b9d84; }
+.cc-commerce__swatches [data-finish="ink"] { --swatch: #20211c; }
+
+.cc-commerce__buy {
+  border: none;
+}
+
+@media (max-width: 991px) {
+  .cc-commerce__shell {
+    display: block;
+  }
+
+  .cc-commerce__copy {
+    padding: 0 4rem 5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cc-commerce {
+    padding: 6rem 0;
+  }
+
+  .cc-commerce__visual {
+    min-height: 46rem;
+    transform: scale(.86);
+    transform-origin: top center;
+  }
+
+  .cc-commerce__copy {
+    padding: 0 2.4rem 4rem;
+  }
+
+  .cc-commerce__price {
+    font-size: 4.2rem;
+  }
+}

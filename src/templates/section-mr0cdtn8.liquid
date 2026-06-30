@@ -1,0 +1,419 @@
+<!-- 澄刻首屏 -->
+{% header %}
+<style>
+.section-mr0cdtn8 {
+    position: relative;
+    color: #151611;
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, .76), rgba(255, 255, 255, 0) 35%),
+        radial-gradient(circle at 12% 18%, rgba(136, 171, 165, .22), transparent 28%),
+        radial-gradient(circle at 86% 8%, rgba(196, 112, 70, .16), transparent 24%),
+        #f4f1e8;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow: hidden;
+    isolation: isolate;
+}
+.section-mr0cdtn8::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .23;
+    background-image:
+        linear-gradient(rgba(21, 22, 17, .055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21, 22, 17, .055) 1px, transparent 1px);
+    background-size: 42px 42px;
+}
+.section-mr0cdtn8 .cc-hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 84px 0 64px;
+    overflow: hidden;
+}
+.section-mr0cdtn8 .cc-hero__grain {
+    position: absolute;
+    inset: 0;
+    opacity: .18;
+    background-image:
+        radial-gradient(circle at 20% 20%, #151611 0 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, #151611 0 1px, transparent 1px);
+    background-size: 18px 18px, 26px 26px;
+    pointer-events: none;
+}
+.section-mr0cdtn8 .cc-hero__waterline {
+    position: absolute;
+    left: -5vw;
+    right: -5vw;
+    bottom: 9vh;
+    height: 130px;
+    background: rgba(126, 176, 185, .22);
+    transform: rotate(-2.5deg);
+    box-shadow: 0 -1px 0 rgba(21, 22, 17, .12), 0 1px 0 rgba(255, 255, 255, .4);
+}
+.section-mr0cdtn8 .cc-hero__row {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 148px);
+}
+.section-mr0cdtn8 .cc-hero__copy {
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+}
+.section-mr0cdtn8 .cc-kicker {
+    margin: 0 0 14px;
+    color: #8b4b2c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+.section-mr0cdtn8 .cc-hero__title {
+    margin: 0;
+    color: #10110d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 136px;
+    font-weight: 400;
+    line-height: .82;
+    letter-spacing: 0;
+}
+.section-mr0cdtn8 .cc-hero__lead {
+    max-width: 460px;
+    margin: 26px 0 0;
+    color: rgba(21, 22, 17, .76);
+    font-size: 21px;
+    line-height: 1.55;
+}
+.section-mr0cdtn8 .cc-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+}
+.section-mr0cdtn8 .cc-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    height: 52px;
+    border: 1px solid #151611;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+.section-mr0cdtn8 .cc-button:hover,
+.section-mr0cdtn8 .cc-button:focus {
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+.section-mr0cdtn8 .cc-button--ink {
+    background: #151611;
+    color: #fffaf0;
+    box-shadow: 0 18px 38px rgba(21, 22, 17, .22);
+}
+.section-mr0cdtn8 .cc-button--ink:hover,
+.section-mr0cdtn8 .cc-button--ink:focus {
+    color: #fffaf0;
+    box-shadow: 0 22px 48px rgba(21, 22, 17, .28);
+}
+.section-mr0cdtn8 .cc-button--ghost {
+    background: rgba(255, 255, 255, .34);
+    color: #151611;
+    backdrop-filter: blur(12px);
+}
+.section-mr0cdtn8 .cc-hero__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 490px;
+    margin-top: 46px;
+}
+.section-mr0cdtn8 .cc-hero__metrics div {
+    min-height: 98px;
+    padding: 18px 16px;
+    border: 1px solid rgba(21, 22, 17, .16);
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(14px);
+}
+.section-mr0cdtn8 .cc-hero__metrics strong {
+    display: block;
+    color: #151611;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+}
+.section-mr0cdtn8 .cc-hero__metrics span {
+    display: block;
+    margin-top: 7px;
+    color: rgba(21, 22, 17, .58);
+    font-size: 13px;
+}
+.section-mr0cdtn8 .cc-hero__stage {
+    position: relative;
+    min-height: 660px;
+}
+.section-mr0cdtn8 .cc-hero__halo {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(21, 22, 17, .16);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, .7), rgba(126, 176, 185, .14) 54%, transparent 55%);
+    animation: section-mr0cdtn8-float 7s ease-in-out infinite;
+}
+.section-mr0cdtn8 .cc-hero__photo {
+    position: absolute;
+    right: -20px;
+    bottom: 30px;
+    width: 340px;
+    height: 480px;
+    object-fit: cover;
+    border: 1px solid rgba(21, 22, 17, .18);
+    filter: saturate(.84) contrast(1.05);
+    transform: rotate(4deg);
+    box-shadow: 26px 34px 70px rgba(21, 22, 17, .25);
+}
+.section-mr0cdtn8 .cc-hero__product {
+    position: absolute;
+    top: 84px;
+    left: 60px;
+    z-index: 2;
+    transform: rotate(-7deg);
+}
+.section-mr0cdtn8 .cc-cup {
+    --cup-body: #e8e3d4;
+    position: relative;
+    width: 220px;
+    height: 500px;
+}
+.section-mr0cdtn8 .cc-cup__cap,
+.section-mr0cdtn8 .cc-cup__body,
+.section-mr0cdtn8 .cc-cup__shine,
+.section-mr0cdtn8 .cc-cup__mark {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-mr0cdtn8 .cc-cup__cap {
+    top: 0;
+    width: 138px;
+    height: 52px;
+    border-radius: 22px 22px 12px 12px;
+    background: linear-gradient(90deg, #25251f, #565145 46%, #141511);
+    box-shadow: inset 15px 0 20px rgba(255, 255, 255, .12), 0 12px 18px rgba(21, 22, 17, .24);
+}
+.section-mr0cdtn8 .cc-cup__body {
+    top: 42px;
+    width: 184px;
+    height: 430px;
+    border-radius: 32px 32px 46px 46px / 40px 40px 80px 80px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, .32) 48%, rgba(0, 0, 0, .16) 100%),
+        var(--cup-body);
+    box-shadow:
+        inset -28px 0 32px rgba(0, 0, 0, .13),
+        inset 20px 0 26px rgba(255, 255, 255, .42),
+        24px 38px 50px rgba(21, 22, 17, .2);
+}
+.section-mr0cdtn8 .cc-cup__body::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 10px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .14);
+    filter: blur(3px);
+}
+.section-mr0cdtn8 .cc-cup__shine {
+    top: 84px;
+    width: 20px;
+    height: 230px;
+    margin-left: -42px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .54);
+    filter: blur(1px);
+}
+.section-mr0cdtn8 .cc-cup__mark {
+    top: 230px;
+    color: rgba(21, 22, 17, .58);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    letter-spacing: .46em;
+    writing-mode: vertical-rl;
+}
+.section-mr0cdtn8 .cc-hero__tag {
+    position: absolute;
+    z-index: 3;
+    padding: 11px 16px;
+    border: 1px solid rgba(21, 22, 17, .22);
+    border-radius: 999px;
+    background: rgba(255, 250, 240, .76);
+    color: #151611;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 14px 30px rgba(21, 22, 17, .12);
+    backdrop-filter: blur(12px);
+}
+.section-mr0cdtn8 .cc-hero__tag--top {
+    top: 105px;
+    right: 50px;
+}
+.section-mr0cdtn8 .cc-hero__tag--bottom {
+    left: 30px;
+    bottom: 100px;
+}
+.section-mr0cdtn8 .cc-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: section-mr0cdtn8-reveal .85s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+@keyframes section-mr0cdtn8-reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes section-mr0cdtn8-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-18px) scale(1.03); }
+}
+@media (max-width: 991px) {
+    .section-mr0cdtn8 .cc-hero {
+        min-height: auto;
+        padding-top: 50px;
+    }
+    .section-mr0cdtn8 .cc-hero__row {
+        display: block;
+        min-height: 0;
+    }
+    .section-mr0cdtn8 .cc-hero__title {
+        font-size: 92px;
+    }
+    .section-mr0cdtn8 .cc-hero__stage {
+        min-height: 580px;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .section-mr0cdtn8 .cc-hero {
+        padding: 42px 0 34px;
+    }
+    .section-mr0cdtn8 .cc-hero__title {
+        font-size: 66px;
+    }
+    .section-mr0cdtn8 .cc-hero__lead {
+        font-size: 18px;
+    }
+    .section-mr0cdtn8 .cc-hero__metrics {
+        grid-template-columns: 1fr;
+    }
+    .section-mr0cdtn8 .cc-hero__stage {
+        min-height: 490px;
+    }
+    .section-mr0cdtn8 .cc-hero__photo {
+        right: 0;
+        width: 230px;
+        height: 340px;
+    }
+    .section-mr0cdtn8 .cc-hero__product {
+        left: 10px;
+        top: 40px;
+        transform: scale(.78) rotate(-7deg);
+        transform-origin: top left;
+    }
+    .section-mr0cdtn8 .cc-hero__tag--top {
+        right: 10px;
+    }
+    .section-mr0cdtn8 .cc-hero__tag--bottom {
+        left: 10px;
+        bottom: 50px;
+    }
+    .section-mr0cdtn8 .cc-button {
+        min-width: 138px;
+        height: 48px;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0cdtn8">
+    <section class="cc-hero" aria-labelledby="section-mr0cdtn8-title">
+        <div class="cc-hero__grain"></div>
+        <div class="cc-hero__waterline"></div>
+        <div class="container">
+            <div class="row cc-hero__row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="cc-hero__copy cc-reveal">
+                        {% if this.Model.kicker %}
+                        <p class="cc-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>
+                        {% endif %}
+                        {% if this.Model.title %}
+                        <h1 id="section-mr0cdtn8-title" class="cc-hero__title" property="true" data-property="title" method="text">{{this.Model.title}}</h1>
+                        {% endif %}
+                        {% if this.Model.lead %}
+                        <p class="cc-hero__lead" property="true" data-property="lead" method="text">{{this.Model.lead}}</p>
+                        {% endif %}
+                        <div class="cc-hero__actions" role="group" aria-label="产品操作">
+                            {% if this.Model.primary_text %}
+                            <a class="cc-button cc-button--ink" property="true" data-property="primary_url" method="attr" para="href" href="{% url this.Model.primary_url %}"><span property="true" data-property="primary_text" method="text">{{this.Model.primary_text}}</span></a>
+                            {% endif %}
+                            {% if this.Model.secondary_text %}
+                            <a class="cc-button cc-button--ghost" property="true" data-property="secondary_url" method="attr" para="href" href="{% url this.Model.secondary_url %}"><span property="true" data-property="secondary_text" method="text">{{this.Model.secondary_text}}</span></a>
+                            {% endif %}
+                        </div>
+                        {% if this.Model.metrics.size > 0 %}
+                        <div class="cc-hero__metrics" aria-label="核心卖点">
+                            {% for metric in this.Model.metrics %}
+                            <div>
+                                {% if metric.value %}
+                                <strong property="true" data-property="metrics[{{forloop.index0}}].value" method="text">{{metric.value}}</strong>
+                                {% endif %}
+                                {% if metric.label %}
+                                <span property="true" data-property="metrics[{{forloop.index0}}].label" method="text">{{metric.label}}</span>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="cc-hero__stage cc-reveal" style="animation-delay: .16s;">
+                        <div class="cc-hero__halo"></div>
+                        {% if this.Model.image_src %}
+                        <img class="cc-hero__photo" property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}">
+                        {% endif %}
+                        <div class="cc-hero__product" aria-hidden="true">
+                            <div class="cc-cup">
+                                <span class="cc-cup__cap"></span>
+                                <span class="cc-cup__body"></span>
+                                <span class="cc-cup__shine"></span>
+                                {% if this.Model.product_mark %}
+                                <span class="cc-cup__mark" property="true" data-property="product_mark" method="text">{{this.Model.product_mark}}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if this.Model.top_tag %}
+                        <div class="cc-hero__tag cc-hero__tag--top" property="true" data-property="top_tag" method="text">{{this.Model.top_tag}}</div>
+                        {% endif %}
+                        {% if this.Model.bottom_tag %}
+                        <div class="cc-hero__tag cc-hero__tag--bottom" property="true" data-property="bottom_tag" method="text">{{this.Model.bottom_tag}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

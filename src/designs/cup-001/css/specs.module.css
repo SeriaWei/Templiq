@@ -1,0 +1,153 @@
+.cc-specs {
+  padding: 10rem 0;
+  background:
+    linear-gradient(90deg, transparent 0 49.9%, rgba(21, 22, 17, .09) 50%, transparent 50.1%),
+    #ebe5d7;
+  background-size: 12rem 100%;
+}
+
+.cc-specs__row {
+  margin-top: 5rem;
+}
+
+.cc-specs__gauge,
+.cc-specs__list,
+.cc-specs__temperature {
+  min-height: 34rem;
+  border: 1px solid rgba(21, 22, 17, .18);
+  background: rgba(255, 250, 240, .56);
+  box-shadow: 0 2rem 5rem rgba(21, 22, 17, .08);
+}
+
+.cc-specs__gauge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.cc-specs__gauge::before {
+  content: "";
+  position: absolute;
+  inset: 3.2rem;
+  border: 1px solid rgba(21, 22, 17, .15);
+  border-radius: 50%;
+}
+
+.cc-specs__needle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: .2rem;
+  height: 12rem;
+  background: #8b4b2c;
+  transform: translate(-50%, -95%) rotate(54deg);
+  transform-origin: bottom center;
+}
+
+.cc-specs__gauge strong {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 7rem;
+  font-weight: 400;
+}
+
+.cc-specs__gauge p {
+  position: relative;
+  z-index: 1;
+  max-width: 16rem;
+  margin: 0;
+  text-align: center;
+  color: rgba(21, 22, 17, .6);
+}
+
+.cc-specs__list {
+  padding: 3.2rem;
+}
+
+.cc-specs__list dl {
+  margin: 0;
+}
+
+.cc-specs__list dt,
+.cc-specs__list dd {
+  float: left;
+  min-height: 5.4rem;
+  margin: 0;
+  padding-top: 1.3rem;
+  border-bottom: 1px solid rgba(21, 22, 17, .16);
+}
+
+.cc-specs__list dt {
+  width: 34%;
+  color: rgba(21, 22, 17, .48);
+  font-weight: 400;
+}
+
+.cc-specs__list dd {
+  width: 66%;
+  font-weight: 700;
+  text-align: right;
+}
+
+.cc-specs__list dl::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cc-specs__temperature {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 1.4rem;
+  padding: 3rem;
+}
+
+.cc-specs__temperature span {
+  align-self: start;
+  color: rgba(21, 22, 17, .52);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.cc-specs__temperature div {
+  position: relative;
+  height: 20rem;
+  border: 1px solid rgba(21, 22, 17, .16);
+  background: rgba(255, 255, 255, .26);
+}
+
+.cc-specs__temperature i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: linear-gradient(180deg, #8cb8be, #d8aa84);
+}
+
+.cc-specs__caption {
+  margin: 1.6rem 0 0;
+  color: rgba(21, 22, 17, .62);
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .cc-specs {
+    padding: 7rem 0;
+  }
+
+  .cc-specs__gauge,
+  .cc-specs__list,
+  .cc-specs__temperature {
+    margin-bottom: 2rem;
+  }
+}

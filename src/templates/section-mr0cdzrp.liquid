@@ -1,0 +1,303 @@
+<!-- 配色购买 -->
+{% header %}
+<style>
+.section-mr0cdzrp {
+    color: #151611;
+    background: #fffaf0;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.section-mr0cdzrp .cc-commerce {
+    padding: 100px 0;
+}
+.section-mr0cdzrp .cc-commerce__shell {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(21, 22, 17, .18);
+    background:
+        linear-gradient(90deg, rgba(139, 75, 44, .08), transparent 42%),
+        #f7f1e4;
+    box-shadow: 0 30px 70px rgba(21, 22, 17, .12);
+}
+.section-mr0cdzrp .cc-commerce__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 540px;
+    padding: 50px 0;
+}
+.section-mr0cdzrp .cc-commerce__visual::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    width: 300px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(21, 22, 17, .18);
+    filter: blur(18px);
+    transform: translateX(-50%);
+}
+.section-mr0cdzrp .cc-cup {
+    --cup-body: #e8e3d4;
+    --cup-shadow: #b9ad98;
+    position: relative;
+    width: 180px;
+    height: 440px;
+    margin-top: 20px;
+    transform: rotate(3deg);
+    transition: filter .25s ease, transform .25s ease;
+}
+.section-mr0cdzrp .cc-cup.is-changing {
+    filter: blur(3px);
+    transform: rotate(3deg) translateY(-8px);
+}
+.section-mr0cdzrp .cc-cup__cap,
+.section-mr0cdzrp .cc-cup__body,
+.section-mr0cdzrp .cc-cup__shine,
+.section-mr0cdzrp .cc-cup__mark {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-mr0cdzrp .cc-cup__cap {
+    top: 0;
+    width: 116px;
+    height: 52px;
+    border-radius: 22px 22px 12px 12px;
+    background: linear-gradient(90deg, #25251f, #565145 46%, #141511);
+    box-shadow: inset 15px 0 20px rgba(255, 255, 255, .12), 0 12px 18px rgba(21, 22, 17, .24);
+}
+.section-mr0cdzrp .cc-cup__body {
+    top: 42px;
+    width: 158px;
+    height: 374px;
+    border-radius: 32px 32px 46px 46px / 40px 40px 80px 80px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, .32) 48%, rgba(0, 0, 0, .16) 100%),
+        var(--cup-body);
+    box-shadow:
+        inset -28px 0 32px rgba(0, 0, 0, .13),
+        inset 20px 0 26px rgba(255, 255, 255, .42),
+        24px 38px 50px color-mix(in srgb, var(--cup-shadow) 72%, rgba(21, 22, 17, .2));
+}
+.section-mr0cdzrp .cc-cup__body::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 10px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .14);
+    filter: blur(3px);
+}
+.section-mr0cdzrp .cc-cup__shine {
+    top: 84px;
+    width: 20px;
+    height: 230px;
+    margin-left: -42px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .54);
+    filter: blur(1px);
+}
+.section-mr0cdzrp .cc-cup__mark {
+    top: 230px;
+    color: rgba(21, 22, 17, .58);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    letter-spacing: .46em;
+    writing-mode: vertical-rl;
+}
+.section-mr0cdzrp .cc-commerce__copy {
+    padding: 70px 70px 70px 20px;
+}
+.section-mr0cdzrp .cc-kicker {
+    margin: 0 0 14px;
+    color: #8b4b2c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+.section-mr0cdzrp .cc-commerce h2 {
+    margin: 0 0 20px;
+    color: #11120e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: 0;
+}
+.section-mr0cdzrp .cc-commerce__copy > p {
+    max-width: 560px;
+    color: rgba(21, 22, 17, .72);
+    font-size: 17px;
+}
+.section-mr0cdzrp .cc-commerce__price {
+    margin: 28px 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 56px;
+    line-height: 1;
+}
+.section-mr0cdzrp .cc-commerce__price span {
+    display: inline-block;
+    margin-left: 10px;
+    color: #8b4b2c;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+.section-mr0cdzrp .cc-commerce__swatches {
+    display: flex;
+    gap: 10px;
+    margin: 26px 0 32px;
+}
+.section-mr0cdzrp .cc-commerce__swatches button {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(21, 22, 17, .28);
+    border-radius: 50%;
+    background: var(--swatch);
+    box-shadow: inset 0 0 0 6px rgba(255, 255, 255, .34);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.section-mr0cdzrp .cc-commerce__swatches button:hover,
+.section-mr0cdzrp .cc-commerce__swatches button:focus,
+.section-mr0cdzrp .cc-commerce__swatches button.is-active {
+    transform: translateY(-3px);
+    box-shadow: inset 0 0 0 6px rgba(255, 255, 255, .34), 0 0 0 4px rgba(21, 22, 17, .12);
+    outline: none;
+}
+.section-mr0cdzrp .cc-commerce__swatch-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+.section-mr0cdzrp .cc-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    height: 52px;
+    border: 0;
+    border-radius: 999px;
+    background: #151611;
+    color: #fffaf0;
+    box-shadow: 0 18px 38px rgba(21, 22, 17, .22);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.section-mr0cdzrp .cc-button:hover,
+.section-mr0cdzrp .cc-button:focus {
+    color: #fffaf0;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 22px 48px rgba(21, 22, 17, .28);
+}
+.section-mr0cdzrp .cc-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: section-mr0cdzrp-reveal .85s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+@keyframes section-mr0cdzrp-reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 991px) {
+    .section-mr0cdzrp .cc-commerce__shell { display: block; }
+    .section-mr0cdzrp .cc-commerce h2 { font-size: 42px; }
+    .section-mr0cdzrp .cc-commerce__copy { padding: 0 40px 50px; }
+}
+@media (max-width: 767px) {
+    .section-mr0cdzrp .cc-commerce { padding: 60px 0; }
+    .section-mr0cdzrp .cc-commerce h2 { font-size: 34px; }
+    .section-mr0cdzrp .cc-commerce__visual {
+        min-height: 460px;
+        transform: scale(.86);
+        transform-origin: top center;
+    }
+    .section-mr0cdzrp .cc-commerce__copy { padding: 0 24px 40px; }
+    .section-mr0cdzrp .cc-commerce__price { font-size: 42px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0cdzrp">
+    <section class="cc-commerce" aria-labelledby="section-mr0cdzrp-title">
+        <div class="container">
+            <div class="row cc-commerce__shell">
+                <div class="col-md-5 col-sm-12">
+                    <div class="cc-commerce__visual cc-reveal">
+                        <div class="cc-cup" data-commerce-cup aria-hidden="true">
+                            <span class="cc-cup__cap"></span>
+                            <span class="cc-cup__body"></span>
+                            <span class="cc-cup__shine"></span>
+                            {% if this.Model.product_mark %}<span class="cc-cup__mark" property="true" data-property="product_mark" method="text">{{this.Model.product_mark}}</span>{% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="cc-commerce__copy cc-reveal" style="animation-delay: .12s;">
+                        {% if this.Model.kicker %}<p class="cc-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                        {% if this.Model.heading %}<h2 id="section-mr0cdzrp-title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                        {% if this.Model.summary %}<p property="true" data-property="summary" method="text">{{this.Model.summary}}</p>{% endif %}
+                        <div class="cc-commerce__price">
+                            {% if this.Model.price %}<span property="true" data-property="price" method="text">{{this.Model.price}}</span>{% endif %}
+                            {% if this.Model.price_label %}<span property="true" data-property="price_label" method="text">{{this.Model.price_label}}</span>{% endif %}
+                        </div>
+                        <div class="cc-commerce__swatches" role="group" aria-label="选择杯身配色">
+                            {% for finish in this.Model.finishes %}
+                            <button class="{{finish.active_class}}" type="button" style="{{finish.swatch_style}}" data-body="{{finish.body_color}}" data-shadow="{{finish.shadow_color}}" aria-label="{{finish.label}}">
+                                <span class="cc-commerce__swatch-label" property="true" data-property="finishes[{{forloop.index0}}].label" method="text">{{finish.label}}</span>
+                            </button>
+                            {% endfor %}
+                        </div>
+                        {% if this.Model.button_text %}<button class="cc-button" type="button" property="true" data-property="button_text" method="text">{{this.Model.button_text}}</button>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% footer %}
+<script type="text/javascript">
+(function () {
+    document.querySelectorAll('.section-mr0cdzrp').forEach(function (section) {
+        var cup = section.querySelector('[data-commerce-cup]');
+        var swatches = section.querySelectorAll('.cc-commerce__swatches button');
+
+        if (!cup || !swatches.length) {
+            return;
+        }
+
+        swatches.forEach(function (button) {
+            button.addEventListener('click', function () {
+                swatches.forEach(function (item) {
+                    item.classList.remove('is-active');
+                });
+
+                button.classList.add('is-active');
+                cup.classList.add('is-changing');
+                cup.style.setProperty('--cup-body', button.getAttribute('data-body'));
+                cup.style.setProperty('--cup-shadow', button.getAttribute('data-shadow'));
+
+                window.setTimeout(function () {
+                    cup.classList.remove('is-changing');
+                }, 180);
+            });
+        });
+    });
+})();
+</script>
+{% endfooter %}

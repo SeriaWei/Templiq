@@ -1,0 +1,15 @@
+{
+	"product_mark": "CLEAR",
+	"kicker": "Choose your finish",
+	"heading": "澄刻随行杯 · 标准套装",
+	"summary": "含杯体、隐藏茶滤、替换密封圈与棉质收纳袋。适合办公室、通勤、短途旅行和周末露营。",
+	"price": "¥189",
+	"price_label": "首发价",
+	"finishes": [
+		{ "label": "雾白", "swatch_style": "--swatch: #e8e3d4;", "body_color": "#e8e3d4", "shadow_color": "#b9ad98", "active_class": "is-active" },
+		{ "label": "陶土", "swatch_style": "--swatch: #b86842;", "body_color": "#b86842", "shadow_color": "#7f3f28", "active_class": "" },
+		{ "label": "鼠尾草绿", "swatch_style": "--swatch: #8b9d84;", "body_color": "#8b9d84", "shadow_color": "#66735f", "active_class": "" },
+		{ "label": "墨黑", "swatch_style": "--swatch: #20211c;", "body_color": "#20211c", "shadow_color": "#090a08", "active_class": "" }
+	],
+	"button_text": "加入清单"
+}

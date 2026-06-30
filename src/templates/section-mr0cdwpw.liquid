@@ -1,0 +1,128 @@
+<!-- 日常场景 -->
+{% header %}
+<style>
+.section-mr0cdwpw {
+    background: #151611;
+    color: #fffaf0;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow: hidden;
+}
+.section-mr0cdwpw .cc-ritual__grid {
+    display: flex;
+    align-items: stretch;
+}
+.section-mr0cdwpw .cc-ritual__image {
+    min-height: 700px;
+    padding: 0;
+}
+.section-mr0cdwpw .cc-ritual__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    object-fit: cover;
+    filter: grayscale(.15) contrast(1.08) saturate(.9);
+}
+.section-mr0cdwpw .cc-ritual__content {
+    padding: 90px 8vw 70px;
+}
+.section-mr0cdwpw .cc-kicker {
+    margin: 0 0 14px;
+    color: #d8aa84;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+.section-mr0cdwpw .cc-ritual h2 {
+    margin: 0 0 20px;
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: 0;
+}
+.section-mr0cdwpw .cc-ritual__content > p {
+    max-width: 560px;
+    color: rgba(255, 250, 240, .68);
+    font-size: 17px;
+}
+.section-mr0cdwpw .cc-ritual__timeline {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 250, 240, .22);
+}
+.section-mr0cdwpw .cc-ritual__timeline article {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 250, 240, .18);
+}
+.section-mr0cdwpw .cc-ritual__timeline span {
+    color: #d8aa84;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+}
+.section-mr0cdwpw .cc-ritual__timeline h3 {
+    margin: 0 0 7px;
+    font-size: 24px;
+}
+.section-mr0cdwpw .cc-ritual__timeline p {
+    margin: 0;
+    color: rgba(255, 250, 240, .62);
+}
+.section-mr0cdwpw .cc-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: section-mr0cdwpw-reveal .85s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+@keyframes section-mr0cdwpw-reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 991px) {
+    .section-mr0cdwpw .cc-ritual__grid { display: block; }
+    .section-mr0cdwpw .cc-ritual__image,
+    .section-mr0cdwpw .cc-ritual__image img { min-height: 440px; }
+    .section-mr0cdwpw .cc-ritual h2 { font-size: 42px; }
+}
+@media (max-width: 767px) {
+    .section-mr0cdwpw .cc-ritual__content { padding: 60px 30px; }
+    .section-mr0cdwpw .cc-ritual h2 { font-size: 34px; }
+    .section-mr0cdwpw .cc-ritual__timeline article {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0cdwpw">
+    <section class="cc-ritual" aria-labelledby="section-mr0cdwpw-title">
+        <div class="container-fluid">
+            <div class="row cc-ritual__grid">
+                <div class="col-md-6 cc-ritual__image cc-reveal">
+                    {% if this.Model.image_src %}<img property="true" data-property="image_src" method="attr" para="src" src="{% url this.Model.image_src %}" alt="{{this.Model.image_alt}}">{% endif %}
+                </div>
+                <div class="col-md-6 cc-ritual__content cc-reveal" style="animation-delay: .12s;">
+                    {% if this.Model.kicker %}<p class="cc-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                    {% if this.Model.heading %}<h2 id="section-mr0cdwpw-title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                    {% if this.Model.summary %}<p property="true" data-property="summary" method="text">{{this.Model.summary}}</p>{% endif %}
+                    <div class="cc-ritual__timeline" aria-label="使用场景">
+                        {% for item in this.Model.timeline_items %}
+                        <article>
+                            {% if item.time %}<span property="true" data-property="timeline_items[{{forloop.index0}}].time" method="text">{{item.time}}</span>{% endif %}
+                            <div>
+                                {% if item.title %}<h3 property="true" data-property="timeline_items[{{forloop.index0}}].title" method="text">{{item.title}}</h3>{% endif %}
+                                {% if item.description %}<p property="true" data-property="timeline_items[{{forloop.index0}}].description" method="text">{{item.description}}</p>{% endif %}
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

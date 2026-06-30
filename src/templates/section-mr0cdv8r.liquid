@@ -1,0 +1,151 @@
+<!-- 杯壁材质 -->
+{% header %}
+<style>
+.section-mr0cdv8r {
+    color: #151611;
+    background: linear-gradient(180deg, rgba(255, 250, 240, .16), rgba(255, 250, 240, .72)), #f4f1e8;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.section-mr0cdv8r .cc-material {
+    padding: 100px 0 90px;
+}
+.section-mr0cdv8r .cc-kicker {
+    margin: 0 0 14px;
+    color: #8b4b2c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+.section-mr0cdv8r .cc-section-copy h2 {
+    margin: 0 0 20px;
+    color: #11120e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: 0;
+}
+.section-mr0cdv8r .cc-section-copy p {
+    max-width: 560px;
+    color: rgba(21, 22, 17, .72);
+    font-size: 17px;
+}
+.section-mr0cdv8r .cc-material__panel {
+    position: relative;
+    padding: 50px 30px;
+    border: 1px solid rgba(21, 22, 17, .18);
+    background: rgba(255, 255, 255, .36);
+    box-shadow: 0 32px 60px rgba(21, 22, 17, .08);
+    overflow: hidden;
+}
+.section-mr0cdv8r .cc-material__rings {
+    position: absolute;
+    right: -100px;
+    top: -140px;
+    width: 340px;
+    height: 340px;
+    pointer-events: none;
+}
+.section-mr0cdv8r .cc-material__rings span {
+    position: absolute;
+    border: 1px solid rgba(139, 75, 44, .18);
+    border-radius: 50%;
+}
+.section-mr0cdv8r .cc-material__rings span:nth-child(1) { inset: 0; }
+.section-mr0cdv8r .cc-material__rings span:nth-child(2) { inset: 40px; }
+.section-mr0cdv8r .cc-material__rings span:nth-child(3) { inset: 80px; }
+.section-mr0cdv8r .cc-material__card {
+    position: relative;
+    min-height: 260px;
+    padding: 28px 22px;
+    border-left: 1px solid rgba(21, 22, 17, .18);
+    background: rgba(244, 241, 232, .45);
+}
+.section-mr0cdv8r .cc-material__card--lift {
+    transform: translateY(-24px);
+    background: #151611;
+    color: #fffaf0;
+}
+.section-mr0cdv8r .cc-material__card span {
+    display: block;
+    margin-bottom: 70px;
+    color: #8b4b2c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+}
+.section-mr0cdv8r .cc-material__card--lift span {
+    color: #d8aa84;
+}
+.section-mr0cdv8r .cc-material__card h3 {
+    margin: 0 0 12px;
+    font-size: 23px;
+    font-weight: 700;
+}
+.section-mr0cdv8r .cc-material__card p {
+    margin: 0;
+    color: rgba(21, 22, 17, .66);
+}
+.section-mr0cdv8r .cc-material__card--lift p {
+    color: rgba(255, 250, 240, .7);
+}
+.section-mr0cdv8r .cc-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: section-mr0cdv8r-reveal .85s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+@keyframes section-mr0cdv8r-reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 991px) {
+    .section-mr0cdv8r .cc-material { padding: 70px 0; }
+    .section-mr0cdv8r .cc-material__panel { margin-top: 30px; }
+    .section-mr0cdv8r .cc-section-copy h2 { font-size: 42px; }
+}
+@media (max-width: 767px) {
+    .section-mr0cdv8r .cc-section-copy h2 { font-size: 34px; }
+    .section-mr0cdv8r .cc-material__card,
+    .section-mr0cdv8r .cc-material__card--lift {
+        min-height: 0;
+        margin-bottom: 12px;
+        transform: none;
+    }
+    .section-mr0cdv8r .cc-material__card span { margin-bottom: 26px; }
+}
+</style>
+{% endheader %}
+
+<div class="section-mr0cdv8r">
+    <section class="cc-material" aria-labelledby="section-mr0cdv8r-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="cc-section-copy cc-reveal">
+                        {% if this.Model.kicker %}<p class="cc-kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>{% endif %}
+                        {% if this.Model.heading %}<h2 id="section-mr0cdv8r-title" property="true" data-property="heading" method="text">{{this.Model.heading}}</h2>{% endif %}
+                        {% if this.Model.summary %}<p property="true" data-property="summary" method="text">{{this.Model.summary}}</p>{% endif %}
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="cc-material__panel cc-reveal" style="animation-delay: .12s;">
+                        <div class="cc-material__rings" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <div class="row">
+                            {% for card in this.Model.cards %}
+                            <div class="col-sm-4">
+                                <article class="cc-material__card {{card.class_name}}">
+                                    {% if card.number %}<span property="true" data-property="cards[{{forloop.index0}}].number" method="text">{{card.number}}</span>{% endif %}
+                                    {% if card.title %}<h3 property="true" data-property="cards[{{forloop.index0}}].title" method="text">{{card.title}}</h3>{% endif %}
+                                    {% if card.description %}<p property="true" data-property="cards[{{forloop.index0}}].description" method="text">{{card.description}}</p>{% endif %}
+                                </article>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

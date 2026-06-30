@@ -1,0 +1,27 @@
+{
+	"kicker": { "FieldType": "SingleLine", "DisplayName": "眉标" },
+	"heading": { "FieldType": "SingleLine", "DisplayName": "标题" },
+	"gauge_value": { "FieldType": "SingleLine", "DisplayName": "仪表数值" },
+	"gauge_label": { "FieldType": "SingleLine", "DisplayName": "仪表说明" },
+	"spec_items": {
+		"FieldType": "Array",
+		"DisplayName": "参数列表",
+		"Children": [
+			{
+				"name": { "FieldType": "SingleLine", "DisplayName": "参数名" },
+				"value": { "FieldType": "SingleLine", "DisplayName": "参数值" }
+			}
+		]
+	},
+	"temperature_points": {
+		"FieldType": "Array",
+		"DisplayName": "保温曲线",
+		"Children": [
+			{
+				"label": { "FieldType": "SingleLine", "DisplayName": "时间" },
+				"height_style": { "FieldType": "SingleLine", "DisplayName": "柱形高度样式" }
+			}
+		]
+	},
+	"caption": { "FieldType": "Paragraph", "DisplayName": "曲线说明" }
+}
