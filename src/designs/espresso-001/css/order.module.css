@@ -1,0 +1,78 @@
+.bd-order {
+  padding: 92px 0;
+  background: #24433d;
+  color: #fff7e8;
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+
+.bd-order__shell {
+  padding: 44px;
+  border: 1px solid rgba(255, 247, 232, 0.24);
+  background:
+    linear-gradient(90deg, rgba(255, 247, 232, 0.08) 1px, transparent 1px) 0 0 / 32px 32px,
+    rgba(34, 23, 17, 0.22);
+}
+
+.bd-order__kicker {
+  color: #d59b63;
+}
+
+.bd-order__title {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", Georgia, serif;
+  font-size: 54px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.bd-order__copy {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: rgba(255, 247, 232, 0.76);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.bd-order__price {
+  height: 100%;
+  min-height: 260px;
+  padding: 30px;
+  background: #fff7e8;
+  color: #221711;
+  text-align: center;
+}
+
+.bd-order__price span {
+  display: block;
+  color: #763421;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bd-order__price strong {
+  display: block;
+  margin: 32px 0;
+  font-family: Didot, "Bodoni 72", Georgia, serif;
+  font-size: 54px;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .bd-order {
+    padding: 64px 0;
+  }
+
+  .bd-order__shell {
+    padding: 24px;
+  }
+
+  .bd-order__title {
+    font-size: 38px;
+  }
+
+  .bd-order__price {
+    margin-top: 26px;
+  }
+}

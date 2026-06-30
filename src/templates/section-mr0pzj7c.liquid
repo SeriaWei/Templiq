@@ -1,0 +1,129 @@
+<!-- 双锅炉热控 -->
+{% header %}
+<style>
+.section-mr0pzj7c {
+    padding: 104px 0;
+    background: #efe3ce;
+    color: #221711;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pzj7c .bd-thermal__layout {
+    display: flex;
+    align-items: stretch;
+}
+.section-mr0pzj7c .bd-thermal__photo {
+    height: 100%;
+    margin: 0;
+    min-height: 560px;
+}
+.section-mr0pzj7c .bd-thermal__photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    object-fit: cover;
+}
+.section-mr0pzj7c .bd-thermal__panel {
+    min-height: 560px;
+    padding: 56px 58px;
+    background: #24433d;
+    color: #fff7e8;
+}
+.section-mr0pzj7c .bd-thermal__kicker {
+    margin: 0 0 18px;
+    color: #d59b63;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pzj7c .bd-thermal__title {
+    margin: 0;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: 0;
+}
+.section-mr0pzj7c .bd-thermal__copy {
+    margin: 24px 0 0;
+    color: rgba(255, 247, 232, 0.76);
+    font-size: 17px;
+    line-height: 1.8;
+}
+.section-mr0pzj7c .bd-thermal__specs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 42px;
+    background: rgba(255, 247, 232, 0.2);
+}
+.section-mr0pzj7c .bd-thermal__specs div {
+    padding: 22px;
+    background: #24433d;
+}
+.section-mr0pzj7c .bd-thermal__specs strong {
+    display: block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 34px;
+    line-height: 1;
+}
+.section-mr0pzj7c .bd-thermal__specs span {
+    display: block;
+    margin-top: 9px;
+    color: rgba(255, 247, 232, 0.66);
+    font-size: 14px;
+}
+@media (max-width: 991px) {
+    .section-mr0pzj7c .bd-thermal__layout {
+        display: block;
+    }
+    .section-mr0pzj7c .bd-thermal__photo,
+    .section-mr0pzj7c .bd-thermal__photo img,
+    .section-mr0pzj7c .bd-thermal__panel {
+        min-height: 420px;
+    }
+}
+@media (max-width: 640px) {
+    .section-mr0pzj7c {
+        padding: 64px 0;
+    }
+    .section-mr0pzj7c .bd-thermal__panel {
+        padding: 34px 26px;
+    }
+    .section-mr0pzj7c .bd-thermal__title {
+        font-size: 40px;
+    }
+    .section-mr0pzj7c .bd-thermal__specs {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pzj7c">
+    <div class="container">
+        <div class="row bd-thermal__layout">
+            <div class="col-md-6">
+                <figure class="bd-thermal__photo">
+                    {% if this.Model.image %}<img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="{{this.Model.image_alt}}">{% endif %}
+                </figure>
+            </div>
+            <div class="col-md-6">
+                <div class="bd-thermal__panel">
+                    {% if this.Model.eyebrow %}<p class="bd-thermal__kicker" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                    {% if this.Model.title %}<h2 class="bd-thermal__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>{% endif %}
+                    {% if this.Model.copy %}<p class="bd-thermal__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>{% endif %}
+                    {% if this.Model.specs.size > 0 %}
+                    <div class="bd-thermal__specs">
+                        {% for item in this.Model.specs %}
+                        <div>
+                            {% if item.value %}<strong property="true" data-property="specs[{{forloop.index0}}].value" method="text">{{item.value}}</strong>{% endif %}
+                            {% if item.label %}<span property="true" data-property="specs[{{forloop.index0}}].label" method="text">{{item.label}}</span>{% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

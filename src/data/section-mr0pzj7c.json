@@ -1,0 +1,25 @@
+{
+	"image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&q=85&auto=format&fit=crop",
+	"image_alt": "咖啡萃取液流入杯中",
+	"eyebrow": "Thermal spine",
+	"title": "双锅炉热脊梁，让连续出杯不掉温。",
+	"copy": "独立萃取锅炉和蒸汽锅炉由同一条铝合金热脊固定，温度探针每秒采样 20 次。冲煮头预热、杯盘保温和蒸汽待机被统一管理。",
+	"specs": [
+		{
+			"value": "93.0",
+			"label": "摄氏度恒温"
+		},
+		{
+			"value": "9",
+			"label": "bar 稳压"
+		},
+		{
+			"value": "18",
+			"label": "分钟热机"
+		},
+		{
+			"value": "42",
+			"label": "dB 安静待机"
+		}
+	]
+}

@@ -1,0 +1,175 @@
+<!-- 桌面咖啡工作站 -->
+{% header %}
+<style>
+.section-mr0pzg4g {
+    position: relative;
+    overflow: hidden;
+    min-height: 720px;
+    padding: 88px 0 76px;
+    background: linear-gradient(90deg, rgba(34, 23, 17, 0.08) 1px, transparent 1px) 0 0 / 44px 44px, radial-gradient(circle at 88% 12%, rgba(184, 48, 31, 0.35), transparent 25%), linear-gradient(128deg, #efe3ce 0%, #c9975c 52%, #24433d 100%);
+    color: #221711;
+    font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+.section-mr0pzg4g .bd-hero__grain {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(34, 23, 17, 0.16) 1px, transparent 1px);
+    background-size: 9px 9px;
+    opacity: 0.18;
+    pointer-events: none;
+}
+.section-mr0pzg4g .bd-hero__layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+.section-mr0pzg4g .bd-hero__eyebrow {
+    margin: 0 0 18px;
+    color: #763421;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-mr0pzg4g .bd-hero__title {
+    margin: 0;
+    max-width: 650px;
+    color: #221711;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+.section-mr0pzg4g .bd-hero__lead {
+    max-width: 560px;
+    margin: 28px 0 0;
+    color: #352820;
+    font-size: 18px;
+    line-height: 1.85;
+}
+.section-mr0pzg4g .bd-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+.section-mr0pzg4g .bd-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid #221711;
+    border-radius: 0;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+}
+.section-mr0pzg4g .bd-button:hover,
+.section-mr0pzg4g .bd-button:focus {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.section-mr0pzg4g .bd-button--dark {
+    background: #221711;
+    color: #fff7e8;
+}
+.section-mr0pzg4g .bd-button--light {
+    background: rgba(255, 247, 232, 0.36);
+    color: #221711;
+}
+.section-mr0pzg4g .bd-hero__image {
+    position: relative;
+    margin: 0 0 0 auto;
+    max-width: 520px;
+    transform: rotate(2deg);
+}
+.section-mr0pzg4g .bd-hero__image::before {
+    content: "";
+    position: absolute;
+    inset: 26px 24px -26px -24px;
+    border: 2px solid #b8301f;
+}
+.section-mr0pzg4g .bd-hero__image img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 610px;
+    object-fit: cover;
+    box-shadow: 0 36px 80px rgba(34, 23, 17, 0.28);
+}
+.section-mr0pzg4g .bd-hero__image figcaption {
+    position: absolute;
+    left: -18px;
+    bottom: 30px;
+    padding: 11px 14px;
+    background: #b8301f;
+    color: #fff7e8;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+}
+@media (max-width: 991px) {
+    .section-mr0pzg4g {
+        min-height: 0;
+        padding: 58px 0;
+    }
+    .section-mr0pzg4g .bd-hero__layout {
+        display: block;
+    }
+    .section-mr0pzg4g .bd-hero__layout > [class*="col-"] {
+        float: none;
+        width: 100%;
+    }
+    .section-mr0pzg4g .bd-hero__title {
+        font-size: 48px;
+        line-height: 1.02;
+    }
+    .section-mr0pzg4g .bd-hero__image {
+        margin: 44px 0 0;
+        max-width: none;
+    }
+    .section-mr0pzg4g .bd-hero__image img {
+        height: 440px;
+    }
+}
+@media (max-width: 640px) {
+    .section-mr0pzg4g .bd-hero__title {
+        font-size: 38px;
+    }
+    .section-mr0pzg4g .bd-hero__lead {
+        font-size: 16px;
+    }
+    .section-mr0pzg4g .bd-hero__image img {
+        height: 340px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mr0pzg4g">
+    <div class="bd-hero__grain" aria-hidden="true"></div>
+    <div class="container">
+        <div class="row bd-hero__layout">
+            <div class="col-md-6 col-sm-7">
+                {% if this.Model.eyebrow %}<p class="bd-hero__eyebrow" property="true" data-property="eyebrow" method="text">{{this.Model.eyebrow}}</p>{% endif %}
+                {% if this.Model.title %}<h1 class="bd-hero__title" property="true" data-property="title" method="text">{{this.Model.title}}</h1>{% endif %}
+                {% if this.Model.lead %}<p class="bd-hero__lead" property="true" data-property="lead" method="text">{{this.Model.lead}}</p>{% endif %}
+                <div class="bd-hero__actions">
+                    {% if this.Model.primary_text %}<a class="bd-button bd-button--dark" property="true" data-property="primary_link" method="attr" para="href" href="{% url this.Model.primary_link %}">{{this.Model.primary_text}}</a>{% endif %}
+                    {% if this.Model.secondary_text %}<a class="bd-button bd-button--light" property="true" data-property="secondary_link" method="attr" para="href" href="{% url this.Model.secondary_link %}">{{this.Model.secondary_text}}</a>{% endif %}
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-5">
+                <figure class="bd-hero__image">
+                    {% if this.Model.image %}<img property="true" data-property="image" method="attr" para="src" src="{% url this.Model.image %}" alt="{{this.Model.image_alt}}">{% endif %}
+                    {% if this.Model.caption %}<figcaption property="true" data-property="caption" method="text">{{this.Model.caption}}</figcaption>{% endif %}
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>

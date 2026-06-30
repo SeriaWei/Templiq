@@ -1,0 +1,25 @@
+{
+	"eyebrow": "Recipe cards",
+	"title": "配方不再写在便利贴上。",
+	"copy": "每张豆卡保存产地、烘焙日期、研磨刻度、粉水比和奶泡建议。家人或同事只要选择饮品，机器会把复杂参数翻译成清晰步骤。",
+	"cards": [
+		{
+			"origin": "Ethiopia Guji",
+			"title": "花香美式",
+			"copy": "19 g 粉量、38 g 出液、26 秒，突出柑橘酸质和茶感尾韵。",
+			"is_accent": false
+		},
+		{
+			"origin": "Brazil Cerrado",
+			"title": "榛果拿铁",
+			"copy": "18.5 g 粉量、32 g 出液，蒸汽棒自动停在 62 摄氏度。",
+			"is_accent": true
+		},
+		{
+			"origin": "Colombia Huila",
+			"title": "冰摇浓缩",
+			"copy": "短预浸泡和高压尾段，保留焦糖甜感，适合加冰稀释。",
+			"is_accent": false
+		}
+	]
+}
