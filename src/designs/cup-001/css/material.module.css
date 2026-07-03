@@ -94,3 +94,23 @@
     margin-bottom: 2.6rem;
   }
 }
+
+/* ============================================================
+   BASE STYLES — Merged from base.module.css
+   ============================================================ */
+
+.cc-section-copy h2 {
+  margin: 0 0 2rem;
+  color: #11120e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.4rem;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
+}
+
+.cc-section-copy p {
+  max-width: 56rem;
+  color: rgba(21, 22, 17, .72);
+  font-size: 1.7rem;
+}

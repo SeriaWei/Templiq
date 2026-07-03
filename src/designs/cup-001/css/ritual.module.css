@@ -27,11 +27,19 @@
 }
 
 .cc-ritual h2 {
+  margin: 0 0 2rem;
   color: #fffaf0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.4rem;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
 }
 
 .cc-ritual__content > p {
+  max-width: 56rem;
   color: rgba(255, 250, 240, .68);
+  font-size: 1.7rem;
 }
 
 .cc-ritual__timeline {
