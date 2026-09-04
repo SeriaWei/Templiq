@@ -1,0 +1,23 @@
+{
+    "kicker": "Two setups",
+    "title": "书桌和画板，各取所需。",
+    "text": "同一个光学核心，两种底座。Desk 适合写字台与显示器工作台；Draft 增加气弹簧升降，更适合绘图板与工作桌。",
+    "items": [
+        {
+            "badge": "Desk setup",
+            "name": "Axion P1 Desk",
+            "description": "台灯、2.5 m 编织线、磁吸夹线器、说明书。",
+            "price": "¥899",
+            "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=85&auto=format&fit=crop",
+            "is_dark": "false"
+        },
+        {
+            "badge": "Draft setup",
+            "name": "Axion P1 Draft",
+            "description": "Desk 全套、气弹簧升降柱、A3 亚克力垫板。",
+            "price": "¥1,199",
+            "image": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=1200&q=85&auto=format&fit=crop",
+            "is_dark": "true"
+        }
+    ]
+}

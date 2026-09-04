@@ -1,0 +1,34 @@
+{
+    "kicker": {
+        "FieldType": "SingleLine",
+        "DisplayName": "眉题"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "text": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述"
+    },
+    "steps": {
+        "FieldType": "Array",
+        "DisplayName": "步骤",
+        "Children": [
+            {
+                "number": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "编号"
+                },
+                "heading": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "text": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "内容"
+                }
+            }
+        ]
+    }
+}

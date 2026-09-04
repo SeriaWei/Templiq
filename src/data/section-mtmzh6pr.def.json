@@ -1,0 +1,30 @@
+{
+    "image": {
+        "FieldType": "Media",
+        "DisplayName": "图片"
+    },
+    "kicker": {
+        "FieldType": "SingleLine",
+        "DisplayName": "眉题"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "items": {
+        "FieldType": "Array",
+        "DisplayName": "工艺列表",
+        "Children": [
+            {
+                "heading": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "text": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "内容"
+                }
+            }
+        ]
+    }
+}

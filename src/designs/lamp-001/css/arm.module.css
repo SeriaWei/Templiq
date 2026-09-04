@@ -1,0 +1,72 @@
+/* ============ ARM (悬臂) ============ */
+.ax-arm {
+  position: relative;
+  padding: 88px 0 84px;
+  background:
+    linear-gradient(90deg, rgba(231, 227, 212, 0.05) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(0deg, rgba(231, 227, 212, 0.05) 1px, transparent 1px) 0 0 / 56px 56px,
+    #0e1a17;
+  color: #e7e3d4;
+}
+
+.ax-arm__kicker {
+  margin: 0 0 18px;
+  color: #d69435;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ax-arm__title {
+  margin: 0;
+  color: #f5f1e2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.4rem;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.ax-arm__text {
+  margin: 26px 0 0;
+  color: #9fb0a4;
+  font-size: 1.6rem;
+  line-height: 1.85;
+}
+
+.ax-arm__steps {
+  border-top: 1px solid rgba(231, 227, 212, 0.14);
+  margin-top: 8px;
+}
+
+.ax-arm__step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(231, 227, 212, 0.14);
+}
+
+.ax-arm__step-index {
+  flex: 0 0 64px;
+  color: #d69435;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+}
+
+.ax-arm__step h3 {
+  flex: 0 0 38%;
+  margin: 0;
+  color: #f5f1e2;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.ax-arm__step p {
+  flex: 1 1 auto;
+  margin: 0;
+  color: #8f9f93;
+  font-size: 1.5rem;
+  line-height: 1.7;
+}

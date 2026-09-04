@@ -1,0 +1,102 @@
+/* ============ LINEUP (套装) ============ */
+.ax-lineup {
+  position: relative;
+  padding: 88px 0 90px;
+  background:
+    linear-gradient(90deg, rgba(231, 227, 212, 0.05) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(0deg, rgba(231, 227, 212, 0.05) 1px, transparent 1px) 0 0 / 56px 56px,
+    #0e1a17;
+  color: #e7e3d4;
+}
+
+.ax-lineup__intro {
+  margin-bottom: 48px;
+}
+
+.ax-lineup__kicker {
+  margin: 0 0 18px;
+  color: #d69435;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ax-lineup__title {
+  margin: 0;
+  color: #f5f1e2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.ax-lineup__text {
+  margin: 10px 0 0;
+  color: #9fb0a4;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.ax-lineup__item {
+  height: 100%;
+  border: 1px solid rgba(231, 227, 212, 0.16);
+  background: rgba(20, 38, 33, 0.6);
+}
+
+.ax-lineup__image {
+  overflow: hidden;
+}
+
+.ax-lineup__image img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: saturate(1.04) contrast(1.04);
+  transition: transform 500ms ease;
+}
+
+.ax-lineup__item:hover .ax-lineup__image img {
+  transform: scale(1.04);
+}
+
+.ax-lineup__detail {
+  padding: 26px 28px 30px;
+}
+
+.ax-lineup__detail span {
+  color: #d69435;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ax-lineup__detail h3 {
+  margin: 10px 0 12px;
+  color: #f5f1e2;
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+.ax-lineup__detail p {
+  margin: 0;
+  color: #8f9f93;
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+.ax-lineup__detail strong {
+  display: block;
+  margin-top: 20px;
+  color: #d69435;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.ax-lineup__item--dark {
+  background: #101f1a;
+}

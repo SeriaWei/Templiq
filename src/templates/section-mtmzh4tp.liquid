@@ -1,0 +1,167 @@
+<!-- 光源 -->
+{% header %}
+<style>
+.section-mtmzh4tp {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1c2a25;
+}
+
+.section-mtmzh4tp .ax-beam {
+  position: relative;
+  padding: 88px 0 84px;
+  background: #e8e4d5;
+  color: #1c2a25;
+}
+
+.section-mtmzh4tp .ax-beam__intro {
+  margin-bottom: 52px;
+}
+
+.section-mtmzh4tp .ax-beam__kicker {
+  margin: 0 0 18px;
+  color: #a8641c;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-mtmzh4tp .ax-beam__title {
+  margin: 0;
+  color: #1c2a25;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.section-mtmzh4tp .ax-beam__copy {
+  margin: 0;
+  color: #55645c;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.section-mtmzh4tp .ax-beam__grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-mtmzh4tp .ax-beam__card {
+  height: 100%;
+  padding: 30px 28px;
+  border: 1px solid rgba(28, 42, 37, 0.18);
+  background: rgba(255, 253, 246, 0.55);
+}
+
+.section-mtmzh4tp .ax-beam__num {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #d69435;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.section-mtmzh4tp .ax-beam__card h3 {
+  margin: 0 0 14px;
+  font-size: 21px;
+  font-weight: 400;
+  color: #1c2a25;
+}
+
+.section-mtmzh4tp .ax-beam__card p {
+  margin: 0;
+  color: #55645c;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.section-mtmzh4tp .ax-beam__card--stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #1c2a25;
+  border-color: #1c2a25;
+}
+
+.section-mtmzh4tp .ax-beam__card--stat strong {
+  color: #d69435;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.section-mtmzh4tp .ax-beam__card--stat span {
+  margin-top: 8px;
+  color: #b9c4ba;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.section-mtmzh4tp .ax-beam__card--stat p {
+  margin-top: 18px;
+  color: #8f9f93;
+  font-size: 14px;
+}
+</style>
+{% endheader %}
+
+<div class="section-mtmzh4tp">
+  <section class="ax-beam">
+    <div class="container">
+      <div class="row ax-beam__intro">
+        <div class="col-md-5 col-sm-6">
+          {% if this.Model.kicker %}
+          <p class="ax-beam__kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>
+          {% endif %}
+          {% if this.Model.title %}
+          <h2 class="ax-beam__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+          {% endif %}
+        </div>
+        <div class="col-md-6 col-md-offset-1 col-sm-6">
+          {% if this.Model.copy %}
+          <p class="ax-beam__copy" property="true" data-property="copy" method="text">{{this.Model.copy}}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% if this.Model.cards %}
+      <div class="row ax-beam__grid">
+        {% for card in this.Model.cards %}
+        {% assign index = forloop.index0 %}
+        <div class="col-md-4 col-sm-4">
+          {% if card.is_stat == "true" %}
+          <article class="ax-beam__card ax-beam__card--stat">
+            {% if card.stat_value %}
+            <strong property="true" data-property="cards[{{index}}].stat_value" method="text">{{card.stat_value}}</strong>
+            {% endif %}
+            {% if card.stat_label %}
+            <span property="true" data-property="cards[{{index}}].stat_label" method="text">{{card.stat_label}}</span>
+            {% endif %}
+            {% if card.text %}
+            <p property="true" data-property="cards[{{index}}].text" method="text">{{card.text}}</p>
+            {% endif %}
+          </article>
+          {% else %}
+          <article class="ax-beam__card">
+            {% if card.number %}
+            <span class="ax-beam__num" property="true" data-property="cards[{{index}}].number" method="text">{{card.number}}</span>
+            {% endif %}
+            {% if card.heading %}
+            <h3 property="true" data-property="cards[{{index}}].heading" method="text">{{card.heading}}</h3>
+            {% endif %}
+            {% if card.text %}
+            <p property="true" data-property="cards[{{index}}].text" method="text">{{card.text}}</p>
+            {% endif %}
+          </article>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</div>

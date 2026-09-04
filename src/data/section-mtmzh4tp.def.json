@@ -1,0 +1,46 @@
+{
+    "kicker": {
+        "FieldType": "SingleLine",
+        "DisplayName": "眉题"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "copy": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述"
+    },
+    "cards": {
+        "FieldType": "Array",
+        "DisplayName": "光源卡片",
+        "Children": [
+            {
+                "number": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "编号"
+                },
+                "heading": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "标题"
+                },
+                "text": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "内容"
+                },
+                "is_stat": {
+                    "FieldType": "Checkbox",
+                    "DisplayName": "数据样式"
+                },
+                "stat_value": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "大数字"
+                },
+                "stat_label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数字说明"
+                }
+            }
+        ]
+    }
+}

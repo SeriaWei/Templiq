@@ -1,0 +1,54 @@
+{
+    "eyebrow": {
+        "FieldType": "SingleLine",
+        "DisplayName": "眉题"
+    },
+    "title": {
+        "FieldType": "HtmlBox",
+        "DisplayName": "主标题"
+    },
+    "lead": {
+        "FieldType": "Paragraph",
+        "DisplayName": "描述"
+    },
+    "primary_button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮文字"
+    },
+    "primary_button_url": {
+        "FieldType": "SingleLine",
+        "DisplayName": "主按钮链接"
+    },
+    "secondary_button_text": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次按钮文字"
+    },
+    "secondary_button_url": {
+        "FieldType": "SingleLine",
+        "DisplayName": "次按钮链接"
+    },
+    "specs": {
+        "FieldType": "Array",
+        "DisplayName": "参数列表",
+        "Children": [
+            {
+                "value": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "参数值"
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "参数说明"
+                }
+            }
+        ]
+    },
+    "image": {
+        "FieldType": "Media",
+        "DisplayName": "主图"
+    },
+    "image_caption": {
+        "FieldType": "SingleLine",
+        "DisplayName": "图片说明"
+    }
+}
