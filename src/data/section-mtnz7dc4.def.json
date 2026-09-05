@@ -1,0 +1,83 @@
+{
+    "kicker": {
+        "FieldType": "SingleLine",
+        "DisplayName": "眉标"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "text": {
+        "FieldType": "Paragraph",
+        "DisplayName": "说明"
+    },
+    "stocks": {
+        "FieldType": "Array",
+        "DisplayName": "胶片配方",
+        "Children": [
+            {
+                "tone": {
+                    "FieldType": "Dropdown",
+                    "DisplayName": "色调",
+                    "IsRequired": true,
+                    "FieldOptions": [
+                        {
+                            "DisplayText": "黑白",
+                            "Value": "mono"
+                        },
+                        {
+                            "DisplayText": "暖调",
+                            "Value": "warm"
+                        },
+                        {
+                            "DisplayText": "冷调",
+                            "Value": "cool"
+                        }
+                    ]
+                },
+                "frame": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "帧号"
+                },
+                "tag": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "用途标签"
+                },
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "配方名称",
+                    "IsRequired": true
+                },
+                "note": {
+                    "FieldType": "Paragraph",
+                    "DisplayName": "配方说明"
+                },
+                "image": {
+                    "FieldType": "Media",
+                    "DisplayName": "样张",
+                    "IsRequired": true
+                },
+                "image_alt": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "样张描述"
+                },
+                "specs": {
+                    "FieldType": "Array",
+                    "DisplayName": "参数",
+                    "Children": [
+                        {
+                            "key": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "参数名"
+                            },
+                            "val": {
+                                "FieldType": "SingleLine",
+                                "DisplayName": "参数值"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

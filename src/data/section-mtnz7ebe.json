@@ -1,0 +1,51 @@
+{
+    "kicker": "Range",
+    "title": "三台机身，同一套机械语言。",
+    "meta": "所有机型共用同一枚 35mm f/2 定焦镜头与同一套快门组件，配件、维修与校准流程完全通用。",
+    "models": [
+        {
+            "name": "K-6 Standard",
+            "variant": "哑光黑 / 黄铜顶盖",
+            "config": "35mm f/2",
+            "config_note": "机械快门 1/1000",
+            "use_case": "日常街拍与纪实",
+            "price": "¥12,800",
+            "cta_text": "预约",
+            "cta_link": "#order"
+        },
+        {
+            "name": "K-6 Brass",
+            "variant": "全黄铜 / 手工抛光",
+            "config": "35mm f/2",
+            "config_note": "快门帘布升级",
+            "use_case": "收藏与长期持有",
+            "price": "¥16,400",
+            "cta_text": "预约",
+            "cta_link": "#order"
+        },
+        {
+            "name": "K-6 Studio",
+            "variant": "银顶 / 皮饰定制",
+            "config": "35mm f/2",
+            "config_note": "含校准证书",
+            "use_case": "工作室与商业拍摄",
+            "price": "¥19,200",
+            "cta_text": "预约",
+            "cta_link": "#order"
+        }
+    ],
+    "badges": [
+        {
+            "value": "三年",
+            "label": "机械保修"
+        },
+        {
+            "value": "终身",
+            "label": "快门校准服务"
+        },
+        {
+            "value": "72 小时",
+            "label": "交付周期"
+        }
+    ]
+}

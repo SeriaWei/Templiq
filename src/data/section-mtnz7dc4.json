@@ -1,0 +1,76 @@
+{
+    "kicker": "Tonal recipes",
+    "title": "三种底片，三种光线性格。",
+    "text": "机身出厂附带三组经过 40 卷实测的冲洗配方，覆盖黑白纪实、暖调人像与冷调街拍。每一组都标注了推荐显影时间与宽容度区间，方便暗房与冲扫沟通。",
+    "stocks": [
+        {
+            "tone": "mono",
+            "frame": "Frame 01",
+            "tag": "Documentary",
+            "name": "B/W 3200",
+            "note": "高感黑白配方，适合室内纪实与低光街拍，暗部保留颗粒层次。",
+            "image": "https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=1000&q=85&auto=format&fit=crop",
+            "image_alt": "黑白街头摄影样张",
+            "specs": [
+                {
+                    "key": "ISO",
+                    "val": "3200"
+                },
+                {
+                    "key": "显影",
+                    "val": "4:30 @ 20℃"
+                },
+                {
+                    "key": "宽容度",
+                    "val": "±3.5 EV"
+                }
+            ]
+        },
+        {
+            "tone": "warm",
+            "frame": "Frame 02",
+            "tag": "Portrait",
+            "name": "Warm 100",
+            "note": "低感彩色配方，肤色偏暖，适合窗光人像与黄昏街拍。",
+            "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=85&auto=format&fit=crop",
+            "image_alt": "暖调人像摄影样张",
+            "specs": [
+                {
+                    "key": "ISO",
+                    "val": "100"
+                },
+                {
+                    "key": "显影",
+                    "val": "标准 C-41"
+                },
+                {
+                    "key": "宽容度",
+                    "val": "±1.5 EV"
+                }
+            ]
+        },
+        {
+            "tone": "cool",
+            "frame": "Frame 03",
+            "tag": "Street",
+            "name": "Cool 400",
+            "note": "冷调彩色配方，阴影偏青，适合阴天城市与建筑街拍。",
+            "image": "https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=1000&q=85&auto=format&fit=crop",
+            "image_alt": "冷调街拍摄影样张",
+            "specs": [
+                {
+                    "key": "ISO",
+                    "val": "400"
+                },
+                {
+                    "key": "显影",
+                    "val": "标准 C-41"
+                },
+                {
+                    "key": "宽容度",
+                    "val": "±2.0 EV"
+                }
+            ]
+        }
+    ]
+}

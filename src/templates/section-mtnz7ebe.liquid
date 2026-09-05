@@ -1,0 +1,319 @@
+<!-- 机型对比 -->
+{% header %}
+<style>
+.section-mtnz7ebe {
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0 104px;
+    background: linear-gradient(180deg, #0d0b08 0%, #14110d 60%, #1a1611 100%);
+    color: #efe7d8;
+    font-family: Georgia, "Times New Roman", serif;
+}
+.section-mtnz7ebe .dm-lineup__glow {
+    position: absolute;
+    right: -14%;
+    top: -30%;
+    width: 62%;
+    height: 120%;
+    background: radial-gradient(ellipse at center, rgba(224, 122, 60, 0.22), transparent 62%);
+    pointer-events: none;
+}
+.section-mtnz7ebe .dm-lineup__head {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 54px;
+}
+.section-mtnz7ebe .dm-lineup__head .col-md-7 {
+    padding-right: 30px;
+}
+.section-mtnz7ebe .dm-lineup__kicker {
+    margin: 0 0 16px;
+    color: #e8a06a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+.section-mtnz7ebe .dm-lineup__title {
+    margin: 0;
+    max-width: 640px;
+    color: #f4ecdd;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.02;
+}
+.section-mtnz7ebe .dm-lineup__meta {
+    margin: 0 0 0 auto;
+    max-width: 340px;
+    padding-left: 24px;
+    border-left: 1px solid rgba(239, 231, 216, 0.2);
+    color: #a89e8c;
+    font-size: 15px;
+    line-height: 1.75;
+}
+.section-mtnz7ebe .dm-lineup__table {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    border-collapse: collapse;
+    width: 100%;
+    background: rgba(239, 231, 216, 0.03);
+    border: 1px solid rgba(239, 231, 216, 0.14);
+}
+.section-mtnz7ebe .dm-lineup__table th,
+.section-mtnz7ebe .dm-lineup__table td {
+    padding: 20px 22px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(239, 231, 216, 0.1);
+}
+.section-mtnz7ebe .dm-lineup__table thead th {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid rgba(239, 231, 216, 0.22);
+    background: rgba(11, 9, 6, 0.5);
+}
+.section-mtnz7ebe .dm-lineup__table tbody tr:last-child td {
+    border-bottom: 0;
+}
+.section-mtnz7ebe .dm-lineup__table th.dm-lineup__label {
+    width: 22%;
+    color: #8f8676;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+.section-mtnz7ebe .dm-lineup__table tbody td.dm-lineup__label {
+    color: #8f8676;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.section-mtnz7ebe .dm-lineup__model {
+    display: block;
+    margin-bottom: 6px;
+    color: #f4ecdd;
+    font-family: Didot, "Bodoni 72", Georgia, serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+.section-mtnz7ebe .dm-lineup__sub {
+    display: block;
+    color: #a89e8c;
+    font-size: 14px;
+}
+.section-mtnz7ebe .dm-lineup__price {
+    display: block;
+    color: #e07a3c;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+}
+.section-mtnz7ebe .dm-lineup__table td {
+    color: #d8cfbe;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.section-mtnz7ebe .dm-lineup__table td strong {
+    display: block;
+    color: #f4ecdd;
+    font-weight: 400;
+}
+.section-mtnz7ebe .dm-lineup__table td em {
+    display: block;
+    margin-top: 4px;
+    color: #8f8676;
+    font-size: 13px;
+    font-style: normal;
+}
+.section-mtnz7ebe .dm-lineup__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 20px;
+    border: 1px solid rgba(224, 122, 60, 0.6);
+    background: rgba(224, 122, 60, 0.12);
+    color: #e8a06a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 220ms ease, color 220ms ease, transform 220ms ease;
+}
+.section-mtnz7ebe .dm-lineup__cta:hover,
+.section-mtnz7ebe .dm-lineup__cta:focus {
+    background: #e07a3c;
+    color: #14110d;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+.section-mtnz7ebe .dm-lineup__foot {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin: 40px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.section-mtnz7ebe .dm-lineup__foot li {
+    padding: 10px 16px;
+    border: 1px solid rgba(239, 231, 216, 0.16);
+    color: #a89e8c;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+}
+.section-mtnz7ebe .dm-lineup__foot li b {
+    color: #f4ecdd;
+    font-weight: 400;
+}
+.section-mtnz7ebe .dm-lineup__foot li span {
+    color: #a89e8c;
+}
+@media (max-width: 991px) {
+    .section-mtnz7ebe {
+        padding: 64px 0 70px;
+    }
+    .section-mtnz7ebe .dm-lineup__head {
+        display: block;
+        margin-bottom: 36px;
+    }
+    .section-mtnz7ebe .dm-lineup__head .col-md-7 {
+        padding-right: 0;
+    }
+    .section-mtnz7ebe .dm-lineup__meta {
+        margin: 22px 0 0;
+        padding-left: 0;
+        padding-top: 20px;
+        max-width: none;
+        border-left: 0;
+        border-top: 1px solid rgba(239, 231, 216, 0.2);
+    }
+    .section-mtnz7ebe .dm-lineup__title {
+        font-size: 40px;
+    }
+    .section-mtnz7ebe .dm-lineup__table th,
+    .section-mtnz7ebe .dm-lineup__table td {
+        padding: 16px 14px;
+    }
+    .section-mtnz7ebe .dm-lineup__model {
+        font-size: 20px;
+    }
+    .section-mtnz7ebe .dm-lineup__price {
+        font-size: 16px;
+    }
+    .section-mtnz7ebe .dm-lineup__table td {
+        font-size: 14px;
+    }
+}
+@media (max-width: 640px) {
+    .section-mtnz7ebe .dm-lineup__title {
+        font-size: 32px;
+    }
+    .section-mtnz7ebe .dm-lineup__table th.dm-lineup__label,
+    .section-mtnz7ebe .dm-lineup__table td.dm-lineup__label {
+        width: 30%;
+        font-size: 10.5px;
+    }
+    .section-mtnz7ebe .dm-lineup__model {
+        font-size: 17px;
+    }
+    .section-mtnz7ebe .dm-lineup__sub {
+        font-size: 12px;
+    }
+    .section-mtnz7ebe .dm-lineup__price {
+        font-size: 14px;
+    }
+    .section-mtnz7ebe .dm-lineup__table td {
+        font-size: 12.5px;
+    }
+    .section-mtnz7ebe .dm-lineup__table td em {
+        font-size: 11.5px;
+    }
+}
+</style>
+{% endheader %}
+
+<section class="section-mtnz7ebe">
+    <div class="dm-lineup__glow" aria-hidden="true"></div>
+    <div class="container">
+        <div class="row dm-lineup__head">
+            <div class="col-md-7">
+                {% if this.Model.kicker %}
+                <p class="dm-lineup__kicker" property="true" data-property="kicker" method="text">{{this.Model.kicker}}</p>
+                {% endif %}
+                {% if this.Model.title %}
+                <h2 class="dm-lineup__title" property="true" data-property="title" method="text">{{this.Model.title}}</h2>
+                {% endif %}
+            </div>
+            <div class="col-md-5">
+                {% if this.Model.meta %}
+                <p class="dm-lineup__meta" property="true" data-property="meta" method="text">{{this.Model.meta}}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if this.Model.models.size > 0 %}
+        <table class="dm-lineup__table">
+            <thead>
+                <tr>
+                    <th class="dm-lineup__label">机型</th>
+                    <th>配置</th>
+                    <th>定位</th>
+                    <th>价格</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for model in this.Model.models %}
+                {% assign model_index = forloop.index0 %}
+                <tr>
+                    <td class="dm-lineup__label">
+                        {% if model.name %}<span class="dm-lineup__model" property="true" data-property="models[{{model_index}}].name" method="text">{{model.name}}</span>{% endif %}
+                        {% if model.variant %}<span class="dm-lineup__sub" property="true" data-property="models[{{model_index}}].variant" method="text">{{model.variant}}</span>{% endif %}
+                    </td>
+                    <td>
+                        {% if model.config %}<strong property="true" data-property="models[{{model_index}}].config" method="text">{{model.config}}</strong>{% endif %}
+                        {% if model.config_note %}<em property="true" data-property="models[{{model_index}}].config_note" method="text">{{model.config_note}}</em>{% endif %}
+                    </td>
+                    {% if model.use_case %}
+                    <td property="true" data-property="models[{{model_index}}].use_case" method="text">{{model.use_case}}</td>
+                    {% endif %}
+                    {% if model.price %}
+                    <td><span class="dm-lineup__price" property="true" data-property="models[{{model_index}}].price" method="text">{{model.price}}</span></td>
+                    {% endif %}
+                    <td>
+                        {% if model.cta_text %}
+                        <a class="dm-lineup__cta" property="true" data-property="models[{{model_index}}].cta_link" method="attr" para="href" href="{% url model.cta_link %}">{{model.cta_text}}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        {% if this.Model.badges.size > 0 %}
+        <ul class="dm-lineup__foot">
+            {% for badge in this.Model.badges %}
+            <li>
+                {% if badge.value %}<b property="true" data-property="badges[{{forloop.index0}}].value" method="text">{{badge.value}}</b>{% endif %}
+                {% if badge.label %}<span property="true" data-property="badges[{{forloop.index0}}].label" method="text">{{badge.label}}</span>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</section>

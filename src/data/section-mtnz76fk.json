@@ -1,0 +1,32 @@
+{
+    "eyebrow": "Halbe K-6 / Hand-built rangefinder",
+    "title_prefix": "把",
+    "title_accent": "暗房",
+    "title_suffix": "的手感，装进机身。",
+    "lead": "Halbe K-6 是一台全手动 35mm 旁轴相机。黄铜顶盖、机械计数快门与 35mm f/2 定焦镜头，为胶片拍摄保留每一处需要指腹确认的阻尼与刻度。",
+    "primary_text": "查看机型",
+    "primary_link": "#lineup",
+    "secondary_text": "胶片配方",
+    "secondary_link": "#filmstock",
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1200&q=85&auto=format&fit=crop",
+    "image_alt": "复古旁轴相机正面特写",
+    "caption": "Brass top plate / 412 g",
+    "stats": [
+        {
+            "value": "35mm",
+            "label": "定焦镜头 f/2"
+        },
+        {
+            "value": "1/1000",
+            "label": "机械计数快门"
+        },
+        {
+            "value": "24mm",
+            "label": "取景器基线"
+        },
+        {
+            "value": "100%",
+            "label": "手工装配调试"
+        }
+    ]
+}

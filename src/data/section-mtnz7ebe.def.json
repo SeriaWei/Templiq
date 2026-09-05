@@ -1,0 +1,73 @@
+{
+    "kicker": {
+        "FieldType": "SingleLine",
+        "DisplayName": "眉标"
+    },
+    "title": {
+        "FieldType": "SingleLine",
+        "DisplayName": "标题"
+    },
+    "meta": {
+        "FieldType": "Paragraph",
+        "DisplayName": "补充说明"
+    },
+    "models": {
+        "FieldType": "Array",
+        "DisplayName": "机型列表",
+        "Children": [
+            {
+                "name": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "机型名称",
+                    "IsRequired": true
+                },
+                "variant": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "外观版本"
+                },
+                "config": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "配置"
+                },
+                "config_note": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "配置备注"
+                },
+                "use_case": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "定位"
+                },
+                "price": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "价格",
+                    "IsRequired": true
+                },
+                "cta_text": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮文字"
+                },
+                "cta_link": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "按钮链接"
+                }
+            }
+        ]
+    },
+    "badges": {
+        "FieldType": "Array",
+        "DisplayName": "服务承诺",
+        "Children": [
+            {
+                "value": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "数值",
+                    "IsRequired": true
+                },
+                "label": {
+                    "FieldType": "SingleLine",
+                    "DisplayName": "说明"
+                }
+            }
+        ]
+    }
+}
